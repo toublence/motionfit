@@ -1,0 +1,3 @@
+"CFBundleDisplayName" = "MotionFit - Squat";
+"NSCameraUsageDescription" = "MotionFit uses the camera to count squats and analyze movement on this device. Video is not saved.";
+"NSUserTrackingUsageDescription" = "This identifier may be used to deliver and measure relevant ads.";

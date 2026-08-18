@@ -1,0 +1,879 @@
+{
+  "@@locale": "ar",
+  "appName": "MotionFit - Plank",
+  "navSquat": "البلانك",
+  "navChallenge": "التحدي",
+  "navRecords": "التقدم",
+  "navSettings": "الإعدادات",
+  "challengeTitle": "تحدي البلانك الخاص بي",
+  "challengeSubtitle": "اختر تحديًا يناسب هدفك واستمر في التمرين بانتظام.",
+  "challengeChooseTitle": "اختر تحديًا",
+  "challengeSevenDayTitle": "تحدي البداية لمدة 7 أيام",
+  "challengeSevenDayDescription": "برنامج تدريجي للمبتدئين",
+  "challengeSevenDaySummary": "اتبع هدفًا يناسب مستواك ويزداد يوميًا لمدة 7 أيام.",
+  "challengeSevenDayEveryDay": "استمر يوميًا لمدة 7 أيام دون أيام تعافٍ",
+  "challengeDurationDays": "{days} أيام",
+  "challengeLevelGoals": "أهداف تناسب مستواك",
+  "challengeRecoveryIncluded": "يتضمن أيام تعافٍ",
+  "challengeDailyGoal": "أهداف يومية للثوانٍ",
+  "challengeSevenDayStart": "بدء تحدي 7 أيام",
+  "challengeSevenDaySettings": "حدد هدف 7 أيام",
+  "challengeSevenDaySettingsDescription": "اختر هدف اليوم الأول، وسيزداد الهدف 5 ثوانٍ يوميًا.",
+  "challengeFirstDayGoal": "هدف ثوانٍ اليوم الأول",
+  "challengeSevenDayPreview": "اليوم 1: {first} ← اليوم 7: {last} ثوانٍ",
+  "challengeWeeklyTitle": "تحدي 3 مرات أسبوعيًا",
+  "challengeWeeklyDescription": "تحدي لبناء عادة دون الحاجة إلى تمرين يومي",
+  "challengeWeeklySummary": "تمرّن في 3 أيام تختارها أسبوعيًا لمدة 4 أسابيع.",
+  "challengeDurationWeeks": "{weeks} أسابيع",
+  "challengeThreePerWeek": "3 تمارين كل أسبوع",
+  "challengeChooseWeekdays": "اختر 3 أيام للتمرين",
+  "challengeWorkoutDaysCount": "يُحسب التقدم حسب أيام التمرين",
+  "challengeWeeklyStart": "بدء التحدي الأسبوعي",
+  "challengeCumulativeTitle": "تحدي مجموع الثوانٍ",
+  "challengeCumulativeDescription": "حقق هدفًا إجماليًا للالبلانك وفق جدولك",
+  "challengeCumulativeSummary": "اختر المدة والهدف الإجمالي مع الحفاظ على التقدم في أيام الراحة.",
+  "challengePreset200": "200 البلانك خلال 7 أيام",
+  "challengePreset500": "500 البلانك خلال 14 يومًا",
+  "challengeCustomGoal": "اختر المدة والهدف",
+  "challengeRestWithoutReset": "أيام الراحة لا تعيد ضبط التقدم",
+  "challengeCumulativeStart": "بدء تحدي المجموع",
+  "challengeHistoryTitle": "التحديات السابقة",
+  "challengeHistoryEmpty": "ستظهر التحديات المكتملة والمنتهية هنا.",
+  "challengeRecommended": "موصى به لك",
+  "challengeRecommendationFromWorkout": "موصى به بناءً على تمرينك الأول الذي بلغ {reps} ثوانٍ.",
+  "challengeRecommendationDefault": "نوصي ببداية مريحة لمدة 7 أيام لتحديك الأول.",
+  "challengeActive": "التحدي النشط",
+  "challengeNext": "التالي",
+  "challengeDayNumber": "اليوم {day}",
+  "challengeRecoveryDay": "يوم تعافٍ",
+  "challengeTodayProgress": "اليوم {current} / {target} ثوانٍ",
+  "challengeRestToday": "امنح نفسك وقتًا كافيًا للتعافي اليوم.",
+  "challengeTodayCompleted": "اكتمل هدف اليوم · تابع غدًا",
+  "challengeRepsRemaining": "متبقٍ {reps} ثوانٍ",
+  "challengeWeekNumber": "الأسبوع {week}",
+  "challengeThisWeekProgress": "هذا الأسبوع {current} / {target} تمارين",
+  "challengeOverallDays": "الإجمالي {current} / {target} أيام",
+  "challengeRepsProgress": "{current} / {target} ثوانٍ",
+  "challengeDaysRemaining": "متبقٍ {days} أيام",
+  "challengeTodaySuggested": "الهدف المقترح لليوم: {reps} ثوانٍ",
+  "challengePercent": "اكتمل {percent}٪",
+  "challengeSquatStart": "بدء البلانك",
+  "challengeTodayWorkoutStart": "بدء تمرين اليوم",
+  "challengeViewDetails": "عرض التفاصيل",
+  "challengeRestart": "البدء مجددًا",
+  "challengeDeleteHistory": "الحذف من السجل",
+  "challengeCumulativeSettings": "تحديد الهدف الإجمالي",
+  "challengeDurationLabel": "المدة",
+  "challengeGoalLabel": "الثوانٍ المستهدفة",
+  "challengeNotFound": "لم يعد هذا التحدي متاحًا.",
+  "challengePeriod": "الفترة",
+  "challengeStatus": "الحالة",
+  "challengeTotalReps": "إجمالي البلانك",
+  "challengeWorkoutDays": "أيام التمرين",
+  "challengeDaysCount": "{days} أيام",
+  "challengeTotalTime": "إجمالي وقت التمرين",
+  "challengeSchedule": "الجدول والتقدم",
+  "challengeNotifications": "تذكيرات التحدي",
+  "challengeNotificationsDescription": "احفظ إعداد التذكير لهذا التحدي.",
+  "challengeReminderNotificationTitle": "تحدي البلانك بانتظارك",
+  "challengeReminderNotificationBody": "افتح MotionFit وتقدم نحو هدف تحدي اليوم.",
+  "challengeSelectedWeekdays": "أيام التمرين المختارة",
+  "challengeNoProgressYet": "لا توجد تمارين للتحدي بعد.",
+  "challengeCancel": "إنهاء التحدي",
+  "challengeCancelTitle": "هل تريد إنهاء هذا التحدي؟",
+  "challengeCancelDescription": "ستبقى سجلات تمرينك محفوظة وسينتقل التحدي إلى السجل.",
+  "challengeStatusActive": "قيد التقدم",
+  "challengeStatusCompleted": "مكتمل",
+  "challengeStatusEnded": "منتهٍ",
+  "challengeStatusCancelled": "ملغى",
+  "challengeProgressUpdated": "تم تحديث تقدم التحدي.",
+  "challengeCheck": "عرض التحدي",
+  "commonDone": "تم",
+  "commonCancel": "إلغاء",
+  "commonClose": "إغلاق",
+  "commonRetry": "إعادة المحاولة",
+  "commonSave": "حفظ",
+  "commonDelete": "حذف",
+  "commonConfirm": "تأكيد",
+  "commonBack": "رجوع",
+  "commonContinue": "متابعة",
+  "commonStart": "بدء",
+  "commonSkip": "تخطٍّ",
+  "commonEdit": "تعديل",
+  "commonOn": "تشغيل",
+  "commonOff": "إيقاف",
+  "commonEnabled": "مفعّل",
+  "commonDisabled": "غير مفعّل",
+  "commonNotAvailable": "غير متاح",
+  "commonToday": "اليوم",
+  "commonYesterday": "أمس",
+  "commonLoading": "جارٍ التحميل…",
+  "unitSets": "{count, plural, zero {0 مجموعات} one {مجموعة واحدة} two {مجموعتان} few {{count} مجموعات} many {{count} مجموعة} other {{count} مجموعة}}",
+  "@unitSets": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unitReps": "{count, plural, zero {0 ثوانٍ} one {ثوانٍ واحد} two {ثوانٍ} few {{count} ثوانٍ} many {{count} ثوانٍ} other {{count} ثوانٍ}}",
+  "@unitReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unitSeconds": "{count, plural, zero {0 ثانية} one {ثانية واحدة} two {ثانيتان} few {{count} ثوانٍ} many {{count} ثانية} other {{count} ثانية}}",
+  "@unitSeconds": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unitMinutes": "{count, plural, zero {0 دقيقة} one {دقيقة واحدة} two {دقيقتان} few {{count} دقائق} many {{count} دقيقة} other {{count} دقيقة}}",
+  "@unitMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHoursMinutes": "{hours} س {minutes} د",
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "durationMinutesSeconds": "{minutes} د {seconds} ث",
+  "@durationMinutesSeconds": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "homeGreeting": "هل أنت مستعد للحركة؟",
+  "homeTodayTitle": "سجل اليوم",
+  "homeTodayNoWorkout": "لم تؤدِّ تمارين البلانك اليوم بعد. ابدأ بمجموعة قصيرة.",
+  "homeTodaySummary": "{reps} البلانك ضمن {sets} مجموعة",
+  "homeViewResult": "عرض النتيجة",
+  "@homeTodaySummary": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "sets": {
+        "type": "int"
+      }
+    }
+  },
+  "homeTodaySets": "مجموعات اليوم",
+  "homeTodayReps": "ما أنجزته اليوم",
+  "streakLabel": "السلسلة",
+  "streakDays": "{days} أيام",
+  "@streakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "homeWorkoutSetup": "التمرين التالي",
+  "homeSetsLabel": "عدد المجموعات",
+  "homeRepsPerSetLabel": "ثوانٍ لكل مجموعة",
+  "homeRestTimeLabel": "وقت الراحة",
+  "homeDirectInputHint": "أدخل رقمًا",
+  "homeStartWorkout": "بدء التمرين",
+  "homeLastSettingsRestored": "إعدادات تمرينك الأخير جاهزة.",
+  "validationNumberRequired": "أدخل رقمًا.",
+  "validationRange": "اختر قيمة من {min} إلى {max}.",
+  "@validationRange": {
+    "placeholders": {
+      "min": {
+        "type": "num"
+      },
+      "max": {
+        "type": "num"
+      }
+    }
+  },
+  "guideTitle": "جهّز الكاميرا",
+  "guideLandscapeTitle": "أدر هاتفك إلى الوضع الأفقي",
+  "guideLandscapeBody": "يعمل تتبع البلانك بالوضع الأفقي. ضع الهاتف أفقيًا قبل اتخاذ الوضعية.",
+  "countdownLandscapePrompt": "أبقِ هاتفك في الوضع الأفقي",
+  "guideSubtitle": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "guideWholeBody": "اجعل جسمك كاملًا ظاهرًا من الرأس إلى القدمين.",
+  "guideStableCamera": "ضع هاتفك في مكان ثابت.",
+  "guideOnePerson": "تأكد من وجود شخص واحد فقط في الإطار.",
+  "guideCameraAngle": "استخدم زاوية جانبية أو جانبية مائلة قليلًا إن أمكن.",
+  "guideLighting": "تجنب الأماكن المعتمة والإضاءة الخلفية القوية.",
+  "guidePrivacy": "يبقى الفيديو على هذا الجهاز ولا يُحفظ إلا عند تفعيل مراجعة الثوانٍ.",
+  "guideContinue": "أنا في الموضع المناسب",
+  "permissionCameraTitle": "يلزم السماح باستخدام الكاميرا",
+  "permissionCameraBody": "يستخدم MotionFit الكاميرا لعدّ البلانك. لا يُحفظ الفيديو على هذا الجهاز إلا عند تفعيل المراجعة.",
+  "permissionCameraRequest": "متابعة",
+  "permissionCameraDenied": "رُفض إذن الكاميرا. لا يزال بإمكانك عرض السجل والإعدادات.",
+  "permissionCameraPermanentlyDenied": "اسمح باستخدام الكاميرا من إعدادات النظام لبدء التمرين.",
+  "permissionOpenSettings": "فتح الإعدادات",
+  "permissionNotificationTitle": "هل تسمح بتذكيرات التمرين؟",
+  "permissionNotificationBody": "تُستخدم الإشعارات فقط للتذكيرات التي تضبطها.",
+  "permissionNotificationRequest": "السماح بالإشعارات",
+  "permissionNotificationDenied": "الإشعارات متوقفة. فعّلها من إعدادات النظام لتلقي التذكيرات.",
+  "countdownGetReady": "استعد",
+  "countdownBeginsIn": "البدء خلال {seconds}",
+  "@countdownBeginsIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "calibrationTitle": "البلانك",
+  "calibrationBody": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "calibrationStayStill": "اثبت للحظة",
+  "calibrationComplete": "أصبحت جاهزًا",
+  "calibrationFailed": "تعذر تحديد وضع وقوف واضح.",
+  "calibrationRetry": "إعادة المعايرة",
+  "workoutSetProgress": "المجموعة {current} من {total}",
+  "@workoutSetProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "workoutRepProgress": "{current} من {target}",
+  "@workoutRepProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "workoutTotalReps": "الإجمالي {count}",
+  "@workoutTotalReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "workoutElapsed": "الوقت المنقضي",
+  "workoutPause": "إيقاف مؤقت",
+  "workoutResume": "متابعة التمرين",
+  "workoutEnd": "إيقاف مؤقت",
+  "workoutBackToSetup": "العودة إلى الإعداد",
+  "workoutEndDialogTitle": "هل تريد التوقف مؤقتًا؟",
+  "workoutEndDialogBody": "سيتم حفظ تقدمك لتتمكن من المتابعة من الشاشة الرئيسية.",
+  "workoutEndDialogConfirm": "حفظ ومغادرة",
+  "workoutPauseReasonBackground": "توقف التمرين مؤقتًا عندما انتقل التطبيق إلى الخلفية.",
+  "workoutPauseReasonInterruption": "توقف التمرين مؤقتًا بعد مقاطعة من النظام.",
+  "workoutStateReady": "البلانك",
+  "workoutStateDescending": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "workoutStateBottom": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "workoutStateAscending": "صعود",
+  "workoutStateCompleted": "تمت ثانية واحدة",
+  "workoutStateTrackingLost": "عُد إلى نطاق الكاميرا",
+  "workoutStatePaused": "متوقف مؤقتًا",
+  "workoutTrackingGood": "الجسم ظاهر",
+  "workoutCameraSwitch": "تبديل الكاميرا",
+  "workoutSkeletonToggle": "إظهار دليل الوضعية",
+  "restTitle": "راحة",
+  "restNextSet": "التالي: المجموعة {set} من {total}",
+  "@restNextSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "restCompletedSets": "المجموعات المكتملة",
+  "restTotalReps": "البلانك حتى الآن",
+  "restSkip": "تخطي الراحة",
+  "restAddFifteenSeconds": "إضافة 15 ثانية",
+  "restEndWorkout": "إيقاف مؤقت",
+  "restAlmostDone": "أوشكت الراحة على الانتهاء",
+  "restReady": "حان وقت المجموعة التالية",
+  "completeTitle": "اكتمل التمرين",
+  "completeSubtitle": "أداء قوي. إليك ملخص جلستك.",
+  "workoutInterruptedSubtitle": "راجع ما تم تسجيله قبل الإنهاء المبكر.",
+  "completeTotalReps": "إجمالي البلانك",
+  "completeCompletedSets": "المجموعات المكتملة",
+  "completeActiveTime": "وقت التمرين الفعلي",
+  "completeRestTime": "وقت الراحة",
+  "completeTotalTime": "الوقت الإجمالي",
+  "completeAverageRepTime": "متوسط زمن الثوانٍ",
+  "completeFormSummary": "ملخص الأداء",
+  "todayCoaching": "تدريب اليوم",
+  "coachingIssueFrequency": "في {count} من أصل {total} ثوانٍ:\n{issue}",
+  "@coachingIssueFrequency": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      },
+      "issue": {
+        "type": "String"
+      }
+    }
+  },
+  "completeTopImprovement": "نقطة التركيز القادمة",
+  "completeStrengths": "ما أتقنته",
+  "completeSaved": "حُفظ التمرين على هذا الجهاز",
+  "completeSaveFailed": "تعذر حفظ التمرين. أعد المحاولة قبل المغادرة.",
+  "completeNoFormData": "لم تكن الحركة الظاهرة كافية لإنشاء ملخص للأداء.",
+  "completeFinish": "إنهاء",
+  "postWorkoutReminderTitle": "حافظ على زخمك",
+  "postWorkoutReminderBody": "هل تريد تذكيرًا يوميًا الساعة {time} بدءًا من الغد؟",
+  "@postWorkoutReminderBody": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "postWorkoutReminderEnable": "ذكّرني",
+  "postWorkoutReminderLater": "ربما لاحقًا",
+  "postWorkoutReminderEnabled": "تم ضبط التذكير.",
+  "recordsTitle": "التقدم",
+  "recordsWeeklySummary": "هذا الأسبوع",
+  "recordsWorkoutCount": "{count} تمارين",
+  "@recordsWorkoutCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsAverageForm": "متوسط الأداء {score}",
+  "@recordsAverageForm": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsWorkoutTime": "الوقت {time}",
+  "@recordsWorkoutTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "recordsFirstWeek": "هذا أول سجل لك هذا الأسبوع",
+  "recordsMoreThanLastWeek": "أديت {count} ثوانٍ أكثر من الأسبوع الماضي",
+  "recordsLessThanLastWeek": "أديت {count} ثوانٍ أقل من الأسبوع الماضي",
+  "@recordsMoreThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recordsLessThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsSameAsLastWeek": "نفس حجم الأسبوع الماضي",
+  "recordsTrendEmpty": "أكمل المزيد من التمارين لرؤية تطور أدائك.",
+  "recordsFirstFormScore": "أول نتيجة للأداء",
+  "recordsRecentAverage": "متوسط آخر {count} تمارين: {score}",
+  "@recordsRecentAverage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsStrength": "نقطة قوة",
+  "recordsFocus": "التركيز",
+  "recordsTodayPoint": "تركيز اليوم",
+  "recordsToday": "اليوم",
+  "recordsRecentWorkouts": "التمارين الأخيرة",
+  "recordsCalendarTitle": "تقويم التمارين",
+  "recordsFormTrend": "تطور الأداء",
+  "recordsViewCalendar": "التقويم",
+  "recordsViewList": "القائمة",
+  "recordsViewStats": "الإحصاءات",
+  "recordsCalendarPreviousMonth": "الشهر السابق",
+  "recordsCalendarNextMonth": "الشهر التالي",
+  "recordsCalendarWorkoutDay": "يوم تمرين",
+  "recordsCalendarNoWorkoutSelected": "اختر يوم تمرين لعرض جلساته.",
+  "recordsDayTotal": "إجمالي اليوم",
+  "recordsSessionsCount": "{count, plural, zero {لا جلسات} one {جلسة واحدة} two {جلستان} few {{count} جلسات} many {{count} جلسة} other {{count} جلسة}}",
+  "@recordsSessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsSessionTitle": "الجلسة {number}",
+  "@recordsSessionTitle": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsListNewest": "الأحدث أولًا",
+  "recordsOpenDetail": "عرض التفاصيل",
+  "recordsEmptyTitle": "لا توجد تمارين بعد",
+  "recordsEmptyBody": "أكمل أول تمرين البلانك وسيظهر هنا.",
+  "recordsStartWorkout": "بدء تمرين",
+  "recordsLoading": "جارٍ تحميل تمارينك…",
+  "recordsLoadError": "تعذر تحميل سجل تمارينك.",
+  "statsPeriod": "الفترة",
+  "statsPeriod7Days": "7 أيام",
+  "statsPeriod30Days": "30 يومًا",
+  "statsPeriodThisMonth": "هذا الشهر",
+  "statsPeriodAll": "كل الوقت",
+  "statsPeriodCustom": "مخصصة",
+  "statsCustomRange": "اختيار نطاق التاريخ",
+  "statsTotalReps": "إجمالي البلانك",
+  "statsWorkoutDays": "أيام التمرين",
+  "statsTotalActiveTime": "إجمالي وقت التمرين",
+  "statsAverageSets": "متوسط المجموعات",
+  "statsAverageReps": "متوسط البلانك",
+  "statsDailyReps": "البلانك حسب اليوم",
+  "statsTrend": "التغير مع الوقت",
+  "statsFrequentImprovements": "نقاط التركيز المتكررة",
+  "statsNoData": "لا توجد تمارين في هذه الفترة.",
+  "statsTrendUp": "ارتفاع {percent}%",
+  "@statsTrendUp": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
+  "statsTrendDown": "انخفاض {percent}%",
+  "@statsTrendDown": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
+  "statsTrendFlat": "لا تغيير",
+  "detailTitle": "تفاصيل التمرين",
+  "detailStartTime": "وقت البدء",
+  "detailEndTime": "وقت الانتهاء",
+  "detailActiveTime": "وقت التمرين الفعلي",
+  "detailRestTime": "وقت الراحة",
+  "detailTotalTime": "الوقت الإجمالي",
+  "detailSets": "المجموعات",
+  "detailSetBreakdown": "الثوانٍ حسب المجموعة",
+  "detailTotalReps": "إجمالي البلانك",
+  "detailAverageRep": "متوسط زمن الثوانٍ",
+  "detailFormSummary": "ملخص الأداء",
+  "detailImprovements": "نقاط التحسين",
+  "detailStrengths": "نقاط القوة",
+  "detailInterrupted": "انتهى مبكرًا",
+  "detailCompleted": "مكتمل",
+  "detailSetRow": "المجموعة {set}: {reps} ثوانٍ",
+  "@detailSetRow": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "detailSessionOn": "{date}، {time}",
+  "@detailSessionOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsTitle": "الإعدادات",
+  "settingsRateApp": "قيّم هذا التطبيق",
+  "settingsRateAppSubtitle": "قيّم MotionFit",
+  "settingsRateAppError": "تعذر فتح المتجر. حاول مرة أخرى.",
+  "settingsSectionGeneral": "عام",
+  "settingsSectionCoaching": "التدريب الصوتي",
+  "settingsSectionReminder": "تذكيرات التمرين",
+  "settingsSectionCamera": "الكاميرا",
+  "settingsSectionPrivacy": "الخصوصية والبيانات",
+  "settingsSectionAbout": "حول التطبيق",
+  "settingsLanguage": "اللغة",
+  "settingsDisplayTheme": "مظهر الشاشة",
+  "settingsColorTheme": "سمة الألوان",
+  "themeLight": "فاتح",
+  "themePureBlack": "أسود خالص",
+  "themeSystem": "النظام",
+  "colorThemeByeokcheong": "أزرق بيوكتشيونغ",
+  "colorThemeChuhyang": "بيج تشوهيانغ",
+  "colorThemeJangdan": "أحمر جانغدان",
+  "colorThemeCheonghyeon": "أزرق تشيونغهيون",
+  "colorThemeHaenghwang": "مشمشي هينغهوانغ",
+  "colorThemeChunyu": "أخضر تشونيو",
+  "colorThemeSeolbaek": "أبيض سولبيك",
+  "colorThemeByeokja": "بنفسجي بيوكجا",
+  "colorThemeChwiram": "نعناعي تشويرام",
+  "languageSystem": "استخدام لغة الجهاز",
+  "languageEnglish": "English",
+  "languageKorean": "한국어",
+  "languageGerman": "Deutsch",
+  "languageSpanish": "Español",
+  "languageFrench": "Français",
+  "languageJapanese": "日本語",
+  "languageArabic": "العربية",
+  "languageChineseSimplified": "简体中文",
+  "languageChineseTraditional": "繁體中文",
+  "languageChanged": "تم تحديث اللغة",
+  "voiceCoachingEnabled": "التدريب الصوتي",
+  "voiceRepCountEnabled": "نطق عدد الثوانٍ",
+  "voiceFormEnabled": "إرشادات الأداء",
+  "voiceEncouragementEnabled": "عبارات التشجيع",
+  "voiceRate": "سرعة النطق",
+  "voiceRateSlow": "بطيئة",
+  "voiceRateNormal": "عادية",
+  "voiceRateFast": "سريعة",
+  "voiceTest": "اختبار الصوت",
+  "voiceTestPhrase": "رائع. مدربك الصوتي جاهز.",
+  "voiceUnavailable": "لا يوجد صوت متوافق يعمل دون اتصال مثبت لهذه اللغة.",
+  "reminderTitle": "تذكيرات التمرين",
+  "reminderSubtitle": "اختر وقتًا لكل يوم تريد التمرن فيه.",
+  "reminderEnabled": "تفعيل التذكير",
+  "reminderTime": "وقت التذكير",
+  "reminderCopyTime": "نسخ هذا الوقت",
+  "reminderCopyFromDay": "نسخ الوقت من {day}",
+  "@reminderCopyFromDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderApplyAll": "تطبيق على كل الأيام",
+  "reminderNext": "التذكير التالي: {dateTime}",
+  "@reminderNext": {
+    "placeholders": {
+      "dateTime": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderNoneScheduled": "لا توجد تذكيرات مجدولة",
+  "reminderPermissionNeeded": "اسمح بالإشعارات لتشغيل التذكيرات.",
+  "reminderSaved": "حُفظ جدول التذكيرات",
+  "weekdayMonday": "الاثنين",
+  "weekdayTuesday": "الثلاثاء",
+  "weekdayWednesday": "الأربعاء",
+  "weekdayThursday": "الخميس",
+  "weekdayFriday": "الجمعة",
+  "weekdaySaturday": "السبت",
+  "weekdaySunday": "الأحد",
+  "weekdayMondayShort": "اثن",
+  "weekdayTuesdayShort": "ثلا",
+  "weekdayWednesdayShort": "أرب",
+  "weekdayThursdayShort": "خمي",
+  "weekdayFridayShort": "جمع",
+  "weekdaySaturdayShort": "سبت",
+  "weekdaySundayShort": "أحد",
+  "cameraFront": "الكاميرا الأمامية",
+  "cameraRear": "الكاميرا الخلفية",
+  "cameraMirrorPreview": "عكس معاينة الكاميرا الأمامية",
+  "cameraPoseOverlay": "طبقة دليل الوضعية",
+  "cameraKeepScreenAwake": "إبقاء الشاشة مضاءة أثناء التمرين",
+  "settingsHaptics": "الاستجابة اللمسية",
+  "privacyTitle": "كيفية التعامل مع بياناتك",
+  "privacyLocalProcessing": "يعمل تحليل الوضعية على هذا الجهاز.",
+  "privacyNoVideoStorage": "لا يُحفظ فيديو التمرين على هذا الجهاز إلا عند تفعيل مراجعة الثوانٍ.",
+  "privacyNoUpload": "لا تُرفع إطارات الكاميرا إلى أي خادم.",
+  "privacyStoredData": "البيانات المحفوظة على هذا الجهاز",
+  "privacyStoredDataDescription": "يحفظ MotionFit أوقات التمرين والمجموعات والثوانٍ ونتائج الأداء كي تراجع تقدمك.",
+  "privacyDeleteData": "حذف جميع بيانات التمرين",
+  "privacyDeleteConfirmTitle": "هل تريد حذف جميع بيانات التمرين؟",
+  "privacyDeleteConfirmBody": "سيؤدي ذلك إلى حذف سجل تمارينك نهائيًا من هذا الجهاز. ولا يمكن التراجع عنه.",
+  "privacyDeleteConfirmAction": "حذف كل البيانات",
+  "privacyDeleteSuccess": "حُذفت بيانات التمرين",
+  "privacyDeleteFailure": "تعذر حذف بيانات التمرين.",
+  "appInfoTitle": "معلومات التطبيق",
+  "appInfoVersion": "الإصدار {version}",
+  "@appInfoVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "appInfoLicenses": "تراخيص المصادر المفتوحة",
+  "appInfoPrivacyPolicy": "سياسة الخصوصية",
+  "appInfoDescription": "يعدّ MotionFit تمارين البلانك ويقدم إرشادات خاصة على الجهاز لتحسين الأداء.",
+  "errorGenericTitle": "حدث خطأ ما",
+  "errorGenericBody": "حاول مرة أخرى. سجلات تمارينك الحالية آمنة.",
+  "errorCameraInit": "تعذر تشغيل الكاميرا.",
+  "errorCameraInUse": "قد تكون الكاميرا قيد الاستخدام في تطبيق آخر.",
+  "errorPoseModelLoad": "تعذر تحميل نموذج اكتشاف الوضعية.",
+  "errorNoPerson": "لم يُكتشف شخص. ادخل في نطاق الكاميرا.",
+  "errorWholeBody": "جسمك غير ظاهر بالكامل. ابتعد قليلًا عن الكاميرا.",
+  "errorMultiplePeople": "يوجد أكثر من شخص في الصورة. أبقِ شخصًا واحدًا فقط في الإطار.",
+  "errorTrackingLost": "توقف التتبع حتى يظهر جسمك من جديد.",
+  "errorDatabaseSave": "تعذر حفظ تمرينك.",
+  "errorTtsVoiceMissing": "لا يوجد صوت نطق مثبت على هذا الجهاز.",
+  "errorTtsLocaleUnsupported": "لا يدعم هذا الجهاز التدريب الصوتي باللغة المحددة.",
+  "emptyNoFormIssues": "لم تُكتشف مشكلات أداء متكررة.",
+  "emptyNotEnoughData": "لا توجد بيانات كافية بعد",
+  "loadingCamera": "جارٍ تشغيل الكاميرا…",
+  "loadingPoseModel": "جارٍ تجهيز اكتشاف الحركة…",
+  "loadingSavingWorkout": "جارٍ حفظ التمرين…",
+  "formScore": "درجة الأداء",
+  "formShort": "الأداء",
+  "formScoreValue": "{score} نقطة",
+  "@formScoreValue": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "formIssueDepth": "حاذِ الوركين مع الكتفين.",
+  "formIssueTorsoLean": "شد عضلات الجذع وحافظ على استقامة الظهر.",
+  "formIssueHeelLift": "ثبات الكعبين",
+  "formIssueKneeAlignment": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "formIssueBalance": "التوازن بين الجانبين",
+  "formIssueDescentSpeed": "سرعة النزول",
+  "formIssueAscentSpeed": "سرعة الصعود",
+  "formIssueControl": "شد عضلات الجذع وحافظ على استقامة الظهر.",
+  "formIssueStandingCompletion": "اكتمال الوقوف",
+  "formIssueNotObservable": "لا يمكن تقييمه من زاوية الكاميرا هذه",
+  "formStrengthDepth": "عمق متناسق",
+  "formStrengthControl": "حركة مضبوطة",
+  "formStrengthBalance": "توازن ثابت",
+  "coachTrackingLost1": "عُد إلى نطاق الكاميرا وسنواصل.",
+  "coachTrackingLost2": "لم أعد أراك. انتقل إلى موضع يظهر فيه جسمك كاملًا.",
+  "coachWholeBody1": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachWholeBody2": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachMultiplePeople1": "أبقِ شخصًا واحدًا فقط في الإطار كي أتمكن من تتبعك.",
+  "coachReady1": "أنت في الموضع المناسب. لنبدأ.",
+  "coachReady2": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachStartSet": "المجموعة {set}. هيا نبدأ.",
+  "@coachStartSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
+  "coachSevenDayChallengeStart": "يبدأ اليوم {day} من تحدي الأيام السبعة.",
+  "@coachSevenDayChallengeStart": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "coachCumulativeChallengeStart": "يبدأ تحدي الثوانٍ التراكمية. أكملت {completed} ثوانٍ، وتبقى {remaining} ثوانٍ.",
+  "@coachCumulativeChallengeStart": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "coachRepCount": "{count} ثانية",
+  "@coachRepCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "coachDepth1": "حاذِ الوركين مع الكتفين.",
+  "coachDepth2": "حاذِ الوركين مع الكتفين.",
+  "coachTorso1": "شد عضلات الجذع وحافظ على استقامة الظهر.",
+  "coachTorso2": "شد عضلات الجذع وحافظ على استقامة الظهر.",
+  "coachHeel1": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachHeel2": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachKnees1": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachKnees2": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachBalance1": "شد عضلات الجذع وحافظ على استقامة الظهر.",
+  "coachBalance2": "شد عضلات الجذع وحافظ على استقامة الظهر.",
+  "coachDescendSlow1": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachDescendSlow2": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachDescendFaster1": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachDescendFaster2": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachAscendControlled1": "حاذِ الوركين مع الكتفين.",
+  "coachAscendControlled2": "حاذِ الوركين مع الكتفين.",
+  "coachAscendFaster1": "حاذِ الوركين مع الكتفين.",
+  "coachAscendFaster2": "حاذِ الوركين مع الكتفين.",
+  "coachControl1": "شد عضلات الجذع وحافظ على استقامة الظهر.",
+  "coachControl2": "شد عضلات الجذع وحافظ على استقامة الظهر.",
+  "coachStandTall1": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachStandTall2": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachGood1": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachGood2": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachGood3": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "coachLastTwo": "تبقى اثنان. واصل بقوة!",
+  "coachLastOne": "الأخيرة. أنهِ بقوة!",
+  "coachSetComplete": "أحسنت. اكتملت المجموعة {set}.",
+  "@coachSetComplete": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
+  "coachRestStart": "استرح لمدة {seconds} ثانية. تنفّس واستعد.",
+  "@coachRestStart": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "coachRestTenSeconds": "بقيت عشر ثوانٍ من الراحة.",
+  "coachRestComplete": "انتهت الراحة. استعد للمجموعة التالية.",
+  "coachWorkoutComplete": "اكتمل التمرين. حافظت على البلانك لمدة {reps} ثانية.",
+  "@coachWorkoutComplete": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "notificationReminderTitle": "حان وقت البلانك اليوم",
+  "notificationReminderBody": "حتى الجلسة القصيرة لها أثر. افتح MotionFit عندما تكون مستعدًا.",
+  "notificationReminderBodyVariant2": "بضع البلانك مركزة تكفي لتضيف نشاطًا إلى يومك.",
+  "notificationStreakReminderBody": "حافظ اليوم على سلسلتك لمدة {days} أيام بتمرين قصير.",
+  "@notificationStreakReminderBody": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "semanticsIncrease": "زيادة",
+  "semanticsDecrease": "تقليل",
+  "semanticsSelectedTab": "علامة التبويب المحددة: {tab}",
+  "@semanticsSelectedTab": {
+    "placeholders": {
+      "tab": {
+        "type": "String"
+      }
+    }
+  },
+  "semanticsCalendarWorkoutDate": "{date}، يوجد تمرين مسجل",
+  "@semanticsCalendarWorkoutDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "semanticsCalendarEmptyDate": "{date}، لا يوجد تمرين",
+  "@semanticsCalendarEmptyDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "semanticsCurrentRep": "الثوانٍ الحالي {current} من {target}",
+  "@semanticsCurrentRep": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "repVideoReviewTitle": "مراجعة فيديو الثوانٍ",
+  "repVideoReviewDescription": "احفظ فيديو هذا التمرين على الجهاز لمراجعة كل ثوانٍ لاحقًا.",
+  "repVideoLocalOnly": "محلي فقط · لا يتم رفعه",
+  "formReviewTitle": "مراجعة الوضعية",
+  "formReviewMainIssue": "المشكلة الرئيسية",
+  "viewRepTimeline": "عرض مخطط الثوانٍ",
+  "repTimelineTitle": "مراجعة الثوانٍ",
+  "repTimelineAll": "الكل",
+  "repTimelineImprove": "تحسين",
+  "repTimelineNoImprovement": "لا توجد ثوانٍ تحتاج إلى تحسين.",
+  "repSetNumber": "المجموعة {number}",
+  "@repSetNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "repNumber": "الثوانٍ {number}",
+  "@repNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "repResultGood": "وضعية جيدة",
+  "repResultNeedsAttention": "يحتاج إلى انتباه",
+  "repResultImproved": "أفضل من الثوانٍ السابق",
+  "repResultNotAssessed": "يصعب التقييم",
+  "repIssueShallowDepth": "حاذِ الوركين مع الكتفين.",
+  "repIssueForwardLean": "شد عضلات الجذع وحافظ على استقامة الظهر.",
+  "repIssueKneesInward": "تحركت الركبتان إلى الداخل",
+  "repVideoNotSaved": "لم يتم حفظ الفيديو",
+  "repReplay": "إعادة التشغيل",
+  "repWhatHappened": "ماذا حدث",
+  "repHowToImprove": "كيفية التحسين",
+  "repWhatWentWell": "ما تم بشكل جيد",
+  "repPrevious": "الثوانٍ السابق",
+  "repNext": "الثوانٍ التالي",
+  "repFeedbackGood": "حافظ على استقامة الكتفين والوركين والكعبين.",
+  "repFeedbackDepth": "حاذِ الوركين مع الكتفين.",
+  "repFeedbackTorso": "شد عضلات الجذع وحافظ على استقامة الظهر.",
+  "repFeedbackKnees": "تحركت ركبتاك إلى الداخل. حافظ على محاذاتهما مع أصابع القدمين.",
+  "repFeedbackGeneric": "يحتاج هذا الثوانٍ إلى الانتباه في {area}.",
+  "@repFeedbackGeneric": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteWorkoutVideo": "حذف فيديو التمرين",
+  "deleteWorkoutVideoTitle": "حذف فيديو التمرين هذا؟",
+  "deleteWorkoutVideoBody": "سيُحذف الفيديو المحلي فقط، وستبقى تحليلات الثوانٍ وسجل التمرين.",
+  "workoutVideoDeleted": "تم حذف فيديو التمرين"
+}

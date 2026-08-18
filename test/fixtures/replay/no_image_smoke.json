@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "privacy": {
+    "containsImages": false,
+    "content": "pose_landmarks_only"
+  },
+  "frames": [
+    {
+      "sequenceId": 1,
+      "timestampUs": 100000,
+      "landmarks": [],
+      "worldLandmarks": [],
+      "trackingState": "lost",
+      "peopleCount": 0,
+      "mirrored": false,
+      "rotationDegrees": 0,
+      "inputWidth": 720,
+      "inputHeight": 1280,
+      "inferenceLatencyMilliseconds": 12
+    },
+    {
+      "sequenceId": 2,
+      "timestampUs": 150000,
+      "landmarks": [],
+      "worldLandmarks": [],
+      "trackingState": "noPerson",
+      "peopleCount": 0,
+      "mirrored": false,
+      "rotationDegrees": 0,
+      "inputWidth": 720,
+      "inputHeight": 1280,
+      "inferenceLatencyMilliseconds": 11
+    }
+  ]
+}

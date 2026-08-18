@@ -1,0 +1,54 @@
+# OS and editors
+.DS_Store
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
+# Dart and Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+**/build/
+coverage/
+**/doc/api/
+app.*.symbols
+app.*.map.json
+
+# Local SDK and signing configuration
+**/local.properties
+**/key.properties
+**/*.jks
+**/*.keystore
+**/*.p12
+**/*.mobileprovision
+**/*.pem
+**/*.key
+.env
+.env.*
+!.env.example
+
+# Android generated files
+**/.gradle/
+**/.kotlin/
+**/.cxx/
+**/GeneratedPluginRegistrant.java
+
+# iOS generated files
+**/Pods/
+**/.symlinks/
+**/DerivedData/
+**/xcuserdata/
+**/Flutter/ephemeral/
+**/Flutter/Generated.xcconfig
+**/Flutter/flutter_export_environment.sh
+**/Runner/GeneratedPluginRegistrant.*
+
+# Generated store-listing images and archived outputs
+store-assets/captures/
+store-assets/output/
+store-assets/_deprecated-*/

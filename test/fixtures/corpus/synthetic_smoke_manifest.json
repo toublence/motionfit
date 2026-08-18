@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "corpus": {
+    "id": "synthetic-schema-smoke",
+    "provenance": "synthetic",
+    "humanLabeled": false,
+    "subjectCount": 0
+  },
+  "cases": [
+    {
+      "id": "no-person-negative",
+      "replay": "../replay/no_image_smoke.json",
+      "expectedReps": 0
+    }
+  ]
+}

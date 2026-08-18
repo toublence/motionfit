@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "corpus": {
+    "id": "synthetic-schema-smoke",
+    "provenance": "synthetic",
+    "humanLabeled": false,
+    "subjectCount": 0,
+    "clipCount": 1,
+    "negativeClipCount": 1,
+    "expectedReps": 0
+  },
+  "metrics": {
+    "observedReps": 0,
+    "exactCountAccuracy": 1.0,
+    "countPrecision": 1.0,
+    "countRecall": 1.0,
+    "countF1": 1.0,
+    "meanAbsoluteError": 0.0
+  },
+  "qualification": {
+    "target": 0.97,
+    "corpusEligible": false,
+    "targetMetricsMet": true,
+    "target97Validated": false,
+    "status": "INELIGIBLE_CORPUS",
+    "failedEligibilityChecks": [
+      "human_labeled_real_corpus",
+      "minimum_100_clips",
+      "minimum_10_subjects",
+      "minimum_500_expected_reps",
+      "minimum_20_negative_clips"
+    ]
+  },
+  "cases": [
+    {
+      "id": "no-person-negative",
+      "expectedReps": 0,
+      "observedReps": 0,
+      "absoluteError": 0,
+      "exact": true
+    }
+  ]
+}

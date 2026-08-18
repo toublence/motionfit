@@ -1,0 +1,208 @@
+{
+  "en": {
+    "01-auto-count": {
+      "headline": "Automatic squat counting",
+      "subtitle": "Set your phone down and just squat"
+    },
+    "02-form-analysis": {
+      "headline": "Real-time form analysis",
+      "subtitle": "See coaching cues during every rep"
+    },
+    "03-challenge": {
+      "headline": "Stay on track with challenges",
+      "subtitle": "310 of 500 reps — 18 days left"
+    },
+    "04-sets-rest": {
+      "headline": "Set your sets, reps and rest",
+      "subtitle": "3 sets × 10 reps, 60 second rest"
+    },
+    "05-workout-result": {
+      "headline": "See your workout at a glance",
+      "subtitle": "Reps, sets, time and form summary"
+    },
+    "06-history": {
+      "headline": "Your squat history, day by day",
+      "subtitle": "Daily totals and a monthly calendar"
+    }
+  },
+  "ko": {
+    "01-auto-count": {
+      "headline": "스쿼트 자동 카운트",
+      "subtitle": "휴대폰을 두고 스쿼트만 하세요"
+    },
+    "02-form-analysis": {
+      "headline": "자세를 실시간으로 분석",
+      "subtitle": "실시간 음성·자세 코칭 제공"
+    },
+    "03-challenge": {
+      "headline": "챌린지로 계속 이어가기",
+      "subtitle": "목표 횟수와 진행률을 확인하세요"
+    },
+    "04-sets-rest": {
+      "headline": "세트·횟수·휴식을 한 번에",
+      "subtitle": "세트 수와 휴식 시간을 미리 정하세요"
+    },
+    "05-workout-result": {
+      "headline": "운동 결과를 한눈에",
+      "subtitle": "횟수·세트·시간·자세 요약"
+    },
+    "06-history": {
+      "headline": "날짜별로 쌓이는 기록",
+      "subtitle": "하루 합계와 월간 기록을 확인하세요"
+    }
+  },
+  "ja": {
+    "01-auto-count": {
+      "headline": "スクワットを自動カウント",
+      "subtitle": "スマホを置いてスクワットするだけ"
+    },
+    "03-challenge": {
+      "headline": "チャレンジで続ける",
+      "subtitle": "500回中310回 — 残り18日"
+    },
+    "04-sets-rest": {
+      "headline": "セット・回数・休憩を設定",
+      "subtitle": "3セット × 10回、休憩60秒"
+    },
+    "05-workout-result": {
+      "headline": "運動結果をひと目で",
+      "subtitle": "回数・セット・時間・フォーム"
+    },
+    "06-history": {
+      "headline": "記録が日ごとに積み上がる",
+      "subtitle": "1日の合計と月間カレンダー"
+    }
+  },
+  "de": {
+    "01-auto-count": {
+      "headline": "Kniebeugen automatisch zählen",
+      "subtitle": "Handy hinstellen und einfach loslegen"
+    },
+    "03-challenge": {
+      "headline": "Mit Challenges dranbleiben",
+      "subtitle": "310 von 500 Wdh. — noch 18 Tage"
+    },
+    "04-sets-rest": {
+      "headline": "Sätze, Wdh. und Pause festlegen",
+      "subtitle": "3 Sätze × 10 Wdh., 60 Sekunden Pause"
+    },
+    "05-workout-result": {
+      "headline": "Training auf einen Blick",
+      "subtitle": "Wdh., Sätze, Zeit und Technik"
+    },
+    "06-history": {
+      "headline": "Dein Verlauf, Tag für Tag",
+      "subtitle": "Tagessummen und Monatskalender"
+    }
+  },
+  "fr": {
+    "01-auto-count": {
+      "headline": "Comptage automatique des squats",
+      "subtitle": "Posez votre téléphone et enchaînez"
+    },
+    "03-challenge": {
+      "headline": "Gardez le cap avec les défis",
+      "subtitle": "310 sur 500 reps — 18 jours restants"
+    },
+    "04-sets-rest": {
+      "headline": "Séries, reps et repos réglés",
+      "subtitle": "3 séries × 10 reps, 60 s de repos"
+    },
+    "05-workout-result": {
+      "headline": "Votre séance en un coup d'œil",
+      "subtitle": "Reps, séries, temps et technique"
+    },
+    "06-history": {
+      "headline": "Votre historique, jour après jour",
+      "subtitle": "Totaux du jour et calendrier mensuel"
+    }
+  },
+  "es": {
+    "01-auto-count": {
+      "headline": "Sentadillas contadas solas",
+      "subtitle": "Apoya el móvil y solo haz sentadillas"
+    },
+    "03-challenge": {
+      "headline": "Sigue con los desafíos",
+      "subtitle": "310 de 500 reps — quedan 18 días"
+    },
+    "04-sets-rest": {
+      "headline": "Series, reps y descanso a tu medida",
+      "subtitle": "3 series × 10 reps, 60 s de descanso"
+    },
+    "05-workout-result": {
+      "headline": "Tu sesión de un vistazo",
+      "subtitle": "Reps, series, tiempo y técnica"
+    },
+    "06-history": {
+      "headline": "Tu historial, día a día",
+      "subtitle": "Totales diarios y calendario mensual"
+    }
+  },
+  "ar": {
+    "01-auto-count": {
+      "headline": "عدّ تلقائي للقرفصاء",
+      "subtitle": "ضع هاتفك وابدأ التمرين"
+    },
+    "03-challenge": {
+      "headline": "تابع مع التحديات",
+      "subtitle": "310 من 500 عدّة — 18 يومًا متبقية"
+    },
+    "04-sets-rest": {
+      "headline": "حدّد المجموعات والتكرارات والراحة",
+      "subtitle": "3 مجموعات × 10 عدّات، راحة 60 ثانية"
+    },
+    "05-workout-result": {
+      "headline": "تمرينك في لمحة",
+      "subtitle": "العدّات والمجموعات والوقت والأداء"
+    },
+    "06-history": {
+      "headline": "سجلّك يومًا بعد يوم",
+      "subtitle": "الإجماليات اليومية وتقويم شهري"
+    }
+  },
+  "zh": {
+    "01-auto-count": {
+      "headline": "自动记录深蹲次数",
+      "subtitle": "放好手机，专注完成深蹲"
+    },
+    "03-challenge": {
+      "headline": "通过挑战坚持锻炼",
+      "subtitle": "已完成 310/500 次 — 剩余 18 天"
+    },
+    "04-sets-rest": {
+      "headline": "自定义组数、次数与休息",
+      "subtitle": "3 组 × 10 次，休息 60 秒"
+    },
+    "05-workout-result": {
+      "headline": "锻炼结果一目了然",
+      "subtitle": "次数、组数、时间与动作总结"
+    },
+    "06-history": {
+      "headline": "逐日查看深蹲记录",
+      "subtitle": "每日总数与月度日历"
+    }
+  },
+  "zh_Hant": {
+    "01-auto-count": {
+      "headline": "自動記錄深蹲次數",
+      "subtitle": "放好手機，專注完成深蹲"
+    },
+    "03-challenge": {
+      "headline": "透過挑戰持續鍛鍊",
+      "subtitle": "已完成 310/500 次 — 剩餘 18 天"
+    },
+    "04-sets-rest": {
+      "headline": "自訂組數、次數與休息",
+      "subtitle": "3 組 × 10 次，休息 60 秒"
+    },
+    "05-workout-result": {
+      "headline": "鍛鍊結果一目瞭然",
+      "subtitle": "次數、組數、時間與動作摘要"
+    },
+    "06-history": {
+      "headline": "逐日查看深蹲記錄",
+      "subtitle": "每日總數與月曆"
+    }
+  }
+}

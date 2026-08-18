@@ -1,0 +1,879 @@
+{
+  "@@locale": "de",
+  "appName": "MotionFit – Plank",
+  "navSquat": "Plank",
+  "navChallenge": "Challenge",
+  "navRecords": "Fortschritt",
+  "navSettings": "Einstellungen",
+  "challengeTitle": "Meine Plank-Sekunden-Challenge",
+  "challengeSubtitle": "Wähle eine Challenge passend zu deinem Ziel und trainiere regelmäßig.",
+  "challengeChooseTitle": "Challenge auswählen",
+  "challengeSevenDayTitle": "7-Tage-Einstiegs-Challenge",
+  "challengeSevenDayDescription": "Ein schrittweises Programm für Einsteiger",
+  "challengeSevenDaySummary": "7 Tage lang jeden Tag ein steigendes Ziel passend zu deinem Niveau.",
+  "challengeSevenDayEveryDay": "7 Tage täglich ohne Erholungstag",
+  "challengeDurationDays": "{days} Tage",
+  "challengeLevelGoals": "Ziele passend zu deinem Niveau",
+  "challengeRecoveryIncluded": "Mit Erholungstagen",
+  "challengeDailyGoal": "Tägliche Sekundesziele",
+  "challengeSevenDayStart": "7-Tage-Challenge starten",
+  "challengeSevenDaySettings": "7-Tage-Ziel festlegen",
+  "challengeSevenDaySettingsDescription": "Lege Tag 1 fest. Das Ziel steigt täglich um 5 Sekunden.",
+  "challengeFirstDayGoal": "Zielsekunden an Tag 1",
+  "challengeSevenDayPreview": "Tag 1: {first} → Tag 7: {last} Sekunden",
+  "challengeWeeklyTitle": "3-mal-pro-Woche-Challenge",
+  "challengeWeeklyDescription": "Eine Gewohnheits-Challenge, wenn tägliches Training zu viel ist",
+  "challengeWeeklySummary": "Trainiere 4 Wochen lang an 3 gewählten Tagen pro Woche.",
+  "challengeDurationWeeks": "{weeks} Wochen",
+  "challengeThreePerWeek": "3 Trainings pro Woche",
+  "challengeChooseWeekdays": "3 Trainingstage auswählen",
+  "challengeWorkoutDaysCount": "Fortschritt nach Trainingstagen",
+  "challengeWeeklyStart": "Wochen-Challenge starten",
+  "challengeCumulativeTitle": "Plankzeit-Challenge",
+  "challengeCumulativeDescription": "Erreiche dein Plank-Sekunden-Ziel in deinem eigenen Zeitplan",
+  "challengeCumulativeSummary": "Wähle Dauer und Gesamtziel; Pausentage erhalten deinen Fortschritt.",
+  "challengePreset200": "200 Plank-Sekunden in 7 Tagen",
+  "challengePreset500": "500 Plank-Sekunden in 14 Tagen",
+  "challengeCustomGoal": "Dauer und Ziel selbst wählen",
+  "challengeRestWithoutReset": "Pausentage setzen den Fortschritt nicht zurück",
+  "challengeCumulativeStart": "Gesamtziel starten",
+  "challengeHistoryTitle": "Vergangene Challenges",
+  "challengeHistoryEmpty": "Abgeschlossene und beendete Challenges erscheinen hier.",
+  "challengeRecommended": "Für dich empfohlen",
+  "challengeRecommendationFromWorkout": "Empfohlen anhand deines ersten Trainings mit {reps} Sekunden.",
+  "challengeRecommendationDefault": "Für deine erste Challenge empfehlen wir einen sanften 7-Tage-Start.",
+  "challengeActive": "Aktive Challenge",
+  "challengeNext": "Als Nächstes",
+  "challengeDayNumber": "Tag {day}",
+  "challengeRecoveryDay": "Erholungstag",
+  "challengeTodayProgress": "Heute {current} / {target} Sekunden",
+  "challengeRestToday": "Erhole dich heute ausreichend.",
+  "challengeTodayCompleted": "Heutiges Ziel erreicht · Morgen geht es weiter",
+  "challengeRepsRemaining": "Noch {reps} Sekunden",
+  "challengeWeekNumber": "Woche {week}",
+  "challengeThisWeekProgress": "Diese Woche {current} / {target} Trainings",
+  "challengeOverallDays": "Gesamt {current} / {target} Tage",
+  "challengeRepsProgress": "{current} / {target} Sekunden",
+  "challengeDaysRemaining": "Noch {days} Tage",
+  "challengeTodaySuggested": "Heutige Empfehlung: {reps} Sekunden",
+  "challengePercent": "{percent} % abgeschlossen",
+  "challengeSquatStart": "Plank starten",
+  "challengeTodayWorkoutStart": "Heutiges Training starten",
+  "challengeViewDetails": "Details anzeigen",
+  "challengeRestart": "Erneut starten",
+  "challengeDeleteHistory": "Aus Verlauf löschen",
+  "challengeCumulativeSettings": "Gesamtziel festlegen",
+  "challengeDurationLabel": "Dauer",
+  "challengeGoalLabel": "Zielsekunden",
+  "challengeNotFound": "Diese Challenge ist nicht mehr verfügbar.",
+  "challengePeriod": "Zeitraum",
+  "challengeStatus": "Status",
+  "challengeTotalReps": "Plank-Sekunden gesamt",
+  "challengeWorkoutDays": "Trainingstage",
+  "challengeDaysCount": "{days} Tage",
+  "challengeTotalTime": "Gesamte Trainingszeit",
+  "challengeSchedule": "Plan und Fortschritt",
+  "challengeNotifications": "Challenge-Erinnerungen",
+  "challengeNotificationsDescription": "Erinnerungseinstellung für diese Challenge speichern.",
+  "challengeReminderNotificationTitle": "Deine Plank-Sekunden-Challenge wartet",
+  "challengeReminderNotificationBody": "Öffne MotionFit und arbeite an deinem heutigen Challenge-Ziel.",
+  "challengeSelectedWeekdays": "Ausgewählte Trainingstage",
+  "challengeNoProgressYet": "Noch keine Challenge-Trainings.",
+  "challengeCancel": "Challenge beenden",
+  "challengeCancelTitle": "Diese Challenge beenden?",
+  "challengeCancelDescription": "Deine Trainingsdaten bleiben erhalten. Die Challenge wird in den Verlauf verschoben.",
+  "challengeStatusActive": "In Bearbeitung",
+  "challengeStatusCompleted": "Abgeschlossen",
+  "challengeStatusEnded": "Beendet",
+  "challengeStatusCancelled": "Abgebrochen",
+  "challengeProgressUpdated": "Dein Challenge-Fortschritt wurde aktualisiert.",
+  "challengeCheck": "Challenge anzeigen",
+  "commonDone": "Fertig",
+  "commonCancel": "Abbrechen",
+  "commonClose": "Schließen",
+  "commonRetry": "Erneut versuchen",
+  "commonSave": "Speichern",
+  "commonDelete": "Löschen",
+  "commonConfirm": "Bestätigen",
+  "commonBack": "Zurück",
+  "commonContinue": "Weiter",
+  "commonStart": "Starten",
+  "commonSkip": "Überspringen",
+  "commonEdit": "Bearbeiten",
+  "commonOn": "Ein",
+  "commonOff": "Aus",
+  "commonEnabled": "Aktiviert",
+  "commonDisabled": "Deaktiviert",
+  "commonNotAvailable": "Nicht verfügbar",
+  "commonToday": "Heute",
+  "commonYesterday": "Gestern",
+  "commonLoading": "Wird geladen…",
+  "unitSets": "{count, plural, =0 {0 Sätze} =1 {1 Satz} other {{count} Sätze}}",
+  "@unitSets": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unitReps": "{count, plural, =0 {0 Sekunden} =1 {1 Sekunde} other {{count} Sekunden}}",
+  "@unitReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unitSeconds": "{count, plural, =0 {0 Sekunden} =1 {1 Sekunde} other {{count} Sekunden}}",
+  "@unitSeconds": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unitMinutes": "{count, plural, =0 {0 Minuten} =1 {1 Minute} other {{count} Minuten}}",
+  "@unitMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHoursMinutes": "{hours} Std. {minutes} Min.",
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "durationMinutesSeconds": "{minutes} Min. {seconds} Sek.",
+  "@durationMinutesSeconds": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "homeGreeting": "Bereit für Bewegung?",
+  "homeTodayTitle": "Heutiger Stand",
+  "homeTodayNoWorkout": "Heute noch keine Plank-Sekunden. Ein kurzer Satz ist ein guter Anfang.",
+  "homeTodaySummary": "Plank-Sekunden: {reps} · Sätze: {sets}",
+  "homeViewResult": "Ergebnis",
+  "@homeTodaySummary": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "sets": {
+        "type": "int"
+      }
+    }
+  },
+  "homeTodaySets": "Sätze heute",
+  "homeTodayReps": "Heute geschafft",
+  "streakLabel": "Serie",
+  "streakDays": "{days} Tage",
+  "@streakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "homeWorkoutSetup": "Nächstes Training",
+  "homeSetsLabel": "Sätze",
+  "homeRepsPerSetLabel": "Sekunden pro Satz",
+  "homeRestTimeLabel": "Pausenzeit",
+  "homeDirectInputHint": "Zahl eingeben",
+  "homeStartWorkout": "Training starten",
+  "homeLastSettingsRestored": "Deine letzten Trainingseinstellungen sind bereit.",
+  "validationNumberRequired": "Gib eine Zahl ein.",
+  "validationRange": "Wähle einen Wert zwischen {min} und {max}.",
+  "@validationRange": {
+    "placeholders": {
+      "min": {
+        "type": "num"
+      },
+      "max": {
+        "type": "num"
+      }
+    }
+  },
+  "guideTitle": "Kamera einrichten",
+  "guideLandscapeTitle": "Drehe dein Smartphone ins Querformat",
+  "guideLandscapeBody": "Die Plank-Erkennung verwendet das Querformat. Lege dein Smartphone waagerecht ab, bevor du die Position einnimmst.",
+  "countdownLandscapePrompt": "Lass dein Smartphone im Querformat",
+  "guideSubtitle": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "guideWholeBody": "Achte darauf, dass dein ganzer Körper von Kopf bis Fuß sichtbar ist.",
+  "guideStableCamera": "Stelle dein Smartphone an einem stabilen Ort auf.",
+  "guideOnePerson": "Achte darauf, dass nur eine Person im Bild ist.",
+  "guideCameraAngle": "Nutze möglichst eine Seitenansicht oder eine leicht schräge Seitenansicht.",
+  "guideLighting": "Vermeide dunkle Räume und starkes Gegenlicht.",
+  "guidePrivacy": "Das Video bleibt auf diesem Gerät und wird nur bei aktivierter Sekundesanalyse gespeichert.",
+  "guideContinue": "Ich bin in Position",
+  "permissionCameraTitle": "Kamerazugriff erforderlich",
+  "permissionCameraBody": "MotionFit nutzt die Kamera zum Zählen. Videos werden nur bei aktivierter Sekundesanalyse auf diesem Gerät gespeichert.",
+  "permissionCameraRequest": "Weiter",
+  "permissionCameraDenied": "Der Kamerazugriff wurde abgelehnt. Du kannst weiterhin Verlauf und Einstellungen ansehen.",
+  "permissionCameraPermanentlyDenied": "Erlaube den Kamerazugriff in den Systemeinstellungen, um ein Training zu starten.",
+  "permissionOpenSettings": "Einstellungen öffnen",
+  "permissionNotificationTitle": "Trainingserinnerungen erlauben?",
+  "permissionNotificationBody": "Benachrichtigungen werden nur für deine geplanten Erinnerungen verwendet.",
+  "permissionNotificationRequest": "Benachrichtigungen erlauben",
+  "permissionNotificationDenied": "Benachrichtigungen sind deaktiviert. Aktiviere sie in den Systemeinstellungen, um Erinnerungen zu erhalten.",
+  "countdownGetReady": "Mach dich bereit",
+  "countdownBeginsIn": "Start in {seconds}",
+  "@countdownBeginsIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "calibrationTitle": "Plank",
+  "calibrationBody": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "calibrationStayStill": "Halte einen Moment still",
+  "calibrationComplete": "Alles bereit",
+  "calibrationFailed": "Deine Standposition konnte nicht eindeutig erfasst werden.",
+  "calibrationRetry": "Neu kalibrieren",
+  "workoutSetProgress": "Satz {current} von {total}",
+  "@workoutSetProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "workoutRepProgress": "{current} von {target}",
+  "@workoutRepProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "workoutTotalReps": "Gesamt: {count}",
+  "@workoutTotalReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "workoutElapsed": "Verstrichene Zeit",
+  "workoutPause": "Pause",
+  "workoutResume": "Training fortsetzen",
+  "workoutEnd": "Training pausieren",
+  "workoutBackToSetup": "Zurück zur Einrichtung",
+  "workoutEndDialogTitle": "Training vorerst pausieren?",
+  "workoutEndDialogBody": "Dein Fortschritt wird gespeichert, damit du vom Startbildschirm aus fortfahren kannst.",
+  "workoutEndDialogConfirm": "Speichern und verlassen",
+  "workoutPauseReasonBackground": "Das Training wurde pausiert, während die App im Hintergrund war.",
+  "workoutPauseReasonInterruption": "Das Training wurde nach einer Systemunterbrechung pausiert.",
+  "workoutStateReady": "Plank",
+  "workoutStateDescending": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "workoutStateBottom": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "workoutStateAscending": "Nach oben",
+  "workoutStateCompleted": "Eine Sekunde gehalten",
+  "workoutStateTrackingLost": "Geh zurück ins Bild",
+  "workoutStatePaused": "Pausiert",
+  "workoutTrackingGood": "Körper im Bild",
+  "workoutCameraSwitch": "Kamera wechseln",
+  "workoutSkeletonToggle": "Positionshilfe anzeigen",
+  "restTitle": "Pause",
+  "restNextSet": "Als Nächstes: Satz {set} von {total}",
+  "@restNextSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "restCompletedSets": "Abgeschlossene Sätze",
+  "restTotalReps": "Bisherige Plank-Sekunden",
+  "restSkip": "Pause überspringen",
+  "restAddFifteenSeconds": "15 Sekunden hinzufügen",
+  "restEndWorkout": "Training pausieren",
+  "restAlmostDone": "Gleich geht es weiter",
+  "restReady": "Zeit für den nächsten Satz",
+  "completeTitle": "Training abgeschlossen",
+  "completeSubtitle": "Starke Leistung. Hier siehst du dein Training auf einen Blick.",
+  "workoutInterruptedSubtitle": "Sieh dir die Aufzeichnung bis zum vorzeitigen Ende an.",
+  "completeTotalReps": "Plank-Sekunden gesamt",
+  "completeCompletedSets": "Abgeschlossene Sätze",
+  "completeActiveTime": "Aktive Zeit",
+  "completeRestTime": "Pausenzeit",
+  "completeTotalTime": "Gesamtzeit",
+  "completeAverageRepTime": "Ø Sekundeszeit",
+  "completeFormSummary": "Technikübersicht",
+  "todayCoaching": "Heutiges Coaching",
+  "coachingIssueFrequency": "Bei {count} von {total} Sekunden:\n{issue}",
+  "@coachingIssueFrequency": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      },
+      "issue": {
+        "type": "String"
+      }
+    }
+  },
+  "completeTopImprovement": "Fokus fürs nächste Mal",
+  "completeStrengths": "Das lief gut",
+  "completeSaved": "Training auf diesem Gerät gespeichert",
+  "completeSaveFailed": "Das Training konnte nicht gespeichert werden. Versuche es erneut, bevor du die Seite verlässt.",
+  "completeNoFormData": "Für eine Technikübersicht war nicht genug Bewegung sichtbar.",
+  "completeFinish": "Fertig",
+  "postWorkoutReminderTitle": "Bleib in Bewegung",
+  "postWorkoutReminderBody": "Möchtest du ab morgen täglich um {time} erinnert werden?",
+  "@postWorkoutReminderBody": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "postWorkoutReminderEnable": "Erinnere mich",
+  "postWorkoutReminderLater": "Vielleicht später",
+  "postWorkoutReminderEnabled": "Deine Erinnerung ist eingerichtet.",
+  "recordsTitle": "Fortschritt",
+  "recordsWeeklySummary": "Diese Woche",
+  "recordsWorkoutCount": "{count} Trainings",
+  "@recordsWorkoutCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsAverageForm": "Ø Technik {score}",
+  "@recordsAverageForm": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsWorkoutTime": "Zeit {time}",
+  "@recordsWorkoutTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "recordsFirstWeek": "Dein erster Eintrag diese Woche",
+  "recordsMoreThanLastWeek": "{count} Sekunden mehr als letzte Woche",
+  "recordsLessThanLastWeek": "{count} Sekunden weniger als letzte Woche",
+  "@recordsMoreThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recordsLessThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsSameAsLastWeek": "Gleiches Volumen wie letzte Woche",
+  "recordsTrendEmpty": "Mit weiteren Trainings wird dein Techniktrend sichtbar.",
+  "recordsFirstFormScore": "Erster Technikwert",
+  "recordsRecentAverage": "Durchschnitt der letzten {count}: {score}",
+  "@recordsRecentAverage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsStrength": "Stärke",
+  "recordsFocus": "Fokus",
+  "recordsTodayPoint": "Heutiger Fokus",
+  "recordsToday": "Heute",
+  "recordsRecentWorkouts": "Letzte Trainings",
+  "recordsCalendarTitle": "Trainingskalender",
+  "recordsFormTrend": "Formtrend",
+  "recordsViewCalendar": "Kalender",
+  "recordsViewList": "Liste",
+  "recordsViewStats": "Statistik",
+  "recordsCalendarPreviousMonth": "Vorheriger Monat",
+  "recordsCalendarNextMonth": "Nächster Monat",
+  "recordsCalendarWorkoutDay": "Trainingstag",
+  "recordsCalendarNoWorkoutSelected": "Wähle einen Trainingstag aus, um die Einheiten anzuzeigen.",
+  "recordsDayTotal": "Tagessumme",
+  "recordsSessionsCount": "{count, plural, =0 {Keine Einheiten} =1 {1 Einheit} other {{count} Einheiten}}",
+  "@recordsSessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsSessionTitle": "Einheit {number}",
+  "@recordsSessionTitle": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsListNewest": "Neueste zuerst",
+  "recordsOpenDetail": "Details anzeigen",
+  "recordsEmptyTitle": "Noch keine Trainings",
+  "recordsEmptyBody": "Schließe dein erstes Plank-Sekundentraining ab. Danach erscheint es hier.",
+  "recordsStartWorkout": "Training starten",
+  "recordsLoading": "Deine Trainings werden geladen…",
+  "recordsLoadError": "Dein Trainingsverlauf konnte nicht geladen werden.",
+  "statsPeriod": "Zeitraum",
+  "statsPeriod7Days": "7 Tage",
+  "statsPeriod30Days": "30 Tage",
+  "statsPeriodThisMonth": "Dieser Monat",
+  "statsPeriodAll": "Gesamter Zeitraum",
+  "statsPeriodCustom": "Benutzerdefiniert",
+  "statsCustomRange": "Datumsbereich wählen",
+  "statsTotalReps": "Plank-Sekunden gesamt",
+  "statsWorkoutDays": "Trainingstage",
+  "statsTotalActiveTime": "Aktive Zeit",
+  "statsAverageSets": "Ø Sätze",
+  "statsAverageReps": "Ø Plank-Sekunden",
+  "statsDailyReps": "Plank-Sekunden pro Tag",
+  "statsTrend": "Verlauf",
+  "statsFrequentImprovements": "Häufige Schwerpunkte",
+  "statsNoData": "Keine Trainings in diesem Zeitraum.",
+  "statsTrendUp": "Plus {percent} %",
+  "@statsTrendUp": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
+  "statsTrendDown": "Minus {percent} %",
+  "@statsTrendDown": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
+  "statsTrendFlat": "Keine Veränderung",
+  "detailTitle": "Trainingsdetails",
+  "detailStartTime": "Beginn",
+  "detailEndTime": "Ende",
+  "detailActiveTime": "Aktive Zeit",
+  "detailRestTime": "Pausenzeit",
+  "detailTotalTime": "Gesamtzeit",
+  "detailSets": "Sätze",
+  "detailSetBreakdown": "Sekunden pro Satz",
+  "detailTotalReps": "Plank-Sekunden gesamt",
+  "detailAverageRep": "Ø Sekundeszeit",
+  "detailFormSummary": "Technikübersicht",
+  "detailImprovements": "Verbesserungspunkte",
+  "detailStrengths": "Stärken",
+  "detailInterrupted": "Vorzeitig beendet",
+  "detailCompleted": "Abgeschlossen",
+  "detailSetRow": "Satz {set}: {reps} Sek.",
+  "@detailSetRow": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "detailSessionOn": "{date} um {time}",
+  "@detailSessionOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsTitle": "Einstellungen",
+  "settingsRateApp": "Diese App bewerten",
+  "settingsRateAppSubtitle": "MotionFit bewerten",
+  "settingsRateAppError": "Der Store konnte nicht geöffnet werden. Bitte versuche es erneut.",
+  "settingsSectionGeneral": "Allgemein",
+  "settingsSectionCoaching": "Sprachcoaching",
+  "settingsSectionReminder": "Trainingserinnerungen",
+  "settingsSectionCamera": "Kamera",
+  "settingsSectionPrivacy": "Datenschutz und Daten",
+  "settingsSectionAbout": "Über die App",
+  "settingsLanguage": "Sprache",
+  "settingsDisplayTheme": "Bildschirmdesign",
+  "settingsColorTheme": "Farbdesign",
+  "themeLight": "Hell",
+  "themePureBlack": "Reines Schwarz",
+  "themeSystem": "System",
+  "colorThemeByeokcheong": "Byeokcheong-Blau",
+  "colorThemeChuhyang": "Chuhyang-Beige",
+  "colorThemeJangdan": "Jangdan-Rot",
+  "colorThemeCheonghyeon": "Cheonghyeon-Blau",
+  "colorThemeHaenghwang": "Haenghwang-Aprikose",
+  "colorThemeChunyu": "Chunyu-Grün",
+  "colorThemeSeolbaek": "Seolbaek-Weiß",
+  "colorThemeByeokja": "Byeokja-Violett",
+  "colorThemeChwiram": "Chwiram-Mint",
+  "languageSystem": "Gerätesprache verwenden",
+  "languageEnglish": "English",
+  "languageKorean": "한국어",
+  "languageGerman": "Deutsch",
+  "languageSpanish": "Español",
+  "languageFrench": "Français",
+  "languageJapanese": "日本語",
+  "languageArabic": "العربية",
+  "languageChineseSimplified": "简体中文",
+  "languageChineseTraditional": "繁體中文",
+  "languageChanged": "Sprache aktualisiert",
+  "voiceCoachingEnabled": "Sprachcoaching",
+  "voiceRepCountEnabled": "Sekunden ansagen",
+  "voiceFormEnabled": "Techniktipps",
+  "voiceEncouragementEnabled": "Motivation",
+  "voiceRate": "Sprechgeschwindigkeit",
+  "voiceRateSlow": "Langsam",
+  "voiceRateNormal": "Normal",
+  "voiceRateFast": "Schnell",
+  "voiceTest": "Stimme testen",
+  "voiceTestPhrase": "Super. Dein Sprachcoach ist bereit.",
+  "voiceUnavailable": "Für diese Sprache ist keine kompatible Offline-Stimme installiert.",
+  "reminderTitle": "Trainingserinnerungen",
+  "reminderSubtitle": "Wähle für jeden gewünschten Trainingstag eine Uhrzeit aus.",
+  "reminderEnabled": "Erinnerung aktiviert",
+  "reminderTime": "Uhrzeit der Erinnerung",
+  "reminderCopyTime": "Diese Uhrzeit kopieren",
+  "reminderCopyFromDay": "Uhrzeit von {day} kopieren",
+  "@reminderCopyFromDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderApplyAll": "Auf alle Tage anwenden",
+  "reminderNext": "Nächste Erinnerung: {dateTime}",
+  "@reminderNext": {
+    "placeholders": {
+      "dateTime": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderNoneScheduled": "Keine Erinnerungen geplant",
+  "reminderPermissionNeeded": "Erlaube Benachrichtigungen, um Erinnerungen zu aktivieren.",
+  "reminderSaved": "Erinnerungsplan gespeichert",
+  "weekdayMonday": "Montag",
+  "weekdayTuesday": "Dienstag",
+  "weekdayWednesday": "Mittwoch",
+  "weekdayThursday": "Donnerstag",
+  "weekdayFriday": "Freitag",
+  "weekdaySaturday": "Samstag",
+  "weekdaySunday": "Sonntag",
+  "weekdayMondayShort": "Mo",
+  "weekdayTuesdayShort": "Di",
+  "weekdayWednesdayShort": "Mi",
+  "weekdayThursdayShort": "Do",
+  "weekdayFridayShort": "Fr",
+  "weekdaySaturdayShort": "Sa",
+  "weekdaySundayShort": "So",
+  "cameraFront": "Frontkamera",
+  "cameraRear": "Rückkamera",
+  "cameraMirrorPreview": "Frontkamera spiegeln",
+  "cameraPoseOverlay": "Positionshilfe einblenden",
+  "cameraKeepScreenAwake": "Bildschirm beim Training eingeschaltet lassen",
+  "settingsHaptics": "Haptisches Feedback",
+  "privacyTitle": "So werden deine Daten verarbeitet",
+  "privacyLocalProcessing": "Die Körperhaltungsanalyse erfolgt auf diesem Gerät.",
+  "privacyNoVideoStorage": "Trainingsvideos werden nur bei aktivierter Sekundesanalyse auf diesem Gerät gespeichert.",
+  "privacyNoUpload": "Kamerabilder werden nicht auf einen Server hochgeladen.",
+  "privacyStoredData": "Auf diesem Gerät gespeicherte Daten",
+  "privacyStoredDataDescription": "MotionFit speichert Trainingszeiten, Sätze, Sekunden und Technikergebnisse, damit du deinen Fortschritt verfolgen kannst.",
+  "privacyDeleteData": "Alle Trainingsdaten löschen",
+  "privacyDeleteConfirmTitle": "Alle Trainingsdaten löschen?",
+  "privacyDeleteConfirmBody": "Dadurch wird dein Trainingsverlauf dauerhaft von diesem Gerät gelöscht. Dies kann nicht rückgängig gemacht werden.",
+  "privacyDeleteConfirmAction": "Alle Daten löschen",
+  "privacyDeleteSuccess": "Trainingsdaten gelöscht",
+  "privacyDeleteFailure": "Die Trainingsdaten konnten nicht gelöscht werden.",
+  "appInfoTitle": "App-Informationen",
+  "appInfoVersion": "Version {version}",
+  "@appInfoVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "appInfoLicenses": "Open-Source-Lizenzen",
+  "appInfoPrivacyPolicy": "Datenschutzerklärung",
+  "appInfoDescription": "MotionFit zählt Plank-Sekunden und bietet private Technikhilfen direkt auf deinem Gerät.",
+  "errorGenericTitle": "Etwas ist schiefgelaufen",
+  "errorGenericBody": "Versuche es bitte erneut. Deine vorhandenen Trainingsdaten sind sicher.",
+  "errorCameraInit": "Die Kamera konnte nicht gestartet werden.",
+  "errorCameraInUse": "Die Kamera wird möglicherweise von einer anderen App verwendet.",
+  "errorPoseModelLoad": "Das Modell zur Körpererkennung konnte nicht geladen werden.",
+  "errorNoPerson": "Keine Person erkannt. Geh ins Bild.",
+  "errorWholeBody": "Dein Körper ist nicht vollständig sichtbar. Geh etwas weiter zurück.",
+  "errorMultiplePeople": "Mehr als eine Person ist im Bild. Es darf nur eine Person zu sehen sein.",
+  "errorTrackingLost": "Die Erfassung ist pausiert, bis dein Körper wieder sichtbar ist.",
+  "errorDatabaseSave": "Dein Training konnte nicht gespeichert werden.",
+  "errorTtsVoiceMissing": "Auf diesem Gerät ist keine Sprachausgabe installiert.",
+  "errorTtsLocaleUnsupported": "Sprachcoaching wird auf diesem Gerät für die ausgewählte Sprache nicht unterstützt.",
+  "emptyNoFormIssues": "Keine wiederkehrenden Technikprobleme erkannt.",
+  "emptyNotEnoughData": "Noch nicht genügend Daten",
+  "loadingCamera": "Kamera wird gestartet…",
+  "loadingPoseModel": "Bewegungserkennung wird vorbereitet…",
+  "loadingSavingWorkout": "Training wird gespeichert…",
+  "formScore": "Technikbewertung",
+  "formShort": "Form",
+  "formScoreValue": "{score} Pkt.",
+  "@formScoreValue": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "formIssueDepth": "Richte deine Hüfte auf einer Linie mit den Schultern aus.",
+  "formIssueTorsoLean": "Spanne die Körpermitte an und halte den Rücken gerade.",
+  "formIssueHeelLift": "Fersenkontakt",
+  "formIssueKneeAlignment": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "formIssueBalance": "Links-rechts-Balance",
+  "formIssueDescentSpeed": "Abwärtsgeschwindigkeit",
+  "formIssueAscentSpeed": "Aufwärtsgeschwindigkeit",
+  "formIssueControl": "Spanne die Körpermitte an und halte den Rücken gerade.",
+  "formIssueStandingCompletion": "Aufrechter Abschluss",
+  "formIssueNotObservable": "Aus diesem Kamerawinkel nicht beurteilbar",
+  "formStrengthDepth": "Gleichmäßige Tiefe",
+  "formStrengthControl": "Kontrollierte Bewegung",
+  "formStrengthBalance": "Stabiles Gleichgewicht",
+  "coachTrackingLost1": "Geh zurück ins Bild, dann machen wir weiter.",
+  "coachTrackingLost2": "Ich kann dich nicht mehr sehen. Stell dich so hin, dass dein ganzer Körper sichtbar ist.",
+  "coachWholeBody1": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachWholeBody2": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachMultiplePeople1": "Es darf nur eine Person im Bild sein, damit ich dich erfassen kann.",
+  "coachReady1": "Du bist in Position. Los geht’s.",
+  "coachReady2": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachStartSet": "Satz {set}. Los geht’s.",
+  "@coachStartSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
+  "coachSevenDayChallengeStart": "Tag {day} der Sieben-Tage-Challenge beginnt.",
+  "@coachSevenDayChallengeStart": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "coachCumulativeChallengeStart": "Die Sekundes-Challenge beginnt. Du hast {completed} Sekunden geschafft, noch {remaining} verbleiben.",
+  "@coachCumulativeChallengeStart": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "coachRepCount": "{count} Sekunden",
+  "@coachRepCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "coachDepth1": "Richte deine Hüfte auf einer Linie mit den Schultern aus.",
+  "coachDepth2": "Richte deine Hüfte auf einer Linie mit den Schultern aus.",
+  "coachTorso1": "Spanne die Körpermitte an und halte den Rücken gerade.",
+  "coachTorso2": "Spanne die Körpermitte an und halte den Rücken gerade.",
+  "coachHeel1": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachHeel2": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachKnees1": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachKnees2": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachBalance1": "Spanne die Körpermitte an und halte den Rücken gerade.",
+  "coachBalance2": "Spanne die Körpermitte an und halte den Rücken gerade.",
+  "coachDescendSlow1": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachDescendSlow2": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachDescendFaster1": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachDescendFaster2": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachAscendControlled1": "Richte deine Hüfte auf einer Linie mit den Schultern aus.",
+  "coachAscendControlled2": "Richte deine Hüfte auf einer Linie mit den Schultern aus.",
+  "coachAscendFaster1": "Richte deine Hüfte auf einer Linie mit den Schultern aus.",
+  "coachAscendFaster2": "Richte deine Hüfte auf einer Linie mit den Schultern aus.",
+  "coachControl1": "Spanne die Körpermitte an und halte den Rücken gerade.",
+  "coachControl2": "Spanne die Körpermitte an und halte den Rücken gerade.",
+  "coachStandTall1": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachStandTall2": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachGood1": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachGood2": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachGood3": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "coachLastTwo": "Noch zwei. Bleib stark!",
+  "coachLastOne": "Noch eine. Stark abschließen!",
+  "coachSetComplete": "Super. Satz {set} ist geschafft.",
+  "@coachSetComplete": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
+  "coachRestStart": "Ruhe dich {seconds} Sekunden aus. Atme durch und sammle dich.",
+  "@coachRestStart": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "coachRestTenSeconds": "Noch zehn Sekunden Pause.",
+  "coachRestComplete": "Die Pause ist vorbei. Mach dich bereit für den nächsten Satz.",
+  "coachWorkoutComplete": "Training abgeschlossen. Du hast den Plank {reps} Sekunden gehalten.",
+  "@coachWorkoutComplete": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "notificationReminderTitle": "Zeit für deine heutigen Plank-Sekunden",
+  "notificationReminderBody": "Auch eine kurze Einheit zählt. Öffne MotionFit, wenn du bereit bist.",
+  "notificationReminderBodyVariant2": "Ein paar konzentrierte Plank-Sekunden bringen heute Bewegung in deinen Tag.",
+  "notificationStreakReminderBody": "Halte deine {days}-Tage-Serie heute mit einer kurzen Einheit am Leben.",
+  "@notificationStreakReminderBody": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "semanticsIncrease": "Erhöhen",
+  "semanticsDecrease": "Verringern",
+  "semanticsSelectedTab": "Ausgewählter Tab: {tab}",
+  "@semanticsSelectedTab": {
+    "placeholders": {
+      "tab": {
+        "type": "String"
+      }
+    }
+  },
+  "semanticsCalendarWorkoutDate": "{date}, Training aufgezeichnet",
+  "@semanticsCalendarWorkoutDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "semanticsCalendarEmptyDate": "{date}, kein Training",
+  "@semanticsCalendarEmptyDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "semanticsCurrentRep": "Aktuelle Sekunde {current} von {target}",
+  "@semanticsCurrentRep": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "repVideoReviewTitle": "Videoanalyse je Sekunde",
+  "repVideoReviewDescription": "Speichere dieses Trainingsvideo auf dem Gerät, um einzelne Sekunden später anzusehen.",
+  "repVideoLocalOnly": "Nur lokal · Kein Upload",
+  "formReviewTitle": "Technikanalyse",
+  "formReviewMainIssue": "Hauptproblem",
+  "viewRepTimeline": "Sekunden ansehen",
+  "repTimelineTitle": "Sekundesanalyse",
+  "repTimelineAll": "Alle",
+  "repTimelineImprove": "Verbessern",
+  "repTimelineNoImprovement": "Keine Sekunde muss verbessert werden.",
+  "repSetNumber": "Satz {number}",
+  "@repSetNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "repNumber": "Sekunde {number}",
+  "@repNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "repResultGood": "Gute Technik",
+  "repResultNeedsAttention": "Achtung nötig",
+  "repResultImproved": "Besser als zuvor",
+  "repResultNotAssessed": "Schwer zu bewerten",
+  "repIssueShallowDepth": "Richte deine Hüfte auf einer Linie mit den Schultern aus.",
+  "repIssueForwardLean": "Spanne die Körpermitte an und halte den Rücken gerade.",
+  "repIssueKneesInward": "Knie bewegten sich nach innen",
+  "repVideoNotSaved": "Video nicht gespeichert",
+  "repReplay": "Erneut abspielen",
+  "repWhatHappened": "Was passiert ist",
+  "repHowToImprove": "So verbesserst du dich",
+  "repWhatWentWell": "Was gut war",
+  "repPrevious": "Vorherige Sekunde",
+  "repNext": "Nächste Sekunde",
+  "repFeedbackGood": "Halte Schultern, Hüfte und Fersen in einer geraden Linie.",
+  "repFeedbackDepth": "Richte deine Hüfte auf einer Linie mit den Schultern aus.",
+  "repFeedbackTorso": "Spanne die Körpermitte an und halte den Rücken gerade.",
+  "repFeedbackKnees": "Deine Knie bewegten sich bei dieser Sekunde nach innen. Richte sie an den Zehen aus.",
+  "repFeedbackGeneric": "Bei dieser Sekunde braucht {area} Aufmerksamkeit.",
+  "@repFeedbackGeneric": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteWorkoutVideo": "Trainingsvideo löschen",
+  "deleteWorkoutVideoTitle": "Dieses Trainingsvideo löschen?",
+  "deleteWorkoutVideoBody": "Nur das lokale Video wird gelöscht. Analyse und Trainingsdaten bleiben erhalten.",
+  "workoutVideoDeleted": "Trainingsvideo gelöscht"
+}

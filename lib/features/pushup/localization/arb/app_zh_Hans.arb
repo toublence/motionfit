@@ -1,0 +1,997 @@
+{
+  "@@locale": "zh_Hans",
+  "appName": "MotionFit - 俯卧撑",
+  "navPushup": "俯卧撑",
+  "navChallenge": "挑战",
+  "navRecords": "进步",
+  "navSettings": "设置",
+  "challengeTitle": "我的俯卧撑挑战",
+  "challengeSubtitle": "选择适合您目标的挑战并坚持不懈地前进。",
+  "challengeChooseTitle": "选择一个挑战",
+  "challengeSevenDayTitle": "7 天新手挑战",
+  "challengeSevenDayDescription": "适合初学者的分步计划",
+  "challengeSevenDaySummary": "遵循每天增加的基于级别的目标，持续 7 天。",
+  "challengeSevenDayEveryDay": "每天持续 7 天，没有恢复日",
+  "challengeDurationDays": "{days}天",
+  "@challengeDurationDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeLevelGoals": "根据您的水平量身定制的目标",
+  "challengeRecoveryIncluded": "包括恢复天数",
+  "challengeDailyGoal": "每日代表目标",
+  "challengeSevenDayStart": "开始7天挑战",
+  "challengeSevenDaySettings": "设定您的 7 天目标",
+  "challengeSevenDaySettingsDescription": "选择第 1 天。目标每天增加 5 次。",
+  "challengeFirstDayGoal": "第一天目标次数",
+  "challengeSevenDayPreview": "第 1 天：{first}代表 → 第 7 天：{last}代表",
+  "@challengeSevenDayPreview": {
+    "placeholders": {
+      "first": {
+        "type": "int"
+      },
+      "last": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeWeeklyTitle": "每周3次挑战",
+  "challengeWeeklyDescription": "针对不想每天锻炼的人的习惯挑战",
+  "challengeWeeklySummary": "每周选择 3 天进行锻炼，持续 4 周。",
+  "challengeDurationWeeks": "{weeks}周",
+  "@challengeDurationWeeks": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeThreePerWeek": "每周 3 次锻炼",
+  "challengeChooseWeekdays": "选择 3 天锻炼",
+  "challengeWorkoutDaysCount": "进度取决于锻炼天数",
+  "challengeWeeklyStart": "开始每周挑战",
+  "challengeCumulativeTitle": "总次数挑战",
+  "challengeCumulativeDescription": "按照适合您的时间表完成俯卧撑总目标",
+  "challengeCumulativeSummary": "选择持续时间和总目标；休息日让你进步。",
+  "challengePreset200": "7天内200个俯卧撑",
+  "challengePreset500": "14天内500个俯卧撑",
+  "challengeCustomGoal": "选择您自己的持续时间和目标",
+  "challengeRestWithoutReset": "休息日不会重置进度",
+  "challengeCumulativeStart": "开始总次数挑战",
+  "challengeHistoryTitle": "过去的挑战",
+  "challengeHistoryEmpty": "您已完成和结束的挑战将显示在此处。",
+  "challengeRecommended": "为您推荐",
+  "challengeRecommendationFromWorkout": "从您第一次{reps}次数锻炼中推荐。",
+  "@challengeRecommendationFromWorkout": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeRecommendationDefault": "建议您以 7 天的温和时间开始第一次挑战。",
+  "challengeActive": "主动挑战",
+  "challengeNext": "下一个",
+  "challengeDayNumber": "日{day}",
+  "@challengeDayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeRecoveryDay": "康复日",
+  "challengeTodayProgress": "今天代表{current}/{target}",
+  "@challengeTodayProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeRestToday": "今天需要时间恢复。",
+  "challengeTodayCompleted": "今天的目标完成·明天继续",
+  "challengeRepsRemaining": "{reps}代表出发",
+  "@challengeRepsRemaining": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeWeekNumber": "周{week}",
+  "@challengeWeekNumber": {
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeThisWeekProgress": "本周{current}/{target}锻炼",
+  "@challengeThisWeekProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeOverallDays": "总计{current}/{target}天",
+  "@challengeOverallDays": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeRepsProgress": "{current}/{target}代表",
+  "@challengeRepsProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeDaysRemaining": "{days}还剩几天",
+  "@challengeDaysRemaining": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeTodaySuggested": "今天建议：{reps}代表",
+  "@challengeTodaySuggested": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "challengePercent": "{percent}完成%",
+  "@challengePercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "challengePushupStart": "开始俯卧撑",
+  "challengeTodayWorkoutStart": "开始今天的锻炼",
+  "challengeViewDetails": "查看详情",
+  "challengeRestart": "重新开始",
+  "challengeDeleteHistory": "从历史记录中删除",
+  "challengeCumulativeSettings": "设定您的总目标",
+  "challengeDurationLabel": "期间",
+  "challengeGoalLabel": "目标代表",
+  "challengeNotFound": "此挑战不再可用。",
+  "challengePeriod": "时期",
+  "challengeStatus": "地位",
+  "challengeTotalReps": "俯卧撑总数",
+  "challengeWorkoutDays": "锻炼日",
+  "challengeDaysCount": "{days}天",
+  "@challengeDaysCount": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeTotalTime": "总锻炼时间",
+  "challengeSchedule": "日程及进度",
+  "challengeNotifications": "挑战提醒",
+  "challengeNotificationsDescription": "在此挑战中保留提醒偏好。",
+  "challengeReminderNotificationTitle": "你的俯卧撑挑战正在等待",
+  "challengeReminderNotificationBody": "打开 MotionFit 并朝着今天的挑战目标取得进展。",
+  "challengeSelectedWeekdays": "选定的锻炼日",
+  "challengeNoProgressYet": "还没有挑战训练。",
+  "challengeCancel": "结束挑战",
+  "challengeCancelTitle": "结束这个挑战吗？",
+  "challengeCancelDescription": "您的锻炼记录将被保存。这一挑战将成为历史。",
+  "challengeStatusActive": "进行中",
+  "challengeStatusCompleted": "完全的",
+  "challengeStatusEnded": "结束",
+  "challengeStatusCancelled": "取消",
+  "challengeProgressUpdated": "您的挑战进度已更新。",
+  "challengeCheck": "查看挑战",
+  "commonDone": "完毕",
+  "commonCancel": "取消",
+  "commonClose": "关闭",
+  "commonRetry": "再试一次",
+  "commonSave": "节省",
+  "commonDelete": "删除",
+  "commonConfirm": "确认",
+  "commonBack": "后退",
+  "commonContinue": "继续",
+  "commonStart": "开始",
+  "commonSkip": "跳过",
+  "commonEdit": "编辑",
+  "commonOn": "在",
+  "commonOff": "离开",
+  "commonEnabled": "启用",
+  "commonDisabled": "残疾人",
+  "commonNotAvailable": "无法使用",
+  "commonToday": "今天",
+  "commonYesterday": "昨天",
+  "commonLoading": "加载中…",
+  "unitSets": "{count} 组",
+  "@unitSets": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unitReps": "{count} 次",
+  "@unitReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unitSeconds": "{count} 秒",
+  "@unitSeconds": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unitMinutes": "{count} 分钟",
+  "@unitMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHoursMinutes": "{hours}小时{minutes}分钟",
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "durationMinutesSeconds": "{minutes}分{seconds}秒",
+  "@durationMinutesSeconds": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "homeGreeting": "准备好搬家了吗？",
+  "homeTodayTitle": "今天的记录",
+  "homeTodayNoWorkout": "今天还没有俯卧撑。简短的一组是一个很好的开始。",
+  "homeTodaySummary": "{reps}俯卧撑横跨{sets}",
+  "homeViewResult": "查看结果",
+  "@homeTodaySummary": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "sets": {
+        "type": "int"
+      }
+    }
+  },
+  "homeTodaySets": "今天设定",
+  "homeTodayReps": "今天完成",
+  "streakLabel": "条纹",
+  "streakDays": "{days}天",
+  "@streakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "homeWorkoutSetup": "下一次锻炼",
+  "homeSetsLabel": "套",
+  "homeRepsPerSetLabel": "每组次数",
+  "homeRestTimeLabel": "休息时间",
+  "homeDirectInputHint": "输入一个数字",
+  "homeStartWorkout": "开始锻炼",
+  "homeLastSettingsRestored": "您上次的锻炼设置已准备就绪。",
+  "validationNumberRequired": "输入一个数字。",
+  "validationRange": "选择从{min}到{max}的值。",
+  "@validationRange": {
+    "placeholders": {
+      "min": {
+        "type": "num"
+      },
+      "max": {
+        "type": "num"
+      }
+    }
+  },
+  "guideTitle": "设置您的相机",
+  "guideSubtitle": "将手机侧放，以便您的手、肩膀、臀部和脚留在视野中。",
+  "guideLandscape": "将手机侧向（横向）并将其放在您身边。",
+  "guideWholeBody": "保持一只完整的手臂和身体线条清晰可见。",
+  "guideStableCamera": "将手机放在稳定的地方。",
+  "guideOnePerson": "确保框架内只有一个人。",
+  "guideCameraAngle": "尽可能使用侧面或略微倾斜的侧视图。",
+  "guideLighting": "避免黑暗的房间和强烈的背光。",
+  "guidePrivacy": "视频保留在此设备上，并且仅当“代表视频审阅”打开时才会保存。",
+  "guideContinue": "我已就位",
+  "permissionCameraTitle": "需要相机访问权限",
+  "permissionCameraBody": "MotionFit 使用摄像头来计算俯卧撑次数。当您打开“Rep Video Review”时，视频仅保存在此设备上。",
+  "permissionCameraRequest": "继续",
+  "permissionCameraDenied": "相机访问被拒绝。您仍然可以查看记录和设置。",
+  "permissionCameraPermanentlyDenied": "在系统设置中允许相机访问以开始锻炼。",
+  "permissionOpenSettings": "打开设置",
+  "permissionNotificationTitle": "允许锻炼提醒吗？",
+  "permissionNotificationBody": "通知仅用于您安排的提醒。",
+  "permissionNotificationRequest": "允许通知",
+  "permissionNotificationDenied": "通知已关闭。在系统设置中打开它们以接收提醒。",
+  "countdownGetReady": "准备",
+  "countdownBeginsIn": "从{seconds}开始",
+  "@countdownBeginsIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "calibrationTitle": "找到你的俯卧撑最高位置",
+  "calibrationBody": "保持顶部俯卧撑位置，双臂伸展。",
+  "calibrationStayStill": "保持静止一会儿",
+  "calibrationComplete": "一切就绪",
+  "calibrationFailed": "我们无法获得明确的顶部俯卧撑位置。",
+  "calibrationRetry": "重新校准",
+  "workoutSetProgress": "设置{total}的{current}",
+  "@workoutSetProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "workoutRepProgress": "{current}之{target}",
+  "@workoutRepProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "workoutTotalReps": "总计{count}",
+  "@workoutTotalReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "workoutElapsed": "经过时间",
+  "workoutPause": "暂停",
+  "workoutResume": "恢复锻炼",
+  "workoutEnd": "暂时停止",
+  "workoutBackToSetup": "返回设置",
+  "workoutEndDialogTitle": "暂时停下来吗？",
+  "workoutEndDialogBody": "您的进度将被保存，以便您可以从主屏幕继续。",
+  "workoutEndDialogConfirm": "保存并离开",
+  "workoutPauseReasonBackground": "当应用程序处于后台时，锻炼暂停。",
+  "workoutPauseReasonInterruption": "系统中断后锻炼暂停。",
+  "workoutStateReady": "准备好",
+  "workoutStateDescending": "往下走",
+  "workoutStateBottom": "在底部",
+  "workoutStateAscending": "即将推出",
+  "workoutStateCompleted": "很好的代表",
+  "workoutStateTrackingLost": "仍在检测中",
+  "workoutStatePaused": "已暂停",
+  "workoutTrackingGood": "检测到关节",
+  "workoutCameraSwitch": "切换相机",
+  "workoutSkeletonToggle": "显示姿势指南",
+  "restTitle": "休息",
+  "restNextSet": "下一篇：设置{total}的{set}",
+  "@restNextSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "restCompletedSets": "已完成的套装",
+  "restTotalReps": "到目前为止俯卧撑",
+  "restSkip": "跳过休息",
+  "restAddFifteenSeconds": "添加 15 秒",
+  "restEndWorkout": "暂时停止",
+  "restAlmostDone": "快准备好了",
+  "restReady": "下一组的时间",
+  "completeTitle": "锻炼完成",
+  "completeSubtitle": "工作扎实。这是您的会话概览。",
+  "workoutInterruptedSubtitle": "在提前结束之前回顾一下您录制的内容。",
+  "completeTotalReps": "俯卧撑总数",
+  "completeCompletedSets": "套数已完成",
+  "completeActiveTime": "活跃时间",
+  "completeRestTime": "休息时间",
+  "completeTotalTime": "总时间",
+  "completeAverageRepTime": "平均重复时间",
+  "completeFormSummary": "表格摘要",
+  "todayCoaching": "今天的辅导",
+  "coachingIssueFrequency": "在{total}次数的{count}中，{issue}",
+  "@coachingIssueFrequency": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      },
+      "issue": {
+        "type": "String"
+      }
+    }
+  },
+  "completeTopImprovement": "下次重点",
+  "completeStrengths": "什么进展顺利",
+  "completeSaved": "此设备上保存的锻炼数据",
+  "completeSaveFailed": "无法保存锻炼。离开前再试一次。",
+  "completeNoFormData": "没有足够的可见运动来进行表格摘要。",
+  "completeFinish": "结束",
+  "postWorkoutReminderTitle": "保持势头",
+  "postWorkoutReminderBody": "您想要从明天开始在{time}上收到每日提醒吗？",
+  "@postWorkoutReminderBody": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "postWorkoutReminderEnable": "提醒我",
+  "postWorkoutReminderLater": "也许稍后",
+  "postWorkoutReminderEnabled": "您的提醒已设置。",
+  "recordsTitle": "进步",
+  "recordsWeeklySummary": "本星期",
+  "recordsWorkoutCount": "{count}锻炼",
+  "@recordsWorkoutCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsAverageForm": "平均形式{score}",
+  "@recordsAverageForm": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsWorkoutTime": "时间{time}",
+  "@recordsWorkoutTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "recordsFirstWeek": "这是您本周的第一张唱片",
+  "recordsMoreThanLastWeek": "{count}比上周更多的次数",
+  "recordsLessThanLastWeek": "{count}次数比上周少",
+  "@recordsMoreThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recordsLessThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsSameAsLastWeek": "成交量与上周持平",
+  "recordsTrendEmpty": "完成更多锻炼以了解您的体形趋势。",
+  "recordsFirstFormScore": "第一形式成绩",
+  "recordsRecentAverage": "最后{count}平均{score}",
+  "@recordsRecentAverage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsStrength": "力量",
+  "recordsFocus": "重点",
+  "recordsTodayPoint": "今日焦点",
+  "recordsToday": "今天",
+  "recordsRecentWorkouts": "最近的锻炼",
+  "recordsCalendarTitle": "锻炼日历",
+  "recordsFormTrend": "形式趋势",
+  "recordsViewCalendar": "日历",
+  "recordsViewList": "列表",
+  "recordsViewStats": "统计数据",
+  "recordsCalendarPreviousMonth": "上个月",
+  "recordsCalendarNextMonth": "下个月",
+  "recordsCalendarWorkoutDay": "锻炼日",
+  "recordsCalendarNoWorkoutSelected": "选择锻炼日以查看其课程。",
+  "recordsDayTotal": "每日总计",
+  "recordsSessionsCount": "{count} 次训练",
+  "@recordsSessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsSessionTitle": "会话{number}",
+  "@recordsSessionTitle": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsListNewest": "最新的优先",
+  "recordsOpenDetail": "查看详情",
+  "recordsEmptyTitle": "还没有锻炼",
+  "recordsEmptyBody": "完成您的第一次俯卧撑锻炼，它将出现在此处。",
+  "recordsStartWorkout": "开始锻炼",
+  "recordsLoading": "正在加载您的锻炼...",
+  "recordsLoadError": "我们无法加载您的锻炼记录。",
+  "statsPeriod": "时期",
+  "statsPeriod7Days": "7天",
+  "statsPeriod30Days": "30天",
+  "statsPeriodThisMonth": "本月",
+  "statsPeriodAll": "所有时间",
+  "statsPeriodCustom": "风俗",
+  "statsCustomRange": "选择日期范围",
+  "statsTotalReps": "俯卧撑总数",
+  "statsWorkoutDays": "锻炼日",
+  "statsTotalActiveTime": "活跃时间",
+  "statsAverageSets": "平均组数",
+  "statsAverageReps": "平均俯卧撑",
+  "statsDailyReps": "白天俯卧撑",
+  "statsTrend": "随着时间的推移而变化",
+  "statsFrequentImprovements": "经常关注的领域",
+  "statsNoData": "这段时间没有锻炼。",
+  "statsTrendUp": "上涨{percent}%",
+  "@statsTrendUp": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
+  "statsTrendDown": "下降{percent}%",
+  "@statsTrendDown": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
+  "statsTrendFlat": "没有变化",
+  "detailTitle": "锻炼详情",
+  "detailStartTime": "开始",
+  "detailEndTime": "结束",
+  "detailActiveTime": "活跃时间",
+  "detailRestTime": "休息时间",
+  "detailTotalTime": "总时间",
+  "detailSets": "套",
+  "detailSetBreakdown": "按组次数",
+  "detailTotalReps": "俯卧撑总数",
+  "detailAverageRep": "平均重复时间",
+  "detailFormSummary": "表格摘要",
+  "detailImprovements": "改进点",
+  "detailStrengths": "优势",
+  "detailInterrupted": "提早结束",
+  "detailCompleted": "完全的",
+  "detailSetRow": "设置{set}：{reps}次数",
+  "@detailSetRow": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "detailSessionOn": "{date}于{time}",
+  "@detailSessionOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsTitle": "设置",
+  "settingsRateApp": "评价这个应用程序",
+  "settingsRateAppSubtitle": "评价 MotionFit",
+  "settingsRateAppError": "无法开店。请再试一次。",
+  "settingsSectionGeneral": "一般的",
+  "settingsSectionCoaching": "语音辅导",
+  "settingsSectionReminder": "锻炼提醒",
+  "settingsSectionCamera": "相机",
+  "settingsSectionPrivacy": "隐私和数据",
+  "settingsSectionAbout": "关于",
+  "settingsLanguage": "语言",
+  "settingsDisplayTheme": "画面主题",
+  "settingsColorTheme": "色彩主题",
+  "themeLight": "光",
+  "themePureBlack": "纯黑",
+  "themeSystem": "系统",
+  "colorThemeByeokcheong": "碧清蓝",
+  "colorThemeChuhyang": "秋香米色",
+  "colorThemeJangdan": "长丹红",
+  "colorThemeCheonghyeon": "清贤蓝",
+  "colorThemeHaenghwang": "杏黄杏",
+  "colorThemeChunyu": "春雨绿",
+  "colorThemeSeolbaek": "雪白白",
+  "colorThemeByeokja": "碧紫紫",
+  "colorThemeChwiram": "奇兰薄荷",
+  "languageSystem": "使用设备语言",
+  "languageEnglish": "英语",
+  "languageKorean": "한국어",
+  "languageGerman": "德语",
+  "languageSpanish": "西班牙语",
+  "languageFrench": "法国人",
+  "languageJapanese": "日本语",
+  "languageArabic": "巴黎",
+  "languageChanged": "语言已更新",
+  "voiceCoachingEnabled": "语音辅导",
+  "voiceRepCountEnabled": "说出次数",
+  "voiceFormEnabled": "表格提示",
+  "voiceEncouragementEnabled": "鼓励",
+  "voiceRate": "语速",
+  "voiceRateSlow": "慢的",
+  "voiceRateNormal": "普通的",
+  "voiceRateFast": "快速地",
+  "voiceTest": "测试语音",
+  "voiceTestPhrase": "伟大的。您的语音教练已准备就绪。",
+  "voiceUnavailable": "没有安装与该语言兼容的离线语音。",
+  "reminderTitle": "锻炼提醒",
+  "reminderSubtitle": "为您每天想要训练的时间选择一个时间。",
+  "reminderEnabled": "已启用提醒",
+  "reminderTime": "提醒时间",
+  "reminderCopyTime": "这次复制",
+  "reminderCopyFromDay": "从{day}复制时间",
+  "@reminderCopyFromDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderApplyAll": "适用于每一天",
+  "reminderNext": "下次提醒：{dateTime}",
+  "@reminderNext": {
+    "placeholders": {
+      "dateTime": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderNoneScheduled": "没有安排提醒",
+  "reminderPermissionNeeded": "允许通知打开提醒。",
+  "reminderSaved": "提醒时间表已保存",
+  "weekdayMonday": "周一",
+  "weekdayTuesday": "周二",
+  "weekdayWednesday": "周三",
+  "weekdayThursday": "周四",
+  "weekdayFriday": "星期五",
+  "weekdaySaturday": "周六",
+  "weekdaySunday": "星期日",
+  "weekdayMondayShort": "周一",
+  "weekdayTuesdayShort": "星期二",
+  "weekdayWednesdayShort": "周三",
+  "weekdayThursdayShort": "星期四",
+  "weekdayFridayShort": "周五",
+  "weekdaySaturdayShort": "星期六",
+  "weekdaySundayShort": "太阳",
+  "cameraFront": "前置摄像头",
+  "cameraRear": "后置摄像头",
+  "cameraMirrorPreview": "后视镜正面预览",
+  "cameraPoseOverlay": "姿势指南覆盖",
+  "cameraKeepScreenAwake": "锻炼期间保持屏幕唤醒",
+  "settingsHaptics": "触觉反馈",
+  "privacyTitle": "如何处理您的数据",
+  "privacyLocalProcessing": "姿势分析在此设备上运行。",
+  "privacyNoVideoStorage": "仅当启用“代表视频查看”时，锻炼视频才会存储在此设备上。",
+  "privacyNoUpload": "相机帧不会上传到服务器。",
+  "privacyStoredData": "该设备上存储的数据",
+  "privacyStoredDataDescription": "MotionFit 会保存锻炼时间、组数、次数和表格结果，以便您可以查看您的进度。",
+  "privacyDeleteData": "删除所有锻炼数据",
+  "privacyDeleteConfirmTitle": "删除所有锻炼数据？",
+  "privacyDeleteConfirmBody": "这将从该设备中永久删除您的锻炼历史记录。此操作无法撤消。",
+  "privacyDeleteConfirmAction": "删除所有数据",
+  "privacyDeleteSuccess": "锻炼数据已删除",
+  "privacyDeleteFailure": "无法删除锻炼数据。",
+  "appInfoTitle": "应用信息",
+  "appInfoVersion": "版本{version}",
+  "@appInfoVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "appInfoLicenses": "开源许可证",
+  "appInfoPrivacyPolicy": "隐私政策",
+  "appInfoDescription": "MotionFit 计算俯卧撑次数并提供私人的设备上形式指导。",
+  "errorGenericTitle": "出了点问题",
+  "errorGenericBody": "请再试一次。您现有的锻炼记录是安全的。",
+  "errorCameraInit": "相机无法启动。",
+  "errorCameraInUse": "相机可能正在被其他应用程序使用。",
+  "errorPoseModelLoad": "无法加载姿势模型。",
+  "errorNoPerson": "没有发现任何人。步入视野。",
+  "errorWholeBody": "保持一只手腕、肘部、肩膀、臀部和脚踝在视野范围内。",
+  "errorMultiplePeople": "视野中不止一个人。画面中仅保留一个人。",
+  "errorTrackingLost": "训练仍在继续，而检测仍在继续尝试。",
+  "errorDatabaseSave": "无法保存您的锻炼。",
+  "errorTtsVoiceMissing": "该设备上未安装语音。",
+  "errorTtsLocaleUnsupported": "此设备上所选语言不支持语音辅导。",
+  "emptyNoFormIssues": "未检测到重复的表单问题。",
+  "emptyNotEnoughData": "还没有足够的数据",
+  "loadingCamera": "启动相机...",
+  "loadingPoseModel": "正在准备移动检测...",
+  "loadingSavingWorkout": "保存锻炼...",
+  "formScore": "形式分数",
+  "formShort": "形式",
+  "formScoreValue": "{score}分",
+  "@formScoreValue": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "formIssueDepth": "俯卧撑深度",
+  "formIssueTorsoLean": "身体线条对齐",
+  "formIssueHeelLift": "髋部位置",
+  "formIssueKneeAlignment": "肘部对齐",
+  "formIssueBalance": "左右平衡",
+  "formIssueDescentSpeed": "下降速度",
+  "formIssueAscentSpeed": "上升速度",
+  "formIssueControl": "运动控制",
+  "formIssueStandingCompletion": "手臂伸展",
+  "formIssueNotObservable": "从这个相机角度无法评估",
+  "formStrengthDepth": "一致的深度",
+  "formStrengthControl": "受控运动",
+  "formStrengthBalance": "稳定平衡",
+  "coachTrackingLost1": "当我不断检测时，你的锻炼仍在进行。",
+  "coachTrackingLost2": "短暂的遮挡不会暂停您的锻炼。",
+  "coachWholeBody1": "保持手腕、肘部、肩膀、臀部和脚踝在视野范围内。",
+  "coachWholeBody2": "将手机移远一些，以便看到您的完整俯卧撑位置。",
+  "coachMultiplePeople1": "画面中只保留一个人，这样我就能追踪到你。",
+  "coachReady1": "你已经就位了。让我们开始吧。",
+  "coachReady2": "位置很好。为你的第一次俯卧撑做好准备。",
+  "coachStartSet": "设置{set}。我们走吧。",
+  "@coachStartSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
+  "coachSevenDayChallengeStart": "七日挑战的起始日{day}。",
+  "@coachSevenDayChallengeStart": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "coachCumulativeChallengeStart": "开始累积次数挑战。您已完成{completed}次，还剩{remaining}。",
+  "@coachCumulativeChallengeStart": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "coachRepCount": "{count}",
+  "@coachRepCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "coachDepth1": "下一次，尝试降低一点。",
+  "coachDepth2": "让下一个俯卧撑更有深度。",
+  "coachTorso1": "从肩膀到脚踝保持一条直线。",
+  "coachTorso2": "收紧你的核心并使你的身体保持在一条线上。",
+  "coachHeel1": "保持臀部与肩膀齐平。",
+  "coachHeel2": "避免在下一次重复时让臀部下垂或屈体。",
+  "coachKnees1": "保持肘部向后倾斜，而不是张开。",
+  "coachKnees2": "将肘部靠近身体一点。",
+  "coachBalance1": "保持两侧体重均匀。",
+  "coachBalance2": "为下一次代表找到一个均匀、稳定的姿势。",
+  "coachDescendSlow1": "下次尝试放慢一点。",
+  "coachDescendSlow2": "控制下一次代表的下降方式。",
+  "coachDescendFaster1": "下次下坡时速度要快一点。",
+  "coachDescendFaster2": "继续下一个下降过程，不要停下来。",
+  "coachAscendControlled1": "顺利起身并保持控制。",
+  "coachAscendControlled2": "以稳定、受控的速度向上推。",
+  "coachAscendFaster1": "更加自信地开车。",
+  "coachAscendFaster2": "下一次重复时果断地向上推一点。",
+  "coachControl1": "让下一次动作从头到尾都顺利进行。",
+  "coachControl2": "在整个动作中保持控制。",
+  "coachStandTall1": "完成时双臂完全伸展。",
+  "coachStandTall2": "一直按回到顶部位置。",
+  "coachGood1": "好的。保持这个节奏。",
+  "coachGood2": "控制得好。继续下去。",
+  "coachGood3": "强代表。再做一次。",
+  "coachLastTwo": "最后两个。坚强点！",
+  "coachLastOne": "最后一张。坚强地完成！",
+  "coachSetComplete": "伟大的。设置{set}完成。",
+  "@coachSetComplete": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
+  "coachRestStart": "休息{seconds}秒。呼吸并重置。",
+  "@coachRestStart": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "coachRestTenSeconds": "还剩十秒休息时间。",
+  "coachRestComplete": "休息结束了。为下一组做好准备。",
+  "coachWorkoutComplete": "锻炼完成。您完成了{reps}俯卧撑。",
+  "@coachWorkoutComplete": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "notificationReminderTitle": "今天的俯卧撑时间",
+  "notificationReminderBody": "即使是短暂的会议也很重要。准备好后打开 MotionFit。",
+  "notificationReminderBodyVariant2": "一些有针对性的俯卧撑可以使今天的运动发挥作用。",
+  "notificationStreakReminderBody": "今天通过简短的训练来保持您的{days}连续几天的活力。",
+  "@notificationStreakReminderBody": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "semanticsIncrease": "增加",
+  "semanticsDecrease": "减少",
+  "semanticsSelectedTab": "所选选项卡：{tab}",
+  "@semanticsSelectedTab": {
+    "placeholders": {
+      "tab": {
+        "type": "String"
+      }
+    }
+  },
+  "semanticsCalendarWorkoutDate": "{date}，锻炼记录",
+  "@semanticsCalendarWorkoutDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "semanticsCalendarEmptyDate": "{date}，没有锻炼",
+  "@semanticsCalendarEmptyDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "semanticsCurrentRep": "{target}的电流重复{current}",
+  "@semanticsCurrentRep": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "repVideoReviewTitle": "代表视频回顾",
+  "repVideoReviewDescription": "在此设备上保存锻炼视频以查看各个代表。",
+  "repVideoLocalOnly": "仅本地·从未上传",
+  "formReviewTitle": "表格审核",
+  "formReviewMainIssue": "主要问题",
+  "viewRepTimeline": "查看代表时间表",
+  "repTimelineTitle": "代表审查",
+  "repTimelineAll": "全部",
+  "repTimelineImprove": "提升",
+  "repTimelineNoImprovement": "没有代表需要改进。",
+  "repSetNumber": "设置{number}",
+  "@repSetNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "repNumber": "代表{number}",
+  "@repNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "repResultGood": "状态好",
+  "repResultNeedsAttention": "需要注意",
+  "repResultImproved": "比之前的代表更好",
+  "repResultNotAssessed": "难以评估",
+  "repIssueShallowDepth": "尝试更深入一点",
+  "repIssueForwardLean": "上半身向前倾",
+  "repIssueKneesInward": "肘部向外张开",
+  "repVideoNotSaved": "视频未保存",
+  "repReplay": "重播",
+  "repWhatHappened": "发生了什么",
+  "repHowToImprove": "如何改进",
+  "repWhatWentWell": "什么进展顺利",
+  "repPrevious": "以前的代表",
+  "repNext": "下一位代表",
+  "repFeedbackGood": "该代表保持在 MotionFit 可以评估的范围内。",
+  "repFeedbackDepth": "您没有达到平常的俯卧撑深度。尝试再降低一点，同时保持胸部稳定。",
+  "repFeedbackTorso": "在此代表过程中，您的身体线条发生了变化。支撑你的核心并保持臀部水平。",
+  "repFeedbackKnees": "你的肘部向外张开。让它们向后倾斜到你的身体。",
+  "repFeedbackGeneric": "该代表需要在{area}中引起注意。",
+  "@repFeedbackGeneric": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteWorkoutVideo": "删除锻炼视频",
+  "deleteWorkoutVideoTitle": "删除这个锻炼视频吗？",
+  "deleteWorkoutVideoBody": "仅删除本地视频。代表分析和锻炼记录将保留。",
+  "workoutVideoDeleted": "锻炼视频已删除",
+  "languageChineseSimplified": "简体中文",
+  "languageChineseTraditional": "繁體中文"
+}

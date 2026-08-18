@@ -1,0 +1,3 @@
+"CFBundleDisplayName" = "MotionFit - Squat";
+"NSCameraUsageDescription" = "MotionFitは、このデバイス上でスクワットの回数と動きを分析するためにカメラを使用します。映像は保存されません。";
+"NSUserTrackingUsageDescription" = "この識別子は、関連性の高い広告の配信と測定に使用される場合があります。";

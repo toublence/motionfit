@@ -1,0 +1,997 @@
+{
+  "@@locale": "zh_Hant",
+  "appName": "MotionFit - 深蹲",
+  "navSquat": "深蹲",
+  "navWorkout": "運動",
+  "navChallenge": "挑戰",
+  "navRecords": "進步",
+  "navSettings": "設定",
+  "challengeTitle": "我的深蹲挑戰",
+  "challengeSubtitle": "選擇適合您目標的挑戰並堅持不懈地前進。",
+  "challengeChooseTitle": "選擇一個挑戰",
+  "challengeSevenDayTitle": "7 天新手挑戰",
+  "challengeSevenDayDescription": "適合初學者的逐步計劃",
+  "challengeSevenDaySummary": "遵循每天增加的基於等級的目標，持續 7 天。",
+  "challengeSevenDayEveryDay": "每天持續 7 天，沒有恢復日",
+  "challengeDurationDays": "{days}天",
+  "@challengeDurationDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeLevelGoals": "根據您的等級量身定制的目標",
+  "challengeRecoveryIncluded": "包括恢復天數",
+  "challengeDailyGoal": "每日次數目標",
+  "challengeSevenDayStart": "開始7天挑戰",
+  "challengeSevenDaySettings": "設定您的 7 天目標",
+  "challengeSevenDaySettingsDescription": "選擇第 1 天。目標每天增加 5 次。",
+  "challengeFirstDayGoal": "第一天目標次數",
+  "challengeSevenDayPreview": "第 1 天：{first} 次 → 第 7 天：{last} 次",
+  "@challengeSevenDayPreview": {
+    "placeholders": {
+      "first": {
+        "type": "int"
+      },
+      "last": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeWeeklyTitle": "每週3次挑戰",
+  "challengeWeeklyDescription": "針對不想每天運動的人的習慣挑戰",
+  "challengeWeeklySummary": "每週選擇 3 天進行鍛煉，持續 4 週。",
+  "challengeDurationWeeks": "{weeks}週",
+  "@challengeDurationWeeks": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeThreePerWeek": "每週 3 次鍛煉",
+  "challengeChooseWeekdays": "選擇 3 天鍛煉",
+  "challengeWorkoutDaysCount": "進度取決於鍛鍊天數",
+  "challengeWeeklyStart": "開始每週挑戰",
+  "challengeCumulativeTitle": "總次數挑戰",
+  "challengeCumulativeDescription": "按照適合您的時間表完成深蹲總目標",
+  "challengeCumulativeSummary": "選擇持續時間和總目標；休息日讓你進步。",
+  "challengePreset200": "7天內200個深蹲",
+  "challengePreset500": "14天內500個深蹲",
+  "challengeCustomGoal": "選擇您自己的持續時間和目標",
+  "challengeRestWithoutReset": "休息日不會重置進度",
+  "challengeCumulativeStart": "開始總次數挑戰",
+  "challengeHistoryTitle": "過去的挑戰",
+  "challengeHistoryEmpty": "您已完成和結束的挑戰將顯示在此。",
+  "challengeRecommended": "為您推薦",
+  "challengeRecommendationFromWorkout": "從您第一次{reps}次數鍛鍊中推薦。",
+  "@challengeRecommendationFromWorkout": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeRecommendationDefault": "建議您以 7 天的溫和時間開始第一次挑戰。",
+  "challengeActive": "主動挑戰",
+  "challengeNext": "下一個",
+  "challengeDayNumber": "日{day}",
+  "@challengeDayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeRecoveryDay": "康復日",
+  "challengeTodayProgress": "今天 {current}/{target} 次",
+  "@challengeTodayProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeRestToday": "今天需要時間恢復。",
+  "challengeTodayCompleted": "今天的目標完成·明天繼續",
+  "challengeRepsRemaining": "還剩 {reps} 次",
+  "@challengeRepsRemaining": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeWeekNumber": "週{week}",
+  "@challengeWeekNumber": {
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeThisWeekProgress": "本週{current}/{target}鍛煉",
+  "@challengeThisWeekProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeOverallDays": "總計{current}/{target}天",
+  "@challengeOverallDays": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeRepsProgress": "{current}/{target} 次",
+  "@challengeRepsProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeDaysRemaining": "還剩 {days} 天",
+  "@challengeDaysRemaining": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeTodaySuggested": "今天建議：{reps} 次",
+  "@challengeTodaySuggested": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "challengePercent": "{percent}完成%",
+  "@challengePercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeSquatStart": "開始深蹲",
+  "challengeTodayWorkoutStart": "開始今天的鍛煉",
+  "challengeViewDetails": "看詳情",
+  "challengeRestart": "重新開始",
+  "challengeDeleteHistory": "從歷史記錄中刪除",
+  "challengeCumulativeSettings": "設定您的總目標",
+  "challengeDurationLabel": "期間",
+  "challengeGoalLabel": "目標次數",
+  "challengeNotFound": "此挑戰不再可用。",
+  "challengePeriod": "時期",
+  "challengeStatus": "地位",
+  "challengeTotalReps": "深蹲總數",
+  "challengeWorkoutDays": "運動日",
+  "challengeDaysCount": "{days}天",
+  "@challengeDaysCount": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeTotalTime": "總運動時間",
+  "challengeSchedule": "行程及進度",
+  "challengeNotifications": "挑戰提醒",
+  "challengeNotificationsDescription": "在此挑戰中保留提醒偏好。",
+  "challengeReminderNotificationTitle": "你的深蹲挑戰正在等待",
+  "challengeReminderNotificationBody": "打開 MotionFit 並朝著今天的挑戰目標取得進展。",
+  "challengeSelectedWeekdays": "選定的鍛鍊日",
+  "challengeNoProgressYet": "還沒有挑戰訓練。",
+  "challengeCancel": "結束挑戰",
+  "challengeCancelTitle": "結束這個挑戰嗎？",
+  "challengeCancelDescription": "您的鍛鍊記錄將被儲存。這項挑戰將成為歷史。",
+  "challengeStatusActive": "進行中",
+  "challengeStatusCompleted": "完全的",
+  "challengeStatusEnded": "結束",
+  "challengeStatusCancelled": "取消",
+  "challengeProgressUpdated": "您的挑戰進度已更新。",
+  "challengeCheck": "查看挑戰",
+  "commonDone": "完畢",
+  "commonCancel": "取消",
+  "commonClose": "關閉",
+  "commonRetry": "再試一次",
+  "commonSave": "節省",
+  "commonDelete": "刪除",
+  "commonConfirm": "確認",
+  "commonBack": "後退",
+  "commonContinue": "繼續",
+  "commonStart": "開始",
+  "commonSkip": "跳過",
+  "commonEdit": "編輯",
+  "commonOn": "在",
+  "commonOff": "離開",
+  "commonEnabled": "啟用",
+  "commonDisabled": "殘障人士",
+  "commonNotAvailable": "無法使用",
+  "commonToday": "今天",
+  "commonYesterday": "昨天",
+  "commonLoading": "載入中…",
+  "unitSets": "{count} 組",
+  "@unitSets": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unitReps": "{count} 次",
+  "@unitReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unitSeconds": "{count} 秒",
+  "@unitSeconds": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unitMinutes": "{count} 分鐘",
+  "@unitMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHoursMinutes": "{hours}小時{minutes}分鐘",
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "durationMinutesSeconds": "{minutes}分{seconds}秒",
+  "@durationMinutesSeconds": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "homeGreeting": "準備好搬家了嗎？",
+  "homeTodayTitle": "今天的記錄",
+  "homeTodayNoWorkout": "今天還沒有深蹲。簡短的一組是一個很好的開始。",
+  "homeTodaySummary": "{reps} 次深蹲，共 {sets} 組",
+  "homeViewResult": "查看結果",
+  "@homeTodaySummary": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "sets": {
+        "type": "int"
+      }
+    }
+  },
+  "homeTodaySets": "今天設定",
+  "homeTodayReps": "今天完成",
+  "streakLabel": "條紋",
+  "streakDays": "{days}天",
+  "@streakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "homeWorkoutSetup": "下次鍛鍊",
+  "homeSetsLabel": "套",
+  "homeRepsPerSetLabel": "每組次數",
+  "homeRestTimeLabel": "休息時間",
+  "homeDirectInputHint": "輸入一個數字",
+  "homeStartWorkout": "開始鍛鍊",
+  "homeLastSettingsRestored": "您上次的鍛鍊設定已準備就緒。",
+  "validationNumberRequired": "輸入一個數字。",
+  "validationRange": "選擇從{min}到{max}的值。",
+  "@validationRange": {
+    "placeholders": {
+      "min": {
+        "type": "num"
+      },
+      "max": {
+        "type": "num"
+      }
+    }
+  },
+  "guideTitle": "設定您的相機",
+  "guideSubtitle": "MotionFit 無需拍到腳踝，只要肩部到膝蓋入鏡即可測量深蹲。",
+  "guideWholeBody": "盡量讓肩部、髖部和膝蓋保持在畫面中。",
+  "guideStableCamera": "將手機放在穩定的地方。",
+  "guideOnePerson": "確保框架內只有一個人。",
+  "guideCameraAngle": "盡可能使用側面或略微傾斜的側視圖。",
+  "guideLighting": "避免黑暗的房間和強烈的背光。",
+  "guidePrivacy": "影片保留在此裝置上，僅當「代表影片審閱」開啟時才會儲存。",
+  "guideContinue": "我已就位",
+  "permissionCameraTitle": "需要相機存取權限",
+  "permissionCameraBody": "MotionFit 使用攝影機計算深蹲次數。當您開啟「Rep Video Review」時，影片只會儲存在此裝置上。",
+  "permissionCameraRequest": "繼續",
+  "permissionCameraDenied": "相機訪問被拒絕。您仍然可以查看記錄和設定。",
+  "permissionCameraPermanentlyDenied": "在系統設定中允許相機存取以開始鍛鍊。",
+  "permissionOpenSettings": "開啟設定",
+  "permissionNotificationTitle": "允許鍛鍊提醒嗎？",
+  "permissionNotificationBody": "通知僅用於您安排的提醒。",
+  "permissionNotificationRequest": "允許通知",
+  "permissionNotificationDenied": "通知已關閉。在系統設定中開啟它們以接收提醒。",
+  "countdownGetReady": "準備",
+  "countdownBeginsIn": "從{seconds}開始",
+  "@countdownBeginsIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "calibrationTitle": "正在確認站立姿勢",
+  "calibrationBody": "站直，並讓肩部到膝蓋保持在畫面中。",
+  "calibrationStayStill": "保持靜止一會兒",
+  "calibrationComplete": "一切就緒",
+  "calibrationFailed": "無法清楚辨識站立姿勢。",
+  "calibrationRetry": "重新校準",
+  "workoutSetProgress": "第 {current}/{total} 組",
+  "@workoutSetProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "workoutRepProgress": "{current}/{target} 次",
+  "@workoutRepProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "workoutTotalReps": "總計 {count} 次",
+  "@workoutTotalReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "workoutElapsed": "經過時間",
+  "workoutPause": "暫停",
+  "workoutResume": "恢復鍛鍊",
+  "workoutEnd": "暫時停止",
+  "workoutBackToSetup": "返回設定",
+  "workoutEndDialogTitle": "暫時停下來嗎？",
+  "workoutEndDialogBody": "您的進度將被保存，以便您可以從主畫面繼續。",
+  "workoutEndDialogConfirm": "保存並離開",
+  "workoutPauseReasonBackground": "當應用程式處於背景時，鍛鍊暫停。",
+  "workoutPauseReasonInterruption": "系統中斷後運動暫停。",
+  "workoutStateReady": "準備好",
+  "workoutStateDescending": "往下走",
+  "workoutStateBottom": "在底部",
+  "workoutStateAscending": "即將推出",
+  "workoutStateCompleted": "很好的代表",
+  "workoutStateTrackingLost": "仍在檢測中",
+  "workoutStatePaused": "已暫停",
+  "workoutTrackingGood": "偵測到關節",
+  "workoutCameraSwitch": "切換相機",
+  "workoutSkeletonToggle": "顯示姿勢指南",
+  "restTitle": "休息",
+  "restNextSet": "下一篇：設定{total}的{set}",
+  "@restNextSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "restCompletedSets": "已完成的套裝",
+  "restTotalReps": "到目前為止深蹲",
+  "restSkip": "跳過休息",
+  "restAddFifteenSeconds": "添加 15 秒",
+  "restEndWorkout": "暫時停止",
+  "restAlmostDone": "快準備好了",
+  "restReady": "下一組的時間",
+  "completeTitle": "鍛鍊完成",
+  "completeSubtitle": "工作紮實。這是您的會話概覽。",
+  "workoutInterruptedSubtitle": "在提前結束之前回顧一下您錄製的內容。",
+  "completeTotalReps": "深蹲總數",
+  "completeCompletedSets": "套數已完成",
+  "completeActiveTime": "活躍時間",
+  "completeRestTime": "休息時間",
+  "completeTotalTime": "總時間",
+  "completeAverageRepTime": "平均重複時間",
+  "completeFormSummary": "表格摘要",
+  "todayCoaching": "今天的輔導",
+  "coachingIssueFrequency": "在{total}次數的{count}中，{issue}",
+  "@coachingIssueFrequency": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      },
+      "issue": {
+        "type": "String"
+      }
+    }
+  },
+  "completeTopImprovement": "下次重點",
+  "completeStrengths": "什麼進展順利",
+  "completeSaved": "此設備上已儲存的鍛鍊數據",
+  "completeSaveFailed": "無法保存鍛鍊。離開前再試一次。",
+  "completeNoFormData": "沒有足夠的可見運動來進行表格摘要。",
+  "completeFinish": "結束",
+  "postWorkoutReminderTitle": "保持勢頭",
+  "postWorkoutReminderBody": "您想要從明天開始在{time}上收到每日提醒嗎？",
+  "@postWorkoutReminderBody": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "postWorkoutReminderEnable": "提醒我",
+  "postWorkoutReminderLater": "也許稍後",
+  "postWorkoutReminderEnabled": "您的提醒已設定。",
+  "recordsTitle": "進步",
+  "recordsWeeklySummary": "本星期",
+  "recordsWorkoutCount": "{count}鍛煉",
+  "@recordsWorkoutCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsAverageForm": "平均動作評分 {score}",
+  "@recordsAverageForm": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsWorkoutTime": "時間{time}",
+  "@recordsWorkoutTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "recordsFirstWeek": "這是您本週的第一張唱片",
+  "recordsMoreThanLastWeek": "{count}比上週更多的次數",
+  "recordsLessThanLastWeek": "{count}次數比上週少",
+  "@recordsMoreThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recordsLessThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsSameAsLastWeek": "成交量與上週持平",
+  "recordsTrendEmpty": "完成更多運動以了解您的體形趨勢。",
+  "recordsFirstFormScore": "首次動作評分",
+  "recordsRecentAverage": "最後{count}平均{score}",
+  "@recordsRecentAverage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsStrength": "力量",
+  "recordsFocus": "重點",
+  "recordsTodayPoint": "今日焦點",
+  "recordsToday": "今天",
+  "recordsRecentWorkouts": "最近的鍛鍊",
+  "recordsCalendarTitle": "鍛鍊日曆",
+  "recordsFormTrend": "動作趨勢",
+  "recordsViewCalendar": "日曆",
+  "recordsViewList": "清單",
+  "recordsViewStats": "統計數據",
+  "recordsCalendarPreviousMonth": "上個月",
+  "recordsCalendarNextMonth": "下個月",
+  "recordsCalendarWorkoutDay": "運動日",
+  "recordsCalendarNoWorkoutSelected": "選擇鍛煉日以查看其課程。",
+  "recordsDayTotal": "每日總計",
+  "recordsSessionsCount": "{count} 次訓練",
+  "@recordsSessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsSessionTitle": "會話{number}",
+  "@recordsSessionTitle": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "recordsListNewest": "最新的優先",
+  "recordsOpenDetail": "看詳情",
+  "recordsEmptyTitle": "還沒有鍛煉",
+  "recordsEmptyBody": "完成您的第一次深蹲鍛煉，它將出現在此處。",
+  "recordsStartWorkout": "開始鍛鍊",
+  "recordsLoading": "正在加載您的鍛鍊...",
+  "recordsLoadError": "我們無法加載您的鍛鍊記錄。",
+  "statsPeriod": "時期",
+  "statsPeriod7Days": "7天",
+  "statsPeriod30Days": "30天",
+  "statsPeriodThisMonth": "本月",
+  "statsPeriodAll": "所有時間",
+  "statsPeriodCustom": "風俗",
+  "statsCustomRange": "選擇日期範圍",
+  "statsTotalReps": "深蹲總數",
+  "statsWorkoutDays": "運動日",
+  "statsTotalActiveTime": "活躍時間",
+  "statsAverageSets": "平均組數",
+  "statsAverageReps": "平均深蹲",
+  "statsDailyReps": "白天深蹲",
+  "statsTrend": "隨著時間的推移而改變",
+  "statsFrequentImprovements": "經常關注的領域",
+  "statsNoData": "這段時間沒有運動。",
+  "statsTrendUp": "上漲{percent}%",
+  "@statsTrendUp": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
+  "statsTrendDown": "下降{percent}%",
+  "@statsTrendDown": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
+  "statsTrendFlat": "沒有變化",
+  "detailTitle": "運動詳情",
+  "detailStartTime": "開始",
+  "detailEndTime": "結束",
+  "detailActiveTime": "活躍時間",
+  "detailRestTime": "休息時間",
+  "detailTotalTime": "總時間",
+  "detailSets": "套",
+  "detailSetBreakdown": "按組次數",
+  "detailTotalReps": "深蹲總數",
+  "detailAverageRep": "平均重複時間",
+  "detailFormSummary": "表格摘要",
+  "detailImprovements": "改進點",
+  "detailStrengths": "優勢",
+  "detailInterrupted": "提早結束",
+  "detailCompleted": "完全的",
+  "detailSetRow": "設定{set}：{reps}次數",
+  "@detailSetRow": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "detailSessionOn": "{date}於{time}",
+  "@detailSessionOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsTitle": "設定",
+  "settingsRateApp": "評價這個應用程式",
+  "settingsRateAppSubtitle": "評價 MotionFit",
+  "settingsRateAppError": "無法開店。請再試一次。",
+  "settingsSectionGeneral": "一般的",
+  "settingsSectionCoaching": "語音輔導",
+  "settingsSectionReminder": "鍛鍊提醒",
+  "settingsSectionCamera": "相機",
+  "settingsSectionPrivacy": "隱私和數據",
+  "settingsSectionAbout": "關於",
+  "settingsLanguage": "語言",
+  "settingsDisplayTheme": "畫面主題",
+  "settingsColorTheme": "色彩主題",
+  "themeLight": "光",
+  "themePureBlack": "純黑",
+  "themeSystem": "系統",
+  "colorThemeByeokcheong": "碧清藍",
+  "colorThemeChuhyang": "秋香米色",
+  "colorThemeJangdan": "長丹紅",
+  "colorThemeCheonghyeon": "清賢藍",
+  "colorThemeHaenghwang": "杏黃杏",
+  "colorThemeChunyu": "春雨綠",
+  "colorThemeSeolbaek": "雪白白",
+  "colorThemeByeokja": "碧紫紫",
+  "colorThemeChwiram": "奇蘭薄荷",
+  "languageSystem": "使用裝置語言",
+  "languageEnglish": "英語",
+  "languageKorean": "한국어",
+  "languageGerman": "德文",
+  "languageSpanish": "西班牙語",
+  "languageFrench": "法國人",
+  "languageJapanese": "日本語",
+  "languageArabic": "巴黎",
+  "languageChineseSimplified": "簡體中文",
+  "languageChineseTraditional": "繁體中文",
+  "languageChanged": "語言已更新",
+  "voiceCoachingEnabled": "語音輔導",
+  "voiceRepCountEnabled": "說出次數",
+  "voiceFormEnabled": "表格提示",
+  "voiceEncouragementEnabled": "鼓勵",
+  "voiceRate": "語速",
+  "voiceRateSlow": "慢的",
+  "voiceRateNormal": "普通的",
+  "voiceRateFast": "快速地",
+  "voiceTest": "測試語音",
+  "voiceTestPhrase": "偉大的。您的語音教練已準備就緒。",
+  "voiceUnavailable": "沒有安裝與該語言相容的離線語音。",
+  "reminderTitle": "鍛鍊提醒",
+  "reminderSubtitle": "為您每天想要訓練的時間選擇一個時間。",
+  "reminderEnabled": "已啟用提醒",
+  "reminderTime": "提醒時間",
+  "reminderCopyTime": "這次複製",
+  "reminderCopyFromDay": "從{day}複製時間",
+  "@reminderCopyFromDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderApplyAll": "適用於每一天",
+  "reminderNext": "下次提醒：{dateTime}",
+  "@reminderNext": {
+    "placeholders": {
+      "dateTime": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderNoneScheduled": "沒有安排提醒",
+  "reminderPermissionNeeded": "允許通知開啟提醒。",
+  "reminderSaved": "提醒時間表已儲存",
+  "weekdayMonday": "週一",
+  "weekdayTuesday": "週二",
+  "weekdayWednesday": "週三",
+  "weekdayThursday": "週四",
+  "weekdayFriday": "星期五",
+  "weekdaySaturday": "週六",
+  "weekdaySunday": "星期日",
+  "weekdayMondayShort": "週一",
+  "weekdayTuesdayShort": "星期二",
+  "weekdayWednesdayShort": "週三",
+  "weekdayThursdayShort": "星期四",
+  "weekdayFridayShort": "週五",
+  "weekdaySaturdayShort": "星期六",
+  "weekdaySundayShort": "太陽",
+  "cameraFront": "前置鏡頭",
+  "cameraRear": "後置攝像頭",
+  "cameraMirrorPreview": "後視鏡正面預覽",
+  "cameraPoseOverlay": "姿勢指南覆蓋",
+  "cameraKeepScreenAwake": "鍛鍊期間保持螢幕喚醒",
+  "settingsHaptics": "觸覺回饋",
+  "privacyTitle": "如何處理您的數據",
+  "privacyLocalProcessing": "姿勢分析在此設備上運行。",
+  "privacyNoVideoStorage": "僅當啟用「代表影片檢視」時，鍛鍊影片才會儲存在此裝置上。",
+  "privacyNoUpload": "相機幀不會上傳到伺服器。",
+  "privacyStoredData": "該設備上儲存的數據",
+  "privacyStoredDataDescription": "MotionFit 會儲存鍛鍊時間、組數、次數和表格結果，以便您可以查看您的進度。",
+  "privacyDeleteData": "刪除所有鍛鍊數據",
+  "privacyDeleteConfirmTitle": "刪除所有鍛鍊數據？",
+  "privacyDeleteConfirmBody": "這將從該裝置中永久刪除您的鍛鍊歷史記錄。此操作無法撤銷。",
+  "privacyDeleteConfirmAction": "刪除所有數據",
+  "privacyDeleteSuccess": "鍛鍊數據已刪除",
+  "privacyDeleteFailure": "無法刪除鍛鍊數據。",
+  "appInfoTitle": "應用程式資訊",
+  "appInfoVersion": "版本{version}",
+  "@appInfoVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "appInfoLicenses": "開源許可證",
+  "appInfoPrivacyPolicy": "隱私權政策",
+  "appInfoDescription": "MotionFit 計算深蹲次數並提供私人的設備上形式指引。",
+  "errorGenericTitle": "出了點問題",
+  "errorGenericBody": "請再試一次。您現有的運動記錄是安全的。",
+  "errorCameraInit": "相機無法啟動。",
+  "errorCameraInUse": "相機可能正在被其他應用程式使用。",
+  "errorPoseModelLoad": "無法載入姿勢模型。",
+  "errorNoPerson": "沒有發現任何人。步入視野。",
+  "errorWholeBody": "正在檢查肩部、髖部和膝蓋的連線。",
+  "errorMultiplePeople": "視野中不只一個人。畫面中僅保留一個人。",
+  "errorTrackingLost": "訓練仍在繼續，而檢測仍在繼續嘗試。",
+  "errorDatabaseSave": "無法保存您的鍛鍊。",
+  "errorTtsVoiceMissing": "該設備上未安裝語音。",
+  "errorTtsLocaleUnsupported": "此裝置上所選語言不支援語音輔導。",
+  "emptyNoFormIssues": "未偵測到重複的表單問題。",
+  "emptyNotEnoughData": "還沒有足夠的數據",
+  "loadingCamera": "啟動相機...",
+  "loadingPoseModel": "正在準備移動檢測...",
+  "loadingSavingWorkout": "儲存鍛鍊...",
+  "formScore": "動作評分",
+  "formShort": "動作",
+  "formScoreValue": "{score}分",
+  "@formScoreValue": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "formIssueDepth": "深蹲深度",
+  "formIssueTorsoLean": "上身穩定性",
+  "formIssueHeelLift": "腳跟接觸",
+  "formIssueKneeAlignment": "膝蓋對齊",
+  "formIssueBalance": "左右平衡",
+  "formIssueDescentSpeed": "下降速度",
+  "formIssueAscentSpeed": "上升速度",
+  "formIssueControl": "運動控制",
+  "formIssueStandingCompletion": "站立完成度",
+  "formIssueNotObservable": "從這個相機角度無法評估",
+  "formStrengthDepth": "一致的深度",
+  "formStrengthControl": "受控運動",
+  "formStrengthBalance": "穩定平衡",
+  "coachTrackingLost1": "當我不斷檢測時，你的鍛鍊仍在進行中。",
+  "coachTrackingLost2": "短暫的遮蔽不會暫停您的運動。",
+  "coachWholeBody1": "肩部、髖部和膝蓋入鏡後即可測量。",
+  "coachWholeBody2": "即使腳踝不在畫面中，也可以繼續鍛鍊。",
+  "coachMultiplePeople1": "畫面中只保留一個人，這樣我就能追蹤到你。",
+  "coachReady1": "你已經就位了。讓我們開始吧。",
+  "coachReady2": "姿勢很好。準備開始第一次深蹲。",
+  "coachStartSet": "設定{set}。我們走吧。",
+  "@coachStartSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
+  "coachSevenDayChallengeStart": "七日挑戰的起始日{day}。",
+  "@coachSevenDayChallengeStart": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "coachCumulativeChallengeStart": "開始累積次數挑戰。您已完成{completed}次，還剩{remaining}。",
+  "@coachCumulativeChallengeStart": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "coachRepCount": "{count}",
+  "@coachRepCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "coachDepth1": "下次，試著降低一點。",
+  "coachDepth2": "下一次深蹲再蹲低一點。",
+  "coachTorso1": "上身再穩定一點。",
+  "coachTorso2": "下一次動作時，讓胸部自然挺起。",
+  "coachHeel1": "盡量讓腳跟貼住地面。",
+  "coachHeel2": "下一次動作時，用整個腳掌發力。",
+  "coachKnees1": "讓膝蓋朝向腳尖的方向。",
+  "coachKnees2": "下一次動作時，讓膝蓋保持對齊。",
+  "coachBalance1": "保持兩側體重均勻。",
+  "coachBalance2": "為下一次代表找到一個均勻、穩定的姿勢。",
+  "coachDescendSlow1": "下次嘗試放慢一點。",
+  "coachDescendSlow2": "控制下一次代表的下降方式。",
+  "coachDescendFaster1": "下次下坡時速度要快一點。",
+  "coachDescendFaster2": "繼續下一個下降過程，不要停下來。",
+  "coachAscendControlled1": "順利起身並保持控制。",
+  "coachAscendControlled2": "站起時保持穩定的節奏。",
+  "coachAscendFaster1": "更有自信地開車。",
+  "coachAscendFaster2": "下一次站起時再果斷一點。",
+  "coachControl1": "讓下一次動作從頭到尾都順利進行。",
+  "coachControl2": "在整個動作中保持控制。",
+  "coachStandTall1": "結束時再站直一點。",
+  "coachStandTall2": "完全回到站立姿勢。",
+  "coachGood1": "好的。保持這個節奏。",
+  "coachGood2": "控制得好。繼續下去。",
+  "coachGood3": "強代表。再做一次。",
+  "coachLastTwo": "最後兩個。堅強點！",
+  "coachLastOne": "最後一張。堅強地完成！",
+  "coachSetComplete": "偉大的。設定{set}完成。",
+  "@coachSetComplete": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
+  "coachRestStart": "休息{seconds}秒。呼吸並重置。",
+  "@coachRestStart": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "coachRestTenSeconds": "還剩十秒休息時間。",
+  "coachRestComplete": "休息結束了。為下一組做好準備。",
+  "coachWorkoutComplete": "鍛煉完成。您完成了{reps}深蹲。",
+  "@coachWorkoutComplete": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "notificationReminderTitle": "今天的深蹲時間",
+  "notificationReminderBody": "即使是短暫的會議也很重要。準備好後打開 MotionFit。",
+  "notificationReminderBodyVariant2": "一些有針對性的深蹲可以使今天的運動發揮作用。",
+  "notificationStreakReminderBody": "今天就透過簡短的訓練來保持您的{days}連續幾天的活力。",
+  "@notificationStreakReminderBody": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "semanticsIncrease": "增加",
+  "semanticsDecrease": "減少",
+  "semanticsSelectedTab": "所選選項卡：{tab}",
+  "@semanticsSelectedTab": {
+    "placeholders": {
+      "tab": {
+        "type": "String"
+      }
+    }
+  },
+  "semanticsCalendarWorkoutDate": "{date}，鍛鍊記錄",
+  "@semanticsCalendarWorkoutDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "semanticsCalendarEmptyDate": "{date}，沒有鍛煉",
+  "@semanticsCalendarEmptyDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "semanticsCurrentRep": "{target}的電流重複{current}",
+  "@semanticsCurrentRep": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "repVideoReviewTitle": "代表影片回顧",
+  "repVideoReviewDescription": "在此裝置上儲存鍛鍊影片以查看各個代表。",
+  "repVideoLocalOnly": "僅本地·從未上傳",
+  "formReviewTitle": "表格審核",
+  "formReviewMainIssue": "主要問題",
+  "viewRepTimeline": "查看代表時間表",
+  "repTimelineTitle": "代表審查",
+  "repTimelineAll": "全部",
+  "repTimelineImprove": "提升",
+  "repTimelineNoImprovement": "沒有代表需要改進。",
+  "repSetNumber": "設定{number}",
+  "@repSetNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "repNumber": "代表{number}",
+  "@repNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "repResultGood": "狀態好",
+  "repResultNeedsAttention": "需要注意",
+  "repResultImproved": "比之前的代表更好",
+  "repResultNotAssessed": "難以評估",
+  "repIssueShallowDepth": "試著更深入一點",
+  "repIssueForwardLean": "上半身向前傾",
+  "repIssueKneesInward": "膝蓋向內移動",
+  "repVideoNotSaved": "影片未儲存",
+  "repReplay": "重播",
+  "repWhatHappened": "發生了什麼事",
+  "repHowToImprove": "如何改進",
+  "repWhatWentWell": "什麼進展順利",
+  "repPrevious": "以前的代表",
+  "repNext": "下一位代表",
+  "repFeedbackGood": "該代表保持在 MotionFit 可以評估的範圍內。",
+  "repFeedbackDepth": "沒有達到平時的深蹲深度。保持胸部穩定，並嘗試再蹲低一點。",
+  "repFeedbackTorso": "這次動作中上身前傾過多。請讓胸部更直立。",
+  "repFeedbackKnees": "這次動作中膝蓋向內移動。請讓膝蓋與腳尖保持同一方向。",
+  "repFeedbackGeneric": "此代表需要在{area}中引起注意。",
+  "@repFeedbackGeneric": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteWorkoutVideo": "刪除鍛煉視頻",
+  "deleteWorkoutVideoTitle": "刪除這個運動影片嗎？",
+  "deleteWorkoutVideoBody": "僅刪除本地影片。代表分析和鍛煉記錄將保留。",
+  "workoutVideoDeleted": "鍛鍊影片已刪除"
+}

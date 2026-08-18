@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "models": {
+    "lite": "pose_landmarker_lite.task",
+    "full": "pose_landmarker_full.task",
+    "heavy": "pose_landmarker_heavy.task"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1005307792225",
+    "project_id": "linkdrawer-bc322",
+    "storage_bucket": "linkdrawer-bc322.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005307792225:android:cbf6a81313c3da6fcb5320",
+        "android_client_info": {
+          "package_name": "com.namslab.motionfit.squat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOkIJwxl5pWYpO_4epQe5D-B0HCLHnkrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
