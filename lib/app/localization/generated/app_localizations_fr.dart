@@ -9,7 +9,7 @@ class AppLocalizationsFr extends AppLocalizations {
   AppLocalizationsFr([String locale = 'fr']) : super(locale);
 
   @override
-  String get appName => 'MotionFit - Squats';
+  String get appName => 'motionfit - workout coach';
 
   @override
   String get navSquat => 'Squats';

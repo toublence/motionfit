@@ -9,7 +9,7 @@ class PushupLocalizationsEs extends PushupLocalizations {
   PushupLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appName => 'MotionFit - Flexiones';
+  String get appName => 'motionfit - workout coach';
 
   @override
   String get navPushup => 'Flexiones';

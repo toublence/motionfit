@@ -9,7 +9,7 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appName => 'MotionFit - 深蹲';
+  String get appName => 'motionfit - workout coach';
 
   @override
   String get navSquat => '深蹲';
@@ -1650,7 +1650,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   AppLocalizationsZhHant() : super('zh_Hant');
 
   @override
-  String get appName => 'MotionFit - 深蹲';
+  String get appName => 'motionfit - workout coach';
 
   @override
   String get navSquat => '深蹲';

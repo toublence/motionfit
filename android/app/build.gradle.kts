@@ -9,7 +9,7 @@ plugins {
 }
 
 val releaseKeystoreProperties = Properties()
-val releaseKeystoreFile = rootProject.file("key.properties")
+val releaseKeystoreFile = rootProject.file("motionfit-release.properties")
 val releaseBuildRequested = gradle.startParameter.taskNames.any {
     it.contains("release", ignoreCase = true)
 }
@@ -17,7 +17,7 @@ if (releaseKeystoreFile.exists()) {
     releaseKeystoreFile.inputStream().use(releaseKeystoreProperties::load)
 } else if (releaseBuildRequested) {
     throw GradleException(
-        "Android release signing requires android/key.properties. See README.md.",
+        "Android signing requires android/motionfit-release.properties.",
     )
 }
 
@@ -54,6 +54,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            signingConfig = signingConfigs.findByName("release")
+        }
         release {
             signingConfig = signingConfigs.findByName("release")
         }

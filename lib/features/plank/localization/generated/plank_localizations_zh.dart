@@ -9,7 +9,7 @@ class PlankLocalizationsZh extends PlankLocalizations {
   PlankLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appName => 'MotionFit - 平板支撑';
+  String get appName => 'motionfit - workout coach';
 
   @override
   String get navSquat => '平板支撑练习';
@@ -1656,7 +1656,7 @@ class PlankLocalizationsZhHant extends PlankLocalizationsZh {
   PlankLocalizationsZhHant() : super('zh_Hant');
 
   @override
-  String get appName => 'MotionFit - 平板支撐';
+  String get appName => 'motionfit - workout coach';
 
   @override
   String get navSquat => '平板支撐練習';

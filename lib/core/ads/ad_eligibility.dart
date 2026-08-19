@@ -1,5 +1,6 @@
 abstract final class AdEligibility {
-  static const minimumNativeCompletedWorkouts = 1;
+  // Motion Fit 3 shows the persistent native ad from the first app session.
+  static const minimumNativeCompletedWorkouts = 0;
   static const minimumInterstitialCompletedWorkouts = 3;
   static const interstitialCooldown = Duration(minutes: 10);
 

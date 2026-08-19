@@ -9,7 +9,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   PlankLocalizationsDe([String locale = 'de']) : super(locale);
 
   @override
-  String get appName => 'MotionFit – Plank';
+  String get appName => 'motionfit - workout coach';
 
   @override
   String get navSquat => 'Plank';

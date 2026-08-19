@@ -9,7 +9,7 @@ class PushupLocalizationsZh extends PushupLocalizations {
   PushupLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appName => 'MotionFit - 俯卧撑';
+  String get appName => 'motionfit - workout coach';
 
   @override
   String get navPushup => '俯卧撑';
@@ -1650,7 +1650,7 @@ class PushupLocalizationsZhHans extends PushupLocalizationsZh {
   PushupLocalizationsZhHans() : super('zh_Hans');
 
   @override
-  String get appName => 'MotionFit - 俯卧撑';
+  String get appName => 'motionfit - workout coach';
 
   @override
   String get navPushup => '俯卧撑';
@@ -3291,7 +3291,7 @@ class PushupLocalizationsZhHant extends PushupLocalizationsZh {
   PushupLocalizationsZhHant() : super('zh_Hant');
 
   @override
-  String get appName => 'MotionFit - 俯臥撐';
+  String get appName => 'motionfit - workout coach';
 
   @override
   String get navPushup => '伏地挺身';

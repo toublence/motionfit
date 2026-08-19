@@ -9,7 +9,7 @@ class PushupLocalizationsKo extends PushupLocalizations {
   PushupLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
-  String get appName => 'MotionFit - Pushup';
+  String get appName => 'motionfit - workout coach';
 
   @override
   String get navPushup => '푸시업';

@@ -59,10 +59,8 @@ GoRouter createAppRouter({required bool onboardingCompleted}) => GoRouter(
       builder: (context, state) => const OnboardingScreen(),
     ),
     StatefulShellRoute.indexedStack(
-      builder: (context, state, navigationShell) => _AppNavigationShell(
-        navigationShell: navigationShell,
-        currentRoute: state.fullPath ?? state.uri.path,
-      ),
+      builder: (context, state, navigationShell) =>
+          _AppNavigationShell(navigationShell: navigationShell),
       branches: [
         StatefulShellBranch(
           navigatorKey: squatNavigatorKey,
@@ -327,18 +325,13 @@ plank_workout.WorkoutPreparation _plankPreparation(Object? extra) =>
     };
 
 class _AppNavigationShell extends ConsumerWidget {
-  const _AppNavigationShell({
-    required this.navigationShell,
-    required this.currentRoute,
-  });
+  const _AppNavigationShell({required this.navigationShell});
 
   final StatefulNavigationShell navigationShell;
-  final String currentRoute;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
-    final isIos = Theme.of(context).platform == TargetPlatform.iOS;
     final challengeBadge =
         (ref.watch(challengeBadgeProvider).value ?? false) ||
         (ref.watch(pushup_challenge_state.challengeBadgeProvider).value ??
@@ -351,66 +344,64 @@ class _AppNavigationShell extends ConsumerWidget {
             .value
             ?.completedWorkoutCount ??
         0;
+    final showBottomAd = AdEligibility.canShowNative(
+      completedWorkoutCount: completedWorkoutCount,
+    );
     return Scaffold(
       body: navigationShell,
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (AdEligibility.canShowNative(
-                completedWorkoutCount: completedWorkoutCount,
-              ) &&
-              (currentRoute == '/squat' ||
-                  currentRoute == '/challenge' ||
-                  currentRoute == '/settings'))
-            const BottomNativeAd(),
           MediaQuery.removePadding(
             context: context,
-            removeBottom: isIos,
-            child: SafeArea(
-              top: false,
-              bottom: !isIos,
-              child: _CompactBottomNavigation(
-                selectedIndex: navigationShell.currentIndex,
-                onSelected: (index) {
-                  ref.read(analyticsServiceProvider).screenView(switch (index) {
-                    0 => 'workout_setup',
-                    1 => 'challenge',
-                    2 => 'records',
-                    _ => 'settings',
-                  });
-                  navigationShell.goBranch(
-                    index,
-                    initialLocation: index == navigationShell.currentIndex,
-                  );
-                },
-                items: [
-                  (
-                    icon: Icons.fitness_center_outlined,
-                    selectedIcon: Icons.fitness_center_rounded,
-                    label: l10n.navWorkout,
-                    showBadge: false,
-                  ),
-                  (
-                    icon: Icons.emoji_events_outlined,
-                    selectedIcon: Icons.emoji_events_rounded,
-                    label: l10n.navChallenge,
-                    showBadge: challengeBadge,
-                  ),
-                  (
-                    icon: Icons.calendar_month_outlined,
-                    selectedIcon: Icons.calendar_month_rounded,
-                    label: l10n.navRecords,
-                    showBadge: false,
-                  ),
-                  (
-                    icon: Icons.settings_outlined,
-                    selectedIcon: Icons.settings_rounded,
-                    label: l10n.navSettings,
-                    showBadge: false,
-                  ),
-                ],
-              ),
+            removeBottom: true,
+            child: _CompactBottomNavigation(
+              selectedIndex: navigationShell.currentIndex,
+              onSelected: (index) {
+                ref.read(analyticsServiceProvider).screenView(switch (index) {
+                  0 => 'workout_setup',
+                  1 => 'challenge',
+                  2 => 'records',
+                  _ => 'settings',
+                });
+                navigationShell.goBranch(
+                  index,
+                  initialLocation: index == navigationShell.currentIndex,
+                );
+              },
+              items: [
+                (
+                  icon: Icons.fitness_center_outlined,
+                  selectedIcon: Icons.fitness_center_rounded,
+                  label: l10n.navWorkout,
+                  showBadge: false,
+                ),
+                (
+                  icon: Icons.emoji_events_outlined,
+                  selectedIcon: Icons.emoji_events_rounded,
+                  label: l10n.navChallenge,
+                  showBadge: challengeBadge,
+                ),
+                (
+                  icon: Icons.calendar_month_outlined,
+                  selectedIcon: Icons.calendar_month_rounded,
+                  label: l10n.navRecords,
+                  showBadge: false,
+                ),
+                (
+                  icon: Icons.settings_outlined,
+                  selectedIcon: Icons.settings_rounded,
+                  label: l10n.navSettings,
+                  showBadge: false,
+                ),
+              ],
             ),
+          ),
+          SafeArea(
+            top: false,
+            child: showBottomAd
+                ? const BottomNativeAd()
+                : const SizedBox.shrink(),
           ),
         ],
       ),

@@ -115,7 +115,7 @@ abstract class PushupLocalizations {
   /// No description provided for @appName.
   ///
   /// In en, this message translates to:
-  /// **'MotionFit - Pushup'**
+  /// **'motionfit - workout coach'**
   String get appName;
 
   /// No description provided for @navPushup.

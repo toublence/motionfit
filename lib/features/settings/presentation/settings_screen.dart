@@ -27,7 +27,7 @@ class SettingsScreen extends ConsumerStatefulWidget {
 class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   static const _systemLocaleValue = 'system';
   static final _privacyPolicyUri = Uri.parse(
-    'https://motionfit.fit/squat/privacy',
+    'https://motionfit.fit/privacy-policy',
   );
 
   SystemTtsCoachEngine? _voiceEngine;
@@ -165,7 +165,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                       minTileHeight: 72,
                       leading: const Icon(Icons.privacy_tip_outlined),
                       title: Text(localizations.appInfoPrivacyPolicy),
-                      subtitle: const Text('motionfit.fit/squat/privacy'),
+                      subtitle: const Text('motionfit.fit/privacy-policy'),
                       trailing: const Icon(Icons.open_in_new_rounded),
                       onTap: _openPrivacyPolicy,
                     ),

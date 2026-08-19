@@ -114,7 +114,7 @@ abstract class PlankLocalizations {
   /// No description provided for @appName.
   ///
   /// In en, this message translates to:
-  /// **'MotionFit - Plank'**
+  /// **'motionfit - workout coach'**
   String get appName;
 
   /// No description provided for @navSquat.

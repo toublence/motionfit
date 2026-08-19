@@ -2,15 +2,15 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:motionfit_squat/core/ads/ad_eligibility.dart';
 
 void main() {
-  test('all ads are hidden before the first completed workout', () {
-    expect(AdEligibility.canShowNative(completedWorkoutCount: 0), isFalse);
+  test('native ads start immediately while interstitial ads stay gated', () {
+    expect(AdEligibility.canShowNative(completedWorkoutCount: 0), isTrue);
     expect(
       AdEligibility.canShowInterstitial(completedWorkoutCount: 0),
       isFalse,
     );
   });
 
-  test('native starts after one workout and interstitial after three', () {
+  test('native remains enabled and interstitial starts after three workouts', () {
     expect(AdEligibility.canShowNative(completedWorkoutCount: 1), isTrue);
     expect(
       AdEligibility.canShowInterstitial(completedWorkoutCount: 2),

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -71,6 +72,9 @@ Future<void> _startApp(CrashReportingService crashReporting) async {
   );
   try {
     await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    if (Platform.isAndroid) {
+      await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+    }
   } on Object catch (error, stackTrace) {
     await crashReporting.recordNonFatal(
       error,

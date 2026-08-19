@@ -114,7 +114,7 @@ abstract class AppLocalizations {
   /// No description provided for @appName.
   ///
   /// In en, this message translates to:
-  /// **'MotionFit - Squat'**
+  /// **'motionfit - workout coach'**
   String get appName;
 
   /// No description provided for @navSquat.
