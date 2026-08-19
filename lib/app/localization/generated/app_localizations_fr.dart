@@ -852,6 +852,58 @@ class AppLocalizationsFr extends AppLocalizations {
   String get recordsCalendarTitle => 'Calendrier des séances';
 
   @override
+  String get recordsWorkoutRecords => 'Historique des entraînements';
+
+  @override
+  String get recordsNoWorkoutOnDay =>
+      'Aucun entraînement enregistré ce jour-là';
+
+  @override
+  String get exercisePushup => 'Pompes';
+
+  @override
+  String get exercisePlank => 'Planche';
+
+  @override
+  String get recordsConsistency => 'Régularité';
+
+  @override
+  String recordsWeeklyStreak(int count) {
+    return '🔥 Objectif atteint $count semaines de suite';
+  }
+
+  @override
+  String get recordsStreakFirstWeek => 'Créez votre première semaine régulière';
+
+  @override
+  String get recordsWeeklyGoalComplete => '🔥 Objectif de la semaine atteint';
+
+  @override
+  String recordsStreakRemaining(int count) {
+    return 'Encore $count entraînements pour poursuivre votre série';
+  }
+
+  @override
+  String recordsStreakStartRemaining(int count) {
+    return 'Encore $count entraînements pour démarrer votre série';
+  }
+
+  @override
+  String recordsStreakContinued(int count) {
+    return 'Votre série dure depuis $count semaines';
+  }
+
+  @override
+  String recordsRecentWeeksSummary(int count) {
+    return '16 dernières semaines · $count jours d’entraînement';
+  }
+
+  @override
+  String recordsRangeSummary(String from, String to, int count) {
+    return '$from – $to · $count jours d’entraînement';
+  }
+
+  @override
   String get recordsFormTrend => 'Évolution de la posture';
 
   @override

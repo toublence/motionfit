@@ -118,6 +118,21 @@ class AnalyticsService {
     _enqueue(_PendingAnalyticsEvent.screenView(screenName));
   }
 
+  /// Kept compatible with the app this Flutter implementation replaces so
+  /// Firebase retains a continuous app-open event series.
+  Future<void> appOpened({
+    required String source,
+    required String initialPath,
+  }) async {
+    _enqueue(
+      _PendingAnalyticsEvent.custom('motionfit_app_open', {
+        'source': source,
+        'initial_path': initialPath,
+      }),
+    );
+    await _dispatchChain;
+  }
+
   void onboardingStarted({required int totalSteps}) =>
       _logV2('mf2_onboarding_started', {'total_steps': totalSteps});
 

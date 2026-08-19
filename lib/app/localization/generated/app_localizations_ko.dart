@@ -724,11 +724,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get completeFinish => '마치기';
 
   @override
-  String get postWorkoutReminderTitle => '이 흐름을 내일도 이어가세요';
+  String get postWorkoutReminderTitle => '다음 운동도 잊지 않도록 알려드릴까요?';
 
   @override
   String postWorkoutReminderBody(String time) {
-    return '내일부터 매일 $time에 알려드릴까요?';
+    return '주 3회 목표를 이어갈 수 있도록 $time에 운동을 알려드려요.';
   }
 
   @override
@@ -804,7 +804,58 @@ class AppLocalizationsKo extends AppLocalizations {
   String get recordsRecentWorkouts => '최근 운동';
 
   @override
-  String get recordsCalendarTitle => '운동 캘린더';
+  String get recordsCalendarTitle => '최근 운동 기록';
+
+  @override
+  String get recordsWorkoutRecords => '운동 기록';
+
+  @override
+  String get recordsNoWorkoutOnDay => '이 날은 운동 기록이 없어요';
+
+  @override
+  String get exercisePushup => '푸쉬업';
+
+  @override
+  String get exercisePlank => '플랭크';
+
+  @override
+  String get recordsConsistency => '꾸준함';
+
+  @override
+  String recordsWeeklyStreak(int count) {
+    return '🔥 $count주 연속 목표 달성 중';
+  }
+
+  @override
+  String get recordsStreakFirstWeek => '첫 주 기록을 만들어보세요';
+
+  @override
+  String get recordsWeeklyGoalComplete => '🔥 이번 주 목표 완료';
+
+  @override
+  String recordsStreakRemaining(int count) {
+    return '$count회 더 운동하면 기록이 이어져요';
+  }
+
+  @override
+  String recordsStreakStartRemaining(int count) {
+    return '이번 주 $count회를 더 완료하면 연속 기록이 시작돼요';
+  }
+
+  @override
+  String recordsStreakContinued(int count) {
+    return '$count주 연속 기록을 이어갔어요';
+  }
+
+  @override
+  String recordsRecentWeeksSummary(int count) {
+    return '최근 16주 · $count일 운동';
+  }
+
+  @override
+  String recordsRangeSummary(String from, String to, int count) {
+    return '$from ~ $to · $count일 운동';
+  }
 
   @override
   String get recordsFormTrend => '자세 변화';
@@ -858,7 +909,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get recordsEmptyTitle => '첫 운동을 시작해볼까요?';
 
   @override
-  String get recordsEmptyBody => '첫 운동 후 나의 변화가 여기에 기록돼요.';
+  String get recordsEmptyBody => '첫 운동을 시작하면 오늘의 기록이 채워져요.';
 
   @override
   String get recordsStartWorkout => '첫 운동 시작';

@@ -108,6 +108,9 @@ class UserPreferences {
   final bool pushupCameraGuideSeen;
   final bool plankCameraGuideSeen;
 
+  bool get cameraSetupSeen =>
+      cameraGuideSeen || pushupCameraGuideSeen || plankCameraGuideSeen;
+
   UserPreferences copyWith({
     String? locale,
     bool useSystemLocale = false,

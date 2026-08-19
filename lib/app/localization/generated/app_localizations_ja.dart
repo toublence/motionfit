@@ -805,6 +805,57 @@ class AppLocalizationsJa extends AppLocalizations {
   String get recordsCalendarTitle => 'ワークアウトカレンダー';
 
   @override
+  String get recordsWorkoutRecords => '運動記録';
+
+  @override
+  String get recordsNoWorkoutOnDay => 'この日の運動記録はありません';
+
+  @override
+  String get exercisePushup => '腕立て伏せ';
+
+  @override
+  String get exercisePlank => 'プランク';
+
+  @override
+  String get recordsConsistency => '継続記録';
+
+  @override
+  String recordsWeeklyStreak(int count) {
+    return '🔥 $count週連続で目標達成中';
+  }
+
+  @override
+  String get recordsStreakFirstWeek => '最初の週の記録を作りましょう';
+
+  @override
+  String get recordsWeeklyGoalComplete => '🔥 今週の目標達成';
+
+  @override
+  String recordsStreakRemaining(int count) {
+    return 'あと$count回で記録が続きます';
+  }
+
+  @override
+  String recordsStreakStartRemaining(int count) {
+    return '今週あと$count回で連続記録が始まります';
+  }
+
+  @override
+  String recordsStreakContinued(int count) {
+    return '$count週連続の記録を続けました';
+  }
+
+  @override
+  String recordsRecentWeeksSummary(int count) {
+    return '直近16週間・$count日運動';
+  }
+
+  @override
+  String recordsRangeSummary(String from, String to, int count) {
+    return '$from〜$to・$count日運動';
+  }
+
+  @override
   String get recordsFormTrend => 'フォームの推移';
 
   @override

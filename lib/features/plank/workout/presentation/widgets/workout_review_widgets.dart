@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:motionfit_squat/features/plank/localization/generated/plank_localizations.dart';
 import 'package:motionfit_squat/app/theme/motionfit_tokens.dart';
 import 'package:motionfit_squat/core/widgets/coach_ui.dart';
@@ -11,17 +10,19 @@ class WorkoutOverviewHero extends StatelessWidget {
   const WorkoutOverviewHero({
     required this.eyebrow,
     required this.totalReps,
-    required this.setsLabel,
-    required this.activeTimeLabel,
-    this.formScore,
+    required this.exerciseLabel,
+    required this.weeklyWorkoutDays,
+    required this.firstWorkout,
+    required this.weeklyRemainingLabel,
     super.key,
   });
 
   final String eyebrow;
   final int totalReps;
-  final String? setsLabel;
-  final String activeTimeLabel;
-  final double? formScore;
+  final String exerciseLabel;
+  final int weeklyWorkoutDays;
+  final bool firstWorkout;
+  final String weeklyRemainingLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -29,38 +30,67 @@ class WorkoutOverviewHero extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        MotionEyebrow(eyebrow, color: Theme.of(context).colorScheme.primary),
+        MotionEyebrow(
+          firstWorkout ? '$eyebrow!' : eyebrow,
+          color: Theme.of(context).colorScheme.primary,
+        ),
         const SizedBox(height: 8),
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          alignment: AlignmentDirectional.centerStart,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
+        Text(
+          '$exerciseLabel ${l10n.unitReps(totalReps)}',
+          style: Theme.of(
+            context,
+          ).textTheme.headlineLarge?.copyWith(fontWeight: FontWeight.w800),
+        ),
+        const SizedBox(height: 14),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primaryContainer,
+            borderRadius: BorderRadius.circular(18),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
-                NumberFormat.decimalPattern(l10n.localeName).format(totalReps),
-                style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                  fontSize: 52,
-                  fontWeight: FontWeight.w800,
-                  height: .92,
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 280),
+                child: Text(
+                  l10n.challengeThisWeekProgress(weeklyWorkoutDays, 3),
+                  key: ValueKey(weeklyWorkoutDays),
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
+                    fontWeight: FontWeight.w800,
+                  ),
                 ),
               ),
-              const SizedBox(width: 8),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: Text(
-                  [
-                    l10n.completeTotalReps,
-                    ?setsLabel,
-                    activeTimeLabel,
-                    if (formScore != null)
-                      '${l10n.formScore} '
-                          '${l10n.formScoreValue(formScore!.round())}',
-                  ].join('  ·  '),
-                  maxLines: 1,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  ),
+              const SizedBox(height: 8),
+              Row(
+                children: List.generate(3, (index) {
+                  final completed = index < weeklyWorkoutDays;
+                  return Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 8),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 240),
+                      width: 28,
+                      height: 7,
+                      decoration: BoxDecoration(
+                        color: completed
+                            ? Theme.of(context).colorScheme.primary
+                            : Theme.of(context).colorScheme.surface,
+                        borderRadius: BorderRadius.circular(999),
+                      ),
+                    ),
+                  );
+                }),
+              ),
+              const SizedBox(height: 7),
+              Text(
+                weeklyWorkoutDays >= 3
+                    ? l10n.challengeTodayCompleted
+                    : firstWorkout
+                    ? l10n.recordsFirstWeek
+                    : weeklyRemainingLabel,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
               ),
             ],
@@ -114,8 +144,52 @@ class WorkoutFormReview extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         CoachSectionHeader(title: l10n.completeFormSummary),
+        const SizedBox(height: 14),
+        MotionEyebrow(l10n.formReviewMainIssue),
+        const SizedBox(height: 10),
+        CoachInsightPanel(
+          icon: mainIssue != null
+              ? Icons.bolt_rounded
+              : hasPositive
+              ? Icons.check_rounded
+              : Icons.remove_rounded,
+          title: mainIssue != null
+              ? '${repIssueCategory(l10n, mainIssue.key)} · '
+                    '${l10n.unitReps(mainIssue.value)}'
+              : hasPositive
+              ? l10n.completeStrengths
+              : l10n.repResultNotAssessed,
+          body: representative != null
+              ? repFeedback(l10n, representative)
+              : hasPositive
+              ? l10n.repFeedbackGood
+              : l10n.commonNotAvailable,
+          tone: tone,
+          bodyMaxLines: 2,
+        ),
+        if (strengths.isNotEmpty) ...[
+          const SizedBox(height: 18),
+          MotionEyebrow(l10n.completeStrengths),
+          const SizedBox(height: 8),
+          for (final strength in strengths)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 6),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(
+                    Icons.check_rounded,
+                    size: 17,
+                    color: context.tokens.success,
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(child: Text(strength)),
+                ],
+              ),
+            ),
+        ],
         if (analyses.isNotEmpty) ...[
-          const SizedBox(height: 14),
+          const SizedBox(height: 20),
           Row(
             children: [
               Expanded(
@@ -141,49 +215,6 @@ class WorkoutFormReview extends StatelessWidget {
               ),
             ],
           ),
-        ],
-        const SizedBox(height: 20),
-        MotionEyebrow(l10n.formReviewMainIssue),
-        const SizedBox(height: 10),
-        CoachInsightPanel(
-          icon: mainIssue != null
-              ? Icons.bolt_rounded
-              : hasPositive
-              ? Icons.check_rounded
-              : Icons.remove_rounded,
-          title: mainIssue != null
-              ? '${repIssueCategory(l10n, mainIssue.key)} · '
-                    '${l10n.unitReps(mainIssue.value)}'
-              : hasPositive
-              ? l10n.completeStrengths
-              : l10n.repResultNotAssessed,
-          body: representative != null
-              ? repFeedback(l10n, representative)
-              : hasPositive
-              ? l10n.repFeedbackGood
-              : l10n.commonNotAvailable,
-          tone: tone,
-        ),
-        if (strengths.isNotEmpty) ...[
-          const SizedBox(height: 18),
-          MotionEyebrow(l10n.completeStrengths),
-          const SizedBox(height: 8),
-          for (final strength in strengths)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 6),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(
-                    Icons.check_rounded,
-                    size: 17,
-                    color: context.tokens.success,
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(child: Text(strength)),
-                ],
-              ),
-            ),
         ],
       ],
     );

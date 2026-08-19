@@ -512,8 +512,7 @@ class PlankLocalizationsJa extends PlankLocalizations {
   String get permissionCameraTitle => 'カメラへのアクセスが必要です';
 
   @override
-  String get permissionCameraBody =>
-      'MotionFitはプランクの時間と姿勢を測るためにカメラを使用します。レビューをオンにした場合のみ映像を端末に保存します。';
+  String get permissionCameraBody => 'MotionFitはプランクの時間と姿勢を測るためにカメラを使用します。レビューをオンにした場合のみ映像を端末に保存します。';
 
   @override
   String get permissionCameraRequest => '続ける';
@@ -522,8 +521,7 @@ class PlankLocalizationsJa extends PlankLocalizations {
   String get permissionCameraDenied => 'カメラへのアクセスが拒否されました。記録と設定は引き続き利用できます。';
 
   @override
-  String get permissionCameraPermanentlyDenied =>
-      'ワークアウトを始めるには、システム設定でカメラを許可してください。';
+  String get permissionCameraPermanentlyDenied => 'ワークアウトを始めるには、システム設定でカメラを許可してください。';
 
   @override
   String get permissionOpenSettings => '設定を開く';
@@ -538,8 +536,7 @@ class PlankLocalizationsJa extends PlankLocalizations {
   String get permissionNotificationRequest => '通知を許可';
 
   @override
-  String get permissionNotificationDenied =>
-      '通知がオフです。リマインダーを受け取るにはシステム設定でオンにしてください。';
+  String get permissionNotificationDenied => '通知がオフです。リマインダーを受け取るにはシステム設定でオンにしてください。';
 
   @override
   String get countdownGetReady => '準備してください';
@@ -1234,8 +1231,7 @@ class PlankLocalizationsJa extends PlankLocalizations {
   String get privacyLocalProcessing => '姿勢分析はこの端末上で行われます。';
 
   @override
-  String get privacyNoVideoStorage =>
-      'ホールド区間動画レビューをオンにした場合のみ、ワークアウト動画を端末に保存します。';
+  String get privacyNoVideoStorage => 'ホールド区間動画レビューをオンにした場合のみ、ワークアウト動画を端末に保存します。';
 
   @override
   String get privacyNoUpload => 'カメラのフレームはサーバーへ送信されません。';
@@ -1244,8 +1240,7 @@ class PlankLocalizationsJa extends PlankLocalizations {
   String get privacyStoredData => 'この端末に保存されるデータ';
 
   @override
-  String get privacyStoredDataDescription =>
-      '進捗を確認できるよう、運動時間、セット、保持時間、フォーム結果を保存します。';
+  String get privacyStoredDataDescription => '進捗を確認できるよう、運動時間、セット、保持時間、フォーム結果を保存します。';
 
   @override
   String get privacyDeleteData => 'すべてのワークアウトデータを削除';
@@ -1254,8 +1249,7 @@ class PlankLocalizationsJa extends PlankLocalizations {
   String get privacyDeleteConfirmTitle => 'すべてのワークアウトデータを削除しますか？';
 
   @override
-  String get privacyDeleteConfirmBody =>
-      'この端末のワークアウト履歴が完全に削除されます。この操作は取り消せません。';
+  String get privacyDeleteConfirmBody => 'この端末のワークアウト履歴が完全に削除されます。この操作は取り消せません。';
 
   @override
   String get privacyDeleteConfirmAction => 'すべてのデータを削除';
@@ -1571,8 +1565,7 @@ class PlankLocalizationsJa extends PlankLocalizations {
   String get repVideoReviewTitle => 'ホールド区間動画レビュー';
 
   @override
-  String get repVideoReviewDescription =>
-      'ワークアウト動画をこの端末に保存し、あとで各ホールド区間を確認できます。';
+  String get repVideoReviewDescription => 'ワークアウト動画をこの端末に保存し、あとで各ホールド区間を確認できます。';
 
   @override
   String get repVideoLocalOnly => '端末内のみ・アップロードなし';

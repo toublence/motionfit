@@ -267,8 +267,7 @@ class PushupLocalizationsZh extends PushupLocalizations {
   String get challengeReminderNotificationTitle => '你的俯卧撑挑战正在等待';
 
   @override
-  String get challengeReminderNotificationBody =>
-      '打开 MotionFit 并朝着今天的挑战目标取得进展。';
+  String get challengeReminderNotificationBody => '打开 MotionFit 并朝着今天的挑战目标取得进展。';
 
   @override
   String get challengeSelectedWeekdays => '选定的锻炼日';
@@ -487,8 +486,7 @@ class PushupLocalizationsZh extends PushupLocalizations {
   String get permissionCameraTitle => '需要相机访问权限';
 
   @override
-  String get permissionCameraBody =>
-      'MotionFit 使用摄像头来计算俯卧撑次数。当您打开“Rep Video Review”时，视频仅保存在此设备上。';
+  String get permissionCameraBody => 'MotionFit 使用摄像头来计算俯卧撑次数。当您打开“Rep Video Review”时，视频仅保存在此设备上。';
 
   @override
   String get permissionCameraRequest => '继续';
@@ -1211,8 +1209,7 @@ class PushupLocalizationsZh extends PushupLocalizations {
   String get privacyStoredData => '该设备上存储的数据';
 
   @override
-  String get privacyStoredDataDescription =>
-      'MotionFit 会保存锻炼时间、组数、次数和表格结果，以便您可以查看您的进度。';
+  String get privacyStoredDataDescription => 'MotionFit 会保存锻炼时间、组数、次数和表格结果，以便您可以查看您的进度。';
 
   @override
   String get privacyDeleteData => '删除所有锻炼数据';
@@ -1647,7 +1644,7 @@ class PushupLocalizationsZh extends PushupLocalizations {
 
 /// The translations for Chinese, using the Han script (`zh_Hans`).
 class PushupLocalizationsZhHans extends PushupLocalizationsZh {
-  PushupLocalizationsZhHans() : super('zh_Hans');
+  PushupLocalizationsZhHans(): super('zh_Hans');
 
   @override
   String get appName => 'motionfit - workout coach';
@@ -1908,8 +1905,7 @@ class PushupLocalizationsZhHans extends PushupLocalizationsZh {
   String get challengeReminderNotificationTitle => '你的俯卧撑挑战正在等待';
 
   @override
-  String get challengeReminderNotificationBody =>
-      '打开 MotionFit 并朝着今天的挑战目标取得进展。';
+  String get challengeReminderNotificationBody => '打开 MotionFit 并朝着今天的挑战目标取得进展。';
 
   @override
   String get challengeSelectedWeekdays => '选定的锻炼日';
@@ -2128,8 +2124,7 @@ class PushupLocalizationsZhHans extends PushupLocalizationsZh {
   String get permissionCameraTitle => '需要相机访问权限';
 
   @override
-  String get permissionCameraBody =>
-      'MotionFit 使用摄像头来计算俯卧撑次数。当您打开“Rep Video Review”时，视频仅保存在此设备上。';
+  String get permissionCameraBody => 'MotionFit 使用摄像头来计算俯卧撑次数。当您打开“Rep Video Review”时，视频仅保存在此设备上。';
 
   @override
   String get permissionCameraRequest => '继续';
@@ -2852,8 +2847,7 @@ class PushupLocalizationsZhHans extends PushupLocalizationsZh {
   String get privacyStoredData => '该设备上存储的数据';
 
   @override
-  String get privacyStoredDataDescription =>
-      'MotionFit 会保存锻炼时间、组数、次数和表格结果，以便您可以查看您的进度。';
+  String get privacyStoredDataDescription => 'MotionFit 会保存锻炼时间、组数、次数和表格结果，以便您可以查看您的进度。';
 
   @override
   String get privacyDeleteData => '删除所有锻炼数据';
@@ -3288,7 +3282,7 @@ class PushupLocalizationsZhHans extends PushupLocalizationsZh {
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
 class PushupLocalizationsZhHant extends PushupLocalizationsZh {
-  PushupLocalizationsZhHant() : super('zh_Hant');
+  PushupLocalizationsZhHant(): super('zh_Hant');
 
   @override
   String get appName => 'motionfit - workout coach';
@@ -3549,8 +3543,7 @@ class PushupLocalizationsZhHant extends PushupLocalizationsZh {
   String get challengeReminderNotificationTitle => '你的伏地挺身挑戰正在等待';
 
   @override
-  String get challengeReminderNotificationBody =>
-      '打開 MotionFit 並朝著今天的挑戰目標取得進展。';
+  String get challengeReminderNotificationBody => '打開 MotionFit 並朝著今天的挑戰目標取得進展。';
 
   @override
   String get challengeSelectedWeekdays => '選定的鍛鍊日';
@@ -3769,8 +3762,7 @@ class PushupLocalizationsZhHant extends PushupLocalizationsZh {
   String get permissionCameraTitle => '需要相機存取權限';
 
   @override
-  String get permissionCameraBody =>
-      'MotionFit 使用攝影機計算俯臥撐次數。當您開啟「Rep Video Review」時，影片只會儲存在此裝置上。';
+  String get permissionCameraBody => 'MotionFit 使用攝影機計算俯臥撐次數。當您開啟「Rep Video Review」時，影片只會儲存在此裝置上。';
 
   @override
   String get permissionCameraRequest => '繼續';
@@ -4493,8 +4485,7 @@ class PushupLocalizationsZhHant extends PushupLocalizationsZh {
   String get privacyStoredData => '該設備上儲存的數據';
 
   @override
-  String get privacyStoredDataDescription =>
-      'MotionFit 會儲存鍛鍊時間、組數、次數和表格結果，以便您可以查看您的進度。';
+  String get privacyStoredDataDescription => 'MotionFit 會儲存鍛鍊時間、組數、次數和表格結果，以便您可以查看您的進度。';
 
   @override
   String get privacyDeleteData => '刪除所有鍛鍊數據';

@@ -146,12 +146,12 @@ class _CameraPermissionScreenState extends ConsumerState<CameraPermissionScreen>
   void _continueIfGranted(AppPermissionState result) {
     if (result != AppPermissionState.granted || _navigating || !mounted) return;
     _navigating = true;
-    final guideSeen = ref.read(preferencesControllerProvider).cameraGuideSeen;
+    final guideSeen = ref.read(preferencesControllerProvider).cameraSetupSeen;
     final persistGuideSeen = guideSeen
         ? null
         : ref
               .read(preferencesControllerProvider.notifier)
-              .markCameraGuideSeen();
+              .markCameraSetupSeen();
     unawaited(_finishGrantedNavigation(persistGuideSeen));
   }
 

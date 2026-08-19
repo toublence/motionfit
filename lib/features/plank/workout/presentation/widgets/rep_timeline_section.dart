@@ -40,6 +40,7 @@ class RepTimelineSection extends StatefulWidget {
 
 class _RepTimelineSectionState extends State<RepTimelineSection> {
   bool _attentionOnly = false;
+  bool _expanded = false;
 
   @override
   Widget build(BuildContext context) {
@@ -93,67 +94,90 @@ class _RepTimelineSectionState extends State<RepTimelineSection> {
           ],
         ),
         const SizedBox(height: 12),
-        Wrap(
-          spacing: 6,
-          runSpacing: 6,
-          children: [
-            ChoiceChip(
-              key: const ValueKey('rep-timeline-filter-all'),
-              label: Text(l10n.repTimelineAll),
-              selected: !_attentionOnly,
-              onSelected: (_) => setState(() => _attentionOnly = false),
-            ),
-            ChoiceChip(
-              key: const ValueKey('rep-timeline-filter-attention'),
-              label: Text('${l10n.repTimelineImprove} $attentionCount'),
-              selected: _attentionOnly,
-              onSelected: (_) => setState(() => _attentionOnly = true),
-            ),
-          ],
-        ),
-        if (!hasVideo && widget.showVideoUnavailableMessage) ...[
-          const SizedBox(height: 8),
+        if (!_expanded) ...[
           Text(
-            l10n.repVideoNotSaved,
-            style: Theme.of(
-              context,
-            ).textTheme.bodySmall?.copyWith(color: context.tokens.unavailable),
-          ),
-        ],
-        const SizedBox(height: 12),
-        if (visible.isEmpty)
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: Text(
-              l10n.repTimelineNoImprovement,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
-              ),
+            '${l10n.unitReps(widget.analyses.length)} · '
+            '${l10n.repTimelineImprove} $attentionCount',
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
           ),
-        for (var setIndex = 0; setIndex < setNumbers.length; setIndex++) ...[
-          MotionEyebrow(l10n.repSetNumber(setNumbers[setIndex])),
-          const SizedBox(height: 5),
-          Column(
+          const SizedBox(height: 10),
+          OutlinedButton.icon(
+            onPressed: () => setState(() {
+              _expanded = true;
+              _attentionOnly = attentionCount > 0;
+            }),
+            icon: const Icon(Icons.expand_more_rounded),
+            label: Text(
+              attentionCount > 0
+                  ? '${l10n.repTimelineImprove} $attentionCount'
+                  : l10n.repTimelineAll,
+            ),
+          ),
+        ] else ...[
+          Wrap(
+            spacing: 6,
+            runSpacing: 6,
             children: [
-              for (
-                var rowIndex = 0;
-                rowIndex < bySet[setNumbers[setIndex]]!.length;
-                rowIndex++
-              ) ...[
-                _RepTimelineRow(
-                  analysis: bySet[setNumbers[setIndex]]![rowIndex],
-                  hasVideo: hasVideo,
-                  onOpen: () => open(bySet[setNumbers[setIndex]]![rowIndex]),
-                ),
-                if (rowIndex < bySet[setNumbers[setIndex]]!.length - 1)
-                  const Divider(height: 1, indent: 38),
-              ],
+              ChoiceChip(
+                key: const ValueKey('rep-timeline-filter-all'),
+                label: Text(l10n.repTimelineAll),
+                selected: !_attentionOnly,
+                onSelected: (_) => setState(() => _attentionOnly = false),
+              ),
+              ChoiceChip(
+                key: const ValueKey('rep-timeline-filter-attention'),
+                label: Text('${l10n.repTimelineImprove} $attentionCount'),
+                selected: _attentionOnly,
+                onSelected: (_) => setState(() => _attentionOnly = true),
+              ),
             ],
           ),
-          if (setIndex != setNumbers.length - 1)
-            SizedBox(height: context.tokens.space12),
+          if (!hasVideo && widget.showVideoUnavailableMessage) ...[
+            const SizedBox(height: 8),
+            Text(
+              l10n.repVideoNotSaved,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: context.tokens.unavailable,
+              ),
+            ),
+          ],
+          const SizedBox(height: 12),
+          if (visible.isEmpty)
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Text(
+                l10n.repTimelineNoImprovement,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                ),
+              ),
+            ),
+          for (var setIndex = 0; setIndex < setNumbers.length; setIndex++) ...[
+            MotionEyebrow(l10n.repSetNumber(setNumbers[setIndex])),
+            const SizedBox(height: 5),
+            Column(
+              children: [
+                for (
+                  var rowIndex = 0;
+                  rowIndex < bySet[setNumbers[setIndex]]!.length;
+                  rowIndex++
+                ) ...[
+                  _RepTimelineRow(
+                    analysis: bySet[setNumbers[setIndex]]![rowIndex],
+                    hasVideo: hasVideo,
+                    onOpen: () => open(bySet[setNumbers[setIndex]]![rowIndex]),
+                  ),
+                  if (rowIndex < bySet[setNumbers[setIndex]]!.length - 1)
+                    const Divider(height: 1, indent: 38),
+                ],
+              ],
+            ),
+            if (setIndex != setNumbers.length - 1)
+              SizedBox(height: context.tokens.space12),
+          ],
         ],
       ],
     );

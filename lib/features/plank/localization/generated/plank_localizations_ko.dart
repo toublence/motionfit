@@ -65,8 +65,7 @@ class PlankLocalizationsKo extends PlankLocalizations {
   String get challengeSevenDaySettings => '7일 목표 설정';
 
   @override
-  String get challengeSevenDaySettingsDescription =>
-      '1일차 목표를 정하면 이후 목표가 매일 5초씩 늘어납니다.';
+  String get challengeSevenDaySettingsDescription => '1일차 목표를 정하면 이후 목표가 매일 5초씩 늘어납니다.';
 
   @override
   String get challengeFirstDayGoal => '1일차 목표 시간';
@@ -268,8 +267,7 @@ class PlankLocalizationsKo extends PlankLocalizations {
   String get challengeReminderNotificationTitle => '플랭크 챌린지를 이어갈 시간이에요';
 
   @override
-  String get challengeReminderNotificationBody =>
-      'MotionFit을 열고 오늘의 챌린지 목표를 향해 운동해보세요.';
+  String get challengeReminderNotificationBody => 'MotionFit을 열고 오늘의 챌린지 목표를 향해 운동해보세요.';
 
   @override
   String get challengeSelectedWeekdays => '선택한 운동 요일';
@@ -481,8 +479,7 @@ class PlankLocalizationsKo extends PlankLocalizations {
   String get guideLandscapeTitle => '휴대폰을 가로로 돌려주세요';
 
   @override
-  String get guideLandscapeBody =>
-      '플랭크는 가로 화면으로 측정해요. 자세를 잡기 전에 휴대폰을 가로로 놓아주세요.';
+  String get guideLandscapeBody => '플랭크는 가로 화면으로 측정해요. 자세를 잡기 전에 휴대폰을 가로로 놓아주세요.';
 
   @override
   String get countdownLandscapePrompt => '휴대폰을 가로 방향으로 유지해 주세요';
@@ -515,8 +512,7 @@ class PlankLocalizationsKo extends PlankLocalizations {
   String get permissionCameraTitle => '카메라 권한이 필요해요';
 
   @override
-  String get permissionCameraBody =>
-      'MotionFit은 플랭크 유지 시간과 자세를 측정하기 위해 카메라를 사용해요. 플랭크 영상 리뷰를 켠 경우에만 영상을 이 기기에 저장해요.';
+  String get permissionCameraBody => 'MotionFit은 플랭크 유지 시간과 자세를 측정하기 위해 카메라를 사용해요. 플랭크 영상 리뷰를 켠 경우에만 영상을 이 기기에 저장해요.';
 
   @override
   String get permissionCameraRequest => '계속';
@@ -525,8 +521,7 @@ class PlankLocalizationsKo extends PlankLocalizations {
   String get permissionCameraDenied => '카메라 권한이 거부되었어요. 기록과 설정은 계속 이용할 수 있어요.';
 
   @override
-  String get permissionCameraPermanentlyDenied =>
-      '운동을 시작하려면 시스템 설정에서 카메라 권한을 허용해 주세요.';
+  String get permissionCameraPermanentlyDenied => '운동을 시작하려면 시스템 설정에서 카메라 권한을 허용해 주세요.';
 
   @override
   String get permissionOpenSettings => '설정 열기';
@@ -541,8 +536,7 @@ class PlankLocalizationsKo extends PlankLocalizations {
   String get permissionNotificationRequest => '알림 허용';
 
   @override
-  String get permissionNotificationDenied =>
-      '알림이 꺼져 있어요. 리마인더를 받으려면 시스템 설정에서 알림을 켜주세요.';
+  String get permissionNotificationDenied => '알림이 꺼져 있어요. 리마인더를 받으려면 시스템 설정에서 알림을 켜주세요.';
 
   @override
   String get countdownGetReady => '준비하세요';
@@ -731,11 +725,11 @@ class PlankLocalizationsKo extends PlankLocalizations {
   String get completeFinish => '마치기';
 
   @override
-  String get postWorkoutReminderTitle => '이 흐름을 내일도 이어가세요';
+  String get postWorkoutReminderTitle => '다음 운동도 잊지 않도록 알려드릴까요?';
 
   @override
   String postWorkoutReminderBody(String time) {
-    return '내일부터 매일 $time에 알려드릴까요?';
+    return '주 3회 목표를 이어갈 수 있도록 $time에 운동을 알려드려요.';
   }
 
   @override
@@ -1246,8 +1240,7 @@ class PlankLocalizationsKo extends PlankLocalizations {
   String get privacyStoredData => '이 기기에 저장되는 데이터';
 
   @override
-  String get privacyStoredDataDescription =>
-      '진행 상황을 확인할 수 있도록 운동 시간, 세트, 유지 시간, 자세 결과를 저장해요.';
+  String get privacyStoredDataDescription => '진행 상황을 확인할 수 있도록 운동 시간, 세트, 유지 시간, 자세 결과를 저장해요.';
 
   @override
   String get privacyDeleteData => '모든 운동 데이터 삭제';
@@ -1572,8 +1565,7 @@ class PlankLocalizationsKo extends PlankLocalizations {
   String get repVideoReviewTitle => '플랭크 영상 리뷰';
 
   @override
-  String get repVideoReviewDescription =>
-      '홀드 구간을 다시 볼 수 있도록 운동 영상을 이 기기에 저장합니다.';
+  String get repVideoReviewDescription => '홀드 구간을 다시 볼 수 있도록 운동 영상을 이 기기에 저장합니다.';
 
   @override
   String get repVideoLocalOnly => '기기에만 저장 · 업로드하지 않음';
@@ -1675,8 +1667,7 @@ class PlankLocalizationsKo extends PlankLocalizations {
   String get deleteWorkoutVideoTitle => '이 운동 영상을 삭제할까요?';
 
   @override
-  String get deleteWorkoutVideoBody =>
-      '기기에 저장된 영상만 삭제됩니다. 홀드 구간 분석과 운동 기록은 유지됩니다.';
+  String get deleteWorkoutVideoBody => '기기에 저장된 영상만 삭제됩니다. 홀드 구간 분석과 운동 기록은 유지됩니다.';
 
   @override
   String get workoutVideoDeleted => '운동 영상을 삭제했습니다';

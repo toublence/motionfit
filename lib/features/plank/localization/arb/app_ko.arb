@@ -354,8 +354,8 @@
   "completeSaveFailed": "운동 기록을 저장하지 못했어요. 나가기 전에 다시 시도해 주세요.",
   "completeNoFormData": "자세를 요약하기에 보이는 동작이 충분하지 않았어요.",
   "completeFinish": "마치기",
-  "postWorkoutReminderTitle": "이 흐름을 내일도 이어가세요",
-  "postWorkoutReminderBody": "내일부터 매일 {time}에 알려드릴까요?",
+  "postWorkoutReminderTitle": "다음 운동도 잊지 않도록 알려드릴까요?",
+  "postWorkoutReminderBody": "주 3회 목표를 이어갈 수 있도록 {time}에 운동을 알려드려요.",
   "@postWorkoutReminderBody": {
     "placeholders": {
       "time": {

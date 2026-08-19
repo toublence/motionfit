@@ -849,6 +849,57 @@ class AppLocalizationsAr extends AppLocalizations {
   String get recordsCalendarTitle => 'تقويم التمارين';
 
   @override
+  String get recordsWorkoutRecords => 'سجل التمارين';
+
+  @override
+  String get recordsNoWorkoutOnDay => 'لا يوجد تمرين مسجل في هذا اليوم';
+
+  @override
+  String get exercisePushup => 'تمرين الضغط';
+
+  @override
+  String get exercisePlank => 'تمرين البلانك';
+
+  @override
+  String get recordsConsistency => 'الاستمرارية';
+
+  @override
+  String recordsWeeklyStreak(int count) {
+    return '🔥 حققت الهدف لمدة $count أسابيع متتالية';
+  }
+
+  @override
+  String get recordsStreakFirstWeek => 'ابدأ سجل أسبوعك الأول';
+
+  @override
+  String get recordsWeeklyGoalComplete => '🔥 اكتمل هدف هذا الأسبوع';
+
+  @override
+  String recordsStreakRemaining(int count) {
+    return 'تبقى $count تمارين لمواصلة السجل';
+  }
+
+  @override
+  String recordsStreakStartRemaining(int count) {
+    return 'أكمل $count تمارين لبدء السجل المتتالي';
+  }
+
+  @override
+  String recordsStreakContinued(int count) {
+    return 'واصلت سجلك لمدة $count أسابيع';
+  }
+
+  @override
+  String recordsRecentWeeksSummary(int count) {
+    return 'آخر 16 أسبوعًا · $count أيام تمرين';
+  }
+
+  @override
+  String recordsRangeSummary(String from, String to, int count) {
+    return '$from – $to · $count أيام تمرين';
+  }
+
+  @override
   String get recordsFormTrend => 'تطور الأداء';
 
   @override

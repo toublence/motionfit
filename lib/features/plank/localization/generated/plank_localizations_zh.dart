@@ -267,8 +267,7 @@ class PlankLocalizationsZh extends PlankLocalizations {
   String get challengeReminderNotificationTitle => '你的平板支撑练习挑战正在等待着';
 
   @override
-  String get challengeReminderNotificationBody =>
-      '打开 MotionFit 并朝着今天的挑战目标取得进展。';
+  String get challengeReminderNotificationBody => '打开 MotionFit 并朝着今天的挑战目标取得进展。';
 
   @override
   String get challengeSelectedWeekdays => '选定的锻炼日';
@@ -493,8 +492,7 @@ class PlankLocalizationsZh extends PlankLocalizations {
   String get permissionCameraTitle => '需要相机访问权限';
 
   @override
-  String get permissionCameraBody =>
-      'MotionFit 使用摄像头来计算平板支撑运动的秒数。当您打开“保留视频查看”时，视频仅保存在此设备上。';
+  String get permissionCameraBody => 'MotionFit 使用摄像头来计算平板支撑运动的秒数。当您打开“保留视频查看”时，视频仅保存在此设备上。';
 
   @override
   String get permissionCameraRequest => '继续';
@@ -1217,8 +1215,7 @@ class PlankLocalizationsZh extends PlankLocalizations {
   String get privacyStoredData => '该设备上存储的数据';
 
   @override
-  String get privacyStoredDataDescription =>
-      'MotionFit 存储锻炼时间、组数、保持秒数和表格结果，以便您可以查看您的进度。';
+  String get privacyStoredDataDescription => 'MotionFit 存储锻炼时间、组数、保持秒数和表格结果，以便您可以查看您的进度。';
 
   @override
   String get privacyDeleteData => '删除所有锻炼数据';
@@ -1653,7 +1650,7 @@ class PlankLocalizationsZh extends PlankLocalizations {
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
 class PlankLocalizationsZhHant extends PlankLocalizationsZh {
-  PlankLocalizationsZhHant() : super('zh_Hant');
+  PlankLocalizationsZhHant(): super('zh_Hant');
 
   @override
   String get appName => 'motionfit - workout coach';
@@ -1914,8 +1911,7 @@ class PlankLocalizationsZhHant extends PlankLocalizationsZh {
   String get challengeReminderNotificationTitle => '你的平板支撐練習挑戰正在等待著';
 
   @override
-  String get challengeReminderNotificationBody =>
-      '打開 MotionFit 並朝著今天的挑戰目標取得進展。';
+  String get challengeReminderNotificationBody => '打開 MotionFit 並朝著今天的挑戰目標取得進展。';
 
   @override
   String get challengeSelectedWeekdays => '選定的鍛鍊日';
@@ -2140,8 +2136,7 @@ class PlankLocalizationsZhHant extends PlankLocalizationsZh {
   String get permissionCameraTitle => '需要相機存取權限';
 
   @override
-  String get permissionCameraBody =>
-      'MotionFit 使用攝影機計算平板支撐運動的秒數。當您開啟「保留影片檢視」時，影片僅儲存在此裝置上。';
+  String get permissionCameraBody => 'MotionFit 使用攝影機計算平板支撐運動的秒數。當您開啟「保留影片檢視」時，影片僅儲存在此裝置上。';
 
   @override
   String get permissionCameraRequest => '繼續';
@@ -2864,8 +2859,7 @@ class PlankLocalizationsZhHant extends PlankLocalizationsZh {
   String get privacyStoredData => '該設備上儲存的數據';
 
   @override
-  String get privacyStoredDataDescription =>
-      'MotionFit 儲存鍛鍊時間、組數、保持秒數和表格結果，以便您可以查看您的進度。';
+  String get privacyStoredDataDescription => 'MotionFit 儲存鍛鍊時間、組數、保持秒數和表格結果，以便您可以查看您的進度。';
 
   @override
   String get privacyDeleteData => '刪除所有鍛鍊數據';

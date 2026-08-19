@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:motionfit_squat/features/pushup/localization/generated/pushup_localizations.dart';
-import 'package:motionfit_squat/app/theme/motionfit_tokens.dart';
 import 'package:motionfit_squat/core/ads/post_workout_interstitial.dart';
 import 'package:motionfit_squat/core/diagnostics/crash_reporting_service.dart';
 import 'package:motionfit_squat/core/notifications/notification_service.dart';
@@ -17,7 +16,6 @@ import 'package:motionfit_squat/core/widgets/responsive_page.dart';
 import 'package:motionfit_squat/features/pushup/records/application/records_providers.dart';
 import 'package:motionfit_squat/features/pushup/challenges/application/challenge_controller.dart';
 import 'package:motionfit_squat/features/pushup/records/domain/workout_session_details.dart';
-import 'package:motionfit_squat/features/pushup/records/presentation/widgets/record_formatters.dart';
 import 'package:motionfit_squat/features/settings/application/preferences_controller.dart';
 import 'package:motionfit_squat/features/settings/application/reminder_controller.dart';
 import 'package:motionfit_squat/features/pushup/application/workout_session_controller.dart';
@@ -82,9 +80,6 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
     final isChallengeWorkout =
         launchContext?.launchSource == WorkoutLaunchSource.challengeTab &&
         launchContext?.challenge != null;
-    final isCumulativeChallenge =
-        isChallengeWorkout &&
-        launchContext?.challenge?.challengeType == 'cumulative';
     if (session == null) {
       if (!_finishing) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -154,57 +149,18 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
                                   ? l10n.detailInterrupted
                                   : l10n.completeTitle,
                               totalReps: session.totalReps,
-                              setsLabel: isCumulativeChallenge
-                                  ? null
-                                  : l10n.unitSets(session.completedSetCount),
-                              activeTimeLabel: LocalizedFormatters.timer(
-                                Duration(
-                                  seconds: session.activeDurationSeconds,
-                                ),
-                                l10n.localeName,
+                              exerciseLabel: l10n.navPushup,
+                              weeklyWorkoutDays:
+                                  retentionMetrics?.currentWeekWorkoutDays ?? 1,
+                              firstWorkout:
+                                  retentionMetrics?.completedWorkoutCount == 1,
+                              weeklyRemainingLabel: l10n.challengeRepsRemaining(
+                                (3 -
+                                        (retentionMetrics
+                                                ?.currentWeekWorkoutDays ??
+                                            1))
+                                    .clamp(0, 3),
                               ),
-                              formScore: resolvedAverageScore,
-                            ),
-                            const SizedBox(height: 24),
-                            const MotionRule(),
-                            const SizedBox(height: 14),
-                            _MetricsDashboard(
-                              compact: compact,
-                              metrics: [
-                                (
-                                  l10n.completeRestTime,
-                                  LocalizedFormatters.timer(
-                                    Duration(
-                                      seconds: session.restDurationSeconds,
-                                    ),
-                                    l10n.localeName,
-                                  ),
-                                ),
-                                (
-                                  l10n.completeTotalTime,
-                                  LocalizedFormatters.timer(
-                                    Duration(
-                                      seconds: session.totalDurationSeconds,
-                                    ),
-                                    l10n.localeName,
-                                  ),
-                                ),
-                                if (session.averageRepDurationMilliseconds > 0)
-                                  (
-                                    l10n.completeAverageRepTime,
-                                    formatAverageRepDuration(
-                                      l10n,
-                                      session.averageRepDurationMilliseconds,
-                                    ),
-                                  ),
-                                if (retentionMetrics != null)
-                                  (
-                                    l10n.streakLabel,
-                                    l10n.streakDays(
-                                      retentionMetrics.currentStreak,
-                                    ),
-                                  ),
-                              ],
                             ),
                             if (resolvedAverageScore != null ||
                                 (loadedDetails?.repAnalyses.isNotEmpty ??
@@ -216,6 +172,34 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
                                     loadedDetails?.repAnalyses ?? const [],
                               ),
                             ],
+                            const SizedBox(height: 24),
+                            const MotionRule(),
+                            const SizedBox(height: 14),
+                            _MetricsDashboard(
+                              compact: compact,
+                              metrics: [
+                                (
+                                  l10n.completeCompletedSets,
+                                  l10n.unitSets(session.completedSetCount),
+                                ),
+                                (
+                                  l10n.completeActiveTime,
+                                  LocalizedFormatters.timer(
+                                    Duration(
+                                      seconds: session.activeDurationSeconds,
+                                    ),
+                                    l10n.localeName,
+                                  ),
+                                ),
+                                if (resolvedAverageScore != null)
+                                  (
+                                    l10n.formScore,
+                                    l10n.formScoreValue(
+                                      resolvedAverageScore.round(),
+                                    ),
+                                  ),
+                              ],
+                            ),
                             const SizedBox(height: 28),
                             WorkoutResultRepTimeline(
                               sessionId: session.id,
@@ -256,10 +240,10 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
                           state.saveState == WorkoutSaveState.failed
                               ? Icons.error_outline
                               : Icons.save_outlined,
-                          size: 20,
+                          size: 17,
                           color: state.saveState == WorkoutSaveState.failed
                               ? Theme.of(context).colorScheme.error
-                              : context.tokens.success,
+                              : Theme.of(context).colorScheme.onSurfaceVariant,
                         ),
                         const SizedBox(width: 8),
                         Expanded(
@@ -269,7 +253,15 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
                                 : l10n.completeSaved,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: Theme.of(context).textTheme.bodySmall,
+                            style: state.saveState == WorkoutSaveState.failed
+                                ? Theme.of(context).textTheme.bodySmall
+                                : Theme.of(
+                                    context,
+                                  ).textTheme.labelSmall?.copyWith(
+                                    color: Theme.of(
+                                      context,
+                                    ).colorScheme.onSurfaceVariant,
+                                  ),
                           ),
                         ),
                         if (state.saveState == WorkoutSaveState.failed)

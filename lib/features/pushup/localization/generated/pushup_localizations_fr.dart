@@ -27,8 +27,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get challengeTitle => 'Mon défi de pompes';
 
   @override
-  String get challengeSubtitle =>
-      'Choisissez un défi adapté à votre objectif et entraînez-vous régulièrement.';
+  String get challengeSubtitle => 'Choisissez un défi adapté à votre objectif et entraînez-vous régulièrement.';
 
   @override
   String get challengeChooseTitle => 'Choisir un défi';
@@ -37,16 +36,13 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get challengeSevenDayTitle => 'Défi débutant de 7 jours';
 
   @override
-  String get challengeSevenDayDescription =>
-      'Un programme progressif pour débuter';
+  String get challengeSevenDayDescription => 'Un programme progressif pour débuter';
 
   @override
-  String get challengeSevenDaySummary =>
-      'Suivez pendant 7 jours un objectif adapté qui augmente chaque jour.';
+  String get challengeSevenDaySummary => 'Suivez pendant 7 jours un objectif adapté qui augmente chaque jour.';
 
   @override
-  String get challengeSevenDayEveryDay =>
-      'Continuez chaque jour pendant 7 jours sans récupération';
+  String get challengeSevenDayEveryDay => 'Continuez chaque jour pendant 7 jours sans récupération';
 
   @override
   String challengeDurationDays(int days) {
@@ -69,8 +65,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get challengeSevenDaySettings => 'Définir l’objectif sur 7 jours';
 
   @override
-  String get challengeSevenDaySettingsDescription =>
-      'Choisissez le jour 1. L’objectif augmente de 5 répétitions par jour.';
+  String get challengeSevenDaySettingsDescription => 'Choisissez le jour 1. L’objectif augmente de 5 répétitions par jour.';
 
   @override
   String get challengeFirstDayGoal => 'Répétitions cibles du jour 1';
@@ -84,12 +79,10 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get challengeWeeklyTitle => 'Défi 3 fois par semaine';
 
   @override
-  String get challengeWeeklyDescription =>
-      'Un défi d’habitude sans entraînement quotidien';
+  String get challengeWeeklyDescription => 'Un défi d’habitude sans entraînement quotidien';
 
   @override
-  String get challengeWeeklySummary =>
-      'Entraînez-vous 3 jours choisis par semaine pendant 4 semaines.';
+  String get challengeWeeklySummary => 'Entraînez-vous 3 jours choisis par semaine pendant 4 semaines.';
 
   @override
   String challengeDurationWeeks(int weeks) {
@@ -103,8 +96,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get challengeChooseWeekdays => 'Choisir 3 jours d’entraînement';
 
   @override
-  String get challengeWorkoutDaysCount =>
-      'Progression selon les jours d’entraînement';
+  String get challengeWorkoutDaysCount => 'Progression selon les jours d’entraînement';
 
   @override
   String get challengeWeeklyStart => 'Commencer le défi hebdomadaire';
@@ -113,12 +105,10 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get challengeCumulativeTitle => 'Défi de répétitions cumulées';
 
   @override
-  String get challengeCumulativeDescription =>
-      'Atteignez un total de pompes selon votre emploi du temps';
+  String get challengeCumulativeDescription => 'Atteignez un total de pompes selon votre emploi du temps';
 
   @override
-  String get challengeCumulativeSummary =>
-      'Choisissez durée et objectif total ; le repos conserve la progression.';
+  String get challengeCumulativeSummary => 'Choisissez durée et objectif total ; le repos conserve la progression.';
 
   @override
   String get challengePreset200 => '200 pompes en 7 jours';
@@ -130,8 +120,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get challengeCustomGoal => 'Choisir la durée et l’objectif';
 
   @override
-  String get challengeRestWithoutReset =>
-      'Les jours de repos ne réinitialisent rien';
+  String get challengeRestWithoutReset => 'Les jours de repos ne réinitialisent rien';
 
   @override
   String get challengeCumulativeStart => 'Commencer le défi cumulé';
@@ -151,8 +140,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   }
 
   @override
-  String get challengeRecommendationDefault =>
-      'Pour votre premier défi, nous recommandons un départ en douceur sur 7 jours.';
+  String get challengeRecommendationDefault => 'Pour votre premier défi, nous recommandons un départ en douceur sur 7 jours.';
 
   @override
   String get challengeActive => 'Défi actif';
@@ -177,8 +165,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get challengeRestToday => 'Prenez le temps de récupérer aujourd’hui.';
 
   @override
-  String get challengeTodayCompleted =>
-      'Objectif du jour atteint · Continuez demain';
+  String get challengeTodayCompleted => 'Objectif du jour atteint · Continuez demain';
 
   @override
   String challengeRepsRemaining(int reps) {
@@ -274,23 +261,19 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get challengeNotifications => 'Rappels du défi';
 
   @override
-  String get challengeNotificationsDescription =>
-      'Enregistrer le réglage de rappel de ce défi.';
+  String get challengeNotificationsDescription => 'Enregistrer le réglage de rappel de ce défi.';
 
   @override
-  String get challengeReminderNotificationTitle =>
-      'Votre défi de pompes vous attend';
+  String get challengeReminderNotificationTitle => 'Votre défi de pompes vous attend';
 
   @override
-  String get challengeReminderNotificationBody =>
-      'Ouvrez MotionFit et progressez vers l’objectif du jour.';
+  String get challengeReminderNotificationBody => 'Ouvrez MotionFit et progressez vers l’objectif du jour.';
 
   @override
   String get challengeSelectedWeekdays => 'Jours d’entraînement choisis';
 
   @override
-  String get challengeNoProgressYet =>
-      'Aucun entraînement du défi pour le moment.';
+  String get challengeNoProgressYet => 'Aucun entraînement du défi pour le moment.';
 
   @override
   String get challengeCancel => 'Terminer le défi';
@@ -299,8 +282,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get challengeCancelTitle => 'Terminer ce défi ?';
 
   @override
-  String get challengeCancelDescription =>
-      'Vos entraînements restent enregistrés. Le défi passera dans l’historique.';
+  String get challengeCancelDescription => 'Vos entraînements restent enregistrés. Le défi passera dans l’historique.';
 
   @override
   String get challengeStatusActive => 'En cours';
@@ -315,8 +297,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get challengeStatusCancelled => 'Annulé';
 
   @override
-  String get challengeProgressUpdated =>
-      'La progression de votre défi a été mise à jour.';
+  String get challengeProgressUpdated => 'La progression de votre défi a été mise à jour.';
 
   @override
   String get challengeCheck => 'Voir le défi';
@@ -446,8 +427,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get homeTodayTitle => 'Bilan du jour';
 
   @override
-  String get homeTodayNoWorkout =>
-      'Pas encore de pompes aujourd’hui. Une petite série est un excellent début.';
+  String get homeTodayNoWorkout => 'Pas encore de pompes aujourd’hui. Une petite série est un excellent début.';
 
   @override
   String homeTodaySummary(int reps, int sets) {
@@ -490,8 +470,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get homeStartWorkout => 'Commencer l’entraînement';
 
   @override
-  String get homeLastSettingsRestored =>
-      'Tes derniers réglages d’entraînement sont prêts.';
+  String get homeLastSettingsRestored => 'Tes derniers réglages d’entraînement sont prêts.';
 
   @override
   String get validationNumberRequired => 'Saisis un nombre.';
@@ -505,35 +484,28 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get guideTitle => 'Installe ta caméra';
 
   @override
-  String get guideSubtitle =>
-      'Place le téléphone de côté pour garder mains, épaules, hanches et pieds visibles.';
+  String get guideSubtitle => 'Place le téléphone de côté pour garder mains, épaules, hanches et pieds visibles.';
 
   @override
-  String get guideLandscape =>
-      'Tourne le téléphone en mode paysage et place-le à côté de toi.';
+  String get guideLandscape => 'Tourne le téléphone en mode paysage et place-le à côté de toi.';
 
   @override
-  String get guideWholeBody =>
-      'Garde un bras complet et la ligne du corps visibles.';
+  String get guideWholeBody => 'Garde un bras complet et la ligne du corps visibles.';
 
   @override
   String get guideStableCamera => 'Place ton téléphone sur un support stable.';
 
   @override
-  String get guideOnePerson =>
-      'Assure-toi qu’une seule personne se trouve dans le cadre.';
+  String get guideOnePerson => 'Assure-toi qu’une seule personne se trouve dans le cadre.';
 
   @override
-  String get guideCameraAngle =>
-      'Si possible, filme-toi de côté ou légèrement de biais.';
+  String get guideCameraAngle => 'Si possible, filme-toi de côté ou légèrement de biais.';
 
   @override
-  String get guideLighting =>
-      'Évite les pièces sombres et les forts contre-jours.';
+  String get guideLighting => 'Évite les pièces sombres et les forts contre-jours.';
 
   @override
-  String get guidePrivacy =>
-      'La vidéo reste sur cet appareil et n’est enregistrée que si la revue par répétition est activée.';
+  String get guidePrivacy => 'La vidéo reste sur cet appareil et n’est enregistrée que si la revue par répétition est activée.';
 
   @override
   String get guideContinue => 'Je suis en position';
@@ -542,37 +514,31 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get permissionCameraTitle => 'Accès à la caméra requis';
 
   @override
-  String get permissionCameraBody =>
-      'MotionFit utilise la caméra pour compter les pompes. La vidéo n’est enregistrée sur cet appareil que si la revue est activée.';
+  String get permissionCameraBody => 'MotionFit utilise la caméra pour compter les pompes. La vidéo n’est enregistrée sur cet appareil que si la revue est activée.';
 
   @override
   String get permissionCameraRequest => 'Continuer';
 
   @override
-  String get permissionCameraDenied =>
-      'L’accès à la caméra a été refusé. Tu peux toujours consulter l’historique et les réglages.';
+  String get permissionCameraDenied => 'L’accès à la caméra a été refusé. Tu peux toujours consulter l’historique et les réglages.';
 
   @override
-  String get permissionCameraPermanentlyDenied =>
-      'Autorise l’accès à la caméra dans les réglages système pour commencer un entraînement.';
+  String get permissionCameraPermanentlyDenied => 'Autorise l’accès à la caméra dans les réglages système pour commencer un entraînement.';
 
   @override
   String get permissionOpenSettings => 'Ouvrir les réglages';
 
   @override
-  String get permissionNotificationTitle =>
-      'Autoriser les rappels d’entraînement ?';
+  String get permissionNotificationTitle => 'Autoriser les rappels d’entraînement ?';
 
   @override
-  String get permissionNotificationBody =>
-      'Les notifications servent uniquement aux rappels que tu programmes.';
+  String get permissionNotificationBody => 'Les notifications servent uniquement aux rappels que tu programmes.';
 
   @override
   String get permissionNotificationRequest => 'Autoriser les notifications';
 
   @override
-  String get permissionNotificationDenied =>
-      'Les notifications sont désactivées. Active-les dans les réglages système pour recevoir des rappels.';
+  String get permissionNotificationDenied => 'Les notifications sont désactivées. Active-les dans les réglages système pour recevoir des rappels.';
 
   @override
   String get countdownGetReady => 'Prépare-toi';
@@ -586,8 +552,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get calibrationTitle => 'Repérage de ta position haute de pompe';
 
   @override
-  String get calibrationBody =>
-      'Tiens la position haute de pompe, bras tendus.';
+  String get calibrationBody => 'Tiens la position haute de pompe, bras tendus.';
 
   @override
   String get calibrationStayStill => 'Reste immobile un instant';
@@ -596,8 +561,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get calibrationComplete => 'Tout est prêt';
 
   @override
-  String get calibrationFailed =>
-      'Ta position haute de pompe n’a pas pu être détectée clairement.';
+  String get calibrationFailed => 'Ta position haute de pompe n’a pas pu être détectée clairement.';
 
   @override
   String get calibrationRetry => 'Recalibrer';
@@ -636,19 +600,16 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get workoutEndDialogTitle => 'Mettre l’entraînement en pause ?';
 
   @override
-  String get workoutEndDialogBody =>
-      'Ta progression sera enregistrée pour que tu puisses continuer depuis l’accueil.';
+  String get workoutEndDialogBody => 'Ta progression sera enregistrée pour que tu puisses continuer depuis l’accueil.';
 
   @override
   String get workoutEndDialogConfirm => 'Enregistrer et quitter';
 
   @override
-  String get workoutPauseReasonBackground =>
-      'L’entraînement a été mis en pause pendant que l’application était en arrière-plan.';
+  String get workoutPauseReasonBackground => 'L’entraînement a été mis en pause pendant que l’application était en arrière-plan.';
 
   @override
-  String get workoutPauseReasonInterruption =>
-      'L’entraînement a été mis en pause après une interruption du système.';
+  String get workoutPauseReasonInterruption => 'L’entraînement a été mis en pause après une interruption du système.';
 
   @override
   String get workoutStateReady => 'Prêt';
@@ -716,8 +677,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get completeSubtitle => 'Beau travail. Voici un aperçu de ta séance.';
 
   @override
-  String get workoutInterruptedSubtitle =>
-      'Consulte les données enregistrées avant l’arrêt anticipé.';
+  String get workoutInterruptedSubtitle => 'Consulte les données enregistrées avant l’arrêt anticipé.';
 
   @override
   String get completeTotalReps => 'Total de pompes';
@@ -758,12 +718,10 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get completeSaved => 'Entraînement enregistré sur cet appareil';
 
   @override
-  String get completeSaveFailed =>
-      'L’entraînement n’a pas pu être enregistré. Réessaie avant de quitter.';
+  String get completeSaveFailed => 'L’entraînement n’a pas pu être enregistré. Réessaie avant de quitter.';
 
   @override
-  String get completeNoFormData =>
-      'Les mouvements visibles n’étaient pas suffisants pour établir un bilan technique.';
+  String get completeNoFormData => 'Les mouvements visibles n’étaient pas suffisants pour établir un bilan technique.';
 
   @override
   String get completeFinish => 'Terminer';
@@ -823,8 +781,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get recordsSameAsLastWeek => 'Même volume que la semaine dernière';
 
   @override
-  String get recordsTrendEmpty =>
-      'Faites plus d’entraînements pour voir votre tendance de posture.';
+  String get recordsTrendEmpty => 'Faites plus d’entraînements pour voir votre tendance de posture.';
 
   @override
   String get recordsFirstFormScore => 'Premier score de posture';
@@ -874,8 +831,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get recordsCalendarWorkoutDay => 'Jour d’entraînement';
 
   @override
-  String get recordsCalendarNoWorkoutSelected =>
-      'Sélectionne un jour d’entraînement pour voir ses séances.';
+  String get recordsCalendarNoWorkoutSelected => 'Sélectionne un jour d’entraînement pour voir ses séances.';
 
   @override
   String get recordsDayTotal => 'Total du jour';
@@ -907,8 +863,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get recordsEmptyTitle => 'Aucun entraînement pour le moment';
 
   @override
-  String get recordsEmptyBody =>
-      'Termine ton premier entraînement de pompes pour le retrouver ici.';
+  String get recordsEmptyBody => 'Termine ton premier entraînement de pompes pour le retrouver ici.';
 
   @override
   String get recordsStartWorkout => 'Commencer un entraînement';
@@ -917,8 +872,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get recordsLoading => 'Chargement de tes entraînements…';
 
   @override
-  String get recordsLoadError =>
-      'Ton historique d’entraînement n’a pas pu être chargé.';
+  String get recordsLoadError => 'Ton historique d’entraînement n’a pas pu être chargé.';
 
   @override
   String get statsPeriod => 'Période';
@@ -1046,8 +1000,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get settingsRateAppSubtitle => 'Notez MotionFit';
 
   @override
-  String get settingsRateAppError =>
-      'Impossible d’ouvrir la boutique. Réessayez.';
+  String get settingsRateAppError => 'Impossible d’ouvrir la boutique. Réessayez.';
 
   @override
   String get settingsSectionGeneral => 'Général';
@@ -1176,15 +1129,13 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get voiceTestPhrase => 'Parfait. Ton coach vocal est prêt.';
 
   @override
-  String get voiceUnavailable =>
-      'Aucune voix hors ligne compatible n’est installée pour cette langue.';
+  String get voiceUnavailable => 'Aucune voix hors ligne compatible n’est installée pour cette langue.';
 
   @override
   String get reminderTitle => 'Rappels d’entraînement';
 
   @override
-  String get reminderSubtitle =>
-      'Choisis une heure pour chaque jour où tu souhaites t’entraîner.';
+  String get reminderSubtitle => 'Choisis une heure pour chaque jour où tu souhaites t’entraîner.';
 
   @override
   String get reminderEnabled => 'Rappel activé';
@@ -1212,8 +1163,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get reminderNoneScheduled => 'Aucun rappel programmé';
 
   @override
-  String get reminderPermissionNeeded =>
-      'Autorise les notifications pour activer les rappels.';
+  String get reminderPermissionNeeded => 'Autorise les notifications pour activer les rappels.';
 
   @override
   String get reminderSaved => 'Planning des rappels enregistré';
@@ -1273,8 +1223,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get cameraPoseOverlay => 'Superposer le guide de posture';
 
   @override
-  String get cameraKeepScreenAwake =>
-      'Garder l’écran allumé pendant l’entraînement';
+  String get cameraKeepScreenAwake => 'Garder l’écran allumé pendant l’entraînement';
 
   @override
   String get settingsHaptics => 'Retour haptique';
@@ -1283,34 +1232,28 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get privacyTitle => 'Traitement de tes données';
 
   @override
-  String get privacyLocalProcessing =>
-      'L’analyse de la posture s’effectue sur cet appareil.';
+  String get privacyLocalProcessing => 'L’analyse de la posture s’effectue sur cet appareil.';
 
   @override
-  String get privacyNoVideoStorage =>
-      'La vidéo de la séance n’est enregistrée sur cet appareil que si la revue est activée.';
+  String get privacyNoVideoStorage => 'La vidéo de la séance n’est enregistrée sur cet appareil que si la revue est activée.';
 
   @override
-  String get privacyNoUpload =>
-      'Les images de la caméra ne sont envoyées à aucun serveur.';
+  String get privacyNoUpload => 'Les images de la caméra ne sont envoyées à aucun serveur.';
 
   @override
   String get privacyStoredData => 'Données enregistrées sur cet appareil';
 
   @override
-  String get privacyStoredDataDescription =>
-      'MotionFit enregistre les heures d’entraînement, les séries, les répétitions et les résultats techniques pour te permettre de suivre tes progrès.';
+  String get privacyStoredDataDescription => 'MotionFit enregistre les heures d’entraînement, les séries, les répétitions et les résultats techniques pour te permettre de suivre tes progrès.';
 
   @override
   String get privacyDeleteData => 'Supprimer toutes les données d’entraînement';
 
   @override
-  String get privacyDeleteConfirmTitle =>
-      'Supprimer toutes les données d’entraînement ?';
+  String get privacyDeleteConfirmTitle => 'Supprimer toutes les données d’entraînement ?';
 
   @override
-  String get privacyDeleteConfirmBody =>
-      'Cette action supprime définitivement ton historique d’entraînement de cet appareil. Elle est irréversible.';
+  String get privacyDeleteConfirmBody => 'Cette action supprime définitivement ton historique d’entraînement de cet appareil. Elle est irréversible.';
 
   @override
   String get privacyDeleteConfirmAction => 'Supprimer toutes les données';
@@ -1319,8 +1262,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get privacyDeleteSuccess => 'Données d’entraînement supprimées';
 
   @override
-  String get privacyDeleteFailure =>
-      'Les données d’entraînement n’ont pas pu être supprimées.';
+  String get privacyDeleteFailure => 'Les données d’entraînement n’ont pas pu être supprimées.';
 
   @override
   String get appInfoTitle => 'Informations sur l’application';
@@ -1337,58 +1279,46 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get appInfoPrivacyPolicy => 'Politique de confidentialité';
 
   @override
-  String get appInfoDescription =>
-      'MotionFit compte les pompes et fournit des conseils techniques privés, directement sur ton appareil.';
+  String get appInfoDescription => 'MotionFit compte les pompes et fournit des conseils techniques privés, directement sur ton appareil.';
 
   @override
   String get errorGenericTitle => 'Un problème est survenu';
 
   @override
-  String get errorGenericBody =>
-      'Réessaie. Tes données d’entraînement existantes sont en sécurité.';
+  String get errorGenericBody => 'Réessaie. Tes données d’entraînement existantes sont en sécurité.';
 
   @override
   String get errorCameraInit => 'La caméra n’a pas pu démarrer.';
 
   @override
-  String get errorCameraInUse =>
-      'La caméra est peut-être utilisée par une autre application.';
+  String get errorCameraInUse => 'La caméra est peut-être utilisée par une autre application.';
 
   @override
-  String get errorPoseModelLoad =>
-      'Le modèle de détection de posture n’a pas pu être chargé.';
+  String get errorPoseModelLoad => 'Le modèle de détection de posture n’a pas pu être chargé.';
 
   @override
-  String get errorNoPerson =>
-      'Aucune personne détectée. Place-toi dans le cadre.';
+  String get errorNoPerson => 'Aucune personne détectée. Place-toi dans le cadre.';
 
   @override
-  String get errorWholeBody =>
-      'Recherche d’un alignement épaule, hanche et genou.';
+  String get errorWholeBody => 'Recherche d’un alignement épaule, hanche et genou.';
 
   @override
-  String get errorMultiplePeople =>
-      'Plusieurs personnes sont dans le cadre. Une seule personne doit rester visible.';
+  String get errorMultiplePeople => 'Plusieurs personnes sont dans le cadre. Une seule personne doit rester visible.';
 
   @override
-  String get errorTrackingLost =>
-      'L’exercice continue pendant que la détection réessaie.';
+  String get errorTrackingLost => 'L’exercice continue pendant que la détection réessaie.';
 
   @override
-  String get errorDatabaseSave =>
-      'Ton entraînement n’a pas pu être enregistré.';
+  String get errorDatabaseSave => 'Ton entraînement n’a pas pu être enregistré.';
 
   @override
-  String get errorTtsVoiceMissing =>
-      'Aucune voix de synthèse vocale n’est installée sur cet appareil.';
+  String get errorTtsVoiceMissing => 'Aucune voix de synthèse vocale n’est installée sur cet appareil.';
 
   @override
-  String get errorTtsLocaleUnsupported =>
-      'Le coaching vocal n’est pas pris en charge pour la langue sélectionnée sur cet appareil.';
+  String get errorTtsLocaleUnsupported => 'Le coaching vocal n’est pas pris en charge pour la langue sélectionnée sur cet appareil.';
 
   @override
-  String get emptyNoFormIssues =>
-      'Aucun problème technique récurrent n’a été détecté.';
+  String get emptyNoFormIssues => 'Aucun problème technique récurrent n’a été détecté.';
 
   @override
   String get emptyNotEnoughData => 'Pas encore assez de données';
@@ -1441,8 +1371,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get formIssueStandingCompletion => 'Extension des bras';
 
   @override
-  String get formIssueNotObservable =>
-      'Impossible à évaluer sous cet angle de caméra';
+  String get formIssueNotObservable => 'Impossible à évaluer sous cet angle de caméra';
 
   @override
   String get formStrengthDepth => 'Profondeur régulière';
@@ -1454,31 +1383,25 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get formStrengthBalance => 'Équilibre stable';
 
   @override
-  String get coachTrackingLost1 =>
-      'L’exercice continue pendant que je poursuis la détection.';
+  String get coachTrackingLost1 => 'L’exercice continue pendant que je poursuis la détection.';
 
   @override
-  String get coachTrackingLost2 =>
-      'Une brève occultation ne met pas l’exercice en pause.';
+  String get coachTrackingLost2 => 'Une brève occultation ne met pas l’exercice en pause.';
 
   @override
-  String get coachWholeBody1 =>
-      'Garde poignet, coude, épaule, hanche et cheville dans le cadre.';
+  String get coachWholeBody1 => 'Garde poignet, coude, épaule, hanche et cheville dans le cadre.';
 
   @override
-  String get coachWholeBody2 =>
-      'Éloigne-toi pour montrer toute la position de pompe.';
+  String get coachWholeBody2 => 'Éloigne-toi pour montrer toute la position de pompe.';
 
   @override
-  String get coachMultiplePeople1 =>
-      'Garde une seule personne dans le cadre pour que je puisse te suivre.';
+  String get coachMultiplePeople1 => 'Garde une seule personne dans le cadre pour que je puisse te suivre.';
 
   @override
   String get coachReady1 => 'Tu es en position. C’est parti.';
 
   @override
-  String get coachReady2 =>
-      'Bonne position. Prépare-toi pour ton premier pompe.';
+  String get coachReady2 => 'Bonne position. Prépare-toi pour ton premier pompe.';
 
   @override
   String coachStartSet(int set) {
@@ -1501,12 +1424,10 @@ class PushupLocalizationsFr extends PushupLocalizations {
   }
 
   @override
-  String get coachDepth1 =>
-      'À la prochaine répétition, essaie de descendre un peu plus bas.';
+  String get coachDepth1 => 'À la prochaine répétition, essaie de descendre un peu plus bas.';
 
   @override
-  String get coachDepth2 =>
-      'Donne un peu plus de profondeur au prochain pompe.';
+  String get coachDepth2 => 'Donne un peu plus de profondeur au prochain pompe.';
 
   @override
   String get coachTorso1 => 'Garde épaules, hanches et chevilles alignées.';
@@ -1521,8 +1442,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get coachHeel2 => 'Évite de laisser les hanches tomber ou monter.';
 
   @override
-  String get coachKnees1 =>
-      'Oriente les coudes vers l’arrière, pas sur les côtés.';
+  String get coachKnees1 => 'Oriente les coudes vers l’arrière, pas sur les côtés.';
 
   @override
   String get coachKnees2 => 'Rapproche un peu les coudes du corps.';
@@ -1531,43 +1451,34 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get coachBalance1 => 'Répartis ton poids également des deux côtés.';
 
   @override
-  String get coachBalance2 =>
-      'Trouve une position stable et équilibrée pour la prochaine répétition.';
+  String get coachBalance2 => 'Trouve une position stable et équilibrée pour la prochaine répétition.';
 
   @override
-  String get coachDescendSlow1 =>
-      'La prochaine fois, essaie de descendre un peu plus lentement.';
+  String get coachDescendSlow1 => 'La prochaine fois, essaie de descendre un peu plus lentement.';
 
   @override
-  String get coachDescendSlow2 =>
-      'Maîtrise la descente à la prochaine répétition.';
+  String get coachDescendSlow2 => 'Maîtrise la descente à la prochaine répétition.';
 
   @override
-  String get coachDescendFaster1 =>
-      'À la prochaine répétition, descends un peu plus rapidement.';
+  String get coachDescendFaster1 => 'À la prochaine répétition, descends un peu plus rapidement.';
 
   @override
-  String get coachDescendFaster2 =>
-      'Lors de la prochaine descente, continue le mouvement sans marquer de pause.';
+  String get coachDescendFaster2 => 'Lors de la prochaine descente, continue le mouvement sans marquer de pause.';
 
   @override
-  String get coachAscendControlled1 =>
-      'Remonte en douceur et garde le contrôle.';
+  String get coachAscendControlled1 => 'Remonte en douceur et garde le contrôle.';
 
   @override
-  String get coachAscendControlled2 =>
-      'Repousse à un rythme régulier et contrôlé.';
+  String get coachAscendControlled2 => 'Repousse à un rythme régulier et contrôlé.';
 
   @override
   String get coachAscendFaster1 => 'Remonte avec un peu plus d’élan.';
 
   @override
-  String get coachAscendFaster2 =>
-      'À la prochaine répétition, repousse un peu plus franchement.';
+  String get coachAscendFaster2 => 'À la prochaine répétition, repousse un peu plus franchement.';
 
   @override
-  String get coachControl1 =>
-      'Réalise la prochaine répétition avec fluidité du début à la fin.';
+  String get coachControl1 => 'Réalise la prochaine répétition avec fluidité du début à la fin.';
 
   @override
   String get coachControl2 => 'Garde le contrôle pendant tout le mouvement.';
@@ -1607,8 +1518,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get coachRestTenSeconds => 'Plus que dix secondes de repos.';
 
   @override
-  String get coachRestComplete =>
-      'Le repos est terminé. Prépare-toi pour la prochaine série.';
+  String get coachRestComplete => 'Le repos est terminé. Prépare-toi pour la prochaine série.';
 
   @override
   String coachWorkoutComplete(int reps) {
@@ -1619,12 +1529,10 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get notificationReminderTitle => 'C’est l’heure des pompes du jour';
 
   @override
-  String get notificationReminderBody =>
-      'Même une courte séance compte. Ouvre MotionFit quand tu es prêt.';
+  String get notificationReminderBody => 'Même une courte séance compte. Ouvre MotionFit quand tu es prêt.';
 
   @override
-  String get notificationReminderBodyVariant2 =>
-      'Quelques pompes bien exécutés suffisent pour faire bouger ta journée.';
+  String get notificationReminderBodyVariant2 => 'Quelques pompes bien exécutés suffisent pour faire bouger ta journée.';
 
   @override
   String notificationStreakReminderBody(int days) {
@@ -1661,8 +1569,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get repVideoReviewTitle => 'Revue vidéo par répétition';
 
   @override
-  String get repVideoReviewDescription =>
-      'Enregistrez la vidéo de cette séance sur l’appareil pour revoir chaque répétition ensuite.';
+  String get repVideoReviewDescription => 'Enregistrez la vidéo de cette séance sur l’appareil pour revoir chaque répétition ensuite.';
 
   @override
   String get repVideoLocalOnly => 'Local uniquement · Jamais téléversé';
@@ -1741,20 +1648,16 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get repNext => 'Répétition suivante';
 
   @override
-  String get repFeedbackGood =>
-      'Cette répétition est restée dans les plages que MotionFit a pu évaluer.';
+  String get repFeedbackGood => 'Cette répétition est restée dans les plages que MotionFit a pu évaluer.';
 
   @override
-  String get repFeedbackDepth =>
-      'Vous n’avez pas atteint votre profondeur habituelle. Descendez un peu plus en gardant le buste stable.';
+  String get repFeedbackDepth => 'Vous n’avez pas atteint votre profondeur habituelle. Descendez un peu plus en gardant le buste stable.';
 
   @override
-  String get repFeedbackTorso =>
-      'La ligne du corps a changé. Gaine le tronc et stabilise les hanches.';
+  String get repFeedbackTorso => 'La ligne du corps a changé. Gaine le tronc et stabilise les hanches.';
 
   @override
-  String get repFeedbackKnees =>
-      'Tes coudes se sont écartés. Oriente-les vers l’arrière près du corps.';
+  String get repFeedbackKnees => 'Tes coudes se sont écartés. Oriente-les vers l’arrière près du corps.';
 
   @override
   String repFeedbackGeneric(String area) {
@@ -1768,8 +1671,7 @@ class PushupLocalizationsFr extends PushupLocalizations {
   String get deleteWorkoutVideoTitle => 'Supprimer cette vidéo ?';
 
   @override
-  String get deleteWorkoutVideoBody =>
-      'Seule la vidéo locale sera supprimée. L’analyse et la séance resteront enregistrées.';
+  String get deleteWorkoutVideoBody => 'Seule la vidéo locale sera supprimée. L’analyse et la séance resteront enregistrées.';
 
   @override
   String get workoutVideoDeleted => 'Vidéo de la séance supprimée';

@@ -54,13 +54,16 @@ class _CameraGuideScreenState extends ConsumerState<CameraGuideScreen> {
     try {
       await ref
           .read(preferencesControllerProvider.notifier)
-          .markPushupCameraGuideSeen();
+          .markCameraSetupSeen();
     } on Object {
       if (mounted) setState(() => _navigating = false);
       rethrow;
     }
     if (!mounted) return;
-    context.pushReplacement('/pushup/prepare/countdown', extra: widget.preparation);
+    context.pushReplacement(
+      '/pushup/prepare/countdown',
+      extra: widget.preparation,
+    );
   }
 
   @override

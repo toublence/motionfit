@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -30,6 +31,9 @@ Future<void> main() async {
   await runZonedGuarded<Future<void>>(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
+      if (Platform.isAndroid || Platform.isIOS) {
+        await Firebase.initializeApp();
+      }
       await crashReporting.initialize();
       _registerGlobalErrorHandlers(crashReporting);
       await _startApp(crashReporting);
@@ -121,6 +125,10 @@ Future<void> _startApp(CrashReportingService crashReporting) async {
   final analyticsService = AnalyticsService(crashReporting: crashReporting);
   final preferences = await preferencesFuture;
   await analyticsService.initialize();
+  await analyticsService.appOpened(
+    source: 'flutter_bootstrap',
+    initialPath: '/',
+  );
 
   runApp(
     ProviderScope(

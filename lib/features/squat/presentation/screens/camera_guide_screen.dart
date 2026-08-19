@@ -54,7 +54,7 @@ class _CameraGuideScreenState extends ConsumerState<CameraGuideScreen> {
     try {
       await ref
           .read(preferencesControllerProvider.notifier)
-          .markCameraGuideSeen();
+          .markCameraSetupSeen();
     } on Object {
       if (mounted) setState(() => _navigating = false);
       rethrow;

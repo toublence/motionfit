@@ -784,6 +784,57 @@ class AppLocalizationsZh extends AppLocalizations {
   String get recordsCalendarTitle => '锻炼日历';
 
   @override
+  String get recordsWorkoutRecords => '训练记录';
+
+  @override
+  String get recordsNoWorkoutOnDay => '这一天没有训练记录';
+
+  @override
+  String get exercisePushup => '俯卧撑';
+
+  @override
+  String get exercisePlank => '平板支撑';
+
+  @override
+  String get recordsConsistency => '坚持记录';
+
+  @override
+  String recordsWeeklyStreak(int count) {
+    return '🔥 连续 $count 周达成目标';
+  }
+
+  @override
+  String get recordsStreakFirstWeek => '开始记录你的第一周';
+
+  @override
+  String get recordsWeeklyGoalComplete => '🔥 本周目标已完成';
+
+  @override
+  String recordsStreakRemaining(int count) {
+    return '再训练 $count 次即可延续记录';
+  }
+
+  @override
+  String recordsStreakStartRemaining(int count) {
+    return '本周再训练 $count 次即可开始连续记录';
+  }
+
+  @override
+  String recordsStreakContinued(int count) {
+    return '你已连续坚持 $count 周';
+  }
+
+  @override
+  String recordsRecentWeeksSummary(int count) {
+    return '最近16周 · 训练$count天';
+  }
+
+  @override
+  String recordsRangeSummary(String from, String to, int count) {
+    return '$from – $to · 训练$count天';
+  }
+
+  @override
   String get recordsFormTrend => '动作趋势';
 
   @override
@@ -2423,6 +2474,57 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get recordsCalendarTitle => '鍛鍊日曆';
+
+  @override
+  String get recordsWorkoutRecords => '訓練記錄';
+
+  @override
+  String get recordsNoWorkoutOnDay => '這一天沒有訓練記錄';
+
+  @override
+  String get exercisePushup => '伏地挺身';
+
+  @override
+  String get exercisePlank => '棒式';
+
+  @override
+  String get recordsConsistency => '持續記錄';
+
+  @override
+  String recordsWeeklyStreak(int count) {
+    return '🔥 連續 $count 週達成目標';
+  }
+
+  @override
+  String get recordsStreakFirstWeek => '開始記錄你的第一週';
+
+  @override
+  String get recordsWeeklyGoalComplete => '🔥 本週目標已完成';
+
+  @override
+  String recordsStreakRemaining(int count) {
+    return '再訓練 $count 次即可延續記錄';
+  }
+
+  @override
+  String recordsStreakStartRemaining(int count) {
+    return '本週再訓練 $count 次即可開始連續記錄';
+  }
+
+  @override
+  String recordsStreakContinued(int count) {
+    return '你已連續維持 $count 週';
+  }
+
+  @override
+  String recordsRecentWeeksSummary(int count) {
+    return '最近16週 · 訓練$count天';
+  }
+
+  @override
+  String recordsRangeSummary(String from, String to, int count) {
+    return '$from – $to · 訓練$count天';
+  }
 
   @override
   String get recordsFormTrend => '動作趨勢';

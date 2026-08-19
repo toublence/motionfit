@@ -162,6 +162,7 @@ class CoachInsightPanel extends StatelessWidget {
     required this.body,
     this.tone = CoachStatusTone.brand,
     this.trailing,
+    this.bodyMaxLines,
     super.key,
   });
 
@@ -170,6 +171,7 @@ class CoachInsightPanel extends StatelessWidget {
   final String body;
   final CoachStatusTone tone;
   final Widget? trailing;
+  final int? bodyMaxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -196,7 +198,14 @@ class CoachInsightPanel extends StatelessWidget {
                     ).textTheme.titleSmall?.copyWith(color: color),
                   ),
                   const SizedBox(height: 4),
-                  Text(body, style: Theme.of(context).textTheme.bodyMedium),
+                  Text(
+                    body,
+                    maxLines: bodyMaxLines,
+                    overflow: bodyMaxLines == null
+                        ? null
+                        : TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
                 ],
               ),
             ),

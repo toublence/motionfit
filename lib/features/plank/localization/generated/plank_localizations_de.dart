@@ -27,8 +27,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get challengeTitle => 'Meine Plank-Sekunden-Challenge';
 
   @override
-  String get challengeSubtitle =>
-      'Wähle eine Challenge passend zu deinem Ziel und trainiere regelmäßig.';
+  String get challengeSubtitle => 'Wähle eine Challenge passend zu deinem Ziel und trainiere regelmäßig.';
 
   @override
   String get challengeChooseTitle => 'Challenge auswählen';
@@ -37,12 +36,10 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get challengeSevenDayTitle => '7-Tage-Einstiegs-Challenge';
 
   @override
-  String get challengeSevenDayDescription =>
-      'Ein schrittweises Programm für Einsteiger';
+  String get challengeSevenDayDescription => 'Ein schrittweises Programm für Einsteiger';
 
   @override
-  String get challengeSevenDaySummary =>
-      '7 Tage lang jeden Tag ein steigendes Ziel passend zu deinem Niveau.';
+  String get challengeSevenDaySummary => '7 Tage lang jeden Tag ein steigendes Ziel passend zu deinem Niveau.';
 
   @override
   String get challengeSevenDayEveryDay => '7 Tage täglich ohne Erholungstag';
@@ -68,8 +65,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get challengeSevenDaySettings => '7-Tage-Ziel festlegen';
 
   @override
-  String get challengeSevenDaySettingsDescription =>
-      'Lege Tag 1 fest. Das Ziel steigt täglich um 5 Sekunden.';
+  String get challengeSevenDaySettingsDescription => 'Lege Tag 1 fest. Das Ziel steigt täglich um 5 Sekunden.';
 
   @override
   String get challengeFirstDayGoal => 'Zielsekunden an Tag 1';
@@ -83,12 +79,10 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get challengeWeeklyTitle => '3-mal-pro-Woche-Challenge';
 
   @override
-  String get challengeWeeklyDescription =>
-      'Eine Gewohnheits-Challenge, wenn tägliches Training zu viel ist';
+  String get challengeWeeklyDescription => 'Eine Gewohnheits-Challenge, wenn tägliches Training zu viel ist';
 
   @override
-  String get challengeWeeklySummary =>
-      'Trainiere 4 Wochen lang an 3 gewählten Tagen pro Woche.';
+  String get challengeWeeklySummary => 'Trainiere 4 Wochen lang an 3 gewählten Tagen pro Woche.';
 
   @override
   String challengeDurationWeeks(int weeks) {
@@ -111,12 +105,10 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get challengeCumulativeTitle => 'Plankzeit-Challenge';
 
   @override
-  String get challengeCumulativeDescription =>
-      'Erreiche dein Plank-Sekunden-Ziel in deinem eigenen Zeitplan';
+  String get challengeCumulativeDescription => 'Erreiche dein Plank-Sekunden-Ziel in deinem eigenen Zeitplan';
 
   @override
-  String get challengeCumulativeSummary =>
-      'Wähle Dauer und Gesamtziel; Pausentage erhalten deinen Fortschritt.';
+  String get challengeCumulativeSummary => 'Wähle Dauer und Gesamtziel; Pausentage erhalten deinen Fortschritt.';
 
   @override
   String get challengePreset200 => '200 Plank-Sekunden in 7 Tagen';
@@ -128,8 +120,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get challengeCustomGoal => 'Dauer und Ziel selbst wählen';
 
   @override
-  String get challengeRestWithoutReset =>
-      'Pausentage setzen den Fortschritt nicht zurück';
+  String get challengeRestWithoutReset => 'Pausentage setzen den Fortschritt nicht zurück';
 
   @override
   String get challengeCumulativeStart => 'Gesamtziel starten';
@@ -138,8 +129,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get challengeHistoryTitle => 'Vergangene Challenges';
 
   @override
-  String get challengeHistoryEmpty =>
-      'Abgeschlossene und beendete Challenges erscheinen hier.';
+  String get challengeHistoryEmpty => 'Abgeschlossene und beendete Challenges erscheinen hier.';
 
   @override
   String get challengeRecommended => 'Für dich empfohlen';
@@ -150,8 +140,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   }
 
   @override
-  String get challengeRecommendationDefault =>
-      'Für deine erste Challenge empfehlen wir einen sanften 7-Tage-Start.';
+  String get challengeRecommendationDefault => 'Für deine erste Challenge empfehlen wir einen sanften 7-Tage-Start.';
 
   @override
   String get challengeActive => 'Aktive Challenge';
@@ -176,8 +165,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get challengeRestToday => 'Erhole dich heute ausreichend.';
 
   @override
-  String get challengeTodayCompleted =>
-      'Heutiges Ziel erreicht · Morgen geht es weiter';
+  String get challengeTodayCompleted => 'Heutiges Ziel erreicht · Morgen geht es weiter';
 
   @override
   String challengeRepsRemaining(int reps) {
@@ -273,16 +261,13 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get challengeNotifications => 'Challenge-Erinnerungen';
 
   @override
-  String get challengeNotificationsDescription =>
-      'Erinnerungseinstellung für diese Challenge speichern.';
+  String get challengeNotificationsDescription => 'Erinnerungseinstellung für diese Challenge speichern.';
 
   @override
-  String get challengeReminderNotificationTitle =>
-      'Deine Plank-Sekunden-Challenge wartet';
+  String get challengeReminderNotificationTitle => 'Deine Plank-Sekunden-Challenge wartet';
 
   @override
-  String get challengeReminderNotificationBody =>
-      'Öffne MotionFit und arbeite an deinem heutigen Challenge-Ziel.';
+  String get challengeReminderNotificationBody => 'Öffne MotionFit und arbeite an deinem heutigen Challenge-Ziel.';
 
   @override
   String get challengeSelectedWeekdays => 'Ausgewählte Trainingstage';
@@ -297,8 +282,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get challengeCancelTitle => 'Diese Challenge beenden?';
 
   @override
-  String get challengeCancelDescription =>
-      'Deine Trainingsdaten bleiben erhalten. Die Challenge wird in den Verlauf verschoben.';
+  String get challengeCancelDescription => 'Deine Trainingsdaten bleiben erhalten. Die Challenge wird in den Verlauf verschoben.';
 
   @override
   String get challengeStatusActive => 'In Bearbeitung';
@@ -313,8 +297,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get challengeStatusCancelled => 'Abgebrochen';
 
   @override
-  String get challengeProgressUpdated =>
-      'Dein Challenge-Fortschritt wurde aktualisiert.';
+  String get challengeProgressUpdated => 'Dein Challenge-Fortschritt wurde aktualisiert.';
 
   @override
   String get challengeCheck => 'Challenge anzeigen';
@@ -444,8 +427,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get homeTodayTitle => 'Heutiger Stand';
 
   @override
-  String get homeTodayNoWorkout =>
-      'Heute noch keine Plank-Sekunden. Ein kurzer Satz ist ein guter Anfang.';
+  String get homeTodayNoWorkout => 'Heute noch keine Plank-Sekunden. Ein kurzer Satz ist ein guter Anfang.';
 
   @override
   String homeTodaySummary(int reps, int sets) {
@@ -488,8 +470,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get homeStartWorkout => 'Training starten';
 
   @override
-  String get homeLastSettingsRestored =>
-      'Deine letzten Trainingseinstellungen sind bereit.';
+  String get homeLastSettingsRestored => 'Deine letzten Trainingseinstellungen sind bereit.';
 
   @override
   String get validationNumberRequired => 'Gib eine Zahl ein.';
@@ -506,38 +487,31 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get guideLandscapeTitle => 'Drehe dein Smartphone ins Querformat';
 
   @override
-  String get guideLandscapeBody =>
-      'Die Plank-Erkennung verwendet das Querformat. Lege dein Smartphone waagerecht ab, bevor du die Position einnimmst.';
+  String get guideLandscapeBody => 'Die Plank-Erkennung verwendet das Querformat. Lege dein Smartphone waagerecht ab, bevor du die Position einnimmst.';
 
   @override
   String get countdownLandscapePrompt => 'Lass dein Smartphone im Querformat';
 
   @override
-  String get guideSubtitle =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get guideSubtitle => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get guideWholeBody =>
-      'Achte darauf, dass dein ganzer Körper von Kopf bis Fuß sichtbar ist.';
+  String get guideWholeBody => 'Achte darauf, dass dein ganzer Körper von Kopf bis Fuß sichtbar ist.';
 
   @override
-  String get guideStableCamera =>
-      'Stelle dein Smartphone an einem stabilen Ort auf.';
+  String get guideStableCamera => 'Stelle dein Smartphone an einem stabilen Ort auf.';
 
   @override
-  String get guideOnePerson =>
-      'Achte darauf, dass nur eine Person im Bild ist.';
+  String get guideOnePerson => 'Achte darauf, dass nur eine Person im Bild ist.';
 
   @override
-  String get guideCameraAngle =>
-      'Nutze möglichst eine Seitenansicht oder eine leicht schräge Seitenansicht.';
+  String get guideCameraAngle => 'Nutze möglichst eine Seitenansicht oder eine leicht schräge Seitenansicht.';
 
   @override
   String get guideLighting => 'Vermeide dunkle Räume und starkes Gegenlicht.';
 
   @override
-  String get guidePrivacy =>
-      'Das Video bleibt auf diesem Gerät und wird nur bei aktivierter Sekundesanalyse gespeichert.';
+  String get guidePrivacy => 'Das Video bleibt auf diesem Gerät und wird nur bei aktivierter Sekundesanalyse gespeichert.';
 
   @override
   String get guideContinue => 'Ich bin in Position';
@@ -546,19 +520,16 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get permissionCameraTitle => 'Kamerazugriff erforderlich';
 
   @override
-  String get permissionCameraBody =>
-      'MotionFit nutzt die Kamera zum Zählen. Videos werden nur bei aktivierter Sekundesanalyse auf diesem Gerät gespeichert.';
+  String get permissionCameraBody => 'MotionFit nutzt die Kamera zum Zählen. Videos werden nur bei aktivierter Sekundesanalyse auf diesem Gerät gespeichert.';
 
   @override
   String get permissionCameraRequest => 'Weiter';
 
   @override
-  String get permissionCameraDenied =>
-      'Der Kamerazugriff wurde abgelehnt. Du kannst weiterhin Verlauf und Einstellungen ansehen.';
+  String get permissionCameraDenied => 'Der Kamerazugriff wurde abgelehnt. Du kannst weiterhin Verlauf und Einstellungen ansehen.';
 
   @override
-  String get permissionCameraPermanentlyDenied =>
-      'Erlaube den Kamerazugriff in den Systemeinstellungen, um ein Training zu starten.';
+  String get permissionCameraPermanentlyDenied => 'Erlaube den Kamerazugriff in den Systemeinstellungen, um ein Training zu starten.';
 
   @override
   String get permissionOpenSettings => 'Einstellungen öffnen';
@@ -567,15 +538,13 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get permissionNotificationTitle => 'Trainingserinnerungen erlauben?';
 
   @override
-  String get permissionNotificationBody =>
-      'Benachrichtigungen werden nur für deine geplanten Erinnerungen verwendet.';
+  String get permissionNotificationBody => 'Benachrichtigungen werden nur für deine geplanten Erinnerungen verwendet.';
 
   @override
   String get permissionNotificationRequest => 'Benachrichtigungen erlauben';
 
   @override
-  String get permissionNotificationDenied =>
-      'Benachrichtigungen sind deaktiviert. Aktiviere sie in den Systemeinstellungen, um Erinnerungen zu erhalten.';
+  String get permissionNotificationDenied => 'Benachrichtigungen sind deaktiviert. Aktiviere sie in den Systemeinstellungen, um Erinnerungen zu erhalten.';
 
   @override
   String get countdownGetReady => 'Mach dich bereit';
@@ -589,8 +558,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get calibrationTitle => 'Plank';
 
   @override
-  String get calibrationBody =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get calibrationBody => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
   String get calibrationStayStill => 'Halte einen Moment still';
@@ -599,8 +567,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get calibrationComplete => 'Alles bereit';
 
   @override
-  String get calibrationFailed =>
-      'Deine Standposition konnte nicht eindeutig erfasst werden.';
+  String get calibrationFailed => 'Deine Standposition konnte nicht eindeutig erfasst werden.';
 
   @override
   String get calibrationRetry => 'Neu kalibrieren';
@@ -639,30 +606,25 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get workoutEndDialogTitle => 'Training vorerst pausieren?';
 
   @override
-  String get workoutEndDialogBody =>
-      'Dein Fortschritt wird gespeichert, damit du vom Startbildschirm aus fortfahren kannst.';
+  String get workoutEndDialogBody => 'Dein Fortschritt wird gespeichert, damit du vom Startbildschirm aus fortfahren kannst.';
 
   @override
   String get workoutEndDialogConfirm => 'Speichern und verlassen';
 
   @override
-  String get workoutPauseReasonBackground =>
-      'Das Training wurde pausiert, während die App im Hintergrund war.';
+  String get workoutPauseReasonBackground => 'Das Training wurde pausiert, während die App im Hintergrund war.';
 
   @override
-  String get workoutPauseReasonInterruption =>
-      'Das Training wurde nach einer Systemunterbrechung pausiert.';
+  String get workoutPauseReasonInterruption => 'Das Training wurde nach einer Systemunterbrechung pausiert.';
 
   @override
   String get workoutStateReady => 'Plank';
 
   @override
-  String get workoutStateDescending =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get workoutStateDescending => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get workoutStateBottom =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get workoutStateBottom => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
   String get workoutStateAscending => 'Nach oben';
@@ -718,12 +680,10 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get completeTitle => 'Training abgeschlossen';
 
   @override
-  String get completeSubtitle =>
-      'Starke Leistung. Hier siehst du dein Training auf einen Blick.';
+  String get completeSubtitle => 'Starke Leistung. Hier siehst du dein Training auf einen Blick.';
 
   @override
-  String get workoutInterruptedSubtitle =>
-      'Sieh dir die Aufzeichnung bis zum vorzeitigen Ende an.';
+  String get workoutInterruptedSubtitle => 'Sieh dir die Aufzeichnung bis zum vorzeitigen Ende an.';
 
   @override
   String get completeTotalReps => 'Plank-Sekunden gesamt';
@@ -764,12 +724,10 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get completeSaved => 'Training auf diesem Gerät gespeichert';
 
   @override
-  String get completeSaveFailed =>
-      'Das Training konnte nicht gespeichert werden. Versuche es erneut, bevor du die Seite verlässt.';
+  String get completeSaveFailed => 'Das Training konnte nicht gespeichert werden. Versuche es erneut, bevor du die Seite verlässt.';
 
   @override
-  String get completeNoFormData =>
-      'Für eine Technikübersicht war nicht genug Bewegung sichtbar.';
+  String get completeNoFormData => 'Für eine Technikübersicht war nicht genug Bewegung sichtbar.';
 
   @override
   String get completeFinish => 'Fertig';
@@ -829,8 +787,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get recordsSameAsLastWeek => 'Gleiches Volumen wie letzte Woche';
 
   @override
-  String get recordsTrendEmpty =>
-      'Mit weiteren Trainings wird dein Techniktrend sichtbar.';
+  String get recordsTrendEmpty => 'Mit weiteren Trainings wird dein Techniktrend sichtbar.';
 
   @override
   String get recordsFirstFormScore => 'Erster Technikwert';
@@ -880,8 +837,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get recordsCalendarWorkoutDay => 'Trainingstag';
 
   @override
-  String get recordsCalendarNoWorkoutSelected =>
-      'Wähle einen Trainingstag aus, um die Einheiten anzuzeigen.';
+  String get recordsCalendarNoWorkoutSelected => 'Wähle einen Trainingstag aus, um die Einheiten anzuzeigen.';
 
   @override
   String get recordsDayTotal => 'Tagessumme';
@@ -913,8 +869,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get recordsEmptyTitle => 'Noch keine Trainings';
 
   @override
-  String get recordsEmptyBody =>
-      'Schließe dein erstes Plank-Sekundentraining ab. Danach erscheint es hier.';
+  String get recordsEmptyBody => 'Schließe dein erstes Plank-Sekundentraining ab. Danach erscheint es hier.';
 
   @override
   String get recordsStartWorkout => 'Training starten';
@@ -923,8 +878,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get recordsLoading => 'Deine Trainings werden geladen…';
 
   @override
-  String get recordsLoadError =>
-      'Dein Trainingsverlauf konnte nicht geladen werden.';
+  String get recordsLoadError => 'Dein Trainingsverlauf konnte nicht geladen werden.';
 
   @override
   String get statsPeriod => 'Zeitraum';
@@ -1052,8 +1006,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get settingsRateAppSubtitle => 'MotionFit bewerten';
 
   @override
-  String get settingsRateAppError =>
-      'Der Store konnte nicht geöffnet werden. Bitte versuche es erneut.';
+  String get settingsRateAppError => 'Der Store konnte nicht geöffnet werden. Bitte versuche es erneut.';
 
   @override
   String get settingsSectionGeneral => 'Allgemein';
@@ -1182,15 +1135,13 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get voiceTestPhrase => 'Super. Dein Sprachcoach ist bereit.';
 
   @override
-  String get voiceUnavailable =>
-      'Für diese Sprache ist keine kompatible Offline-Stimme installiert.';
+  String get voiceUnavailable => 'Für diese Sprache ist keine kompatible Offline-Stimme installiert.';
 
   @override
   String get reminderTitle => 'Trainingserinnerungen';
 
   @override
-  String get reminderSubtitle =>
-      'Wähle für jeden gewünschten Trainingstag eine Uhrzeit aus.';
+  String get reminderSubtitle => 'Wähle für jeden gewünschten Trainingstag eine Uhrzeit aus.';
 
   @override
   String get reminderEnabled => 'Erinnerung aktiviert';
@@ -1218,8 +1169,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get reminderNoneScheduled => 'Keine Erinnerungen geplant';
 
   @override
-  String get reminderPermissionNeeded =>
-      'Erlaube Benachrichtigungen, um Erinnerungen zu aktivieren.';
+  String get reminderPermissionNeeded => 'Erlaube Benachrichtigungen, um Erinnerungen zu aktivieren.';
 
   @override
   String get reminderSaved => 'Erinnerungsplan gespeichert';
@@ -1279,8 +1229,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get cameraPoseOverlay => 'Positionshilfe einblenden';
 
   @override
-  String get cameraKeepScreenAwake =>
-      'Bildschirm beim Training eingeschaltet lassen';
+  String get cameraKeepScreenAwake => 'Bildschirm beim Training eingeschaltet lassen';
 
   @override
   String get settingsHaptics => 'Haptisches Feedback';
@@ -1289,23 +1238,19 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get privacyTitle => 'So werden deine Daten verarbeitet';
 
   @override
-  String get privacyLocalProcessing =>
-      'Die Körperhaltungsanalyse erfolgt auf diesem Gerät.';
+  String get privacyLocalProcessing => 'Die Körperhaltungsanalyse erfolgt auf diesem Gerät.';
 
   @override
-  String get privacyNoVideoStorage =>
-      'Trainingsvideos werden nur bei aktivierter Sekundesanalyse auf diesem Gerät gespeichert.';
+  String get privacyNoVideoStorage => 'Trainingsvideos werden nur bei aktivierter Sekundesanalyse auf diesem Gerät gespeichert.';
 
   @override
-  String get privacyNoUpload =>
-      'Kamerabilder werden nicht auf einen Server hochgeladen.';
+  String get privacyNoUpload => 'Kamerabilder werden nicht auf einen Server hochgeladen.';
 
   @override
   String get privacyStoredData => 'Auf diesem Gerät gespeicherte Daten';
 
   @override
-  String get privacyStoredDataDescription =>
-      'MotionFit speichert Trainingszeiten, Sätze, Sekunden und Technikergebnisse, damit du deinen Fortschritt verfolgen kannst.';
+  String get privacyStoredDataDescription => 'MotionFit speichert Trainingszeiten, Sätze, Sekunden und Technikergebnisse, damit du deinen Fortschritt verfolgen kannst.';
 
   @override
   String get privacyDeleteData => 'Alle Trainingsdaten löschen';
@@ -1314,8 +1259,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get privacyDeleteConfirmTitle => 'Alle Trainingsdaten löschen?';
 
   @override
-  String get privacyDeleteConfirmBody =>
-      'Dadurch wird dein Trainingsverlauf dauerhaft von diesem Gerät gelöscht. Dies kann nicht rückgängig gemacht werden.';
+  String get privacyDeleteConfirmBody => 'Dadurch wird dein Trainingsverlauf dauerhaft von diesem Gerät gelöscht. Dies kann nicht rückgängig gemacht werden.';
 
   @override
   String get privacyDeleteConfirmAction => 'Alle Daten löschen';
@@ -1324,8 +1268,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get privacyDeleteSuccess => 'Trainingsdaten gelöscht';
 
   @override
-  String get privacyDeleteFailure =>
-      'Die Trainingsdaten konnten nicht gelöscht werden.';
+  String get privacyDeleteFailure => 'Die Trainingsdaten konnten nicht gelöscht werden.';
 
   @override
   String get appInfoTitle => 'App-Informationen';
@@ -1342,57 +1285,46 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get appInfoPrivacyPolicy => 'Datenschutzerklärung';
 
   @override
-  String get appInfoDescription =>
-      'MotionFit zählt Plank-Sekunden und bietet private Technikhilfen direkt auf deinem Gerät.';
+  String get appInfoDescription => 'MotionFit zählt Plank-Sekunden und bietet private Technikhilfen direkt auf deinem Gerät.';
 
   @override
   String get errorGenericTitle => 'Etwas ist schiefgelaufen';
 
   @override
-  String get errorGenericBody =>
-      'Versuche es bitte erneut. Deine vorhandenen Trainingsdaten sind sicher.';
+  String get errorGenericBody => 'Versuche es bitte erneut. Deine vorhandenen Trainingsdaten sind sicher.';
 
   @override
   String get errorCameraInit => 'Die Kamera konnte nicht gestartet werden.';
 
   @override
-  String get errorCameraInUse =>
-      'Die Kamera wird möglicherweise von einer anderen App verwendet.';
+  String get errorCameraInUse => 'Die Kamera wird möglicherweise von einer anderen App verwendet.';
 
   @override
-  String get errorPoseModelLoad =>
-      'Das Modell zur Körpererkennung konnte nicht geladen werden.';
+  String get errorPoseModelLoad => 'Das Modell zur Körpererkennung konnte nicht geladen werden.';
 
   @override
   String get errorNoPerson => 'Keine Person erkannt. Geh ins Bild.';
 
   @override
-  String get errorWholeBody =>
-      'Dein Körper ist nicht vollständig sichtbar. Geh etwas weiter zurück.';
+  String get errorWholeBody => 'Dein Körper ist nicht vollständig sichtbar. Geh etwas weiter zurück.';
 
   @override
-  String get errorMultiplePeople =>
-      'Mehr als eine Person ist im Bild. Es darf nur eine Person zu sehen sein.';
+  String get errorMultiplePeople => 'Mehr als eine Person ist im Bild. Es darf nur eine Person zu sehen sein.';
 
   @override
-  String get errorTrackingLost =>
-      'Die Erfassung ist pausiert, bis dein Körper wieder sichtbar ist.';
+  String get errorTrackingLost => 'Die Erfassung ist pausiert, bis dein Körper wieder sichtbar ist.';
 
   @override
-  String get errorDatabaseSave =>
-      'Dein Training konnte nicht gespeichert werden.';
+  String get errorDatabaseSave => 'Dein Training konnte nicht gespeichert werden.';
 
   @override
-  String get errorTtsVoiceMissing =>
-      'Auf diesem Gerät ist keine Sprachausgabe installiert.';
+  String get errorTtsVoiceMissing => 'Auf diesem Gerät ist keine Sprachausgabe installiert.';
 
   @override
-  String get errorTtsLocaleUnsupported =>
-      'Sprachcoaching wird auf diesem Gerät für die ausgewählte Sprache nicht unterstützt.';
+  String get errorTtsLocaleUnsupported => 'Sprachcoaching wird auf diesem Gerät für die ausgewählte Sprache nicht unterstützt.';
 
   @override
-  String get emptyNoFormIssues =>
-      'Keine wiederkehrenden Technikprobleme erkannt.';
+  String get emptyNoFormIssues => 'Keine wiederkehrenden Technikprobleme erkannt.';
 
   @override
   String get emptyNotEnoughData => 'Noch nicht genügend Daten';
@@ -1418,19 +1350,16 @@ class PlankLocalizationsDe extends PlankLocalizations {
   }
 
   @override
-  String get formIssueDepth =>
-      'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
+  String get formIssueDepth => 'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
 
   @override
-  String get formIssueTorsoLean =>
-      'Spanne die Körpermitte an und halte den Rücken gerade.';
+  String get formIssueTorsoLean => 'Spanne die Körpermitte an und halte den Rücken gerade.';
 
   @override
   String get formIssueHeelLift => 'Fersenkontakt';
 
   @override
-  String get formIssueKneeAlignment =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get formIssueKneeAlignment => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
   String get formIssueBalance => 'Links-rechts-Balance';
@@ -1442,15 +1371,13 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get formIssueAscentSpeed => 'Aufwärtsgeschwindigkeit';
 
   @override
-  String get formIssueControl =>
-      'Spanne die Körpermitte an und halte den Rücken gerade.';
+  String get formIssueControl => 'Spanne die Körpermitte an und halte den Rücken gerade.';
 
   @override
   String get formIssueStandingCompletion => 'Aufrechter Abschluss';
 
   @override
-  String get formIssueNotObservable =>
-      'Aus diesem Kamerawinkel nicht beurteilbar';
+  String get formIssueNotObservable => 'Aus diesem Kamerawinkel nicht beurteilbar';
 
   @override
   String get formStrengthDepth => 'Gleichmäßige Tiefe';
@@ -1462,31 +1389,25 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get formStrengthBalance => 'Stabiles Gleichgewicht';
 
   @override
-  String get coachTrackingLost1 =>
-      'Geh zurück ins Bild, dann machen wir weiter.';
+  String get coachTrackingLost1 => 'Geh zurück ins Bild, dann machen wir weiter.';
 
   @override
-  String get coachTrackingLost2 =>
-      'Ich kann dich nicht mehr sehen. Stell dich so hin, dass dein ganzer Körper sichtbar ist.';
+  String get coachTrackingLost2 => 'Ich kann dich nicht mehr sehen. Stell dich so hin, dass dein ganzer Körper sichtbar ist.';
 
   @override
-  String get coachWholeBody1 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachWholeBody1 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachWholeBody2 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachWholeBody2 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachMultiplePeople1 =>
-      'Es darf nur eine Person im Bild sein, damit ich dich erfassen kann.';
+  String get coachMultiplePeople1 => 'Es darf nur eine Person im Bild sein, damit ich dich erfassen kann.';
 
   @override
   String get coachReady1 => 'Du bist in Position. Los geht’s.';
 
   @override
-  String get coachReady2 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachReady2 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
   String coachStartSet(int set) {
@@ -1509,104 +1430,79 @@ class PlankLocalizationsDe extends PlankLocalizations {
   }
 
   @override
-  String get coachDepth1 =>
-      'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
+  String get coachDepth1 => 'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
 
   @override
-  String get coachDepth2 =>
-      'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
+  String get coachDepth2 => 'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
 
   @override
-  String get coachTorso1 =>
-      'Spanne die Körpermitte an und halte den Rücken gerade.';
+  String get coachTorso1 => 'Spanne die Körpermitte an und halte den Rücken gerade.';
 
   @override
-  String get coachTorso2 =>
-      'Spanne die Körpermitte an und halte den Rücken gerade.';
+  String get coachTorso2 => 'Spanne die Körpermitte an und halte den Rücken gerade.';
 
   @override
-  String get coachHeel1 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachHeel1 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachHeel2 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachHeel2 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachKnees1 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachKnees1 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachKnees2 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachKnees2 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachBalance1 =>
-      'Spanne die Körpermitte an und halte den Rücken gerade.';
+  String get coachBalance1 => 'Spanne die Körpermitte an und halte den Rücken gerade.';
 
   @override
-  String get coachBalance2 =>
-      'Spanne die Körpermitte an und halte den Rücken gerade.';
+  String get coachBalance2 => 'Spanne die Körpermitte an und halte den Rücken gerade.';
 
   @override
-  String get coachDescendSlow1 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachDescendSlow1 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachDescendSlow2 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachDescendSlow2 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachDescendFaster1 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachDescendFaster1 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachDescendFaster2 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachDescendFaster2 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachAscendControlled1 =>
-      'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
+  String get coachAscendControlled1 => 'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
 
   @override
-  String get coachAscendControlled2 =>
-      'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
+  String get coachAscendControlled2 => 'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
 
   @override
-  String get coachAscendFaster1 =>
-      'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
+  String get coachAscendFaster1 => 'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
 
   @override
-  String get coachAscendFaster2 =>
-      'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
+  String get coachAscendFaster2 => 'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
 
   @override
-  String get coachControl1 =>
-      'Spanne die Körpermitte an und halte den Rücken gerade.';
+  String get coachControl1 => 'Spanne die Körpermitte an und halte den Rücken gerade.';
 
   @override
-  String get coachControl2 =>
-      'Spanne die Körpermitte an und halte den Rücken gerade.';
+  String get coachControl2 => 'Spanne die Körpermitte an und halte den Rücken gerade.';
 
   @override
-  String get coachStandTall1 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachStandTall1 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachStandTall2 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachStandTall2 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachGood1 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachGood1 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachGood2 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachGood2 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get coachGood3 =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get coachGood3 => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
   String get coachLastTwo => 'Noch zwei. Bleib stark!';
@@ -1628,8 +1524,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get coachRestTenSeconds => 'Noch zehn Sekunden Pause.';
 
   @override
-  String get coachRestComplete =>
-      'Die Pause ist vorbei. Mach dich bereit für den nächsten Satz.';
+  String get coachRestComplete => 'Die Pause ist vorbei. Mach dich bereit für den nächsten Satz.';
 
   @override
   String coachWorkoutComplete(int reps) {
@@ -1637,16 +1532,13 @@ class PlankLocalizationsDe extends PlankLocalizations {
   }
 
   @override
-  String get notificationReminderTitle =>
-      'Zeit für deine heutigen Plank-Sekunden';
+  String get notificationReminderTitle => 'Zeit für deine heutigen Plank-Sekunden';
 
   @override
-  String get notificationReminderBody =>
-      'Auch eine kurze Einheit zählt. Öffne MotionFit, wenn du bereit bist.';
+  String get notificationReminderBody => 'Auch eine kurze Einheit zählt. Öffne MotionFit, wenn du bereit bist.';
 
   @override
-  String get notificationReminderBodyVariant2 =>
-      'Ein paar konzentrierte Plank-Sekunden bringen heute Bewegung in deinen Tag.';
+  String get notificationReminderBodyVariant2 => 'Ein paar konzentrierte Plank-Sekunden bringen heute Bewegung in deinen Tag.';
 
   @override
   String notificationStreakReminderBody(int days) {
@@ -1683,8 +1575,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get repVideoReviewTitle => 'Videoanalyse je Sekunde';
 
   @override
-  String get repVideoReviewDescription =>
-      'Speichere dieses Trainingsvideo auf dem Gerät, um einzelne Sekunden später anzusehen.';
+  String get repVideoReviewDescription => 'Speichere dieses Trainingsvideo auf dem Gerät, um einzelne Sekunden später anzusehen.';
 
   @override
   String get repVideoLocalOnly => 'Nur lokal · Kein Upload';
@@ -1708,8 +1599,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get repTimelineImprove => 'Verbessern';
 
   @override
-  String get repTimelineNoImprovement =>
-      'Keine Sekunde muss verbessert werden.';
+  String get repTimelineNoImprovement => 'Keine Sekunde muss verbessert werden.';
 
   @override
   String repSetNumber(int number) {
@@ -1734,12 +1624,10 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get repResultNotAssessed => 'Schwer zu bewerten';
 
   @override
-  String get repIssueShallowDepth =>
-      'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
+  String get repIssueShallowDepth => 'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
 
   @override
-  String get repIssueForwardLean =>
-      'Spanne die Körpermitte an und halte den Rücken gerade.';
+  String get repIssueForwardLean => 'Spanne die Körpermitte an und halte den Rücken gerade.';
 
   @override
   String get repIssueKneesInward => 'Knie bewegten sich nach innen';
@@ -1766,20 +1654,16 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get repNext => 'Nächste Sekunde';
 
   @override
-  String get repFeedbackGood =>
-      'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
+  String get repFeedbackGood => 'Halte Schultern, Hüfte und Fersen in einer geraden Linie.';
 
   @override
-  String get repFeedbackDepth =>
-      'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
+  String get repFeedbackDepth => 'Richte deine Hüfte auf einer Linie mit den Schultern aus.';
 
   @override
-  String get repFeedbackTorso =>
-      'Spanne die Körpermitte an und halte den Rücken gerade.';
+  String get repFeedbackTorso => 'Spanne die Körpermitte an und halte den Rücken gerade.';
 
   @override
-  String get repFeedbackKnees =>
-      'Deine Knie bewegten sich bei dieser Sekunde nach innen. Richte sie an den Zehen aus.';
+  String get repFeedbackKnees => 'Deine Knie bewegten sich bei dieser Sekunde nach innen. Richte sie an den Zehen aus.';
 
   @override
   String repFeedbackGeneric(String area) {
@@ -1793,8 +1677,7 @@ class PlankLocalizationsDe extends PlankLocalizations {
   String get deleteWorkoutVideoTitle => 'Dieses Trainingsvideo löschen?';
 
   @override
-  String get deleteWorkoutVideoBody =>
-      'Nur das lokale Video wird gelöscht. Analyse und Trainingsdaten bleiben erhalten.';
+  String get deleteWorkoutVideoBody => 'Nur das lokale Video wird gelöscht. Analyse und Trainingsdaten bleiben erhalten.';
 
   @override
   String get workoutVideoDeleted => 'Trainingsvideo gelöscht';

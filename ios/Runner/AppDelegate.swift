@@ -1,3 +1,4 @@
+import FirebaseCore
 import Flutter
 import UIKit
 import UserNotifications
@@ -8,6 +9,9 @@ import UserNotifications
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
+    if FirebaseApp.app() == nil {
+      FirebaseApp.configure()
+    }
     // Required by flutter_local_notifications so scheduled local notifications
     // are handled (including while the app is in the foreground).
     if #available(iOS 10.0, *) {

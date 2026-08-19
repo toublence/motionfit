@@ -1,26 +1,60 @@
 {
   "project_info": {
-    "project_number": "1005307792225",
-    "project_id": "linkdrawer-bc322",
-    "storage_bucket": "linkdrawer-bc322.firebasestorage.app"
+    "project_number": "246191989101",
+    "project_id": "motionfit-e75b9",
+    "storage_bucket": "motionfit-e75b9.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1005307792225:android:cbf6a81313c3da6fcb5320",
+        "mobilesdk_app_id": "1:246191989101:android:fc016355e9638bb0237a64",
         "android_client_info": {
-          "package_name": "com.namslab.motionfit.squat"
+          "package_name": "fit.motionfit.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "246191989101-qqp989607e6srg589bvgbcnj4v5p8o5n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fit.motionfit.app",
+            "certificate_hash": "1ee47605e477b957a6a652cd0ef9f4cb87743cd3"
+          }
+        },
+        {
+          "client_id": "246191989101-urk5fhhsi7n1n9goo4vbfps7gb5fcv0o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fit.motionfit.app",
+            "certificate_hash": "58f7515b0aab65527c182ae9a55bf5de9cb2adb0"
+          }
+        },
+        {
+          "client_id": "246191989101-i8ridqb8i1189tlh2a8r71pi32vvc0h7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyDOkIJwxl5pWYpO_4epQe5D-B0HCLHnkrU"
+          "current_key": "AIzaSyA9C-olfgFSuBcMxuhT08Wm9Fd9yUR7KuE"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246191989101-i8ridqb8i1189tlh2a8r71pi32vvc0h7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "246191989101-orm4cdntc7hccjcmntjvst7umia0h1of.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "fit.motionfit.app",
+                "app_store_id": "6754861354"
+              }
+            }
+          ]
         }
       }
     }

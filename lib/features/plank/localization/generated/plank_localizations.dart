@@ -68,8 +68,7 @@ import 'plank_localizations_zh.dart';
 /// be consistent with the languages listed in the PlankLocalizations.supportedLocales
 /// property.
 abstract class PlankLocalizations {
-  PlankLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  PlankLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -77,8 +76,7 @@ abstract class PlankLocalizations {
     return Localizations.of<PlankLocalizations>(context, PlankLocalizations)!;
   }
 
-  static const LocalizationsDelegate<PlankLocalizations> delegate =
-      _PlankLocalizationsDelegate();
+  static const LocalizationsDelegate<PlankLocalizations> delegate = _PlankLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -90,13 +88,12 @@ abstract class PlankLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      <LocalizationsDelegate<dynamic>>[
-        delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ];
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+    delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+  ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
@@ -108,7 +105,7 @@ abstract class PlankLocalizations {
     Locale('ja'),
     Locale('ko'),
     Locale('zh'),
-    Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),
+    Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant')
   ];
 
   /// No description provided for @appName.
@@ -3142,70 +3139,49 @@ abstract class PlankLocalizations {
   String get workoutVideoDeleted;
 }
 
-class _PlankLocalizationsDelegate
-    extends LocalizationsDelegate<PlankLocalizations> {
+class _PlankLocalizationsDelegate extends LocalizationsDelegate<PlankLocalizations> {
   const _PlankLocalizationsDelegate();
 
   @override
   Future<PlankLocalizations> load(Locale locale) {
-    return SynchronousFuture<PlankLocalizations>(
-      lookupPlankLocalizations(locale),
-    );
+    return SynchronousFuture<PlankLocalizations>(lookupPlankLocalizations(locale));
   }
 
   @override
-  bool isSupported(Locale locale) => <String>[
-    'ar',
-    'de',
-    'en',
-    'es',
-    'fr',
-    'ja',
-    'ko',
-    'zh',
-  ].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['ar', 'de', 'en', 'es', 'fr', 'ja', 'ko', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_PlankLocalizationsDelegate old) => false;
 }
 
 PlankLocalizations lookupPlankLocalizations(Locale locale) {
+
   // Lookup logic when language+script codes are specified.
   switch (locale.languageCode) {
-    case 'zh':
-      {
-        switch (locale.scriptCode) {
-          case 'Hant':
-            return PlankLocalizationsZhHant();
-        }
-        break;
-      }
+    case 'zh': {
+  switch (locale.scriptCode) {
+    case 'Hant': return PlankLocalizationsZhHant();
+   }
+  break;
+   }
   }
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'ar':
-      return PlankLocalizationsAr();
-    case 'de':
-      return PlankLocalizationsDe();
-    case 'en':
-      return PlankLocalizationsEn();
-    case 'es':
-      return PlankLocalizationsEs();
-    case 'fr':
-      return PlankLocalizationsFr();
-    case 'ja':
-      return PlankLocalizationsJa();
-    case 'ko':
-      return PlankLocalizationsKo();
-    case 'zh':
-      return PlankLocalizationsZh();
+    case 'ar': return PlankLocalizationsAr();
+    case 'de': return PlankLocalizationsDe();
+    case 'en': return PlankLocalizationsEn();
+    case 'es': return PlankLocalizationsEs();
+    case 'fr': return PlankLocalizationsFr();
+    case 'ja': return PlankLocalizationsJa();
+    case 'ko': return PlankLocalizationsKo();
+    case 'zh': return PlankLocalizationsZh();
   }
 
   throw FlutterError(
     'PlankLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.',
+    'that was used.'
   );
 }

@@ -506,8 +506,7 @@ class PushupLocalizationsJa extends PushupLocalizations {
   String get permissionCameraTitle => 'カメラへのアクセスが必要です';
 
   @override
-  String get permissionCameraBody =>
-      'MotionFitはプッシュアップを数えるためにカメラを使用します。レビューをオンにした場合のみ映像を端末に保存します。';
+  String get permissionCameraBody => 'MotionFitはプッシュアップを数えるためにカメラを使用します。レビューをオンにした場合のみ映像を端末に保存します。';
 
   @override
   String get permissionCameraRequest => '続ける';
@@ -516,8 +515,7 @@ class PushupLocalizationsJa extends PushupLocalizations {
   String get permissionCameraDenied => 'カメラへのアクセスが拒否されました。記録と設定は引き続き利用できます。';
 
   @override
-  String get permissionCameraPermanentlyDenied =>
-      'ワークアウトを始めるには、システム設定でカメラを許可してください。';
+  String get permissionCameraPermanentlyDenied => 'ワークアウトを始めるには、システム設定でカメラを許可してください。';
 
   @override
   String get permissionOpenSettings => '設定を開く';
@@ -532,8 +530,7 @@ class PushupLocalizationsJa extends PushupLocalizations {
   String get permissionNotificationRequest => '通知を許可';
 
   @override
-  String get permissionNotificationDenied =>
-      '通知がオフです。リマインダーを受け取るにはシステム設定でオンにしてください。';
+  String get permissionNotificationDenied => '通知がオフです。リマインダーを受け取るにはシステム設定でオンにしてください。';
 
   @override
   String get countdownGetReady => '準備してください';
@@ -1237,8 +1234,7 @@ class PushupLocalizationsJa extends PushupLocalizations {
   String get privacyStoredData => 'この端末に保存されるデータ';
 
   @override
-  String get privacyStoredDataDescription =>
-      '進捗を確認できるよう、運動時間、セット、回数、フォーム結果を保存します。';
+  String get privacyStoredDataDescription => '進捗を確認できるよう、運動時間、セット、回数、フォーム結果を保存します。';
 
   @override
   String get privacyDeleteData => 'すべてのワークアウトデータを削除';
@@ -1247,8 +1243,7 @@ class PushupLocalizationsJa extends PushupLocalizations {
   String get privacyDeleteConfirmTitle => 'すべてのワークアウトデータを削除しますか？';
 
   @override
-  String get privacyDeleteConfirmBody =>
-      'この端末のワークアウト履歴が完全に削除されます。この操作は取り消せません。';
+  String get privacyDeleteConfirmBody => 'この端末のワークアウト履歴が完全に削除されます。この操作は取り消せません。';
 
   @override
   String get privacyDeleteConfirmAction => 'すべてのデータを削除';
@@ -1646,8 +1641,7 @@ class PushupLocalizationsJa extends PushupLocalizations {
   String get repFeedbackGood => 'MotionFitで評価できたフォーム範囲は安定していました。';
 
   @override
-  String get repFeedbackDepth =>
-      '普段のプッシュアップの深さに届いていません。胸を安定させながら、もう少し深く下げましょう。';
+  String get repFeedbackDepth => '普段のプッシュアップの深さに届いていません。胸を安定させながら、もう少し深く下げましょう。';
 
   @override
   String get repFeedbackTorso => '動作中に体のラインが崩れました。体幹を締めて腰を安定させましょう。';

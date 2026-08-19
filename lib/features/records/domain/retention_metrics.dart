@@ -9,6 +9,7 @@ class RetentionMetrics {
     required this.streakAtRisk,
     required this.completedWorkoutCount,
     required this.distinctWorkoutDays,
+    required this.currentWeekWorkoutDays,
   });
 
   factory RetentionMetrics.fromSessions(
@@ -41,6 +42,13 @@ class RetentionMetrics {
       currentStreak++;
       cursor = _previousDay(cursor);
     }
+    final weekStart = today.subtract(Duration(days: today.weekday - 1));
+    final nextWeekStart = weekStart.add(const Duration(days: 7));
+    final currentWeekWorkoutDays = workoutDates
+        .where(
+          (date) => !date.isBefore(weekStart) && date.isBefore(nextWeekStart),
+        )
+        .length;
 
     return RetentionMetrics(
       todayReps: todayReps,
@@ -49,6 +57,7 @@ class RetentionMetrics {
       streakAtRisk: !trainedToday && currentStreak > 0,
       completedWorkoutCount: completedWorkoutCount,
       distinctWorkoutDays: workoutDates.length,
+      currentWeekWorkoutDays: currentWeekWorkoutDays,
     );
   }
 
@@ -58,6 +67,7 @@ class RetentionMetrics {
   final bool streakAtRisk;
   final int completedWorkoutCount;
   final int distinctWorkoutDays;
+  final int currentWeekWorkoutDays;
 
   static DateTime _dateOnly(DateTime value) =>
       DateTime(value.year, value.month, value.day);

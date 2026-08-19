@@ -39,9 +39,7 @@ Future<void> openWorkoutPreparation(
         .read(analyticsServiceProvider)
         .cameraPermissionResult(result: status.name, requested: false);
     ref.read(workoutLaunchContextProvider.notifier).set(preparation);
-    final guideSeen = ref
-        .read(preferencesControllerProvider)
-        .plankCameraGuideSeen;
+    final guideSeen = ref.read(preferencesControllerProvider).cameraSetupSeen;
     await context.push(
       guideSeen ? '/plank/prepare/countdown' : '/plank/prepare/guide',
       extra: preparation,

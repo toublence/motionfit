@@ -146,12 +146,12 @@ class _CameraPermissionScreenState extends ConsumerState<CameraPermissionScreen>
   void _continueIfGranted(AppPermissionState result) {
     if (result != AppPermissionState.granted || _navigating || !mounted) return;
     _navigating = true;
-    final guideSeen = ref.read(preferencesControllerProvider).pushupCameraGuideSeen;
+    final guideSeen = ref.read(preferencesControllerProvider).cameraSetupSeen;
     final persistGuideSeen = guideSeen
         ? null
         : ref
               .read(preferencesControllerProvider.notifier)
-              .markPushupCameraGuideSeen();
+              .markCameraSetupSeen();
     unawaited(_finishGrantedNavigation(persistGuideSeen));
   }
 
@@ -164,7 +164,10 @@ class _CameraPermissionScreenState extends ConsumerState<CameraPermissionScreen>
       }
     }
     if (!mounted) return;
-    context.pushReplacement('/pushup/prepare/countdown', extra: widget.preparation);
+    context.pushReplacement(
+      '/pushup/prepare/countdown',
+      extra: widget.preparation,
+    );
   }
 
   @override

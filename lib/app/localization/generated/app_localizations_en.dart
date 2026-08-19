@@ -847,6 +847,57 @@ class AppLocalizationsEn extends AppLocalizations {
   String get recordsCalendarTitle => 'Workout calendar';
 
   @override
+  String get recordsWorkoutRecords => 'Workout records';
+
+  @override
+  String get recordsNoWorkoutOnDay => 'No workout was recorded on this day';
+
+  @override
+  String get exercisePushup => 'Push-up';
+
+  @override
+  String get exercisePlank => 'Plank';
+
+  @override
+  String get recordsConsistency => 'Consistency';
+
+  @override
+  String recordsWeeklyStreak(int count) {
+    return '🔥 $count-week goal streak';
+  }
+
+  @override
+  String get recordsStreakFirstWeek => 'Build your first weekly streak';
+
+  @override
+  String get recordsWeeklyGoalComplete => '🔥 This week’s goal is complete';
+
+  @override
+  String recordsStreakRemaining(int count) {
+    return '$count more workouts keeps your streak going';
+  }
+
+  @override
+  String recordsStreakStartRemaining(int count) {
+    return 'Complete $count more workouts to start your streak';
+  }
+
+  @override
+  String recordsStreakContinued(int count) {
+    return 'Your $count-week streak continues';
+  }
+
+  @override
+  String recordsRecentWeeksSummary(int count) {
+    return 'Last 16 weeks · $count workout days';
+  }
+
+  @override
+  String recordsRangeSummary(String from, String to, int count) {
+    return '$from – $to · $count workout days';
+  }
+
+  @override
   String get recordsFormTrend => 'Form trend';
 
   @override

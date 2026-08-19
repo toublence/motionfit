@@ -1509,6 +1509,84 @@ abstract class AppLocalizations {
   /// **'Workout calendar'**
   String get recordsCalendarTitle;
 
+  /// No description provided for @recordsWorkoutRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'Workout records'**
+  String get recordsWorkoutRecords;
+
+  /// No description provided for @recordsNoWorkoutOnDay.
+  ///
+  /// In en, this message translates to:
+  /// **'No workout was recorded on this day'**
+  String get recordsNoWorkoutOnDay;
+
+  /// No description provided for @exercisePushup.
+  ///
+  /// In en, this message translates to:
+  /// **'Push-up'**
+  String get exercisePushup;
+
+  /// No description provided for @exercisePlank.
+  ///
+  /// In en, this message translates to:
+  /// **'Plank'**
+  String get exercisePlank;
+
+  /// No description provided for @recordsConsistency.
+  ///
+  /// In en, this message translates to:
+  /// **'Consistency'**
+  String get recordsConsistency;
+
+  /// No description provided for @recordsWeeklyStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'🔥 {count}-week goal streak'**
+  String recordsWeeklyStreak(int count);
+
+  /// No description provided for @recordsStreakFirstWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Build your first weekly streak'**
+  String get recordsStreakFirstWeek;
+
+  /// No description provided for @recordsWeeklyGoalComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'🔥 This week’s goal is complete'**
+  String get recordsWeeklyGoalComplete;
+
+  /// No description provided for @recordsStreakRemaining.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} more workouts keeps your streak going'**
+  String recordsStreakRemaining(int count);
+
+  /// No description provided for @recordsStreakStartRemaining.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete {count} more workouts to start your streak'**
+  String recordsStreakStartRemaining(int count);
+
+  /// No description provided for @recordsStreakContinued.
+  ///
+  /// In en, this message translates to:
+  /// **'Your {count}-week streak continues'**
+  String recordsStreakContinued(int count);
+
+  /// No description provided for @recordsRecentWeeksSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Last 16 weeks · {count} workout days'**
+  String recordsRecentWeeksSummary(int count);
+
+  /// No description provided for @recordsRangeSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{from} – {to} · {count} workout days'**
+  String recordsRangeSummary(String from, String to, int count);
+
   /// No description provided for @recordsFormTrend.
   ///
   /// In en, this message translates to:

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:motionfit_squat/features/pushup/localization/generated/pushup_localizations.dart';
@@ -91,6 +92,20 @@ class _ActiveWorkoutScreenState extends ConsumerState<ActiveWorkoutScreen>
     final terminal =
         next.status == WorkoutSessionStatus.completed ||
         next.status == WorkoutSessionStatus.interrupted;
+    if (next.status == WorkoutSessionStatus.completed) {
+      if (challengeWorkout && next.saveState == WorkoutSaveState.saving) {
+        return;
+      }
+      if (challengeWorkout && next.saveState == WorkoutSaveState.failed) {
+        unawaited(
+          ref.read(workoutSessionControllerProvider.notifier).retrySave(),
+        );
+        return;
+      }
+      _navigating = true;
+      unawaited(_completeAndNavigate(challengeWorkout: challengeWorkout));
+      return;
+    }
     if (terminal && challengeWorkout) {
       if (next.saveState == WorkoutSaveState.saving) return;
       if (next.saveState == WorkoutSaveState.failed) {
@@ -117,6 +132,21 @@ class _ActiveWorkoutScreenState extends ConsumerState<ActiveWorkoutScreen>
       if (mounted) context.go(location);
       _navigating = false;
     });
+  }
+
+  Future<void> _completeAndNavigate({required bool challengeWorkout}) async {
+    final preferences = ref.read(preferencesControllerProvider);
+    if (preferences.hapticsEnabled) {
+      await HapticFeedback.mediumImpact();
+    }
+    await Future<void>.delayed(const Duration(milliseconds: 850));
+    if (!mounted) return;
+    if (challengeWorkout) {
+      await _returnToChallenge();
+      return;
+    }
+    context.go('/pushup/workout/summary');
+    _navigating = false;
   }
 
   Future<void> _returnToChallenge() async {
@@ -313,7 +343,53 @@ class _WorkoutCountOverlay extends ConsumerWidget {
         ),
         child: AnimatedSwitcher(
           duration: const Duration(milliseconds: 180),
-          child: calibrating
+          child: state.status == WorkoutSessionStatus.completed
+              ? TweenAnimationBuilder<double>(
+                  key: const ValueKey('workout-completed'),
+                  tween: Tween(begin: .88, end: 1),
+                  duration: const Duration(milliseconds: 320),
+                  curve: Curves.easeOutBack,
+                  builder: (context, scale, child) =>
+                      Transform.scale(scale: scale, child: child),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        l10n.workoutRepProgress(
+                          state.targetReps,
+                          state.targetReps,
+                        ),
+                        style: Theme.of(context).textTheme.displayMedium
+                            ?.copyWith(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                              height: 1.05,
+                            ),
+                      ),
+                      const SizedBox(height: 6),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.check_circle_rounded,
+                            color: Color(0xFF8FD6B0),
+                            size: 24,
+                          ),
+                          const SizedBox(width: 7),
+                          Text(
+                            l10n.completeTitle,
+                            style: Theme.of(context).textTheme.titleMedium
+                                ?.copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              : calibrating
               ? Column(
                   key: const ValueKey('calibrating'),
                   mainAxisSize: MainAxisSize.min,

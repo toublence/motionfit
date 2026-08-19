@@ -3,7 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:motionfit_squat/app/localization/generated/app_localizations.dart';
 import 'package:motionfit_squat/core/providers.dart';
 import 'package:motionfit_squat/core/widgets/responsive_page.dart';
-import 'package:motionfit_squat/features/records/application/records_providers.dart';
+import 'package:motionfit_squat/features/plank/records/application/records_providers.dart'
+    as plank_records;
+import 'package:motionfit_squat/features/pushup/records/application/records_providers.dart'
+    as pushup_records;
+import 'package:motionfit_squat/features/records/application/records_providers.dart'
+    as squat_records;
+import 'package:motionfit_squat/features/records/presentation/models/growth_workout_record.dart';
 import 'package:motionfit_squat/features/records/presentation/widgets/calendar_records_view.dart';
 import 'package:motionfit_squat/features/records/presentation/widgets/record_components.dart';
 import 'package:motionfit_squat/features/settings/application/preferences_controller.dart';
@@ -20,50 +26,46 @@ class RecordsScreen extends ConsumerStatefulWidget {
 }
 
 class _RecordsScreenState extends ConsumerState<RecordsScreen> {
-  late DateTime _visibleMonth;
-
   @override
   void initState() {
     super.initState();
     ref.read(analyticsServiceProvider).screenView('records');
-    final now = DateTime.now();
-    _visibleMonth = DateTime(now.year, now.month);
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final sessions = ref.watch(allSessionsProvider);
-    final selectedDate = ref.watch(selectedRecordDateProvider);
-
+    final squatSessions = ref.watch(squat_records.allSessionsProvider);
+    final pushupSessions = ref.watch(pushup_records.allSessionsProvider);
+    final plankSessions = ref.watch(plank_records.allSessionsProvider);
     return Scaffold(
       appBar: AppBar(title: Text(l10n.recordsTitle)),
       body: SafeArea(
         top: false,
         child: ResponsivePage(
           padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 8),
-          child: switch (sessions) {
-            AsyncData(:final value) when value.isEmpty => RecordEmptyState(
-              title: l10n.recordsEmptyTitle,
-              body: l10n.recordsEmptyBody,
-              actionLabel: l10n.recordsStartWorkout,
-              onAction: _startWorkout,
-            ),
-            AsyncData(:final value) => CalendarRecordsView(
-              sessions: value,
-              visibleMonth: _visibleMonth,
-              selectedDate: selectedDate,
-              onPreviousMonth: () => _moveMonth(-1),
-              onNextMonth: () => _moveMonth(1),
-              onSelectDate: (date) =>
-                  ref.read(selectedRecordDateProvider.notifier).select(date),
-              onRefresh: _refreshSessions,
-            ),
-            AsyncError() => RecordErrorState(
+          child: switch ((squatSessions, pushupSessions, plankSessions)) {
+            (
+              AsyncData(value: final squats),
+              AsyncData(value: final pushups),
+              AsyncData(value: final planks),
+            ) =>
+              CalendarRecordsView(
+                records: [
+                  ...squats.map(GrowthWorkoutRecord.fromSquat),
+                  ...pushups.map(GrowthWorkoutRecord.fromPushup),
+                  ...planks.map(GrowthWorkoutRecord.fromPlank),
+                ],
+                onRefresh: _refreshSessions,
+                onStartWorkout: _startWorkout,
+              ),
+            (AsyncError(), _, _) ||
+            (_, AsyncError(), _) ||
+            (_, _, AsyncError()) => RecordErrorState(
               title: l10n.errorGenericTitle,
               body: l10n.recordsLoadError,
               retryLabel: l10n.commonRetry,
-              onRetry: () => ref.invalidate(allSessionsProvider),
+              onRetry: _invalidateSessions,
             ),
             _ => RecordLoadingState(label: l10n.recordsLoading),
           },
@@ -72,16 +74,22 @@ class _RecordsScreenState extends ConsumerState<RecordsScreen> {
     );
   }
 
-  void _moveMonth(int offset) {
-    final next = DateTime(_visibleMonth.year, _visibleMonth.month + offset);
-    setState(() => _visibleMonth = next);
-    ref.read(selectedRecordDateProvider.notifier).select(next);
+  Future<void> _refreshSessions() async {
+    _invalidateSessions();
+    ref.invalidate(squat_records.workoutStatisticsProvider);
+    ref.invalidate(pushup_records.workoutStatisticsProvider);
+    ref.invalidate(plank_records.workoutStatisticsProvider);
+    await Future.wait([
+      ref.read(squat_records.allSessionsProvider.future),
+      ref.read(pushup_records.allSessionsProvider.future),
+      ref.read(plank_records.allSessionsProvider.future),
+    ]);
   }
 
-  Future<void> _refreshSessions() async {
-    ref.invalidate(allSessionsProvider);
-    ref.invalidate(workoutStatisticsProvider);
-    await ref.read(allSessionsProvider.future);
+  void _invalidateSessions() {
+    ref.invalidate(squat_records.allSessionsProvider);
+    ref.invalidate(pushup_records.allSessionsProvider);
+    ref.invalidate(plank_records.allSessionsProvider);
   }
 
   Future<void> _startWorkout() async {
