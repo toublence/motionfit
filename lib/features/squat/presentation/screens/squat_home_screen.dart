@@ -360,10 +360,7 @@ class _WeekActivityOverview extends StatelessWidget {
           return DateTime(value.year, value.month, value.day);
         })
         .toSet();
-    final weekEnd = start.add(const Duration(days: 6));
-    final weeklyDays = workoutDates
-        .where((date) => !date.isBefore(start) && !date.isAfter(weekEnd))
-        .length;
+    final currentStreak = metrics?.currentStreak ?? 0;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -374,8 +371,8 @@ class _WeekActivityOverview extends StatelessWidget {
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 260),
                 child: Text(
-                  l10n.challengeThisWeekProgress(weeklyDays, 3),
-                  key: ValueKey(weeklyDays),
+                  '🔥 ${l10n.streakLabel} · ${l10n.streakDays(currentStreak)}',
+                  key: ValueKey(currentStreak),
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.w800,
                   ),
@@ -391,11 +388,7 @@ class _WeekActivityOverview extends StatelessWidget {
         ),
         const SizedBox(height: 6),
         Text(
-          weeklyDays == 0
-              ? l10n.challengeWeeklyDescription
-              : weeklyDays >= 3
-              ? l10n.challengeTodayCompleted
-              : l10n.challengeRepsRemaining(3 - weeklyDays),
+          currentStreak > 0 ? l10n.streakDays(currentStreak) : l10n.streakLabel,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
             color: Theme.of(context).colorScheme.onSurfaceVariant,
           ),

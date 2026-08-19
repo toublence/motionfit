@@ -11,18 +11,16 @@ class WorkoutOverviewHero extends StatelessWidget {
     required this.eyebrow,
     required this.totalReps,
     required this.exerciseLabel,
-    required this.weeklyWorkoutDays,
+    required this.currentStreak,
     required this.firstWorkout,
-    required this.weeklyRemainingLabel,
     super.key,
   });
 
   final String eyebrow;
   final int totalReps;
   final String exerciseLabel;
-  final int weeklyWorkoutDays;
+  final int currentStreak;
   final bool firstWorkout;
-  final String weeklyRemainingLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -42,58 +40,11 @@ class WorkoutOverviewHero extends StatelessWidget {
           ).textTheme.headlineLarge?.copyWith(fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 14),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-          decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.primaryContainer,
-            borderRadius: BorderRadius.circular(18),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              AnimatedSwitcher(
-                duration: const Duration(milliseconds: 280),
-                child: Text(
-                  l10n.challengeThisWeekProgress(weeklyWorkoutDays, 3),
-                  key: ValueKey(weeklyWorkoutDays),
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    color: Theme.of(context).colorScheme.onPrimaryContainer,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 8),
-              Row(
-                children: List.generate(3, (index) {
-                  final completed = index < weeklyWorkoutDays;
-                  return Padding(
-                    padding: const EdgeInsetsDirectional.only(end: 8),
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 240),
-                      width: 28,
-                      height: 7,
-                      decoration: BoxDecoration(
-                        color: completed
-                            ? Theme.of(context).colorScheme.primary
-                            : Theme.of(context).colorScheme.surface,
-                        borderRadius: BorderRadius.circular(999),
-                      ),
-                    ),
-                  );
-                }),
-              ),
-              const SizedBox(height: 7),
-              Text(
-                weeklyWorkoutDays >= 3
-                    ? l10n.challengeTodayCompleted
-                    : firstWorkout
-                    ? l10n.recordsFirstWeek
-                    : weeklyRemainingLabel,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Theme.of(context).colorScheme.onPrimaryContainer,
-                ),
-              ),
-            ],
+        Text(
+          '🔥 ${l10n.streakLabel} · ${l10n.streakDays(currentStreak)}',
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            color: Theme.of(context).colorScheme.primary,
+            fontWeight: FontWeight.w800,
           ),
         ),
       ],

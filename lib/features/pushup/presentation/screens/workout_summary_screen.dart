@@ -150,17 +150,10 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
                                   : l10n.completeTitle,
                               totalReps: session.totalReps,
                               exerciseLabel: l10n.navPushup,
-                              weeklyWorkoutDays:
-                                  retentionMetrics?.currentWeekWorkoutDays ?? 1,
+                              currentStreak:
+                                  retentionMetrics?.currentStreak ?? 0,
                               firstWorkout:
                                   retentionMetrics?.completedWorkoutCount == 1,
-                              weeklyRemainingLabel: l10n.challengeRepsRemaining(
-                                (3 -
-                                        (retentionMetrics
-                                                ?.currentWeekWorkoutDays ??
-                                            1))
-                                    .clamp(0, 3),
-                              ),
                             ),
                             if (resolvedAverageScore != null ||
                                 (loadedDetails?.repAnalyses.isNotEmpty ??

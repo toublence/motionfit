@@ -55,18 +55,6 @@ class _CalendarRecordsViewState extends State<CalendarRecordsView> {
         widget.records.where((record) => record.isValid).toList()
           ..sort((a, b) => b.startedAt.compareTo(a.startedAt));
     final latest = validRecords.firstOrNull;
-    final today = _dateOnly(DateTime.now());
-    final weekStart = today.subtract(Duration(days: today.weekday - 1));
-    final nextWeekStart = weekStart.add(const Duration(days: 7));
-    final weeklyExerciseByDay = <DateTime, ExerciseType>{};
-    for (final record in validRecords.reversed) {
-      final date = _dateOnly(record.startedAt);
-      if (!date.isBefore(weekStart) && date.isBefore(nextWeekStart)) {
-        weeklyExerciseByDay.putIfAbsent(date, () => record.exerciseType);
-      }
-    }
-    final weeklyExerciseTypes = weeklyExerciseByDay.entries.toList()
-      ..sort((a, b) => a.key.compareTo(b.key));
     final selectedRecords =
         validRecords
             .where((record) => _dateOnly(record.startedAt) == _selectedDate)
@@ -79,10 +67,8 @@ class _CalendarRecordsViewState extends State<CalendarRecordsView> {
         physics: const AlwaysScrollableScrollPhysics(),
         padding: EdgeInsetsDirectional.only(bottom: context.tokens.spaceXl),
         children: [
-          _WeekProgress(
-            weeklyExerciseTypes: weeklyExerciseTypes
-                .map((entry) => entry.value)
-                .toList(growable: false),
+          _StreakSummary(
+            records: validRecords,
             latest: latest,
             emptyMessage: l10n.recordsEmptyBody,
           ),
@@ -120,26 +106,26 @@ class _CalendarRecordsViewState extends State<CalendarRecordsView> {
   }
 }
 
-class _WeekProgress extends StatelessWidget {
-  const _WeekProgress({
-    required this.weeklyExerciseTypes,
+class _StreakSummary extends StatelessWidget {
+  const _StreakSummary({
+    required this.records,
     required this.latest,
     required this.emptyMessage,
   });
 
-  final List<ExerciseType> weeklyExerciseTypes;
+  final List<GrowthWorkoutRecord> records;
   final GrowthWorkoutRecord? latest;
   final String emptyMessage;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final weeklyDays = weeklyExerciseTypes.length;
+    final streak = _currentWorkoutStreak(records);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          l10n.challengeThisWeekProgress(weeklyDays, 3),
+          '🔥 ${l10n.streakLabel} · ${l10n.streakDays(streak)}',
           style: Theme.of(context).textTheme.headlineMedium?.copyWith(
             color: Theme.of(context).colorScheme.onSurface,
             fontWeight: FontWeight.w800,
@@ -175,25 +161,6 @@ class _WeekProgress extends StatelessWidget {
               ),
             ],
           ),
-        const SizedBox(height: 14),
-        Row(
-          children: List.generate(3, (index) {
-            final completed = index < weeklyDays;
-            return Expanded(
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 240),
-                height: 7,
-                margin: EdgeInsetsDirectional.only(end: index == 2 ? 0 : 7),
-                decoration: BoxDecoration(
-                  color: completed
-                      ? ExerciseColors.of(weeklyExerciseTypes[index])
-                      : Theme.of(context).colorScheme.outlineVariant,
-                  borderRadius: BorderRadius.circular(999),
-                ),
-              ),
-            );
-          }),
-        ),
       ],
     );
   }
@@ -236,13 +203,6 @@ class _WorkoutGrassState extends State<_WorkoutGrass> {
       final date = _dateOnly(record.startedAt);
       byDate.putIfAbsent(date, () => []).add(record);
     }
-    final currentWeekDays = _workoutDaysInWeek(byDate.keys, thisWeekStart);
-    final streakWeeks = _weeklyGoalStreak(
-      workoutDates: byDate.keys,
-      currentWeekStart: thisWeekStart,
-      currentWeekDays: currentWeekDays,
-    );
-    final remaining = (3 - currentWeekDays).clamp(0, 3).toInt();
     final visibleStart = _periodStart(thisWeekStart, _page);
     final visibleEnd = visibleStart.add(
       const Duration(days: _weekCount * 7 - 1),
@@ -269,28 +229,6 @@ class _WorkoutGrassState extends State<_WorkoutGrass> {
                 child: Text(l10n.recordsToday),
               ),
           ],
-        ),
-        const SizedBox(height: 8),
-        Text(
-          currentWeekDays >= 3
-              ? l10n.recordsWeeklyGoalComplete
-              : streakWeeks > 0
-              ? l10n.recordsWeeklyStreak(streakWeeks)
-              : l10n.recordsStreakFirstWeek,
-          style: Theme.of(
-            context,
-          ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
-        ),
-        const SizedBox(height: 3),
-        Text(
-          currentWeekDays >= 3
-              ? l10n.recordsStreakContinued(streakWeeks)
-              : streakWeeks > 0
-              ? l10n.recordsStreakRemaining(remaining)
-              : l10n.recordsStreakStartRemaining(remaining),
-          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
-          ),
         ),
         const SizedBox(height: 12),
         SizedBox(
@@ -638,25 +576,19 @@ class _WorkoutRecordRow extends StatelessWidget {
   }
 }
 
-int _workoutDaysInWeek(Iterable<DateTime> workoutDates, DateTime weekStart) {
-  final weekEnd = weekStart.add(const Duration(days: 7));
-  return workoutDates
-      .where((date) => !date.isBefore(weekStart) && date.isBefore(weekEnd))
-      .length;
-}
-
-int _weeklyGoalStreak({
-  required Iterable<DateTime> workoutDates,
-  required DateTime currentWeekStart,
-  required int currentWeekDays,
-}) {
-  var cursor = currentWeekDays >= 3
-      ? currentWeekStart
-      : currentWeekStart.subtract(const Duration(days: 7));
+int _currentWorkoutStreak(Iterable<GrowthWorkoutRecord> records) {
+  final dates = records
+      .where((record) => record.isValid)
+      .map((record) => _dateOnly(record.startedAt))
+      .toSet();
+  final today = _dateOnly(DateTime.now());
+  var cursor = dates.contains(today)
+      ? today
+      : today.subtract(const Duration(days: 1));
   var streak = 0;
-  while (_workoutDaysInWeek(workoutDates, cursor) >= 3) {
+  while (dates.contains(cursor)) {
     streak++;
-    cursor = cursor.subtract(const Duration(days: 7));
+    cursor = cursor.subtract(const Duration(days: 1));
   }
   return streak;
 }

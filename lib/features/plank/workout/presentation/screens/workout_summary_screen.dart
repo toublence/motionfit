@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
-import 'package:motionfit_squat/app/localization/generated/app_localizations.dart'
-    as shared_l10n;
 import 'package:motionfit_squat/features/plank/localization/generated/plank_localizations.dart';
 import 'package:motionfit_squat/core/ads/post_workout_interstitial.dart';
 import 'package:motionfit_squat/core/diagnostics/crash_reporting_service.dart';
@@ -154,20 +152,10 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
                                   : l10n.completeTitle,
                               totalReps: session.totalReps,
                               exerciseLabel: l10n.navSquat,
-                              weeklyWorkoutDays:
-                                  retentionMetrics?.currentWeekWorkoutDays ?? 1,
+                              currentStreak:
+                                  retentionMetrics?.currentStreak ?? 0,
                               firstWorkout:
                                   retentionMetrics?.completedWorkoutCount == 1,
-                              weeklyRemainingLabel:
-                                  shared_l10n.AppLocalizations.of(
-                                    context,
-                                  ).challengeRepsRemaining(
-                                    (3 -
-                                            (retentionMetrics
-                                                    ?.currentWeekWorkoutDays ??
-                                                1))
-                                        .clamp(0, 3),
-                                  ),
                             ),
                             if (resolvedAverageScore != null ||
                                 (loadedDetails?.repAnalyses.isNotEmpty ??

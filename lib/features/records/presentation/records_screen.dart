@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:motionfit_squat/app/localization/generated/app_localizations.dart';
+import 'package:motionfit_squat/core/ads/bottom_native_ad.dart';
 import 'package:motionfit_squat/core/providers.dart';
 import 'package:motionfit_squat/core/widgets/responsive_page.dart';
 import 'package:motionfit_squat/features/plank/records/application/records_providers.dart'
@@ -40,6 +41,9 @@ class _RecordsScreenState extends ConsumerState<RecordsScreen> {
     final plankSessions = ref.watch(plank_records.allSessionsProvider);
     return Scaffold(
       appBar: AppBar(title: Text(l10n.recordsTitle)),
+      bottomNavigationBar: const NativeAdSection(
+        placement: NativeAdPlacement.records,
+      ),
       body: SafeArea(
         top: false,
         child: ResponsivePage(
