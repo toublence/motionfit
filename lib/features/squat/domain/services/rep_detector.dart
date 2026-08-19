@@ -45,6 +45,7 @@ class RepDetectorSnapshot {
     required this.calibrationRetries,
     required this.trackingState,
     required this.lastMetrics,
+    required this.calibration,
   });
 
   final SquatPhase phase;
@@ -54,6 +55,7 @@ class RepDetectorSnapshot {
   final int calibrationRetries;
   final TrackingState trackingState;
   final SquatMetrics? lastMetrics;
+  final CalibrationProfile? calibration;
 }
 
 abstract interface class RepDetector {
@@ -111,6 +113,7 @@ class SquatRepDetector implements RepDetector {
     calibrationRetries: _calibration.retryCount,
     trackingState: _trackingState,
     lastMetrics: _lastMetrics,
+    calibration: _profile,
   );
 
   void prepareForWorkout() {

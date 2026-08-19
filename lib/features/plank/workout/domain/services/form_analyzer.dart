@@ -30,6 +30,8 @@ class FormMetricResult {
     required this.confidence,
     required this.persistence,
     this.issue,
+    this.value,
+    this.threshold,
   });
 
   final FormMetricType type;
@@ -38,6 +40,8 @@ class FormMetricResult {
   final double confidence;
   final double persistence;
   final FormIssue? issue;
+  final double? value;
+  final Object? threshold;
 }
 
 class FormAnalysisResult {
@@ -163,6 +167,8 @@ class SquatFormAnalyzer implements FormAnalyzer {
         confidence: meanConfidence,
         persistence: persistence,
         issue: needsAttention ? issue : null,
+        value: worst,
+        threshold: allowedError,
       );
     }
 
@@ -203,6 +209,8 @@ class SquatFormAnalyzer implements FormAnalyzer {
       confidence: control.confidence,
       persistence: control.persistence,
       issue: control.issue,
+      value: control.value,
+      threshold: control.threshold,
     );
     metrics[FormMetricType.heelContact] = _notObservable(
       FormMetricType.heelContact,
@@ -221,6 +229,8 @@ class SquatFormAnalyzer implements FormAnalyzer {
       confidence: legExtension.confidence,
       persistence: legExtension.persistence,
       issue: legExtension.issue,
+      value: legExtension.value,
+      threshold: legExtension.threshold,
     );
 
     final evaluated = metrics.values

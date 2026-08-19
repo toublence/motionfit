@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:motionfit_squat/core/diagnostics/motionfit_debug_session.dart';
 import 'package:motionfit_squat/features/plank/providers.dart';
 import 'package:motionfit_squat/features/plank/records/application/records_providers.dart';
 import 'package:motionfit_squat/features/plank/records/domain/workout_session_details.dart';
@@ -59,6 +60,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
   final PoseLandmarkSmoother _overlaySmoother = PoseLandmarkSmoother();
   CoachQueue? _coachQueue;
   CoachPolicy _coachPolicy = CoachPolicy();
+  MotionFitDebugSession? _debugSession;
   WorkoutCoachMessages? _messages;
   StreamSubscription? _poseSubscription;
   StreamSubscription? _subtitleSubscription;
@@ -273,6 +275,13 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
           .read(analyticsServiceProvider)
           .currentWorkoutSessionId,
     );
+    if (MotionFitDebugSession.enabled) {
+      _debugSession = MotionFitDebugSession(
+        exercise: 'plank',
+        sessionId: sessionId,
+        startedAt: now,
+      );
+    }
     final firstSet = WorkoutSet(
       id: setId,
       sessionId: sessionId,
@@ -631,7 +640,11 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
     unawaited(_diagnosticLog('camera_initialization_started'));
     final preferences = ref.read(preferencesControllerProvider);
     final voiceEngine = ref.read(coachVoiceEngineFactoryProvider)();
-    _coachQueue = CoachQueue(voiceEngine, onDelivery: _recordCoachDelivery);
+    _coachQueue = CoachQueue(
+      voiceEngine,
+      onDelivery: _recordCoachDelivery,
+      onDebugDelivery: _recordCoachDebugDelivery,
+    );
     _subtitleSubscription = _coachQueue!.subtitles.listen((subtitle) {
       if (_disposed) return;
       state = state.copyWith(
@@ -735,8 +748,14 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
     }
 
     try {
+      final before = _repDetector!.snapshot;
       final events = _repDetector!.addFrame(frame);
       final snapshot = _repDetector!.snapshot;
+      try {
+        _recordDebugFrame(frame, before, snapshot, events);
+      } on Object {
+        // Debug observation must never affect detector state.
+      }
       if (snapshot.trackingState == TrackingState.tracking) {
         _recordTrackingRecovered();
         final confidence = snapshot.lastMetrics?.confidence;
@@ -961,6 +980,11 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
         confidence: trace.detectionConfidence,
       );
     }
+    try {
+      _recordDebugAnalysis(trace, analysis);
+    } on Object {
+      // Debug observation must never affect persistence or coaching.
+    }
     final timelineOriginUs = _workoutTimelineOriginUs ?? trace.startedAtUs;
     int elapsedMilliseconds(int timestampUs) =>
         ((timestampUs - timelineOriginUs) ~/ 1000).clamp(0, 86400000);
@@ -1047,9 +1071,29 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
       await _saveJournal(WorkoutSessionStatus.active);
       final preferences = ref.read(preferencesControllerProvider);
       final setFinished = updatedSet.completedReps >= updatedSet.targetReps;
-      final issueToCoach = (preferences.formVoiceEnabled || _isChallengeWorkout)
-          ? _coachPolicy.selectIssue(analysis)
+      final policyEnabled = preferences.formVoiceEnabled || _isChallengeWorkout;
+      final coachDecision = policyEnabled
+          ? _coachPolicy.evaluate(analysis)
           : null;
+      final issueToCoach = coachDecision?.selectedIssue;
+      try {
+        _debugSession?.recordCoachDecision(
+          repSequence: _repSequenceOffset + analysis.repSequence,
+          issue:
+              coachDecision?.candidateIssue?.name ??
+              analysis.primaryIssue?.name,
+          selectedIssue: issueToCoach?.name,
+          coachCandidate: analysis.detectedIssues.isNotEmpty,
+          spoken: false,
+          rejectReason: analysis.detectedIssues.isEmpty
+              ? 'noDetectedIssue'
+              : policyEnabled
+              ? coachDecision?.rejectReason?.name
+              : 'formVoiceDisabled',
+        );
+      } on Object {
+        // Debug observation must never affect CoachPolicy behavior.
+      }
       if (kDebugMode) {
         final issues = analysis.detectedIssues
             .map((issue) => issue.name)
@@ -1209,6 +1253,12 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
       CoachMessageType.completion,
       _messages!.workoutComplete(completed.totalReps),
       'workout_complete',
+    );
+    unawaited(
+      Future<void>.delayed(
+        const Duration(seconds: 10),
+        () => _debugSession?.finishAndSave(endedAt: endedAt),
+      ),
     );
   }
 
@@ -1906,9 +1956,29 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
     _ticker = Timer.periodic(const Duration(milliseconds: 250), (_) {
       if (_disposed || state.session == null) return;
       final now = DateTime.now();
-      final tickEvents = _repDetector?.tick(_nowMonotonicUs()) ?? const [];
+      final timestampUs = _nowMonotonicUs();
+      final beforeTick = _repDetector?.snapshot;
+      final tickEvents = _repDetector?.tick(timestampUs) ?? const [];
       if (tickEvents.isNotEmpty && _repDetector != null) {
         final snapshot = _repDetector!.snapshot;
+        try {
+          _debugSession?.recordDetectorTransition(
+            timestampUs: timestampUs,
+            from: beforeTick?.phase.name ?? 'unknown',
+            to: snapshot.phase.name,
+            reason: tickEvents.map((event) => event.type.name).join(','),
+            values: {
+              'trackingState': snapshot.trackingState.name,
+              'trackingLostDurationUs': tickEvents.first.trackingLostDurationUs,
+            },
+            isGoodPlank: false,
+            resetReason: beforeTick?.phase != snapshot.phase
+                ? 'trackingLost'
+                : null,
+          );
+        } on Object {
+          // Debug observation must never stop the workout ticker.
+        }
         state = state.copyWith(phase: snapshot.phase);
         final trackingLostEvents = tickEvents.where(
           (event) => event.type == RepEventType.trackingLost,
@@ -2131,6 +2201,151 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
         // Debug telemetry must never affect workout coaching.
       }
     }());
+  }
+
+  void _recordCoachDebugDelivery(
+    String event,
+    CoachMessage message,
+    String? reason,
+  ) {
+    try {
+      _debugSession?.recordTtsEvent(
+        coachMessageId: message.id,
+        event: event,
+        type: message.type.name,
+        message: message.text,
+        deduplicationKey: message.deduplicationKey,
+        repSequence: message.repSequence,
+        reason: reason,
+      );
+    } on Object {
+      return;
+    }
+    if (message.deduplicationKey == 'workout_complete' &&
+        (event == 'spoken' || event == 'cancelled' || event == 'failed')) {
+      unawaited(_debugSession?.finishAndSave() ?? Future.value());
+    }
+  }
+
+  void _recordDebugFrame(
+    PoseFrame frame,
+    RepDetectorSnapshot before,
+    RepDetectorSnapshot after,
+    List<RepEvent> events,
+  ) {
+    final metrics = after.lastMetrics?.timestampUs == frame.timestampUs
+        ? after.lastMetrics
+        : null;
+    final config = _repDetector!.config;
+    final kneeObservable =
+        metrics != null &&
+        (metrics.leftKneeAngle != null || metrics.rightKneeAngle != null);
+    final goodPlank =
+        metrics != null &&
+        metrics.hipAngle >= config.minimumPlankHipAngle &&
+        (!kneeObservable ||
+            metrics.kneeAngle >= config.minimumPlankKneeAngle) &&
+        metrics.torsoLeanDegrees >= config.minimumPlankTorsoAngle &&
+        metrics.torsoLeanDegrees <= config.maximumPlankTorsoAngle;
+    final failedConditions = <String>[
+      if (metrics == null) 'featureExtractionFailed',
+      if (metrics != null && metrics.hipAngle < config.minimumPlankHipAngle)
+        'hipAngleBelowMinimum',
+      if (metrics != null &&
+          kneeObservable &&
+          metrics.kneeAngle < config.minimumPlankKneeAngle)
+        'kneeAngleBelowMinimum',
+      if (metrics != null &&
+          metrics.torsoLeanDegrees < config.minimumPlankTorsoAngle)
+        'torsoAngleBelowMinimum',
+      if (metrics != null &&
+          metrics.torsoLeanDegrees > config.maximumPlankTorsoAngle)
+        'torsoAngleAboveMaximum',
+    ];
+    final values = <String, Object?>{
+      'kneeAngle': metrics?.kneeAngle,
+      'hipAngle': metrics?.hipAngle,
+      'elbowAngle': null,
+      'torsoAngle': metrics?.torsoLeanDegrees,
+      'bodyLineAngle': metrics?.hipAngle,
+      'hipDrop': metrics?.hipDrop,
+      'shoulderDrop': null,
+      'velocity': metrics?.hipVelocity,
+      'shoulderHipRelativeMovement': metrics?.shoulderHipRelativeMovement,
+      'confidence': metrics?.confidence,
+      'minimumPlankHipAngle': config.minimumPlankHipAngle,
+      'minimumPlankKneeAngle': config.minimumPlankKneeAngle,
+      'minimumPlankTorsoAngle': config.minimumPlankTorsoAngle,
+      'maximumPlankTorsoAngle': config.maximumPlankTorsoAngle,
+      'poseFrameStatus': frame.hasCompletePose && frame.peopleCount == 1
+          ? 'passed'
+          : 'failed',
+      'poseFrameRejectReason': !frame.hasCompletePose
+          ? 'incompletePose'
+          : frame.peopleCount != 1
+          ? 'peopleCountNotOne'
+          : null,
+      'featureExtractorStatus': metrics == null ? 'failed' : 'passed',
+      'calibration': after.calibration?.toMap(),
+    };
+    _debugSession?.recordFrame(
+      poseFrame: frame.toMap(),
+      phase: after.phase.name,
+      trackingState: after.trackingState.name,
+      landmarkConfidence: frame.meanKeyConfidence,
+      features: values,
+    );
+    final reset =
+        before.phase == SquatPhase.bottom &&
+        after.phase != SquatPhase.bottom &&
+        !goodPlank;
+    if (before.phase != after.phase || events.isNotEmpty || !goodPlank) {
+      _debugSession?.recordDetectorTransition(
+        timestampUs: frame.timestampUs,
+        from: before.phase.name,
+        to: after.phase.name,
+        reason: failedConditions.isNotEmpty
+            ? failedConditions.join(',')
+            : events.isEmpty
+            ? 'plankConditionsSatisfied'
+            : events.map((event) => event.type.name).join(','),
+        values: values,
+        isGoodPlank: goodPlank,
+        resetReason: reset ? failedConditions.join(',') : null,
+      );
+    }
+  }
+
+  void _recordDebugAnalysis(RepMotionTrace trace, FormAnalysisResult analysis) {
+    final repSequence = _repSequenceOffset + analysis.repSequence;
+    _debugSession?.recordRep(
+      repSequence: repSequence,
+      startedAtUs: trace.startedAtUs,
+      completedAtUs: trace.completedAtUs,
+      confidence: trace.detectionConfidence,
+    );
+    _debugSession?.recordAnalyzer(
+      repSequence: repSequence,
+      metrics: analysis.metrics.entries
+          .map(
+            (entry) => <String, Object?>{
+              'metric': entry.key.name,
+              'value': entry.value.value,
+              'threshold': entry.value.threshold,
+              'score': entry.value.score,
+              'confidence': entry.value.confidence,
+              'persistence': entry.value.persistence,
+              'status': entry.value.status.name,
+              'issue': entry.value.issue?.name,
+            },
+          )
+          .toList(growable: false),
+      detectedIssues: analysis.detectedIssues
+          .map((issue) => issue.name)
+          .toList(),
+      primaryIssue: analysis.primaryIssue?.name,
+      confidence: analysis.confidence,
+    );
   }
 
   void _recordTrackingLost({int elapsedBeforeReportUs = 0}) {

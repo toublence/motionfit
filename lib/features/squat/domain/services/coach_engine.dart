@@ -23,8 +23,12 @@ class CoachMessage {
     required this.createdAt,
     this.expiresAfter = const Duration(seconds: 4),
     this.repSequence,
-  });
+    String? id,
+  }) : id = id ?? 'coach-${createdAt.microsecondsSinceEpoch}-${_nextId++}';
 
+  static int _nextId = 1;
+
+  final String id;
   final CoachMessageType type;
   final String text;
   final String deduplicationKey;
@@ -299,11 +303,14 @@ class CoachQueue {
     this._engine, {
     this.defaultCooldown = const Duration(seconds: 4),
     this.onDelivery,
+    this.onDebugDelivery,
   });
 
   final CoachVoiceEngine _engine;
   final Duration defaultCooldown;
   void Function(String event, CoachMessage message)? onDelivery;
+  void Function(String event, CoachMessage message, String? reason)?
+  onDebugDelivery;
   final List<CoachMessage> _pending = [];
   final Map<String, DateTime> _lastSpoken = {};
   final Map<String, DateTime> _lastPresented = {};
@@ -322,40 +329,65 @@ class CoachQueue {
     _enabled = value;
     if (!value) {
       _cancellationGeneration++;
+      for (final message in _pending) {
+        onDebugDelivery?.call('cancelled', message, 'ttsDisabled');
+      }
       _pending.clear();
       unawaited(_engine.stop().catchError((Object _) {}));
     }
   }
 
   Future<void> enqueue(CoachMessage message) async {
-    if (message.text.trim().isEmpty || message.isExpired) return;
+    if (message.text.trim().isEmpty) {
+      onDebugDelivery?.call('cancelled', message, 'emptyMessage');
+      return;
+    }
+    if (message.isExpired) {
+      onDebugDelivery?.call('cancelled', message, 'expired');
+      return;
+    }
     if (message.type == CoachMessageType.form &&
         message.repSequence != null &&
         _formCoachedReps.contains(message.repSequence)) {
+      onDebugDelivery?.call('cancelled', message, 'sameIssueRepSuppression');
       return;
     }
     final lastPresented = _lastPresented[message.deduplicationKey];
     if (lastPresented != null &&
         DateTime.now().difference(lastPresented) < defaultCooldown) {
+      onDebugDelivery?.call('cancelled', message, 'queueCooldown');
       return;
     }
     _lastPresented[message.deduplicationKey] = DateTime.now();
     _showSubtitle(message.text);
-    if (!_enabled) return;
-    final last = _lastSpoken[message.deduplicationKey];
-    if (last != null && DateTime.now().difference(last) < defaultCooldown) {
+    if (!_enabled) {
+      onDebugDelivery?.call('cancelled', message, 'ttsDisabled');
       return;
     }
-    _pending.removeWhere(
-      (queued) =>
+    final last = _lastSpoken[message.deduplicationKey];
+    if (last != null && DateTime.now().difference(last) < defaultCooldown) {
+      onDebugDelivery?.call('cancelled', message, 'queueCooldown');
+      return;
+    }
+    _pending.removeWhere((queued) {
+      final remove =
           queued.deduplicationKey == message.deduplicationKey ||
           queued.isExpired ||
           (message.type == CoachMessageType.repCount &&
               (queued.type == CoachMessageType.repCount ||
-                  queued.type == CoachMessageType.encouragement)),
-    );
+                  queued.type == CoachMessageType.encouragement));
+      if (remove) {
+        onDebugDelivery?.call(
+          'cancelled',
+          queued,
+          queued.isExpired ? 'expired' : 'higherPriorityMessage',
+        );
+      }
+      return remove;
+    });
     _pending.add(message);
     onDelivery?.call('queued', message);
+    onDebugDelivery?.call('queued', message, null);
     _pending.sort((a, b) {
       final priority = b.priority.compareTo(a.priority);
       return priority == 0 ? a.createdAt.compareTo(b.createdAt) : priority;
@@ -375,7 +407,10 @@ class CoachQueue {
     try {
       while (_pending.isNotEmpty && _enabled) {
         final message = _pending.removeAt(0);
-        if (message.isExpired) continue;
+        if (message.isExpired) {
+          onDebugDelivery?.call('cancelled', message, 'expired');
+          continue;
+        }
         if (message.type == CoachMessageType.form &&
             message.repSequence != null) {
           _formCoachedReps.add(message.repSequence!);
@@ -386,12 +421,20 @@ class CoachQueue {
         final generation = _cancellationGeneration;
         try {
           onDelivery?.call('speaking', message);
+          onDebugDelivery?.call('speaking', message, null);
           await _speakWithRetry(message, generation);
           onDelivery?.call('spoken', message);
+          onDebugDelivery?.call('spoken', message, null);
         } on _CoachSpeechCancelled {
           onDelivery?.call('cancelled', message);
-        } on Object {
+          onDebugDelivery?.call('cancelled', message, 'ttsDisabled');
+        } on Object catch (error) {
           onDelivery?.call('failed', message);
+          onDebugDelivery?.call(
+            'failed',
+            message,
+            error.runtimeType.toString(),
+          );
           _cancellationGeneration++;
           _enabled = false;
           _pending.clear();
@@ -414,11 +457,12 @@ class CoachQueue {
       return;
     } on _CoachSpeechCancelled {
       rethrow;
-    } on Object {
+    } on Object catch (error) {
       if (!_canContinueSpeaking(message, generation)) {
         throw const _CoachSpeechCancelled();
       }
       onDelivery?.call('retrying', message);
+      onDebugDelivery?.call('retrying', message, error.runtimeType.toString());
       await _engine.stop().catchError((Object _) {});
       if (!_canContinueSpeaking(message, generation)) {
         throw const _CoachSpeechCancelled();
@@ -460,12 +504,35 @@ class _CoachSpeechCancelled implements Exception {
   const _CoachSpeechCancelled();
 }
 
+enum CoachPolicyRejectReason {
+  noDetectedIssue,
+  globalRepSuppression,
+  insufficientConfidence,
+  sameIssueRepSuppression,
+  insufficientObservations,
+}
+
+class CoachPolicyDecision {
+  const CoachPolicyDecision({
+    required this.candidateIssue,
+    required this.selectedIssue,
+    required this.rejectReason,
+  });
+
+  final FormIssue? candidateIssue;
+  final FormIssue? selectedIssue;
+  final CoachPolicyRejectReason? rejectReason;
+}
+
 class CoachPolicy {
   final List<FormAnalysisResult> _recent = [];
   final Map<FormIssue, int> _lastCoachedRep = {};
   int? _lastAnyCoachedRep;
 
-  FormIssue? selectIssue(FormAnalysisResult analysis) {
+  FormIssue? selectIssue(FormAnalysisResult analysis) =>
+      evaluate(analysis).selectedIssue;
+
+  CoachPolicyDecision evaluate(FormAnalysisResult analysis) {
     if (_recent.isNotEmpty &&
         _recent.last.repSequence == analysis.repSequence) {
       _recent[_recent.length - 1] = analysis;
@@ -474,21 +541,44 @@ class CoachPolicy {
       if (_recent.length > 3) _recent.removeAt(0);
     }
     final lastAnyCoached = _lastAnyCoachedRep;
+    final candidate =
+        analysis.primaryIssue ??
+        (analysis.detectedIssues.isEmpty
+            ? null
+            : analysis.detectedIssues.first);
+    if (candidate == null) {
+      return const CoachPolicyDecision(
+        candidateIssue: null,
+        selectedIssue: null,
+        rejectReason: CoachPolicyRejectReason.noDetectedIssue,
+      );
+    }
     if (lastAnyCoached != null && analysis.repSequence - lastAnyCoached < 2) {
-      return null;
+      return CoachPolicyDecision(
+        candidateIssue: candidate,
+        selectedIssue: null,
+        rejectReason: CoachPolicyRejectReason.globalRepSuppression,
+      );
     }
 
     FormIssue? selected;
     var selectedScore = double.negativeInfinity;
+    var confidenceRejected = false;
+    var sameIssueRejected = false;
+    var observationRejected = false;
     for (final metric in analysis.metrics.values) {
       final issue = metric.issue;
       if (issue == null ||
           metric.status != FormMetricStatus.needsAttention ||
           metric.confidence < 0.70) {
+        if (issue != null && metric.confidence < 0.70) {
+          confidenceRejected = true;
+        }
         continue;
       }
       final lastCoached = _lastCoachedRep[issue];
       if (lastCoached != null && analysis.repSequence - lastCoached < 3) {
+        sameIssueRejected = true;
         continue;
       }
       final observations = _recent.where((recent) {
@@ -506,7 +596,10 @@ class CoachPolicy {
       final clearlyObserved =
           metric.confidence >= (safetyCritical ? 0.85 : 0.82) &&
           metric.persistence >= 0.60;
-      if (observations < 2 && !clearlyObserved) continue;
+      if (observations < 2 && !clearlyObserved) {
+        observationRejected = true;
+        continue;
+      }
 
       final safetyWeight = safetyCritical ? 0.35 : 0.0;
       final severity = 1 - ((metric.score ?? 100) / 100);
@@ -520,6 +613,18 @@ class CoachPolicy {
       _lastCoachedRep[selected] = analysis.repSequence;
       _lastAnyCoachedRep = analysis.repSequence;
     }
-    return selected;
+    return CoachPolicyDecision(
+      candidateIssue: candidate,
+      selectedIssue: selected,
+      rejectReason: selected != null
+          ? null
+          : sameIssueRejected
+          ? CoachPolicyRejectReason.sameIssueRepSuppression
+          : observationRejected
+          ? CoachPolicyRejectReason.insufficientObservations
+          : confidenceRejected
+          ? CoachPolicyRejectReason.insufficientConfidence
+          : CoachPolicyRejectReason.insufficientObservations,
+    );
   }
 }

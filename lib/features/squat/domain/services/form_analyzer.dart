@@ -30,6 +30,8 @@ class FormMetricResult {
     required this.confidence,
     required this.persistence,
     this.issue,
+    this.value,
+    this.threshold,
   });
 
   final FormMetricType type;
@@ -38,6 +40,8 @@ class FormMetricResult {
   final double confidence;
   final double persistence;
   final FormIssue? issue;
+  final double? value;
+  final Object? threshold;
 }
 
 class FormAnalysisResult {
@@ -178,6 +182,8 @@ class SquatFormAnalyzer implements FormAnalyzer {
         worst: 70,
       ),
       issue: FormIssue.excessiveTorsoLean,
+      value: samples.map((sample) => sample.torsoLeanDegrees).reduce(math.max),
+      threshold: config.maximumTorsoLeanDegrees,
     );
     metrics[FormMetricType.heelContact] = _assessOptionalThreshold(
       type: FormMetricType.heelContact,
@@ -259,6 +265,8 @@ class SquatFormAnalyzer implements FormAnalyzer {
             ),
       confidence: continuousTrace ? meanConfidence : 0,
       persistence: continuousTrace && jerk > config.maximumControlJerk ? 1 : 0,
+      value: jerk,
+      threshold: config.maximumControlJerk,
       issue: continuousTrace && jerk > config.maximumControlJerk
           ? FormIssue.unstableControl
           : null,
@@ -312,6 +320,8 @@ class SquatFormAnalyzer implements FormAnalyzer {
     required bool Function(SquatMetrics) violates,
     required double score,
     required FormIssue issue,
+    required double value,
+    required double threshold,
   }) {
     if (!observable) return _notObservable(type);
     final confident = samples
@@ -329,6 +339,8 @@ class SquatFormAnalyzer implements FormAnalyzer {
       confidence: _meanConfidence(confident),
       persistence: persistence,
       issue: needsAttention ? issue : null,
+      value: value,
+      threshold: threshold,
     );
   }
 
@@ -367,6 +379,8 @@ class SquatFormAnalyzer implements FormAnalyzer {
           confidence: _meanConfidence(kneeSamples),
           persistence: needsAttention ? 1 : 0,
           issue: needsAttention ? FormIssue.insufficientDepth : null,
+          value: representativeAngle,
+          threshold: config.goodDepthKneeAngle,
         );
       }
     }
@@ -390,6 +404,8 @@ class SquatFormAnalyzer implements FormAnalyzer {
       confidence: _meanConfidence(confident),
       persistence: needsAttention ? 1 : 0,
       issue: needsAttention ? FormIssue.insufficientDepth : null,
+      value: representativeDrop,
+      threshold: config.minimumGoodHipDrop,
     );
   }
 
@@ -428,6 +444,8 @@ class SquatFormAnalyzer implements FormAnalyzer {
       confidence: _meanConfidence(confident),
       persistence: persistence,
       issue: needsAttention ? issue : null,
+      value: worst,
+      threshold: threshold,
     );
   }
 
@@ -457,6 +475,8 @@ class SquatFormAnalyzer implements FormAnalyzer {
       confidence: confidence,
       persistence: issue == null ? 0 : 1,
       issue: issue,
+      value: seconds,
+      threshold: {'minimum': minimum, 'maximum': maximum},
     );
   }
 
