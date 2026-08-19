@@ -21,7 +21,7 @@ void main() {
     markAttempted: (version, attemptedAt) async {
       attempts.add((version, attemptedAt));
     },
-    navigationDelay: Duration.zero,
+    resultDisplayDelay: Duration.zero,
     now: () => now,
   );
 
@@ -30,20 +30,13 @@ void main() {
     attempts = [];
   });
 
-  test('review is requested only after returning home', () async {
+  test('review is requested after a valid result is displayed', () async {
     final subject = service();
     expect(
-      await subject.prepareAutomaticRequest(anotherPromptWasPresented: false),
-      isTrue,
-    );
-    expect(gateway.requestCount, 0);
-
-    expect(
-      await subject.requestAfterNavigation(
-        isHomeVisible: () => true,
+      await subject.requestAfterResultDisplayed(
+        validCompletedWorkout: true,
+        isResultVisible: () => true,
         isAppActive: () => true,
-        isAnotherPromptVisible: () => false,
-        isAdVisible: () => false,
       ),
       isTrue,
     );
@@ -53,25 +46,31 @@ void main() {
 
   test('review request is idempotent in one app session', () async {
     final subject = service();
-    await subject.prepareAutomaticRequest(anotherPromptWasPresented: false);
-    await subject.requestAfterNavigation(
-      isHomeVisible: () => true,
+    await subject.requestAfterResultDisplayed(
+      validCompletedWorkout: true,
+      isResultVisible: () => true,
       isAppActive: () => true,
-      isAnotherPromptVisible: () => false,
-      isAdVisible: () => false,
     );
 
     expect(
-      await subject.prepareAutomaticRequest(anotherPromptWasPresented: false),
+      await subject.requestAfterResultDisplayed(
+        validCompletedWorkout: true,
+        isResultVisible: () => true,
+        isAppActive: () => true,
+      ),
       isFalse,
     );
     expect(gateway.requestCount, 1);
   });
 
-  test('another prompt defers review to a later workout', () async {
+  test('cancelled workout never requests review', () async {
     final subject = service();
     expect(
-      await subject.prepareAutomaticRequest(anotherPromptWasPresented: true),
+      await subject.requestAfterResultDisplayed(
+        validCompletedWorkout: false,
+        isResultVisible: () => true,
+        isAppActive: () => true,
+      ),
       isFalse,
     );
     expect(gateway.requestCount, 0);
@@ -80,30 +79,26 @@ void main() {
   test('review API failure does not throw or block the app', () async {
     gateway.throwOnRequest = true;
     final subject = service();
-    await subject.prepareAutomaticRequest(anotherPromptWasPresented: false);
 
     expect(
-      await subject.requestAfterNavigation(
-        isHomeVisible: () => true,
+      await subject.requestAfterResultDisplayed(
+        validCompletedWorkout: true,
+        isResultVisible: () => true,
         isAppActive: () => true,
-        isAnotherPromptVisible: () => false,
-        isAdVisible: () => false,
       ),
       isFalse,
     );
     expect(attempts, hasLength(1));
   });
 
-  test('review is not requested while another prompt is visible', () async {
+  test('review is not requested after leaving the result screen', () async {
     final subject = service();
-    await subject.prepareAutomaticRequest(anotherPromptWasPresented: false);
 
     expect(
-      await subject.requestAfterNavigation(
-        isHomeVisible: () => true,
+      await subject.requestAfterResultDisplayed(
+        validCompletedWorkout: true,
+        isResultVisible: () => false,
         isAppActive: () => true,
-        isAnotherPromptVisible: () => true,
-        isAdVisible: () => false,
       ),
       isFalse,
     );

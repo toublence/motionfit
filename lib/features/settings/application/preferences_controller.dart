@@ -109,6 +109,12 @@ class PreferencesController extends Notifier<UserPreferences> {
     ),
   );
 
+  Future<void> setCompletedWorkoutCount(int count) => _serialize(
+    () => _commit(
+      state.copyWith(completedWorkoutCount: count.clamp(0, 1 << 31).toInt()),
+    ),
+  );
+
   Future<void> markInterstitialShown() => _serialize(
     () => _commit(state.copyWith(lastInterstitialShownAt: DateTime.now())),
   );

@@ -13,8 +13,14 @@ final reviewPromptServiceProvider = Provider<ReviewPromptService>((ref) {
     crashReporting: ref.watch(crashReportingServiceProvider),
     automaticRequestsEnabled: kReleaseMode,
     loadContext: () async {
-      final preferences = ref.read(preferencesControllerProvider);
       final metrics = await ref.read(combinedWorkoutMetricsProvider.future);
+      var preferences = ref.read(preferencesControllerProvider);
+      if (preferences.completedWorkoutCount != metrics.completedWorkoutCount) {
+        await ref
+            .read(preferencesControllerProvider.notifier)
+            .setCompletedWorkoutCount(metrics.completedWorkoutCount);
+        preferences = ref.read(preferencesControllerProvider);
+      }
       final packageInfo = await PackageInfo.fromPlatform();
       return ReviewPromptContext(
         validWorkoutCount: metrics.completedWorkoutCount,

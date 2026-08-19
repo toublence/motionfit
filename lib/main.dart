@@ -10,6 +10,7 @@ import 'package:motionfit_squat/app/app.dart';
 import 'package:motionfit_squat/core/analytics/analytics_service.dart';
 import 'package:motionfit_squat/core/database/app_database.dart';
 import 'package:motionfit_squat/core/diagnostics/crash_reporting_service.dart';
+import 'package:motionfit_squat/core/migration/legacy_capacitor_migration.dart';
 import 'package:motionfit_squat/core/notifications/notification_service.dart';
 import 'package:motionfit_squat/core/providers.dart';
 import 'package:motionfit_squat/features/settings/data/preferences_service.dart';
@@ -70,10 +71,6 @@ void _registerGlobalErrorHandlers(CrashReportingService crashReporting) {
 
 Future<void> _startApp(CrashReportingService crashReporting) async {
   final preferencesService = PreferencesService();
-  final preferencesFuture = _loadPreferencesSafely(
-    preferencesService,
-    crashReporting,
-  );
   try {
     await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     if (Platform.isAndroid) {
@@ -122,8 +119,28 @@ Future<void> _startApp(CrashReportingService crashReporting) async {
   final notificationService = NotificationService(
     crashReporting: crashReporting,
   );
+  try {
+    await LegacyCapacitorMigration(
+      squatDatabase: database,
+      pushupDatabase: pushupDatabase,
+      plankDatabase: plankDatabase,
+      preferencesService: preferencesService,
+      notificationService: notificationService,
+    ).run();
+  } on Object catch (error, stackTrace) {
+    // Do not mark or delete the legacy data on failure. A later launch retries
+    // the idempotent import while the app remains usable with current storage.
+    await crashReporting.recordNonFatal(
+      error,
+      stackTrace,
+      reason: 'legacy_capacitor_migration',
+    );
+  }
   final analyticsService = AnalyticsService(crashReporting: crashReporting);
-  final preferences = await preferencesFuture;
+  final preferences = await _loadPreferencesSafely(
+    preferencesService,
+    crashReporting,
+  );
   await analyticsService.initialize();
   await analyticsService.appOpened(
     source: 'flutter_bootstrap',

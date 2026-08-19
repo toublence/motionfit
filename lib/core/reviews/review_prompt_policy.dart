@@ -1,7 +1,6 @@
 enum ReviewEligibilityDecision {
   eligible,
   notEnoughValidWorkouts,
-  notEnoughWorkoutDays,
   alreadyRequestedThisVersion,
   cooldownNotElapsed,
   legacyRequestNeedsMigration,
@@ -9,12 +8,10 @@ enum ReviewEligibilityDecision {
 
 abstract final class ReviewPromptPolicy {
   static const minimumValidWorkouts = 3;
-  static const minimumDistinctWorkoutDays = 2;
-  static const cooldown = Duration(days: 120);
+  static const cooldown = Duration(days: 90);
 
   static ReviewEligibilityDecision evaluate({
     required int validWorkoutCount,
-    required int distinctWorkoutDays,
     required String appVersion,
     required bool legacyReviewRequested,
     required String? lastRequestAppVersion,
@@ -23,9 +20,6 @@ abstract final class ReviewPromptPolicy {
   }) {
     if (validWorkoutCount < minimumValidWorkouts) {
       return ReviewEligibilityDecision.notEnoughValidWorkouts;
-    }
-    if (distinctWorkoutDays < minimumDistinctWorkoutDays) {
-      return ReviewEligibilityDecision.notEnoughWorkoutDays;
     }
     if (lastRequestAppVersion == appVersion) {
       return ReviewEligibilityDecision.alreadyRequestedThisVersion;

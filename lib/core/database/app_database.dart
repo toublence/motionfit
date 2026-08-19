@@ -10,7 +10,7 @@ class AppDatabase {
   final String? _path;
   Database? _database;
 
-  static const schemaVersion = 5;
+  static const schemaVersion = 6;
 
   Future<Database> get database async {
     if (_database != null) return _database!;
@@ -122,6 +122,7 @@ class AppDatabase {
       )
     ''');
     await _createChallengeSchema(database);
+    await _createLegacyArchiveSchema(database);
     await database.execute(
       'CREATE INDEX idx_sessions_started_at ON workout_sessions(started_at DESC)',
     );
@@ -216,6 +217,9 @@ class AppDatabase {
         );
       }
     }
+    if (oldVersion < 6) {
+      await _createLegacyArchiveSchema(database);
+    }
   }
 
   Future<void> _addColumnIfMissing(
@@ -255,6 +259,18 @@ class AppDatabase {
     await database.execute('''
       CREATE UNIQUE INDEX IF NOT EXISTS idx_one_active_challenge
       ON challenges(status) WHERE status = 'active'
+    ''');
+  }
+
+  Future<void> _createLegacyArchiveSchema(Database database) async {
+    await database.execute('''
+      CREATE TABLE IF NOT EXISTS legacy_import_archive (
+        id TEXT PRIMARY KEY,
+        exercise_type TEXT NOT NULL,
+        source_key TEXT NOT NULL,
+        source_payload TEXT NOT NULL,
+        imported_at INTEGER NOT NULL
+      )
     ''');
   }
 

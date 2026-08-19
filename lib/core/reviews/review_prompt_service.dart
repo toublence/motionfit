@@ -88,7 +88,7 @@ class ReviewPromptService {
     AnalyticsService? analytics,
     CrashReportingService? crashReporting,
     bool automaticRequestsEnabled = true,
-    Duration navigationDelay = const Duration(milliseconds: 1500),
+    Duration resultDisplayDelay = const Duration(seconds: 2),
     DateTime Function()? now,
   }) : _gateway = gateway,
        _loadContext = loadContext,
@@ -96,7 +96,7 @@ class ReviewPromptService {
        _analytics = analytics,
        _crashReporting = crashReporting,
        _automaticRequestsEnabled = automaticRequestsEnabled,
-       _navigationDelay = navigationDelay,
+       _resultDisplayDelay = resultDisplayDelay,
        _now = now ?? DateTime.now;
 
   final ReviewGateway _gateway;
@@ -106,36 +106,38 @@ class ReviewPromptService {
   final AnalyticsService? _analytics;
   final CrashReportingService? _crashReporting;
   final bool _automaticRequestsEnabled;
-  final Duration _navigationDelay;
+  final Duration _resultDisplayDelay;
   final DateTime Function() _now;
 
-  bool _pending = false;
   bool _requestInProgress = false;
   bool _requestedInCurrentSession = false;
   bool _openingStore = false;
-  ReviewPromptContext? _pendingContext;
-
-  bool get hasPendingAutomaticRequest => _pending;
-
-  Future<bool> prepareAutomaticRequest({
-    required bool anotherPromptWasPresented,
+  Future<bool> requestAfterResultDisplayed({
+    required bool validCompletedWorkout,
+    required bool Function() isResultVisible,
+    required bool Function() isAppActive,
   }) async {
-    if (!_automaticRequestsEnabled) return false;
-    if (_pending || _requestInProgress || _requestedInCurrentSession) {
+    if (!_automaticRequestsEnabled || !validCompletedWorkout) return false;
+    if (_requestInProgress || _requestedInCurrentSession) {
       _logSkipped('same_session_requested');
       return false;
     }
-    if (anotherPromptWasPresented) {
-      _logSkipped('notification_prompt_shown');
-      return false;
-    }
-
+    _requestInProgress = true;
     try {
+      await Future<void>.delayed(_resultDisplayDelay);
+      if (!isAppActive()) {
+        _logSkipped('app_not_active');
+        return false;
+      }
+      if (!isResultVisible()) {
+        _logSkipped('result_not_visible');
+        return false;
+      }
+
       final context = await _loadContext();
       final now = _now();
       final decision = ReviewPromptPolicy.evaluate(
         validWorkoutCount: context.validWorkoutCount,
-        distinctWorkoutDays: context.distinctWorkoutDays,
         appVersion: context.appVersion,
         legacyReviewRequested: context.legacyReviewRequested,
         lastRequestAppVersion: context.lastRequestAppVersion,
@@ -162,55 +164,13 @@ class ReviewPromptService {
         daysSinceInstall: now.difference(context.installedAt).inDays,
         daysSinceLastRequest: _daysSinceLastRequest(context, now),
       );
-      _analytics?.reviewRequestScheduled(
-        validWorkoutCount: context.validWorkoutCount,
-        distinctWorkoutDays: context.distinctWorkoutDays,
-        triggerSource: triggerSource,
-        daysSinceInstall: now.difference(context.installedAt).inDays,
-        daysSinceLastRequest: _daysSinceLastRequest(context, now),
-      );
-      _pendingContext = context;
-      _pending = true;
-      return true;
-    } on Object catch (error, stackTrace) {
-      _recordNonFatal(error, stackTrace, 'review_eligibility_evaluation');
-      return false;
-    }
-  }
-
-  Future<bool> requestAfterNavigation({
-    required bool Function() isHomeVisible,
-    required bool Function() isAppActive,
-    required bool Function() isAnotherPromptVisible,
-    required bool Function() isAdVisible,
-  }) async {
-    if (!_pending || _requestInProgress || _requestedInCurrentSession) {
-      return false;
-    }
-    await Future<void>.delayed(_navigationDelay);
-    if (!_pending) return false;
-    if (!isAppActive()) return _cancelPending('app_not_active');
-    if (!isHomeVisible()) return _cancelPending('navigation_in_progress');
-    if (isAnotherPromptVisible()) {
-      return _cancelPending('another_prompt_visible');
-    }
-    if (isAdVisible()) return _cancelPending('ad_visible');
-
-    final context = _pendingContext;
-    if (context == null) return _cancelPending('unknown');
-    _requestInProgress = true;
-    try {
       if (!await _gateway.isAvailable()) {
-        return _cancelPending('review_api_unavailable', context: context);
+        _logSkipped('review_api_unavailable', context: context);
+        return false;
       }
       final attemptedAt = _now();
       await _markAttempted(context.appVersion, attemptedAt);
-      _pending = false;
-      _pendingContext = null;
       _requestedInCurrentSession = true;
-      final triggerSource = context.validWorkoutCount == 3
-          ? 'third_valid_workout'
-          : 'later_valid_workout';
       _analytics?.reviewPromptRequested(
         validWorkoutCount: context.validWorkoutCount,
         distinctWorkoutDays: context.distinctWorkoutDays,
@@ -219,17 +179,8 @@ class ReviewPromptService {
         daysSinceLastRequest: _daysSinceLastRequest(context, attemptedAt),
       );
       await _gateway.requestReview();
-      _analytics?.reviewRequestCompleted(
-        validWorkoutCount: context.validWorkoutCount,
-        distinctWorkoutDays: context.distinctWorkoutDays,
-        triggerSource: triggerSource,
-        daysSinceInstall: attemptedAt.difference(context.installedAt).inDays,
-        daysSinceLastRequest: _daysSinceLastRequest(context, attemptedAt),
-      );
       return true;
     } on Object catch (error, stackTrace) {
-      _pending = false;
-      _pendingContext = null;
       _recordNonFatal(error, stackTrace, 'in_app_review_request');
       return false;
     } finally {
@@ -264,20 +215,13 @@ class ReviewPromptService {
     }
   }
 
-  bool _cancelPending(String reason, {ReviewPromptContext? context}) {
-    _logSkipped(reason, context: context ?? _pendingContext);
-    _pending = false;
-    _pendingContext = null;
-    return false;
-  }
-
   void _logSkipped(String reason, {ReviewPromptContext? context}) {
     final value = context;
     final now = _now();
     _analytics?.reviewRequestSkipped(
       validWorkoutCount: value?.validWorkoutCount ?? 0,
       distinctWorkoutDays: value?.distinctWorkoutDays ?? 0,
-      triggerSource: 'post_workout_home',
+      triggerSource: 'post_workout_result',
       skipReason: reason,
       daysSinceInstall: value == null
           ? 0
@@ -296,8 +240,6 @@ class ReviewPromptService {
   String _skipReason(ReviewEligibilityDecision decision) => switch (decision) {
     ReviewEligibilityDecision.notEnoughValidWorkouts =>
       'minimum_workouts_not_reached',
-    ReviewEligibilityDecision.notEnoughWorkoutDays =>
-      'insufficient_distinct_days',
     ReviewEligibilityDecision.alreadyRequestedThisVersion =>
       'already_requested_this_version',
     ReviewEligibilityDecision.cooldownNotElapsed => 'cooldown_not_elapsed',

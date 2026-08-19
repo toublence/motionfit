@@ -1,4 +1,4 @@
 abstract final class StoreListingConfig {
-  // Verified for bundle ID com.namslab.motionfit.squat via Apple's lookup API.
-  static const iosAppStoreId = '6793439770';
+  // Existing MotionFit listing for bundle ID fit.motionfit.app.
+  static const iosAppStoreId = '6754861354';
 }

@@ -19,6 +19,7 @@ enum NativeAdPlacement {
   home,
   challenge,
   records,
+  workoutSummary,
   workoutDetail,
   repReview,
   settings,
@@ -41,6 +42,7 @@ class NativeAdSection extends ConsumerWidget {
           NativeAdPlacement.home => path == '/squat',
           NativeAdPlacement.challenge => path == '/challenge',
           NativeAdPlacement.records => path == '/records',
+          NativeAdPlacement.workoutSummary => path == '/plank/workout/summary',
           NativeAdPlacement.workoutDetail =>
             ModalRoute.of(context)?.isCurrent ?? false,
           NativeAdPlacement.repReview =>

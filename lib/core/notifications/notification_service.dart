@@ -41,6 +41,8 @@ class NotificationService {
   static const _channelDescription = 'MotionFit workout reminders';
   static const _notificationBaseId = 4100;
   static const _streakRiskNotificationId = 4300;
+  static const _legacyWeeklyNotificationBaseId = 830000;
+  static const _legacyStreakNotificationId = 830100;
 
   final FlutterLocalNotificationsPlugin _plugin;
   final CrashReportingService? _crashReporting;
@@ -288,6 +290,16 @@ class NotificationService {
   Future<void> cancelWeekday(int weekday) async {
     await initialize();
     await _plugin.cancel(id: _notificationBaseId + weekday);
+  }
+
+  /// Removes notifications scheduled by the Capacitor app before Flutter
+  /// reschedules the imported reminder settings with the current IDs.
+  Future<void> cancelLegacyCapacitorReminders() async {
+    await initialize();
+    for (var weekday = 1; weekday <= 7; weekday += 1) {
+      await _plugin.cancel(id: _legacyWeeklyNotificationBaseId + weekday);
+    }
+    await _plugin.cancel(id: _legacyStreakNotificationId);
   }
 
   Future<void> syncStreakRiskReminder({

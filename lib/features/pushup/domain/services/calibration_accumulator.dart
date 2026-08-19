@@ -40,10 +40,14 @@ class CalibrationAccumulator {
     _lastObservedAtUs = metrics.timestampUs;
     final kneeObservable =
         metrics.leftKneeAngle != null || metrics.rightKneeAngle != null;
-    final standingLike =
-        (!kneeObservable || metrics.kneeAngle >= 145) &&
-        metrics.hipAngle >= 145;
-    if (!standingLike || metrics.confidence < config.aggregateConfidenceFloor) {
+    // Calibration is performed in the top push-up position, not standing.
+    // Allow a naturally soft elbow/body line so a horizontal pose can start
+    // the workout; stricter form findings are reported after the workout.
+    final topPushupLike =
+        (!kneeObservable || metrics.kneeAngle >= 125) &&
+        metrics.hipAngle >= 125;
+    if (!topPushupLike ||
+        metrics.confidence < config.aggregateConfidenceFloor) {
       _restart();
       return null;
     }

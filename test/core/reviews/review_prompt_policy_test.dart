@@ -6,13 +6,11 @@ void main() {
 
   ReviewEligibilityDecision evaluate({
     int workouts = 3,
-    int days = 2,
     String version = '1.0.7',
     String? lastVersion,
     DateTime? lastAttempt,
   }) => ReviewPromptPolicy.evaluate(
     validWorkoutCount: workouts,
-    distinctWorkoutDays: days,
     appVersion: version,
     legacyReviewRequested: false,
     lastRequestAppVersion: lastVersion,
@@ -31,11 +29,7 @@ void main() {
     );
   });
 
-  test('three workouts on one day do not request review', () {
-    expect(evaluate(days: 1), ReviewEligibilityDecision.notEnoughWorkoutDays);
-  });
-
-  test('third valid workout on two days becomes eligible', () {
+  test('third valid workout becomes eligible', () {
     expect(evaluate(), ReviewEligibilityDecision.eligible);
   });
 
@@ -46,12 +40,12 @@ void main() {
     );
   });
 
-  test('review respects the 120 day cooldown across versions', () {
+  test('review respects the 90 day cooldown across versions', () {
     expect(
       evaluate(
         version: '1.0.8',
         lastVersion: '1.0.7',
-        lastAttempt: now.subtract(const Duration(days: 119)),
+        lastAttempt: now.subtract(const Duration(days: 89)),
       ),
       ReviewEligibilityDecision.cooldownNotElapsed,
     );
@@ -59,7 +53,7 @@ void main() {
       evaluate(
         version: '1.0.8',
         lastVersion: '1.0.7',
-        lastAttempt: now.subtract(const Duration(days: 120)),
+        lastAttempt: now.subtract(const Duration(days: 90)),
       ),
       ReviewEligibilityDecision.eligible,
     );

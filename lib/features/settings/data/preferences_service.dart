@@ -8,6 +8,9 @@ class PreferencesService {
   static const _preferencesKey = 'user_preferences_v1';
   final SharedPreferencesAsync _preferences;
 
+  Future<bool> hasSavedPreferences() async =>
+      await _preferences.getString(_preferencesKey) != null;
+
   Future<UserPreferences> load() async {
     final source = await _preferences.getString(_preferencesKey);
     if (source == null) return UserPreferences.defaults();

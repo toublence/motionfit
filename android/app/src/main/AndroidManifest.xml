@@ -10,6 +10,8 @@
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-feature android:name="android.hardware.camera.any" android:required="false" />
     <application
+        android:allowBackup="false"
+        android:fullBackupContent="false"
         android:label="motionfit - workout coach"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"

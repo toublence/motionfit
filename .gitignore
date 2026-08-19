@@ -39,6 +39,9 @@ app.*.map.json
 **/.cxx/
 **/GeneratedPluginRegistrant.java
 
+# Local Android release bundles (GitHub has a 100 MB file limit)
+/releases/*.aab
+
 # iOS generated files
 **/Pods/
 **/.symlinks/

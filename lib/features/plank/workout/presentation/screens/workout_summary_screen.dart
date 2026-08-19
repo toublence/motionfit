@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
+import 'package:motionfit_squat/core/ads/bottom_native_ad.dart';
 import 'package:motionfit_squat/features/plank/localization/generated/plank_localizations.dart';
 import 'package:motionfit_squat/core/ads/post_workout_interstitial.dart';
 import 'package:motionfit_squat/core/diagnostics/crash_reporting_service.dart';
@@ -42,7 +43,6 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
   bool _enablingReminder = false;
   bool _reminderEnabled = false;
   bool _postCompletionActionsLoading = false;
-  bool _postWorkoutPromptPresented = false;
   bool _timelineAnalyticsLogged = false;
   int? _reminderOfferWorkoutCount;
 
@@ -63,7 +63,31 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
             );
       }
       _loadPostCompletionActions();
+      _requestReviewAfterResult();
     });
+  }
+
+  void _requestReviewAfterResult() {
+    final state = ref.read(workoutSessionControllerProvider);
+    final session = state.session;
+    final validCompletedWorkout =
+        session != null &&
+        session.completed &&
+        !session.interrupted &&
+        session.totalReps > 0 &&
+        state.saveState == WorkoutSaveState.saved;
+    unawaited(
+      ref
+          .read(reviewPromptServiceProvider)
+          .requestAfterResultDisplayed(
+            validCompletedWorkout: validCompletedWorkout,
+            isResultVisible: () =>
+                mounted && (ModalRoute.of(context)?.isCurrent ?? false),
+            isAppActive: () =>
+                WidgetsBinding.instance.lifecycleState ==
+                AppLifecycleState.resumed,
+          ),
+    );
   }
 
   @override
@@ -196,6 +220,9 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
                               ],
                             ),
                             const SizedBox(height: 28),
+                            const NativeAdSection(
+                              placement: NativeAdPlacement.workoutSummary,
+                            ),
                             WorkoutResultRepTimeline(
                               sessionId: session.id,
                               details: persistedDetails,
@@ -346,7 +373,6 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
           (completedWorkoutCount == 1 || completedWorkoutCount == 3);
       if (shouldShowReminderSettings && mounted) {
         setState(() {
-          _postWorkoutPromptPresented = true;
           _reminderSettingsCtaVisible = true;
           _reminderOfferWorkoutCount = completedWorkoutCount;
         });
@@ -373,7 +399,6 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
             .reminderPromptShown(completedWorkoutCount: completedWorkoutCount);
         if (!mounted) return;
         setState(() {
-          _postWorkoutPromptPresented = true;
           _reminderOfferEligible = true;
           _reminderOfferWorkoutCount = completedWorkoutCount;
         });
@@ -389,7 +414,6 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
     if (_enablingReminder) return;
     setState(() {
       _enablingReminder = true;
-      _postWorkoutPromptPresented = true;
     });
     final l10n = PlankLocalizations.of(context);
     final reminderTime =
@@ -524,26 +548,9 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
     if (_finishing) return;
     setState(() => _finishing = true);
     try {
-      final state = ref.read(workoutSessionControllerProvider);
       final sessionController = ref.read(
         workoutSessionControllerProvider.notifier,
       );
-      final session = state.session;
-      final reviewService = ref.read(reviewPromptServiceProvider);
-      final adService = ref.read(adServiceProvider);
-      final router = GoRouter.of(context);
-      final rootNavigator = Navigator.of(context, rootNavigator: true);
-      final validCompletedWorkout =
-          session != null &&
-          session.completed &&
-          !session.interrupted &&
-          session.totalReps > 0 &&
-          state.saveState == WorkoutSaveState.saved;
-      final reviewReserved = destination == '/squat' && validCompletedWorkout
-          ? await reviewService.prepareAutomaticRequest(
-              anotherPromptWasPresented: _postWorkoutPromptPresented,
-            )
-          : false;
       if (!mounted) return;
       await sessionController.clearCompletedSession();
       if (!mounted) return;
@@ -551,10 +558,9 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
       ref.invalidate(todaySessionsProvider);
       ref.invalidate(workoutStatisticsProvider);
       ref.invalidate(challengeDashboardProvider);
-      var interstitialShown = false;
       if (showInterstitial) {
         try {
-          interstitialShown = await showPostWorkoutInterstitial(ref);
+          await showPostWorkoutInterstitial(ref);
         } on Object catch (error, stackTrace) {
           _recordNonFatal(error, stackTrace, 'post_workout_ad');
         }
@@ -562,19 +568,6 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
       if (!mounted) return;
       ref.read(workoutLaunchContextProvider.notifier).clear();
       context.go(destination);
-      if (reviewReserved && !interstitialShown) {
-        unawaited(
-          reviewService.requestAfterNavigation(
-            isHomeVisible: () =>
-                router.routeInformationProvider.value.uri.path == '/squat',
-            isAppActive: () =>
-                WidgetsBinding.instance.lifecycleState ==
-                AppLifecycleState.resumed,
-            isAnotherPromptVisible: rootNavigator.canPop,
-            isAdVisible: () => adService.fullScreenShowing,
-          ),
-        );
-      }
     } finally {
       if (mounted) setState(() => _finishing = false);
     }

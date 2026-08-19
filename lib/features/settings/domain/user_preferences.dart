@@ -29,6 +29,7 @@ class UserPreferences {
     this.reviewRequested = false,
     this.lastReviewRequestAttemptAt,
     this.lastReviewRequestAppVersion,
+    this.completedWorkoutCount = 0,
     required this.installedAt,
     this.lastInterstitialShownAt,
     this.postWorkoutReminderPromptedAtWorkoutCount = 0,
@@ -97,6 +98,7 @@ class UserPreferences {
   final bool reviewRequested;
   final DateTime? lastReviewRequestAttemptAt;
   final String? lastReviewRequestAppVersion;
+  final int completedWorkoutCount;
   final DateTime installedAt;
   final DateTime? lastInterstitialShownAt;
   final int postWorkoutReminderPromptedAtWorkoutCount;
@@ -133,6 +135,7 @@ class UserPreferences {
     bool? reviewRequested,
     DateTime? lastReviewRequestAttemptAt,
     String? lastReviewRequestAppVersion,
+    int? completedWorkoutCount,
     DateTime? installedAt,
     DateTime? lastInterstitialShownAt,
     int? postWorkoutReminderPromptedAtWorkoutCount,
@@ -172,6 +175,10 @@ class UserPreferences {
           lastReviewRequestAttemptAt ?? this.lastReviewRequestAttemptAt,
       lastReviewRequestAppVersion:
           lastReviewRequestAppVersion ?? this.lastReviewRequestAppVersion,
+      completedWorkoutCount:
+          (completedWorkoutCount ?? this.completedWorkoutCount)
+              .clamp(0, 1 << 31)
+              .toInt(),
       installedAt: installedAt ?? this.installedAt,
       lastInterstitialShownAt:
           lastInterstitialShownAt ?? this.lastInterstitialShownAt,
@@ -217,6 +224,7 @@ class UserPreferences {
     'lastReviewRequestAttemptAt':
         lastReviewRequestAttemptAt?.millisecondsSinceEpoch,
     'lastReviewRequestAppVersion': lastReviewRequestAppVersion,
+    'completedWorkoutCount': completedWorkoutCount,
     'installedAt': installedAt.millisecondsSinceEpoch,
     'lastInterstitialShownAt': lastInterstitialShownAt?.millisecondsSinceEpoch,
     'postWorkoutReminderPromptedAtWorkoutCount':
@@ -285,6 +293,10 @@ class UserPreferences {
       },
       lastReviewRequestAppVersion:
           map['lastReviewRequestAppVersion'] as String?,
+      completedWorkoutCount: switch (map['completedWorkoutCount']) {
+        final num value => value.toInt().clamp(0, 1 << 31).toInt(),
+        _ => 0,
+      },
       installedAt: switch (map['installedAt']) {
         final num value => DateTime.fromMillisecondsSinceEpoch(value.toInt()),
         _ => DateTime.fromMillisecondsSinceEpoch(0),

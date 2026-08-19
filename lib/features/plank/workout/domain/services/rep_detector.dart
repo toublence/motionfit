@@ -181,8 +181,14 @@ class SquatRepDetector implements RepDetector {
       _candidateSinceUs = null;
       _candidateVideoElapsedUs = null;
       if (_checkpointStartedAtUs != null) {
-        _clearHold();
-        _phase = SquatPhase.ready;
+        _phase = SquatPhase.bottom;
+        _checkpointSamples.add(metrics);
+        events.addAll(
+          _completeDueCheckpoints(
+            timestampUs,
+            videoElapsedUs: metrics.videoElapsedUs,
+          ),
+        );
       }
       _poorFormSinceUs ??= timestampUs;
       final warningDue =
@@ -223,35 +229,50 @@ class SquatRepDetector implements RepDetector {
 
     _phase = SquatPhase.bottom;
     _checkpointSamples.add(metrics);
-    final checkpointAtUs = _nextCheckpointAtUs!;
-    if (timestampUs < checkpointAtUs) return events;
+    events.addAll(
+      _completeDueCheckpoints(
+        timestampUs,
+        videoElapsedUs: metrics.videoElapsedUs,
+      ),
+    );
+    return events;
+  }
 
+  List<RepEvent> _completeDueCheckpoints(
+    int timestampUs, {
+    int? videoElapsedUs,
+  }) {
+    final checkpointAtUs = _nextCheckpointAtUs;
+    final checkpointStartedAtUs = _checkpointStartedAtUs;
+    if (checkpointAtUs == null ||
+        checkpointStartedAtUs == null ||
+        timestampUs < checkpointAtUs) {
+      return const [];
+    }
+    final samples = List<SquatMetrics>.unmodifiable(_checkpointSamples);
     final trace = RepMotionTrace(
       repSequence: _count + 1,
-      startedAtUs: _checkpointStartedAtUs!,
+      startedAtUs: checkpointStartedAtUs,
       bottomAtUs: null,
       completedAtUs: checkpointAtUs,
       videoStartedAtUs: _checkpointVideoStartedAtUs,
       videoBottomAtUs: null,
-      videoCompletedAtUs: metrics.videoElapsedUs,
-      samples: List.unmodifiable(_checkpointSamples),
-      detectionConfidence: _averageConfidence(_checkpointSamples),
+      videoCompletedAtUs: videoElapsedUs,
+      samples: samples,
+      detectionConfidence: _averageConfidence(samples),
     );
     _count++;
     _checkpointStartedAtUs = checkpointAtUs;
-    _checkpointVideoStartedAtUs = metrics.videoElapsedUs;
+    _checkpointVideoStartedAtUs = videoElapsedUs;
     _nextCheckpointAtUs = checkpointAtUs + config.plankCheckpointUs;
-    _checkpointSamples
-      ..clear()
-      ..add(metrics);
-    events.add(
+    _checkpointSamples.clear();
+    return [
       RepEvent(
         type: RepEventType.completed,
         timestampUs: timestampUs,
         trace: trace,
       ),
-    );
-    return events;
+    ];
   }
 
   bool _isGoodPlank(SquatMetrics metrics) {
@@ -282,8 +303,9 @@ class SquatRepDetector implements RepDetector {
       return const [];
     }
     _trackingState = TrackingState.lost;
-    _phase = SquatPhase.trackingLost;
-    _clearHold(keepPhase: true);
+    if (_checkpointStartedAtUs == null) {
+      _phase = SquatPhase.trackingLost;
+    }
     _extractor.resetDerivatives();
     if (_trackingLossReported) return const [];
     _trackingLossReported = true;
@@ -297,7 +319,10 @@ class SquatRepDetector implements RepDetector {
   }
 
   @override
-  List<RepEvent> tick(int timestampUs) => _handleTrackingGap(timestampUs);
+  List<RepEvent> tick(int timestampUs) => [
+    ..._completeDueCheckpoints(timestampUs),
+    ..._handleTrackingGap(timestampUs),
+  ];
 
   @override
   void pause(int timestampUs) {

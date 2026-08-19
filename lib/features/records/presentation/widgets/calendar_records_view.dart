@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:motionfit_squat/app/localization/generated/app_localizations.dart';
 import 'package:motionfit_squat/app/theme/exercise_colors.dart';
 import 'package:motionfit_squat/app/theme/motionfit_tokens.dart';
+import 'package:motionfit_squat/core/ads/bottom_native_ad.dart';
 import 'package:motionfit_squat/core/widgets/coach_ui.dart';
 import 'package:motionfit_squat/features/exercise/domain/exercise_type.dart';
 import 'package:motionfit_squat/features/records/presentation/models/growth_workout_record.dart';
@@ -54,7 +55,6 @@ class _CalendarRecordsViewState extends State<CalendarRecordsView> {
     final validRecords =
         widget.records.where((record) => record.isValid).toList()
           ..sort((a, b) => b.startedAt.compareTo(a.startedAt));
-    final latest = validRecords.firstOrNull;
     final selectedRecords =
         validRecords
             .where((record) => _dateOnly(record.startedAt) == _selectedDate)
@@ -69,7 +69,6 @@ class _CalendarRecordsViewState extends State<CalendarRecordsView> {
         children: [
           _StreakSummary(
             records: validRecords,
-            latest: latest,
             emptyMessage: l10n.recordsEmptyBody,
           ),
           SizedBox(height: context.tokens.spaceXl),
@@ -79,6 +78,7 @@ class _CalendarRecordsViewState extends State<CalendarRecordsView> {
             onSelectDate: (date) => setState(() => _selectedDate = date),
           ),
           SizedBox(height: context.tokens.spaceXl),
+          const NativeAdSection(placement: NativeAdPlacement.records),
           CoachSectionHeader(title: l10n.recordsWorkoutRecords),
           const SizedBox(height: 7),
           Text(
@@ -107,20 +107,29 @@ class _CalendarRecordsViewState extends State<CalendarRecordsView> {
 }
 
 class _StreakSummary extends StatelessWidget {
-  const _StreakSummary({
-    required this.records,
-    required this.latest,
-    required this.emptyMessage,
-  });
+  const _StreakSummary({required this.records, required this.emptyMessage});
 
   final List<GrowthWorkoutRecord> records;
-  final GrowthWorkoutRecord? latest;
   final String emptyMessage;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final streak = _currentWorkoutStreak(records);
+    final today = _dateOnly(DateTime.now());
+    final todayTotals = <ExerciseType, int>{};
+    for (final record in records) {
+      if (_dateOnly(record.startedAt) != today) continue;
+      todayTotals.update(
+        record.exerciseType,
+        (total) => total + record.totalReps,
+        ifAbsent: () => record.totalReps,
+      );
+    }
+    final todayTypes = ExerciseType.values
+        .where(todayTotals.containsKey)
+        .toList(growable: false);
+    final latest = records.firstOrNull;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -132,7 +141,18 @@ class _StreakSummary extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 7),
-        if (latest == null)
+        if (todayTotals.isNotEmpty)
+          for (var index = 0; index < todayTypes.length; index++) ...[
+            if (todayTotals[todayTypes[index]] case final total?)
+              _ExerciseSummaryRow(
+                color: ExerciseColors.of(todayTypes[index]),
+                text:
+                    '${l10n.recordsToday} · ${_exerciseLabel(l10n, todayTypes[index])} '
+                    '${todayTypes[index] == ExerciseType.plank ? l10n.unitSeconds(total) : l10n.unitReps(total)}',
+              ),
+            if (index < todayTypes.length - 1) const SizedBox(height: 5),
+          ]
+        else if (latest == null)
           Text(
             emptyMessage,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
@@ -140,30 +160,40 @@ class _StreakSummary extends StatelessWidget {
             ),
           )
         else
-          Row(
-            children: [
-              Container(
-                width: 9,
-                height: 9,
-                decoration: BoxDecoration(
-                  color: ExerciseColors.of(latest!.exerciseType),
-                  shape: BoxShape.circle,
-                ),
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text(
-                  _latestCompletionText(context, latest!),
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  ),
-                ),
-              ),
-            ],
+          _ExerciseSummaryRow(
+            color: ExerciseColors.of(latest.exerciseType),
+            text: _latestCompletionText(context, latest),
           ),
       ],
     );
   }
+}
+
+class _ExerciseSummaryRow extends StatelessWidget {
+  const _ExerciseSummaryRow({required this.color, required this.text});
+
+  final Color color;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) => Row(
+    children: [
+      Container(
+        width: 9,
+        height: 9,
+        decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+      ),
+      const SizedBox(width: 8),
+      Expanded(
+        child: Text(
+          text,
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
+        ),
+      ),
+    ],
+  );
 }
 
 class _WorkoutGrass extends StatefulWidget {
@@ -216,20 +246,18 @@ class _WorkoutGrassState extends State<_WorkoutGrass> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Row(
-          children: [
-            Expanded(child: CoachSectionHeader(title: l10n.recordsConsistency)),
-            if (_page > 0)
-              TextButton(
-                onPressed: () => _pageController.animateToPage(
-                  0,
-                  duration: const Duration(milliseconds: 280),
-                  curve: Curves.easeOutCubic,
-                ),
-                child: Text(l10n.recordsToday),
+        if (_page > 0)
+          Align(
+            alignment: AlignmentDirectional.centerEnd,
+            child: TextButton(
+              onPressed: () => _pageController.animateToPage(
+                0,
+                duration: const Duration(milliseconds: 280),
+                curve: Curves.easeOutCubic,
               ),
-          ],
-        ),
+              child: Text(l10n.recordsToday),
+            ),
+          ),
         const SizedBox(height: 12),
         SizedBox(
           height: 144,

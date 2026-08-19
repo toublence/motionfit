@@ -466,7 +466,7 @@ class AnalyticsService {
     required int daysSinceInstall,
     required int? daysSinceLastRequest,
   }) => _logV2(
-    'mf2_review_eligibility_met',
+    'mf2_review_request_eligible',
     _reviewParameters(
       validWorkoutCount: validWorkoutCount,
       distinctWorkoutDays: distinctWorkoutDays,
@@ -518,7 +518,7 @@ class AnalyticsService {
     required int daysSinceInstall,
     required int? daysSinceLastRequest,
   }) => _logV2(
-    'mf2_review_requested',
+    'mf2_review_request_attempted',
     _reviewParameters(
       validWorkoutCount: validWorkoutCount,
       distinctWorkoutDays: distinctWorkoutDays,
@@ -549,7 +549,7 @@ class AnalyticsService {
       _logV2('mf2_manual_rate_tapped', {'trigger_source': triggerSource});
 
   void storeReviewPageOpened({required String triggerSource}) =>
-      _logV2('mf2_store_review_page_opened', {'trigger_source': triggerSource});
+      _logV2('mf2_review_store_opened', {'trigger_source': triggerSource});
 
   void storeReviewPageFailed({
     required String triggerSource,

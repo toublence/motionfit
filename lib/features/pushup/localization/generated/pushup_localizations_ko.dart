@@ -1373,7 +1373,7 @@ class PushupLocalizationsKo extends PushupLocalizations {
   String get formStrengthBalance => '균형 잡힌 자세';
 
   @override
-  String get coachTrackingLost1 => '카메라 앞에 서주세요.';
+  String get coachTrackingLost1 => '운동은 계속되고 있어요. 푸시업 자세 전체가 보이게 해주세요.';
 
   @override
   String get coachTrackingLost2 => '관절을 다시 찾고 있어요.';
