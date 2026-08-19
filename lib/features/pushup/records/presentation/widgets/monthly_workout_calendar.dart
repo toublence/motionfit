@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' hide TextDirection;
+import 'package:motionfit_squat/app/theme/exercise_colors.dart';
 import 'package:motionfit_squat/features/pushup/localization/generated/pushup_localizations.dart';
 import 'package:motionfit_squat/app/theme/motionfit_tokens.dart';
 import 'package:motionfit_squat/features/pushup/records/presentation/widgets/record_formatters.dart';
@@ -205,9 +206,7 @@ class _CalendarDay extends StatelessWidget {
                     child: Icon(
                       Icons.circle,
                       size: 6,
-                      color: selected
-                          ? colors.onPrimaryContainer
-                          : colors.primary,
+                      color: ExerciseColors.pushup,
                     ),
                   ),
               ],

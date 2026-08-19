@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:motionfit_squat/app/localization/generated/app_localizations.dart';
+import 'package:motionfit_squat/app/theme/exercise_colors.dart';
 import 'package:motionfit_squat/app/theme/motionfit_tokens.dart';
 import 'package:motionfit_squat/core/widgets/coach_ui.dart';
 import 'package:motionfit_squat/features/exercise/domain/exercise_type.dart';
@@ -57,13 +58,15 @@ class _CalendarRecordsViewState extends State<CalendarRecordsView> {
     final today = _dateOnly(DateTime.now());
     final weekStart = today.subtract(Duration(days: today.weekday - 1));
     final nextWeekStart = weekStart.add(const Duration(days: 7));
-    final weeklyDays = validRecords
-        .map((record) => _dateOnly(record.startedAt))
-        .where(
-          (date) => !date.isBefore(weekStart) && date.isBefore(nextWeekStart),
-        )
-        .toSet()
-        .length;
+    final weeklyExerciseByDay = <DateTime, ExerciseType>{};
+    for (final record in validRecords.reversed) {
+      final date = _dateOnly(record.startedAt);
+      if (!date.isBefore(weekStart) && date.isBefore(nextWeekStart)) {
+        weeklyExerciseByDay.putIfAbsent(date, () => record.exerciseType);
+      }
+    }
+    final weeklyExerciseTypes = weeklyExerciseByDay.entries.toList()
+      ..sort((a, b) => a.key.compareTo(b.key));
     final selectedRecords =
         validRecords
             .where((record) => _dateOnly(record.startedAt) == _selectedDate)
@@ -77,7 +80,9 @@ class _CalendarRecordsViewState extends State<CalendarRecordsView> {
         padding: EdgeInsetsDirectional.only(bottom: context.tokens.spaceXl),
         children: [
           _WeekProgress(
-            weeklyDays: weeklyDays,
+            weeklyExerciseTypes: weeklyExerciseTypes
+                .map((entry) => entry.value)
+                .toList(growable: false),
             latest: latest,
             emptyMessage: l10n.recordsEmptyBody,
           ),
@@ -117,25 +122,26 @@ class _CalendarRecordsViewState extends State<CalendarRecordsView> {
 
 class _WeekProgress extends StatelessWidget {
   const _WeekProgress({
-    required this.weeklyDays,
+    required this.weeklyExerciseTypes,
     required this.latest,
     required this.emptyMessage,
   });
 
-  final int weeklyDays;
+  final List<ExerciseType> weeklyExerciseTypes;
   final GrowthWorkoutRecord? latest;
   final String emptyMessage;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final weeklyDays = weeklyExerciseTypes.length;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
           l10n.challengeThisWeekProgress(weeklyDays, 3),
           style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-            color: Theme.of(context).colorScheme.primary,
+            color: Theme.of(context).colorScheme.onSurface,
             fontWeight: FontWeight.w800,
           ),
         ),
@@ -154,7 +160,7 @@ class _WeekProgress extends StatelessWidget {
                 width: 9,
                 height: 9,
                 decoration: BoxDecoration(
-                  color: _exerciseColor(context, latest!.exerciseType),
+                  color: ExerciseColors.of(latest!.exerciseType),
                   shape: BoxShape.circle,
                 ),
               ),
@@ -180,7 +186,7 @@ class _WeekProgress extends StatelessWidget {
                 margin: EdgeInsetsDirectional.only(end: index == 2 ? 0 : 7),
                 decoration: BoxDecoration(
                   color: completed
-                      ? Theme.of(context).colorScheme.primary
+                      ? ExerciseColors.of(weeklyExerciseTypes[index])
                       : Theme.of(context).colorScheme.outlineVariant,
                   borderRadius: BorderRadius.circular(999),
                 ),
@@ -479,7 +485,7 @@ class _GrassCell extends StatelessWidget {
     final borderColor = selected
         ? colors.onSurface
         : date == today
-        ? colors.primary
+        ? colors.onSurfaceVariant
         : future
         ? colors.outlineVariant.withValues(alpha: .22)
         : colors.outlineVariant;
@@ -529,7 +535,7 @@ class _GrassCell extends StatelessWidget {
                             for (final type in orderedTypes)
                               Expanded(
                                 child: ColoredBox(
-                                  color: _exerciseColor(context, type),
+                                  color: ExerciseColors.of(type),
                                 ),
                               ),
                           ],
@@ -601,7 +607,7 @@ class _WorkoutRecordRow extends StatelessWidget {
               width: 10,
               height: 10,
               decoration: BoxDecoration(
-                color: _exerciseColor(context, record.exerciseType),
+                color: ExerciseColors.of(record.exerciseType),
                 shape: BoxShape.circle,
               ),
             ),
@@ -692,12 +698,6 @@ String _exerciseLabel(AppLocalizations l10n, ExerciseType type) =>
       ExerciseType.pushup => l10n.exercisePushup,
       ExerciseType.plank => l10n.exercisePlank,
     };
-
-Color _exerciseColor(BuildContext context, ExerciseType type) => switch (type) {
-  ExerciseType.squat => Theme.of(context).colorScheme.primary,
-  ExerciseType.pushup => const Color(0xFFC86A4A),
-  ExerciseType.plank => const Color(0xFF2A8C7D),
-};
 
 String _selectedDateLabel(AppLocalizations l10n, DateTime date) =>
     '${DateFormat.MMMMd(l10n.localeName).format(date)} · '

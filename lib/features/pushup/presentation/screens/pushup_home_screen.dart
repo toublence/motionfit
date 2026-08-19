@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
+import 'package:motionfit_squat/app/theme/exercise_colors.dart';
 import 'package:motionfit_squat/features/pushup/localization/generated/pushup_localizations.dart';
 import 'package:motionfit_squat/features/pushup/providers.dart';
 import 'package:motionfit_squat/core/widgets/coach_ui.dart';
@@ -409,7 +410,7 @@ class _WeekActivityOverview extends StatelessWidget {
             final completed = workoutDates.contains(day);
             final isToday = day == today;
             final color = completed
-                ? Theme.of(context).colorScheme.primary
+                ? ExerciseColors.pushup
                 : Theme.of(context).colorScheme.outlineVariant;
             return Expanded(
               child: Semantics(
