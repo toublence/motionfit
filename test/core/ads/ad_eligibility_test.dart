@@ -2,21 +2,22 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:motionfit_squat/core/ads/ad_eligibility.dart';
 
 void main() {
-  test('native ads start immediately while interstitial ads stay gated', () {
-    expect(AdEligibility.canShowNative(completedWorkoutCount: 0), isTrue);
+  test('all ads stay gated during the first three workouts', () {
+    expect(AdEligibility.canShowNative(completedWorkoutCount: 0), isFalse);
     expect(
       AdEligibility.canShowInterstitial(completedWorkoutCount: 0),
       isFalse,
     );
   });
 
-  test('native remains enabled and interstitial starts after three workouts', () {
-    expect(AdEligibility.canShowNative(completedWorkoutCount: 1), isTrue);
+  test('native and interstitial ads start after three workouts', () {
+    expect(AdEligibility.canShowNative(completedWorkoutCount: 1), isFalse);
     expect(
       AdEligibility.canShowInterstitial(completedWorkoutCount: 2),
       isFalse,
     );
     expect(AdEligibility.canShowInterstitial(completedWorkoutCount: 3), isTrue);
+    expect(AdEligibility.canShowNative(completedWorkoutCount: 3), isTrue);
   });
 
   test('interstitial cooldown is ten minutes from the last impression', () {

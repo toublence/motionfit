@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:motionfit_squat/features/pushup/localization/generated/pushup_localizations.dart';
 import 'package:motionfit_squat/app/theme/motionfit_tokens.dart';
-import 'package:motionfit_squat/core/ads/bottom_native_ad.dart';
 import 'package:motionfit_squat/core/widgets/coach_ui.dart';
 import 'package:motionfit_squat/features/pushup/records/domain/workout_session_details.dart';
 import 'package:motionfit_squat/features/pushup/records/presentation/widgets/monthly_workout_calendar.dart';
@@ -56,7 +55,6 @@ class CalendarRecordsView extends StatelessWidget {
         children: [
           _WeeklySummary(sessions: sessions),
           SizedBox(height: context.tokens.spaceLg),
-          const NativeAdSection(placement: NativeAdPlacement.records),
           CoachSectionHeader(title: l10n.recordsRecentWorkouts),
           const SizedBox(height: 10),
           for (
@@ -79,9 +77,7 @@ class CalendarRecordsView extends StatelessWidget {
             ),
             child: ExpansionTile(
               key: const ValueKey('records-calendar-expansion'),
-              initiallyExpanded: const bool.fromEnvironment(
-                'STORE_SCREENSHOT',
-              ),
+              initiallyExpanded: const bool.fromEnvironment('STORE_SCREENSHOT'),
               leading: const Icon(Icons.calendar_month_outlined),
               title: Text(l10n.recordsCalendarTitle),
               tilePadding: EdgeInsets.zero,

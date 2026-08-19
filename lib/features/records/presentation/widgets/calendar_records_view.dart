@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:motionfit_squat/app/localization/generated/app_localizations.dart';
 import 'package:motionfit_squat/app/theme/motionfit_tokens.dart';
-import 'package:motionfit_squat/core/ads/bottom_native_ad.dart';
 import 'package:motionfit_squat/core/widgets/coach_ui.dart';
 import 'package:motionfit_squat/features/records/domain/workout_session_details.dart';
 import 'package:motionfit_squat/features/records/presentation/widgets/monthly_workout_calendar.dart';
@@ -56,7 +55,6 @@ class CalendarRecordsView extends StatelessWidget {
         children: [
           _WeeklySummary(sessions: sessions),
           SizedBox(height: context.tokens.spaceLg),
-          const NativeAdSection(placement: NativeAdPlacement.records),
           CoachSectionHeader(title: l10n.recordsRecentWorkouts),
           const SizedBox(height: 10),
           for (

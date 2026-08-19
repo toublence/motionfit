@@ -320,22 +320,21 @@ class _ChallengeChoiceCard extends StatelessWidget {
   final VoidCallback onDismissRecommendation;
 
   @override
-  Widget build(BuildContext context) => DecoratedBox(
-    decoration: BoxDecoration(
-      border: BorderDirectional(
-        start: recommended
-            ? BorderSide(color: Theme.of(context).colorScheme.primary, width: 3)
-            : BorderSide.none,
-        bottom: BorderSide(color: Theme.of(context).colorScheme.outlineVariant),
+  Widget build(BuildContext context) => Card(
+    margin: const EdgeInsets.only(bottom: 12),
+    elevation: 0,
+    color: Theme.of(context).colorScheme.surfaceContainerLowest,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(18),
+      side: BorderSide(
+        color: recommended
+            ? Theme.of(context).colorScheme.primary
+            : Theme.of(context).colorScheme.outlineVariant,
+        width: recommended ? 2 : 1,
       ),
     ),
     child: Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(
-        recommended ? 14 : 0,
-        compact ? 12 : 16,
-        0,
-        10,
-      ),
+      padding: EdgeInsetsDirectional.fromSTEB(16, compact ? 12 : 16, 16, 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
@@ -425,11 +424,7 @@ class _ChallengeChoiceCard extends StatelessWidget {
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               ),
               onPressed: onPressed,
-              child: Text(
-                compact
-                    ? PushupLocalizations.of(context).commonStart
-                    : buttonLabel,
-              ),
+              child: Text(buttonLabel),
             ),
           ),
         ],
@@ -817,7 +812,7 @@ class _SevenDayGoalDialogState extends State<_SevenDayGoalDialog> {
         ),
         FilledButton(
           onPressed: valid ? () => context.pop(firstGoal) : null,
-          child: Text(l10n.commonStart),
+          child: Text(l10n.challengeSevenDayStart),
         ),
       ],
     );
@@ -870,6 +865,22 @@ class _CumulativeDialogState extends State<_CumulativeDialog> {
                 .toList(),
             onChanged: (value) => setState(() => reps = value ?? reps),
           ),
+          const SizedBox(height: 16),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Text(
+              '${l10n.challengeDurationDays(days)} · ${l10n.unitReps(reps)}\n'
+              '${l10n.challengeDailyGoal} ${l10n.unitReps((reps / days).ceil())}',
+              style: Theme.of(
+                context,
+              ).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w700),
+            ),
+          ),
         ],
       ),
       actions: [
@@ -879,7 +890,7 @@ class _CumulativeDialogState extends State<_CumulativeDialog> {
         ),
         FilledButton(
           onPressed: () => context.pop((days, reps)),
-          child: Text(l10n.commonStart),
+          child: Text(l10n.challengeCumulativeStart),
         ),
       ],
     );
@@ -1112,7 +1123,9 @@ Future<void> startChallengeWorkout(
 ) async {
   final type = progress.challenge.type;
   if (progress.isTodayGoalCompleted) return;
-  final savedPlan = ref.read(preferencesControllerProvider).pushupLastWorkoutPlan;
+  final savedPlan = ref
+      .read(preferencesControllerProvider)
+      .pushupLastWorkoutPlan;
   final challengeTarget = switch (type) {
     ChallengeType.sevenDay => progress.remainingReps,
     ChallengeType.cumulative => progress.remainingReps,

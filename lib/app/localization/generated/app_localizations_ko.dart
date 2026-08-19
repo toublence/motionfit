@@ -855,13 +855,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String get recordsOpenDetail => '상세 보기';
 
   @override
-  String get recordsEmptyTitle => '아직 운동 기록이 없어요';
+  String get recordsEmptyTitle => '첫 운동을 시작해볼까요?';
 
   @override
-  String get recordsEmptyBody => '첫 스쿼트 운동을 마치면 여기에 기록이 표시돼요.';
+  String get recordsEmptyBody => '첫 운동 후 나의 변화가 여기에 기록돼요.';
 
   @override
-  String get recordsStartWorkout => '운동 시작';
+  String get recordsStartWorkout => '첫 운동 시작';
 
   @override
   String get recordsLoading => '운동 기록을 불러오는 중…';

@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:motionfit_squat/app/localization/generated/app_localizations.dart';
-import 'package:motionfit_squat/core/ads/ad_eligibility.dart';
-import 'package:motionfit_squat/core/ads/bottom_native_ad.dart';
 import 'package:motionfit_squat/core/providers.dart';
 import 'package:motionfit_squat/features/challenges/application/challenge_controller.dart';
 import 'package:motionfit_squat/features/challenges/presentation/challenge_screen.dart';
-import 'package:motionfit_squat/features/exercise/application/combined_workout_metrics.dart';
 import 'package:motionfit_squat/features/exercise/presentation/exercise_challenge_screen.dart';
 import 'package:motionfit_squat/features/exercise/presentation/exercise_home_screen.dart';
 import 'package:motionfit_squat/features/plank/challenges/presentation/challenge_screen.dart'
@@ -338,72 +335,55 @@ class _AppNavigationShell extends ConsumerWidget {
             false) ||
         (ref.watch(plank_challenge_state.challengeBadgeProvider).value ??
             false);
-    final completedWorkoutCount =
-        ref
-            .watch(combinedWorkoutMetricsProvider)
-            .value
-            ?.completedWorkoutCount ??
-        0;
-    final showBottomAd = AdEligibility.canShowNative(
-      completedWorkoutCount: completedWorkoutCount,
-    );
     return Scaffold(
       body: navigationShell,
-      bottomNavigationBar: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          MediaQuery.removePadding(
-            context: context,
-            removeBottom: true,
-            child: _CompactBottomNavigation(
-              selectedIndex: navigationShell.currentIndex,
-              onSelected: (index) {
-                ref.read(analyticsServiceProvider).screenView(switch (index) {
-                  0 => 'workout_setup',
-                  1 => 'challenge',
-                  2 => 'records',
-                  _ => 'settings',
-                });
-                navigationShell.goBranch(
-                  index,
-                  initialLocation: index == navigationShell.currentIndex,
-                );
-              },
-              items: [
-                (
-                  icon: Icons.fitness_center_outlined,
-                  selectedIcon: Icons.fitness_center_rounded,
-                  label: l10n.navWorkout,
-                  showBadge: false,
-                ),
-                (
-                  icon: Icons.emoji_events_outlined,
-                  selectedIcon: Icons.emoji_events_rounded,
-                  label: l10n.navChallenge,
-                  showBadge: challengeBadge,
-                ),
-                (
-                  icon: Icons.calendar_month_outlined,
-                  selectedIcon: Icons.calendar_month_rounded,
-                  label: l10n.navRecords,
-                  showBadge: false,
-                ),
-                (
-                  icon: Icons.settings_outlined,
-                  selectedIcon: Icons.settings_rounded,
-                  label: l10n.navSettings,
-                  showBadge: false,
-                ),
-              ],
-            ),
+      bottomNavigationBar: MediaQuery.removePadding(
+        context: context,
+        removeBottom: true,
+        child: SafeArea(
+          top: false,
+          child: _CompactBottomNavigation(
+            selectedIndex: navigationShell.currentIndex,
+            onSelected: (index) {
+              ref.read(analyticsServiceProvider).screenView(switch (index) {
+                0 => 'workout_setup',
+                1 => 'challenge',
+                2 => 'records',
+                _ => 'settings',
+              });
+              navigationShell.goBranch(
+                index,
+                initialLocation: index == navigationShell.currentIndex,
+              );
+            },
+            items: [
+              (
+                icon: Icons.fitness_center_outlined,
+                selectedIcon: Icons.fitness_center_rounded,
+                label: l10n.navWorkout,
+                showBadge: false,
+              ),
+              (
+                icon: Icons.emoji_events_outlined,
+                selectedIcon: Icons.emoji_events_rounded,
+                label: l10n.navChallenge,
+                showBadge: challengeBadge,
+              ),
+              (
+                icon: Icons.calendar_month_outlined,
+                selectedIcon: Icons.calendar_month_rounded,
+                label: l10n.navRecords,
+                showBadge: false,
+              ),
+              (
+                icon: Icons.settings_outlined,
+                selectedIcon: Icons.settings_rounded,
+                label: l10n.navSettings,
+                showBadge: false,
+              ),
+            ],
           ),
-          SafeArea(
-            top: false,
-            child: showBottomAd
-                ? const BottomNativeAd()
-                : const SizedBox.shrink(),
-          ),
-        ],
+        ),
       ),
     );
   }

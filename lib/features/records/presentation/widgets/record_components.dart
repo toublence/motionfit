@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:motionfit_squat/app/localization/generated/app_localizations.dart';
 import 'package:motionfit_squat/app/theme/motionfit_tokens.dart';
 
 class RecordMetricTile extends StatelessWidget {
@@ -122,38 +123,102 @@ class RecordEmptyState extends StatelessWidget {
   final VoidCallback onAction;
 
   @override
-  Widget build(BuildContext context) => Center(
-    child: SingleChildScrollView(
-      padding: EdgeInsets.all(context.tokens.spaceLg),
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 420),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final colors = Theme.of(context).colorScheme;
+    return ListView(
+      padding: EdgeInsets.symmetric(vertical: context.tokens.spaceMd),
+      children: [
+        Text(title, style: Theme.of(context).textTheme.headlineSmall),
+        SizedBox(height: context.tokens.spaceSm),
+        Text(
+          body,
+          style: Theme.of(
+            context,
+          ).textTheme.bodyLarge?.copyWith(color: colors.onSurfaceVariant),
+        ),
+        SizedBox(height: context.tokens.spaceXl),
+        Text(
+          l10n.recordsWeeklySummary,
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
+        SizedBox(height: context.tokens.spaceMd),
+        Row(
           children: [
-            Icon(
-              Icons.fitness_center_rounded,
-              size: 52,
-              color: Theme.of(context).colorScheme.primary,
+            Expanded(
+              child: RecordMetricTile(
+                icon: Icons.event_available_rounded,
+                label: l10n.challengeWorkoutDays,
+                value: '–',
+              ),
             ),
-            SizedBox(height: context.tokens.spaceMd),
-            Text(
-              title,
-              style: Theme.of(context).textTheme.headlineSmall,
-              textAlign: TextAlign.center,
+            SizedBox(width: context.tokens.spaceSm),
+            Expanded(
+              child: RecordMetricTile(
+                icon: Icons.repeat_rounded,
+                label: l10n.challengeTotalReps,
+                value: '–',
+              ),
             ),
-            SizedBox(height: context.tokens.spaceSm),
-            Text(body, textAlign: TextAlign.center),
-            SizedBox(height: context.tokens.spaceLg),
-            FilledButton.icon(
-              onPressed: onAction,
-              icon: const Icon(Icons.play_arrow_rounded),
-              label: Text(actionLabel),
+            SizedBox(width: context.tokens.spaceSm),
+            Expanded(
+              child: RecordMetricTile(
+                icon: Icons.trending_up_rounded,
+                label: l10n.recordsFormTrend,
+                value: '–',
+              ),
             ),
           ],
         ),
-      ),
-    ),
-  );
+        SizedBox(height: context.tokens.spaceLg),
+        ExcludeSemantics(
+          child: Container(
+            height: 132,
+            padding: EdgeInsets.all(context.tokens.spaceMd),
+            decoration: BoxDecoration(
+              color: colors.surfaceContainerHighest.withValues(alpha: 0.35),
+              borderRadius: BorderRadius.circular(context.tokens.radiusMd),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                for (final height in const [
+                  34.0,
+                  52.0,
+                  45.0,
+                  76.0,
+                  66.0,
+                  94.0,
+                  82.0,
+                ])
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      child: Container(
+                        height: height,
+                        decoration: BoxDecoration(
+                          color: colors.primary.withValues(alpha: 0.10),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ),
+        SizedBox(height: context.tokens.spaceXl),
+        SizedBox(
+          width: double.infinity,
+          child: FilledButton.icon(
+            onPressed: onAction,
+            icon: const Icon(Icons.play_arrow_rounded),
+            label: Text(actionLabel),
+          ),
+        ),
+      ],
+    );
+  }
 }
 
 class RecordLoadingState extends StatelessWidget {

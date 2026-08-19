@@ -25,6 +25,8 @@ class SquatHomeScreen extends ConsumerStatefulWidget {
 }
 
 class _SquatHomeScreenState extends ConsumerState<SquatHomeScreen> {
+  int? _lastCompletedWorkoutCount;
+
   @override
   void initState() {
     super.initState();
@@ -52,6 +54,18 @@ class _SquatHomeScreenState extends ConsumerState<SquatHomeScreen> {
       AsyncData(:final value) => value,
       _ => null,
     };
+    final completedWorkoutCount = retentionMetrics?.completedWorkoutCount;
+    if (completedWorkoutCount != null) {
+      final previous = _lastCompletedWorkoutCount;
+      _lastCompletedWorkoutCount = completedWorkoutCount;
+      if (previous != null && completedWorkoutCount > previous) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted && preferences.hapticsEnabled) {
+            HapticFeedback.mediumImpact();
+          }
+        });
+      }
+    }
     final canStartNew = recoverable is AsyncData<WorkoutSessionDetails?>;
     final sessionValues = switch (sessions) {
       AsyncData(:final value) => value,
@@ -195,26 +209,25 @@ class _SquatHomeScreenState extends ConsumerState<SquatHomeScreen> {
                   ],
                 ),
                 const SizedBox(height: 4),
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Text(
-                    '${l10n.unitSets(plan.setCount)} × '
-                    '${l10n.unitReps(plan.targetRepsPerSet)}  ·  '
-                    '${l10n.homeRestTimeLabel} '
-                    '${l10n.unitSeconds(plan.restDurationSeconds)}',
-                    maxLines: 1,
-                    style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                      color: Theme.of(context).colorScheme.primary,
-                      fontSize: 42,
-                      fontWeight: FontWeight.w800,
-                      height: 1,
-                    ),
+                Text(
+                  '${l10n.navSquat} ${l10n.unitReps(plan.setCount * plan.targetRepsPerSet)}',
+                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.w800,
                   ),
                 ),
-                const SizedBox(height: 16),
-                Align(
-                  alignment: Alignment.center,
+                const SizedBox(height: 6),
+                Text(
+                  '${l10n.unitSets(plan.setCount)} × '
+                  '${l10n.unitReps(plan.targetRepsPerSet)} · '
+                  '${l10n.homeRestTimeLabel} ${l10n.unitSeconds(plan.restDurationSeconds)}',
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
+                ),
+                const SizedBox(height: 18),
+                SizedBox(
+                  width: double.infinity,
                   child: FilledButton.icon(
                     onPressed: canStartNew
                         ? () => openWorkoutPreparation(
@@ -224,7 +237,7 @@ class _SquatHomeScreenState extends ConsumerState<SquatHomeScreen> {
                           )
                         : null,
                     icon: const Icon(Icons.play_arrow_rounded, size: 19),
-                    label: Text(l10n.homeStartWorkout),
+                    label: Text('${l10n.navSquat} ${l10n.commonStart}'),
                   ),
                 ),
                 if (recoverable case AsyncData(value: final details?)) ...[
@@ -283,6 +296,8 @@ class _TodayRecord extends StatelessWidget {
         : scores.reduce((a, b) => a + b) / scores.length;
     final summary = metrics == null
         ? l10n.commonLoading
+        : completedToday.isEmpty
+        ? l10n.recordsEmptyBody
         : [
             l10n.unitReps(metrics!.todayReps),
             l10n.unitSets(metrics!.todaySets),
@@ -351,44 +366,40 @@ class _WeekActivityOverview extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Wrap(
-          alignment: WrapAlignment.spaceBetween,
-          crossAxisAlignment: WrapCrossAlignment.end,
-          spacing: 14,
-          runSpacing: 6,
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                const Icon(
-                  Icons.local_fire_department_rounded,
-                  size: 21,
-                  color: Color(0xFFE77C2F),
-                ),
-                const SizedBox(width: 6),
-                Text(
-                  metrics == null
-                      ? l10n.commonLoading
-                      : l10n.streakDays(metrics!.currentStreak),
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                const SizedBox(width: 6),
-                Text(
-                  l10n.streakLabel,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+            Expanded(
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 260),
+                child: Text(
+                  l10n.challengeThisWeekProgress(weeklyDays, 3),
+                  key: ValueKey(weeklyDays),
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.w800,
                   ),
                 ),
-              ],
+              ),
             ),
-            Text(
-              '${l10n.recordsWeeklySummary} · ${l10n.streakDays(weeklyDays)}',
-              style: Theme.of(context).textTheme.labelMedium,
-            ),
+            if ((metrics?.currentStreak ?? 0) > 1)
+              Text(
+                '🔥 ${l10n.streakDays(metrics!.currentStreak)}',
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
           ],
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: 6),
+        Text(
+          weeklyDays == 0
+              ? l10n.challengeWeeklyDescription
+              : weeklyDays >= 3
+              ? l10n.challengeTodayCompleted
+              : l10n.challengeRepsRemaining(3 - weeklyDays),
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
+        ),
+        const SizedBox(height: 14),
         Row(
           children: List.generate(7, (index) {
             final day = start.add(Duration(days: index));
@@ -414,10 +425,24 @@ class _WeekActivityOverview extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    Container(
-                      width: 24,
-                      height: completed ? 6 : 2,
-                      color: color,
+                    AnimatedContainer(
+                      duration: const Duration(milliseconds: 240),
+                      width: 28,
+                      height: 28,
+                      decoration: BoxDecoration(
+                        color: completed ? color : Colors.transparent,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: color),
+                      ),
+                      child: completed
+                          ? Icon(
+                              Icons.check_rounded,
+                              size: 17,
+                              color: Theme.of(context).colorScheme.onPrimary,
+                            )
+                          : isToday
+                          ? Icon(Icons.circle, size: 7, color: color)
+                          : null,
                     ),
                   ],
                 ),
