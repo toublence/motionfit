@@ -55,6 +55,7 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.view.TextureRegistry
 import java.io.File
+import java.nio.ByteBuffer
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.ExecutionException
 import java.util.concurrent.Executors
@@ -352,7 +353,11 @@ class MotionfitPosePlugin :
             val landmarker =
                 try {
                     createPoseLandmarker(model)
-                } catch (error: Exception) {
+                } catch (error: Throwable) {
+                    // MediaPipe class/native initialization failures are Errors, not
+                    // Exceptions. Report those to Flutter instead of terminating the app.
+                    if (error !is Exception && error !is LinkageError) throw error
+                    Log.e(TAG, "Failed to load the ${model.channelValue} pose model.", error)
                     mainHandler.post {
                         if (generation.get() != token || !sessionActive) return@post
                         cleanupSessionOnMain()?.let(::closeLandmarkerAsync)
@@ -579,7 +584,9 @@ class MotionfitPosePlugin :
             val replacement =
                 try {
                     createPoseLandmarker(model)
-                } catch (error: Exception) {
+                } catch (error: Throwable) {
+                    if (error !is Exception && error !is LinkageError) throw error
+                    Log.e(TAG, "Failed to load the ${model.channelValue} pose model.", error)
                     mainHandler.post {
                         if (generation.get() == token && sessionActive) {
                             analysisEnabled = !userPaused && !lifecycleSuspended
@@ -1409,12 +1416,19 @@ class MotionfitPosePlugin :
     }
 
     private fun createPoseLandmarker(model: PoseModel): PoseLandmarker {
-        applicationContext.assets.open(model.assetPath).use { stream ->
-            if (stream.read() < 0) throw IllegalStateException("Model asset is empty.")
+        // Play automatic protection rewrites the delivered APK. In protected builds,
+        // MediaPipe's native asset-path loader can fail even though AssetManager can
+        // read the same bundled model. Supplying a direct buffer keeps model loading
+        // independent of the APK's delivered asset layout.
+        val modelBytes = applicationContext.assets.open(model.assetPath).use { it.readBytes() }
+        if (modelBytes.isEmpty()) throw IllegalStateException("Model asset is empty.")
+        val modelBuffer = ByteBuffer.allocateDirect(modelBytes.size).apply {
+            put(modelBytes)
+            rewind()
         }
         val baseOptions =
             BaseOptions.builder()
-                .setModelAssetPath(model.assetPath)
+                .setModelAssetBuffer(modelBuffer)
                 .setDelegate(Delegate.CPU)
                 .build()
         val options =

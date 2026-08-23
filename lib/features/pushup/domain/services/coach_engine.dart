@@ -112,6 +112,11 @@ class SystemTtsCoachEngine implements CoachVoiceEngine {
       await _deactivateIosAudioSession();
       return false;
     }
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      // Samsung may classify the external TTS engine as background playback.
+      // Navigation guidance attributes keep workout coaching audible.
+      await _flutterTts.setAudioAttributesForNavigation();
+    }
     if (defaultTargetPlatform == TargetPlatform.iOS) {
       await _selectBestIosVoice(
         baseLanguage: baseLanguage,
@@ -269,7 +274,10 @@ class SystemTtsCoachEngine implements CoachVoiceEngine {
     if (kDebugMode) {
       debugPrint('[MotionFitCoach] speak type=${type.name} text="$text"');
     }
-    final result = await _flutterTts.speak(text);
+    final result = await _flutterTts.speak(
+      text,
+      focus: defaultTargetPlatform == TargetPlatform.android,
+    );
     if (result != 1) {
       throw StateError('The text-to-speech engine rejected the message.');
     }

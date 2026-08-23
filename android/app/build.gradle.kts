@@ -1,4 +1,5 @@
 import java.util.Properties
+import java.util.zip.ZipFile
 
 plugins {
     id("com.android.application")
@@ -58,8 +59,20 @@ android {
             signingConfig = signingConfigs.findByName("release")
         }
         release {
+            // MediaPipe 0.10.x is not safe under R8: optimization can inline
+            // Flogger's caller lookup and crash Graph.<clinit> at runtime.
+            isMinifyEnabled = false
+            isShrinkResources = false
             signingConfig = signingConfigs.findByName("release")
         }
+    }
+}
+
+afterEvaluate {
+    val releaseBuildType = android.buildTypes.getByName("release")
+    check(!releaseBuildType.isMinifyEnabled && !releaseBuildType.isShrinkResources) {
+        "MediaPipe release builds must keep R8/resource shrinking disabled; " +
+            "enabling them causes a production-only Graph initialization crash."
     }
 }
 
@@ -75,4 +88,33 @@ flutter {
 
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
+}
+
+val mediaPipeReleaseBundle =
+    layout.buildDirectory.file("outputs/bundle/release/app-release.aab")
+
+// Model delivery is a second, independent release risk. Verify the final AAB,
+// not only the Flutter asset manifest.
+tasks.matching { it.name == "bundleRelease" }.configureEach {
+    doLast {
+        val bundleFile = mediaPipeReleaseBundle.get().asFile
+        check(bundleFile.isFile) {
+            "Release AAB is missing; MediaPipe model assets could not be verified."
+        }
+        val requiredModels =
+            listOf(
+                "base/assets/pose_landmarker_lite.task",
+                "base/assets/pose_landmarker_full.task",
+                "base/assets/pose_landmarker_heavy.task",
+            )
+        ZipFile(bundleFile).use { bundle ->
+            val missingModels =
+                requiredModels.filter { path ->
+                    bundle.getEntry(path)?.takeIf { it.size > 0L } == null
+                }
+            check(missingModels.isEmpty()) {
+                "Release AAB is missing MediaPipe models: ${missingModels.joinToString()}"
+            }
+        }
+    }
 }

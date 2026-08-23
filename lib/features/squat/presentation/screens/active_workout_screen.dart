@@ -214,9 +214,7 @@ class _ActiveWorkoutScreenState extends ConsumerState<ActiveWorkoutScreen>
         body: Stack(
           fit: StackFit.expand,
           children: [
-            if (state.previewTextureId case final textureId?
-                when state.previewInputWidth > 0 &&
-                    state.previewInputHeight > 0)
+            if (state.previewTextureId case final textureId?)
               Transform.flip(
                 flipX: mirrorInFlutter,
                 child: Stack(
@@ -231,7 +229,9 @@ class _ActiveWorkoutScreenState extends ConsumerState<ActiveWorkoutScreen>
                       sourceWidth: state.previewInputWidth,
                       sourceHeight: state.previewInputHeight,
                     ),
-                    if (state.skeletonVisible)
+                    if (state.skeletonVisible &&
+                        state.previewInputWidth > 0 &&
+                        state.previewInputHeight > 0)
                       PoseOverlay(
                         landmarks: state.overlayLandmarks,
                         previewTransform: state.previewTransform,

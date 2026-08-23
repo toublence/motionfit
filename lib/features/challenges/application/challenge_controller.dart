@@ -99,7 +99,7 @@ class ChallengeController extends AsyncNotifier<ChallengeDashboard> {
           challenge.notificationEnabled,
     );
     if (!hasActiveReminder) {
-      await ref.read(notificationServiceProvider).cancelChallengeReminder();
+      _cancelChallengeReminderInBackground();
     }
     final progressValues = <ChallengeProgress>[];
     for (var challenge in challenges) {
@@ -120,9 +120,7 @@ class ChallengeController extends AsyncNotifier<ChallengeDashboard> {
             : ChallengeStatus.active;
         if (finalStatus != ChallengeStatus.active) {
           if (challenge.notificationEnabled) {
-            await ref
-                .read(notificationServiceProvider)
-                .cancelChallengeReminder();
+            _cancelChallengeReminderInBackground();
           }
           challenge = challenge.copyWith(status: finalStatus);
           await repository.update(challenge);
@@ -162,6 +160,22 @@ class ChallengeController extends AsyncNotifier<ChallengeDashboard> {
           ),
     );
     return dashboard;
+  }
+
+  void _cancelChallengeReminderInBackground() {
+    final notifications = ref.read(notificationServiceProvider);
+    final crashReporting = ref.read(crashReportingServiceProvider);
+    unawaited(() async {
+      try {
+        await notifications.cancelChallengeReminder();
+      } on Object catch (error, stackTrace) {
+        await crashReporting.recordNonFatal(
+          error,
+          stackTrace,
+          reason: 'challenge_reminder_cleanup',
+        );
+      }
+    }());
   }
 
   Future<void> dismissRecommendation() async {
