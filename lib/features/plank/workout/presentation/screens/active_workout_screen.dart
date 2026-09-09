@@ -568,13 +568,25 @@ class _CameraErrorOverlay extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = PlankLocalizations.of(context);
-    final body = switch (state.errorCode) {
-      'camera_in_use' => l10n.errorCameraInUse,
-      'model_load_failed' ||
-      'model_initialization_failed' ||
-      'model_unavailable' => l10n.errorPoseModelLoad,
-      _ => l10n.errorCameraInit,
-    };
+    final calibrationTimedOut = state.errorCode == 'calibration_failed';
+    final body = calibrationTimedOut
+        ? switch (state.trackingState) {
+            TrackingState.noPerson ||
+            TrackingState.partialBody => l10n.guideWholeBody,
+            TrackingState.multiplePeople => l10n.guideOnePerson,
+            TrackingState.cameraUnavailable => l10n.errorCameraInit,
+            TrackingState.modelUnavailable => l10n.errorPoseModelLoad,
+            TrackingState.tracking =>
+              '${l10n.calibrationBody} ${l10n.calibrationStayStill}',
+            _ => l10n.calibrationBody,
+          }
+        : switch (state.errorCode) {
+            'camera_in_use' => l10n.errorCameraInUse,
+            'model_load_failed' ||
+            'model_initialization_failed' ||
+            'model_unavailable' => l10n.errorPoseModelLoad,
+            _ => l10n.errorCameraInit,
+          };
     return ColoredBox(
       color: Colors.black.withValues(alpha: .76),
       child: SafeArea(
@@ -619,9 +631,16 @@ class _CameraErrorOverlay extends ConsumerWidget {
                   ),
                   const SizedBox(width: 12),
                   FilledButton.icon(
-                    onPressed: () => ref
-                        .read(workoutSessionControllerProvider.notifier)
-                        .retryCamera(),
+                    onPressed: () {
+                      final controller = ref.read(
+                        workoutSessionControllerProvider.notifier,
+                      );
+                      if (calibrationTimedOut) {
+                        controller.retryCalibration();
+                      } else {
+                        controller.retryCamera();
+                      }
+                    },
                     icon: const Icon(Icons.refresh_rounded),
                     label: Text(l10n.commonRetry),
                   ),

@@ -98,6 +98,7 @@ class MotionfitPosePlugin :
     private var resumeAfterConfigurationChange = false
     private var resumeWhenLifecycleStarts = false
     private var operationInProgress = false
+    private var startOperationInProgress = false
     private var pendingOperationResult: MethodChannel.Result? = null
     private var lastCameraErrorCode: Int? = null
     private var lastCameraErrorAtNs = 0L
@@ -218,6 +219,9 @@ class MotionfitPosePlugin :
         if (!sessionActive || userPaused) return
 
         lifecycleSuspended = false
+        // A start that was backgrounded may still be loading MediaPipe or CameraX.
+        // Its completion callback will bind once both dependencies are ready.
+        if (poseLandmarker == null || cameraProvider == null) return
         try {
             bindCameraUseCases()
         } catch (error: Exception) {
@@ -234,6 +238,7 @@ class MotionfitPosePlugin :
     override fun onStop(owner: LifecycleOwner) {
         if (owner !== lifecycleOwner || !sessionActive) return
         if (userPaused && recording == null) return
+        resumeWhenLifecycleStarts = !userPaused
         lifecycleSuspended = true
         analysisEnabled = false
         abandonVideoRecording()
@@ -262,6 +267,7 @@ class MotionfitPosePlugin :
 
     private fun start(call: MethodCall, result: MethodChannel.Result) {
         if (!beginOperation(result)) return
+        startOperationInProgress = true
         if (sessionActive) {
             finishOperationError(ERROR_ALREADY_STARTED, "The pose engine is already running.")
             return
@@ -431,6 +437,7 @@ class MotionfitPosePlugin :
     private fun pause(result: MethodChannel.Result) {
         if (!ensureReadyForMethod(result)) return
         userPaused = true
+        resumeWhenLifecycleStarts = false
         analysisEnabled = false
         unbindCameraUseCases()
         result.success(null)
@@ -463,13 +470,15 @@ class MotionfitPosePlugin :
             )
             return
         }
-        if (!userPaused && !lifecycleSuspended) {
+        val cameraBound = preview != null && imageAnalysis != null && analysisEnabled
+        if (!userPaused && !lifecycleSuspended && cameraBound) {
             result.success(null)
             return
         }
 
         userPaused = false
         lifecycleSuspended = false
+        resumeWhenLifecycleStarts = false
         try {
             bindCameraUseCases()
             result.success(null)
@@ -933,7 +942,22 @@ class MotionfitPosePlugin :
 
     private fun dispose(result: MethodChannel.Result) {
         if (operationInProgress) {
-            result.error(ERROR_BUSY, "Another pose engine operation is still running.", null)
+            if (!startOperationInProgress) {
+                result.error(ERROR_BUSY, "Another pose engine operation is still running.", null)
+                return
+            }
+            val pendingStart = pendingOperationResult
+            pendingOperationResult = null
+            operationInProgress = false
+            startOperationInProgress = false
+            val landmarker = if (sessionActive) cleanupSessionOnMain() else null
+            pendingStart?.error(
+                ERROR_INITIALIZATION_CANCELLED,
+                "Pose engine initialization was cancelled.",
+                null,
+            )
+            landmarker?.let(::closeLandmarkerAsync)
+            result.success(null)
             return
         }
         if (!sessionActive) {
@@ -1518,6 +1542,7 @@ class MotionfitPosePlugin :
         val result = pendingOperationResult
         pendingOperationResult = null
         operationInProgress = false
+        startOperationInProgress = false
         result?.success(value)
     }
 
@@ -1525,6 +1550,7 @@ class MotionfitPosePlugin :
         val result = pendingOperationResult
         pendingOperationResult = null
         operationInProgress = false
+        startOperationInProgress = false
         result?.error(code, message, details)
     }
 
@@ -1575,6 +1601,7 @@ class MotionfitPosePlugin :
         )
         pendingOperationResult = null
         operationInProgress = false
+        startOperationInProgress = false
         engineAttached = false
         eventSink = null
         lifecycleOwner?.lifecycle?.removeObserver(this)
@@ -1678,6 +1705,7 @@ class MotionfitPosePlugin :
         const val ERROR_CAMERA_IN_USE = "camera_in_use"
         const val ERROR_CAMERA_DISABLED = "camera_disabled"
         const val ERROR_CAMERA_INITIALIZATION_FAILED = "camera_initialization_failed"
+        const val ERROR_INITIALIZATION_CANCELLED = "initialization_cancelled"
         const val ERROR_MODEL_UNAVAILABLE = "model_unavailable"
         const val ERROR_INFERENCE_FAILED = "inference_failed"
         const val ERROR_SURFACE_UNAVAILABLE = "surface_unavailable"

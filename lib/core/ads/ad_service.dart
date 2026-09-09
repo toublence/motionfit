@@ -236,6 +236,9 @@ class AdService extends ChangeNotifier {
     if (!_ready ||
         _disposed ||
         adUnitId == null ||
+        !AdEligibility.canShowInterstitial(
+          completedWorkoutCount: _completedWorkoutCount,
+        ) ||
         _interstitialLoading ||
         _validInterstitialAd() != null) {
       return;

@@ -93,6 +93,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
   int _lastJournalCheckpointSecond = -1;
   Future<void>? _prewarmOperation;
   bool _prewarming = false;
+  bool _cancellingPreparation = false;
   Completer<void>? _prewarmReady;
   int? _prewarmFirstFrameLocalUs;
   int _prewarmInferenceFrames = 0;
@@ -121,6 +122,9 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
   PoseVideoRecordingResult? _finalizedWorkoutVideo;
 
   static const _calibrationPromptInterval = Duration(seconds: 12);
+  static const _calibrationTimeout = Duration(seconds: 45);
+  static const _poseInitializationTimeout = Duration(seconds: 25);
+  static const _voiceInitializationTimeout = Duration(seconds: 8);
   static const _overlayTrackingHoldUs = 1800000;
   static const _minimumPrewarmDurationUs = 750000;
   static const _minimumPrewarmInferenceFrames = 6;
@@ -161,10 +165,12 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
     try {
       await _startEnginesAndWarmPreview(messages);
     } on Object catch (error, stackTrace) {
-      unawaited(_recordNonFatal(error, stackTrace, 'camera_prewarm'));
       _prewarming = false;
-      await _releaseRuntimeResources();
-      state = WorkoutSessionState.idle();
+      if (!_cancellingPreparation) {
+        unawaited(_recordCameraFailure(error, stackTrace, 'camera_prewarm'));
+        await _releaseRuntimeResources();
+        state = WorkoutSessionState.idle();
+      }
       rethrow;
     }
   }
@@ -192,20 +198,29 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
   }
 
   Future<void> cancelPreparation() async {
-    final inFlight = _prewarmOperation;
-    if (inFlight != null) {
-      try {
-        await inFlight;
-      } on Object {
-        // Failed preparation has already released its native resources.
-      }
-    }
-    if (state.status != WorkoutSessionStatus.idle || state.session != null) {
+    if (_cancellingPreparation ||
+        state.status != WorkoutSessionStatus.idle ||
+        state.session != null) {
       return;
     }
-    _prewarming = false;
-    await _releaseRuntimeResources();
-    state = WorkoutSessionState.idle();
+    _cancellingPreparation = true;
+    final inFlight = _prewarmOperation;
+    try {
+      _prewarming = false;
+      final ready = _prewarmReady;
+      if (ready != null && !ready.isCompleted) ready.complete();
+      await _releaseRuntimeResources();
+      if (inFlight != null) {
+        try {
+          await inFlight;
+        } on Object {
+          // Disposing the native start completes an in-flight prewarm.
+        }
+      }
+      state = WorkoutSessionState.idle();
+    } finally {
+      _cancellingPreparation = false;
+    }
   }
 
   Future<void> start(
@@ -658,29 +673,35 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
       _onPoseFrame,
       onError: _onPoseError,
     );
-    final results = await Future.wait<Object?>([
-      _poseEngine!.start(
-        PoseEngineConfig(
-          camera: preferences.selectedCamera,
-          preferredQuality: _activeModelQuality,
-          targetInferenceFps: _targetInferenceFps,
-          enableVideoRecording: _videoReviewRequested,
-        ),
-      ),
-      (() async {
-        try {
-          return await voiceEngine.configure(
-            locale: messages.locale,
-            rate: preferences.ttsRate,
-          );
-        } on Object catch (error, stackTrace) {
-          unawaited(_recordNonFatal(error, stackTrace, 'tts_configuration'));
-          return false;
-        }
-      })(),
-    ]);
+    final poseInitialization = _poseEngine!
+        .start(
+          PoseEngineConfig(
+            camera: preferences.selectedCamera,
+            preferredQuality: _activeModelQuality,
+            targetInferenceFps: _targetInferenceFps,
+            enableVideoRecording: _videoReviewRequested,
+          ),
+        )
+        .timeout(
+          _poseInitializationTimeout,
+          onTimeout: () => throw const PoseEngineException(
+            'camera_initialization_timeout',
+            'Camera and pose initialization timed out.',
+          ),
+        );
+    final voiceInitialization = (() async {
+      try {
+        return await voiceEngine
+            .configure(locale: messages.locale, rate: preferences.ttsRate)
+            .timeout(_voiceInitializationTimeout);
+      } on Object catch (error, stackTrace) {
+        unawaited(_recordNonFatal(error, stackTrace, 'tts_configuration'));
+        return false;
+      }
+    })();
+    await poseInitialization;
+    final voiceAvailable = await voiceInitialization;
     _engineVideoCapabilityRequested = _videoReviewRequested;
-    final voiceAvailable = results[1]! as bool;
     _coachQueue!.setEnabled(
       voiceAvailable &&
           (_isChallengeWorkout || preferences.voiceCoachingEnabled),
@@ -1526,6 +1547,30 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
     }
   }
 
+  Future<void> retryCalibration() async {
+    if (state.status != WorkoutSessionStatus.error ||
+        state.errorCode != 'calibration_failed' ||
+        _repDetector == null ||
+        _poseEngine == null) {
+      return;
+    }
+    _ticker?.cancel();
+    _repDetector!.reset();
+    _calibrationRequired = true;
+    _pausedDuringCalibration = false;
+    state = state.copyWith(
+      status: WorkoutSessionStatus.calibrating,
+      phase: SquatPhase.calibrating,
+      trackingState: TrackingState.lost,
+      calibrationProgress: 0,
+      overlayLandmarks: const [],
+      clearError: true,
+    );
+    _beginCalibrationWindow();
+    _startTicker();
+    await _saveJournal(WorkoutSessionStatus.calibrating);
+  }
+
   Future<bool> finishContinuousWorkout() async {
     if ((!state.isWorkoutInProgress &&
             state.status != WorkoutSessionStatus.error) ||
@@ -2123,9 +2168,16 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
   }
 
   void _checkCalibrationPrompt() {
+    if (state.status != WorkoutSessionStatus.calibrating) return;
+    final startedAt = _calibrationWindowStartedLocalUs;
+    if (startedAt != null &&
+        _localClock.elapsedMicroseconds - startedAt >=
+            _calibrationTimeout.inMicroseconds) {
+      _handleCalibrationTimeout();
+      return;
+    }
     final lastPromptAt = _lastCalibrationPromptLocalUs;
-    if (state.status != WorkoutSessionStatus.calibrating ||
-        lastPromptAt == null ||
+    if (lastPromptAt == null ||
         _localClock.elapsedMicroseconds - lastPromptAt <
             _calibrationPromptInterval.inMicroseconds) {
       return;
@@ -2136,6 +2188,23 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
       _messages!.tracking(state.trackingState, state.totalReps % 2),
       'calibration_wait_${state.trackingState.name}',
     );
+  }
+
+  void _handleCalibrationTimeout() {
+    if (state.status != WorkoutSessionStatus.calibrating) return;
+    _captureUnfinishedCalibration();
+    _ticker?.cancel();
+    _ticker = null;
+    _repDetector?.pause(_nowMonotonicUs());
+    state = state.copyWith(
+      status: WorkoutSessionStatus.error,
+      phase: SquatPhase.paused,
+      errorCode: 'calibration_failed',
+    );
+    ref
+        .read(analyticsServiceProvider)
+        .calibrationFailed(failureReason: 'calibration_timeout');
+    _saveJournalSafely(WorkoutSessionStatus.error);
   }
 
   DateTime _earlierDate(DateTime left, DateTime right) =>
@@ -2470,7 +2539,9 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
 
   String _failureReason(String errorCode) => switch (errorCode) {
     'camera_unavailable' || 'no_camera' => 'camera_unavailable',
-    'initialization_timeout' || 'camera_timeout' => 'initialization_timeout',
+    'initialization_timeout' ||
+    'camera_timeout' ||
+    'camera_initialization_timeout' => 'initialization_timeout',
     'model_load_failed' ||
     'model_initialization_failed' ||
     'model_unavailable' ||
@@ -2684,7 +2755,8 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
       PlatformException(:final code) => _failureReason(code),
       _ => 'unknown',
     };
-    if (reason == 'workout_start' ||
+    if (reason == 'camera_prewarm' ||
+        reason == 'workout_start' ||
         reason == 'workout_recovery' ||
         reason == 'camera_retry') {
       ref
@@ -2766,7 +2838,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
     _subtitleSubscription = null;
     await _disposeEngineOnly();
     try {
-      await _coachQueue?.dispose();
+      await _coachQueue?.dispose().timeout(const Duration(seconds: 3));
     } on Object {
       // TTS cleanup cannot block a new or completed workout session.
     }

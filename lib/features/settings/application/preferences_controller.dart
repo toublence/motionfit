@@ -80,16 +80,6 @@ class PreferencesController extends Notifier<UserPreferences> {
   Future<void> markCameraGuideSeen() =>
       _serialize(() => _commit(state.copyWith(cameraGuideSeen: true)));
 
-  Future<void> markCameraSetupSeen() => _serialize(
-    () => _commit(
-      state.copyWith(
-        cameraGuideSeen: true,
-        pushupCameraGuideSeen: true,
-        plankCameraGuideSeen: true,
-      ),
-    ),
-  );
-
   Future<void> markPushupCameraGuideSeen() =>
       _serialize(() => _commit(state.copyWith(pushupCameraGuideSeen: true)));
 

@@ -243,7 +243,7 @@ void main() {
       expect(harness.visitsTo('/prepare/countdown'), 0);
     });
 
-    testWidgets('granted status navigates once without cancellation', (
+    testWidgets('first granted status opens the exercise guide', (
       tester,
     ) async {
       final harness = await createHarness(tester);
@@ -252,10 +252,25 @@ void main() {
       await harness.openPermission(tester);
       await harness.pumpNavigation(tester);
 
-      expect(harness.currentPath, '/prepare/countdown');
-      expect(harness.preferences.saveCount, 1);
+      expect(harness.currentPath, '/prepare/guide');
+      expect(harness.preferences.saveCount, 0);
       expect(harness.analytics.cancellationCount, 0);
-      expect(harness.visitsTo('/prepare/countdown'), 1);
+      expect(harness.visitsTo('/prepare/countdown'), 0);
+    });
+
+    testWidgets('an already seen exercise guide is not repeated', (
+      tester,
+    ) async {
+      final harness = await createHarness(tester);
+      harness.permissions.status = AppPermissionState.granted;
+      harness.preferences.setSquatGuideSeen();
+
+      await harness.openPermission(tester);
+      await harness.pumpNavigation(tester);
+
+      expect(harness.currentPath, '/prepare/countdown');
+      expect(harness.preferences.saveCount, 0);
+      expect(harness.analytics.cancellationCount, 0);
     });
   });
 
@@ -344,7 +359,7 @@ void main() {
 
       expect(find.byType(WorkoutCountdownScreen), findsNothing);
       expect(harness.workoutController.startCount, startCount);
-      expect(harness.workoutController.cancelPreparationCount, cancelCount);
+      expect(harness.workoutController.cancelPreparationCount, cancelCount + 1);
       expect(harness.analytics.cancellationCount, 0);
     });
 
@@ -373,7 +388,29 @@ void main() {
       expect(harness.currentPath, '/prepare/guide');
       expect(harness.analytics.cancellationCount, 0);
       expect(harness.launchContext.clearCount, 0);
-      expect(harness.workoutController.cancelPreparationCount, 0);
+      expect(harness.workoutController.cancelPreparationCount, 1);
+    });
+
+    testWidgets('prewarm failure offers retry and starts a fresh attempt', (
+      tester,
+    ) async {
+      final harness = await createHarness(tester);
+      harness.workoutController.failNextPrewarm();
+      await harness.openCountdown(tester);
+
+      await tester.pump(const Duration(seconds: 5));
+      await tester.pump();
+      expect(find.byType(AlertDialog), findsOneWidget);
+
+      await tester.tap(find.text('Try again'));
+      await tester.pumpAndSettle();
+      expect(harness.workoutController.prewarmCount, 2);
+      expect(harness.workoutController.cancelPreparationCount, 1);
+
+      await tester.pump(const Duration(seconds: 5));
+      await harness.pumpNavigation(tester);
+      expect(harness.currentPath, '/workout');
+      expect(harness.workoutController.startCount, 1);
     });
 
     testWidgets('lifecycle change followed by removal is safe', (tester) async {

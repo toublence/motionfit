@@ -27,18 +27,30 @@ class _WorkoutCountdownScreenState
     extends ConsumerState<WorkoutCountdownScreen> {
   Timer? _timer;
   Future<void>? _prewarmFuture;
+  Object? _prewarmError;
+  WorkoutSessionController? _controller;
   WorkoutCoachMessages? _messages;
   int _seconds = 5;
   bool _starting = false;
+  bool _committingWorkout = false;
   bool _openingGuide = false;
   bool _leaving = false;
+  bool _handedOff = false;
+  bool _preparationReleased = false;
+  bool _showingInitializationError = false;
   bool _allowPop = false;
+  int _operationId = 0;
   late final DateTime _startedAt;
 
   @override
   void initState() {
     super.initState();
     _startedAt = DateTime.now();
+    _startCountdownTimer();
+  }
+
+  void _startCountdownTimer() {
+    _timer?.cancel();
     _timer = Timer.periodic(const Duration(seconds: 1), (_) {
       if (!mounted || _starting || _leaving) return;
       if (_seconds > 1) {
@@ -55,29 +67,41 @@ class _WorkoutCountdownScreenState
     if (_prewarmFuture != null) return;
     final messages = localizedCoachMessages(AppLocalizations.of(context));
     _messages = messages;
+    _controller = ref.read(workoutSessionControllerProvider.notifier);
     ref.read(analyticsServiceProvider).workoutInitializationStarted();
     _prewarmFuture = _prewarm(messages);
   }
 
   Future<void> _prewarm(WorkoutCoachMessages messages) async {
     try {
-      await ref
-          .read(workoutSessionControllerProvider.notifier)
-          .prewarm(messages);
-    } on Object {
-      // The normal start path retries camera and model initialization.
+      await _controller!.prewarm(messages);
+    } on Object catch (error) {
+      _prewarmError = error;
     }
   }
 
   Future<void> _begin() async {
     if (!mounted || _starting || _leaving) return;
+    final operationId = ++_operationId;
     setState(() => _starting = true);
     _timer?.cancel();
     await _prewarmFuture;
-    if (!mounted) return;
+    if (_prewarmError != null) {
+      if (!mounted ||
+          _leaving ||
+          _openingGuide ||
+          operationId != _operationId) {
+        return;
+      }
+      setState(() => _starting = false);
+      await _showInitializationFailure();
+      return;
+    }
+    if (!mounted || _leaving || operationId != _operationId) return;
+    setState(() => _committingWorkout = true);
     final messages =
         _messages ?? localizedCoachMessages(AppLocalizations.of(context));
-    final controller = ref.read(workoutSessionControllerProvider.notifier);
+    final controller = _controller!;
     final recovery = widget.preparation.recovery;
     if (recovery == null) {
       final challenge = widget.preparation.challenge;
@@ -94,23 +118,79 @@ class _WorkoutCountdownScreenState
     } else {
       await controller.recover(recovery, messages);
     }
-    if (mounted) {
+    if (mounted && !_leaving && operationId == _operationId) {
       final status = ref.read(workoutSessionControllerProvider).status;
+      _handedOff = true;
       context.go(
         status == WorkoutSessionStatus.resting ? '/workout/rest' : '/workout',
       );
     }
   }
 
+  Future<void> _showInitializationFailure() async {
+    if (_showingInitializationError || !mounted) return;
+    _showingInitializationError = true;
+    final l10n = AppLocalizations.of(context);
+    final retry = await showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => PopScope(
+        canPop: false,
+        child: AlertDialog(
+          content: Text(l10n.errorCameraInit),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text(l10n.workoutBackToSetup),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(l10n.commonRetry),
+            ),
+          ],
+        ),
+      ),
+    );
+    _showingInitializationError = false;
+    if (!mounted || retry == null) return;
+    if (retry) {
+      await _retryInitialization();
+    } else {
+      await _cancelCountdown();
+    }
+  }
+
+  Future<void> _retryInitialization() async {
+    if (!mounted || _leaving || _openingGuide || _committingWorkout) return;
+    ++_operationId;
+    await _controller?.cancelPreparation();
+    if (!mounted || _leaving) return;
+    final messages =
+        _messages ?? localizedCoachMessages(AppLocalizations.of(context));
+    setState(() {
+      _seconds = 5;
+      _starting = false;
+      _prewarmError = null;
+      _prewarmFuture = _prewarm(messages);
+      _preparationReleased = false;
+    });
+    _startCountdownTimer();
+  }
+
   @override
   void dispose() {
     _timer?.cancel();
+    ++_operationId;
+    if (!_handedOff && !_preparationReleased) {
+      unawaited(_controller?.cancelPreparation());
+    }
     super.dispose();
   }
 
-  void _cancelCountdown() {
-    if (_starting || _openingGuide || _leaving || !mounted) return;
+  Future<void> _cancelCountdown() async {
+    if (_committingWorkout || _openingGuide || _leaving || !mounted) return;
     _leaving = true;
+    ++_operationId;
     _timer?.cancel();
     ref
         .read(analyticsServiceProvider)
@@ -122,18 +202,23 @@ class _WorkoutCountdownScreenState
           trackingLoss: Duration.zero,
         );
     ref.read(workoutLaunchContextProvider.notifier).clear();
-    unawaited(
-      ref.read(workoutSessionControllerProvider.notifier).cancelPreparation(),
-    );
+    await _controller?.cancelPreparation();
+    _preparationReleased = true;
+    if (!mounted) return;
     setState(() => _allowPop = true);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) context.pop();
     });
   }
 
-  void _openGuide() {
-    if (!mounted || _starting || _openingGuide || _leaving) return;
+  Future<void> _openGuide() async {
+    if (!mounted || _committingWorkout || _openingGuide || _leaving) return;
     _openingGuide = true;
+    ++_operationId;
+    _timer?.cancel();
+    await _controller?.cancelPreparation();
+    _preparationReleased = true;
+    if (!mounted) return;
     context.pushReplacement('/prepare/guide', extra: widget.preparation);
   }
 
@@ -153,7 +238,7 @@ class _WorkoutCountdownScreenState
                 Row(
                   children: [
                     IconButton(
-                      onPressed: _starting || _leaving
+                      onPressed: _committingWorkout || _leaving
                           ? null
                           : _cancelCountdown,
                       color: Colors.white,
@@ -161,7 +246,7 @@ class _WorkoutCountdownScreenState
                     ),
                     const Spacer(),
                     TextButton.icon(
-                      onPressed: _starting || _openingGuide || _leaving
+                      onPressed: _committingWorkout || _openingGuide || _leaving
                           ? null
                           : _openGuide,
                       icon: const Icon(Icons.help_outline_rounded),

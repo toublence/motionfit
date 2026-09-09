@@ -146,25 +146,11 @@ class _CameraPermissionScreenState extends ConsumerState<CameraPermissionScreen>
   void _continueIfGranted(AppPermissionState result) {
     if (result != AppPermissionState.granted || _navigating || !mounted) return;
     _navigating = true;
-    final guideSeen = ref.read(preferencesControllerProvider).cameraSetupSeen;
-    final persistGuideSeen = guideSeen
-        ? null
-        : ref
-              .read(preferencesControllerProvider.notifier)
-              .markCameraSetupSeen();
-    unawaited(_finishGrantedNavigation(persistGuideSeen));
-  }
-
-  Future<void> _finishGrantedNavigation(Future<void>? persistGuideSeen) async {
-    if (persistGuideSeen != null) {
-      try {
-        await persistGuideSeen;
-      } on Object {
-        // A persistence failure must not block camera startup.
-      }
-    }
-    if (!mounted) return;
-    context.pushReplacement('/prepare/countdown', extra: widget.preparation);
+    final guideSeen = ref.read(preferencesControllerProvider).cameraGuideSeen;
+    context.pushReplacement(
+      guideSeen ? '/prepare/countdown' : '/prepare/guide',
+      extra: widget.preparation,
+    );
   }
 
   @override

@@ -1,7 +1,8 @@
 abstract final class AdEligibility {
-  // Keep the first three workouts focused on habit formation.
-  static const minimumNativeCompletedWorkouts = 3;
-  static const minimumInterstitialCompletedWorkouts = 3;
+  // Primary-screen native ads are available after onboarding. Interstitials
+  // become eligible after the user's first completed workout.
+  static const minimumNativeCompletedWorkouts = 0;
+  static const minimumInterstitialCompletedWorkouts = 1;
   static const interstitialCooldown = Duration(minutes: 10);
 
   static bool canShowNative({required int completedWorkoutCount}) =>

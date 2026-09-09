@@ -11,6 +11,16 @@ void main() {
     expect(UserPreferences.defaults().repVideoReviewEnabled, isTrue);
   });
 
+  test('camera guide state remains independent per exercise', () {
+    final squatSeen = UserPreferences.defaults().copyWith(
+      cameraGuideSeen: true,
+    );
+
+    expect(squatSeen.cameraGuideSeen, isTrue);
+    expect(squatSeen.pushupCameraGuideSeen, isFalse);
+    expect(squatSeen.plankCameraGuideSeen, isFalse);
+  });
+
   test('missing video preference defaults on and explicit false is kept', () {
     final missing = UserPreferences.defaults().toJson()
       ..remove('repVideoReviewEnabled');

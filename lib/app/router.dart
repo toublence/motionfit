@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:motionfit_squat/app/localization/generated/app_localizations.dart';
+import 'package:motionfit_squat/core/ads/ad_eligibility.dart';
+import 'package:motionfit_squat/core/ads/bottom_native_ad.dart';
 import 'package:motionfit_squat/core/providers.dart';
 import 'package:motionfit_squat/features/challenges/application/challenge_controller.dart';
 import 'package:motionfit_squat/features/challenges/presentation/challenge_screen.dart';
+import 'package:motionfit_squat/features/exercise/application/combined_workout_metrics.dart';
 import 'package:motionfit_squat/features/exercise/presentation/exercise_challenge_screen.dart';
 import 'package:motionfit_squat/features/exercise/presentation/exercise_home_screen.dart';
 import 'package:motionfit_squat/features/plank/challenges/presentation/challenge_screen.dart'
@@ -56,8 +59,10 @@ GoRouter createAppRouter({required bool onboardingCompleted}) => GoRouter(
       builder: (context, state) => const OnboardingScreen(),
     ),
     StatefulShellRoute.indexedStack(
-      builder: (context, state, navigationShell) =>
-          _AppNavigationShell(navigationShell: navigationShell),
+      builder: (context, state, navigationShell) => _AppNavigationShell(
+        navigationShell: navigationShell,
+        currentRoute: state.uri.path,
+      ),
       branches: [
         StatefulShellBranch(
           navigatorKey: squatNavigatorKey,
@@ -322,9 +327,13 @@ plank_workout.WorkoutPreparation _plankPreparation(Object? extra) =>
     };
 
 class _AppNavigationShell extends ConsumerWidget {
-  const _AppNavigationShell({required this.navigationShell});
+  const _AppNavigationShell({
+    required this.navigationShell,
+    required this.currentRoute,
+  });
 
   final StatefulNavigationShell navigationShell;
+  final String currentRoute;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -335,55 +344,74 @@ class _AppNavigationShell extends ConsumerWidget {
             false) ||
         (ref.watch(plank_challenge_state.challengeBadgeProvider).value ??
             false);
+    final completedWorkoutCount =
+        ref
+            .watch(combinedWorkoutMetricsProvider)
+            .value
+            ?.completedWorkoutCount ??
+        0;
+    final showBottomAd =
+        AdEligibility.canShowNative(
+          completedWorkoutCount: completedWorkoutCount,
+        ) &&
+        (currentRoute == '/squat' ||
+            currentRoute == '/challenge' ||
+            currentRoute == '/settings');
     return Scaffold(
       body: navigationShell,
-      bottomNavigationBar: MediaQuery.removePadding(
-        context: context,
-        removeBottom: true,
-        child: SafeArea(
-          top: false,
-          child: _CompactBottomNavigation(
-            selectedIndex: navigationShell.currentIndex,
-            onSelected: (index) {
-              ref.read(analyticsServiceProvider).screenView(switch (index) {
-                0 => 'workout_setup',
-                1 => 'challenge',
-                2 => 'records',
-                _ => 'settings',
-              });
-              navigationShell.goBranch(
-                index,
-                initialLocation: index == navigationShell.currentIndex,
-              );
-            },
-            items: [
-              (
-                icon: Icons.fitness_center_outlined,
-                selectedIcon: Icons.fitness_center_rounded,
-                label: l10n.navWorkout,
-                showBadge: false,
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (showBottomAd) const BottomNativeAd(),
+          MediaQuery.removePadding(
+            context: context,
+            removeBottom: true,
+            child: SafeArea(
+              top: false,
+              child: _CompactBottomNavigation(
+                selectedIndex: navigationShell.currentIndex,
+                onSelected: (index) {
+                  ref.read(analyticsServiceProvider).screenView(switch (index) {
+                    0 => 'workout_setup',
+                    1 => 'challenge',
+                    2 => 'records',
+                    _ => 'settings',
+                  });
+                  navigationShell.goBranch(
+                    index,
+                    initialLocation: index == navigationShell.currentIndex,
+                  );
+                },
+                items: [
+                  (
+                    icon: Icons.fitness_center_outlined,
+                    selectedIcon: Icons.fitness_center_rounded,
+                    label: l10n.navWorkout,
+                    showBadge: false,
+                  ),
+                  (
+                    icon: Icons.emoji_events_outlined,
+                    selectedIcon: Icons.emoji_events_rounded,
+                    label: l10n.navChallenge,
+                    showBadge: challengeBadge,
+                  ),
+                  (
+                    icon: Icons.calendar_month_outlined,
+                    selectedIcon: Icons.calendar_month_rounded,
+                    label: l10n.navRecords,
+                    showBadge: false,
+                  ),
+                  (
+                    icon: Icons.settings_outlined,
+                    selectedIcon: Icons.settings_rounded,
+                    label: l10n.navSettings,
+                    showBadge: false,
+                  ),
+                ],
               ),
-              (
-                icon: Icons.emoji_events_outlined,
-                selectedIcon: Icons.emoji_events_rounded,
-                label: l10n.navChallenge,
-                showBadge: challengeBadge,
-              ),
-              (
-                icon: Icons.calendar_month_outlined,
-                selectedIcon: Icons.calendar_month_rounded,
-                label: l10n.navRecords,
-                showBadge: false,
-              ),
-              (
-                icon: Icons.settings_outlined,
-                selectedIcon: Icons.settings_rounded,
-                label: l10n.navSettings,
-                showBadge: false,
-              ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

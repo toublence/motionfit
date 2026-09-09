@@ -119,6 +119,10 @@ class ControlledPreferencesController extends PreferencesController {
     _nextSave = null;
   }
 
+  void setSquatGuideSeen() {
+    state = state.copyWith(cameraGuideSeen: true);
+  }
+
   @override
   UserPreferences build() => UserPreferences.defaults().copyWith(
     onboardingCompleted: true,
@@ -202,6 +206,7 @@ class ControlledWorkoutSessionController extends WorkoutSessionController {
   int recoverCount = 0;
   int cancelPreparationCount = 0;
   Completer<void>? _nextPrewarm;
+  Object? _nextPrewarmError;
 
   void delayNextPrewarm() {
     _nextPrewarm = Completer<void>();
@@ -211,6 +216,10 @@ class ControlledWorkoutSessionController extends WorkoutSessionController {
     final prewarm = _nextPrewarm;
     if (prewarm != null && !prewarm.isCompleted) prewarm.complete();
     _nextPrewarm = null;
+  }
+
+  void failNextPrewarm() {
+    _nextPrewarmError = StateError('camera initialization failed');
   }
 
   void resetCounts() {
@@ -224,9 +233,12 @@ class ControlledWorkoutSessionController extends WorkoutSessionController {
   WorkoutSessionState build() => WorkoutSessionState.idle();
 
   @override
-  Future<void> prewarm(WorkoutCoachMessages messages) {
+  Future<void> prewarm(WorkoutCoachMessages messages) async {
     prewarmCount++;
-    return _nextPrewarm?.future ?? Future<void>.value();
+    final error = _nextPrewarmError;
+    _nextPrewarmError = null;
+    if (error != null) throw error;
+    await (_nextPrewarm?.future ?? Future<void>.value());
   }
 
   @override

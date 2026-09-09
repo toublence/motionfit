@@ -54,14 +54,20 @@ Future<void> main() async {
 
 void _registerGlobalErrorHandlers(CrashReportingService crashReporting) {
   FlutterError.onError = (details) {
-    unawaited(crashReporting.recordFlutterFatalError(details));
+    FlutterError.presentError(details);
+    unawaited(
+      crashReporting.recordNonFatal(
+        details.exception,
+        details.stack ?? StackTrace.current,
+        reason: 'FlutterError.onError',
+      ),
+    );
   };
   PlatformDispatcher.instance.onError = (error, stackTrace) {
     unawaited(
-      crashReporting.recordError(
+      crashReporting.recordNonFatal(
         error,
         stackTrace,
-        fatal: true,
         reason: 'PlatformDispatcher.onError',
       ),
     );
