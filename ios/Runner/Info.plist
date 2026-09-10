@@ -26,10 +26,8 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>motionfit - workout coach</string>
-	<!-- Google sample app ID for testing. Production value to restore
-	     before release: ca-app-pub-6169297934919363~5425389550 -->
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<string>ca-app-pub-6169297934919363~5425389550</string>
 	<key>GADDelayAppMeasurementInit</key>
 	<true/>
 	<key>SKAdNetworkItems</key>

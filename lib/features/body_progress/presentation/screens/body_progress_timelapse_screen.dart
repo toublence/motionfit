@@ -9,7 +9,6 @@ import 'package:motionfit_squat/core/widgets/timelapse_player.dart';
 import 'package:motionfit_squat/features/body_progress/application/body_progress_providers.dart';
 import 'package:motionfit_squat/features/body_progress/domain/body_progress_summary.dart';
 import 'package:motionfit_squat/features/body_progress/presentation/widgets/body_progress_image.dart';
-import 'package:motionfit_squat/features/body_progress/presentation/widgets/body_progress_widgets.dart';
 import 'package:motionfit_squat/features/records/presentation/widgets/record_components.dart';
 
 /// Plays every stored photo of one view back in date order.
@@ -80,12 +79,8 @@ class _Player extends StatelessWidget {
     return ListView(
       padding: EdgeInsetsDirectional.only(bottom: context.tokens.spaceXl),
       children: [
-        Text(
-          bodyViewLabel(l10n, summary.bodyView),
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-        SizedBox(height: context.tokens.space12),
         TimelapsePlayer(
+          autoPlay: true,
           frameCount: summary.photoCount,
           frameBuilder: (context, index) =>
               BodyProgressImage(photo: summary.photos[index]),

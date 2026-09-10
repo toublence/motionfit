@@ -7,6 +7,7 @@ import 'package:motionfit_squat/app/theme/motionfit_tokens.dart';
 import 'package:motionfit_squat/core/providers.dart';
 import 'package:motionfit_squat/core/widgets/coach_ui.dart';
 import 'package:motionfit_squat/core/widgets/responsive_page.dart';
+import 'package:motionfit_squat/core/widgets/timelapse_player.dart';
 import 'package:motionfit_squat/features/body_progress/application/body_progress_providers.dart';
 import 'package:motionfit_squat/features/body_progress/domain/body_progress_photo.dart';
 import 'package:motionfit_squat/features/body_progress/domain/body_progress_summary.dart';
@@ -32,21 +33,23 @@ class _BodyProgressScreenState extends ConsumerState<BodyProgressScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final summary = ref.watch(bodyProgressSummaryProvider);
-    final counts = ref.watch(bodyProgressViewCountsProvider).value ?? const {};
-    final selected = ref.watch(selectedBodyViewProvider);
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.bodyProgressTitle)),
+      appBar: AppBar(
+        title: Text(l10n.bodyProgressTitle),
+        actions: [
+          IconButton(
+            tooltip: l10n.bodyProgressManualCapture,
+            onPressed: _openCapture,
+            icon: const Icon(Icons.photo_camera_outlined),
+          ),
+        ],
+      ),
       body: SafeArea(
         top: false,
         child: ResponsivePage(
           child: switch (summary) {
             AsyncData(:final value) => _Content(
               summary: value,
-              counts: counts,
-              selected: selected,
-              onSelectView: (view) =>
-                  ref.read(selectedBodyViewProvider.notifier).select(view),
-              onCapture: _openCapture,
               onRefresh: _refresh,
             ),
             AsyncError() => RecordErrorState(
@@ -77,20 +80,9 @@ class _BodyProgressScreenState extends ConsumerState<BodyProgressScreen> {
 }
 
 class _Content extends StatelessWidget {
-  const _Content({
-    required this.summary,
-    required this.counts,
-    required this.selected,
-    required this.onSelectView,
-    required this.onCapture,
-    required this.onRefresh,
-  });
+  const _Content({required this.summary, required this.onRefresh});
 
   final BodyProgressSummary summary;
-  final Map<BodyView, int> counts;
-  final BodyView selected;
-  final ValueChanged<BodyView> onSelectView;
-  final Future<void> Function() onCapture;
   final Future<void> Function() onRefresh;
 
   @override
@@ -105,76 +97,27 @@ class _Content extends StatelessWidget {
         physics: const AlwaysScrollableScrollPhysics(),
         padding: EdgeInsetsDirectional.only(bottom: context.tokens.spaceXl),
         children: [
-          _AutoStatusBanner(summary: summary),
-          SizedBox(height: context.tokens.spaceMd),
-          BodyViewSelector(
-            selected: selected,
-            onSelected: onSelectView,
-            counts: counts,
-          ),
-          SizedBox(height: context.tokens.spaceLg),
           if (summary.isEmpty)
-            _EmptyState(onCapture: onCapture)
+            const _EmptyState()
           else ...[
-            _StatsRow(summary: summary),
-            SizedBox(height: context.tokens.spaceLg),
-            _HeroComparison(summary: summary, dateFormat: dateFormat),
-            SizedBox(height: context.tokens.spaceLg),
-            // Viewing what was recorded comes first. Capturing by hand is the
-            // fallback, not the main action.
-            Row(
-              children: [
-                Expanded(
-                  child: FilledButton.icon(
-                    onPressed: summary.photoCount < 2
-                        ? null
-                        : () =>
-                              context.push('/records/body-progress/timelapse'),
-                    icon: const Icon(Icons.play_arrow_rounded, size: 18),
-                    label: Text(
-                      l10n.bodyProgressTimelapse,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ),
-                SizedBox(width: context.tokens.spaceSm),
-                Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: summary.photoCount < 2
-                        ? null
-                        : () => context.push('/records/body-progress/compare'),
-                    icon: const Icon(Icons.compare_rounded, size: 18),
-                    label: Text(
-                      l10n.bodyProgressCompare,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: context.tokens.spaceSm),
-            Align(
-              alignment: AlignmentDirectional.centerStart,
-              child: TextButton.icon(
-                onPressed: onCapture,
-                icon: const Icon(Icons.photo_camera_outlined, size: 18),
-                label: Text(
-                  _hasPhotoToday(summary)
-                      ? l10n.bodyProgressReplaceToday
-                      : l10n.bodyProgressManualCapture,
+            _BodyTimeline(summary: summary, dateFormat: dateFormat),
+            SizedBox(height: context.tokens.spaceXl),
+            if (summary.photoCount >= 2) ...[
+              CoachSectionHeader(title: l10n.bodyProgressCompare),
+              SizedBox(height: context.tokens.space12),
+              _HeroComparison(summary: summary, dateFormat: dateFormat),
+              SizedBox(height: context.tokens.spaceSm),
+              Align(
+                alignment: AlignmentDirectional.centerEnd,
+                child: TextButton.icon(
+                  onPressed: () =>
+                      context.push('/records/body-progress/compare'),
+                  icon: const Icon(Icons.compare_rounded, size: 18),
+                  label: Text(l10n.bodyProgressCompare),
                 ),
               ),
-            ),
-            SizedBox(height: context.tokens.spaceXl),
-            CoachSectionHeader(title: l10n.bodyProgressMilestones),
-            SizedBox(height: context.tokens.space12),
-            BodyProgressMilestoneStrip(
-              summary: summary,
-              formatDate: dateFormat.format,
-            ),
-            SizedBox(height: context.tokens.spaceXl),
+              SizedBox(height: context.tokens.spaceLg),
+            ],
             CoachSectionHeader(
               title: l10n.bodyProgressHistory,
               subtitle: l10n.bodyProgressPhotoCount(summary.photoCount),
@@ -187,50 +130,25 @@ class _Content extends StatelessWidget {
                 onDelete: (photo) => _confirmDelete(context, ref, photo),
               ),
             ),
+            SizedBox(height: context.tokens.spaceXl),
+            _StatsRow(summary: summary),
+            SizedBox(height: context.tokens.space12),
+            Text(
+              l10n.bodyProgressAutoHint,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+            ),
           ],
         ],
       ),
     );
   }
-
-  static bool _hasPhotoToday(BodyProgressSummary summary) {
-    final today = BodyProgressPhoto.dayKey(DateTime.now());
-    return summary.photos.any((photo) => photo.capturedOn == today);
-  }
-}
-
-
-/// Shows whether today's photo is already in, and explains that the app takes
-/// it on its own. This replaces the old capture-first framing.
-class _AutoStatusBanner extends StatelessWidget {
-  const _AutoStatusBanner({required this.summary});
-
-  final BodyProgressSummary summary;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
-    final today = BodyProgressPhoto.dayKey(DateTime.now());
-    final recorded = summary.photos.any(
-      (photo) => photo.capturedOn == today,
-    );
-    return CoachInsightPanel(
-      icon: recorded
-          ? Icons.check_circle_rounded
-          : Icons.auto_awesome_motion_rounded,
-      title: recorded
-          ? l10n.bodyProgressRecordedToday
-          : l10n.bodyProgressPendingToday,
-      body: l10n.bodyProgressAutoHint,
-      tone: recorded ? CoachStatusTone.positive : CoachStatusTone.brand,
-    );
-  }
 }
 
 class _EmptyState extends StatelessWidget {
-  const _EmptyState({required this.onCapture});
-
-  final Future<void> Function() onCapture;
+  const _EmptyState();
 
   @override
   Widget build(BuildContext context) {
@@ -247,11 +165,7 @@ class _EmptyState extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Icon(
-                Icons.photo_camera_rounded,
-                size: 36,
-                color: colors.primary,
-              ),
+              Icon(Icons.photo_camera_rounded, size: 36, color: colors.primary),
               SizedBox(height: context.tokens.space12),
               Text(
                 l10n.bodyProgressAutoEmptyTitle,
@@ -269,13 +183,68 @@ class _EmptyState extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: context.tokens.spaceLg),
-        TextButton.icon(
-          onPressed: onCapture,
-          icon: const Icon(Icons.photo_camera_outlined, size: 18),
-          label: Text(l10n.bodyProgressManualCapture),
-        ),
       ],
+    );
+  }
+}
+
+class _BodyTimeline extends StatelessWidget {
+  const _BodyTimeline({required this.summary, required this.dateFormat});
+
+  final BodyProgressSummary summary;
+  final DateFormat dateFormat;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    if (summary.photoCount == 1) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(context.tokens.radiusLg),
+            child: AspectRatio(
+              aspectRatio: 3 / 4,
+              child: BodyProgressImage(photo: summary.photos.single),
+            ),
+          ),
+          SizedBox(height: context.tokens.spaceSm),
+          Text(
+            l10n.bodyProgressAutoHint,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
+          ),
+        ],
+      );
+    }
+    return TimelapsePlayer(
+      autoPlay: true,
+      frameCount: summary.photoCount,
+      frameBuilder: (context, index) =>
+          BodyProgressImage(photo: summary.photos[index]),
+      captionBuilder: (context, index) {
+        final photo = summary.photos[index];
+        return Row(
+          children: [
+            Text(
+              l10n.bodyProgressDayNumber(summary.dayNumberOf(photo)),
+              style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            const Spacer(),
+            Text(
+              dateFormat.format(photo.capturedAt),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: Colors.white70),
+            ),
+          ],
+        );
+      },
     );
   }
 }
@@ -360,28 +329,28 @@ Future<void> _confirmDelete(
   WidgetRef ref,
   BodyProgressPhoto photo,
 ) async {
-    final l10n = AppLocalizations.of(context);
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(l10n.bodyProgressDeletePhoto),
-        content: Text(l10n.bodyProgressDeleteConfirm),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(false),
-            child: Text(l10n.commonCancel),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.of(context).pop(true),
-            child: Text(l10n.bodyProgressDeletePhoto),
-          ),
-        ],
-      ),
-    );
-    if (confirmed != true) return;
-    final directory = await ref.read(bodyProgressDirectoryProvider.future);
-    await ref
-        .read(bodyProgressRepositoryProvider)
-        .deletePhoto(photo.id, directory: directory);
-    ref.invalidate(bodyProgressPhotosProvider);
+  final l10n = AppLocalizations.of(context);
+  final confirmed = await showDialog<bool>(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text(l10n.bodyProgressDeletePhoto),
+      content: Text(l10n.bodyProgressDeleteConfirm),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(false),
+          child: Text(l10n.commonCancel),
+        ),
+        FilledButton(
+          onPressed: () => Navigator.of(context).pop(true),
+          child: Text(l10n.bodyProgressDeletePhoto),
+        ),
+      ],
+    ),
+  );
+  if (confirmed != true) return;
+  final directory = await ref.read(bodyProgressDirectoryProvider.future);
+  await ref
+      .read(bodyProgressRepositoryProvider)
+      .deletePhoto(photo.id, directory: directory);
+  ref.invalidate(bodyProgressPhotosProvider);
 }

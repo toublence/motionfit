@@ -30,7 +30,7 @@ class FormProgressSeries {
   /// Representative pose per session id, when one was captured.
   final Map<String, FormPoseSnapshot> poses;
 
-  bool get isEmpty => points.isEmpty;
+  bool get isEmpty => points.isEmpty && poseSnapshots.isEmpty;
 
   int get sessionCount => points.length;
 
@@ -43,9 +43,13 @@ class FormProgressSeries {
   FormProgressPoint? get latest =>
       scoredPoints.isEmpty ? null : scoredPoints.last;
 
-  double? get firstScore => first?.formScore;
+  double? get firstScore =>
+      first?.formScore ??
+      (poseSnapshots.isEmpty ? null : poseSnapshots.first.formScore);
 
-  double? get latestScore => latest?.formScore;
+  double? get latestScore =>
+      latest?.formScore ??
+      (poseSnapshots.isEmpty ? null : poseSnapshots.last.formScore);
 
   double? get scoreDelta {
     final start = firstScore;
@@ -54,9 +58,13 @@ class FormProgressSeries {
     return end - start;
   }
 
-  double? get firstAccuracy => first?.accuracy;
+  double? get firstAccuracy =>
+      first?.accuracy ??
+      (poseSnapshots.isEmpty ? null : poseSnapshots.first.accuracy);
 
-  double? get latestAccuracy => latest?.accuracy;
+  double? get latestAccuracy =>
+      latest?.accuracy ??
+      (poseSnapshots.isEmpty ? null : poseSnapshots.last.accuracy);
 
   double? get accuracyDelta {
     final start = firstAccuracy;
@@ -82,10 +90,7 @@ class FormProgressSeries {
   int dayNumberOf(FormProgressPoint point) {
     final start = firstDate;
     if (start == null) return 1;
-    return _dayOnly(
-          point.workoutDate,
-        ).difference(_dayOnly(start)).inDays +
-        1;
+    return _dayOnly(point.workoutDate).difference(_dayOnly(start)).inDays + 1;
   }
 
   /// Issues ordered by how often they were detected, most frequent first.
@@ -98,7 +103,9 @@ class FormProgressSeries {
     }
     final tallies =
         counts.entries
-            .map((entry) => FormIssueTally(issue: entry.key, count: entry.value))
+            .map(
+              (entry) => FormIssueTally(issue: entry.key, count: entry.value),
+            )
             .toList()
           ..sort((a, b) => b.count.compareTo(a.count));
     return List.unmodifiable(tallies);
@@ -109,18 +116,32 @@ class FormProgressSeries {
   List<FormIssue> get resolvedIssues {
     if (points.length < 4) return const [];
     final split = points.length ~/ 2;
-    final early = points
-        .take(split)
-        .expand((point) => point.issues)
-        .toSet();
-    final recent = points
-        .skip(split)
-        .expand((point) => point.issues)
-        .toSet();
+    final early = points.take(split).expand((point) => point.issues).toSet();
+    final recent = points.skip(split).expand((point) => point.issues).toSet();
     return List.unmodifiable(early.difference(recent));
   }
 
   FormPoseSnapshot? poseFor(FormProgressPoint point) => poses[point.sessionId];
+
+  /// Stored representative poses are the visual timeline's source of truth.
+  ///
+  /// They are intentionally independent from completed-session points: the
+  /// first valid rep is saved while a workout is still active, so waiting for
+  /// session completion made a freshly captured pose disappear from Progress.
+  List<FormPoseSnapshot> get poseSnapshots {
+    final snapshots = poses.values.where((pose) => pose.isRenderable).toList()
+      ..sort((a, b) => a.capturedAt.compareTo(b.capturedAt));
+    return List.unmodifiable(snapshots);
+  }
+
+  int dayNumberOfSnapshot(FormPoseSnapshot snapshot) {
+    final snapshots = poseSnapshots;
+    if (snapshots.isEmpty) return 1;
+    return _dayOnly(
+          snapshot.capturedAt,
+        ).difference(_dayOnly(snapshots.first.capturedAt)).inDays +
+        1;
+  }
 
   /// Points that carry a representative pose, oldest first. These drive the
   /// form timelapse and the before/after comparison.

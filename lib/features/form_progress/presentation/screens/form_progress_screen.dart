@@ -10,6 +10,7 @@ import 'package:motionfit_squat/core/widgets/responsive_page.dart';
 import 'package:motionfit_squat/features/exercise/domain/exercise_type.dart';
 import 'package:motionfit_squat/features/form_progress/application/form_progress_providers.dart';
 import 'package:motionfit_squat/features/form_progress/domain/form_progress_series.dart';
+import 'package:motionfit_squat/features/form_progress/presentation/widgets/form_pose_figure.dart';
 import 'package:motionfit_squat/features/form_progress/presentation/widgets/form_progress_widgets.dart';
 import 'package:motionfit_squat/features/records/presentation/widgets/record_components.dart';
 
@@ -75,9 +76,7 @@ class _FormProgressScreenState extends ConsumerState<FormProgressScreen> {
 
   Future<void> _refresh() async {
     _invalidate();
-    await ref.read(
-      formProgressSeriesProvider(ExerciseType.squat).future,
-    );
+    await ref.read(formProgressSeriesProvider(ExerciseType.squat).future);
   }
 }
 
@@ -207,8 +206,7 @@ class _ExerciseCard extends StatelessWidget {
                         color: colors.onSurfaceVariant,
                       ),
                     ),
-                  if (!series.isEmpty)
-                    const Icon(Icons.chevron_right_rounded),
+                  if (!series.isEmpty) const Icon(Icons.chevron_right_rounded),
                 ],
               ),
               if (series.isEmpty)
@@ -223,70 +221,46 @@ class _ExerciseCard extends StatelessWidget {
                 )
               else ...[
                 SizedBox(height: context.tokens.space12),
+                if (series.poseSnapshots.isNotEmpty)
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(
+                      context.tokens.radiusMd,
+                    ),
+                    child: AspectRatio(
+                      aspectRatio: 16 / 10,
+                      child: FormPoseFigure(
+                        snapshot: series.poseSnapshots.last,
+                        color: accent,
+                      ),
+                    ),
+                  ),
+                SizedBox(height: context.tokens.spaceSm),
                 Row(
                   children: [
                     Expanded(
-                      child: _MiniStat(
-                        label: l10n.formProgressFirstScore,
-                        value: formatFormScore(series.firstScore),
+                      child: Text(
+                        series.poseSnapshots.length >= 2
+                            ? '${l10n.bodyProgressDayNumber(1)} → '
+                                  '${l10n.bodyProgressDayNumber(series.dayNumberOfSnapshot(series.poseSnapshots.last))}'
+                            : l10n.bodyProgressDayNumber(1),
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: colors.onSurfaceVariant,
+                        ),
                       ),
                     ),
-                    Expanded(
-                      child: _MiniStat(
-                        label: l10n.formProgressCurrentScore,
-                        value: formatFormScore(series.latestScore),
-                        accent: accent,
+                    Text(
+                      '${formatFormScore(series.firstScore)} → '
+                      '${formatFormScore(series.latestScore)}',
+                      style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                        color: accent,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: context.tokens.spaceSm),
-                Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: FormScoreDeltaPill(delta: series.scoreDelta),
-                ),
               ],
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class _MiniStat extends StatelessWidget {
-  const _MiniStat({required this.label, required this.value, this.accent});
-
-  final String label;
-  final String value;
-  final Color? accent;
-
-  @override
-  Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
-    return Semantics(
-      label: label,
-      value: value,
-      child: ExcludeSemantics(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              value,
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                color: accent,
-                fontWeight: FontWeight.w800,
-              ),
-            ),
-            Text(
-              label,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: Theme.of(
-                context,
-              ).textTheme.bodySmall?.copyWith(color: colors.onSurfaceVariant),
-            ),
-          ],
         ),
       ),
     );

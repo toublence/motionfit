@@ -15,6 +15,7 @@ class TimelapsePlayer extends StatefulWidget {
     required this.frameBuilder,
     required this.captionBuilder,
     this.aspectRatio = 3 / 4,
+    this.autoPlay = false,
     super.key,
   });
 
@@ -22,6 +23,7 @@ class TimelapsePlayer extends StatefulWidget {
   final Widget Function(BuildContext context, int index) frameBuilder;
   final Widget Function(BuildContext context, int index) captionBuilder;
   final double aspectRatio;
+  final bool autoPlay;
 
   @override
   State<TimelapsePlayer> createState() => _TimelapsePlayerState();
@@ -36,6 +38,16 @@ class _TimelapsePlayerState extends State<TimelapsePlayer> {
   bool _playing = false;
 
   @override
+  void initState() {
+    super.initState();
+    if (widget.autoPlay && widget.frameCount >= 2) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _play();
+      });
+    }
+  }
+
+  @override
   void dispose() {
     _timer?.cancel();
     super.dispose();
@@ -47,11 +59,15 @@ class _TimelapsePlayerState extends State<TimelapsePlayer> {
     if (_index >= widget.frameCount) {
       _index = widget.frameCount == 0 ? 0 : widget.frameCount - 1;
     }
+    if (widget.autoPlay && oldWidget.frameCount < 2 && widget.frameCount >= 2) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _play();
+      });
+    }
   }
 
-  Duration get _interval => Duration(
-    milliseconds: (700 / _speeds[_speedIndex]).round(),
-  );
+  Duration get _interval =>
+      Duration(milliseconds: (700 / _speeds[_speedIndex]).round());
 
   void _play() {
     if (widget.frameCount < 2) return;
@@ -96,7 +112,17 @@ class _TimelapsePlayerState extends State<TimelapsePlayer> {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                widget.frameBuilder(context, index),
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 280),
+                  switchInCurve: Curves.easeOut,
+                  switchOutCurve: Curves.easeIn,
+                  transitionBuilder: (child, animation) =>
+                      FadeTransition(opacity: animation, child: child),
+                  child: KeyedSubtree(
+                    key: ValueKey(index),
+                    child: widget.frameBuilder(context, index),
+                  ),
+                ),
                 PositionedDirectional(
                   start: 0,
                   end: 0,

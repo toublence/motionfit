@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:motionfit_squat/app/localization/generated/app_localizations.dart';
@@ -8,6 +9,9 @@ import 'package:motionfit_squat/app/theme/exercise_colors.dart';
 import 'package:motionfit_squat/app/theme/motionfit_tokens.dart';
 import 'package:motionfit_squat/core/ads/bottom_native_ad.dart';
 import 'package:motionfit_squat/core/widgets/coach_ui.dart';
+import 'package:motionfit_squat/features/body_progress/application/body_progress_providers.dart';
+import 'package:motionfit_squat/features/body_progress/domain/body_progress_photo.dart';
+import 'package:motionfit_squat/features/body_progress/presentation/widgets/body_progress_image.dart';
 import 'package:motionfit_squat/features/exercise/domain/exercise_type.dart';
 import 'package:motionfit_squat/features/records/presentation/models/growth_workout_record.dart';
 
@@ -108,16 +112,22 @@ class _CalendarRecordsViewState extends State<CalendarRecordsView> {
   }
 }
 
-/// Entry points for the two progress features.
+/// Body Progress and its automatic full-body timelapse entry point.
 ///
 /// They sit in the Progress tab rather than on the workout screen because both
 /// are about looking back at accumulated history, not starting a session.
-class _ProgressEntryCards extends StatelessWidget {
+class _ProgressEntryCards extends ConsumerWidget {
   const _ProgressEntryCards();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
+    final today = BodyProgressPhoto.dayKey(DateTime.now());
+    final todayPhoto = switch (ref.watch(bodyProgressSummaryProvider)) {
+      AsyncData(:final value) =>
+        value.photos.where((photo) => photo.capturedOn == today).lastOrNull,
+      _ => null,
+    };
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -143,10 +153,13 @@ class _ProgressEntryCards extends StatelessWidget {
               SizedBox(width: context.tokens.space12),
               Expanded(
                 child: _ProgressEntryCard(
-                  icon: Icons.insights_rounded,
-                  title: l10n.formProgressTitle,
-                  body: l10n.formProgressSubtitle,
-                  onTap: () => context.push('/records/form-progress'),
+                  icon: Icons.play_circle_outline_rounded,
+                  title: l10n.bodyProgressTimelapse,
+                  body: l10n.bodyProgressAutoHint,
+                  preview: todayPhoto == null
+                      ? null
+                      : BodyProgressImage(photo: todayPhoto),
+                  onTap: () => context.push('/records/body-progress/timelapse'),
                 ),
               ),
             ],
@@ -163,12 +176,14 @@ class _ProgressEntryCard extends StatelessWidget {
     required this.title,
     required this.body,
     required this.onTap,
+    this.preview,
   });
 
   final IconData icon;
   final String title;
   final String body;
   final VoidCallback onTap;
+  final Widget? preview;
 
   @override
   Widget build(BuildContext context) {
@@ -183,7 +198,28 @@ class _ProgressEntryCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(icon, size: 22, color: colors.primary),
+              if (preview == null)
+                Icon(icon, size: 22, color: colors.primary)
+              else
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(context.tokens.radiusSm),
+                  child: SizedBox(
+                    height: 22,
+                    width: 44,
+                    child: Stack(
+                      fit: StackFit.expand,
+                      children: [
+                        preview!,
+                        const ColoredBox(color: Color(0x33000000)),
+                        const Icon(
+                          Icons.play_arrow_rounded,
+                          size: 16,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               SizedBox(height: context.tokens.spaceSm),
               Text(
                 title,
@@ -196,9 +232,9 @@ class _ProgressEntryCard extends StatelessWidget {
                 body,
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: colors.onSurfaceVariant,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: colors.onSurfaceVariant),
               ),
             ],
           ),

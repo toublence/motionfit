@@ -4,6 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:motionfit_squat/app/localization/generated/app_localizations.dart';
 import 'package:motionfit_squat/app/theme/motionfit_tokens.dart';
+import 'package:motionfit_squat/features/body_progress/application/body_progress_providers.dart';
+import 'package:motionfit_squat/features/body_progress/domain/body_progress_photo.dart';
+import 'package:motionfit_squat/features/body_progress/domain/body_progress_summary.dart';
 import 'package:motionfit_squat/features/exercise/domain/exercise_type.dart';
 import 'package:motionfit_squat/features/records/presentation/models/growth_workout_record.dart';
 import 'package:motionfit_squat/features/records/presentation/widgets/calendar_records_view.dart';
@@ -13,6 +16,12 @@ import 'package:motionfit_squat/features/records/presentation/widgets/calendar_r
 /// resolve against that and blanks the whole tab, so these tests pump the real
 /// widget rather than a stand-in.
 Widget host(List<GrowthWorkoutRecord> records) => ProviderScope(
+  overrides: [
+    bodyProgressSummaryProvider.overrideWith(
+      (ref) async =>
+          BodyProgressSummary(bodyView: BodyView.front, photos: const []),
+    ),
+  ],
   child: MaterialApp(
     localizationsDelegates: const [
       AppLocalizations.delegate,
@@ -62,16 +71,21 @@ void main() {
 
     expect(tester.takeException(), isNull);
     expect(find.text('바디 프로그레스'), findsOneWidget);
-    expect(find.text('폼 프로그레스'), findsOneWidget);
+    expect(find.text('전신샷 타임랩스'), findsOneWidget);
+    expect(find.text('폼 프로그레스'), findsNothing);
   });
 
   testWidgets('the entry cards share one height', (tester) async {
     await tester.pumpWidget(host([record(DateTime.now())]));
     await tester.pump();
 
-    final body = tester.getRect(find.text('바디 프로그레스'));
-    final form = tester.getRect(find.text('폼 프로그레스'));
-    expect(body.top, closeTo(form.top, 0.5));
+    final body = tester.getRect(
+      find.ancestor(of: find.text('바디 프로그레스'), matching: find.byType(Card)),
+    );
+    final timelapse = tester.getRect(
+      find.ancestor(of: find.text('전신샷 타임랩스'), matching: find.byType(Card)),
+    );
+    expect(body.height, closeTo(timelapse.height, 0.5));
   });
 
   testWidgets('the tab still lays out on a narrow screen', (tester) async {

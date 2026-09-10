@@ -7,9 +7,11 @@ import 'package:motionfit_squat/app/theme/motionfit_tokens.dart';
 import 'package:motionfit_squat/core/providers.dart';
 import 'package:motionfit_squat/core/widgets/coach_ui.dart';
 import 'package:motionfit_squat/core/widgets/responsive_page.dart';
+import 'package:motionfit_squat/core/widgets/timelapse_player.dart';
 import 'package:motionfit_squat/features/exercise/domain/exercise_type.dart';
 import 'package:motionfit_squat/features/form_progress/application/form_progress_providers.dart';
 import 'package:motionfit_squat/features/form_progress/domain/form_progress_series.dart';
+import 'package:motionfit_squat/features/form_progress/presentation/widgets/form_pose_figure.dart';
 import 'package:motionfit_squat/features/form_progress/presentation/widgets/form_progress_widgets.dart';
 import 'package:motionfit_squat/features/records/presentation/widgets/record_components.dart';
 import 'package:motionfit_squat/features/squat/presentation/rep_review_formatters.dart';
@@ -83,10 +85,25 @@ class _Content extends StatelessWidget {
     final dateFormat = DateFormat.yMMMd(
       Localizations.localeOf(context).toLanguageTag(),
     );
-    final posed = series.posedPoints;
+    final poses = series.poseSnapshots;
     return ListView(
       padding: EdgeInsetsDirectional.only(bottom: context.tokens.spaceXl),
       children: [
+        _FormTimeline(series: series, dateFormat: dateFormat),
+        SizedBox(height: context.tokens.spaceXl),
+        if (poses.length >= 2) ...[
+          CoachSectionHeader(title: l10n.formProgressCompare),
+          SizedBox(height: context.tokens.space12),
+          _BeforeAfter(series: series, dateFormat: dateFormat),
+          SizedBox(height: context.tokens.spaceLg),
+        ],
+        CoachSectionHeader(
+          title: l10n.bodyProgressHistory,
+          subtitle: l10n.bodyProgressPhotoCount(poses.length),
+        ),
+        SizedBox(height: context.tokens.space12),
+        _PoseHistory(series: series, dateFormat: dateFormat),
+        SizedBox(height: context.tokens.spaceXl),
         _Headline(series: series),
         SizedBox(height: context.tokens.spaceLg),
         CoachSectionHeader(title: l10n.formProgressTrend),
@@ -94,32 +111,6 @@ class _Content extends StatelessWidget {
         FormScoreTrend(series: series),
         SizedBox(height: context.tokens.spaceLg),
         _AccuracyRow(series: series),
-        SizedBox(height: context.tokens.spaceXl),
-        if (posed.length >= 2) ...[
-          CoachSectionHeader(title: l10n.formProgressCompare),
-          SizedBox(height: context.tokens.space12),
-          _BeforeAfter(series: series, dateFormat: dateFormat),
-          SizedBox(height: context.tokens.spaceMd),
-          SizedBox(
-            width: double.infinity,
-            child: OutlinedButton.icon(
-              onPressed: () => context.push(
-                '/records/form-progress/${series.exerciseType.name}/timelapse',
-              ),
-              icon: const Icon(Icons.movie_rounded, size: 18),
-              label: Text(l10n.formProgressTimelapse),
-            ),
-          ),
-        ] else ...[
-          CoachSectionHeader(title: l10n.formProgressCompare),
-          SizedBox(height: context.tokens.spaceSm),
-          CoachInsightPanel(
-            icon: Icons.accessibility_new_rounded,
-            title: l10n.formProgressNoPose,
-            body: l10n.formProgressAutoHint,
-            tone: CoachStatusTone.unavailable,
-          ),
-        ],
         SizedBox(height: context.tokens.spaceXl),
         CoachSectionHeader(title: l10n.formProgressCommonIssues),
         SizedBox(height: context.tokens.space12),
@@ -138,6 +129,79 @@ class _Content extends StatelessWidget {
             onTap: () => context.push(point.detailRoute),
           ),
       ],
+    );
+  }
+}
+
+class _FormTimeline extends StatelessWidget {
+  const _FormTimeline({required this.series, required this.dateFormat});
+
+  final FormProgressSeries series;
+  final DateFormat dateFormat;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final poses = series.poseSnapshots;
+    if (poses.isEmpty) {
+      return CoachInsightPanel(
+        icon: Icons.accessibility_new_rounded,
+        title: l10n.formProgressNoPose,
+        body: l10n.formProgressAutoHint,
+        tone: CoachStatusTone.unavailable,
+      );
+    }
+    if (poses.length == 1) {
+      final pose = poses.single;
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          FormPoseCard(
+            snapshot: pose,
+            exerciseType: series.exerciseType,
+            dayNumber: 1,
+            caption: dateFormat.format(pose.capturedAt),
+            issueLabel: null,
+          ),
+          SizedBox(height: context.tokens.spaceSm),
+          Text(
+            l10n.formProgressAutoHint,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
+          ),
+        ],
+      );
+    }
+    return TimelapsePlayer(
+      autoPlay: true,
+      frameCount: poses.length,
+      frameBuilder: (context, index) => FormPoseFigure(
+        snapshot: poses[index],
+        color: Theme.of(context).colorScheme.primary,
+      ),
+      captionBuilder: (context, index) {
+        final pose = poses[index];
+        return Row(
+          children: [
+            Text(
+              l10n.bodyProgressDayNumber(series.dayNumberOfSnapshot(pose)),
+              style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            const Spacer(),
+            Text(
+              dateFormat.format(pose.capturedAt),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: Colors.white70),
+            ),
+          ],
+        );
+      },
     );
   }
 }
@@ -227,11 +291,9 @@ class _BeforeAfter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final posed = series.posedPoints;
-    final firstPoint = posed.first;
-    final latestPoint = posed.last;
-    final firstPose = series.poseFor(firstPoint)!;
-    final latestPose = series.poseFor(latestPoint)!;
+    final poses = series.poseSnapshots;
+    final firstPose = poses.first;
+    final latestPose = poses.last;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -239,8 +301,8 @@ class _BeforeAfter extends StatelessWidget {
           child: FormPoseCard(
             snapshot: firstPose,
             exerciseType: series.exerciseType,
-            dayNumber: series.dayNumberOf(firstPoint),
-            caption: dateFormat.format(firstPoint.workoutDate),
+            dayNumber: series.dayNumberOfSnapshot(firstPose),
+            caption: dateFormat.format(firstPose.capturedAt),
             issueLabel: firstPose.primaryIssue == null
                 ? null
                 : repIssueCategory(l10n, firstPose.primaryIssue),
@@ -251,14 +313,57 @@ class _BeforeAfter extends StatelessWidget {
           child: FormPoseCard(
             snapshot: latestPose,
             exerciseType: series.exerciseType,
-            dayNumber: series.dayNumberOf(latestPoint),
-            caption: dateFormat.format(latestPoint.workoutDate),
+            dayNumber: series.dayNumberOfSnapshot(latestPose),
+            caption: dateFormat.format(latestPose.capturedAt),
             issueLabel: latestPose.primaryIssue == null
                 ? null
                 : repIssueCategory(l10n, latestPose.primaryIssue),
           ),
         ),
       ],
+    );
+  }
+}
+
+class _PoseHistory extends StatelessWidget {
+  const _PoseHistory({required this.series, required this.dateFormat});
+
+  final FormProgressSeries series;
+  final DateFormat dateFormat;
+
+  @override
+  Widget build(BuildContext context) {
+    final poses = series.poseSnapshots.reversed.toList(growable: false);
+    if (poses.isEmpty) return const SizedBox.shrink();
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        const columns = 3;
+        final spacing = context.tokens.space12;
+        final width =
+            (constraints.maxWidth - spacing * (columns - 1)) / columns;
+        final captions = MediaQuery.textScalerOf(context).scale(52);
+        return GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: columns,
+            mainAxisSpacing: spacing,
+            crossAxisSpacing: spacing,
+            mainAxisExtent: width * 4 / 3 + captions,
+          ),
+          itemCount: poses.length,
+          itemBuilder: (context, index) {
+            final pose = poses[index];
+            return FormPoseCard(
+              snapshot: pose,
+              exerciseType: series.exerciseType,
+              dayNumber: series.dayNumberOfSnapshot(pose),
+              caption: dateFormat.format(pose.capturedAt),
+              issueLabel: null,
+            );
+          },
+        );
+      },
     );
   }
 }

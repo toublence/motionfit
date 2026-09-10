@@ -1784,7 +1784,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get bodyProgressCompare => '비포 / 애프터';
 
   @override
-  String get bodyProgressTimelapse => '타임랩스';
+  String get bodyProgressTimelapse => '전신샷 타임랩스';
 
   @override
   String get bodyProgressHistory => '날짜별 기록';

@@ -78,8 +78,7 @@ class BodyProgressCaptureState {
   ///
   /// Android hands over an unmirrored front-camera stream, so the flip belongs
   /// here; iOS mirrors it on the capture connection and needs none.
-  bool get mirrorInFlutter =>
-      camera == CameraSelection.front && !mirrored;
+  bool get mirrorInFlutter => camera == CameraSelection.front && !mirrored;
 
   /// Most recent photo of the same view, drawn under the live preview so the
   /// next shot can be framed the same way.
@@ -132,10 +131,9 @@ class BodyProgressCaptureState {
 }
 
 final bodyProgressCaptureControllerProvider =
-    NotifierProvider<
-      BodyProgressCaptureController,
-      BodyProgressCaptureState
-    >(BodyProgressCaptureController.new);
+    NotifierProvider<BodyProgressCaptureController, BodyProgressCaptureState>(
+      BodyProgressCaptureController.new,
+    );
 
 class BodyProgressCaptureController extends Notifier<BodyProgressCaptureState> {
   static const _uuid = Uuid();
@@ -148,24 +146,17 @@ class BodyProgressCaptureController extends Notifier<BodyProgressCaptureState> {
       _disposed = true;
       unawaited(_camera.stop());
     });
-    return BodyProgressCaptureState.initial(ref.read(selectedBodyViewProvider));
+    return BodyProgressCaptureState.initial(BodyView.front);
   }
 
   BodyProgressCamera get _camera => ref.read(bodyProgressCameraProvider);
 
   Future<void> open(BodyView bodyView) async {
-    state = BodyProgressCaptureState.initial(bodyView).copyWith(
-      camera: ref.read(preferencesControllerProvider).selectedCamera,
-    );
+    state = BodyProgressCaptureState.initial(
+      bodyView,
+    ).copyWith(camera: ref.read(preferencesControllerProvider).selectedCamera);
     await _loadGhost(bodyView);
     await _ensurePermissionAndStart();
-  }
-
-  Future<void> selectBodyView(BodyView bodyView) async {
-    if (state.bodyView == bodyView) return;
-    state = state.copyWith(bodyView: bodyView, clearGhostPhoto: true);
-    ref.read(selectedBodyViewProvider.notifier).select(bodyView);
-    await _loadGhost(bodyView);
   }
 
   void setGhostOpacity(double opacity) {

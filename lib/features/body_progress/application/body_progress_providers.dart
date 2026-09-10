@@ -29,8 +29,9 @@ final bodyProgressDirectoryProvider = FutureProvider<Directory>((ref) {
   return ref.watch(bodyProgressCameraProvider).directory();
 });
 
-final selectedBodyViewProvider =
-    NotifierProvider<SelectedBodyView, BodyView>(SelectedBodyView.new);
+final selectedBodyViewProvider = NotifierProvider<SelectedBodyView, BodyView>(
+  SelectedBodyView.new,
+);
 
 class SelectedBodyView extends Notifier<BodyView> {
   @override
@@ -46,15 +47,17 @@ final bodyProgressPhotosProvider = FutureProvider<List<BodyProgressPhoto>>((
   return ref.watch(bodyProgressRepositoryProvider).loadPhotos();
 });
 
-/// Read model for the currently selected body view.
+/// Read model for Body Progress.
+///
+/// Legacy side/back rows stay readable for data compatibility, but the product
+/// now presents and records the automatic front view only.
 final bodyProgressSummaryProvider = FutureProvider<BodyProgressSummary>((
   ref,
 ) async {
-  final view = ref.watch(selectedBodyViewProvider);
   final photos = await ref.watch(bodyProgressPhotosProvider.future);
   return BodyProgressSummary(
-    bodyView: view,
-    photos: photos.where((photo) => photo.bodyView == view).toList(),
+    bodyView: BodyView.front,
+    photos: photos.where((photo) => photo.bodyView == BodyView.front).toList(),
   );
 });
 

@@ -62,11 +62,7 @@ void main() {
     final series = FormProgressSeries(
       exerciseType: ExerciseType.squat,
       points: [
-        point(
-          id: 'c',
-          date: origin.add(const Duration(days: 29)),
-          score: 84,
-        ),
+        point(id: 'c', date: origin.add(const Duration(days: 29)), score: 84),
         point(id: 'a', date: origin, score: 62),
         point(id: 'b', date: origin.add(const Duration(days: 6)), score: 71),
       ],
@@ -229,6 +225,23 @@ void main() {
     expect(series.poseFor(series.points.first), isNull);
   });
 
+  test(
+    'a freshly stored first-rep pose is visible before session completion',
+    () {
+      final stored = snapshot('active-session', origin, 74);
+      final series = FormProgressSeries(
+        exerciseType: ExerciseType.squat,
+        points: const [],
+        poses: {'active-session': stored},
+      );
+
+      expect(series.isEmpty, isFalse);
+      expect(series.poseSnapshots, [stored]);
+      expect(series.dayNumberOfSnapshot(stored), 1);
+      expect(series.latestScore, 74);
+    },
+  );
+
   test('a pose snapshot survives an encode and decode round trip', () {
     final original = snapshot('a', origin, 71);
     final restored = FormPoseSnapshot.fromMap(original.toMap());
@@ -238,9 +251,6 @@ void main() {
     expect(restored.landmarks.length, 33);
     expect(restored.isRenderable, isTrue);
     expect(restored.landmarks[10].x, closeTo(0.5, 0.0001));
-    expect(
-      restored.landmarks[10].y,
-      closeTo(original.landmarks[10].y, 0.0001),
-    );
+    expect(restored.landmarks[10].y, closeTo(original.landmarks[10].y, 0.0001));
   });
 }

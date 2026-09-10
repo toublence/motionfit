@@ -5,9 +5,8 @@ import 'package:motionfit_squat/app/localization/generated/app_localizations.dar
 import 'package:motionfit_squat/app/theme/motionfit_tokens.dart';
 import 'package:motionfit_squat/core/providers.dart';
 import 'package:motionfit_squat/features/body_progress/application/body_progress_capture_controller.dart';
-import 'package:motionfit_squat/features/body_progress/application/body_progress_providers.dart';
+import 'package:motionfit_squat/features/body_progress/domain/body_progress_photo.dart';
 import 'package:motionfit_squat/features/body_progress/presentation/widgets/body_progress_image.dart';
-import 'package:motionfit_squat/features/body_progress/presentation/widgets/body_progress_widgets.dart';
 import 'package:motionfit_squat/features/settings/application/preferences_controller.dart';
 
 class BodyProgressCaptureScreen extends ConsumerStatefulWidget {
@@ -28,7 +27,7 @@ class _BodyProgressCaptureScreenState
       ref.read(analyticsServiceProvider).screenView('body_progress_capture');
       ref
           .read(bodyProgressCaptureControllerProvider.notifier)
-          .open(ref.read(selectedBodyViewProvider));
+          .open(BodyView.front);
     });
   }
 
@@ -85,9 +84,7 @@ class _BodyProgressCaptureScreenState
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          saved
-              ? l10n.bodyProgressSaved
-              : _errorMessage(l10n, state.errorCode),
+          saved ? l10n.bodyProgressSaved : _errorMessage(l10n, state.errorCode),
         ),
       ),
     );
@@ -201,7 +198,9 @@ class _UprightPreview extends StatelessWidget {
       preview = RotatedBox(quarterTurns: quarterTurns, child: preview);
     }
     if (!hasSourceSize) return ClipRect(child: preview);
-    return ClipRect(child: FittedBox(fit: BoxFit.cover, child: preview));
+    return ClipRect(
+      child: FittedBox(fit: BoxFit.cover, child: preview),
+    );
   }
 }
 
@@ -402,17 +401,6 @@ class _Controls extends ConsumerWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Theme(
-            data: Theme.of(context).copyWith(
-              colorScheme: Theme.of(
-                context,
-              ).colorScheme.copyWith(brightness: Brightness.dark),
-            ),
-            child: BodyViewSelector(
-              selected: state.bodyView,
-              onSelected: notifier.selectBodyView,
-            ),
-          ),
           if (state.ghostPhoto != null) ...[
             SizedBox(height: context.tokens.spaceSm),
             Row(

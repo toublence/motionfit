@@ -46,7 +46,7 @@ class _FormProgressTimelapseScreenState
         top: false,
         child: ResponsivePage(
           child: switch (series) {
-            AsyncData(:final value) when value.posedPoints.length >= 2 =>
+            AsyncData(:final value) when value.poseSnapshots.length >= 2 =>
               _Player(series: value),
             AsyncData() => Center(
               child: Text(
@@ -82,7 +82,7 @@ class _Player extends StatelessWidget {
     final dateFormat = DateFormat.yMMMd(
       Localizations.localeOf(context).toLanguageTag(),
     );
-    final posed = series.posedPoints;
+    final poses = series.poseSnapshots;
     final accent = ExerciseColors.of(series.exerciseType);
     return ListView(
       padding: EdgeInsetsDirectional.only(bottom: context.tokens.spaceXl),
@@ -93,18 +93,16 @@ class _Player extends StatelessWidget {
         ),
         SizedBox(height: context.tokens.space12),
         TimelapsePlayer(
-          frameCount: posed.length,
-          frameBuilder: (context, index) => FormPoseFigure(
-            snapshot: series.poseFor(posed[index])!,
-            color: accent,
-          ),
+          autoPlay: true,
+          frameCount: poses.length,
+          frameBuilder: (context, index) =>
+              FormPoseFigure(snapshot: poses[index], color: accent),
           captionBuilder: (context, index) {
-            final point = posed[index];
-            final pose = series.poseFor(point)!;
+            final pose = poses[index];
             return Row(
               children: [
                 Text(
-                  l10n.bodyProgressDayNumber(series.dayNumberOf(point)),
+                  l10n.bodyProgressDayNumber(series.dayNumberOfSnapshot(pose)),
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w800,
@@ -114,13 +112,13 @@ class _Player extends StatelessWidget {
                 Text(
                   '${l10n.formProgressScoreLabel} '
                   '${formatFormScore(pose.formScore)}',
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Colors.white,
-                  ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodySmall?.copyWith(color: Colors.white),
                 ),
                 const Spacer(),
                 Text(
-                  dateFormat.format(point.workoutDate),
+                  dateFormat.format(pose.capturedAt),
                   style: Theme.of(
                     context,
                   ).textTheme.bodySmall?.copyWith(color: Colors.white70),

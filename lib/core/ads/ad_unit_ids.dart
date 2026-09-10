@@ -27,7 +27,7 @@ abstract final class MotionFitAdUnits {
   /// The AdMob application IDs in `AndroidManifest.xml` and `Info.plist` are
   /// switched to the matching sample IDs alongside this flag and have to be
   /// restored at the same time.
-  static const useTestAds = true;
+  static const useTestAds = false;
 
   static bool get _useTestUnits => useTestAds || !kReleaseMode;
 
