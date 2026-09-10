@@ -1694,6 +1694,291 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get workoutVideoDeleted => '锻炼视频已删除';
+
+  @override
+  String get bodyProgressTitle => '身体变化';
+
+  @override
+  String get bodyProgressSubtitle => '每次以相同构图拍摄身体，看着变化一点点累积。';
+
+  @override
+  String get bodyProgressEmptyTitle => '拍下第一张照片';
+
+  @override
+  String get bodyProgressEmptyBody => '今天的这一张会成为之后所有照片的对齐基准。';
+
+  @override
+  String get bodyProgressStartCapture => '拍摄今天的照片';
+
+  @override
+  String get bodyProgressRetake => '重拍今天的照片';
+
+  @override
+  String get bodyProgressViewFront => '正面';
+
+  @override
+  String get bodyProgressViewSide => '侧面';
+
+  @override
+  String get bodyProgressViewBack => '背面';
+
+  @override
+  String bodyProgressDayNumber(int day) {
+    return '第 $day 天';
+  }
+
+  @override
+  String get bodyProgressFirstPhoto => '最初';
+
+  @override
+  String get bodyProgressLatestPhoto => '最新';
+
+  @override
+  String bodyProgressPhotoCount(int count) {
+    return '$count 张';
+  }
+
+  @override
+  String bodyProgressSpanDays(int days) {
+    return '已记录 $days 天';
+  }
+
+  @override
+  String get bodyProgressRecordedDays => '记录天数';
+
+  @override
+  String get bodyProgressStreak => '当前连续';
+
+  @override
+  String get bodyProgressCompare => '前后对比';
+
+  @override
+  String get bodyProgressTimelapse => '延时回放';
+
+  @override
+  String get bodyProgressHistory => '按日期记录';
+
+  @override
+  String get bodyProgressMilestones => '阶段变化';
+
+  @override
+  String get bodyProgressMilestonePending => '尚未记录';
+
+  @override
+  String get bodyProgressDeletePhoto => '删除照片';
+
+  @override
+  String get bodyProgressDeleteConfirm => '要删除这张照片吗？图片将从本机移除。';
+
+  @override
+  String get bodyProgressLoading => '正在加载身体变化';
+
+  @override
+  String get bodyProgressLoadError => '无法加载身体变化。';
+
+  @override
+  String get bodyProgressMissingImage => '图片不可用';
+
+  @override
+  String get bodyProgressCaptureTitle => '身体变化拍摄';
+
+  @override
+  String get bodyProgressGhostOverlay => '半透明参考';
+
+  @override
+  String get bodyProgressGuides => '对齐参考线';
+
+  @override
+  String get bodyProgressCaptureHintFirst => '站到全身都能进入取景框的位置。';
+
+  @override
+  String get bodyProgressCaptureHintGhost => '把身体对准半透明的上一张照片再拍摄。';
+
+  @override
+  String get bodyProgressShutter => '拍摄';
+
+  @override
+  String get bodyProgressSwitchCamera => '切换摄像头';
+
+  @override
+  String get bodyProgressSaved => '已保存今天的照片。';
+
+  @override
+  String get bodyProgressCameraBusy => '请先结束训练相机再拍摄身体变化照片。';
+
+  @override
+  String get bodyProgressCameraError => '无法启动相机。';
+
+  @override
+  String get bodyProgressPermissionTitle => '需要相机权限';
+
+  @override
+  String get bodyProgressPermissionBody => '拍摄需要相机权限。照片仅保存在本机。';
+
+  @override
+  String get bodyProgressCompareNeedsTwo => '至少需要两张照片才能对比。';
+
+  @override
+  String get bodyProgressCompareBefore => '之前';
+
+  @override
+  String get bodyProgressCompareAfter => '之后';
+
+  @override
+  String get bodyProgressCompareHint => '左右拖动滑块比较两张照片。';
+
+  @override
+  String get bodyProgressTimelapseNeedsTwo => '至少需要两张照片才能生成延时回放。';
+
+  @override
+  String get formProgressTitle => '动作变化';
+
+  @override
+  String get formProgressSubtitle => '按项目查看你的动作改善了多少。';
+
+  @override
+  String get formProgressEmptyTitle => '还没有动作数据';
+
+  @override
+  String get formProgressEmptyBody => '完成一次训练后，姿势分析结果会自动汇总到这里。';
+
+  @override
+  String get formProgressFirstScore => '最初分数';
+
+  @override
+  String get formProgressCurrentScore => '当前分数';
+
+  @override
+  String get formProgressChange => '变化';
+
+  @override
+  String get formProgressAccuracy => '识别准确度';
+
+  @override
+  String get formProgressScoreLabel => '动作分数';
+
+  @override
+  String get formProgressTrend => '分数走势';
+
+  @override
+  String get formProgressCommonIssues => '最常出现的姿势问题';
+
+  @override
+  String get formProgressRecentImprovement => '最近改善的部分';
+
+  @override
+  String get formProgressNoImprovementYet => '再累积一些记录就会显示改善摘要。';
+
+  @override
+  String get formProgressSessions => '按日期的训练记录';
+
+  @override
+  String formProgressSessionCount(int count) {
+    return '$count 次';
+  }
+
+  @override
+  String get formProgressCompare => '最初与最新';
+
+  @override
+  String get formProgressTimelapse => '动作延时回放';
+
+  @override
+  String formProgressImprovedBy(int points) {
+    return '提高 $points 分';
+  }
+
+  @override
+  String formProgressDeclinedBy(int points) {
+    return '下降 $points 分';
+  }
+
+  @override
+  String get formProgressUnchanged => '暂无变化';
+
+  @override
+  String get formProgressNoPose => '还没有代表姿势';
+
+  @override
+  String get formProgressPoseHint => '下次训练开始会在这里保存代表姿势。';
+
+  @override
+  String get formProgressLoading => '正在加载动作变化';
+
+  @override
+  String get formProgressLoadError => '无法加载动作变化。';
+
+  @override
+  String formProgressIssueOccurrences(int count) {
+    return '$count 次';
+  }
+
+  @override
+  String get formProgressNeedsTwoSessions => '完成同一项目两次以上即可比较动作。';
+
+  @override
+  String get formProgressSelectExercise => '选择项目';
+
+  @override
+  String get progressTimelapsePlay => '播放';
+
+  @override
+  String get progressTimelapsePause => '暂停';
+
+  @override
+  String get progressTimelapseReplay => '重新播放';
+
+  @override
+  String get progressTimelapseSpeed => '速度';
+
+  @override
+  String progressTimelapseFrameOf(int index, int total) {
+    return '第 $index / $total 张';
+  }
+
+  @override
+  String get progressSectionTitle => '变化追踪';
+
+  @override
+  String get progressSectionSubtitle => '同时追踪身体变化与动作变化。';
+
+  @override
+  String get bodyProgressAutoHint => '开始训练时每天自动记录一次。';
+
+  @override
+  String get formProgressAutoHint => '当天第一个标准动作会自动记录。';
+
+  @override
+  String get bodyProgressRecordedToday => '今天已记录';
+
+  @override
+  String get bodyProgressPendingToday => '下次训练时记录';
+
+  @override
+  String get bodyProgressAutoEmptyTitle => '运动一次就会留下第一条记录';
+
+  @override
+  String get bodyProgressAutoEmptyBody => '像平常一样开始训练，姿势就位后会自动拍摄。';
+
+  @override
+  String get formProgressAutoEmptyBody => '像平常一样开始训练，第一个标准动作会自动记录。';
+
+  @override
+  String get bodyProgressManualCapture => '现在手动拍摄';
+
+  @override
+  String get bodyProgressReplaceToday => '重拍今天的记录';
+
+  @override
+  String get bodyProgressAutoSaved => '已记录今天的身体变化。';
+
+  @override
+  String formProgressAutoSaved(String exercise) {
+    return '已记录今天的$exercise动作。';
+  }
+
+  @override
+  String get progressAutoBadge => '自动';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -3386,4 +3671,289 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get workoutVideoDeleted => '鍛鍊影片已刪除';
+
+  @override
+  String get bodyProgressTitle => '身體變化';
+
+  @override
+  String get bodyProgressSubtitle => '每次以相同構圖拍攝身體，看著變化一點點累積。';
+
+  @override
+  String get bodyProgressEmptyTitle => '拍下第一張照片';
+
+  @override
+  String get bodyProgressEmptyBody => '今天的這一張會成為之後所有照片的對齊基準。';
+
+  @override
+  String get bodyProgressStartCapture => '拍攝今天的照片';
+
+  @override
+  String get bodyProgressRetake => '重拍今天的照片';
+
+  @override
+  String get bodyProgressViewFront => '正面';
+
+  @override
+  String get bodyProgressViewSide => '側面';
+
+  @override
+  String get bodyProgressViewBack => '背面';
+
+  @override
+  String bodyProgressDayNumber(int day) {
+    return '第 $day 天';
+  }
+
+  @override
+  String get bodyProgressFirstPhoto => '最初';
+
+  @override
+  String get bodyProgressLatestPhoto => '最新';
+
+  @override
+  String bodyProgressPhotoCount(int count) {
+    return '$count 張';
+  }
+
+  @override
+  String bodyProgressSpanDays(int days) {
+    return '已記錄 $days 天';
+  }
+
+  @override
+  String get bodyProgressRecordedDays => '記錄天數';
+
+  @override
+  String get bodyProgressStreak => '目前連續';
+
+  @override
+  String get bodyProgressCompare => '前後對比';
+
+  @override
+  String get bodyProgressTimelapse => '縮時回放';
+
+  @override
+  String get bodyProgressHistory => '按日期記錄';
+
+  @override
+  String get bodyProgressMilestones => '階段變化';
+
+  @override
+  String get bodyProgressMilestonePending => '尚未記錄';
+
+  @override
+  String get bodyProgressDeletePhoto => '刪除照片';
+
+  @override
+  String get bodyProgressDeleteConfirm => '要刪除這張照片嗎？圖片將從本機移除。';
+
+  @override
+  String get bodyProgressLoading => '正在載入身體變化';
+
+  @override
+  String get bodyProgressLoadError => '無法載入身體變化。';
+
+  @override
+  String get bodyProgressMissingImage => '圖片無法使用';
+
+  @override
+  String get bodyProgressCaptureTitle => '身體變化拍攝';
+
+  @override
+  String get bodyProgressGhostOverlay => '半透明參考';
+
+  @override
+  String get bodyProgressGuides => '對齊參考線';
+
+  @override
+  String get bodyProgressCaptureHintFirst => '站到全身都能進入取景框的位置。';
+
+  @override
+  String get bodyProgressCaptureHintGhost => '把身體對準半透明的上一張照片再拍攝。';
+
+  @override
+  String get bodyProgressShutter => '拍攝';
+
+  @override
+  String get bodyProgressSwitchCamera => '切換鏡頭';
+
+  @override
+  String get bodyProgressSaved => '已儲存今天的照片。';
+
+  @override
+  String get bodyProgressCameraBusy => '請先結束訓練相機再拍攝身體變化照片。';
+
+  @override
+  String get bodyProgressCameraError => '無法啟動相機。';
+
+  @override
+  String get bodyProgressPermissionTitle => '需要相機權限';
+
+  @override
+  String get bodyProgressPermissionBody => '拍攝需要相機權限。照片僅儲存在本機。';
+
+  @override
+  String get bodyProgressCompareNeedsTwo => '至少需要兩張照片才能對比。';
+
+  @override
+  String get bodyProgressCompareBefore => '之前';
+
+  @override
+  String get bodyProgressCompareAfter => '之後';
+
+  @override
+  String get bodyProgressCompareHint => '左右拖曳滑桿比較兩張照片。';
+
+  @override
+  String get bodyProgressTimelapseNeedsTwo => '至少需要兩張照片才能產生縮時回放。';
+
+  @override
+  String get formProgressTitle => '動作變化';
+
+  @override
+  String get formProgressSubtitle => '按項目查看你的動作改善了多少。';
+
+  @override
+  String get formProgressEmptyTitle => '還沒有動作資料';
+
+  @override
+  String get formProgressEmptyBody => '完成一次訓練後，姿勢分析結果會自動彙整到這裡。';
+
+  @override
+  String get formProgressFirstScore => '最初分數';
+
+  @override
+  String get formProgressCurrentScore => '目前分數';
+
+  @override
+  String get formProgressChange => '變化';
+
+  @override
+  String get formProgressAccuracy => '辨識準確度';
+
+  @override
+  String get formProgressScoreLabel => '動作分數';
+
+  @override
+  String get formProgressTrend => '分數走勢';
+
+  @override
+  String get formProgressCommonIssues => '最常出現的姿勢問題';
+
+  @override
+  String get formProgressRecentImprovement => '最近改善的部分';
+
+  @override
+  String get formProgressNoImprovementYet => '再累積一些記錄就會顯示改善摘要。';
+
+  @override
+  String get formProgressSessions => '按日期的訓練記錄';
+
+  @override
+  String formProgressSessionCount(int count) {
+    return '$count 次';
+  }
+
+  @override
+  String get formProgressCompare => '最初與最新';
+
+  @override
+  String get formProgressTimelapse => '動作縮時回放';
+
+  @override
+  String formProgressImprovedBy(int points) {
+    return '提高 $points 分';
+  }
+
+  @override
+  String formProgressDeclinedBy(int points) {
+    return '下降 $points 分';
+  }
+
+  @override
+  String get formProgressUnchanged => '暫無變化';
+
+  @override
+  String get formProgressNoPose => '還沒有代表姿勢';
+
+  @override
+  String get formProgressPoseHint => '下次訓練開始會在這裡儲存代表姿勢。';
+
+  @override
+  String get formProgressLoading => '正在載入動作變化';
+
+  @override
+  String get formProgressLoadError => '無法載入動作變化。';
+
+  @override
+  String formProgressIssueOccurrences(int count) {
+    return '$count 次';
+  }
+
+  @override
+  String get formProgressNeedsTwoSessions => '完成同一項目兩次以上即可比較動作。';
+
+  @override
+  String get formProgressSelectExercise => '選擇項目';
+
+  @override
+  String get progressTimelapsePlay => '播放';
+
+  @override
+  String get progressTimelapsePause => '暫停';
+
+  @override
+  String get progressTimelapseReplay => '重新播放';
+
+  @override
+  String get progressTimelapseSpeed => '速度';
+
+  @override
+  String progressTimelapseFrameOf(int index, int total) {
+    return '第 $index / $total 張';
+  }
+
+  @override
+  String get progressSectionTitle => '變化追蹤';
+
+  @override
+  String get progressSectionSubtitle => '同時追蹤身體變化與動作變化。';
+
+  @override
+  String get bodyProgressAutoHint => '開始訓練時每天自動記錄一次。';
+
+  @override
+  String get formProgressAutoHint => '當天第一個標準動作會自動記錄。';
+
+  @override
+  String get bodyProgressRecordedToday => '今天已記錄';
+
+  @override
+  String get bodyProgressPendingToday => '下次訓練時記錄';
+
+  @override
+  String get bodyProgressAutoEmptyTitle => '運動一次就會留下第一筆記錄';
+
+  @override
+  String get bodyProgressAutoEmptyBody => '像平常一樣開始訓練，姿勢就位後會自動拍攝。';
+
+  @override
+  String get formProgressAutoEmptyBody => '像平常一樣開始訓練，第一個標準動作會自動記錄。';
+
+  @override
+  String get bodyProgressManualCapture => '現在手動拍攝';
+
+  @override
+  String get bodyProgressReplaceToday => '重拍今天的記錄';
+
+  @override
+  String get bodyProgressAutoSaved => '已記錄今天的身體變化。';
+
+  @override
+  String formProgressAutoSaved(String exercise) {
+    return '已記錄今天的$exercise動作。';
+  }
+
+  @override
+  String get progressAutoBadge => '自動';
 }

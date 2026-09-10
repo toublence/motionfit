@@ -110,28 +110,85 @@
   "commonYesterday": "Gestern",
   "commonLoading": "Wird geladen…",
   "unitSets": "{count, plural, =0 {0 Sätze} =1 {1 Satz} other {{count} Sätze}}",
-  "@unitSets": {"placeholders": {"count": {"type": "int"}}},
+  "@unitSets": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitReps": "{count, plural, =0 {0 Wiederholungen} =1 {1 Wiederholung} other {{count} Wiederholungen}}",
-  "@unitReps": {"placeholders": {"count": {"type": "int"}}},
+  "@unitReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitSeconds": "{count, plural, =0 {0 Sekunden} =1 {1 Sekunde} other {{count} Sekunden}}",
-  "@unitSeconds": {"placeholders": {"count": {"type": "int"}}},
+  "@unitSeconds": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitMinutes": "{count, plural, =0 {0 Minuten} =1 {1 Minute} other {{count} Minuten}}",
-  "@unitMinutes": {"placeholders": {"count": {"type": "int"}}},
+  "@unitMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "durationHoursMinutes": "{hours} Std. {minutes} Min.",
-  "@durationHoursMinutes": {"placeholders": {"hours": {"type": "int"}, "minutes": {"type": "int"}}},
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "durationMinutesSeconds": "{minutes} Min. {seconds} Sek.",
-  "@durationMinutesSeconds": {"placeholders": {"minutes": {"type": "int"}, "seconds": {"type": "int"}}},
+  "@durationMinutesSeconds": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "homeGreeting": "Bereit für Bewegung?",
   "homeTodayTitle": "Heutiger Stand",
   "homeTodayNoWorkout": "Heute noch keine Kniebeugen. Ein kurzer Satz ist ein guter Anfang.",
   "homeTodaySummary": "Kniebeugen: {reps} · Sätze: {sets}",
   "homeViewResult": "Ergebnis",
-  "@homeTodaySummary": {"placeholders": {"reps": {"type": "int"}, "sets": {"type": "int"}}},
+  "@homeTodaySummary": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "sets": {
+        "type": "int"
+      }
+    }
+  },
   "homeTodaySets": "Sätze heute",
   "homeTodayReps": "Heute geschafft",
   "streakLabel": "Serie",
   "streakDays": "{days} Tage",
-  "@streakDays": {"placeholders": {"days": {"type": "int"}}},
+  "@streakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "homeWorkoutSetup": "Nächstes Training",
   "homeSetsLabel": "Sätze",
   "homeRepsPerSetLabel": "Wiederholungen pro Satz",
@@ -141,7 +198,16 @@
   "homeLastSettingsRestored": "Deine letzten Trainingseinstellungen sind bereit.",
   "validationNumberRequired": "Gib eine Zahl ein.",
   "validationRange": "Wähle einen Wert zwischen {min} und {max}.",
-  "@validationRange": {"placeholders": {"min": {"type": "num"}, "max": {"type": "num"}}},
+  "@validationRange": {
+    "placeholders": {
+      "min": {
+        "type": "num"
+      },
+      "max": {
+        "type": "num"
+      }
+    }
+  },
   "guideTitle": "Kamera einrichten",
   "guideSubtitle": "Eine klare Ganzkörperansicht hilft MotionFit, zuverlässig zu zählen.",
   "guideWholeBody": "Achte darauf, dass dein ganzer Körper von Kopf bis Fuß sichtbar ist.",
@@ -163,7 +229,13 @@
   "permissionNotificationDenied": "Benachrichtigungen sind deaktiviert. Aktiviere sie in den Systemeinstellungen, um Erinnerungen zu erhalten.",
   "countdownGetReady": "Mach dich bereit",
   "countdownBeginsIn": "Start in {seconds}",
-  "@countdownBeginsIn": {"placeholders": {"seconds": {"type": "int"}}},
+  "@countdownBeginsIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "calibrationTitle": "Deine Standposition wird erfasst",
   "calibrationBody": "Stehe aufrecht und bleibe mit dem ganzen Körper im Bild.",
   "calibrationStayStill": "Halte einen Moment still",
@@ -171,11 +243,35 @@
   "calibrationFailed": "Deine Standposition konnte nicht eindeutig erfasst werden.",
   "calibrationRetry": "Neu kalibrieren",
   "workoutSetProgress": "Satz {current} von {total}",
-  "@workoutSetProgress": {"placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}},
+  "@workoutSetProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "workoutRepProgress": "{current} von {target}",
-  "@workoutRepProgress": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@workoutRepProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "workoutTotalReps": "Gesamt: {count}",
-  "@workoutTotalReps": {"placeholders": {"count": {"type": "int"}}},
+  "@workoutTotalReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "workoutElapsed": "Verstrichene Zeit",
   "workoutPause": "Pause",
   "workoutResume": "Training fortsetzen",
@@ -198,7 +294,16 @@
   "workoutSkeletonToggle": "Positionshilfe anzeigen",
   "restTitle": "Pause",
   "restNextSet": "Als Nächstes: Satz {set} von {total}",
-  "@restNextSet": {"placeholders": {"set": {"type": "int"}, "total": {"type": "int"}}},
+  "@restNextSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "restCompletedSets": "Abgeschlossene Sätze",
   "restTotalReps": "Bisherige Kniebeugen",
   "restSkip": "Pause überspringen",
@@ -218,7 +323,19 @@
   "completeFormSummary": "Technikübersicht",
   "todayCoaching": "Heutiges Coaching",
   "coachingIssueFrequency": "Bei {count} von {total} Wiederholungen:\n{issue}",
-  "@coachingIssueFrequency": {"placeholders": {"total": {"type": "int"}, "count": {"type": "int"}, "issue": {"type": "String"}}},
+  "@coachingIssueFrequency": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      },
+      "issue": {
+        "type": "String"
+      }
+    }
+  },
   "completeTopImprovement": "Fokus fürs nächste Mal",
   "completeStrengths": "Das lief gut",
   "completeSaved": "Training auf diesem Gerät gespeichert",
@@ -227,28 +344,73 @@
   "completeFinish": "Fertig",
   "postWorkoutReminderTitle": "Bleib in Bewegung",
   "postWorkoutReminderBody": "Möchtest du ab morgen täglich um {time} erinnert werden?",
-  "@postWorkoutReminderBody": {"placeholders": {"time": {"type": "String"}}},
+  "@postWorkoutReminderBody": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "postWorkoutReminderEnable": "Erinnere mich",
   "postWorkoutReminderLater": "Vielleicht später",
   "postWorkoutReminderEnabled": "Deine Erinnerung ist eingerichtet.",
   "recordsTitle": "Fortschritt",
   "recordsWeeklySummary": "Diese Woche",
   "recordsWorkoutCount": "{count} Trainings",
-  "@recordsWorkoutCount": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsWorkoutCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsAverageForm": "Ø Technik {score}",
-  "@recordsAverageForm": {"placeholders": {"score": {"type": "int"}}},
+  "@recordsAverageForm": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "recordsWorkoutTime": "Zeit {time}",
-  "@recordsWorkoutTime": {"placeholders": {"time": {"type": "String"}}},
+  "@recordsWorkoutTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "recordsFirstWeek": "Dein erster Eintrag diese Woche",
   "recordsMoreThanLastWeek": "{count} Wiederholungen mehr als letzte Woche",
   "recordsLessThanLastWeek": "{count} Wiederholungen weniger als letzte Woche",
-  "@recordsMoreThanLastWeek": {"placeholders": {"count": {"type": "int"}}},
-  "@recordsLessThanLastWeek": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsMoreThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recordsLessThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsSameAsLastWeek": "Gleiches Volumen wie letzte Woche",
   "recordsTrendEmpty": "Mit weiteren Trainings wird dein Techniktrend sichtbar.",
   "recordsFirstFormScore": "Erster Technikwert",
   "recordsRecentAverage": "Durchschnitt der letzten {count}: {score}",
-  "@recordsRecentAverage": {"placeholders": {"count": {"type": "int"}, "score": {"type": "int"}}},
+  "@recordsRecentAverage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "recordsStrength": "Stärke",
   "recordsFocus": "Fokus",
   "recordsTodayPoint": "Heutiger Fokus",
@@ -278,9 +440,21 @@
   "recordsCalendarNoWorkoutSelected": "Wähle einen Trainingstag aus, um die Einheiten anzuzeigen.",
   "recordsDayTotal": "Tagessumme",
   "recordsSessionsCount": "{count, plural, =0 {Keine Einheiten} =1 {1 Einheit} other {{count} Einheiten}}",
-  "@recordsSessionsCount": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsSessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsSessionTitle": "Einheit {number}",
-  "@recordsSessionTitle": {"placeholders": {"number": {"type": "int"}}},
+  "@recordsSessionTitle": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "recordsListNewest": "Neueste zuerst",
   "recordsOpenDetail": "Details anzeigen",
   "recordsEmptyTitle": "Noch keine Trainings",
@@ -305,9 +479,21 @@
   "statsFrequentImprovements": "Häufige Schwerpunkte",
   "statsNoData": "Keine Trainings in diesem Zeitraum.",
   "statsTrendUp": "Plus {percent} %",
-  "@statsTrendUp": {"placeholders": {"percent": {"type": "num"}}},
+  "@statsTrendUp": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
   "statsTrendDown": "Minus {percent} %",
-  "@statsTrendDown": {"placeholders": {"percent": {"type": "num"}}},
+  "@statsTrendDown": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
   "statsTrendFlat": "Keine Veränderung",
   "detailTitle": "Trainingsdetails",
   "detailStartTime": "Beginn",
@@ -325,9 +511,27 @@
   "detailInterrupted": "Vorzeitig beendet",
   "detailCompleted": "Abgeschlossen",
   "detailSetRow": "Satz {set}: {reps} Wdh.",
-  "@detailSetRow": {"placeholders": {"set": {"type": "int"}, "reps": {"type": "int"}}},
+  "@detailSetRow": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
   "detailSessionOn": "{date} um {time}",
-  "@detailSessionOn": {"placeholders": {"date": {"type": "String"}, "time": {"type": "String"}}},
+  "@detailSessionOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "settingsTitle": "Einstellungen",
   "settingsRateApp": "Diese App bewerten",
   "settingsRateAppSubtitle": "MotionFit bewerten",
@@ -379,10 +583,22 @@
   "reminderTime": "Uhrzeit der Erinnerung",
   "reminderCopyTime": "Diese Uhrzeit kopieren",
   "reminderCopyFromDay": "Uhrzeit von {day} kopieren",
-  "@reminderCopyFromDay": {"placeholders": {"day": {"type": "String"}}},
+  "@reminderCopyFromDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
   "reminderApplyAll": "Auf alle Tage anwenden",
   "reminderNext": "Nächste Erinnerung: {dateTime}",
-  "@reminderNext": {"placeholders": {"dateTime": {"type": "String"}}},
+  "@reminderNext": {
+    "placeholders": {
+      "dateTime": {
+        "type": "String"
+      }
+    }
+  },
   "reminderNoneScheduled": "Keine Erinnerungen geplant",
   "reminderPermissionNeeded": "Erlaube Benachrichtigungen, um Erinnerungen zu aktivieren.",
   "reminderSaved": "Erinnerungsplan gespeichert",
@@ -420,7 +636,13 @@
   "privacyDeleteFailure": "Die Trainingsdaten konnten nicht gelöscht werden.",
   "appInfoTitle": "App-Informationen",
   "appInfoVersion": "Version {version}",
-  "@appInfoVersion": {"placeholders": {"version": {"type": "String"}}},
+  "@appInfoVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
   "appInfoLicenses": "Open-Source-Lizenzen",
   "appInfoPrivacyPolicy": "Datenschutzerklärung",
   "appInfoDescription": "MotionFit zählt Kniebeugen und bietet private Technikhilfen direkt auf deinem Gerät.",
@@ -444,7 +666,13 @@
   "formScore": "Technikbewertung",
   "formShort": "Form",
   "formScoreValue": "{score} Pkt.",
-  "@formScoreValue": {"placeholders": {"score": {"type": "int"}}},
+  "@formScoreValue": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "formIssueDepth": "Kniebeugentiefe",
   "formIssueTorsoLean": "Oberkörperstabilität",
   "formIssueHeelLift": "Fersenkontakt",
@@ -466,13 +694,40 @@
   "coachReady1": "Du bist in Position. Los geht’s.",
   "coachReady2": "Gute Position. Mach dich bereit für deine erste Kniebeuge.",
   "coachStartSet": "Satz {set}. Los geht’s.",
-  "@coachStartSet": {"placeholders": {"set": {"type": "int"}}},
+  "@coachStartSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
   "coachSevenDayChallengeStart": "Tag {day} der Sieben-Tage-Challenge beginnt.",
-  "@coachSevenDayChallengeStart": {"placeholders": {"day": {"type": "int"}}},
+  "@coachSevenDayChallengeStart": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "coachCumulativeChallengeStart": "Die Wiederholungs-Challenge beginnt. Du hast {completed} Wiederholungen geschafft, noch {remaining} verbleiben.",
-  "@coachCumulativeChallengeStart": {"placeholders": {"completed": {"type": "int"}, "remaining": {"type": "int"}}},
+  "@coachCumulativeChallengeStart": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "coachRepCount": "{count}",
-  "@coachRepCount": {"placeholders": {"count": {"type": "int"}}},
+  "@coachRepCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "coachDepth1": "Versuche bei der nächsten Wiederholung etwas tiefer zu gehen.",
   "coachDepth2": "Geh bei der nächsten Kniebeuge etwas tiefer.",
   "coachTorso1": "Halte deinen Oberkörper etwas stabiler.",
@@ -501,28 +756,79 @@
   "coachLastTwo": "Noch zwei. Bleib stark!",
   "coachLastOne": "Noch eine. Stark abschließen!",
   "coachSetComplete": "Super. Satz {set} ist geschafft.",
-  "@coachSetComplete": {"placeholders": {"set": {"type": "int"}}},
+  "@coachSetComplete": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
   "coachRestStart": "Ruhe dich {seconds} Sekunden aus. Atme durch und sammle dich.",
-  "@coachRestStart": {"placeholders": {"seconds": {"type": "int"}}},
+  "@coachRestStart": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "coachRestTenSeconds": "Noch zehn Sekunden Pause.",
   "coachRestComplete": "Die Pause ist vorbei. Mach dich bereit für den nächsten Satz.",
   "coachWorkoutComplete": "Training abgeschlossen. Du hast {reps} Kniebeugen geschafft.",
-  "@coachWorkoutComplete": {"placeholders": {"reps": {"type": "int"}}},
+  "@coachWorkoutComplete": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
   "notificationReminderTitle": "Zeit für deine heutigen Kniebeugen",
   "notificationReminderBody": "Auch eine kurze Einheit zählt. Öffne MotionFit, wenn du bereit bist.",
   "notificationReminderBodyVariant2": "Ein paar konzentrierte Kniebeugen bringen heute Bewegung in deinen Tag.",
   "notificationStreakReminderBody": "Halte deine {days}-Tage-Serie heute mit einer kurzen Einheit am Leben.",
-  "@notificationStreakReminderBody": {"placeholders": {"days": {"type": "int"}}},
+  "@notificationStreakReminderBody": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "semanticsIncrease": "Erhöhen",
   "semanticsDecrease": "Verringern",
   "semanticsSelectedTab": "Ausgewählter Tab: {tab}",
-  "@semanticsSelectedTab": {"placeholders": {"tab": {"type": "String"}}},
+  "@semanticsSelectedTab": {
+    "placeholders": {
+      "tab": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCalendarWorkoutDate": "{date}, Training aufgezeichnet",
-  "@semanticsCalendarWorkoutDate": {"placeholders": {"date": {"type": "String"}}},
+  "@semanticsCalendarWorkoutDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCalendarEmptyDate": "{date}, kein Training",
-  "@semanticsCalendarEmptyDate": {"placeholders": {"date": {"type": "String"}}},
+  "@semanticsCalendarEmptyDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCurrentRep": "Aktuelle Wiederholung {current} von {target}",
-  "@semanticsCurrentRep": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@semanticsCurrentRep": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "repVideoReviewTitle": "Videoanalyse je Wiederholung",
   "repVideoReviewDescription": "Speichere dieses Trainingsvideo auf dem Gerät, um einzelne Wiederholungen später anzusehen.",
   "repVideoLocalOnly": "Nur lokal · Kein Upload",
@@ -534,9 +840,21 @@
   "repTimelineImprove": "Verbessern",
   "repTimelineNoImprovement": "Keine Wiederholung muss verbessert werden.",
   "repSetNumber": "Satz {number}",
-  "@repSetNumber": {"placeholders": {"number": {"type": "int"}}},
+  "@repSetNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "repNumber": "Wiederholung {number}",
-  "@repNumber": {"placeholders": {"number": {"type": "int"}}},
+  "@repNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "repResultGood": "Gute Technik",
   "repResultNeedsAttention": "Achtung nötig",
   "repResultImproved": "Besser als zuvor",
@@ -556,9 +874,170 @@
   "repFeedbackTorso": "Dein Oberkörper war bei dieser Wiederholung zu weit nach vorn geneigt. Halte die Brust aufrechter.",
   "repFeedbackKnees": "Deine Knie bewegten sich bei dieser Wiederholung nach innen. Richte sie an den Zehen aus.",
   "repFeedbackGeneric": "Bei dieser Wiederholung braucht {area} Aufmerksamkeit.",
-  "@repFeedbackGeneric": {"placeholders": {"area": {"type": "String"}}},
+  "@repFeedbackGeneric": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      }
+    }
+  },
   "deleteWorkoutVideo": "Trainingsvideo löschen",
   "deleteWorkoutVideoTitle": "Dieses Trainingsvideo löschen?",
   "deleteWorkoutVideoBody": "Nur das lokale Video wird gelöscht. Analyse und Trainingsdaten bleiben erhalten.",
-  "workoutVideoDeleted": "Trainingsvideo gelöscht"
+  "workoutVideoDeleted": "Trainingsvideo gelöscht",
+  "bodyProgressTitle": "Körperfortschritt",
+  "bodyProgressSubtitle": "Fotografiere deinen Körper jedes Mal gleich und sieh, wie sich die Veränderung aufbaut.",
+  "bodyProgressEmptyTitle": "Mach dein erstes Foto",
+  "bodyProgressEmptyBody": "Das heutige Foto wird die Referenz, an der sich alle späteren Fotos ausrichten.",
+  "bodyProgressStartCapture": "Heutiges Foto aufnehmen",
+  "bodyProgressRetake": "Heutiges Foto neu aufnehmen",
+  "bodyProgressViewFront": "Vorne",
+  "bodyProgressViewSide": "Seite",
+  "bodyProgressViewBack": "Hinten",
+  "bodyProgressDayNumber": "Tag {day}",
+  "@bodyProgressDayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressFirstPhoto": "Erstes",
+  "bodyProgressLatestPhoto": "Neuestes",
+  "bodyProgressPhotoCount": "{count} Fotos",
+  "@bodyProgressPhotoCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressSpanDays": "{days} Tage erfasst",
+  "@bodyProgressSpanDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressRecordedDays": "Erfasste Tage",
+  "bodyProgressStreak": "Aktuelle Serie",
+  "bodyProgressCompare": "Vorher / Nachher",
+  "bodyProgressTimelapse": "Zeitraffer",
+  "bodyProgressHistory": "Fotoverlauf",
+  "bodyProgressMilestones": "Meilensteine",
+  "bodyProgressMilestonePending": "Noch nicht",
+  "bodyProgressDeletePhoto": "Foto löschen",
+  "bodyProgressDeleteConfirm": "Dieses Foto löschen? Das Bild wird von diesem Gerät entfernt.",
+  "bodyProgressLoading": "Körperfortschritt wird geladen",
+  "bodyProgressLoadError": "Der Körperfortschritt konnte nicht geladen werden.",
+  "bodyProgressMissingImage": "Bild nicht verfügbar",
+  "bodyProgressCaptureTitle": "Körperfortschritt-Foto",
+  "bodyProgressGhostOverlay": "Geister-Overlay",
+  "bodyProgressGuides": "Ausrichtungshilfen",
+  "bodyProgressCaptureHintFirst": "Stell dich so hin, dass dein ganzer Körper ins Bild passt.",
+  "bodyProgressCaptureHintGhost": "Richte dich am blassen Foto aus und löse dann aus.",
+  "bodyProgressShutter": "Aufnehmen",
+  "bodyProgressSwitchCamera": "Kamera wechseln",
+  "bodyProgressSaved": "Das heutige Foto ist gespeichert.",
+  "bodyProgressCameraBusy": "Beende die Workout-Kamera, bevor du ein Foto aufnimmst.",
+  "bodyProgressCameraError": "Die Kamera konnte nicht gestartet werden.",
+  "bodyProgressPermissionTitle": "Kamerazugriff erforderlich",
+  "bodyProgressPermissionBody": "MotionFit braucht die Kamera für dieses Foto. Fotos bleiben auf diesem Gerät.",
+  "bodyProgressCompareNeedsTwo": "Für einen Vergleich sind mindestens zwei Fotos nötig.",
+  "bodyProgressCompareBefore": "Vorher",
+  "bodyProgressCompareAfter": "Nachher",
+  "bodyProgressCompareHint": "Ziehe den Griff, um zwischen den Fotos zu wischen.",
+  "bodyProgressTimelapseNeedsTwo": "Für einen Zeitraffer sind mindestens zwei Fotos nötig.",
+  "formProgressTitle": "Formfortschritt",
+  "formProgressSubtitle": "Sieh dir Übung für Übung an, wie sich deine Form verbessert hat.",
+  "formProgressEmptyTitle": "Noch keine Formdaten",
+  "formProgressEmptyBody": "Beende ein Workout, dann landet die Formanalyse automatisch hier.",
+  "formProgressFirstScore": "Erster Wert",
+  "formProgressCurrentScore": "Aktueller Wert",
+  "formProgressChange": "Veränderung",
+  "formProgressAccuracy": "Erkennungsgenauigkeit",
+  "formProgressScoreLabel": "Formwert",
+  "formProgressTrend": "Werteverlauf",
+  "formProgressCommonIssues": "Häufigste Formprobleme",
+  "formProgressRecentImprovement": "Kürzlich verbessert",
+  "formProgressNoImprovementYet": "Trainiere weiter, dann erscheint eine Verbesserungsübersicht.",
+  "formProgressSessions": "Trainingsverlauf",
+  "formProgressSessionCount": "{count} Einheiten",
+  "@formProgressSessionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressCompare": "Erste vs. letzte",
+  "formProgressTimelapse": "Form-Zeitraffer",
+  "formProgressImprovedBy": "{points} Punkte besser",
+  "@formProgressImprovedBy": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressDeclinedBy": "{points} Punkte schlechter",
+  "@formProgressDeclinedBy": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressUnchanged": "Noch keine Veränderung",
+  "formProgressNoPose": "Noch keine Referenzhaltung",
+  "formProgressPoseHint": "Dein nächstes Workout speichert hier eine Referenzhaltung.",
+  "formProgressLoading": "Formfortschritt wird geladen",
+  "formProgressLoadError": "Der Formfortschritt konnte nicht geladen werden.",
+  "formProgressIssueOccurrences": "{count}-mal",
+  "@formProgressIssueOccurrences": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressNeedsTwoSessions": "Absolviere zwei Workouts dieser Übung, um die Form zu vergleichen.",
+  "formProgressSelectExercise": "Übung wählen",
+  "progressTimelapsePlay": "Abspielen",
+  "progressTimelapsePause": "Pause",
+  "progressTimelapseReplay": "Erneut abspielen",
+  "progressTimelapseSpeed": "Tempo",
+  "progressTimelapseFrameOf": "{index} von {total}",
+  "@progressTimelapseFrameOf": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "progressSectionTitle": "Fortschritt",
+  "progressSectionSubtitle": "Verfolge deinen Körper und deine Form über die Zeit.",
+  "bodyProgressAutoHint": "Wird beim Start eines Workouts einmal am Tag automatisch aufgenommen.",
+  "formProgressAutoHint": "Deine erste saubere Wiederholung des Tages wird automatisch aufgenommen.",
+  "bodyProgressRecordedToday": "Heute aufgenommen",
+  "bodyProgressPendingToday": "Wird beim nächsten Workout aufgenommen",
+  "bodyProgressAutoEmptyTitle": "Ein Workout und dein erster Eintrag steht",
+  "bodyProgressAutoEmptyBody": "Starte einfach ein Workout. Das Foto entsteht, sobald du im Bild stehst.",
+  "formProgressAutoEmptyBody": "Starte einfach ein Workout. Deine erste saubere Wiederholung wird aufgenommen.",
+  "bodyProgressManualCapture": "Jetzt selbst aufnehmen",
+  "bodyProgressReplaceToday": "Heutiges Foto ersetzen",
+  "bodyProgressAutoSaved": "Der heutige Körperfortschritt ist aufgenommen.",
+  "formProgressAutoSaved": "Die heutige {exercise}-Form ist aufgenommen.",
+  "@formProgressAutoSaved": {
+    "placeholders": {
+      "exercise": {
+        "type": "String"
+      }
+    }
+  },
+  "progressAutoBadge": "Auto"
 }

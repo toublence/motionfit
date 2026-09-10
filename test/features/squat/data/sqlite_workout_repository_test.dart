@@ -282,17 +282,32 @@ void main() {
       final rawDatabase = await database.database;
       final schemaRows = await rawDatabase.query(
         'sqlite_master',
-        columns: ['sql'],
+        columns: ['name', 'sql'],
         where: "type = 'table' AND name NOT LIKE 'sqlite_%'",
       );
-      final schema = schemaRows
+      // Body Progress stores photo file names and Form Progress stores a
+      // representative pose, both by explicit user action. Every other table,
+      // and the workout pipeline in particular, still must not persist images,
+      // pixels, or landmarks.
+      const progressTables = {'body_progress_photos', 'form_pose_snapshots'};
+      final workoutSchema = schemaRows
+          .where((row) => !progressTables.contains(row['name'] as String?))
           .map((row) => row['sql'] as String? ?? '')
           .join('\n')
           .toLowerCase();
-      expect(schema, isNot(contains(' blob')));
-      expect(schema, isNot(contains('image')));
-      expect(schema, isNot(contains('pixel')));
-      expect(schema, isNot(contains('landmark')));
+      expect(workoutSchema, isNot(contains(' blob')));
+      expect(workoutSchema, isNot(contains('image')));
+      expect(workoutSchema, isNot(contains('pixel')));
+      expect(workoutSchema, isNot(contains('landmark')));
+
+      final fullSchema = schemaRows
+          .map((row) => row['sql'] as String? ?? '')
+          .join('\n')
+          .toLowerCase();
+      // Even the progress tables hold references and coordinates only, never
+      // raw bytes.
+      expect(fullSchema, isNot(contains(' blob')));
+      expect(fullSchema, isNot(contains('pixel')));
 
       await repository.markInterrupted(
         initialSession.id,

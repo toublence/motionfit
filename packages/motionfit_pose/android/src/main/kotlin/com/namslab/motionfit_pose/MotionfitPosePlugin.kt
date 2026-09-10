@@ -4,6 +4,8 @@ import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.Matrix
 import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
@@ -62,6 +64,7 @@ import java.util.concurrent.Executors
 import java.util.concurrent.RejectedExecutionException
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicLong
+import java.util.concurrent.atomic.AtomicReference
 import kotlin.math.abs
 import kotlin.math.max
 
@@ -88,6 +91,9 @@ class MotionfitPosePlugin :
     private var videoCapture: VideoCapture<Recorder>? = null
     private var recording: Recording? = null
     private var surfaceProducer: TextureRegistry.SurfaceProducer? = null
+    private var stillCapture: MotionfitStillCapture? = null
+    private val workoutFrameRequest = AtomicReference<MethodChannel.Result?>(null)
+    private var workoutFrameTimeout: Runnable? = null
     private var observedCameraState: LiveData<CameraState>? = null
     private var cameraStateObserver: Observer<CameraState>? = null
     private var eventSink: EventChannel.EventSink? = null
@@ -128,6 +134,11 @@ class MotionfitPosePlugin :
     @Volatile private var lastInputHeight = 0
     @Volatile private var lastRotationDegrees = 0
 
+    private val captureEncodeExecutor: ExecutorService =
+        Executors.newSingleThreadExecutor { runnable ->
+            Thread(runnable, "motionfit-frame-encode").apply { isDaemon = true }
+        }
+
     private val generation = AtomicLong(0L)
     private val frameId = AtomicLong(0L)
     private val inferenceInFlight = AtomicBoolean(false)
@@ -162,6 +173,12 @@ class MotionfitPosePlugin :
             "stopVideoRecording" -> stopVideoRecording(result)
             "cancelVideoRecording" -> cancelVideoRecording(result)
             "dispose" -> dispose(result)
+            "startStillCapture" -> startStillCapture(call, result)
+            "switchStillCamera" -> switchStillCamera(call, result)
+            "captureStill" -> captureStill(result)
+            "captureWorkoutFrame" -> captureWorkoutFrame(result)
+            "stillCaptureDirectory" -> stillCaptureDirectory(result)
+            "stopStillCapture" -> stopStillCapture(result)
             else -> result.notImplemented()
         }
     }
@@ -204,11 +221,13 @@ class MotionfitPosePlugin :
 
     override fun onDetachedFromActivityForConfigChanges() {
         resumeAfterConfigurationChange = sessionActive && !userPaused
+        stillCapture?.release()
         detachActivity()
     }
 
     override fun onDetachedFromActivity() {
         resumeAfterConfigurationChange = false
+        stillCapture?.release()
         detachActivity()
     }
 
@@ -247,6 +266,277 @@ class MotionfitPosePlugin :
         emitStatusFrame(TrackingState.LOST)
     }
 
+    private fun startStillCapture(call: MethodCall, result: MethodChannel.Result) {
+        checkMainThread()
+        if (sessionActive) {
+            result.error(
+                ERROR_CAMERA_BUSY,
+                "The pose engine holds the camera. Dispose it before capturing photos.",
+                null,
+            )
+            return
+        }
+        val camera = StillCamera.from(call.argument<String>("camera"))
+        if (camera == null) {
+            result.error(
+                ERROR_INVALID_ARGUMENTS,
+                "camera must be either 'front' or 'back'.",
+                null,
+            )
+            return
+        }
+        if (!hasCameraPermission()) {
+            result.error(
+                ERROR_PERMISSION_DENIED,
+                "Camera permission must be granted before capturing photos.",
+                null,
+            )
+            return
+        }
+        val owner = lifecycleOwner
+        if (activity == null || owner == null) {
+            result.error(
+                ERROR_ACTIVITY_UNAVAILABLE,
+                "A LifecycleOwner activity is required to start the camera.",
+                null,
+            )
+            return
+        }
+        val capture = stillCapture ?: MotionfitStillCapture(
+            applicationContext,
+            textureRegistry,
+            mainHandler,
+            analysisExecutor,
+        ).also { stillCapture = it }
+        capture.start(
+            owner = owner,
+            hostActivity = activity,
+            camera = camera,
+            onSuccess = { started ->
+                result.success(
+                    mapOf(
+                        "textureId" to started.textureId,
+                        "previewWidth" to started.previewWidth,
+                        "previewHeight" to started.previewHeight,
+                        "rotationDegrees" to started.rotationDegrees,
+                        "handlesCropAndRotation" to started.handlesCropAndRotation,
+                        "mirrored" to started.mirrored,
+                    ),
+                )
+            },
+            onError = { code, message -> result.error(code, message, null) },
+        )
+    }
+
+    private fun switchStillCamera(call: MethodCall, result: MethodChannel.Result) {
+        checkMainThread()
+        val capture = stillCapture
+        val camera = StillCamera.from(call.argument<String>("camera"))
+        if (camera == null) {
+            result.error(
+                ERROR_INVALID_ARGUMENTS,
+                "camera must be either 'front' or 'back'.",
+                null,
+            )
+            return
+        }
+        if (capture == null || !capture.isRunning) {
+            result.error(ERROR_NOT_STARTED, "Still capture is not running.", null)
+            return
+        }
+        capture.switchCamera(
+            camera = camera,
+            onSuccess = { started ->
+                result.success(
+                    mapOf(
+                        "textureId" to started.textureId,
+                        "previewWidth" to started.previewWidth,
+                        "previewHeight" to started.previewHeight,
+                        "rotationDegrees" to started.rotationDegrees,
+                        "handlesCropAndRotation" to started.handlesCropAndRotation,
+                        "mirrored" to started.mirrored,
+                    ),
+                )
+            },
+            onError = { code, message -> result.error(code, message, null) },
+        )
+    }
+
+    private fun captureStill(result: MethodChannel.Result) {
+        checkMainThread()
+        val capture = stillCapture
+        if (capture == null || !capture.isRunning) {
+            result.error(ERROR_NOT_STARTED, "Still capture is not running.", null)
+            return
+        }
+        capture.capture(
+            onSuccess = { photo ->
+                result.success(
+                    mapOf(
+                        "directory" to photo.directory,
+                        "fileName" to photo.fileName,
+                        "width" to photo.width,
+                        "height" to photo.height,
+                    ),
+                )
+            },
+            onError = { code, message -> result.error(code, message, null) },
+        )
+    }
+
+    private fun stillCaptureDirectory(result: MethodChannel.Result) {
+        checkMainThread()
+        val capture = stillCapture ?: MotionfitStillCapture(
+            applicationContext,
+            textureRegistry,
+            mainHandler,
+            analysisExecutor,
+        ).also { stillCapture = it }
+        try {
+            result.success(mapOf("directory" to capture.directory().absolutePath))
+        } catch (error: Exception) {
+            result.error(
+                ERROR_PHOTO_STORAGE,
+                "The body progress directory is unavailable.",
+                errorDetails(error),
+            )
+        }
+    }
+
+    /**
+     * Saves the next analyzed camera frame as a JPEG.
+     *
+     * Body Progress captures itself while the user works out, and the workout
+     * camera is already bound for pose analysis, so a second capture session
+     * cannot be opened. This reuses the frame the analyzer is about to receive
+     * instead, which is also the frame calibration settled on.
+     */
+    private fun captureWorkoutFrame(result: MethodChannel.Result) {
+        checkMainThread()
+        if (!sessionActive || !analysisEnabled) {
+            result.error(ERROR_NOT_STARTED, "The pose engine is not running.", null)
+            return
+        }
+        if (!workoutFrameRequest.compareAndSet(null, result)) {
+            result.error(ERROR_BUSY, "A workout frame capture is already pending.", null)
+            return
+        }
+        val timeout =
+            Runnable {
+                workoutFrameTimeout = null
+                val pending = workoutFrameRequest.getAndSet(null) ?: return@Runnable
+                pending.error(
+                    ERROR_CAPTURE_FAILED,
+                    "No camera frame arrived in time.",
+                    null,
+                )
+            }
+        workoutFrameTimeout = timeout
+        mainHandler.postDelayed(timeout, WORKOUT_FRAME_TIMEOUT_MS)
+    }
+
+    /**
+     * Encodes [image] off the analysis thread and answers the pending request.
+     *
+     * Called only when a capture was requested, so the steady-state analysis
+     * path is untouched. Failures resolve the request with an error and never
+     * interrupt the workout.
+     */
+    private fun fulfillWorkoutFrameRequest(image: ImageProxy, mirrored: Boolean) {
+        if (workoutFrameRequest.get() == null) return
+        val bitmap =
+            try {
+                // Copy on the analysis thread, encode elsewhere: the copy is a
+                // memcpy, the JPEG encode is not.
+                val source = image.toBitmap()
+                val rotation = image.imageInfo.rotationDegrees
+                if (rotation == 0 && !mirrored) {
+                    source
+                } else {
+                    val matrix = Matrix()
+                    matrix.postRotate(rotation.toFloat())
+                    if (mirrored) matrix.postScale(-1f, 1f)
+                    Bitmap.createBitmap(
+                        source,
+                        0,
+                        0,
+                        source.width,
+                        source.height,
+                        matrix,
+                        true,
+                    )
+                }
+            } catch (error: Exception) {
+                Log.w(TAG, "The workout frame could not be converted.", error)
+                completeWorkoutFrameRequest(null, error.message)
+                return
+            }
+        stillCaptureOrCreate().let { capture ->
+            captureEncodeExecutor.execute {
+                try {
+                    val directory = capture.directory()
+                    val fileName = "body_${System.currentTimeMillis()}.jpg"
+                    val file = File(directory, fileName)
+                    file.outputStream().use { stream ->
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 92, stream)
+                    }
+                    val width = bitmap.width
+                    val height = bitmap.height
+                    bitmap.recycle()
+                    mainHandler.post {
+                        completeWorkoutFrameRequest(
+                            mapOf(
+                                "directory" to directory.absolutePath,
+                                "fileName" to fileName,
+                                "width" to width,
+                                "height" to height,
+                            ),
+                            null,
+                        )
+                    }
+                } catch (error: Exception) {
+                    Log.w(TAG, "The workout frame could not be written.", error)
+                    bitmap.recycle()
+                    mainHandler.post {
+                        completeWorkoutFrameRequest(null, error.message)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun completeWorkoutFrameRequest(
+        payload: Map<String, Any>?,
+        errorMessage: String?,
+    ) {
+        workoutFrameTimeout?.let(mainHandler::removeCallbacks)
+        workoutFrameTimeout = null
+        val pending = workoutFrameRequest.getAndSet(null) ?: return
+        if (payload != null) {
+            pending.success(payload)
+        } else {
+            pending.error(
+                ERROR_CAPTURE_FAILED,
+                errorMessage ?: "The workout frame could not be saved.",
+                null,
+            )
+        }
+    }
+
+    private fun stillCaptureOrCreate(): MotionfitStillCapture =
+        stillCapture ?: MotionfitStillCapture(
+            applicationContext,
+            textureRegistry,
+            mainHandler,
+            analysisExecutor,
+        ).also { stillCapture = it }
+
+    private fun stopStillCapture(result: MethodChannel.Result) {
+        checkMainThread()
+        stillCapture?.release()
+        result.success(null)
+    }
+
     private fun attachActivity(newActivity: Activity) {
         lifecycleOwner?.lifecycle?.removeObserver(this)
         activity = newActivity
@@ -260,6 +550,8 @@ class MotionfitPosePlugin :
         unbindCameraUseCases()
         releaseVideoCaptureForReprobe()
         lifecycleSuspended = sessionActive
+        stillCapture?.release()
+        stillCapture = null
         lifecycleOwner?.lifecycle?.removeObserver(this)
         lifecycleOwner = null
         activity = null
@@ -270,6 +562,13 @@ class MotionfitPosePlugin :
         startOperationInProgress = true
         if (sessionActive) {
             finishOperationError(ERROR_ALREADY_STARTED, "The pose engine is already running.")
+            return
+        }
+        if (stillCapture?.isRunning == true) {
+            finishOperationError(
+                ERROR_CAMERA_BUSY,
+                "Still capture holds the camera. Stop it before starting a workout.",
+            )
             return
         }
 
@@ -1263,6 +1562,15 @@ class MotionfitPosePlugin :
         lastRotationDegrees = rotationDegrees
         val startedNs = SystemClock.elapsedRealtimeNanos()
 
+        if (workoutFrameRequest.get() != null) {
+            // Only runs when Body Progress asked for a frame, so the normal
+            // analysis path keeps its timing.
+            fulfillWorkoutFrameRequest(
+                image,
+                mirrored = selectedCamera == CameraSelection.FRONT,
+            )
+        }
+
         try {
             val mediaImage = image.image
                 ?: throw IllegalStateException("CameraX did not expose an android.media.Image.")
@@ -1455,14 +1763,26 @@ class MotionfitPosePlugin :
                 .setModelAssetBuffer(modelBuffer)
                 .setDelegate(Delegate.CPU)
                 .build()
+        val accuracyThreshold =
+            if (selectedTrackingProfile == PoseTrackingProfile.SQUAT) {
+                SQUAT_ACQUISITION_CONFIDENCE
+            } else {
+                DEFAULT_ACQUISITION_CONFIDENCE
+            }
+        val trackingThreshold =
+            if (selectedTrackingProfile == PoseTrackingProfile.SQUAT) {
+                SQUAT_TRACKING_CONFIDENCE
+            } else {
+                DEFAULT_TRACKING_CONFIDENCE
+            }
         val options =
             PoseLandmarker.PoseLandmarkerOptions.builder()
                 .setBaseOptions(baseOptions)
                 .setRunningMode(RunningMode.VIDEO)
                 .setNumPoses(MAX_POSES)
-                .setMinPoseDetectionConfidence(MIN_POSE_DETECTION_CONFIDENCE)
-                .setMinPosePresenceConfidence(MIN_POSE_PRESENCE_CONFIDENCE)
-                .setMinTrackingConfidence(MIN_TRACKING_CONFIDENCE)
+                .setMinPoseDetectionConfidence(accuracyThreshold)
+                .setMinPosePresenceConfidence(accuracyThreshold)
+                .setMinTrackingConfidence(trackingThreshold)
                 .setOutputSegmentationMasks(false)
                 .build()
         lastMediaPipeTimestampMs = -1L
@@ -1619,6 +1939,7 @@ class MotionfitPosePlugin :
             }
         }
         analysisExecutor.shutdown()
+        captureEncodeExecutor.shutdown()
         cameraProvider = null
     }
 
@@ -1679,9 +2000,12 @@ class MotionfitPosePlugin :
         const val MAX_FPS = 30
         // Keep the real-time detector identical to motion-fit3's mobile worker.
         const val MAX_POSES = 1
-        const val MIN_POSE_DETECTION_CONFIDENCE = 0.4f
-        const val MIN_POSE_PRESENCE_CONFIDENCE = 0.4f
-        const val MIN_TRACKING_CONFIDENCE = 0.5f
+        // Squat acquisition favours recall; Dart still requires a stronger
+        // shoulder-hip-knee chain before calibration or rep counting.
+        const val SQUAT_ACQUISITION_CONFIDENCE = 0.3f
+        const val SQUAT_TRACKING_CONFIDENCE = 0.4f
+        const val DEFAULT_ACQUISITION_CONFIDENCE = 0.4f
+        const val DEFAULT_TRACKING_CONFIDENCE = 0.5f
         const val NANOS_PER_SECOND = 1_000_000_000L
         const val NANOS_PER_MILLISECOND = 1_000_000L
         const val NANOS_PER_MICROSECOND = 1_000L
@@ -1715,5 +2039,9 @@ class MotionfitPosePlugin :
         const val ERROR_VIDEO_NOT_RECORDING = "video_not_recording"
         const val ERROR_VIDEO_RECORDING_FAILED = "video_recording_failed"
         const val ERROR_VIDEO_STORAGE_FAILED = "video_storage_failed"
+        const val ERROR_CAMERA_BUSY = "camera_busy"
+        const val ERROR_PHOTO_STORAGE = "photo_storage_failed"
+        const val ERROR_CAPTURE_FAILED = "capture_failed"
+        const val WORKOUT_FRAME_TIMEOUT_MS = 2_500L
     }
 }

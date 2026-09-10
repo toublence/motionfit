@@ -110,28 +110,85 @@
   "commonYesterday": "昨日",
   "commonLoading": "読み込み中…",
   "unitSets": "{count, plural, other {{count}セット}}",
-  "@unitSets": {"placeholders": {"count": {"type": "int"}}},
+  "@unitSets": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitReps": "{count, plural, other {{count}回}}",
-  "@unitReps": {"placeholders": {"count": {"type": "int"}}},
+  "@unitReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitSeconds": "{count, plural, other {{count}秒}}",
-  "@unitSeconds": {"placeholders": {"count": {"type": "int"}}},
+  "@unitSeconds": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitMinutes": "{count, plural, other {{count}分}}",
-  "@unitMinutes": {"placeholders": {"count": {"type": "int"}}},
+  "@unitMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "durationHoursMinutes": "{hours}時間{minutes}分",
-  "@durationHoursMinutes": {"placeholders": {"hours": {"type": "int"}, "minutes": {"type": "int"}}},
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "durationMinutesSeconds": "{minutes}分{seconds}秒",
-  "@durationMinutesSeconds": {"placeholders": {"minutes": {"type": "int"}, "seconds": {"type": "int"}}},
+  "@durationMinutesSeconds": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "homeGreeting": "体を動かす準備はできましたか？",
   "homeTodayTitle": "今日の記録",
   "homeTodayNoWorkout": "今日はまだスクワットをしていません。短い1セットから始めましょう。",
   "homeTodaySummary": "スクワット{reps}回・{sets}セット",
   "homeViewResult": "結果を見る",
-  "@homeTodaySummary": {"placeholders": {"reps": {"type": "int"}, "sets": {"type": "int"}}},
+  "@homeTodaySummary": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "sets": {
+        "type": "int"
+      }
+    }
+  },
   "homeTodaySets": "今日のセット",
   "homeTodayReps": "今日の回数",
   "streakLabel": "連続記録",
   "streakDays": "{days}日",
-  "@streakDays": {"placeholders": {"days": {"type": "int"}}},
+  "@streakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "homeWorkoutSetup": "次のワークアウト",
   "homeSetsLabel": "セット数",
   "homeRepsPerSetLabel": "1セットの回数",
@@ -141,7 +198,16 @@
   "homeLastSettingsRestored": "前回のワークアウト設定を復元しました。",
   "validationNumberRequired": "数値を入力してください。",
   "validationRange": "{min}から{max}までの値を選んでください。",
-  "@validationRange": {"placeholders": {"min": {"type": "num"}, "max": {"type": "num"}}},
+  "@validationRange": {
+    "placeholders": {
+      "min": {
+        "type": "num"
+      },
+      "max": {
+        "type": "num"
+      }
+    }
+  },
   "guideTitle": "カメラをセットしましょう",
   "guideSubtitle": "全身がはっきり映ると、MotionFitが正確に回数を数えられます。",
   "guideWholeBody": "頭からつま先まで全身が画面に入るようにしてください。",
@@ -163,7 +229,13 @@
   "permissionNotificationDenied": "通知がオフです。リマインダーを受け取るにはシステム設定でオンにしてください。",
   "countdownGetReady": "準備してください",
   "countdownBeginsIn": "{seconds}秒後に開始",
-  "@countdownBeginsIn": {"placeholders": {"seconds": {"type": "int"}}},
+  "@countdownBeginsIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "calibrationTitle": "立ち姿勢を確認しています",
   "calibrationBody": "まっすぐ立ち、全身を画面に入れてください。",
   "calibrationStayStill": "少しの間そのままでいてください",
@@ -171,11 +243,35 @@
   "calibrationFailed": "立ち姿勢をはっきり確認できませんでした。",
   "calibrationRetry": "もう一度調整",
   "workoutSetProgress": "{current} / {total}セット",
-  "@workoutSetProgress": {"placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}},
+  "@workoutSetProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "workoutRepProgress": "{current} / {target}回",
-  "@workoutRepProgress": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@workoutRepProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "workoutTotalReps": "合計{count}回",
-  "@workoutTotalReps": {"placeholders": {"count": {"type": "int"}}},
+  "@workoutTotalReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "workoutElapsed": "経過時間",
   "workoutPause": "一時停止",
   "workoutResume": "ワークアウトを再開",
@@ -198,7 +294,16 @@
   "workoutSkeletonToggle": "姿勢ガイドを表示",
   "restTitle": "休憩",
   "restNextSet": "次：{set} / {total}セット",
-  "@restNextSet": {"placeholders": {"set": {"type": "int"}, "total": {"type": "int"}}},
+  "@restNextSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "restCompletedSets": "完了したセット",
   "restTotalReps": "ここまでのスクワット",
   "restSkip": "休憩をスキップ",
@@ -218,7 +323,19 @@
   "completeFormSummary": "フォームのまとめ",
   "todayCoaching": "今日のコーチング",
   "coachingIssueFrequency": "{total}回中{count}回で\n{issue}",
-  "@coachingIssueFrequency": {"placeholders": {"total": {"type": "int"}, "count": {"type": "int"}, "issue": {"type": "String"}}},
+  "@coachingIssueFrequency": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      },
+      "issue": {
+        "type": "String"
+      }
+    }
+  },
   "completeTopImprovement": "次回のポイント",
   "completeStrengths": "良かった点",
   "completeSaved": "ワークアウトをこの端末に保存しました",
@@ -227,28 +344,73 @@
   "completeFinish": "終了",
   "postWorkoutReminderTitle": "明日も続けましょう",
   "postWorkoutReminderBody": "明日から毎日{time}にお知らせしますか？",
-  "@postWorkoutReminderBody": {"placeholders": {"time": {"type": "String"}}},
+  "@postWorkoutReminderBody": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "postWorkoutReminderEnable": "通知する",
   "postWorkoutReminderLater": "あとで",
   "postWorkoutReminderEnabled": "リマインダーを設定しました。",
   "recordsTitle": "進歩",
   "recordsWeeklySummary": "今週",
   "recordsWorkoutCount": "{count}回の運動",
-  "@recordsWorkoutCount": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsWorkoutCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsAverageForm": "平均フォーム {score}",
-  "@recordsAverageForm": {"placeholders": {"score": {"type": "int"}}},
+  "@recordsAverageForm": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "recordsWorkoutTime": "時間 {time}",
-  "@recordsWorkoutTime": {"placeholders": {"time": {"type": "String"}}},
+  "@recordsWorkoutTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "recordsFirstWeek": "今週最初の記録です",
   "recordsMoreThanLastWeek": "先週より{count}回多くできました",
   "recordsLessThanLastWeek": "先週より{count}回少ないです",
-  "@recordsMoreThanLastWeek": {"placeholders": {"count": {"type": "int"}}},
-  "@recordsLessThanLastWeek": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsMoreThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recordsLessThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsSameAsLastWeek": "先週と同じ運動量です",
   "recordsTrendEmpty": "運動を続けるとフォームの変化を確認できます。",
   "recordsFirstFormScore": "最初のフォーム記録",
   "recordsRecentAverage": "直近{count}回の平均 {score}",
-  "@recordsRecentAverage": {"placeholders": {"count": {"type": "int"}, "score": {"type": "int"}}},
+  "@recordsRecentAverage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "recordsStrength": "強み",
   "recordsFocus": "意識する点",
   "recordsTodayPoint": "今日のポイント",
@@ -278,9 +440,21 @@
   "recordsCalendarNoWorkoutSelected": "運動した日を選ぶとセッションを確認できます。",
   "recordsDayTotal": "1日の合計",
   "recordsSessionsCount": "{count, plural, other {{count}セッション}}",
-  "@recordsSessionsCount": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsSessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsSessionTitle": "セッション{number}",
-  "@recordsSessionTitle": {"placeholders": {"number": {"type": "int"}}},
+  "@recordsSessionTitle": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "recordsListNewest": "新しい順",
   "recordsOpenDetail": "詳細を見る",
   "recordsEmptyTitle": "ワークアウト記録はまだありません",
@@ -305,9 +479,21 @@
   "statsFrequentImprovements": "よく見られた改善ポイント",
   "statsNoData": "この期間のワークアウトはありません。",
   "statsTrendUp": "{percent}%増加",
-  "@statsTrendUp": {"placeholders": {"percent": {"type": "num"}}},
+  "@statsTrendUp": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
   "statsTrendDown": "{percent}%減少",
-  "@statsTrendDown": {"placeholders": {"percent": {"type": "num"}}},
+  "@statsTrendDown": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
   "statsTrendFlat": "変化なし",
   "detailTitle": "ワークアウト詳細",
   "detailStartTime": "開始時刻",
@@ -325,9 +511,27 @@
   "detailInterrupted": "途中で終了",
   "detailCompleted": "完了",
   "detailSetRow": "{set}セット：{reps}回",
-  "@detailSetRow": {"placeholders": {"set": {"type": "int"}, "reps": {"type": "int"}}},
+  "@detailSetRow": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
   "detailSessionOn": "{date} {time}",
-  "@detailSessionOn": {"placeholders": {"date": {"type": "String"}, "time": {"type": "String"}}},
+  "@detailSessionOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "settingsTitle": "設定",
   "settingsRateApp": "このアプリを評価",
   "settingsRateAppSubtitle": "MotionFitを評価してください",
@@ -379,10 +583,22 @@
   "reminderTime": "通知時刻",
   "reminderCopyTime": "この時刻をコピー",
   "reminderCopyFromDay": "{day}の時刻をコピー",
-  "@reminderCopyFromDay": {"placeholders": {"day": {"type": "String"}}},
+  "@reminderCopyFromDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
   "reminderApplyAll": "すべての曜日に適用",
   "reminderNext": "次の通知：{dateTime}",
-  "@reminderNext": {"placeholders": {"dateTime": {"type": "String"}}},
+  "@reminderNext": {
+    "placeholders": {
+      "dateTime": {
+        "type": "String"
+      }
+    }
+  },
   "reminderNoneScheduled": "予定されているリマインダーはありません",
   "reminderPermissionNeeded": "リマインダーをオンにするには通知を許可してください。",
   "reminderSaved": "リマインダーを保存しました",
@@ -420,7 +636,13 @@
   "privacyDeleteFailure": "ワークアウトデータを削除できませんでした。",
   "appInfoTitle": "アプリ情報",
   "appInfoVersion": "バージョン {version}",
-  "@appInfoVersion": {"placeholders": {"version": {"type": "String"}}},
+  "@appInfoVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
   "appInfoLicenses": "オープンソースライセンス",
   "appInfoPrivacyPolicy": "プライバシーポリシー",
   "appInfoDescription": "MotionFitは端末上でスクワットを数え、フォーム改善をサポートします。",
@@ -444,7 +666,13 @@
   "formScore": "フォームスコア",
   "formShort": "フォーム",
   "formScoreValue": "{score}点",
-  "@formScoreValue": {"placeholders": {"score": {"type": "int"}}},
+  "@formScoreValue": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "formIssueDepth": "スクワットの深さ",
   "formIssueTorsoLean": "上半身の安定",
   "formIssueHeelLift": "かかとの接地",
@@ -466,13 +694,40 @@
   "coachReady1": "位置はばっちりです。始めましょう。",
   "coachReady2": "よく見えています。最初のスクワットを準備してください。",
   "coachStartSet": "{set}セット目、始めましょう。",
-  "@coachStartSet": {"placeholders": {"set": {"type": "int"}}},
+  "@coachStartSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
   "coachSevenDayChallengeStart": "7日間チャレンジの{day}日目を開始します。",
-  "@coachSevenDayChallengeStart": {"placeholders": {"day": {"type": "int"}}},
+  "@coachSevenDayChallengeStart": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "coachCumulativeChallengeStart": "累積回数チャレンジを開始します。現在{completed}回完了、残り{remaining}回です。",
-  "@coachCumulativeChallengeStart": {"placeholders": {"completed": {"type": "int"}, "remaining": {"type": "int"}}},
+  "@coachCumulativeChallengeStart": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "coachRepCount": "{count}",
-  "@coachRepCount": {"placeholders": {"count": {"type": "int"}}},
+  "@coachRepCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "coachDepth1": "次はもう少し深く下がってみましょう。",
   "coachDepth2": "次のスクワットでは、少しだけ深さを出しましょう。",
   "coachTorso1": "上半身をもう少し安定させましょう。",
@@ -501,28 +756,79 @@
   "coachLastTwo": "あと2回！その調子！",
   "coachLastOne": "あと1回！最後まで！",
   "coachSetComplete": "いいですね。{set}セット目が終わりました。",
-  "@coachSetComplete": {"placeholders": {"set": {"type": "int"}}},
+  "@coachSetComplete": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
   "coachRestStart": "{seconds}秒休憩します。呼吸を整えましょう。",
-  "@coachRestStart": {"placeholders": {"seconds": {"type": "int"}}},
+  "@coachRestStart": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "coachRestTenSeconds": "休憩はあと10秒です。",
   "coachRestComplete": "休憩終了です。次のセットを準備してください。",
   "coachWorkoutComplete": "ワークアウト完了。スクワット{reps}回をやり切りました。",
-  "@coachWorkoutComplete": {"placeholders": {"reps": {"type": "int"}}},
+  "@coachWorkoutComplete": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
   "notificationReminderTitle": "今日のスクワットの時間です",
   "notificationReminderBody": "短い時間でも大丈夫。準備ができたらMotionFitを開きましょう。",
   "notificationReminderBodyVariant2": "集中して数回動くだけでも、今日の運動になります。",
   "notificationStreakReminderBody": "今日も短く運動して、{days}日連続記録を守りましょう。",
-  "@notificationStreakReminderBody": {"placeholders": {"days": {"type": "int"}}},
+  "@notificationStreakReminderBody": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "semanticsIncrease": "増やす",
   "semanticsDecrease": "減らす",
   "semanticsSelectedTab": "選択中のタブ：{tab}",
-  "@semanticsSelectedTab": {"placeholders": {"tab": {"type": "String"}}},
+  "@semanticsSelectedTab": {
+    "placeholders": {
+      "tab": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCalendarWorkoutDate": "{date}、ワークアウト記録あり",
-  "@semanticsCalendarWorkoutDate": {"placeholders": {"date": {"type": "String"}}},
+  "@semanticsCalendarWorkoutDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCalendarEmptyDate": "{date}、ワークアウト記録なし",
-  "@semanticsCalendarEmptyDate": {"placeholders": {"date": {"type": "String"}}},
+  "@semanticsCalendarEmptyDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCurrentRep": "現在{target}回中{current}回",
-  "@semanticsCurrentRep": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@semanticsCurrentRep": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "repVideoReviewTitle": "レップ動画レビュー",
   "repVideoReviewDescription": "ワークアウト動画をこの端末に保存し、あとで各レップを確認できます。",
   "repVideoLocalOnly": "端末内のみ・アップロードなし",
@@ -534,9 +840,21 @@
   "repTimelineImprove": "改善",
   "repTimelineNoImprovement": "改善が必要なレップはありません。",
   "repSetNumber": "セット {number}",
-  "@repSetNumber": {"placeholders": {"number": {"type": "int"}}},
+  "@repSetNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "repNumber": "レップ {number}",
-  "@repNumber": {"placeholders": {"number": {"type": "int"}}},
+  "@repNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "repResultGood": "良いフォーム",
   "repResultNeedsAttention": "要確認",
   "repResultImproved": "前のレップより改善",
@@ -556,9 +874,170 @@
   "repFeedbackTorso": "このレップでは上体が前に傾きすぎました。胸をもう少し起こしましょう。",
   "repFeedbackKnees": "このレップでは膝が内側に入りました。つま先の向きに合わせましょう。",
   "repFeedbackGeneric": "このレップでは{area}を確認しましょう。",
-  "@repFeedbackGeneric": {"placeholders": {"area": {"type": "String"}}},
+  "@repFeedbackGeneric": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      }
+    }
+  },
   "deleteWorkoutVideo": "ワークアウト動画を削除",
   "deleteWorkoutVideoTitle": "この動画を削除しますか？",
   "deleteWorkoutVideoBody": "端末内の動画のみ削除されます。レップ分析と記録は残ります。",
-  "workoutVideoDeleted": "ワークアウト動画を削除しました"
+  "workoutVideoDeleted": "ワークアウト動画を削除しました",
+  "bodyProgressTitle": "ボディプログレス",
+  "bodyProgressSubtitle": "毎回同じ構図で体を撮影し、変化が積み重なる様子を確認します。",
+  "bodyProgressEmptyTitle": "最初の写真を撮る",
+  "bodyProgressEmptyBody": "今日の 1 枚が、これから撮る写真すべての基準になります。",
+  "bodyProgressStartCapture": "今日の写真を撮る",
+  "bodyProgressRetake": "今日の写真を撮り直す",
+  "bodyProgressViewFront": "正面",
+  "bodyProgressViewSide": "側面",
+  "bodyProgressViewBack": "背面",
+  "bodyProgressDayNumber": "{day} 日目",
+  "@bodyProgressDayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressFirstPhoto": "最初",
+  "bodyProgressLatestPhoto": "最新",
+  "bodyProgressPhotoCount": "{count} 枚",
+  "@bodyProgressPhotoCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressSpanDays": "{days} 日分の記録",
+  "@bodyProgressSpanDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressRecordedDays": "記録した日",
+  "bodyProgressStreak": "現在の連続",
+  "bodyProgressCompare": "ビフォー / アフター",
+  "bodyProgressTimelapse": "タイムラプス",
+  "bodyProgressHistory": "日付ごとの記録",
+  "bodyProgressMilestones": "期間ごとの変化",
+  "bodyProgressMilestonePending": "未記録",
+  "bodyProgressDeletePhoto": "写真を削除",
+  "bodyProgressDeleteConfirm": "この写真を削除しますか。画像はこの端末から削除されます。",
+  "bodyProgressLoading": "ボディプログレスを読み込み中",
+  "bodyProgressLoadError": "ボディプログレスを読み込めませんでした。",
+  "bodyProgressMissingImage": "画像がありません",
+  "bodyProgressCaptureTitle": "ボディプログレス撮影",
+  "bodyProgressGhostOverlay": "ゴーストオーバーレイ",
+  "bodyProgressGuides": "位置ガイド",
+  "bodyProgressCaptureHintFirst": "体全体がフレームに収まる位置に立ちます。",
+  "bodyProgressCaptureHintGhost": "薄く表示された前回の写真に体を合わせて撮影します。",
+  "bodyProgressShutter": "撮影",
+  "bodyProgressSwitchCamera": "カメラ切り替え",
+  "bodyProgressSaved": "今日の写真を保存しました。",
+  "bodyProgressCameraBusy": "ワークアウトのカメラを終了してから撮影してください。",
+  "bodyProgressCameraError": "カメラを起動できませんでした。",
+  "bodyProgressPermissionTitle": "カメラの許可が必要です",
+  "bodyProgressPermissionBody": "撮影にカメラの許可が必要です。写真はこの端末にのみ保存されます。",
+  "bodyProgressCompareNeedsTwo": "比較には写真が 2 枚以上必要です。",
+  "bodyProgressCompareBefore": "ビフォー",
+  "bodyProgressCompareAfter": "アフター",
+  "bodyProgressCompareHint": "ハンドルを左右に動かして 2 枚を比較します。",
+  "bodyProgressTimelapseNeedsTwo": "タイムラプスには写真が 2 枚以上必要です。",
+  "formProgressTitle": "フォームプログレス",
+  "formProgressSubtitle": "種目ごとにフォームがどれだけ良くなったかを確認します。",
+  "formProgressEmptyTitle": "フォームのデータがまだありません",
+  "formProgressEmptyBody": "ワークアウトを終えると、フォーム分析の結果がここに自動で加わります。",
+  "formProgressFirstScore": "最初のスコア",
+  "formProgressCurrentScore": "現在のスコア",
+  "formProgressChange": "変化",
+  "formProgressAccuracy": "検出精度",
+  "formProgressScoreLabel": "フォームスコア",
+  "formProgressTrend": "スコアの推移",
+  "formProgressCommonIssues": "よく出たフォームの課題",
+  "formProgressRecentImprovement": "最近よくなった点",
+  "formProgressNoImprovementYet": "記録が増えると改善のまとめを表示します。",
+  "formProgressSessions": "日付ごとの記録",
+  "formProgressSessionCount": "{count} 回",
+  "@formProgressSessionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressCompare": "最初と最新",
+  "formProgressTimelapse": "フォームのタイムラプス",
+  "formProgressImprovedBy": "{points} ポイント上昇",
+  "@formProgressImprovedBy": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressDeclinedBy": "{points} ポイント低下",
+  "@formProgressDeclinedBy": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressUnchanged": "まだ変化なし",
+  "formProgressNoPose": "代表フォームはまだありません",
+  "formProgressPoseHint": "次のワークアウトから代表フォームがここに保存されます。",
+  "formProgressLoading": "フォームプログレスを読み込み中",
+  "formProgressLoadError": "フォームプログレスを読み込めませんでした。",
+  "formProgressIssueOccurrences": "{count} 回",
+  "@formProgressIssueOccurrences": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressNeedsTwoSessions": "同じ種目を 2 回以上こなすとフォームを比較できます。",
+  "formProgressSelectExercise": "種目を選ぶ",
+  "progressTimelapsePlay": "再生",
+  "progressTimelapsePause": "一時停止",
+  "progressTimelapseReplay": "もう一度再生",
+  "progressTimelapseSpeed": "速度",
+  "progressTimelapseFrameOf": "{total} 枚中 {index} 枚目",
+  "@progressTimelapseFrameOf": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "progressSectionTitle": "変化のトラッキング",
+  "progressSectionSubtitle": "体の変化とフォームの変化をあわせて追跡します。",
+  "bodyProgressAutoHint": "ワークアウト開始時に 1 日 1 回、自動で記録されます。",
+  "formProgressAutoHint": "その日の最初の正常な反復が自動で記録されます。",
+  "bodyProgressRecordedToday": "今日は記録済み",
+  "bodyProgressPendingToday": "次のワークアウトで記録されます",
+  "bodyProgressAutoEmptyTitle": "1 回運動すれば最初の記録が残ります",
+  "bodyProgressAutoEmptyBody": "いつも通り運動を始めれば、姿勢が整った時点で自動的に撮影されます。",
+  "formProgressAutoEmptyBody": "いつも通り運動を始めれば、最初の正常な反復が自動で記録されます。",
+  "bodyProgressManualCapture": "今すぐ自分で撮影",
+  "bodyProgressReplaceToday": "今日の記録を撮り直す",
+  "bodyProgressAutoSaved": "今日のボディプログレスを記録しました。",
+  "formProgressAutoSaved": "今日の{exercise}のフォームを記録しました。",
+  "@formProgressAutoSaved": {
+    "placeholders": {
+      "exercise": {
+        "type": "String"
+      }
+    }
+  },
+  "progressAutoBadge": "自動"
 }

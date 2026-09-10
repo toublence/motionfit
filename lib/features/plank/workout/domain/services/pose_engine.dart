@@ -35,6 +35,30 @@ abstract interface class RecordablePoseEngine {
   Future<void> cancelVideoRecording();
 }
 
+/// A workout frame written to disk for Body Progress.
+class PoseFrameCapture {
+  const PoseFrameCapture({
+    required this.directory,
+    required this.fileName,
+    required this.width,
+    required this.height,
+  });
+
+  final String directory;
+  final String fileName;
+  final int width;
+  final int height;
+}
+
+/// Saves a single analysis frame while a workout is running.
+///
+/// Body Progress records itself during the workout, and the pose session
+/// already owns the camera, so the frame is taken from the analysis stream
+/// rather than from a second capture session.
+abstract interface class FrameCapturingPoseEngine {
+  Future<PoseFrameCapture> captureWorkoutFrame();
+}
+
 abstract interface class PoseEngine {
   Stream<PoseFrame> get frames;
   int? get previewTextureId;

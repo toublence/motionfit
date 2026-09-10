@@ -1789,4 +1789,304 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get workoutVideoDeleted => 'تم حذف فيديو التمرين';
+
+  @override
+  String get bodyProgressTitle => 'تقدّم الجسم';
+
+  @override
+  String get bodyProgressSubtitle =>
+      'صوّر جسمك بالطريقة نفسها في كل مرة وشاهد التغيير يتراكم.';
+
+  @override
+  String get bodyProgressEmptyTitle => 'التقط صورتك الأولى';
+
+  @override
+  String get bodyProgressEmptyBody =>
+      'صورة اليوم تصبح المرجع الذي تُحاذى معه كل الصور اللاحقة.';
+
+  @override
+  String get bodyProgressStartCapture => 'التقط صورة اليوم';
+
+  @override
+  String get bodyProgressRetake => 'أعد التقاط صورة اليوم';
+
+  @override
+  String get bodyProgressViewFront => 'أمامي';
+
+  @override
+  String get bodyProgressViewSide => 'جانبي';
+
+  @override
+  String get bodyProgressViewBack => 'خلفي';
+
+  @override
+  String bodyProgressDayNumber(int day) {
+    return 'اليوم $day';
+  }
+
+  @override
+  String get bodyProgressFirstPhoto => 'الأولى';
+
+  @override
+  String get bodyProgressLatestPhoto => 'الأحدث';
+
+  @override
+  String bodyProgressPhotoCount(int count) {
+    return '$count صورة';
+  }
+
+  @override
+  String bodyProgressSpanDays(int days) {
+    return '$days يوماً من التتبع';
+  }
+
+  @override
+  String get bodyProgressRecordedDays => 'أيام مسجّلة';
+
+  @override
+  String get bodyProgressStreak => 'التتابع الحالي';
+
+  @override
+  String get bodyProgressCompare => 'قبل / بعد';
+
+  @override
+  String get bodyProgressTimelapse => 'فاصل زمني';
+
+  @override
+  String get bodyProgressHistory => 'سجل الصور';
+
+  @override
+  String get bodyProgressMilestones => 'محطات';
+
+  @override
+  String get bodyProgressMilestonePending => 'ليس بعد';
+
+  @override
+  String get bodyProgressDeletePhoto => 'حذف الصورة';
+
+  @override
+  String get bodyProgressDeleteConfirm =>
+      'هل تريد حذف هذه الصورة؟ سيُزال الملف من هذا الجهاز.';
+
+  @override
+  String get bodyProgressLoading => 'جارٍ تحميل تقدّم الجسم';
+
+  @override
+  String get bodyProgressLoadError => 'تعذّر تحميل تقدّم الجسم.';
+
+  @override
+  String get bodyProgressMissingImage => 'الصورة غير متوفرة';
+
+  @override
+  String get bodyProgressCaptureTitle => 'صورة تقدّم الجسم';
+
+  @override
+  String get bodyProgressGhostOverlay => 'طبقة شفافة';
+
+  @override
+  String get bodyProgressGuides => 'أدلة المحاذاة';
+
+  @override
+  String get bodyProgressCaptureHintFirst =>
+      'قف بحيث يظهر جسمك بالكامل داخل الإطار.';
+
+  @override
+  String get bodyProgressCaptureHintGhost =>
+      'حاذِ جسمك مع الصورة الباهتة ثم التقط.';
+
+  @override
+  String get bodyProgressShutter => 'التقاط';
+
+  @override
+  String get bodyProgressSwitchCamera => 'تبديل الكاميرا';
+
+  @override
+  String get bodyProgressSaved => 'تم حفظ صورة اليوم.';
+
+  @override
+  String get bodyProgressCameraBusy =>
+      'أنهِ كاميرا التمرين قبل التقاط صورة تقدّم الجسم.';
+
+  @override
+  String get bodyProgressCameraError => 'تعذّر تشغيل الكاميرا.';
+
+  @override
+  String get bodyProgressPermissionTitle => 'مطلوب الوصول إلى الكاميرا';
+
+  @override
+  String get bodyProgressPermissionBody =>
+      'يحتاج MotionFit إلى الكاميرا لهذه الصورة. تبقى الصور على هذا الجهاز.';
+
+  @override
+  String get bodyProgressCompareNeedsTwo =>
+      'تحتاج إلى صورتين على الأقل للمقارنة.';
+
+  @override
+  String get bodyProgressCompareBefore => 'قبل';
+
+  @override
+  String get bodyProgressCompareAfter => 'بعد';
+
+  @override
+  String get bodyProgressCompareHint => 'اسحب المقبض للتنقل بين الصورتين.';
+
+  @override
+  String get bodyProgressTimelapseNeedsTwo =>
+      'تحتاج إلى صورتين على الأقل لإنشاء الفاصل الزمني.';
+
+  @override
+  String get formProgressTitle => 'تقدّم الأداء';
+
+  @override
+  String get formProgressSubtitle =>
+      'اطّلع على تحسّن أدائك في كل تمرين على حدة.';
+
+  @override
+  String get formProgressEmptyTitle => 'لا توجد بيانات أداء بعد';
+
+  @override
+  String get formProgressEmptyBody =>
+      'أكمل تمريناً وسيُضاف تحليل الأداء هنا تلقائياً.';
+
+  @override
+  String get formProgressFirstScore => 'أول نتيجة';
+
+  @override
+  String get formProgressCurrentScore => 'النتيجة الحالية';
+
+  @override
+  String get formProgressChange => 'التغيّر';
+
+  @override
+  String get formProgressAccuracy => 'دقة الاكتشاف';
+
+  @override
+  String get formProgressScoreLabel => 'نتيجة الأداء';
+
+  @override
+  String get formProgressTrend => 'مسار النتيجة';
+
+  @override
+  String get formProgressCommonIssues => 'أكثر أخطاء الأداء تكراراً';
+
+  @override
+  String get formProgressRecentImprovement => 'تحسّن مؤخراً';
+
+  @override
+  String get formProgressNoImprovementYet => 'واصل التمرين لعرض ملخّص التحسّن.';
+
+  @override
+  String get formProgressSessions => 'سجل التمارين';
+
+  @override
+  String formProgressSessionCount(int count) {
+    return '$count جلسة';
+  }
+
+  @override
+  String get formProgressCompare => 'الأولى مقابل الأحدث';
+
+  @override
+  String get formProgressTimelapse => 'الفاصل الزمني للأداء';
+
+  @override
+  String formProgressImprovedBy(int points) {
+    return 'ارتفاع $points نقطة';
+  }
+
+  @override
+  String formProgressDeclinedBy(int points) {
+    return 'انخفاض $points نقطة';
+  }
+
+  @override
+  String get formProgressUnchanged => 'لا تغيير بعد';
+
+  @override
+  String get formProgressNoPose => 'لا توجد وضعية مرجعية بعد';
+
+  @override
+  String get formProgressPoseHint => 'سيحفظ تمرينك التالي وضعية مرجعية هنا.';
+
+  @override
+  String get formProgressLoading => 'جارٍ تحميل تقدّم الأداء';
+
+  @override
+  String get formProgressLoadError => 'تعذّر تحميل تقدّم الأداء.';
+
+  @override
+  String formProgressIssueOccurrences(int count) {
+    return '$count مرة';
+  }
+
+  @override
+  String get formProgressNeedsTwoSessions =>
+      'أكمل تمرينين من هذا التمرين لمقارنة الأداء.';
+
+  @override
+  String get formProgressSelectExercise => 'اختر تمريناً';
+
+  @override
+  String get progressTimelapsePlay => 'تشغيل';
+
+  @override
+  String get progressTimelapsePause => 'إيقاف مؤقت';
+
+  @override
+  String get progressTimelapseReplay => 'إعادة التشغيل';
+
+  @override
+  String get progressTimelapseSpeed => 'السرعة';
+
+  @override
+  String progressTimelapseFrameOf(int index, int total) {
+    return '$index من $total';
+  }
+
+  @override
+  String get progressSectionTitle => 'التقدّم';
+
+  @override
+  String get progressSectionSubtitle => 'تابع تغيّر جسمك وأدائك مع الوقت.';
+
+  @override
+  String get bodyProgressAutoHint =>
+      'يُسجّل تلقائياً مرة واحدة يومياً عند بدء التمرين.';
+
+  @override
+  String get formProgressAutoHint => 'يُسجّل أول تكرار سليم في اليوم تلقائياً.';
+
+  @override
+  String get bodyProgressRecordedToday => 'سُجّل اليوم';
+
+  @override
+  String get bodyProgressPendingToday => 'سيُسجّل في تمرينك التالي';
+
+  @override
+  String get bodyProgressAutoEmptyTitle => 'تمرين واحد ويصبح لديك أول سجل';
+
+  @override
+  String get bodyProgressAutoEmptyBody =>
+      'ابدأ التمرين كالمعتاد. تُلتقط الصورة بمجرد ظهورك في الإطار.';
+
+  @override
+  String get formProgressAutoEmptyBody =>
+      'ابدأ التمرين كالمعتاد. يُسجّل أول تكرار سليم لك تلقائياً.';
+
+  @override
+  String get bodyProgressManualCapture => 'التقط واحدة الآن';
+
+  @override
+  String get bodyProgressReplaceToday => 'استبدال صورة اليوم';
+
+  @override
+  String get bodyProgressAutoSaved => 'تم تسجيل تقدّم الجسم لليوم.';
+
+  @override
+  String formProgressAutoSaved(String exercise) {
+    return 'تم تسجيل أداء $exercise لليوم.';
+  }
+
+  @override
+  String get progressAutoBadge => 'تلقائي';
 }

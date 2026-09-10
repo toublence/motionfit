@@ -1006,5 +1006,160 @@
   "deleteWorkoutVideo": "删除锻炼视频",
   "deleteWorkoutVideoTitle": "删除这个锻炼视频吗？",
   "deleteWorkoutVideoBody": "仅删除本地视频。代表分析和锻炼记录将保留。",
-  "workoutVideoDeleted": "锻炼视频已删除"
+  "workoutVideoDeleted": "锻炼视频已删除",
+  "bodyProgressTitle": "身体变化",
+  "bodyProgressSubtitle": "每次以相同构图拍摄身体，看着变化一点点累积。",
+  "bodyProgressEmptyTitle": "拍下第一张照片",
+  "bodyProgressEmptyBody": "今天的这一张会成为之后所有照片的对齐基准。",
+  "bodyProgressStartCapture": "拍摄今天的照片",
+  "bodyProgressRetake": "重拍今天的照片",
+  "bodyProgressViewFront": "正面",
+  "bodyProgressViewSide": "侧面",
+  "bodyProgressViewBack": "背面",
+  "bodyProgressDayNumber": "第 {day} 天",
+  "@bodyProgressDayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressFirstPhoto": "最初",
+  "bodyProgressLatestPhoto": "最新",
+  "bodyProgressPhotoCount": "{count} 张",
+  "@bodyProgressPhotoCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressSpanDays": "已记录 {days} 天",
+  "@bodyProgressSpanDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressRecordedDays": "记录天数",
+  "bodyProgressStreak": "当前连续",
+  "bodyProgressCompare": "前后对比",
+  "bodyProgressTimelapse": "延时回放",
+  "bodyProgressHistory": "按日期记录",
+  "bodyProgressMilestones": "阶段变化",
+  "bodyProgressMilestonePending": "尚未记录",
+  "bodyProgressDeletePhoto": "删除照片",
+  "bodyProgressDeleteConfirm": "要删除这张照片吗？图片将从本机移除。",
+  "bodyProgressLoading": "正在加载身体变化",
+  "bodyProgressLoadError": "无法加载身体变化。",
+  "bodyProgressMissingImage": "图片不可用",
+  "bodyProgressCaptureTitle": "身体变化拍摄",
+  "bodyProgressGhostOverlay": "半透明参考",
+  "bodyProgressGuides": "对齐参考线",
+  "bodyProgressCaptureHintFirst": "站到全身都能进入取景框的位置。",
+  "bodyProgressCaptureHintGhost": "把身体对准半透明的上一张照片再拍摄。",
+  "bodyProgressShutter": "拍摄",
+  "bodyProgressSwitchCamera": "切换摄像头",
+  "bodyProgressSaved": "已保存今天的照片。",
+  "bodyProgressCameraBusy": "请先结束训练相机再拍摄身体变化照片。",
+  "bodyProgressCameraError": "无法启动相机。",
+  "bodyProgressPermissionTitle": "需要相机权限",
+  "bodyProgressPermissionBody": "拍摄需要相机权限。照片仅保存在本机。",
+  "bodyProgressCompareNeedsTwo": "至少需要两张照片才能对比。",
+  "bodyProgressCompareBefore": "之前",
+  "bodyProgressCompareAfter": "之后",
+  "bodyProgressCompareHint": "左右拖动滑块比较两张照片。",
+  "bodyProgressTimelapseNeedsTwo": "至少需要两张照片才能生成延时回放。",
+  "formProgressTitle": "动作变化",
+  "formProgressSubtitle": "按项目查看你的动作改善了多少。",
+  "formProgressEmptyTitle": "还没有动作数据",
+  "formProgressEmptyBody": "完成一次训练后，姿势分析结果会自动汇总到这里。",
+  "formProgressFirstScore": "最初分数",
+  "formProgressCurrentScore": "当前分数",
+  "formProgressChange": "变化",
+  "formProgressAccuracy": "识别准确度",
+  "formProgressScoreLabel": "动作分数",
+  "formProgressTrend": "分数走势",
+  "formProgressCommonIssues": "最常出现的姿势问题",
+  "formProgressRecentImprovement": "最近改善的部分",
+  "formProgressNoImprovementYet": "再累积一些记录就会显示改善摘要。",
+  "formProgressSessions": "按日期的训练记录",
+  "formProgressSessionCount": "{count} 次",
+  "@formProgressSessionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressCompare": "最初与最新",
+  "formProgressTimelapse": "动作延时回放",
+  "formProgressImprovedBy": "提高 {points} 分",
+  "@formProgressImprovedBy": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressDeclinedBy": "下降 {points} 分",
+  "@formProgressDeclinedBy": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressUnchanged": "暂无变化",
+  "formProgressNoPose": "还没有代表姿势",
+  "formProgressPoseHint": "下次训练开始会在这里保存代表姿势。",
+  "formProgressLoading": "正在加载动作变化",
+  "formProgressLoadError": "无法加载动作变化。",
+  "formProgressIssueOccurrences": "{count} 次",
+  "@formProgressIssueOccurrences": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressNeedsTwoSessions": "完成同一项目两次以上即可比较动作。",
+  "formProgressSelectExercise": "选择项目",
+  "progressTimelapsePlay": "播放",
+  "progressTimelapsePause": "暂停",
+  "progressTimelapseReplay": "重新播放",
+  "progressTimelapseSpeed": "速度",
+  "progressTimelapseFrameOf": "第 {index} / {total} 张",
+  "@progressTimelapseFrameOf": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "progressSectionTitle": "变化追踪",
+  "progressSectionSubtitle": "同时追踪身体变化与动作变化。",
+  "bodyProgressAutoHint": "开始训练时每天自动记录一次。",
+  "formProgressAutoHint": "当天第一个标准动作会自动记录。",
+  "bodyProgressRecordedToday": "今天已记录",
+  "bodyProgressPendingToday": "下次训练时记录",
+  "bodyProgressAutoEmptyTitle": "运动一次就会留下第一条记录",
+  "bodyProgressAutoEmptyBody": "像平常一样开始训练，姿势就位后会自动拍摄。",
+  "formProgressAutoEmptyBody": "像平常一样开始训练，第一个标准动作会自动记录。",
+  "bodyProgressManualCapture": "现在手动拍摄",
+  "bodyProgressReplaceToday": "重拍今天的记录",
+  "bodyProgressAutoSaved": "已记录今天的身体变化。",
+  "formProgressAutoSaved": "已记录今天的{exercise}动作。",
+  "@formProgressAutoSaved": {
+    "placeholders": {
+      "exercise": {
+        "type": "String"
+      }
+    }
+  },
+  "progressAutoBadge": "自动"
 }

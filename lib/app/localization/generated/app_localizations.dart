@@ -3206,6 +3206,540 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Workout video deleted'**
   String get workoutVideoDeleted;
+
+  /// No description provided for @bodyProgressTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Body Progress'**
+  String get bodyProgressTitle;
+
+  /// No description provided for @bodyProgressSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Photograph your body the same way each time and watch the change build up.'**
+  String get bodyProgressSubtitle;
+
+  /// No description provided for @bodyProgressEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Take your first photo'**
+  String get bodyProgressEmptyTitle;
+
+  /// No description provided for @bodyProgressEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'One photo today becomes the reference every later photo lines up with.'**
+  String get bodyProgressEmptyBody;
+
+  /// No description provided for @bodyProgressStartCapture.
+  ///
+  /// In en, this message translates to:
+  /// **'Take today\'\'s photo'**
+  String get bodyProgressStartCapture;
+
+  /// No description provided for @bodyProgressRetake.
+  ///
+  /// In en, this message translates to:
+  /// **'Retake today\'\'s photo'**
+  String get bodyProgressRetake;
+
+  /// No description provided for @bodyProgressViewFront.
+  ///
+  /// In en, this message translates to:
+  /// **'Front'**
+  String get bodyProgressViewFront;
+
+  /// No description provided for @bodyProgressViewSide.
+  ///
+  /// In en, this message translates to:
+  /// **'Side'**
+  String get bodyProgressViewSide;
+
+  /// No description provided for @bodyProgressViewBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get bodyProgressViewBack;
+
+  /// No description provided for @bodyProgressDayNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Day {day}'**
+  String bodyProgressDayNumber(int day);
+
+  /// No description provided for @bodyProgressFirstPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'First'**
+  String get bodyProgressFirstPhoto;
+
+  /// No description provided for @bodyProgressLatestPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Latest'**
+  String get bodyProgressLatestPhoto;
+
+  /// No description provided for @bodyProgressPhotoCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} photos'**
+  String bodyProgressPhotoCount(int count);
+
+  /// No description provided for @bodyProgressSpanDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days tracked'**
+  String bodyProgressSpanDays(int days);
+
+  /// No description provided for @bodyProgressRecordedDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Days recorded'**
+  String get bodyProgressRecordedDays;
+
+  /// No description provided for @bodyProgressStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Current streak'**
+  String get bodyProgressStreak;
+
+  /// No description provided for @bodyProgressCompare.
+  ///
+  /// In en, this message translates to:
+  /// **'Before / After'**
+  String get bodyProgressCompare;
+
+  /// No description provided for @bodyProgressTimelapse.
+  ///
+  /// In en, this message translates to:
+  /// **'Timelapse'**
+  String get bodyProgressTimelapse;
+
+  /// No description provided for @bodyProgressHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo history'**
+  String get bodyProgressHistory;
+
+  /// No description provided for @bodyProgressMilestones.
+  ///
+  /// In en, this message translates to:
+  /// **'Milestones'**
+  String get bodyProgressMilestones;
+
+  /// No description provided for @bodyProgressMilestonePending.
+  ///
+  /// In en, this message translates to:
+  /// **'Not yet'**
+  String get bodyProgressMilestonePending;
+
+  /// No description provided for @bodyProgressDeletePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete photo'**
+  String get bodyProgressDeletePhoto;
+
+  /// No description provided for @bodyProgressDeleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this photo? The image is removed from this device.'**
+  String get bodyProgressDeleteConfirm;
+
+  /// No description provided for @bodyProgressLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading Body Progress'**
+  String get bodyProgressLoading;
+
+  /// No description provided for @bodyProgressLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Body Progress could not be loaded.'**
+  String get bodyProgressLoadError;
+
+  /// No description provided for @bodyProgressMissingImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Image unavailable'**
+  String get bodyProgressMissingImage;
+
+  /// No description provided for @bodyProgressCaptureTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Body Progress photo'**
+  String get bodyProgressCaptureTitle;
+
+  /// No description provided for @bodyProgressGhostOverlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Ghost overlay'**
+  String get bodyProgressGhostOverlay;
+
+  /// No description provided for @bodyProgressGuides.
+  ///
+  /// In en, this message translates to:
+  /// **'Alignment guides'**
+  String get bodyProgressGuides;
+
+  /// No description provided for @bodyProgressCaptureHintFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Stand so your whole body fits inside the frame.'**
+  String get bodyProgressCaptureHintFirst;
+
+  /// No description provided for @bodyProgressCaptureHintGhost.
+  ///
+  /// In en, this message translates to:
+  /// **'Line yourself up with the faded photo, then take the shot.'**
+  String get bodyProgressCaptureHintGhost;
+
+  /// No description provided for @bodyProgressShutter.
+  ///
+  /// In en, this message translates to:
+  /// **'Capture'**
+  String get bodyProgressShutter;
+
+  /// No description provided for @bodyProgressSwitchCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch camera'**
+  String get bodyProgressSwitchCamera;
+
+  /// No description provided for @bodyProgressSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'\'s photo is saved.'**
+  String get bodyProgressSaved;
+
+  /// No description provided for @bodyProgressCameraBusy.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish the workout camera before taking a Body Progress photo.'**
+  String get bodyProgressCameraBusy;
+
+  /// No description provided for @bodyProgressCameraError.
+  ///
+  /// In en, this message translates to:
+  /// **'The camera could not be started.'**
+  String get bodyProgressCameraError;
+
+  /// No description provided for @bodyProgressPermissionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera access is needed'**
+  String get bodyProgressPermissionTitle;
+
+  /// No description provided for @bodyProgressPermissionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'MotionFit needs the camera for this photo. Photos stay on this device.'**
+  String get bodyProgressPermissionBody;
+
+  /// No description provided for @bodyProgressCompareNeedsTwo.
+  ///
+  /// In en, this message translates to:
+  /// **'Take at least two photos to compare.'**
+  String get bodyProgressCompareNeedsTwo;
+
+  /// No description provided for @bodyProgressCompareBefore.
+  ///
+  /// In en, this message translates to:
+  /// **'Before'**
+  String get bodyProgressCompareBefore;
+
+  /// No description provided for @bodyProgressCompareAfter.
+  ///
+  /// In en, this message translates to:
+  /// **'After'**
+  String get bodyProgressCompareAfter;
+
+  /// No description provided for @bodyProgressCompareHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag the handle to wipe between the two photos.'**
+  String get bodyProgressCompareHint;
+
+  /// No description provided for @bodyProgressTimelapseNeedsTwo.
+  ///
+  /// In en, this message translates to:
+  /// **'Take at least two photos to build a timelapse.'**
+  String get bodyProgressTimelapseNeedsTwo;
+
+  /// No description provided for @formProgressTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Form Progress'**
+  String get formProgressTitle;
+
+  /// No description provided for @formProgressSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'See how your workout form has improved, one exercise at a time.'**
+  String get formProgressSubtitle;
+
+  /// No description provided for @formProgressEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No form data yet'**
+  String get formProgressEmptyTitle;
+
+  /// No description provided for @formProgressEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish a workout and its form analysis lands here automatically.'**
+  String get formProgressEmptyBody;
+
+  /// No description provided for @formProgressFirstScore.
+  ///
+  /// In en, this message translates to:
+  /// **'First score'**
+  String get formProgressFirstScore;
+
+  /// No description provided for @formProgressCurrentScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Current score'**
+  String get formProgressCurrentScore;
+
+  /// No description provided for @formProgressChange.
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get formProgressChange;
+
+  /// No description provided for @formProgressAccuracy.
+  ///
+  /// In en, this message translates to:
+  /// **'Detection accuracy'**
+  String get formProgressAccuracy;
+
+  /// No description provided for @formProgressScoreLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Form score'**
+  String get formProgressScoreLabel;
+
+  /// No description provided for @formProgressTrend.
+  ///
+  /// In en, this message translates to:
+  /// **'Score trend'**
+  String get formProgressTrend;
+
+  /// No description provided for @formProgressCommonIssues.
+  ///
+  /// In en, this message translates to:
+  /// **'Most frequent form issues'**
+  String get formProgressCommonIssues;
+
+  /// No description provided for @formProgressRecentImprovement.
+  ///
+  /// In en, this message translates to:
+  /// **'Recently improved'**
+  String get formProgressRecentImprovement;
+
+  /// No description provided for @formProgressNoImprovementYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep training to unlock an improvement summary.'**
+  String get formProgressNoImprovementYet;
+
+  /// No description provided for @formProgressSessions.
+  ///
+  /// In en, this message translates to:
+  /// **'Workout history'**
+  String get formProgressSessions;
+
+  /// No description provided for @formProgressSessionCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} sessions'**
+  String formProgressSessionCount(int count);
+
+  /// No description provided for @formProgressCompare.
+  ///
+  /// In en, this message translates to:
+  /// **'First vs latest'**
+  String get formProgressCompare;
+
+  /// No description provided for @formProgressTimelapse.
+  ///
+  /// In en, this message translates to:
+  /// **'Form timelapse'**
+  String get formProgressTimelapse;
+
+  /// No description provided for @formProgressImprovedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Up {points} points'**
+  String formProgressImprovedBy(int points);
+
+  /// No description provided for @formProgressDeclinedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Down {points} points'**
+  String formProgressDeclinedBy(int points);
+
+  /// No description provided for @formProgressUnchanged.
+  ///
+  /// In en, this message translates to:
+  /// **'No change yet'**
+  String get formProgressUnchanged;
+
+  /// No description provided for @formProgressNoPose.
+  ///
+  /// In en, this message translates to:
+  /// **'No reference pose yet'**
+  String get formProgressNoPose;
+
+  /// No description provided for @formProgressPoseHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Your next workout saves a reference pose here.'**
+  String get formProgressPoseHint;
+
+  /// No description provided for @formProgressLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading Form Progress'**
+  String get formProgressLoading;
+
+  /// No description provided for @formProgressLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Form Progress could not be loaded.'**
+  String get formProgressLoadError;
+
+  /// No description provided for @formProgressIssueOccurrences.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} times'**
+  String formProgressIssueOccurrences(int count);
+
+  /// No description provided for @formProgressNeedsTwoSessions.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish two workouts of this exercise to compare form.'**
+  String get formProgressNeedsTwoSessions;
+
+  /// No description provided for @formProgressSelectExercise.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose an exercise'**
+  String get formProgressSelectExercise;
+
+  /// No description provided for @progressTimelapsePlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Play'**
+  String get progressTimelapsePlay;
+
+  /// No description provided for @progressTimelapsePause.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause'**
+  String get progressTimelapsePause;
+
+  /// No description provided for @progressTimelapseReplay.
+  ///
+  /// In en, this message translates to:
+  /// **'Replay'**
+  String get progressTimelapseReplay;
+
+  /// No description provided for @progressTimelapseSpeed.
+  ///
+  /// In en, this message translates to:
+  /// **'Speed'**
+  String get progressTimelapseSpeed;
+
+  /// No description provided for @progressTimelapseFrameOf.
+  ///
+  /// In en, this message translates to:
+  /// **'{index} of {total}'**
+  String progressTimelapseFrameOf(int index, int total);
+
+  /// No description provided for @progressSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress'**
+  String get progressSectionTitle;
+
+  /// No description provided for @progressSectionSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Track your body and your form over time.'**
+  String get progressSectionSubtitle;
+
+  /// No description provided for @bodyProgressAutoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Recorded automatically once a day when you start a workout.'**
+  String get bodyProgressAutoHint;
+
+  /// No description provided for @formProgressAutoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Your first clean rep of the day is recorded automatically.'**
+  String get formProgressAutoHint;
+
+  /// No description provided for @bodyProgressRecordedToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Recorded today'**
+  String get bodyProgressRecordedToday;
+
+  /// No description provided for @bodyProgressPendingToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Records on your next workout'**
+  String get bodyProgressPendingToday;
+
+  /// No description provided for @bodyProgressAutoEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your first record is one workout away'**
+  String get bodyProgressAutoEmptyTitle;
+
+  /// No description provided for @bodyProgressAutoEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Start a workout as usual. The photo is taken for you once you are in frame.'**
+  String get bodyProgressAutoEmptyBody;
+
+  /// No description provided for @formProgressAutoEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Start a workout as usual. Your first clean rep is recorded for you.'**
+  String get formProgressAutoEmptyBody;
+
+  /// No description provided for @bodyProgressManualCapture.
+  ///
+  /// In en, this message translates to:
+  /// **'Take one now'**
+  String get bodyProgressManualCapture;
+
+  /// No description provided for @bodyProgressReplaceToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace today\'\'s photo'**
+  String get bodyProgressReplaceToday;
+
+  /// No description provided for @bodyProgressAutoSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'\'s Body Progress is recorded.'**
+  String get bodyProgressAutoSaved;
+
+  /// No description provided for @formProgressAutoSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'\'s {exercise} form is recorded.'**
+  String formProgressAutoSaved(String exercise);
+
+  /// No description provided for @progressAutoBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto'**
+  String get progressAutoBadge;
 }
 
 class _AppLocalizationsDelegate

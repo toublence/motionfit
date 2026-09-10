@@ -1824,4 +1824,313 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get workoutVideoDeleted => 'Vídeo del entrenamiento eliminado';
+
+  @override
+  String get bodyProgressTitle => 'Progreso corporal';
+
+  @override
+  String get bodyProgressSubtitle =>
+      'Fotografía tu cuerpo siempre igual y observa cómo se acumula el cambio.';
+
+  @override
+  String get bodyProgressEmptyTitle => 'Haz tu primera foto';
+
+  @override
+  String get bodyProgressEmptyBody =>
+      'La foto de hoy será la referencia con la que se alinearán todas las siguientes.';
+
+  @override
+  String get bodyProgressStartCapture => 'Hacer la foto de hoy';
+
+  @override
+  String get bodyProgressRetake => 'Repetir la foto de hoy';
+
+  @override
+  String get bodyProgressViewFront => 'Frente';
+
+  @override
+  String get bodyProgressViewSide => 'Perfil';
+
+  @override
+  String get bodyProgressViewBack => 'Espalda';
+
+  @override
+  String bodyProgressDayNumber(int day) {
+    return 'Día $day';
+  }
+
+  @override
+  String get bodyProgressFirstPhoto => 'Primera';
+
+  @override
+  String get bodyProgressLatestPhoto => 'Última';
+
+  @override
+  String bodyProgressPhotoCount(int count) {
+    return '$count fotos';
+  }
+
+  @override
+  String bodyProgressSpanDays(int days) {
+    return '$days días registrados';
+  }
+
+  @override
+  String get bodyProgressRecordedDays => 'Días registrados';
+
+  @override
+  String get bodyProgressStreak => 'Racha actual';
+
+  @override
+  String get bodyProgressCompare => 'Antes / Después';
+
+  @override
+  String get bodyProgressTimelapse => 'Time-lapse';
+
+  @override
+  String get bodyProgressHistory => 'Historial de fotos';
+
+  @override
+  String get bodyProgressMilestones => 'Hitos';
+
+  @override
+  String get bodyProgressMilestonePending => 'Aún no';
+
+  @override
+  String get bodyProgressDeletePhoto => 'Eliminar foto';
+
+  @override
+  String get bodyProgressDeleteConfirm =>
+      '¿Eliminar esta foto? La imagen se borrará de este dispositivo.';
+
+  @override
+  String get bodyProgressLoading => 'Cargando progreso corporal';
+
+  @override
+  String get bodyProgressLoadError => 'No se pudo cargar el progreso corporal.';
+
+  @override
+  String get bodyProgressMissingImage => 'Imagen no disponible';
+
+  @override
+  String get bodyProgressCaptureTitle => 'Foto de progreso corporal';
+
+  @override
+  String get bodyProgressGhostOverlay => 'Superposición fantasma';
+
+  @override
+  String get bodyProgressGuides => 'Guías de alineación';
+
+  @override
+  String get bodyProgressCaptureHintFirst =>
+      'Colócate de forma que todo tu cuerpo entre en el encuadre.';
+
+  @override
+  String get bodyProgressCaptureHintGhost =>
+      'Alinéate con la foto atenuada y luego dispara.';
+
+  @override
+  String get bodyProgressShutter => 'Capturar';
+
+  @override
+  String get bodyProgressSwitchCamera => 'Cambiar cámara';
+
+  @override
+  String get bodyProgressSaved => 'La foto de hoy se ha guardado.';
+
+  @override
+  String get bodyProgressCameraBusy =>
+      'Cierra la cámara del entrenamiento antes de hacer la foto.';
+
+  @override
+  String get bodyProgressCameraError => 'No se pudo iniciar la cámara.';
+
+  @override
+  String get bodyProgressPermissionTitle => 'Se necesita acceso a la cámara';
+
+  @override
+  String get bodyProgressPermissionBody =>
+      'MotionFit necesita la cámara para esta foto. Las fotos se quedan en este dispositivo.';
+
+  @override
+  String get bodyProgressCompareNeedsTwo =>
+      'Necesitas al menos dos fotos para comparar.';
+
+  @override
+  String get bodyProgressCompareBefore => 'Antes';
+
+  @override
+  String get bodyProgressCompareAfter => 'Después';
+
+  @override
+  String get bodyProgressCompareHint =>
+      'Arrastra el control para pasar de una foto a otra.';
+
+  @override
+  String get bodyProgressTimelapseNeedsTwo =>
+      'Necesitas al menos dos fotos para crear un time-lapse.';
+
+  @override
+  String get formProgressTitle => 'Progreso de técnica';
+
+  @override
+  String get formProgressSubtitle =>
+      'Comprueba cuánto ha mejorado tu técnica en cada ejercicio.';
+
+  @override
+  String get formProgressEmptyTitle => 'Aún no hay datos de técnica';
+
+  @override
+  String get formProgressEmptyBody =>
+      'Termina un entrenamiento y su análisis de técnica aparecerá aquí solo.';
+
+  @override
+  String get formProgressFirstScore => 'Primera puntuación';
+
+  @override
+  String get formProgressCurrentScore => 'Puntuación actual';
+
+  @override
+  String get formProgressChange => 'Cambio';
+
+  @override
+  String get formProgressAccuracy => 'Precisión de detección';
+
+  @override
+  String get formProgressScoreLabel => 'Puntuación de técnica';
+
+  @override
+  String get formProgressTrend => 'Evolución de la puntuación';
+
+  @override
+  String get formProgressCommonIssues => 'Fallos de técnica más frecuentes';
+
+  @override
+  String get formProgressRecentImprovement => 'Mejorado recientemente';
+
+  @override
+  String get formProgressNoImprovementYet =>
+      'Sigue entrenando para ver un resumen de mejoras.';
+
+  @override
+  String get formProgressSessions => 'Historial de entrenamientos';
+
+  @override
+  String formProgressSessionCount(int count) {
+    return '$count sesiones';
+  }
+
+  @override
+  String get formProgressCompare => 'Primera vs. última';
+
+  @override
+  String get formProgressTimelapse => 'Time-lapse de técnica';
+
+  @override
+  String formProgressImprovedBy(int points) {
+    return '$points puntos más';
+  }
+
+  @override
+  String formProgressDeclinedBy(int points) {
+    return '$points puntos menos';
+  }
+
+  @override
+  String get formProgressUnchanged => 'Sin cambios aún';
+
+  @override
+  String get formProgressNoPose => 'Aún no hay postura de referencia';
+
+  @override
+  String get formProgressPoseHint =>
+      'Tu próximo entrenamiento guardará aquí una postura de referencia.';
+
+  @override
+  String get formProgressLoading => 'Cargando progreso de técnica';
+
+  @override
+  String get formProgressLoadError =>
+      'No se pudo cargar el progreso de técnica.';
+
+  @override
+  String formProgressIssueOccurrences(int count) {
+    return '$count veces';
+  }
+
+  @override
+  String get formProgressNeedsTwoSessions =>
+      'Completa dos entrenamientos de este ejercicio para comparar la técnica.';
+
+  @override
+  String get formProgressSelectExercise => 'Elige un ejercicio';
+
+  @override
+  String get progressTimelapsePlay => 'Reproducir';
+
+  @override
+  String get progressTimelapsePause => 'Pausa';
+
+  @override
+  String get progressTimelapseReplay => 'Repetir';
+
+  @override
+  String get progressTimelapseSpeed => 'Velocidad';
+
+  @override
+  String progressTimelapseFrameOf(int index, int total) {
+    return '$index de $total';
+  }
+
+  @override
+  String get progressSectionTitle => 'Progreso';
+
+  @override
+  String get progressSectionSubtitle =>
+      'Sigue la evolución de tu cuerpo y de tu técnica.';
+
+  @override
+  String get bodyProgressAutoHint =>
+      'Se registra solo una vez al día cuando empiezas a entrenar.';
+
+  @override
+  String get formProgressAutoHint =>
+      'Tu primera repetición limpia del día se registra sola.';
+
+  @override
+  String get bodyProgressRecordedToday => 'Registrado hoy';
+
+  @override
+  String get bodyProgressPendingToday =>
+      'Se registrará en tu próximo entrenamiento';
+
+  @override
+  String get bodyProgressAutoEmptyTitle =>
+      'Un entrenamiento y tendrás tu primer registro';
+
+  @override
+  String get bodyProgressAutoEmptyBody =>
+      'Empieza a entrenar como siempre. La foto se toma cuando estás encuadrado.';
+
+  @override
+  String get formProgressAutoEmptyBody =>
+      'Empieza a entrenar como siempre. Tu primera repetición limpia queda registrada.';
+
+  @override
+  String get bodyProgressManualCapture => 'Hacer una ahora';
+
+  @override
+  String get bodyProgressReplaceToday => 'Reemplazar la foto de hoy';
+
+  @override
+  String get bodyProgressAutoSaved =>
+      'El progreso corporal de hoy está registrado.';
+
+  @override
+  String formProgressAutoSaved(String exercise) {
+    return 'La técnica de $exercise de hoy está registrada.';
+  }
+
+  @override
+  String get progressAutoBadge => 'Auto';
 }

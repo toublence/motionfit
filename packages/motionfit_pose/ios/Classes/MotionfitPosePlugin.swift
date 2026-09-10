@@ -9,18 +9,24 @@ public final class MotionfitPosePlugin: NSObject, FlutterPlugin, FlutterStreamHa
   private let textureRegistry: FlutterTextureRegistry
   private let texture = MotionfitPoseTexture()
   private let engine = MotionfitPoseEngine()
+  private let stillTexture = MotionfitPoseTexture()
+  private let stillCapture = MotionfitStillCapture()
   private var textureId: Int64?
+  private var stillTextureId: Int64?
   private var eventSink: FlutterEventSink?
   private var eventChannel: FlutterEventChannel?
   private var isDetached = false
 
   private let frameNotificationLock = NSLock()
   private var isFrameNotificationScheduled = false
+  private let stillFrameNotificationLock = NSLock()
+  private var isStillFrameNotificationScheduled = false
 
   private init(textureRegistry: FlutterTextureRegistry) {
     self.textureRegistry = textureRegistry
     super.init()
     engine.delegate = self
+    stillCapture.delegate = self
   }
 
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -67,6 +73,9 @@ public final class MotionfitPosePlugin: NSObject, FlutterPlugin, FlutterStreamHa
     eventSink = nil
     eventChannel?.setStreamHandler(nil)
     eventChannel = nil
+    stillCapture.stop { [weak self] in
+      DispatchQueue.main.async { self?.unregisterStillTexture() }
+    }
     engine.dispose { [weak self] in
       self?.unregisterTexture()
     }
@@ -136,6 +145,73 @@ public final class MotionfitPosePlugin: NSObject, FlutterPlugin, FlutterStreamHa
       }
     case "cancelVideoRecording":
       engine.cancelVideoRecording { result(self.flutterResult($0)) }
+    case "startStillCapture":
+      handleStartStillCapture(arguments: call.arguments, result: result)
+    case "switchStillCamera":
+      guard let camera = cameraArgument(from: call.arguments) else {
+        result(invalidArgumentError("camera must be either 'front' or 'back'."))
+        return
+      }
+      stillCapture.switchCamera(to: camera) { captureResult in
+        DispatchQueue.main.async {
+          switch captureResult {
+          case .success(let start):
+            result(self.stillStartMap(start))
+          case .failure(let error):
+            result(self.flutterError(error))
+          }
+        }
+      }
+    case "captureStill":
+      stillCapture.capturePhoto { captureResult in
+        DispatchQueue.main.async {
+          switch captureResult {
+          case .success(let photo):
+            result([
+              "directory": photo.directory,
+              "fileName": photo.fileName,
+              "width": photo.width,
+              "height": photo.height
+            ])
+          case .failure(let error):
+            result(self.flutterError(error))
+          }
+        }
+      }
+    case "stillCaptureDirectory":
+      do {
+        result(["directory": try MotionfitStillCapture.directoryPath()])
+      } catch let error as MotionfitPoseNativeError {
+        result(flutterError(error))
+      } catch {
+        result(flutterError(MotionfitPoseNativeError(
+          "photo_storage_failed",
+          error.localizedDescription
+        )))
+      }
+    case "captureWorkoutFrame":
+      engine.captureNextFrame { captureResult in
+        DispatchQueue.main.async {
+          switch captureResult {
+          case .success(let photo):
+            result([
+              "directory": photo.directory,
+              "fileName": photo.fileName,
+              "width": photo.width,
+              "height": photo.height
+            ])
+          case .failure(let error):
+            result(self.flutterError(error))
+          }
+        }
+      }
+    case "stopStillCapture":
+      stillCapture.stop { [weak self] in
+        DispatchQueue.main.async {
+          self?.unregisterStillTexture()
+          result(nil)
+        }
+      }
     case "dispose":
       engine.dispose { [weak self] in
         self?.unregisterTexture()
@@ -151,6 +227,13 @@ public final class MotionfitPosePlugin: NSObject, FlutterPlugin, FlutterStreamHa
       result(flutterError(MotionfitPoseNativeError(
         "already_started",
         "The pose engine is already running. Dispose it before starting again."
+      )))
+      return
+    }
+    guard stillTextureId == nil else {
+      result(flutterError(MotionfitPoseNativeError(
+        "camera_busy",
+        "Still capture holds the camera. Stop it before starting a workout."
       )))
       return
     }
@@ -242,6 +325,90 @@ public final class MotionfitPosePlugin: NSObject, FlutterPlugin, FlutterStreamHa
 
   private func flutterError(_ error: MotionfitPoseNativeError) -> FlutterError {
     FlutterError(code: error.code, message: error.message, details: error.details)
+  }
+
+  private func handleStartStillCapture(
+    arguments: Any?,
+    result: @escaping FlutterResult
+  ) {
+    dispatchPrecondition(condition: .onQueue(.main))
+    guard textureId == nil else {
+      result(flutterError(MotionfitPoseNativeError(
+        "camera_busy",
+        "The pose engine holds the camera. Dispose it before capturing photos."
+      )))
+      return
+    }
+    guard stillTextureId == nil else {
+      result(flutterError(MotionfitPoseNativeError(
+        "already_started",
+        "Still capture is already running."
+      )))
+      return
+    }
+    guard let camera = cameraArgument(from: arguments) else {
+      result(invalidArgumentError("camera must be either 'front' or 'back'."))
+      return
+    }
+    let registeredTextureId = textureRegistry.register(stillTexture)
+    stillTextureId = registeredTextureId
+    stillCapture.start(camera: camera) { [weak self] captureResult in
+      DispatchQueue.main.async {
+        guard let self else { return }
+        switch captureResult {
+        case .success(let start):
+          var payload = self.stillStartMap(start)
+          payload["textureId"] = registeredTextureId
+          result(payload)
+        case .failure(let error):
+          self.unregisterStillTexture()
+          result(self.flutterError(error))
+        }
+      }
+    }
+  }
+
+  private func stillStartMap(_ start: MotionfitStillCaptureStart) -> [String: Any] {
+    // AVFoundation applies both the portrait rotation and the front-camera
+    // mirror on the connection, so Flutter has nothing left to correct.
+    [
+      "previewWidth": start.previewWidth,
+      "previewHeight": start.previewHeight,
+      "rotationDegrees": 0,
+      "handlesCropAndRotation": true,
+      "mirrored": start.mirrored
+    ]
+  }
+
+  private func unregisterStillTexture() {
+    dispatchPrecondition(condition: .onQueue(.main))
+    guard let stillTextureId else {
+      stillTexture.clear()
+      return
+    }
+    textureRegistry.unregisterTexture(stillTextureId)
+    self.stillTextureId = nil
+    stillTexture.clear()
+  }
+
+  private func scheduleStillTextureFrameAvailable() {
+    stillFrameNotificationLock.lock()
+    guard !isStillFrameNotificationScheduled else {
+      stillFrameNotificationLock.unlock()
+      return
+    }
+    isStillFrameNotificationScheduled = true
+    stillFrameNotificationLock.unlock()
+
+    DispatchQueue.main.async { [weak self] in
+      guard let self else { return }
+      if let stillTextureId = self.stillTextureId, !self.isDetached {
+        self.textureRegistry.textureFrameAvailable(stillTextureId)
+      }
+      self.stillFrameNotificationLock.lock()
+      self.isStillFrameNotificationScheduled = false
+      self.stillFrameNotificationLock.unlock()
+    }
   }
 
   private func unregisterTexture() {
@@ -338,5 +505,15 @@ extension MotionfitPosePlugin: MotionfitPoseEngineDelegate {
       guard let self, !self.isDetached, self.textureId != nil else { return }
       self.eventSink?(flutterError)
     }
+  }
+}
+
+extension MotionfitPosePlugin: MotionfitStillCaptureDelegate {
+  func stillCapture(
+    _ capture: MotionfitStillCapture,
+    didOutputPreview pixelBuffer: CVPixelBuffer
+  ) {
+    stillTexture.update(with: pixelBuffer)
+    scheduleStillTextureFrameAvailable()
   }
 }

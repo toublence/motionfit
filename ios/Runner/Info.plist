@@ -26,8 +26,10 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>motionfit - workout coach</string>
+	<!-- Google sample app ID for testing. Production value to restore
+	     before release: ca-app-pub-6169297934919363~5425389550 -->
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-6169297934919363~5425389550</string>
+	<string>ca-app-pub-3940256099942544~1458002511</string>
 	<key>GADDelayAppMeasurementInit</key>
 	<true/>
 	<key>SKAdNetworkItems</key>
@@ -234,7 +236,7 @@
 		</dict>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>MotionFit uses the camera to count squats and analyze movement. Workout video is saved only on this device when you enable Rep Video Review.</string>
+	<string>MotionFit uses the camera to count reps and analyze movement, and to take Body Progress photos when you ask for one. Workout video and Body Progress photos are saved only on this device.</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>This identifier may be used to deliver and measure relevant ads.</string>
 	<key>CFBundlePackageType</key>

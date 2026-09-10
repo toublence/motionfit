@@ -39,6 +39,18 @@ void main() {
     );
 
     expect(lowConfidence.first.x, 0.4);
+    expect(lowConfidence.first.confidence, greaterThan(0.25));
     expect(lowConfidence.first.confidence, lessThan(0.9));
+  });
+
+  test('stops rendering a stale joint after the confidence grace period', () {
+    final smoother = PoseLandmarkSmoother(maximumGapUs: 1000000);
+
+    smoother.smooth(pose(x: 0.4), 1000000);
+    smoother.smooth(pose(x: 0.9, confidence: 0.05), 1200000);
+    final expired = smoother.smooth(pose(x: 0.9, confidence: 0.05), 1400000);
+
+    expect(expired.first.x, 0.4);
+    expect(expired.first.confidence, 0.05);
   });
 }

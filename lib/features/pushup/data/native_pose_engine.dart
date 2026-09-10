@@ -5,7 +5,8 @@ import 'package:motionfit_squat/features/pushup/domain/models/pose_frame.dart';
 import 'package:motionfit_squat/features/pushup/domain/models/workout_enums.dart';
 import 'package:motionfit_squat/features/pushup/domain/services/pose_engine.dart';
 
-class NativePoseEngine implements PoseEngine, RecordablePoseEngine {
+class NativePoseEngine
+    implements PoseEngine, RecordablePoseEngine, FrameCapturingPoseEngine {
   NativePoseEngine({MotionfitPose? plugin})
     : _plugin = plugin ?? MotionfitPose();
 
@@ -64,6 +65,21 @@ class NativePoseEngine implements PoseEngine, RecordablePoseEngine {
   @override
   Future<void> setTargetInferenceFps(int fps) =>
       _translate(() => _plugin.setTargetFps(fps));
+
+  @override
+  Future<PoseFrameCapture> captureWorkoutFrame() async {
+    try {
+      final photo = await _plugin.captureWorkoutFrame();
+      return PoseFrameCapture(
+        directory: photo.directory,
+        fileName: photo.fileName,
+        width: photo.width,
+        height: photo.height,
+      );
+    } on MotionfitPoseException catch (error) {
+      throw PoseEngineException(error.code, error.message);
+    }
+  }
 
   @override
   Future<void> startVideoRecording(String sessionId) => _translate(() async {

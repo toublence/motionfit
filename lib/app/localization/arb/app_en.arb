@@ -14,7 +14,13 @@
   "challengeSevenDaySummary": "Follow a level-based goal that increases each day for 7 days.",
   "challengeSevenDayEveryDay": "Continue every day for 7 days without recovery days",
   "challengeDurationDays": "{days} days",
-  "@challengeDurationDays": {"placeholders": {"days": {"type": "int"}}},
+  "@challengeDurationDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "challengeLevelGoals": "Goals tailored to your level",
   "challengeRecoveryIncluded": "Recovery days included",
   "challengeDailyGoal": "Daily rep goals",
@@ -23,12 +29,27 @@
   "challengeSevenDaySettingsDescription": "Choose day 1. The goal increases by 5 reps each day.",
   "challengeFirstDayGoal": "Day 1 target reps",
   "challengeSevenDayPreview": "Day 1: {first} reps → Day 7: {last} reps",
-  "@challengeSevenDayPreview": {"placeholders": {"first": {"type": "int"}, "last": {"type": "int"}}},
+  "@challengeSevenDayPreview": {
+    "placeholders": {
+      "first": {
+        "type": "int"
+      },
+      "last": {
+        "type": "int"
+      }
+    }
+  },
   "challengeWeeklyTitle": "3 times a week challenge",
   "challengeWeeklyDescription": "A habit challenge for people who do not want to work out every day",
   "challengeWeeklySummary": "Work out 3 selected days each week for 4 weeks.",
   "challengeDurationWeeks": "{weeks} weeks",
-  "@challengeDurationWeeks": {"placeholders": {"weeks": {"type": "int"}}},
+  "@challengeDurationWeeks": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
   "challengeThreePerWeek": "3 workouts each week",
   "challengeChooseWeekdays": "Choose 3 workout days",
   "challengeWorkoutDaysCount": "Progress is based on workout days",
@@ -45,33 +66,111 @@
   "challengeHistoryEmpty": "Your completed and ended challenges will appear here.",
   "challengeRecommended": "Recommended for you",
   "challengeRecommendationFromWorkout": "Recommended from your first workout of {reps} reps.",
-  "@challengeRecommendationFromWorkout": {"placeholders": {"reps": {"type": "int"}}},
+  "@challengeRecommendationFromWorkout": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
   "challengeRecommendationDefault": "A gentle 7-day start is recommended for your first challenge.",
   "challengeActive": "Active challenge",
   "challengeNext": "Next",
   "challengeDayNumber": "Day {day}",
-  "@challengeDayNumber": {"placeholders": {"day": {"type": "int"}}},
+  "@challengeDayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "challengeRecoveryDay": "Recovery day",
   "challengeTodayProgress": "Today {current} / {target} reps",
-  "@challengeTodayProgress": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@challengeTodayProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "challengeRestToday": "Take time to recover today.",
   "challengeTodayCompleted": "Today’s goal is complete · Continue tomorrow",
   "challengeRepsRemaining": "{reps} reps to go",
-  "@challengeRepsRemaining": {"placeholders": {"reps": {"type": "int"}}},
+  "@challengeRepsRemaining": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
   "challengeWeekNumber": "Week {week}",
-  "@challengeWeekNumber": {"placeholders": {"week": {"type": "int"}}},
+  "@challengeWeekNumber": {
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
   "challengeThisWeekProgress": "This week {current} / {target} workouts",
-  "@challengeThisWeekProgress": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@challengeThisWeekProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "challengeOverallDays": "Overall {current} / {target} days",
-  "@challengeOverallDays": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@challengeOverallDays": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "challengeRepsProgress": "{current} / {target} reps",
-  "@challengeRepsProgress": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@challengeRepsProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "challengeDaysRemaining": "{days} days left",
-  "@challengeDaysRemaining": {"placeholders": {"days": {"type": "int"}}},
+  "@challengeDaysRemaining": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "challengeTodaySuggested": "Suggested for today: {reps} reps",
-  "@challengeTodaySuggested": {"placeholders": {"reps": {"type": "int"}}},
+  "@challengeTodaySuggested": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
   "challengePercent": "{percent}% complete",
-  "@challengePercent": {"placeholders": {"percent": {"type": "int"}}},
+  "@challengePercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
   "challengeSquatStart": "Start squats",
   "challengeTodayWorkoutStart": "Start today’s workout",
   "challengeViewDetails": "View details",
@@ -86,7 +185,13 @@
   "challengeTotalReps": "Total squats",
   "challengeWorkoutDays": "Workout days",
   "challengeDaysCount": "{days} days",
-  "@challengeDaysCount": {"placeholders": {"days": {"type": "int"}}},
+  "@challengeDaysCount": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "challengeTotalTime": "Total workout time",
   "challengeSchedule": "Schedule and progress",
   "challengeNotifications": "Challenge reminders",
@@ -125,28 +230,85 @@
   "commonYesterday": "Yesterday",
   "commonLoading": "Loading…",
   "unitSets": "{count, plural, =0 {0 sets} =1 {1 set} other {{count} sets}}",
-  "@unitSets": {"placeholders": {"count": {"type": "int"}}},
+  "@unitSets": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitReps": "{count, plural, =0 {0 reps} =1 {1 rep} other {{count} reps}}",
-  "@unitReps": {"placeholders": {"count": {"type": "int"}}},
+  "@unitReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitSeconds": "{count, plural, =0 {0 seconds} =1 {1 second} other {{count} seconds}}",
-  "@unitSeconds": {"placeholders": {"count": {"type": "int"}}},
+  "@unitSeconds": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitMinutes": "{count, plural, =0 {0 minutes} =1 {1 minute} other {{count} minutes}}",
-  "@unitMinutes": {"placeholders": {"count": {"type": "int"}}},
+  "@unitMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "durationHoursMinutes": "{hours} hr {minutes} min",
-  "@durationHoursMinutes": {"placeholders": {"hours": {"type": "int"}, "minutes": {"type": "int"}}},
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "durationMinutesSeconds": "{minutes} min {seconds} sec",
-  "@durationMinutesSeconds": {"placeholders": {"minutes": {"type": "int"}, "seconds": {"type": "int"}}},
+  "@durationMinutesSeconds": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "homeGreeting": "Ready to move?",
   "homeTodayTitle": "Today’s record",
   "homeTodayNoWorkout": "No squats yet today. A short set is a great start.",
   "homeTodaySummary": "{reps} squats across {sets}",
   "homeViewResult": "View result",
-  "@homeTodaySummary": {"placeholders": {"reps": {"type": "int"}, "sets": {"type": "int"}}},
+  "@homeTodaySummary": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "sets": {
+        "type": "int"
+      }
+    }
+  },
   "homeTodaySets": "Sets today",
   "homeTodayReps": "Done today",
   "streakLabel": "Streak",
   "streakDays": "{days} days",
-  "@streakDays": {"placeholders": {"days": {"type": "int"}}},
+  "@streakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "homeWorkoutSetup": "Next workout",
   "homeSetsLabel": "Sets",
   "homeRepsPerSetLabel": "Reps per set",
@@ -156,7 +318,16 @@
   "homeLastSettingsRestored": "Your last workout settings are ready.",
   "validationNumberRequired": "Enter a number.",
   "validationRange": "Choose a value from {min} to {max}.",
-  "@validationRange": {"placeholders": {"min": {"type": "num"}, "max": {"type": "num"}}},
+  "@validationRange": {
+    "placeholders": {
+      "min": {
+        "type": "num"
+      },
+      "max": {
+        "type": "num"
+      }
+    }
+  },
   "guideTitle": "Set up your camera",
   "guideSubtitle": "MotionFit can measure squats from shoulders through knees without ankles.",
   "guideWholeBody": "Keep your shoulders, hips, and knees visible when possible.",
@@ -178,7 +349,13 @@
   "permissionNotificationDenied": "Notifications are off. Turn them on in system settings to receive reminders.",
   "countdownGetReady": "Get ready",
   "countdownBeginsIn": "Starting in {seconds}",
-  "@countdownBeginsIn": {"placeholders": {"seconds": {"type": "int"}}},
+  "@countdownBeginsIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "calibrationTitle": "Finding your standing position",
   "calibrationBody": "Stand tall with your shoulders through knees in view.",
   "calibrationStayStill": "Hold still for a moment",
@@ -186,11 +363,35 @@
   "calibrationFailed": "We could not get a clear standing position.",
   "calibrationRetry": "Recalibrate",
   "workoutSetProgress": "Set {current} of {total}",
-  "@workoutSetProgress": {"placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}},
+  "@workoutSetProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "workoutRepProgress": "{current} of {target}",
-  "@workoutRepProgress": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@workoutRepProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "workoutTotalReps": "Total {count}",
-  "@workoutTotalReps": {"placeholders": {"count": {"type": "int"}}},
+  "@workoutTotalReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "workoutElapsed": "Elapsed time",
   "workoutPause": "Pause",
   "workoutResume": "Resume workout",
@@ -213,7 +414,16 @@
   "workoutSkeletonToggle": "Show pose guide",
   "restTitle": "Rest",
   "restNextSet": "Next: set {set} of {total}",
-  "@restNextSet": {"placeholders": {"set": {"type": "int"}, "total": {"type": "int"}}},
+  "@restNextSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "restCompletedSets": "Completed sets",
   "restTotalReps": "Squats so far",
   "restSkip": "Skip rest",
@@ -233,7 +443,19 @@
   "completeFormSummary": "Form summary",
   "todayCoaching": "Today''s coaching",
   "coachingIssueFrequency": "In {count} of {total} reps,\n{issue}",
-  "@coachingIssueFrequency": {"placeholders": {"total": {"type": "int"}, "count": {"type": "int"}, "issue": {"type": "String"}}},
+  "@coachingIssueFrequency": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      },
+      "issue": {
+        "type": "String"
+      }
+    }
+  },
   "completeTopImprovement": "Focus for next time",
   "completeStrengths": "What went well",
   "completeSaved": "Workout saved on this device",
@@ -242,28 +464,73 @@
   "completeFinish": "Finish",
   "postWorkoutReminderTitle": "Keep the momentum going",
   "postWorkoutReminderBody": "Would you like a daily reminder at {time}, starting tomorrow?",
-  "@postWorkoutReminderBody": {"placeholders": {"time": {"type": "String"}}},
+  "@postWorkoutReminderBody": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "postWorkoutReminderEnable": "Remind me",
   "postWorkoutReminderLater": "Maybe later",
   "postWorkoutReminderEnabled": "Your reminder is set.",
   "recordsTitle": "Progress",
   "recordsWeeklySummary": "This week",
   "recordsWorkoutCount": "{count} workouts",
-  "@recordsWorkoutCount": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsWorkoutCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsAverageForm": "Average form {score}",
-  "@recordsAverageForm": {"placeholders": {"score": {"type": "int"}}},
+  "@recordsAverageForm": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "recordsWorkoutTime": "Time {time}",
-  "@recordsWorkoutTime": {"placeholders": {"time": {"type": "String"}}},
+  "@recordsWorkoutTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "recordsFirstWeek": "This is your first record this week",
   "recordsMoreThanLastWeek": "{count} more reps than last week",
   "recordsLessThanLastWeek": "{count} fewer reps than last week",
-  "@recordsMoreThanLastWeek": {"placeholders": {"count": {"type": "int"}}},
-  "@recordsLessThanLastWeek": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsMoreThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recordsLessThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsSameAsLastWeek": "Same volume as last week",
   "recordsTrendEmpty": "Complete more workouts to see your form trend.",
   "recordsFirstFormScore": "First form score",
   "recordsRecentAverage": "Last {count} average {score}",
-  "@recordsRecentAverage": {"placeholders": {"count": {"type": "int"}, "score": {"type": "int"}}},
+  "@recordsRecentAverage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "recordsStrength": "Strength",
   "recordsFocus": "Focus",
   "recordsTodayPoint": "Today''s focus",
@@ -276,19 +543,61 @@
   "exercisePlank": "Plank",
   "recordsConsistency": "Consistency",
   "recordsWeeklyStreak": "🔥 {count}-week goal streak",
-  "@recordsWeeklyStreak": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsWeeklyStreak": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsStreakFirstWeek": "Build your first weekly streak",
   "recordsWeeklyGoalComplete": "🔥 This week’s goal is complete",
   "recordsStreakRemaining": "{count} more workouts keeps your streak going",
-  "@recordsStreakRemaining": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsStreakRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsStreakStartRemaining": "Complete {count} more workouts to start your streak",
-  "@recordsStreakStartRemaining": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsStreakStartRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsStreakContinued": "Your {count}-week streak continues",
-  "@recordsStreakContinued": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsStreakContinued": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsRecentWeeksSummary": "Last 16 weeks · {count} workout days",
-  "@recordsRecentWeeksSummary": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsRecentWeeksSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsRangeSummary": "{from} – {to} · {count} workout days",
-  "@recordsRangeSummary": {"placeholders": {"from": {"type": "String"}, "to": {"type": "String"}, "count": {"type": "int"}}},
+  "@recordsRangeSummary": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsFormTrend": "Form trend",
   "recordsViewCalendar": "Calendar",
   "recordsViewList": "List",
@@ -299,9 +608,21 @@
   "recordsCalendarNoWorkoutSelected": "Select a workout day to see its sessions.",
   "recordsDayTotal": "Daily total",
   "recordsSessionsCount": "{count, plural, =0 {No sessions} =1 {1 session} other {{count} sessions}}",
-  "@recordsSessionsCount": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsSessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsSessionTitle": "Session {number}",
-  "@recordsSessionTitle": {"placeholders": {"number": {"type": "int"}}},
+  "@recordsSessionTitle": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "recordsListNewest": "Newest first",
   "recordsOpenDetail": "View details",
   "recordsEmptyTitle": "No workouts yet",
@@ -326,9 +647,21 @@
   "statsFrequentImprovements": "Frequent focus areas",
   "statsNoData": "No workouts in this period.",
   "statsTrendUp": "Up {percent}%",
-  "@statsTrendUp": {"placeholders": {"percent": {"type": "num"}}},
+  "@statsTrendUp": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
   "statsTrendDown": "Down {percent}%",
-  "@statsTrendDown": {"placeholders": {"percent": {"type": "num"}}},
+  "@statsTrendDown": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
   "statsTrendFlat": "No change",
   "detailTitle": "Workout details",
   "detailStartTime": "Started",
@@ -346,9 +679,27 @@
   "detailInterrupted": "Ended early",
   "detailCompleted": "Completed",
   "detailSetRow": "Set {set}: {reps} reps",
-  "@detailSetRow": {"placeholders": {"set": {"type": "int"}, "reps": {"type": "int"}}},
+  "@detailSetRow": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
   "detailSessionOn": "{date} at {time}",
-  "@detailSessionOn": {"placeholders": {"date": {"type": "String"}, "time": {"type": "String"}}},
+  "@detailSessionOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "settingsTitle": "Settings",
   "settingsRateApp": "Rate this app",
   "settingsRateAppSubtitle": "Rate MotionFit",
@@ -402,10 +753,22 @@
   "reminderTime": "Reminder time",
   "reminderCopyTime": "Copy this time",
   "reminderCopyFromDay": "Copy time from {day}",
-  "@reminderCopyFromDay": {"placeholders": {"day": {"type": "String"}}},
+  "@reminderCopyFromDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
   "reminderApplyAll": "Apply to every day",
   "reminderNext": "Next reminder: {dateTime}",
-  "@reminderNext": {"placeholders": {"dateTime": {"type": "String"}}},
+  "@reminderNext": {
+    "placeholders": {
+      "dateTime": {
+        "type": "String"
+      }
+    }
+  },
   "reminderNoneScheduled": "No reminders scheduled",
   "reminderPermissionNeeded": "Allow notifications to turn on reminders.",
   "reminderSaved": "Reminder schedule saved",
@@ -443,7 +806,13 @@
   "privacyDeleteFailure": "Workout data could not be deleted.",
   "appInfoTitle": "App information",
   "appInfoVersion": "Version {version}",
-  "@appInfoVersion": {"placeholders": {"version": {"type": "String"}}},
+  "@appInfoVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
   "appInfoLicenses": "Open-source licenses",
   "appInfoPrivacyPolicy": "Privacy policy",
   "appInfoDescription": "MotionFit counts squats and offers private, on-device form guidance.",
@@ -467,7 +836,13 @@
   "formScore": "Form score",
   "formShort": "Form",
   "formScoreValue": "{score} pts",
-  "@formScoreValue": {"placeholders": {"score": {"type": "int"}}},
+  "@formScoreValue": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "formIssueDepth": "Squat depth",
   "formIssueTorsoLean": "Upper-body stability",
   "formIssueHeelLift": "Heel contact",
@@ -489,13 +864,40 @@
   "coachReady1": "You’re in position. Let’s begin.",
   "coachReady2": "Great position. Get ready for your first squat.",
   "coachStartSet": "Set {set}. Let’s go.",
-  "@coachStartSet": {"placeholders": {"set": {"type": "int"}}},
+  "@coachStartSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
   "coachSevenDayChallengeStart": "Starting day {day} of the seven-day challenge.",
-  "@coachSevenDayChallengeStart": {"placeholders": {"day": {"type": "int"}}},
+  "@coachSevenDayChallengeStart": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "coachCumulativeChallengeStart": "Starting the cumulative reps challenge. You have completed {completed} reps, with {remaining} remaining.",
-  "@coachCumulativeChallengeStart": {"placeholders": {"completed": {"type": "int"}, "remaining": {"type": "int"}}},
+  "@coachCumulativeChallengeStart": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "coachRepCount": "{count}",
-  "@coachRepCount": {"placeholders": {"count": {"type": "int"}}},
+  "@coachRepCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "coachDepth1": "Next rep, try going a little lower.",
   "coachDepth2": "Give the next squat a little more depth.",
   "coachTorso1": "Keep your upper body a little steadier.",
@@ -524,28 +926,79 @@
   "coachLastTwo": "Last two. Stay strong!",
   "coachLastOne": "Last one. Finish strong!",
   "coachSetComplete": "Great. Set {set} is complete.",
-  "@coachSetComplete": {"placeholders": {"set": {"type": "int"}}},
+  "@coachSetComplete": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
   "coachRestStart": "Rest for {seconds} seconds. Breathe and reset.",
-  "@coachRestStart": {"placeholders": {"seconds": {"type": "int"}}},
+  "@coachRestStart": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "coachRestTenSeconds": "Ten seconds of rest left.",
   "coachRestComplete": "Rest is over. Get ready for the next set.",
   "coachWorkoutComplete": "Workout complete. You finished {reps} squats.",
-  "@coachWorkoutComplete": {"placeholders": {"reps": {"type": "int"}}},
+  "@coachWorkoutComplete": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
   "notificationReminderTitle": "Time for today’s squats",
   "notificationReminderBody": "Even a short session counts. Open MotionFit when you’re ready.",
   "notificationReminderBodyVariant2": "A few focused squats can make today’s movement count.",
   "notificationStreakReminderBody": "Keep your {days}-day streak alive with a short session today.",
-  "@notificationStreakReminderBody": {"placeholders": {"days": {"type": "int"}}},
+  "@notificationStreakReminderBody": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "semanticsIncrease": "Increase",
   "semanticsDecrease": "Decrease",
   "semanticsSelectedTab": "Selected tab: {tab}",
-  "@semanticsSelectedTab": {"placeholders": {"tab": {"type": "String"}}},
+  "@semanticsSelectedTab": {
+    "placeholders": {
+      "tab": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCalendarWorkoutDate": "{date}, workout recorded",
-  "@semanticsCalendarWorkoutDate": {"placeholders": {"date": {"type": "String"}}},
+  "@semanticsCalendarWorkoutDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCalendarEmptyDate": "{date}, no workout",
-  "@semanticsCalendarEmptyDate": {"placeholders": {"date": {"type": "String"}}},
+  "@semanticsCalendarEmptyDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCurrentRep": "Current repetition {current} of {target}",
-  "@semanticsCurrentRep": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@semanticsCurrentRep": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "repVideoReviewTitle": "Rep Video Review",
   "repVideoReviewDescription": "Save workout videos on this device to review individual reps.",
   "repVideoLocalOnly": "Local only · Never uploaded",
@@ -557,9 +1010,21 @@
   "repTimelineImprove": "Improve",
   "repTimelineNoImprovement": "No reps need improvement.",
   "repSetNumber": "Set {number}",
-  "@repSetNumber": {"placeholders": {"number": {"type": "int"}}},
+  "@repSetNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "repNumber": "Rep {number}",
-  "@repNumber": {"placeholders": {"number": {"type": "int"}}},
+  "@repNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "repResultGood": "Good form",
   "repResultNeedsAttention": "Needs attention",
   "repResultImproved": "Better than the previous rep",
@@ -579,9 +1044,170 @@
   "repFeedbackTorso": "Your upper body leaned too far during this rep. Keep your chest more upright.",
   "repFeedbackKnees": "Your knees moved inward during this rep. Keep them aligned with your toes.",
   "repFeedbackGeneric": "This rep needs attention in {area}.",
-  "@repFeedbackGeneric": {"placeholders": {"area": {"type": "String"}}},
+  "@repFeedbackGeneric": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      }
+    }
+  },
   "deleteWorkoutVideo": "Delete workout video",
   "deleteWorkoutVideoTitle": "Delete this workout video?",
   "deleteWorkoutVideoBody": "Only the local video will be deleted. Rep analysis and workout records will stay.",
-  "workoutVideoDeleted": "Workout video deleted"
+  "workoutVideoDeleted": "Workout video deleted",
+  "bodyProgressTitle": "Body Progress",
+  "bodyProgressSubtitle": "Photograph your body the same way each time and watch the change build up.",
+  "bodyProgressEmptyTitle": "Take your first photo",
+  "bodyProgressEmptyBody": "One photo today becomes the reference every later photo lines up with.",
+  "bodyProgressStartCapture": "Take today''s photo",
+  "bodyProgressRetake": "Retake today''s photo",
+  "bodyProgressViewFront": "Front",
+  "bodyProgressViewSide": "Side",
+  "bodyProgressViewBack": "Back",
+  "bodyProgressDayNumber": "Day {day}",
+  "@bodyProgressDayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressFirstPhoto": "First",
+  "bodyProgressLatestPhoto": "Latest",
+  "bodyProgressPhotoCount": "{count} photos",
+  "@bodyProgressPhotoCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressSpanDays": "{days} days tracked",
+  "@bodyProgressSpanDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressRecordedDays": "Days recorded",
+  "bodyProgressStreak": "Current streak",
+  "bodyProgressCompare": "Before / After",
+  "bodyProgressTimelapse": "Timelapse",
+  "bodyProgressHistory": "Photo history",
+  "bodyProgressMilestones": "Milestones",
+  "bodyProgressMilestonePending": "Not yet",
+  "bodyProgressDeletePhoto": "Delete photo",
+  "bodyProgressDeleteConfirm": "Delete this photo? The image is removed from this device.",
+  "bodyProgressLoading": "Loading Body Progress",
+  "bodyProgressLoadError": "Body Progress could not be loaded.",
+  "bodyProgressMissingImage": "Image unavailable",
+  "bodyProgressCaptureTitle": "Body Progress photo",
+  "bodyProgressGhostOverlay": "Ghost overlay",
+  "bodyProgressGuides": "Alignment guides",
+  "bodyProgressCaptureHintFirst": "Stand so your whole body fits inside the frame.",
+  "bodyProgressCaptureHintGhost": "Line yourself up with the faded photo, then take the shot.",
+  "bodyProgressShutter": "Capture",
+  "bodyProgressSwitchCamera": "Switch camera",
+  "bodyProgressSaved": "Today''s photo is saved.",
+  "bodyProgressCameraBusy": "Finish the workout camera before taking a Body Progress photo.",
+  "bodyProgressCameraError": "The camera could not be started.",
+  "bodyProgressPermissionTitle": "Camera access is needed",
+  "bodyProgressPermissionBody": "MotionFit needs the camera for this photo. Photos stay on this device.",
+  "bodyProgressCompareNeedsTwo": "Take at least two photos to compare.",
+  "bodyProgressCompareBefore": "Before",
+  "bodyProgressCompareAfter": "After",
+  "bodyProgressCompareHint": "Drag the handle to wipe between the two photos.",
+  "bodyProgressTimelapseNeedsTwo": "Take at least two photos to build a timelapse.",
+  "formProgressTitle": "Form Progress",
+  "formProgressSubtitle": "See how your workout form has improved, one exercise at a time.",
+  "formProgressEmptyTitle": "No form data yet",
+  "formProgressEmptyBody": "Finish a workout and its form analysis lands here automatically.",
+  "formProgressFirstScore": "First score",
+  "formProgressCurrentScore": "Current score",
+  "formProgressChange": "Change",
+  "formProgressAccuracy": "Detection accuracy",
+  "formProgressScoreLabel": "Form score",
+  "formProgressTrend": "Score trend",
+  "formProgressCommonIssues": "Most frequent form issues",
+  "formProgressRecentImprovement": "Recently improved",
+  "formProgressNoImprovementYet": "Keep training to unlock an improvement summary.",
+  "formProgressSessions": "Workout history",
+  "formProgressSessionCount": "{count} sessions",
+  "@formProgressSessionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressCompare": "First vs latest",
+  "formProgressTimelapse": "Form timelapse",
+  "formProgressImprovedBy": "Up {points} points",
+  "@formProgressImprovedBy": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressDeclinedBy": "Down {points} points",
+  "@formProgressDeclinedBy": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressUnchanged": "No change yet",
+  "formProgressNoPose": "No reference pose yet",
+  "formProgressPoseHint": "Your next workout saves a reference pose here.",
+  "formProgressLoading": "Loading Form Progress",
+  "formProgressLoadError": "Form Progress could not be loaded.",
+  "formProgressIssueOccurrences": "{count} times",
+  "@formProgressIssueOccurrences": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressNeedsTwoSessions": "Finish two workouts of this exercise to compare form.",
+  "formProgressSelectExercise": "Choose an exercise",
+  "progressTimelapsePlay": "Play",
+  "progressTimelapsePause": "Pause",
+  "progressTimelapseReplay": "Replay",
+  "progressTimelapseSpeed": "Speed",
+  "progressTimelapseFrameOf": "{index} of {total}",
+  "@progressTimelapseFrameOf": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "progressSectionTitle": "Progress",
+  "progressSectionSubtitle": "Track your body and your form over time.",
+  "bodyProgressAutoHint": "Recorded automatically once a day when you start a workout.",
+  "formProgressAutoHint": "Your first clean rep of the day is recorded automatically.",
+  "bodyProgressRecordedToday": "Recorded today",
+  "bodyProgressPendingToday": "Records on your next workout",
+  "bodyProgressAutoEmptyTitle": "Your first record is one workout away",
+  "bodyProgressAutoEmptyBody": "Start a workout as usual. The photo is taken for you once you are in frame.",
+  "formProgressAutoEmptyBody": "Start a workout as usual. Your first clean rep is recorded for you.",
+  "bodyProgressManualCapture": "Take one now",
+  "bodyProgressReplaceToday": "Replace today''s photo",
+  "bodyProgressAutoSaved": "Today''s Body Progress is recorded.",
+  "formProgressAutoSaved": "Today''s {exercise} form is recorded.",
+  "@formProgressAutoSaved": {
+    "placeholders": {
+      "exercise": {
+        "type": "String"
+      }
+    }
+  },
+  "progressAutoBadge": "Auto"
 }

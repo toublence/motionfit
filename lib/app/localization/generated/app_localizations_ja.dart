@@ -1721,4 +1721,289 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get workoutVideoDeleted => 'ワークアウト動画を削除しました';
+
+  @override
+  String get bodyProgressTitle => 'ボディプログレス';
+
+  @override
+  String get bodyProgressSubtitle => '毎回同じ構図で体を撮影し、変化が積み重なる様子を確認します。';
+
+  @override
+  String get bodyProgressEmptyTitle => '最初の写真を撮る';
+
+  @override
+  String get bodyProgressEmptyBody => '今日の 1 枚が、これから撮る写真すべての基準になります。';
+
+  @override
+  String get bodyProgressStartCapture => '今日の写真を撮る';
+
+  @override
+  String get bodyProgressRetake => '今日の写真を撮り直す';
+
+  @override
+  String get bodyProgressViewFront => '正面';
+
+  @override
+  String get bodyProgressViewSide => '側面';
+
+  @override
+  String get bodyProgressViewBack => '背面';
+
+  @override
+  String bodyProgressDayNumber(int day) {
+    return '$day 日目';
+  }
+
+  @override
+  String get bodyProgressFirstPhoto => '最初';
+
+  @override
+  String get bodyProgressLatestPhoto => '最新';
+
+  @override
+  String bodyProgressPhotoCount(int count) {
+    return '$count 枚';
+  }
+
+  @override
+  String bodyProgressSpanDays(int days) {
+    return '$days 日分の記録';
+  }
+
+  @override
+  String get bodyProgressRecordedDays => '記録した日';
+
+  @override
+  String get bodyProgressStreak => '現在の連続';
+
+  @override
+  String get bodyProgressCompare => 'ビフォー / アフター';
+
+  @override
+  String get bodyProgressTimelapse => 'タイムラプス';
+
+  @override
+  String get bodyProgressHistory => '日付ごとの記録';
+
+  @override
+  String get bodyProgressMilestones => '期間ごとの変化';
+
+  @override
+  String get bodyProgressMilestonePending => '未記録';
+
+  @override
+  String get bodyProgressDeletePhoto => '写真を削除';
+
+  @override
+  String get bodyProgressDeleteConfirm => 'この写真を削除しますか。画像はこの端末から削除されます。';
+
+  @override
+  String get bodyProgressLoading => 'ボディプログレスを読み込み中';
+
+  @override
+  String get bodyProgressLoadError => 'ボディプログレスを読み込めませんでした。';
+
+  @override
+  String get bodyProgressMissingImage => '画像がありません';
+
+  @override
+  String get bodyProgressCaptureTitle => 'ボディプログレス撮影';
+
+  @override
+  String get bodyProgressGhostOverlay => 'ゴーストオーバーレイ';
+
+  @override
+  String get bodyProgressGuides => '位置ガイド';
+
+  @override
+  String get bodyProgressCaptureHintFirst => '体全体がフレームに収まる位置に立ちます。';
+
+  @override
+  String get bodyProgressCaptureHintGhost => '薄く表示された前回の写真に体を合わせて撮影します。';
+
+  @override
+  String get bodyProgressShutter => '撮影';
+
+  @override
+  String get bodyProgressSwitchCamera => 'カメラ切り替え';
+
+  @override
+  String get bodyProgressSaved => '今日の写真を保存しました。';
+
+  @override
+  String get bodyProgressCameraBusy => 'ワークアウトのカメラを終了してから撮影してください。';
+
+  @override
+  String get bodyProgressCameraError => 'カメラを起動できませんでした。';
+
+  @override
+  String get bodyProgressPermissionTitle => 'カメラの許可が必要です';
+
+  @override
+  String get bodyProgressPermissionBody => '撮影にカメラの許可が必要です。写真はこの端末にのみ保存されます。';
+
+  @override
+  String get bodyProgressCompareNeedsTwo => '比較には写真が 2 枚以上必要です。';
+
+  @override
+  String get bodyProgressCompareBefore => 'ビフォー';
+
+  @override
+  String get bodyProgressCompareAfter => 'アフター';
+
+  @override
+  String get bodyProgressCompareHint => 'ハンドルを左右に動かして 2 枚を比較します。';
+
+  @override
+  String get bodyProgressTimelapseNeedsTwo => 'タイムラプスには写真が 2 枚以上必要です。';
+
+  @override
+  String get formProgressTitle => 'フォームプログレス';
+
+  @override
+  String get formProgressSubtitle => '種目ごとにフォームがどれだけ良くなったかを確認します。';
+
+  @override
+  String get formProgressEmptyTitle => 'フォームのデータがまだありません';
+
+  @override
+  String get formProgressEmptyBody => 'ワークアウトを終えると、フォーム分析の結果がここに自動で加わります。';
+
+  @override
+  String get formProgressFirstScore => '最初のスコア';
+
+  @override
+  String get formProgressCurrentScore => '現在のスコア';
+
+  @override
+  String get formProgressChange => '変化';
+
+  @override
+  String get formProgressAccuracy => '検出精度';
+
+  @override
+  String get formProgressScoreLabel => 'フォームスコア';
+
+  @override
+  String get formProgressTrend => 'スコアの推移';
+
+  @override
+  String get formProgressCommonIssues => 'よく出たフォームの課題';
+
+  @override
+  String get formProgressRecentImprovement => '最近よくなった点';
+
+  @override
+  String get formProgressNoImprovementYet => '記録が増えると改善のまとめを表示します。';
+
+  @override
+  String get formProgressSessions => '日付ごとの記録';
+
+  @override
+  String formProgressSessionCount(int count) {
+    return '$count 回';
+  }
+
+  @override
+  String get formProgressCompare => '最初と最新';
+
+  @override
+  String get formProgressTimelapse => 'フォームのタイムラプス';
+
+  @override
+  String formProgressImprovedBy(int points) {
+    return '$points ポイント上昇';
+  }
+
+  @override
+  String formProgressDeclinedBy(int points) {
+    return '$points ポイント低下';
+  }
+
+  @override
+  String get formProgressUnchanged => 'まだ変化なし';
+
+  @override
+  String get formProgressNoPose => '代表フォームはまだありません';
+
+  @override
+  String get formProgressPoseHint => '次のワークアウトから代表フォームがここに保存されます。';
+
+  @override
+  String get formProgressLoading => 'フォームプログレスを読み込み中';
+
+  @override
+  String get formProgressLoadError => 'フォームプログレスを読み込めませんでした。';
+
+  @override
+  String formProgressIssueOccurrences(int count) {
+    return '$count 回';
+  }
+
+  @override
+  String get formProgressNeedsTwoSessions => '同じ種目を 2 回以上こなすとフォームを比較できます。';
+
+  @override
+  String get formProgressSelectExercise => '種目を選ぶ';
+
+  @override
+  String get progressTimelapsePlay => '再生';
+
+  @override
+  String get progressTimelapsePause => '一時停止';
+
+  @override
+  String get progressTimelapseReplay => 'もう一度再生';
+
+  @override
+  String get progressTimelapseSpeed => '速度';
+
+  @override
+  String progressTimelapseFrameOf(int index, int total) {
+    return '$total 枚中 $index 枚目';
+  }
+
+  @override
+  String get progressSectionTitle => '変化のトラッキング';
+
+  @override
+  String get progressSectionSubtitle => '体の変化とフォームの変化をあわせて追跡します。';
+
+  @override
+  String get bodyProgressAutoHint => 'ワークアウト開始時に 1 日 1 回、自動で記録されます。';
+
+  @override
+  String get formProgressAutoHint => 'その日の最初の正常な反復が自動で記録されます。';
+
+  @override
+  String get bodyProgressRecordedToday => '今日は記録済み';
+
+  @override
+  String get bodyProgressPendingToday => '次のワークアウトで記録されます';
+
+  @override
+  String get bodyProgressAutoEmptyTitle => '1 回運動すれば最初の記録が残ります';
+
+  @override
+  String get bodyProgressAutoEmptyBody => 'いつも通り運動を始めれば、姿勢が整った時点で自動的に撮影されます。';
+
+  @override
+  String get formProgressAutoEmptyBody => 'いつも通り運動を始めれば、最初の正常な反復が自動で記録されます。';
+
+  @override
+  String get bodyProgressManualCapture => '今すぐ自分で撮影';
+
+  @override
+  String get bodyProgressReplaceToday => '今日の記録を撮り直す';
+
+  @override
+  String get bodyProgressAutoSaved => '今日のボディプログレスを記録しました。';
+
+  @override
+  String formProgressAutoSaved(String exercise) {
+    return '今日の$exerciseのフォームを記録しました。';
+  }
+
+  @override
+  String get progressAutoBadge => '自動';
 }

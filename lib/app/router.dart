@@ -26,6 +26,14 @@ import 'package:motionfit_squat/features/pushup/records/presentation/workout_ses
     as pushup_records;
 import 'package:motionfit_squat/features/pushup/workout_routes.dart'
     as pushup_workout;
+import 'package:motionfit_squat/features/body_progress/presentation/screens/body_progress_capture_screen.dart';
+import 'package:motionfit_squat/features/body_progress/presentation/screens/body_progress_compare_screen.dart';
+import 'package:motionfit_squat/features/body_progress/presentation/screens/body_progress_screen.dart';
+import 'package:motionfit_squat/features/body_progress/presentation/screens/body_progress_timelapse_screen.dart';
+import 'package:motionfit_squat/features/exercise/domain/exercise_type.dart';
+import 'package:motionfit_squat/features/form_progress/presentation/screens/form_progress_detail_screen.dart';
+import 'package:motionfit_squat/features/form_progress/presentation/screens/form_progress_screen.dart';
+import 'package:motionfit_squat/features/form_progress/presentation/screens/form_progress_timelapse_screen.dart';
 import 'package:motionfit_squat/features/records/presentation/records_screen.dart';
 import 'package:motionfit_squat/features/records/presentation/workout_session_detail_screen.dart';
 import 'package:motionfit_squat/features/onboarding/presentation/onboarding_screen.dart';
@@ -130,6 +138,53 @@ GoRouter createAppRouter({required bool onboardingCompleted}) => GoRouter(
                   builder: (context, state) => WorkoutSessionDetailScreen(
                     sessionId: state.pathParameters['sessionId']!,
                   ),
+                ),
+                GoRoute(
+                  path: 'body-progress',
+                  builder: (context, state) => const BodyProgressScreen(),
+                  routes: [
+                    GoRoute(
+                      parentNavigatorKey: rootNavigatorKey,
+                      path: 'capture',
+                      builder: (context, state) =>
+                          const BodyProgressCaptureScreen(),
+                    ),
+                    GoRoute(
+                      path: 'compare',
+                      builder: (context, state) =>
+                          const BodyProgressCompareScreen(),
+                    ),
+                    GoRoute(
+                      path: 'timelapse',
+                      builder: (context, state) =>
+                          const BodyProgressTimelapseScreen(),
+                    ),
+                  ],
+                ),
+                GoRoute(
+                  path: 'form-progress',
+                  builder: (context, state) => const FormProgressScreen(),
+                  routes: [
+                    GoRoute(
+                      path: ':exercise',
+                      builder: (context, state) => FormProgressDetailScreen(
+                        exerciseType: _exerciseType(
+                          state.pathParameters['exercise'],
+                        ),
+                      ),
+                      routes: [
+                        GoRoute(
+                          path: 'timelapse',
+                          builder: (context, state) =>
+                              FormProgressTimelapseScreen(
+                                exerciseType: _exerciseType(
+                                  state.pathParameters['exercise'],
+                                ),
+                              ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -299,6 +354,14 @@ GoRouter createAppRouter({required bool onboardingCompleted}) => GoRouter(
     ),
   ],
 );
+
+/// Falls back to squat so a malformed deep link still opens a valid screen.
+ExerciseType _exerciseType(String? name) {
+  for (final value in ExerciseType.values) {
+    if (value.name == name) return value;
+  }
+  return ExerciseType.squat;
+}
 
 WorkoutPreparation _preparation(Object? extra) => switch (extra) {
   final WorkoutPreparation value => value,

@@ -22,7 +22,16 @@
   "challengeSevenDaySettingsDescription": "1일차 목표를 정하면 이후 목표가 매일 5회씩 늘어납니다.",
   "challengeFirstDayGoal": "1일차 목표 횟수",
   "challengeSevenDayPreview": "1일차 {first}회 → 7일차 {last}회",
-  "@challengeSevenDayPreview": {"placeholders": {"first": {"type": "int"}, "last": {"type": "int"}}},
+  "@challengeSevenDayPreview": {
+    "placeholders": {
+      "first": {
+        "type": "int"
+      },
+      "last": {
+        "type": "int"
+      }
+    }
+  },
   "challengeWeeklyTitle": "주 3회 챌린지",
   "challengeWeeklyDescription": "매일 운동하기 부담스러운 사용자를 위한 습관 챌린지",
   "challengeWeeklySummary": "4주 동안 선택한 요일에 일주일 3회 운동해요.",
@@ -111,28 +120,85 @@
   "commonYesterday": "어제",
   "commonLoading": "불러오는 중…",
   "unitSets": "{count, plural, other {{count}세트}}",
-  "@unitSets": {"placeholders": {"count": {"type": "int"}}},
+  "@unitSets": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitReps": "{count, plural, other {{count}회}}",
-  "@unitReps": {"placeholders": {"count": {"type": "int"}}},
+  "@unitReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitSeconds": "{count, plural, other {{count}초}}",
-  "@unitSeconds": {"placeholders": {"count": {"type": "int"}}},
+  "@unitSeconds": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitMinutes": "{count, plural, other {{count}분}}",
-  "@unitMinutes": {"placeholders": {"count": {"type": "int"}}},
+  "@unitMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "durationHoursMinutes": "{hours}시간 {minutes}분",
-  "@durationHoursMinutes": {"placeholders": {"hours": {"type": "int"}, "minutes": {"type": "int"}}},
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "durationMinutesSeconds": "{minutes}분 {seconds}초",
-  "@durationMinutesSeconds": {"placeholders": {"minutes": {"type": "int"}, "seconds": {"type": "int"}}},
+  "@durationMinutesSeconds": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "homeGreeting": "움직일 준비가 되셨나요?",
   "homeTodayTitle": "오늘 기록",
   "homeTodayNoWorkout": "오늘은 아직 운동하지 않았어요. 짧은 한 세트부터 시작해 보세요.",
   "homeTodaySummary": "스쿼트 {reps}회 · {sets}세트",
   "homeViewResult": "결과 보기",
-  "@homeTodaySummary": {"placeholders": {"reps": {"type": "int"}, "sets": {"type": "int"}}},
+  "@homeTodaySummary": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "sets": {
+        "type": "int"
+      }
+    }
+  },
   "homeTodaySets": "오늘 한 세트",
   "homeTodayReps": "오늘 한 횟수",
   "streakLabel": "연속 운동",
   "streakDays": "{days}일",
-  "@streakDays": {"placeholders": {"days": {"type": "int"}}},
+  "@streakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "homeWorkoutSetup": "다음 운동",
   "homeSetsLabel": "세트 수",
   "homeRepsPerSetLabel": "세트당 횟수",
@@ -142,7 +208,16 @@
   "homeLastSettingsRestored": "지난 운동 설정을 불러왔어요.",
   "validationNumberRequired": "숫자를 입력해 주세요.",
   "validationRange": "{min}에서 {max} 사이의 값을 선택해 주세요.",
-  "@validationRange": {"placeholders": {"min": {"type": "num"}, "max": {"type": "num"}}},
+  "@validationRange": {
+    "placeholders": {
+      "min": {
+        "type": "num"
+      },
+      "max": {
+        "type": "num"
+      }
+    }
+  },
   "guideTitle": "카메라를 준비해 주세요",
   "guideSubtitle": "어깨부터 무릎까지 보이면 발목이 없어도 스쿼트를 측정해요.",
   "guideWholeBody": "가능하면 어깨, 골반, 무릎이 화면에 보이게 해주세요.",
@@ -164,7 +239,13 @@
   "permissionNotificationDenied": "알림이 꺼져 있어요. 리마인더를 받으려면 시스템 설정에서 알림을 켜주세요.",
   "countdownGetReady": "준비하세요",
   "countdownBeginsIn": "{seconds}초 후 시작",
-  "@countdownBeginsIn": {"placeholders": {"seconds": {"type": "int"}}},
+  "@countdownBeginsIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "calibrationTitle": "서 있는 자세를 확인하고 있어요",
   "calibrationBody": "바르게 서서 어깨부터 무릎까지 보여주세요.",
   "calibrationStayStill": "잠시만 그대로 있어주세요",
@@ -172,11 +253,35 @@
   "calibrationFailed": "서 있는 자세를 선명하게 확인하지 못했어요.",
   "calibrationRetry": "다시 보정",
   "workoutSetProgress": "{current} / {total}세트",
-  "@workoutSetProgress": {"placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}},
+  "@workoutSetProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "workoutRepProgress": "{current} / {target}회",
-  "@workoutRepProgress": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@workoutRepProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "workoutTotalReps": "누적 {count}회",
-  "@workoutTotalReps": {"placeholders": {"count": {"type": "int"}}},
+  "@workoutTotalReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "workoutElapsed": "운동 경과 시간",
   "workoutPause": "일시정지",
   "workoutResume": "운동 계속하기",
@@ -199,7 +304,16 @@
   "workoutSkeletonToggle": "자세 가이드 표시",
   "restTitle": "휴식",
   "restNextSet": "다음: {set} / {total}세트",
-  "@restNextSet": {"placeholders": {"set": {"type": "int"}, "total": {"type": "int"}}},
+  "@restNextSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "restCompletedSets": "완료한 세트",
   "restTotalReps": "현재까지 스쿼트",
   "restSkip": "휴식 건너뛰기",
@@ -219,7 +333,19 @@
   "completeFormSummary": "자세 요약",
   "todayCoaching": "오늘의 코칭",
   "coachingIssueFrequency": "{total}회 중 {count}회에서\n{issue}",
-  "@coachingIssueFrequency": {"placeholders": {"total": {"type": "int"}, "count": {"type": "int"}, "issue": {"type": "String"}}},
+  "@coachingIssueFrequency": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      },
+      "issue": {
+        "type": "String"
+      }
+    }
+  },
   "completeTopImprovement": "다음 운동의 집중 포인트",
   "completeStrengths": "잘한 점",
   "completeSaved": "운동 기록을 이 기기에 저장했어요",
@@ -228,28 +354,73 @@
   "completeFinish": "마치기",
   "postWorkoutReminderTitle": "다음 운동도 잊지 않도록 알려드릴까요?",
   "postWorkoutReminderBody": "주 3회 목표를 이어갈 수 있도록 {time}에 운동을 알려드려요.",
-  "@postWorkoutReminderBody": {"placeholders": {"time": {"type": "String"}}},
+  "@postWorkoutReminderBody": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "postWorkoutReminderEnable": "알림 받기",
   "postWorkoutReminderLater": "나중에",
   "postWorkoutReminderEnabled": "리마인더를 설정했어요.",
   "recordsTitle": "성장",
   "recordsWeeklySummary": "이번 주",
   "recordsWorkoutCount": "{count}회 운동",
-  "@recordsWorkoutCount": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsWorkoutCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsAverageForm": "평균 자세 {score}",
-  "@recordsAverageForm": {"placeholders": {"score": {"type": "int"}}},
+  "@recordsAverageForm": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "recordsWorkoutTime": "시간 {time}",
-  "@recordsWorkoutTime": {"placeholders": {"time": {"type": "String"}}},
+  "@recordsWorkoutTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "recordsFirstWeek": "이번 주 첫 기록이에요",
   "recordsMoreThanLastWeek": "지난주보다 {count}회 더 했어요",
   "recordsLessThanLastWeek": "지난주보다 {count}회 적게 했어요",
-  "@recordsMoreThanLastWeek": {"placeholders": {"count": {"type": "int"}}},
-  "@recordsLessThanLastWeek": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsMoreThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recordsLessThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsSameAsLastWeek": "지난주와 같은 운동량이에요",
   "recordsTrendEmpty": "운동을 더 하면 자세 변화를 확인할 수 있어요.",
   "recordsFirstFormScore": "첫 자세 기록",
   "recordsRecentAverage": "최근 {count}회 평균 {score}",
-  "@recordsRecentAverage": {"placeholders": {"count": {"type": "int"}, "score": {"type": "int"}}},
+  "@recordsRecentAverage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "recordsStrength": "강점",
   "recordsFocus": "집중",
   "recordsTodayPoint": "오늘의 포인트",
@@ -279,9 +450,21 @@
   "recordsCalendarNoWorkoutSelected": "운동한 날짜를 선택하면 세션을 볼 수 있어요.",
   "recordsDayTotal": "하루 합계",
   "recordsSessionsCount": "{count, plural, other {{count}개 세션}}",
-  "@recordsSessionsCount": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsSessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsSessionTitle": "세션 {number}",
-  "@recordsSessionTitle": {"placeholders": {"number": {"type": "int"}}},
+  "@recordsSessionTitle": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "recordsListNewest": "최신순",
   "recordsOpenDetail": "상세 보기",
   "recordsEmptyTitle": "첫 운동을 시작해볼까요?",
@@ -306,9 +489,21 @@
   "statsFrequentImprovements": "자주 나타난 집중 포인트",
   "statsNoData": "이 기간에는 운동 기록이 없어요.",
   "statsTrendUp": "{percent}% 증가",
-  "@statsTrendUp": {"placeholders": {"percent": {"type": "num"}}},
+  "@statsTrendUp": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
   "statsTrendDown": "{percent}% 감소",
-  "@statsTrendDown": {"placeholders": {"percent": {"type": "num"}}},
+  "@statsTrendDown": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
   "statsTrendFlat": "변화 없음",
   "detailTitle": "운동 상세",
   "detailStartTime": "시작 시간",
@@ -326,9 +521,27 @@
   "detailInterrupted": "중간에 종료됨",
   "detailCompleted": "완료",
   "detailSetRow": "{set}세트: {reps}회",
-  "@detailSetRow": {"placeholders": {"set": {"type": "int"}, "reps": {"type": "int"}}},
+  "@detailSetRow": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
   "detailSessionOn": "{date} {time}",
-  "@detailSessionOn": {"placeholders": {"date": {"type": "String"}, "time": {"type": "String"}}},
+  "@detailSessionOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "settingsTitle": "설정",
   "settingsRateApp": "앱 평가하기",
   "settingsRateAppSubtitle": "MotionFit을 평가해 주세요",
@@ -380,10 +593,22 @@
   "reminderTime": "알림 시간",
   "reminderCopyTime": "이 시간 복사",
   "reminderCopyFromDay": "{day} 시간 복사",
-  "@reminderCopyFromDay": {"placeholders": {"day": {"type": "String"}}},
+  "@reminderCopyFromDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
   "reminderApplyAll": "모든 요일에 적용",
   "reminderNext": "다음 알림: {dateTime}",
-  "@reminderNext": {"placeholders": {"dateTime": {"type": "String"}}},
+  "@reminderNext": {
+    "placeholders": {
+      "dateTime": {
+        "type": "String"
+      }
+    }
+  },
   "reminderNoneScheduled": "예정된 리마인더가 없어요",
   "reminderPermissionNeeded": "리마인더를 켜려면 알림을 허용해 주세요.",
   "reminderSaved": "리마인더 일정을 저장했어요",
@@ -421,7 +646,13 @@
   "privacyDeleteFailure": "운동 데이터를 삭제하지 못했어요.",
   "appInfoTitle": "앱 정보",
   "appInfoVersion": "버전 {version}",
-  "@appInfoVersion": {"placeholders": {"version": {"type": "String"}}},
+  "@appInfoVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
   "appInfoLicenses": "오픈 소스 라이선스",
   "appInfoPrivacyPolicy": "개인정보 처리방침",
   "appInfoDescription": "MotionFit은 기기 안에서 스쿼트 횟수를 세고 자세 개선을 도와줘요.",
@@ -445,7 +676,13 @@
   "formScore": "자세 점수",
   "formShort": "자세",
   "formScoreValue": "{score}점",
-  "@formScoreValue": {"placeholders": {"score": {"type": "int"}}},
+  "@formScoreValue": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "formIssueDepth": "스쿼트 깊이",
   "formIssueTorsoLean": "상체 안정성",
   "formIssueHeelLift": "발뒤꿈치 유지",
@@ -467,13 +704,40 @@
   "coachReady1": "좋아요. 준비됐습니다. 시작할게요.",
   "coachReady2": "자세가 잘 보여요. 첫 스쿼트를 준비하세요.",
   "coachStartSet": "{set}세트, 시작합니다.",
-  "@coachStartSet": {"placeholders": {"set": {"type": "int"}}},
+  "@coachStartSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
   "coachSevenDayChallengeStart": "7일 챌린지 {day}일차를 시작합니다.",
-  "@coachSevenDayChallengeStart": {"placeholders": {"day": {"type": "int"}}},
+  "@coachSevenDayChallengeStart": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "coachCumulativeChallengeStart": "누적 횟수 챌린지를 시작합니다. 현재 {completed}회, {remaining}회 남았습니다.",
-  "@coachCumulativeChallengeStart": {"placeholders": {"completed": {"type": "int"}, "remaining": {"type": "int"}}},
+  "@coachCumulativeChallengeStart": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "coachRepCount": "{count}",
-  "@coachRepCount": {"placeholders": {"count": {"type": "int"}}},
+  "@coachRepCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "coachDepth1": "조금 더 깊게 앉아요!",
   "coachDepth2": "다음엔 깊이를 조금 더!",
   "coachTorso1": "가슴 들고, 허리 단단히!",
@@ -502,28 +766,79 @@
   "coachLastTwo": "마지막 두 개! 힘내요!",
   "coachLastOne": "마지막 하나! 끝까지!",
   "coachSetComplete": "좋습니다. {set}세트가 끝났어요.",
-  "@coachSetComplete": {"placeholders": {"set": {"type": "int"}}},
+  "@coachSetComplete": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
   "coachRestStart": "{seconds}초 쉬고, 다음 세트 준비하세요.",
-  "@coachRestStart": {"placeholders": {"seconds": {"type": "int"}}},
+  "@coachRestStart": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "coachRestTenSeconds": "휴식이 10초 남았습니다.",
   "coachRestComplete": "휴식이 끝났어요. 다음 세트를 준비하세요.",
   "coachWorkoutComplete": "운동 완료. 스쿼트 {reps}회를 마쳤어요.",
-  "@coachWorkoutComplete": {"placeholders": {"reps": {"type": "int"}}},
+  "@coachWorkoutComplete": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
   "notificationReminderTitle": "오늘의 스쿼트 시간이에요",
   "notificationReminderBody": "짧게라도 시작해 보세요. 준비되면 MotionFit을 열어주세요.",
   "notificationReminderBodyVariant2": "집중해서 몇 번만 움직여도 오늘의 운동이 달라져요.",
   "notificationStreakReminderBody": "오늘 짧게 운동하고 {days}일 연속 기록을 이어가세요.",
-  "@notificationStreakReminderBody": {"placeholders": {"days": {"type": "int"}}},
+  "@notificationStreakReminderBody": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "semanticsIncrease": "늘리기",
   "semanticsDecrease": "줄이기",
   "semanticsSelectedTab": "선택된 탭: {tab}",
-  "@semanticsSelectedTab": {"placeholders": {"tab": {"type": "String"}}},
+  "@semanticsSelectedTab": {
+    "placeholders": {
+      "tab": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCalendarWorkoutDate": "{date}, 운동 기록 있음",
-  "@semanticsCalendarWorkoutDate": {"placeholders": {"date": {"type": "String"}}},
+  "@semanticsCalendarWorkoutDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCalendarEmptyDate": "{date}, 운동 기록 없음",
-  "@semanticsCalendarEmptyDate": {"placeholders": {"date": {"type": "String"}}},
+  "@semanticsCalendarEmptyDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCurrentRep": "현재 {target}회 중 {current}회",
-  "@semanticsCurrentRep": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@semanticsCurrentRep": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "repVideoReviewTitle": "Rep 영상 리뷰",
   "repVideoReviewDescription": "각 Rep을 다시 볼 수 있도록 운동 영상을 이 기기에 저장합니다.",
   "repVideoLocalOnly": "기기에만 저장 · 업로드하지 않음",
@@ -535,9 +850,21 @@
   "repTimelineImprove": "개선 필요",
   "repTimelineNoImprovement": "개선할 Rep이 없습니다.",
   "repSetNumber": "세트 {number}",
-  "@repSetNumber": {"placeholders": {"number": {"type": "int"}}},
+  "@repSetNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "repNumber": "Rep {number}",
-  "@repNumber": {"placeholders": {"number": {"type": "int"}}},
+  "@repNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "repResultGood": "좋은 자세예요",
   "repResultNeedsAttention": "확인 필요",
   "repResultImproved": "직전 Rep보다 좋아졌어요",
@@ -557,9 +884,170 @@
   "repFeedbackTorso": "이 Rep에서 상체가 너무 앞으로 기울었습니다. 가슴을 조금 더 세워 주세요.",
   "repFeedbackKnees": "이 Rep에서 무릎이 안쪽으로 움직였습니다. 무릎과 발끝 방향을 맞춰 주세요.",
   "repFeedbackGeneric": "이 Rep은 {area} 부분을 확인해 주세요.",
-  "@repFeedbackGeneric": {"placeholders": {"area": {"type": "String"}}},
+  "@repFeedbackGeneric": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      }
+    }
+  },
   "deleteWorkoutVideo": "운동 영상 삭제",
   "deleteWorkoutVideoTitle": "이 운동 영상을 삭제할까요?",
   "deleteWorkoutVideoBody": "기기에 저장된 영상만 삭제됩니다. Rep 분석과 운동 기록은 유지됩니다.",
-  "workoutVideoDeleted": "운동 영상을 삭제했습니다"
+  "workoutVideoDeleted": "운동 영상을 삭제했습니다",
+  "bodyProgressTitle": "바디 프로그레스",
+  "bodyProgressSubtitle": "매번 같은 구도로 몸을 촬영하고 변화가 쌓이는 과정을 확인한다.",
+  "bodyProgressEmptyTitle": "첫 사진을 남긴다",
+  "bodyProgressEmptyBody": "오늘 찍은 한 장이 이후 모든 사진의 기준이 된다.",
+  "bodyProgressStartCapture": "오늘 사진 촬영",
+  "bodyProgressRetake": "오늘 사진 다시 촬영",
+  "bodyProgressViewFront": "정면",
+  "bodyProgressViewSide": "측면",
+  "bodyProgressViewBack": "후면",
+  "bodyProgressDayNumber": "{day}일차",
+  "@bodyProgressDayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressFirstPhoto": "처음",
+  "bodyProgressLatestPhoto": "최신",
+  "bodyProgressPhotoCount": "{count}장",
+  "@bodyProgressPhotoCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressSpanDays": "{days}일 기록",
+  "@bodyProgressSpanDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressRecordedDays": "기록한 날",
+  "bodyProgressStreak": "현재 연속",
+  "bodyProgressCompare": "비포 / 애프터",
+  "bodyProgressTimelapse": "타임랩스",
+  "bodyProgressHistory": "날짜별 기록",
+  "bodyProgressMilestones": "기간별 변화",
+  "bodyProgressMilestonePending": "아직 없음",
+  "bodyProgressDeletePhoto": "사진 삭제",
+  "bodyProgressDeleteConfirm": "이 사진을 삭제할까? 이미지는 이 기기에서 제거된다.",
+  "bodyProgressLoading": "바디 프로그레스 불러오는 중",
+  "bodyProgressLoadError": "바디 프로그레스를 불러오지 못했다.",
+  "bodyProgressMissingImage": "이미지 없음",
+  "bodyProgressCaptureTitle": "바디 프로그레스 촬영",
+  "bodyProgressGhostOverlay": "고스트 오버레이",
+  "bodyProgressGuides": "정렬 가이드",
+  "bodyProgressCaptureHintFirst": "몸 전체가 프레임 안에 들어오도록 선다.",
+  "bodyProgressCaptureHintGhost": "반투명하게 보이는 이전 사진에 몸을 맞추고 촬영한다.",
+  "bodyProgressShutter": "촬영",
+  "bodyProgressSwitchCamera": "카메라 전환",
+  "bodyProgressSaved": "오늘 사진을 저장했다.",
+  "bodyProgressCameraBusy": "운동 카메라를 종료한 뒤 바디 프로그레스를 촬영한다.",
+  "bodyProgressCameraError": "카메라를 시작하지 못했다.",
+  "bodyProgressPermissionTitle": "카메라 권한이 필요하다",
+  "bodyProgressPermissionBody": "촬영에 카메라 권한이 필요하다. 사진은 이 기기에만 저장된다.",
+  "bodyProgressCompareNeedsTwo": "비교하려면 사진이 두 장 이상 필요하다.",
+  "bodyProgressCompareBefore": "비포",
+  "bodyProgressCompareAfter": "애프터",
+  "bodyProgressCompareHint": "핸들을 좌우로 끌어 두 사진을 비교한다.",
+  "bodyProgressTimelapseNeedsTwo": "타임랩스를 만들려면 사진이 두 장 이상 필요하다.",
+  "formProgressTitle": "폼 프로그레스",
+  "formProgressSubtitle": "운동별로 자세가 얼마나 좋아졌는지 확인한다.",
+  "formProgressEmptyTitle": "아직 자세 데이터가 없다",
+  "formProgressEmptyBody": "운동을 마치면 자세 분석 결과가 자동으로 여기에 쌓인다.",
+  "formProgressFirstScore": "최초 점수",
+  "formProgressCurrentScore": "현재 점수",
+  "formProgressChange": "변화",
+  "formProgressAccuracy": "인식 정확도",
+  "formProgressScoreLabel": "자세 점수",
+  "formProgressTrend": "점수 변화",
+  "formProgressCommonIssues": "자주 발생한 자세 오류",
+  "formProgressRecentImprovement": "최근 개선된 부분",
+  "formProgressNoImprovementYet": "조금 더 기록이 쌓이면 개선 요약을 보여준다.",
+  "formProgressSessions": "날짜별 운동 기록",
+  "formProgressSessionCount": "{count}회",
+  "@formProgressSessionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressCompare": "최초 vs 최신",
+  "formProgressTimelapse": "자세 타임랩스",
+  "formProgressImprovedBy": "{points}점 상승",
+  "@formProgressImprovedBy": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressDeclinedBy": "{points}점 하락",
+  "@formProgressDeclinedBy": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressUnchanged": "아직 변화 없음",
+  "formProgressNoPose": "대표 자세가 아직 없다",
+  "formProgressPoseHint": "다음 운동부터 대표 자세가 여기에 저장된다.",
+  "formProgressLoading": "폼 프로그레스 불러오는 중",
+  "formProgressLoadError": "폼 프로그레스를 불러오지 못했다.",
+  "formProgressIssueOccurrences": "{count}회",
+  "@formProgressIssueOccurrences": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressNeedsTwoSessions": "같은 운동을 두 번 이상 완료하면 자세를 비교할 수 있다.",
+  "formProgressSelectExercise": "운동 종목 선택",
+  "progressTimelapsePlay": "재생",
+  "progressTimelapsePause": "일시정지",
+  "progressTimelapseReplay": "다시 재생",
+  "progressTimelapseSpeed": "속도",
+  "progressTimelapseFrameOf": "{total}장 중 {index}장",
+  "@progressTimelapseFrameOf": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "progressSectionTitle": "변화 추적",
+  "progressSectionSubtitle": "몸의 변화와 자세의 변화를 함께 추적한다.",
+  "bodyProgressAutoHint": "운동을 시작할 때 하루 한 번 자동으로 기록된다.",
+  "formProgressAutoHint": "그날 첫 번째 정상 반복 동작이 자동으로 기록된다.",
+  "bodyProgressRecordedToday": "오늘 기록 완료",
+  "bodyProgressPendingToday": "다음 운동 때 기록된다",
+  "bodyProgressAutoEmptyTitle": "운동 한 번이면 첫 기록이 남는다",
+  "bodyProgressAutoEmptyBody": "평소처럼 운동을 시작하면 자세가 잡히는 순간 알아서 촬영된다.",
+  "formProgressAutoEmptyBody": "평소처럼 운동을 시작하면 첫 정상 반복이 알아서 기록된다.",
+  "bodyProgressManualCapture": "지금 직접 촬영",
+  "bodyProgressReplaceToday": "오늘 기록 다시 촬영",
+  "bodyProgressAutoSaved": "오늘의 바디 프로그레스가 기록되었다.",
+  "formProgressAutoSaved": "오늘의 {exercise} 자세가 기록되었다.",
+  "@formProgressAutoSaved": {
+    "placeholders": {
+      "exercise": {
+        "type": "String"
+      }
+    }
+  },
+  "progressAutoBadge": "자동"
 }

@@ -5,6 +5,11 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:motionfit_squat/features/exercise/domain/exercise_type.dart';
+import 'package:motionfit_squat/features/body_progress/application/body_progress_auto_capture.dart';
+import 'package:motionfit_squat/features/form_progress/application/form_pose_recorder.dart';
+import 'package:motionfit_squat/features/form_progress/application/form_progress_auto_capture.dart';
+import 'package:motionfit_squat/features/form_progress/domain/form_pose_snapshot.dart';
 import 'package:motionfit_squat/core/diagnostics/motionfit_debug_session.dart';
 import 'package:motionfit_squat/features/plank/providers.dart';
 import 'package:motionfit_squat/features/plank/records/application/records_providers.dart';
@@ -58,6 +63,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
   final PoseFeedbackClassifier _poseFeedbackClassifier =
       const PoseFeedbackClassifier();
   final PoseLandmarkSmoother _overlaySmoother = PoseLandmarkSmoother();
+  final FormPoseRecorder _formPoseRecorder = FormPoseRecorder();
   CoachQueue? _coachQueue;
   CoachPolicy _coachPolicy = CoachPolicy();
   MotionFitDebugSession? _debugSession;
@@ -668,6 +674,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
       );
     });
     _repDetector = SquatRepDetector();
+    _formPoseRecorder.reset();
     _poseEngine = ref.read(poseEngineFactoryProvider)();
     _poseSubscription = _poseEngine!.frames.listen(
       _onPoseFrame,
@@ -756,6 +763,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
         frame.landmarks,
         frame.timestampUs,
       );
+      _recordFormPoseFrame(frame);
     } else {
       final lastRenderableAt = _lastRenderablePoseReceivedLocalUs;
       final canHoldLastPose =
@@ -815,6 +823,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
               phase: SquatPhase.ready,
             );
             _logCalibrationCompleted();
+            _captureBodyProgress();
             _activeStopwatch.start();
             _saveJournalSafely(WorkoutSessionStatus.active);
             _enqueueCoach(
@@ -976,6 +985,89 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
     });
   }
 
+  /// Buffers the landmark frame so a completed rep can keep the pose closest
+  /// to its bottom. Coordinates only; no camera pixels are retained.
+  void _recordFormPoseFrame(PoseFrame frame) {
+    final values = <double>[];
+    for (final landmark in frame.landmarks) {
+      values
+        ..add(landmark.x)
+        ..add(landmark.y)
+        ..add(landmark.confidence);
+    }
+    _formPoseRecorder.addFrame(
+      timestampUs: frame.timestampUs,
+      flatXyConfidence: values,
+      sourceWidth: frame.inputWidth,
+      sourceHeight: frame.inputHeight,
+      mirrored: frame.mirrored,
+    );
+  }
+
+  /// Records today's Body Progress photo once calibration settles.
+  ///
+  /// Runs at the same point every day, so the daily photos line up. It is fire
+  /// and forget: a failure is reported inside the capture service and never
+  /// interrupts the workout that is about to start.
+  void _captureBodyProgress() {
+    final engine = _poseEngine;
+    final session = state.session;
+    if (engine is! FrameCapturingPoseEngine || session == null) return;
+    final capturing = engine as FrameCapturingPoseEngine;
+    unawaited(
+      ref.read(bodyProgressAutoCaptureProvider).captureIfNeeded(
+        sessionId: session.id,
+        captureFrame: () async {
+          final frame = await capturing.captureWorkoutFrame();
+          return (
+            directory: frame.directory,
+            fileName: frame.fileName,
+            width: frame.width,
+            height: frame.height,
+          );
+        },
+      ),
+    );
+  }
+
+  /// Records today's Form Progress pose from the first scored rep.
+  ///
+  /// One entry per exercise per day. The recorder only yields a snapshot for
+  /// the session's first scored rep, and the day key rejects a second write, so
+  /// repeated workouts on the same day leave the first entry alone. Failures
+  /// are swallowed: the rep is already saved and must not depend on this.
+  void _saveFormPoseSnapshot({
+    required RepRecord rep,
+    required RepMotionTrace trace,
+    required FormAnalysisResult analysis,
+  }) {
+    final snapshot = _formPoseRecorder.snapshotForRep(
+      sessionId: rep.sessionId,
+      repId: rep.id,
+      capturedAt: rep.completedAt,
+      score: analysis.overallScore,
+      accuracy: trace.detectionConfidence,
+      primaryIssue: analysis.primaryIssue,
+      bottomAtUs: trace.bottomAtUs,
+      sourceType: _formProgressSource(),
+    );
+    if (snapshot == null) return;
+    unawaited(
+      ref
+          .read(formProgressAutoCaptureProvider)
+          .captureIfNeeded(exercise: ExerciseType.plank, snapshot: snapshot),
+    );
+  }
+
+  /// Challenge and routine workouts are recorded the same way as free ones;
+  /// only the label on the stored pose differs.
+  FormProgressSource _formProgressSource() {
+    final challenge = _cumulativeChallenge || _sevenDayChallengeDay != null;
+    return challenge
+        ? FormProgressSource.challenge
+        : FormProgressSource.freeWorkout;
+  }
+
   Future<bool> _persistCompletedRep(
     RepMotionTrace trace,
     int expectedRepIndex,
@@ -1079,6 +1171,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
       await ref
           .read(workoutRepositoryProvider)
           .saveProgress(rep: rep, set: updatedSet, session: updatedSession);
+      _saveFormPoseSnapshot(rep: rep, trace: trace, analysis: analysis);
       if (_disposed) return false;
       _pendingRepSaves.remove(expectedRepIndex);
       state = state.copyWith(

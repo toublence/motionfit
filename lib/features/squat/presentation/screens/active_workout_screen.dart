@@ -8,6 +8,8 @@ import 'package:motionfit_squat/app/localization/generated/app_localizations.dar
 import 'package:motionfit_squat/core/ads/post_workout_interstitial.dart';
 import 'package:motionfit_squat/features/settings/application/preferences_controller.dart';
 import 'package:motionfit_squat/core/providers.dart';
+import 'package:motionfit_squat/features/exercise/application/progress_capture_notice.dart';
+import 'package:motionfit_squat/features/exercise/domain/exercise_type.dart';
 import 'package:motionfit_squat/features/challenges/application/challenge_controller.dart';
 import 'package:motionfit_squat/features/records/application/records_providers.dart';
 import 'package:motionfit_squat/features/squat/application/workout_preparation.dart';
@@ -190,6 +192,25 @@ class _ActiveWorkoutScreenState extends ConsumerState<ActiveWorkoutScreen>
     ref
         .read(workoutSessionControllerProvider.notifier)
         .enableCoachDiagnostics();
+    // Automatic Progress capture reports itself here as a brief message. It
+    // must never interrupt the workout, so there is no dialog and no pause.
+    ref.listen(progressCaptureNoticeProvider, (_, notice) {
+      if (notice == null || !context.mounted) return;
+      final messenger = ScaffoldMessenger.maybeOf(context);
+      if (messenger == null) return;
+      final text = switch (notice.kind) {
+        ProgressCaptureKind.bodyProgress => AppLocalizations.of(
+          context,
+        ).bodyProgressAutoSaved,
+        ProgressCaptureKind.formProgress => AppLocalizations.of(
+          context,
+        ).formProgressAutoSaved(_progressExerciseLabel(context, notice)),
+      };
+      messenger.showSnackBar(
+        SnackBar(content: Text(text), duration: const Duration(seconds: 2)),
+      );
+      ref.read(progressCaptureNoticeProvider.notifier).clear();
+    });
     ref.listen(workoutSessionControllerProvider, (_, next) {
       _navigateForStatus(next);
     });
@@ -330,6 +351,14 @@ class _WorkoutCountOverlay extends ConsumerWidget {
     final calibrating =
         state.status == WorkoutSessionStatus.preparing ||
         state.status == WorkoutSessionStatus.calibrating;
+    final calibrationGuidance = state.previewInputWidth <= 0
+        ? l10n.calibrationBody
+        : switch (state.trackingState) {
+            TrackingState.noPerson || TrackingState.lost => l10n.errorNoPerson,
+            TrackingState.partialBody => l10n.guideWholeBody,
+            TrackingState.multiplePeople => l10n.errorMultiplePeople,
+            _ => l10n.calibrationBody,
+          };
     return Semantics(
       liveRegion: true,
       child: Container(
@@ -409,7 +438,7 @@ class _WorkoutCountOverlay extends ConsumerWidget {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      l10n.calibrationBody,
+                      calibrationGuidance,
                       textAlign: TextAlign.center,
                       style: Theme.of(
                         context,
@@ -705,4 +734,17 @@ Future<void> _leaveCameraError(
   if (!discarded || !context.mounted) return;
   ref.read(workoutLaunchContextProvider.notifier).clear();
   context.go('/squat');
+}
+
+/// Localised exercise name for the automatic capture message.
+String _progressExerciseLabel(
+  BuildContext context,
+  ProgressCaptureNotice notice,
+) {
+  final l10n = AppLocalizations.of(context);
+  return switch (notice.exerciseType) {
+    ExerciseType.pushup => l10n.exercisePushup,
+    ExerciseType.plank => l10n.exercisePlank,
+    _ => l10n.navSquat,
+  };
 }

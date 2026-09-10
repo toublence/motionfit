@@ -110,28 +110,85 @@
   "commonYesterday": "أمس",
   "commonLoading": "جارٍ التحميل…",
   "unitSets": "{count, plural, zero {0 مجموعات} one {مجموعة واحدة} two {مجموعتان} few {{count} مجموعات} many {{count} مجموعة} other {{count} مجموعة}}",
-  "@unitSets": {"placeholders": {"count": {"type": "int"}}},
+  "@unitSets": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitReps": "{count, plural, zero {0 تكرارات} one {تكرار واحد} two {تكراران} few {{count} تكرارات} many {{count} تكرارًا} other {{count} تكرار}}",
-  "@unitReps": {"placeholders": {"count": {"type": "int"}}},
+  "@unitReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitSeconds": "{count, plural, zero {0 ثانية} one {ثانية واحدة} two {ثانيتان} few {{count} ثوانٍ} many {{count} ثانية} other {{count} ثانية}}",
-  "@unitSeconds": {"placeholders": {"count": {"type": "int"}}},
+  "@unitSeconds": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitMinutes": "{count, plural, zero {0 دقيقة} one {دقيقة واحدة} two {دقيقتان} few {{count} دقائق} many {{count} دقيقة} other {{count} دقيقة}}",
-  "@unitMinutes": {"placeholders": {"count": {"type": "int"}}},
+  "@unitMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "durationHoursMinutes": "{hours} س {minutes} د",
-  "@durationHoursMinutes": {"placeholders": {"hours": {"type": "int"}, "minutes": {"type": "int"}}},
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "durationMinutesSeconds": "{minutes} د {seconds} ث",
-  "@durationMinutesSeconds": {"placeholders": {"minutes": {"type": "int"}, "seconds": {"type": "int"}}},
+  "@durationMinutesSeconds": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "homeGreeting": "هل أنت مستعد للحركة؟",
   "homeTodayTitle": "سجل اليوم",
   "homeTodayNoWorkout": "لم تؤدِّ تمارين القرفصاء اليوم بعد. ابدأ بمجموعة قصيرة.",
   "homeTodaySummary": "{reps} قرفصاء ضمن {sets} مجموعة",
   "homeViewResult": "عرض النتيجة",
-  "@homeTodaySummary": {"placeholders": {"reps": {"type": "int"}, "sets": {"type": "int"}}},
+  "@homeTodaySummary": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "sets": {
+        "type": "int"
+      }
+    }
+  },
   "homeTodaySets": "مجموعات اليوم",
   "homeTodayReps": "ما أنجزته اليوم",
   "streakLabel": "السلسلة",
   "streakDays": "{days} أيام",
-  "@streakDays": {"placeholders": {"days": {"type": "int"}}},
+  "@streakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "homeWorkoutSetup": "التمرين التالي",
   "homeSetsLabel": "عدد المجموعات",
   "homeRepsPerSetLabel": "التكرارات لكل مجموعة",
@@ -141,7 +198,16 @@
   "homeLastSettingsRestored": "إعدادات تمرينك الأخير جاهزة.",
   "validationNumberRequired": "أدخل رقمًا.",
   "validationRange": "اختر قيمة من {min} إلى {max}.",
-  "@validationRange": {"placeholders": {"min": {"type": "num"}, "max": {"type": "num"}}},
+  "@validationRange": {
+    "placeholders": {
+      "min": {
+        "type": "num"
+      },
+      "max": {
+        "type": "num"
+      }
+    }
+  },
   "guideTitle": "جهّز الكاميرا",
   "guideSubtitle": "تساعد رؤية الجسم كاملًا وبوضوح MotionFit على العد بدقة.",
   "guideWholeBody": "اجعل جسمك كاملًا ظاهرًا من الرأس إلى القدمين.",
@@ -163,7 +229,13 @@
   "permissionNotificationDenied": "الإشعارات متوقفة. فعّلها من إعدادات النظام لتلقي التذكيرات.",
   "countdownGetReady": "استعد",
   "countdownBeginsIn": "البدء خلال {seconds}",
-  "@countdownBeginsIn": {"placeholders": {"seconds": {"type": "int"}}},
+  "@countdownBeginsIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "calibrationTitle": "جارٍ تحديد وضع الوقوف",
   "calibrationBody": "قف باستقامة واجعل جسمك كاملًا ظاهرًا.",
   "calibrationStayStill": "اثبت للحظة",
@@ -171,11 +243,35 @@
   "calibrationFailed": "تعذر تحديد وضع وقوف واضح.",
   "calibrationRetry": "إعادة المعايرة",
   "workoutSetProgress": "المجموعة {current} من {total}",
-  "@workoutSetProgress": {"placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}},
+  "@workoutSetProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "workoutRepProgress": "{current} من {target}",
-  "@workoutRepProgress": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@workoutRepProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "workoutTotalReps": "الإجمالي {count}",
-  "@workoutTotalReps": {"placeholders": {"count": {"type": "int"}}},
+  "@workoutTotalReps": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "workoutElapsed": "الوقت المنقضي",
   "workoutPause": "إيقاف مؤقت",
   "workoutResume": "متابعة التمرين",
@@ -198,7 +294,16 @@
   "workoutSkeletonToggle": "إظهار دليل الوضعية",
   "restTitle": "راحة",
   "restNextSet": "التالي: المجموعة {set} من {total}",
-  "@restNextSet": {"placeholders": {"set": {"type": "int"}, "total": {"type": "int"}}},
+  "@restNextSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "restCompletedSets": "المجموعات المكتملة",
   "restTotalReps": "القرفصاء حتى الآن",
   "restSkip": "تخطي الراحة",
@@ -218,7 +323,19 @@
   "completeFormSummary": "ملخص الأداء",
   "todayCoaching": "تدريب اليوم",
   "coachingIssueFrequency": "في {count} من أصل {total} تكرارات:\n{issue}",
-  "@coachingIssueFrequency": {"placeholders": {"total": {"type": "int"}, "count": {"type": "int"}, "issue": {"type": "String"}}},
+  "@coachingIssueFrequency": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      },
+      "issue": {
+        "type": "String"
+      }
+    }
+  },
   "completeTopImprovement": "نقطة التركيز القادمة",
   "completeStrengths": "ما أتقنته",
   "completeSaved": "حُفظ التمرين على هذا الجهاز",
@@ -227,28 +344,73 @@
   "completeFinish": "إنهاء",
   "postWorkoutReminderTitle": "حافظ على زخمك",
   "postWorkoutReminderBody": "هل تريد تذكيرًا يوميًا الساعة {time} بدءًا من الغد؟",
-  "@postWorkoutReminderBody": {"placeholders": {"time": {"type": "String"}}},
+  "@postWorkoutReminderBody": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "postWorkoutReminderEnable": "ذكّرني",
   "postWorkoutReminderLater": "ربما لاحقًا",
   "postWorkoutReminderEnabled": "تم ضبط التذكير.",
   "recordsTitle": "التقدم",
   "recordsWeeklySummary": "هذا الأسبوع",
   "recordsWorkoutCount": "{count} تمارين",
-  "@recordsWorkoutCount": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsWorkoutCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsAverageForm": "متوسط الأداء {score}",
-  "@recordsAverageForm": {"placeholders": {"score": {"type": "int"}}},
+  "@recordsAverageForm": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "recordsWorkoutTime": "الوقت {time}",
-  "@recordsWorkoutTime": {"placeholders": {"time": {"type": "String"}}},
+  "@recordsWorkoutTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "recordsFirstWeek": "هذا أول سجل لك هذا الأسبوع",
   "recordsMoreThanLastWeek": "أديت {count} تكرارات أكثر من الأسبوع الماضي",
   "recordsLessThanLastWeek": "أديت {count} تكرارات أقل من الأسبوع الماضي",
-  "@recordsMoreThanLastWeek": {"placeholders": {"count": {"type": "int"}}},
-  "@recordsLessThanLastWeek": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsMoreThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recordsLessThanLastWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsSameAsLastWeek": "نفس حجم الأسبوع الماضي",
   "recordsTrendEmpty": "أكمل المزيد من التمارين لرؤية تطور أدائك.",
   "recordsFirstFormScore": "أول نتيجة للأداء",
   "recordsRecentAverage": "متوسط آخر {count} تمارين: {score}",
-  "@recordsRecentAverage": {"placeholders": {"count": {"type": "int"}, "score": {"type": "int"}}},
+  "@recordsRecentAverage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "recordsStrength": "نقطة قوة",
   "recordsFocus": "التركيز",
   "recordsTodayPoint": "تركيز اليوم",
@@ -278,9 +440,21 @@
   "recordsCalendarNoWorkoutSelected": "اختر يوم تمرين لعرض جلساته.",
   "recordsDayTotal": "إجمالي اليوم",
   "recordsSessionsCount": "{count, plural, zero {لا جلسات} one {جلسة واحدة} two {جلستان} few {{count} جلسات} many {{count} جلسة} other {{count} جلسة}}",
-  "@recordsSessionsCount": {"placeholders": {"count": {"type": "int"}}},
+  "@recordsSessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "recordsSessionTitle": "الجلسة {number}",
-  "@recordsSessionTitle": {"placeholders": {"number": {"type": "int"}}},
+  "@recordsSessionTitle": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "recordsListNewest": "الأحدث أولًا",
   "recordsOpenDetail": "عرض التفاصيل",
   "recordsEmptyTitle": "لا توجد تمارين بعد",
@@ -305,9 +479,21 @@
   "statsFrequentImprovements": "نقاط التركيز المتكررة",
   "statsNoData": "لا توجد تمارين في هذه الفترة.",
   "statsTrendUp": "ارتفاع {percent}%",
-  "@statsTrendUp": {"placeholders": {"percent": {"type": "num"}}},
+  "@statsTrendUp": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
   "statsTrendDown": "انخفاض {percent}%",
-  "@statsTrendDown": {"placeholders": {"percent": {"type": "num"}}},
+  "@statsTrendDown": {
+    "placeholders": {
+      "percent": {
+        "type": "num"
+      }
+    }
+  },
   "statsTrendFlat": "لا تغيير",
   "detailTitle": "تفاصيل التمرين",
   "detailStartTime": "وقت البدء",
@@ -325,9 +511,27 @@
   "detailInterrupted": "انتهى مبكرًا",
   "detailCompleted": "مكتمل",
   "detailSetRow": "المجموعة {set}: {reps} تكرار",
-  "@detailSetRow": {"placeholders": {"set": {"type": "int"}, "reps": {"type": "int"}}},
+  "@detailSetRow": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
   "detailSessionOn": "{date}، {time}",
-  "@detailSessionOn": {"placeholders": {"date": {"type": "String"}, "time": {"type": "String"}}},
+  "@detailSessionOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "settingsTitle": "الإعدادات",
   "settingsRateApp": "قيّم هذا التطبيق",
   "settingsRateAppSubtitle": "قيّم MotionFit",
@@ -379,10 +583,22 @@
   "reminderTime": "وقت التذكير",
   "reminderCopyTime": "نسخ هذا الوقت",
   "reminderCopyFromDay": "نسخ الوقت من {day}",
-  "@reminderCopyFromDay": {"placeholders": {"day": {"type": "String"}}},
+  "@reminderCopyFromDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
   "reminderApplyAll": "تطبيق على كل الأيام",
   "reminderNext": "التذكير التالي: {dateTime}",
-  "@reminderNext": {"placeholders": {"dateTime": {"type": "String"}}},
+  "@reminderNext": {
+    "placeholders": {
+      "dateTime": {
+        "type": "String"
+      }
+    }
+  },
   "reminderNoneScheduled": "لا توجد تذكيرات مجدولة",
   "reminderPermissionNeeded": "اسمح بالإشعارات لتشغيل التذكيرات.",
   "reminderSaved": "حُفظ جدول التذكيرات",
@@ -420,7 +636,13 @@
   "privacyDeleteFailure": "تعذر حذف بيانات التمرين.",
   "appInfoTitle": "معلومات التطبيق",
   "appInfoVersion": "الإصدار {version}",
-  "@appInfoVersion": {"placeholders": {"version": {"type": "String"}}},
+  "@appInfoVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
   "appInfoLicenses": "تراخيص المصادر المفتوحة",
   "appInfoPrivacyPolicy": "سياسة الخصوصية",
   "appInfoDescription": "يعدّ MotionFit تمارين القرفصاء ويقدم إرشادات خاصة على الجهاز لتحسين الأداء.",
@@ -444,7 +666,13 @@
   "formScore": "درجة الأداء",
   "formShort": "الأداء",
   "formScoreValue": "{score} نقطة",
-  "@formScoreValue": {"placeholders": {"score": {"type": "int"}}},
+  "@formScoreValue": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
   "formIssueDepth": "عمق القرفصاء",
   "formIssueTorsoLean": "ثبات الجزء العلوي",
   "formIssueHeelLift": "ثبات الكعبين",
@@ -466,13 +694,40 @@
   "coachReady1": "أنت في الموضع المناسب. لنبدأ.",
   "coachReady2": "موضع رائع. استعد لأول قرفصاء.",
   "coachStartSet": "المجموعة {set}. هيا نبدأ.",
-  "@coachStartSet": {"placeholders": {"set": {"type": "int"}}},
+  "@coachStartSet": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
   "coachSevenDayChallengeStart": "يبدأ اليوم {day} من تحدي الأيام السبعة.",
-  "@coachSevenDayChallengeStart": {"placeholders": {"day": {"type": "int"}}},
+  "@coachSevenDayChallengeStart": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "coachCumulativeChallengeStart": "يبدأ تحدي التكرارات التراكمية. أكملت {completed} تكرارًا، وتبقى {remaining} تكرارًا.",
-  "@coachCumulativeChallengeStart": {"placeholders": {"completed": {"type": "int"}, "remaining": {"type": "int"}}},
+  "@coachCumulativeChallengeStart": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
   "coachRepCount": "{count}",
-  "@coachRepCount": {"placeholders": {"count": {"type": "int"}}},
+  "@coachRepCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "coachDepth1": "في التكرار التالي، حاول النزول أكثر قليلًا.",
   "coachDepth2": "أضف قليلًا من العمق إلى القرفصاء التالية.",
   "coachTorso1": "حافظ على ثبات الجزء العلوي أكثر قليلًا.",
@@ -501,28 +756,79 @@
   "coachLastTwo": "تبقى اثنان. واصل بقوة!",
   "coachLastOne": "الأخيرة. أنهِ بقوة!",
   "coachSetComplete": "أحسنت. اكتملت المجموعة {set}.",
-  "@coachSetComplete": {"placeholders": {"set": {"type": "int"}}},
+  "@coachSetComplete": {
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
   "coachRestStart": "استرح لمدة {seconds} ثانية. تنفّس واستعد.",
-  "@coachRestStart": {"placeholders": {"seconds": {"type": "int"}}},
+  "@coachRestStart": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
   "coachRestTenSeconds": "بقيت عشر ثوانٍ من الراحة.",
   "coachRestComplete": "انتهت الراحة. استعد للمجموعة التالية.",
   "coachWorkoutComplete": "اكتمل التمرين. أنهيت {reps} حركة قرفصاء.",
-  "@coachWorkoutComplete": {"placeholders": {"reps": {"type": "int"}}},
+  "@coachWorkoutComplete": {
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
   "notificationReminderTitle": "حان وقت قرفصاء اليوم",
   "notificationReminderBody": "حتى الجلسة القصيرة لها أثر. افتح MotionFit عندما تكون مستعدًا.",
   "notificationReminderBodyVariant2": "بضع حركات قرفصاء مركزة تكفي لتضيف نشاطًا إلى يومك.",
   "notificationStreakReminderBody": "حافظ اليوم على سلسلتك لمدة {days} أيام بتمرين قصير.",
-  "@notificationStreakReminderBody": {"placeholders": {"days": {"type": "int"}}},
+  "@notificationStreakReminderBody": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "semanticsIncrease": "زيادة",
   "semanticsDecrease": "تقليل",
   "semanticsSelectedTab": "علامة التبويب المحددة: {tab}",
-  "@semanticsSelectedTab": {"placeholders": {"tab": {"type": "String"}}},
+  "@semanticsSelectedTab": {
+    "placeholders": {
+      "tab": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCalendarWorkoutDate": "{date}، يوجد تمرين مسجل",
-  "@semanticsCalendarWorkoutDate": {"placeholders": {"date": {"type": "String"}}},
+  "@semanticsCalendarWorkoutDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCalendarEmptyDate": "{date}، لا يوجد تمرين",
-  "@semanticsCalendarEmptyDate": {"placeholders": {"date": {"type": "String"}}},
+  "@semanticsCalendarEmptyDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "semanticsCurrentRep": "التكرار الحالي {current} من {target}",
-  "@semanticsCurrentRep": {"placeholders": {"current": {"type": "int"}, "target": {"type": "int"}}},
+  "@semanticsCurrentRep": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
   "repVideoReviewTitle": "مراجعة فيديو التكرارات",
   "repVideoReviewDescription": "احفظ فيديو هذا التمرين على الجهاز لمراجعة كل تكرار لاحقًا.",
   "repVideoLocalOnly": "محلي فقط · لا يتم رفعه",
@@ -534,9 +840,21 @@
   "repTimelineImprove": "تحسين",
   "repTimelineNoImprovement": "لا توجد تكرارات تحتاج إلى تحسين.",
   "repSetNumber": "المجموعة {number}",
-  "@repSetNumber": {"placeholders": {"number": {"type": "int"}}},
+  "@repSetNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "repNumber": "التكرار {number}",
-  "@repNumber": {"placeholders": {"number": {"type": "int"}}},
+  "@repNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "repResultGood": "وضعية جيدة",
   "repResultNeedsAttention": "يحتاج إلى انتباه",
   "repResultImproved": "أفضل من التكرار السابق",
@@ -556,9 +874,170 @@
   "repFeedbackTorso": "مال الجزء العلوي من جسمك كثيرًا إلى الأمام. أبقِ صدرك أكثر استقامة.",
   "repFeedbackKnees": "تحركت ركبتاك إلى الداخل. حافظ على محاذاتهما مع أصابع القدمين.",
   "repFeedbackGeneric": "يحتاج هذا التكرار إلى الانتباه في {area}.",
-  "@repFeedbackGeneric": {"placeholders": {"area": {"type": "String"}}},
+  "@repFeedbackGeneric": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      }
+    }
+  },
   "deleteWorkoutVideo": "حذف فيديو التمرين",
   "deleteWorkoutVideoTitle": "حذف فيديو التمرين هذا؟",
   "deleteWorkoutVideoBody": "سيُحذف الفيديو المحلي فقط، وستبقى تحليلات التكرارات وسجل التمرين.",
-  "workoutVideoDeleted": "تم حذف فيديو التمرين"
+  "workoutVideoDeleted": "تم حذف فيديو التمرين",
+  "bodyProgressTitle": "تقدّم الجسم",
+  "bodyProgressSubtitle": "صوّر جسمك بالطريقة نفسها في كل مرة وشاهد التغيير يتراكم.",
+  "bodyProgressEmptyTitle": "التقط صورتك الأولى",
+  "bodyProgressEmptyBody": "صورة اليوم تصبح المرجع الذي تُحاذى معه كل الصور اللاحقة.",
+  "bodyProgressStartCapture": "التقط صورة اليوم",
+  "bodyProgressRetake": "أعد التقاط صورة اليوم",
+  "bodyProgressViewFront": "أمامي",
+  "bodyProgressViewSide": "جانبي",
+  "bodyProgressViewBack": "خلفي",
+  "bodyProgressDayNumber": "اليوم {day}",
+  "@bodyProgressDayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressFirstPhoto": "الأولى",
+  "bodyProgressLatestPhoto": "الأحدث",
+  "bodyProgressPhotoCount": "{count} صورة",
+  "@bodyProgressPhotoCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressSpanDays": "{days} يوماً من التتبع",
+  "@bodyProgressSpanDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "bodyProgressRecordedDays": "أيام مسجّلة",
+  "bodyProgressStreak": "التتابع الحالي",
+  "bodyProgressCompare": "قبل / بعد",
+  "bodyProgressTimelapse": "فاصل زمني",
+  "bodyProgressHistory": "سجل الصور",
+  "bodyProgressMilestones": "محطات",
+  "bodyProgressMilestonePending": "ليس بعد",
+  "bodyProgressDeletePhoto": "حذف الصورة",
+  "bodyProgressDeleteConfirm": "هل تريد حذف هذه الصورة؟ سيُزال الملف من هذا الجهاز.",
+  "bodyProgressLoading": "جارٍ تحميل تقدّم الجسم",
+  "bodyProgressLoadError": "تعذّر تحميل تقدّم الجسم.",
+  "bodyProgressMissingImage": "الصورة غير متوفرة",
+  "bodyProgressCaptureTitle": "صورة تقدّم الجسم",
+  "bodyProgressGhostOverlay": "طبقة شفافة",
+  "bodyProgressGuides": "أدلة المحاذاة",
+  "bodyProgressCaptureHintFirst": "قف بحيث يظهر جسمك بالكامل داخل الإطار.",
+  "bodyProgressCaptureHintGhost": "حاذِ جسمك مع الصورة الباهتة ثم التقط.",
+  "bodyProgressShutter": "التقاط",
+  "bodyProgressSwitchCamera": "تبديل الكاميرا",
+  "bodyProgressSaved": "تم حفظ صورة اليوم.",
+  "bodyProgressCameraBusy": "أنهِ كاميرا التمرين قبل التقاط صورة تقدّم الجسم.",
+  "bodyProgressCameraError": "تعذّر تشغيل الكاميرا.",
+  "bodyProgressPermissionTitle": "مطلوب الوصول إلى الكاميرا",
+  "bodyProgressPermissionBody": "يحتاج MotionFit إلى الكاميرا لهذه الصورة. تبقى الصور على هذا الجهاز.",
+  "bodyProgressCompareNeedsTwo": "تحتاج إلى صورتين على الأقل للمقارنة.",
+  "bodyProgressCompareBefore": "قبل",
+  "bodyProgressCompareAfter": "بعد",
+  "bodyProgressCompareHint": "اسحب المقبض للتنقل بين الصورتين.",
+  "bodyProgressTimelapseNeedsTwo": "تحتاج إلى صورتين على الأقل لإنشاء الفاصل الزمني.",
+  "formProgressTitle": "تقدّم الأداء",
+  "formProgressSubtitle": "اطّلع على تحسّن أدائك في كل تمرين على حدة.",
+  "formProgressEmptyTitle": "لا توجد بيانات أداء بعد",
+  "formProgressEmptyBody": "أكمل تمريناً وسيُضاف تحليل الأداء هنا تلقائياً.",
+  "formProgressFirstScore": "أول نتيجة",
+  "formProgressCurrentScore": "النتيجة الحالية",
+  "formProgressChange": "التغيّر",
+  "formProgressAccuracy": "دقة الاكتشاف",
+  "formProgressScoreLabel": "نتيجة الأداء",
+  "formProgressTrend": "مسار النتيجة",
+  "formProgressCommonIssues": "أكثر أخطاء الأداء تكراراً",
+  "formProgressRecentImprovement": "تحسّن مؤخراً",
+  "formProgressNoImprovementYet": "واصل التمرين لعرض ملخّص التحسّن.",
+  "formProgressSessions": "سجل التمارين",
+  "formProgressSessionCount": "{count} جلسة",
+  "@formProgressSessionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressCompare": "الأولى مقابل الأحدث",
+  "formProgressTimelapse": "الفاصل الزمني للأداء",
+  "formProgressImprovedBy": "ارتفاع {points} نقطة",
+  "@formProgressImprovedBy": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressDeclinedBy": "انخفاض {points} نقطة",
+  "@formProgressDeclinedBy": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressUnchanged": "لا تغيير بعد",
+  "formProgressNoPose": "لا توجد وضعية مرجعية بعد",
+  "formProgressPoseHint": "سيحفظ تمرينك التالي وضعية مرجعية هنا.",
+  "formProgressLoading": "جارٍ تحميل تقدّم الأداء",
+  "formProgressLoadError": "تعذّر تحميل تقدّم الأداء.",
+  "formProgressIssueOccurrences": "{count} مرة",
+  "@formProgressIssueOccurrences": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "formProgressNeedsTwoSessions": "أكمل تمرينين من هذا التمرين لمقارنة الأداء.",
+  "formProgressSelectExercise": "اختر تمريناً",
+  "progressTimelapsePlay": "تشغيل",
+  "progressTimelapsePause": "إيقاف مؤقت",
+  "progressTimelapseReplay": "إعادة التشغيل",
+  "progressTimelapseSpeed": "السرعة",
+  "progressTimelapseFrameOf": "{index} من {total}",
+  "@progressTimelapseFrameOf": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "progressSectionTitle": "التقدّم",
+  "progressSectionSubtitle": "تابع تغيّر جسمك وأدائك مع الوقت.",
+  "bodyProgressAutoHint": "يُسجّل تلقائياً مرة واحدة يومياً عند بدء التمرين.",
+  "formProgressAutoHint": "يُسجّل أول تكرار سليم في اليوم تلقائياً.",
+  "bodyProgressRecordedToday": "سُجّل اليوم",
+  "bodyProgressPendingToday": "سيُسجّل في تمرينك التالي",
+  "bodyProgressAutoEmptyTitle": "تمرين واحد ويصبح لديك أول سجل",
+  "bodyProgressAutoEmptyBody": "ابدأ التمرين كالمعتاد. تُلتقط الصورة بمجرد ظهورك في الإطار.",
+  "formProgressAutoEmptyBody": "ابدأ التمرين كالمعتاد. يُسجّل أول تكرار سليم لك تلقائياً.",
+  "bodyProgressManualCapture": "التقط واحدة الآن",
+  "bodyProgressReplaceToday": "استبدال صورة اليوم",
+  "bodyProgressAutoSaved": "تم تسجيل تقدّم الجسم لليوم.",
+  "formProgressAutoSaved": "تم تسجيل أداء {exercise} لليوم.",
+  "@formProgressAutoSaved": {
+    "placeholders": {
+      "exercise": {
+        "type": "String"
+      }
+    }
+  },
+  "progressAutoBadge": "تلقائي"
 }

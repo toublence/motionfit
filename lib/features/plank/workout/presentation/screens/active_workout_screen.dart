@@ -5,7 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:motionfit_squat/features/plank/localization/generated/plank_localizations.dart';
+import 'package:motionfit_squat/app/localization/generated/app_localizations.dart';
 import 'package:motionfit_squat/core/ads/post_workout_interstitial.dart';
+import 'package:motionfit_squat/features/exercise/application/progress_capture_notice.dart';
+import 'package:motionfit_squat/features/exercise/domain/exercise_type.dart';
 import 'package:motionfit_squat/features/settings/application/preferences_controller.dart';
 import 'package:motionfit_squat/features/plank/providers.dart';
 import 'package:motionfit_squat/features/plank/challenges/application/challenge_controller.dart';
@@ -199,6 +202,24 @@ class _ActiveWorkoutScreenState extends ConsumerState<ActiveWorkoutScreen>
     ref
         .read(workoutSessionControllerProvider.notifier)
         .enableCoachDiagnostics();
+    // Automatic Progress capture reports itself here as a brief message. It
+    // must never interrupt the workout, so there is no dialog and no pause.
+    ref.listen(progressCaptureNoticeProvider, (_, notice) {
+      if (notice == null || !context.mounted) return;
+      final messenger = ScaffoldMessenger.maybeOf(context);
+      if (messenger == null) return;
+      final text = switch (notice.kind) {
+        ProgressCaptureKind.bodyProgress =>
+          AppLocalizations.of(context).bodyProgressAutoSaved,
+        ProgressCaptureKind.formProgress => AppLocalizations.of(
+          context,
+        ).formProgressAutoSaved(_progressExerciseLabel(context, notice)),
+      };
+      messenger.showSnackBar(
+        SnackBar(content: Text(text), duration: const Duration(seconds: 2)),
+      );
+      ref.read(progressCaptureNoticeProvider.notifier).clear();
+    });
     ref.listen(workoutSessionControllerProvider, (_, next) {
       _navigateForStatus(next);
     });
@@ -720,4 +741,17 @@ Future<void> _leaveCameraError(
   await WorkoutOrientation.usePortrait();
   if (!context.mounted) return;
   context.go('/squat');
+}
+
+/// Localised exercise name for the automatic capture message.
+String _progressExerciseLabel(
+  BuildContext context,
+  ProgressCaptureNotice notice,
+) {
+  final l10n = AppLocalizations.of(context);
+  return switch (notice.exerciseType) {
+    ExerciseType.pushup => l10n.exercisePushup,
+    ExerciseType.plank => l10n.exercisePlank,
+    _ => l10n.navSquat,
+  };
 }

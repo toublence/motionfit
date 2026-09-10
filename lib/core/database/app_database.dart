@@ -10,7 +10,7 @@ class AppDatabase {
   final String? _path;
   Database? _database;
 
-  static const schemaVersion = 6;
+  static const schemaVersion = 8;
 
   Future<Database> get database async {
     if (_database != null) return _database!;
@@ -123,6 +123,7 @@ class AppDatabase {
     ''');
     await _createChallengeSchema(database);
     await _createLegacyArchiveSchema(database);
+    await _createProgressSchema(database);
     await database.execute(
       'CREATE INDEX idx_sessions_started_at ON workout_sessions(started_at DESC)',
     );
@@ -220,6 +221,59 @@ class AppDatabase {
     if (oldVersion < 6) {
       await _createLegacyArchiveSchema(database);
     }
+    if (oldVersion < 7) {
+      await _createProgressSchema(database);
+    }
+    if (oldVersion < 8) {
+      // No _createProgressSchema call here. It also builds the one-per-day
+      // index, and on a version 7 database the column that index needs does
+      // not exist yet. An upgrade from below 7 already ran it above, with the
+      // current definition.
+      for (final column in <(String, String)>[
+        ('source', "TEXT NOT NULL DEFAULT 'manual'"),
+        ('session_id', 'TEXT'),
+      ]) {
+        await _addColumnIfMissing(
+          database,
+          table: 'body_progress_photos',
+          column: column.$1,
+          definition: column.$2,
+        );
+      }
+      for (final column in <(String, String)>[
+        ('captured_on', "TEXT NOT NULL DEFAULT ''"),
+        ('accuracy', 'REAL'),
+        ('source_type', "TEXT NOT NULL DEFAULT 'freeWorkout'"),
+      ]) {
+        await _addColumnIfMissing(
+          database,
+          table: 'form_pose_snapshots',
+          column: column.$1,
+          definition: column.$2,
+        );
+      }
+      // Existing rows predate the day key. Backfill from the capture time so
+      // the one-per-day index has a value to work with.
+      await database.execute(
+        "UPDATE form_pose_snapshots SET captured_on = "
+        "strftime('%Y-%m-%d', captured_at / 1000, 'unixepoch', 'localtime') "
+        "WHERE captured_on = ''",
+      );
+      // Version 7 stored one row per session, so a day with several workouts
+      // now holds duplicates. Keep the earliest, which matches the rule the
+      // automatic capture follows, or the unique index below cannot be built
+      // and the upgrade would fail the app on launch.
+      await database.execute('''
+        DELETE FROM form_pose_snapshots
+        WHERE rowid NOT IN (
+          SELECT MIN(rowid) FROM form_pose_snapshots GROUP BY captured_on
+        )
+      ''');
+      await database.execute(
+        'CREATE UNIQUE INDEX IF NOT EXISTS idx_form_pose_one_per_day '
+        "ON form_pose_snapshots(captured_on) WHERE captured_on <> ''",
+      );
+    }
   }
 
   Future<void> _addColumnIfMissing(
@@ -260,6 +314,60 @@ class AppDatabase {
       CREATE UNIQUE INDEX IF NOT EXISTS idx_one_active_challenge
       ON challenges(status) WHERE status = 'active'
     ''');
+  }
+
+  /// Body Progress photos and Form Progress representative poses.
+  ///
+  /// Every exercise database shares this class, so both tables exist in each
+  /// file. Body Progress rows are written only through the shared squat
+  /// database; Form Progress rows stay next to the session they describe.
+  Future<void> _createProgressSchema(Database database) async {
+    await database.execute('''
+      CREATE TABLE IF NOT EXISTS body_progress_photos (
+        id TEXT PRIMARY KEY,
+        captured_at INTEGER NOT NULL,
+        captured_on TEXT NOT NULL,
+        body_view TEXT NOT NULL CHECK(body_view IN ('front', 'side', 'back')),
+        image_file TEXT NOT NULL,
+        image_width INTEGER NOT NULL DEFAULT 0,
+        image_height INTEGER NOT NULL DEFAULT 0,
+        source TEXT NOT NULL DEFAULT 'manual' CHECK(source IN ('auto', 'manual')),
+        session_id TEXT,
+        created_at INTEGER NOT NULL,
+        UNIQUE(captured_on, body_view)
+      )
+    ''');
+    await database.execute(
+      'CREATE INDEX IF NOT EXISTS idx_body_progress_captured_at '
+      'ON body_progress_photos(captured_at)',
+    );
+    await database.execute('''
+      CREATE TABLE IF NOT EXISTS form_pose_snapshots (
+        session_id TEXT PRIMARY KEY REFERENCES workout_sessions(id) ON DELETE CASCADE,
+        rep_id TEXT,
+        captured_at INTEGER NOT NULL,
+        captured_on TEXT NOT NULL DEFAULT '',
+        form_score REAL,
+        accuracy REAL,
+        primary_issue TEXT,
+        landmarks TEXT NOT NULL,
+        source_width INTEGER NOT NULL DEFAULT 0,
+        source_height INTEGER NOT NULL DEFAULT 0,
+        mirrored INTEGER NOT NULL DEFAULT 0 CHECK(mirrored IN (0, 1)),
+        source_type TEXT NOT NULL DEFAULT 'freeWorkout',
+        created_at INTEGER NOT NULL
+      )
+    ''');
+    await database.execute(
+      'CREATE INDEX IF NOT EXISTS idx_form_pose_captured_at '
+      'ON form_pose_snapshots(captured_at)',
+    );
+    // One representative pose per calendar day. The automatic capture relies on
+    // this to stay idempotent across repeated sessions on the same day.
+    await database.execute(
+      'CREATE UNIQUE INDEX IF NOT EXISTS idx_form_pose_one_per_day '
+      "ON form_pose_snapshots(captured_on) WHERE captured_on <> ''",
+    );
   }
 
   Future<void> _createLegacyArchiveSchema(Database database) async {

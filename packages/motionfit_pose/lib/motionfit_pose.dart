@@ -132,6 +132,59 @@ class MotionfitVideoRecordingResult {
   final int durationMilliseconds;
 }
 
+/// Live preview handle for the Body Progress still camera.
+class MotionfitStillCaptureStart {
+  const MotionfitStillCaptureStart({
+    required this.textureId,
+    required this.previewWidth,
+    required this.previewHeight,
+    required this.rotationDegrees,
+    required this.handlesCropAndRotation,
+    required this.mirrored,
+  });
+
+  final int textureId;
+
+  /// Size of the preview buffer, before [rotationDegrees] is applied.
+  final int previewWidth;
+  final int previewHeight;
+
+  /// How far the preview buffer has to be turned to sit upright.
+  ///
+  /// Only meaningful when [handlesCropAndRotation] is false; otherwise the
+  /// platform has already applied it.
+  final int rotationDegrees;
+
+  /// True when the platform texture already applies rotation and cropping.
+  ///
+  /// Flutter's Android `SurfaceProducer` does not always honour CameraX
+  /// orientation metadata, and the caller has to rotate the texture itself.
+  final bool handlesCropAndRotation;
+
+  /// True when the preview is already horizontally mirrored by the platform.
+  final bool mirrored;
+
+  double get previewAspectRatio =>
+      previewWidth > 0 && previewHeight > 0
+      ? previewWidth / previewHeight
+      : 3 / 4;
+}
+
+/// A photo written to the private Body Progress directory.
+class MotionfitStillPhoto {
+  const MotionfitStillPhoto({
+    required this.directory,
+    required this.fileName,
+    required this.width,
+    required this.height,
+  });
+
+  final String directory;
+  final String fileName;
+  final int width;
+  final int height;
+}
+
 class MotionfitPoseException implements Exception {
   const MotionfitPoseException(this.code, this.message, [this.details]);
 
@@ -246,6 +299,109 @@ class MotionfitPose {
   }
 
   Future<void> cancelVideoRecording() => _invokeVoid('cancelVideoRecording');
+
+  /// Opens a photo-resolution camera session for Body Progress.
+  ///
+  /// This is a separate capture session from [start]. The pose engine runs a
+  /// low resolution tuned for on-device inference, so the two cannot share one
+  /// session and the platform refuses to run both at the same time.
+  Future<MotionfitStillCaptureStart> startStillCapture({
+    MotionfitCamera camera = MotionfitCamera.front,
+  }) async {
+    final response = await _invokeMap('startStillCapture', {
+      'camera': camera.name,
+    });
+    final textureId = (response['textureId'] as num?)?.toInt();
+    if (textureId == null) {
+      throw const MotionfitPoseException(
+        'invalid_response',
+        'Native still capture did not return a texture ID.',
+      );
+    }
+    return MotionfitStillCaptureStart(
+      textureId: textureId,
+      previewWidth: (response['previewWidth'] as num? ?? 0).toInt(),
+      previewHeight: (response['previewHeight'] as num? ?? 0).toInt(),
+      rotationDegrees: (response['rotationDegrees'] as num? ?? 0).toInt(),
+      handlesCropAndRotation:
+          response['handlesCropAndRotation'] as bool? ?? true,
+      mirrored: response['mirrored'] as bool? ?? false,
+    );
+  }
+
+  Future<MotionfitStillCaptureStart> switchStillCamera(
+    MotionfitCamera camera,
+  ) async {
+    final response = await _invokeMap('switchStillCamera', {
+      'camera': camera.name,
+    });
+    return MotionfitStillCaptureStart(
+      textureId: (response['textureId'] as num? ?? 0).toInt(),
+      previewWidth: (response['previewWidth'] as num? ?? 0).toInt(),
+      previewHeight: (response['previewHeight'] as num? ?? 0).toInt(),
+      rotationDegrees: (response['rotationDegrees'] as num? ?? 0).toInt(),
+      handlesCropAndRotation:
+          response['handlesCropAndRotation'] as bool? ?? true,
+      mirrored: response['mirrored'] as bool? ?? false,
+    );
+  }
+
+  Future<MotionfitStillPhoto> captureStill() async {
+    final response = await _invokeMap('captureStill');
+    final directory = response['directory'] as String?;
+    final fileName = response['fileName'] as String?;
+    if (directory == null || fileName == null) {
+      throw const MotionfitPoseException(
+        'invalid_response',
+        'Native still capture did not return a written photo.',
+      );
+    }
+    return MotionfitStillPhoto(
+      directory: directory,
+      fileName: fileName,
+      width: (response['width'] as num? ?? 0).toInt(),
+      height: (response['height'] as num? ?? 0).toInt(),
+    );
+  }
+
+  /// Absolute path of the private directory that holds Body Progress photos.
+  Future<String> stillCaptureDirectory() async {
+    final response = await _invokeMap('stillCaptureDirectory');
+    final directory = response['directory'] as String?;
+    if (directory == null) {
+      throw const MotionfitPoseException(
+        'invalid_response',
+        'Native still capture did not return a photo directory.',
+      );
+    }
+    return directory;
+  }
+
+  Future<void> stopStillCapture() => _invokeVoid('stopStillCapture');
+
+  /// Saves the next analyzed camera frame of the running workout as a JPEG.
+  ///
+  /// Body Progress records itself during a workout, and the pose session
+  /// already owns the camera, so this reuses the analysis frame instead of
+  /// opening a second capture session. The frame is the one calibration
+  /// settled on, at the analysis resolution rather than full photo resolution.
+  Future<MotionfitStillPhoto> captureWorkoutFrame() async {
+    final response = await _invokeMap('captureWorkoutFrame');
+    final directory = response['directory'] as String?;
+    final fileName = response['fileName'] as String?;
+    if (directory == null || fileName == null) {
+      throw const MotionfitPoseException(
+        'invalid_response',
+        'Native pose engine did not return a written frame.',
+      );
+    }
+    return MotionfitStillPhoto(
+      directory: directory,
+      fileName: fileName,
+      width: (response['width'] as num? ?? 0).toInt(),
+      height: (response['height'] as num? ?? 0).toInt(),
+    );
+  }
 
   Future<void> dispose() async {
     try {

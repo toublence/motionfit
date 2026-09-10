@@ -1,4 +1,5 @@
 import AVFoundation
+import CoreImage
 import Foundation
 import MediaPipeTasksVision
 import UIKit
@@ -24,6 +25,13 @@ final class MotionfitPoseEngine: NSObject {
   )
 
   private var cameraInput: AVCaptureDeviceInput?
+  private let frameCaptureLock = NSLock()
+  private var pendingFrameCapture:
+    ((Result<MotionfitStillPhoto, MotionfitPoseNativeError>) -> Void)?
+  private let frameEncodeQueue = DispatchQueue(
+    label: "com.namslab.motionfit_pose.frame.encode"
+  )
+  private lazy var frameEncodeContext = CIContext()
   private var observerTokens: [NSObjectProtocol] = []
   private var lastDeviceOrientation: UIDeviceOrientation = .portrait
 
@@ -495,6 +503,97 @@ final class MotionfitPoseEngine: NSObject {
     }
   }
 
+  /// Saves the next analyzed camera frame as a JPEG.
+  ///
+  /// Body Progress records itself while the user works out, and the pose
+  /// session already owns the camera, so a second capture session cannot be
+  /// opened. This reuses the frame the analyzer is about to receive, which is
+  /// also the frame calibration settled on.
+  func captureNextFrame(
+    completion: @escaping (Result<MotionfitStillPhoto, MotionfitPoseNativeError>) -> Void
+  ) {
+    frameCaptureLock.lock()
+    if pendingFrameCapture != nil {
+      frameCaptureLock.unlock()
+      completion(.failure(MotionfitPoseNativeError(
+        "busy",
+        "A workout frame capture is already pending."
+      )))
+      return
+    }
+    pendingFrameCapture = completion
+    frameCaptureLock.unlock()
+  }
+
+  private func takePendingFrameCapture()
+    -> ((Result<MotionfitStillPhoto, MotionfitPoseNativeError>) -> Void)? {
+    frameCaptureLock.lock()
+    let pending = pendingFrameCapture
+    pendingFrameCapture = nil
+    frameCaptureLock.unlock()
+    return pending
+  }
+
+  private func failPendingFrameCapture(_ message: String) {
+    guard let pending = takePendingFrameCapture() else { return }
+    pending(.failure(MotionfitPoseNativeError("capture_failed", message)))
+  }
+
+  /// Encodes off the processing queue so pose inference keeps its cadence.
+  private func writeWorkoutFrame(
+    _ pixelBuffer: CVPixelBuffer,
+    completion: @escaping (Result<MotionfitStillPhoto, MotionfitPoseNativeError>) -> Void
+  ) {
+    let mirrored = cameraInput?.device.position == .front
+    frameEncodeQueue.async { [weak self] in
+      guard let self else {
+        completion(.failure(MotionfitPoseNativeError(
+          "capture_failed",
+          "The pose engine went away before the frame was written."
+        )))
+        return
+      }
+      var image = CIImage(cvPixelBuffer: pixelBuffer)
+      if mirrored {
+        // Match the mirrored preview the user is looking at.
+        image = image
+          .transformed(by: CGAffineTransform(scaleX: -1, y: 1))
+          .transformed(by: CGAffineTransform(
+            translationX: image.extent.width,
+            y: 0
+          ))
+      }
+      guard let data = self.frameEncodeContext.jpegRepresentation(
+        of: image,
+        colorSpace: CGColorSpaceCreateDeviceRGB(),
+        options: [:]
+      ) else {
+        completion(.failure(MotionfitPoseNativeError(
+          "capture_failed",
+          "The workout frame could not be encoded."
+        )))
+        return
+      }
+      do {
+        let directory = try MotionfitStillCapture.directoryURL()
+        let fileName = "body_\(Int64(Date().timeIntervalSince1970 * 1000)).jpg"
+        let fileURL = directory.appendingPathComponent(fileName)
+        try data.write(to: fileURL, options: .atomic)
+        completion(.success(MotionfitStillPhoto(
+          directory: directory.path,
+          fileName: fileName,
+          width: Int(image.extent.width),
+          height: Int(image.extent.height)
+        )))
+      } catch {
+        completion(.failure(MotionfitPoseNativeError(
+          "photo_storage_failed",
+          "The workout frame could not be written to disk."
+        )))
+      }
+    }
+  }
+
   func dispose(completion: @escaping () -> Void) {
     dispatchPrecondition(condition: .onQueue(.main))
 
@@ -547,7 +646,10 @@ final class MotionfitPoseEngine: NSObject {
       }
 
       do {
-        let landmarker = try self.makePoseLandmarker(modelURL: modelURL)
+        let landmarker = try self.makePoseLandmarker(
+          modelURL: modelURL,
+          trackingProfile: newConfiguration.trackingProfile
+        )
         self.poseLandmarker = landmarker
         self.processingGeneration = operationGeneration
         self.activeModel = newConfiguration.model
@@ -1278,17 +1380,21 @@ final class MotionfitPoseEngine: NSObject {
     return sanitized.isEmpty ? "session" : sanitized
   }
 
-  private func makePoseLandmarker(modelURL: URL) throws -> PoseLandmarker {
+  private func makePoseLandmarker(
+    modelURL: URL,
+    trackingProfile: MotionfitTrackingProfile
+  ) throws -> PoseLandmarker {
     let options = PoseLandmarkerOptions()
     options.baseOptions.modelAssetPath = modelURL.path
     options.runningMode = .liveStream
-    // Match motion-fit3's mobile worker: one person and the Lite model's
-    // production confidence thresholds. MediaPipe still returns all 33
-    // landmarks when only part of the body is visible.
+    // Squat acquisition favours recall. Dart still requires a stronger
+    // shoulder-hip-knee chain before calibration or rep counting.
+    let acquisitionConfidence: Float = trackingProfile == .squat ? 0.3 : 0.4
+    let trackingConfidence: Float = trackingProfile == .squat ? 0.4 : 0.5
     options.numPoses = 1
-    options.minPoseDetectionConfidence = 0.4
-    options.minPosePresenceConfidence = 0.4
-    options.minTrackingConfidence = 0.5
+    options.minPoseDetectionConfidence = acquisitionConfidence
+    options.minPosePresenceConfidence = acquisitionConfidence
+    options.minTrackingConfidence = trackingConfidence
     options.shouldOutputSegmentationMasks = false
     options.poseLandmarkerLiveStreamDelegate = self
     return try PoseLandmarker(options: options)
@@ -1303,7 +1409,10 @@ final class MotionfitPoseEngine: NSObject {
 
     let changeResult: Result<Void, MotionfitPoseNativeError>
     do {
-      let replacement = try makePoseLandmarker(modelURL: request.modelURL)
+      let replacement = try makePoseLandmarker(
+        modelURL: request.modelURL,
+        trackingProfile: activeTrackingProfile
+      )
       poseLandmarker = replacement
       activeModel = request.model
       resetInferenceState(resetFrameCounter: false)
@@ -1592,6 +1701,10 @@ extension MotionfitPoseEngine: AVCaptureVideoDataOutputSampleBufferDelegate {
     guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
 
     delegate?.poseEngine(self, didOutputPreview: pixelBuffer)
+
+    if let pendingCapture = takePendingFrameCapture() {
+      writeWorkoutFrame(pixelBuffer, completion: pendingCapture)
+    }
 
     let videoElapsedUs = appendVideoSample(sampleBuffer)
 

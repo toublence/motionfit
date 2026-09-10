@@ -78,6 +78,8 @@ class _CalendarRecordsViewState extends State<CalendarRecordsView> {
             onSelectDate: (date) => setState(() => _selectedDate = date),
           ),
           SizedBox(height: context.tokens.spaceXl),
+          const _ProgressEntryCards(),
+          SizedBox(height: context.tokens.spaceXl),
           const NativeAdSection(placement: NativeAdPlacement.records),
           CoachSectionHeader(title: l10n.recordsWorkoutRecords),
           const SizedBox(height: 7),
@@ -101,6 +103,106 @@ class _CalendarRecordsViewState extends State<CalendarRecordsView> {
             ),
           ],
         ],
+      ),
+    );
+  }
+}
+
+/// Entry points for the two progress features.
+///
+/// They sit in the Progress tab rather than on the workout screen because both
+/// are about looking back at accumulated history, not starting a session.
+class _ProgressEntryCards extends StatelessWidget {
+  const _ProgressEntryCards();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        CoachSectionHeader(
+          title: l10n.progressSectionTitle,
+          subtitle: l10n.progressSectionSubtitle,
+        ),
+        SizedBox(height: context.tokens.space12),
+        // The list gives its children an unbounded height, so the row can only
+        // stretch its cards to a shared height inside an IntrinsicHeight.
+        IntrinsicHeight(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: _ProgressEntryCard(
+                  icon: Icons.photo_camera_rounded,
+                  title: l10n.bodyProgressTitle,
+                  body: l10n.bodyProgressSubtitle,
+                  onTap: () => context.push('/records/body-progress'),
+                ),
+              ),
+              SizedBox(width: context.tokens.space12),
+              Expanded(
+                child: _ProgressEntryCard(
+                  icon: Icons.insights_rounded,
+                  title: l10n.formProgressTitle,
+                  body: l10n.formProgressSubtitle,
+                  onTap: () => context.push('/records/form-progress'),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _ProgressEntryCard extends StatelessWidget {
+  const _ProgressEntryCard({
+    required this.icon,
+    required this.title,
+    required this.body,
+    required this.onTap,
+  });
+
+  final IconData icon;
+  final String title;
+  final String body;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      margin: EdgeInsets.zero,
+      child: InkWell(
+        onTap: onTap,
+        child: Padding(
+          padding: EdgeInsets.all(context.tokens.spaceMd),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(icon, size: 22, color: colors.primary),
+              SizedBox(height: context.tokens.spaceSm),
+              Text(
+                title,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context).textTheme.titleSmall,
+              ),
+              SizedBox(height: context.tokens.spaceXs),
+              Text(
+                body,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: colors.onSurfaceVariant,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
