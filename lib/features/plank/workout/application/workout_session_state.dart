@@ -1,3 +1,4 @@
+import 'package:motionfit_squat/core/analytics/calibration_feedback.dart';
 import 'package:motionfit_squat/features/plank/workout/domain/models/workout_enums.dart';
 import 'package:motionfit_squat/features/plank/workout/domain/models/pose_frame.dart';
 import 'package:motionfit_squat/features/plank/workout/domain/models/workout_plan.dart';
@@ -20,6 +21,7 @@ class WorkoutSessionState {
     required this.phase,
     required this.trackingState,
     required this.calibrationProgress,
+    this.calibrationFeedback = CalibrationFeedback.connecting,
     required this.activeElapsed,
     required this.restElapsed,
     required this.totalElapsed,
@@ -87,6 +89,7 @@ class WorkoutSessionState {
   final SquatPhase phase;
   final TrackingState trackingState;
   final double calibrationProgress;
+  final CalibrationFeedback calibrationFeedback;
   final Duration activeElapsed;
   final Duration restElapsed;
   final Duration totalElapsed;
@@ -143,6 +146,7 @@ class WorkoutSessionState {
     SquatPhase? phase,
     TrackingState? trackingState,
     double? calibrationProgress,
+    CalibrationFeedback? calibrationFeedback,
     Duration? activeElapsed,
     Duration? restElapsed,
     Duration? totalElapsed,
@@ -181,6 +185,7 @@ class WorkoutSessionState {
       phase: phase ?? this.phase,
       trackingState: trackingState ?? this.trackingState,
       calibrationProgress: calibrationProgress ?? this.calibrationProgress,
+      calibrationFeedback: calibrationFeedback ?? this.calibrationFeedback,
       activeElapsed: activeElapsed ?? this.activeElapsed,
       restElapsed: restElapsed ?? this.restElapsed,
       totalElapsed: totalElapsed ?? this.totalElapsed,

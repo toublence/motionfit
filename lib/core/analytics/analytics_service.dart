@@ -211,9 +211,12 @@ class AnalyticsService {
   void workoutSetupViewed({
     required int plannedSets,
     required int plannedRepsPerSet,
+    String exerciseType = 'squat',
   }) => _logV2('mf2_workout_setup_viewed', {
     'planned_sets_bucket': countBucket(plannedSets),
     'planned_reps_bucket': repsBucket(plannedRepsPerSet),
+    'exercise_type': exerciseType,
+    'target_unit': exerciseType == 'plank' ? 'seconds' : 'reps',
     'entry_point': 'home',
     'challenge_active': 0,
     'target_sets': plannedSets,
@@ -226,6 +229,10 @@ class AnalyticsService {
     required String launchSource,
     bool isRecovery = false,
     bool challengeActive = false,
+    String exerciseType = 'squat',
+    bool? isFirstWorkout,
+    bool hadPriorCount = false,
+    String? entryPointOverride,
   }) {
     final entryPoint = isRecovery
         ? 'resume'
@@ -236,8 +243,11 @@ class AnalyticsService {
         : 'other';
     _workoutSession = WorkoutAnalyticsSession(
       sessionId: _sessionIdFactory(),
-      entryPoint: entryPoint,
+      entryPoint: entryPointOverride ?? entryPoint,
       challengeActive: challengeActive,
+      exerciseType: exerciseType,
+      isFirstWorkout: isFirstWorkout,
+      hadPriorCount: hadPriorCount,
       targetSets: plannedSets,
       targetReps: plannedSets * plannedRepsPerSet,
     );
@@ -281,13 +291,16 @@ class AnalyticsService {
     required String cameraState,
     required String permissionState,
     required String sessionState,
-  }) => _logWorkoutV2('mf2_workout_failed', {
-    'failure_stage': failureStage,
-    'failure_reason': failureReason,
-    'camera_state': cameraState,
-    'permission_state': permissionState,
-    'session_state': sessionState,
-  }, terminal: true);
+  }) {
+    workoutExit(stage: failureStage, reason: failureReason);
+    _logWorkoutV2('mf2_workout_failed', {
+      'failure_stage': failureStage,
+      'failure_reason': failureReason,
+      'camera_state': cameraState,
+      'permission_state': permissionState,
+      'session_state': sessionState,
+    }, terminal: true);
+  }
 
   void workoutScreenViewed() =>
       _logWorkoutV2('mf2_workout_screen_viewed', null, oncePerSession: true);
@@ -296,14 +309,95 @@ class AnalyticsService {
   // by cameraInitializationStarted.
   void workoutInitializationStarted() {}
 
-  void calibrationStarted() =>
-      _logWorkoutV2('mf2_calibration_started', null, oncePerSession: true);
+  void calibrationStarted() {
+    _workoutSession?.calibrationObserved = true;
+    _logWorkoutV2('mf2_calibration_started', null, oncePerSession: true);
+  }
 
-  void calibrationCompleted({required Duration elapsed}) => _logWorkoutV2(
-    'mf2_calibration_completed',
-    {'elapsed_time_bucket': elapsedTimeBucket(elapsed)},
-    oncePerSession: true,
-  );
+  Map<String, Object>? get workoutContext => _workoutSession?.parameters;
+
+  void resolveFirstWorkout(String attemptId, bool isFirst) {
+    if (_workoutSession?.sessionId == attemptId) {
+      _workoutSession?.isFirstWorkout = isFirst;
+    }
+  }
+
+  void preparationChanged({
+    required String reason,
+    required bool hadValidPose,
+    required bool ready,
+    int resetCount = 0,
+    String? resetReason,
+  }) {
+    final session = _workoutSession;
+    if (session == null) return;
+    session.hadValidPose |= hadValidPose;
+    session.calibrationCompleted |= ready;
+    calibrationStarted();
+    final details = <String, Object>{
+      'reason': reason,
+      'elapsed_ms': session.clock.elapsedMilliseconds,
+      'attempt_index': session.calibrationAttemptIndex,
+    };
+    if (session.preparationReason != reason) {
+      session.preparationReason = reason;
+      _logWorkoutV2('mf2_preparation_state_changed', details);
+    }
+    if (resetCount > 0) {
+      session.calibrationAttemptIndex += resetCount;
+      _logWorkoutV2('mf2_calibration_reset', {
+        ...details,
+        'reason': resetReason ?? reason,
+        'attempt_index': session.calibrationAttemptIndex,
+        'reset_count': resetCount,
+      });
+    }
+    if (ready) {
+      _logWorkoutV2('mf2_calibration_ready', details, oncePerSession: true);
+    }
+  }
+
+  void firstCountCommitted({String? attemptId}) {
+    final session = _workoutSession;
+    if (session == null ||
+        (attemptId != null && session.sessionId != attemptId) ||
+        session.hadPriorCount)
+      return;
+    session.firstCountCompleted = true;
+    _logWorkoutV2('mf2_first_count_committed', {
+      'elapsed_ms': session.clock.elapsedMilliseconds,
+    }, oncePerSession: true);
+  }
+
+  void workoutExit({required String stage, required String reason}) {
+    final session = _workoutSession;
+    if (session == null) return;
+    final parameters = <String, Object>{
+      'exit_stage': stage,
+      'exit_reason': reason,
+      'reason': reason,
+      'elapsed_ms': session.clock.elapsedMilliseconds,
+      'had_valid_pose': session.hadValidPose ? 1 : 0,
+      'calibration_completed': session.calibrationCompleted ? 1 : 0,
+      'first_count_completed':
+          session.firstCountCompleted || session.hadPriorCount ? 1 : 0,
+      'attempt_index': session.calibrationAttemptIndex,
+    };
+    _logWorkoutV2('mf2_workout_exit', parameters, oncePerSession: true);
+    if (session.calibrationObserved) {
+      _logWorkoutV2('mf2_calibration_exit', parameters, oncePerSession: true);
+    }
+  }
+
+  void retentionEvent(String name, Map<String, Object> parameters) =>
+      _logV2(name, parameters);
+
+  void calibrationCompleted({required Duration elapsed}) {
+    _workoutSession?.calibrationCompleted = true;
+    _logWorkoutV2('mf2_calibration_completed', {
+      'elapsed_time_bucket': elapsedTimeBucket(elapsed),
+    }, oncePerSession: true);
+  }
 
   void calibrationFailed({required String failureReason}) => _logWorkoutV2(
     'mf2_calibration_failed',
@@ -332,6 +426,7 @@ class AnalyticsService {
     required int durationSeconds,
   }) {
     if (reps <= 0) return;
+    workoutExit(stage: 'completed', reason: 'completed');
     _logWorkoutV2('mf2_workout_completed', <String, Object>{
       'reps_bucket': repsBucket(reps),
       'sets_bucket': countBucket(sets),
@@ -363,11 +458,14 @@ class AnalyticsService {
     required int reps,
     required int sets,
     required int durationSeconds,
-  }) => _logWorkoutV2('mf2_workout_interrupted', {
-    'reps_bucket': repsBucket(reps),
-    'sets_bucket': countBucket(sets),
-    'duration_bucket': durationBucket(Duration(seconds: durationSeconds)),
-  }, oncePerSession: true);
+  }) {
+    workoutExit(stage: 'paused', reason: 'save_for_later');
+    _logWorkoutV2('mf2_workout_interrupted', {
+      'reps_bucket': repsBucket(reps),
+      'sets_bucket': countBucket(sets),
+      'duration_bucket': durationBucket(Duration(seconds: durationSeconds)),
+    }, oncePerSession: true);
+  }
 
   void workoutCancelled({
     required String cancelStage,
@@ -375,13 +473,16 @@ class AnalyticsService {
     required Duration elapsed,
     required int detectedReps,
     required Duration trackingLoss,
-  }) => _logWorkoutV2('mf2_workout_cancelled', {
-    'cancel_stage': cancelStage,
-    'cancel_reason': cancelReason,
-    'elapsed_time_bucket': elapsedTimeBucket(elapsed),
-    'detected_rep_bucket': repsBucket(detectedReps),
-    'tracking_loss_bucket': trackingLossBucket(trackingLoss),
-  }, terminal: true);
+  }) {
+    workoutExit(stage: cancelStage, reason: cancelReason);
+    _logWorkoutV2('mf2_workout_cancelled', {
+      'cancel_stage': cancelStage,
+      'cancel_reason': cancelReason,
+      'elapsed_time_bucket': elapsedTimeBucket(elapsed),
+      'detected_rep_bucket': repsBucket(detectedReps),
+      'tracking_loss_bucket': trackingLossBucket(trackingLoss),
+    }, terminal: true);
+  }
 
   void reminderEnabled({
     required int weekday,
@@ -421,11 +522,14 @@ class AnalyticsService {
     _logV2('mf2_reminder_permission_result', parameters);
   }
 
-  void reminderScheduled({required String source}) {}
+  void reminderScheduled({required String source}) =>
+      _logV2('mf2_reminder_scheduled', {'source': source});
 
-  void reminderScheduleFailed({required String source}) {}
+  void reminderScheduleFailed({required String source}) =>
+      _logV2('mf2_reminder_schedule_failed', {'source': source});
 
-  void reminderDisabled({required String source}) {}
+  void reminderDisabled({required String source}) =>
+      _logV2('mf2_reminder_disabled', {'source': source});
 
   void workoutDetectionSummary({
     required bool completed,
@@ -870,6 +974,7 @@ class AnalyticsService {
     }
     values
       ..['analytics_schema'] = 2
+      ..['analytics_revision'] = 3
       ..['platform'] = _platform
       ..['app_version'] = _appVersion
       ..['build_number'] = _buildNumber

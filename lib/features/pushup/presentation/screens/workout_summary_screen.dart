@@ -1,3 +1,7 @@
+import 'package:motionfit_squat/features/exercise/application/combined_workout_metrics.dart';
+import 'package:motionfit_squat/features/exercise/application/exercise_selection.dart';
+import 'package:motionfit_squat/features/exercise/domain/exercise_type.dart';
+import 'package:motionfit_squat/features/settings/domain/user_preferences.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -40,7 +44,6 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
   bool _reminderSettingsCtaVisible = false;
   bool _enablingReminder = false;
   bool _reminderEnabled = false;
-  bool _postCompletionActionsLoading = false;
   bool _timelineAnalyticsLogged = false;
   int? _reminderOfferWorkoutCount;
 
@@ -49,7 +52,7 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
     super.initState();
     _crashReporting = ref.read(crashReportingServiceProvider);
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted) return;
+      if (!mounted || _finishing) return;
       final session = ref.read(workoutSessionControllerProvider).session;
       ref.read(analyticsServiceProvider).screenView('workout_summary');
       if (session != null) {
@@ -138,13 +141,28 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
         : scoreValues.reduce((a, b) => a + b) / scoreValues.length;
     final resolvedAverageScore =
         averageScore ?? loadedDetails?.averageFormScore;
-    final retention = ref.watch(retentionMetricsProvider);
+    final retention = ref.watch(combinedWorkoutMetricsProvider);
     final retentionMetrics = switch (retention) {
       AsyncData(:final value) => value,
       _ => null,
     };
+    final activeChallenge = ref.watch(challengeDashboardProvider).value?.active;
+    final nextGoal =
+        activeChallenge != null &&
+            activeChallenge.currentDay <
+                activeChallenge.challenge.dailyGoals.length
+        ? activeChallenge.challenge.dailyGoals[activeChallenge.currentDay]
+        : null;
+    final nextBody = activeChallenge == null
+        ? l10n.challengeSevenDayDescription
+        : nextGoal != null
+        ? '${l10n.challengeDayNumber(activeChallenge.currentDay + 1)} · ${nextGoal == 0 ? l10n.challengeRecoveryDay : l10n.unitReps(nextGoal)}'
+        : l10n.challengeRepsRemaining(activeChallenge.remainingReps);
     return PopScope(
       canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop && !_finishing) unawaited(_finish(showInterstitial: false));
+      },
       child: Scaffold(
         body: SafeArea(
           child: LayoutBuilder(
@@ -250,6 +268,48 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
                       ),
                       SizedBox(height: gap),
                     ],
+                    if (!_reminderOfferEligible &&
+                        !_reminderSettingsCtaVisible &&
+                        !_reminderEnabled &&
+                        session.completed &&
+                        !session.interrupted) ...[
+                      CoachInsightPanel(
+                        icon: Icons.event_available_rounded,
+                        title: activeChallenge == null
+                            ? l10n.challengeSevenDayTitle
+                            : l10n.challengeNext,
+                        body: nextBody,
+                        trailing: TextButton(
+                          onPressed: _finishing
+                              ? null
+                              : () {
+                                  ref
+                                      .read(selectedExerciseProvider.notifier)
+                                      .select(ExerciseType.pushup);
+                                  ref
+                                      .read(analyticsServiceProvider)
+                                      .retentionEvent(
+                                        'mf2_next_workout_action_tapped',
+                                        {
+                                          'exercise_type': 'pushup',
+                                          'entry_point': 'workout_summary',
+                                          'action': activeChallenge == null
+                                              ? 'challenge_recommendation'
+                                              : 'active_challenge',
+                                        },
+                                      );
+                                  unawaited(
+                                    _finish(
+                                      showInterstitial: false,
+                                      destination: '/challenge',
+                                    ),
+                                  );
+                                },
+                          child: Text(l10n.challengeViewDetails),
+                        ),
+                      ),
+                      SizedBox(height: gap),
+                    ],
                     Row(
                       children: [
                         Icon(
@@ -306,8 +366,7 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
                     FilledButton(
                       onPressed:
                           state.saveState == WorkoutSaveState.saving ||
-                              _finishing ||
-                              _postCompletionActionsLoading
+                              _finishing
                           ? null
                           : () => _finish(
                               showInterstitial:
@@ -331,54 +390,42 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
   Future<void> _loadPostCompletionActions() async {
     final session = ref.read(workoutSessionControllerProvider).session;
     if (session == null || !session.completed || session.interrupted) return;
-    if (mounted) setState(() => _postCompletionActionsLoading = true);
     try {
-      final metrics = await ref.read(retentionMetricsProvider.future);
-      if (!mounted) return;
+      final metrics = await ref.read(combinedWorkoutMetricsProvider.future);
+      if (!mounted || _finishing) return;
 
       final l10n = PushupLocalizations.of(context);
       var hasEnabledReminder = true;
       try {
         final reminders = await ref.read(reminderControllerProvider.future);
-        if (!mounted) return;
+        if (!mounted || _finishing) return;
         hasEnabledReminder = reminders.any((reminder) => reminder.enabled);
-        await ref
-            .read(reminderControllerProvider.notifier)
-            .refreshForEnvironment(
-              title: l10n.notificationReminderTitle,
-              body: l10n.notificationReminderBody,
-              force: true,
-              currentStreak: metrics.currentStreak,
-              streakAtRisk: metrics.streakAtRisk,
-              streakRiskBody: l10n.notificationStreakReminderBody(
-                metrics.currentStreak,
-              ),
-            );
+        unawaited(
+          ref
+              .read(reminderControllerProvider.notifier)
+              .refreshForEnvironment(
+                title: l10n.notificationReminderTitle,
+                body: l10n.notificationReminderBody,
+                force: true,
+                currentStreak: metrics.currentStreak,
+                streakAtRisk: metrics.streakAtRisk,
+                streakRiskBody: l10n.notificationStreakReminderBody(
+                  metrics.currentStreak,
+                ),
+              )
+              .catchError((Object _) {}),
+        );
       } on Object catch (error, stackTrace) {
         _recordNonFatal(error, stackTrace, 'post_workout_reminder_refresh');
       }
-      if (!mounted) return;
+      if (!mounted || _finishing) return;
 
       final preferences = ref.read(preferencesControllerProvider);
       final completedWorkoutCount = metrics.completedWorkoutCount;
-      final shouldShowReminderSettings =
-          !hasEnabledReminder &&
-          preferences.postWorkoutReminderPermissionDenied &&
-          (completedWorkoutCount == 1 || completedWorkoutCount == 3);
-      if (shouldShowReminderSettings && mounted) {
-        setState(() {
-          _reminderSettingsCtaVisible = true;
-          _reminderOfferWorkoutCount = completedWorkoutCount;
-        });
-      }
+      // Explicit denial is respected. Settings remain accessible separately.
       final shouldOfferReminder =
           !hasEnabledReminder &&
-          !preferences.postWorkoutReminderPermissionDenied &&
-          (completedWorkoutCount == 1
-              ? preferences.postWorkoutReminderPromptedAtWorkoutCount < 1
-              : completedWorkoutCount == 3 &&
-                    preferences.postWorkoutReminderDeferred &&
-                    preferences.postWorkoutReminderPromptedAtWorkoutCount < 3);
+          preferences.shouldOfferWorkoutReminder(completedWorkoutCount);
       if (shouldOfferReminder) {
         try {
           await ref
@@ -387,11 +434,11 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
         } on Object catch (error, stackTrace) {
           _recordNonFatal(error, stackTrace, 'reminder_prompt_persistence');
         }
-        if (!mounted) return;
+        if (!mounted || _finishing) return;
         ref
             .read(analyticsServiceProvider)
             .reminderPromptShown(completedWorkoutCount: completedWorkoutCount);
-        if (!mounted) return;
+        if (!mounted || _finishing) return;
         setState(() {
           _reminderOfferEligible = true;
           _reminderOfferWorkoutCount = completedWorkoutCount;
@@ -399,8 +446,6 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
       }
     } on Object catch (error, stackTrace) {
       _recordNonFatal(error, stackTrace, 'post_workout_actions');
-    } finally {
-      if (mounted) setState(() => _postCompletionActionsLoading = false);
     }
   }
 
@@ -415,6 +460,12 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
                 DateTime.now())
             .toLocal();
     final completedWorkoutCount = _reminderOfferWorkoutCount ?? 1;
+    unawaited(
+      ref
+          .read(preferencesControllerProvider.notifier)
+          .setReminderPromptResponse(ReminderPromptResponse.accepted)
+          .catchError((Object _) {}),
+    );
     ref
         .read(analyticsServiceProvider)
         .reminderPromptAccepted(completedWorkoutCount: completedWorkoutCount);
@@ -426,7 +477,7 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
         title: l10n.notificationReminderTitle,
         body: l10n.notificationReminderBody,
       );
-      if (!mounted) return;
+      if (!mounted || _finishing) return;
       final permissionDenied =
           result == NotificationPermissionResult.denied ||
           result == NotificationPermissionResult.permanentlyDenied;
@@ -443,7 +494,7 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
       } on Object catch (error, stackTrace) {
         _recordNonFatal(error, stackTrace, 'reminder_eligibility_persistence');
       }
-      if (!mounted) return;
+      if (!mounted || _finishing) return;
       if (result == NotificationPermissionResult.granted) {
         setState(() {
           _reminderEnabled = true;
@@ -451,7 +502,7 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
           _reminderSettingsCtaVisible = false;
         });
         try {
-          final metrics = await ref.read(retentionMetricsProvider.future);
+          final metrics = await ref.read(combinedWorkoutMetricsProvider.future);
           await controller.refreshForEnvironment(
             title: l10n.notificationReminderTitle,
             body: l10n.notificationReminderBody,
@@ -492,7 +543,7 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
       }
     } on Object catch (error, stackTrace) {
       _recordNonFatal(error, stackTrace, 'post_workout_reminder_enable');
-      if (!mounted) return;
+      if (!mounted || _finishing) return;
       try {
         await ref
             .read(preferencesControllerProvider.notifier)
@@ -515,6 +566,12 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
   }
 
   Future<void> _declineReminderOffer() async {
+    unawaited(
+      ref
+          .read(preferencesControllerProvider.notifier)
+          .setReminderPromptResponse(ReminderPromptResponse.declined)
+          .catchError((Object _) {}),
+    );
     final completedWorkoutCount = _reminderOfferWorkoutCount;
     if (completedWorkoutCount != null) {
       ref
@@ -528,11 +585,30 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
         _recordNonFatal(error, stackTrace, 'reminder_decline_persistence');
       }
     }
-    if (!mounted) return;
+    if (!mounted || _finishing) return;
     setState(() {
       _reminderOfferEligible = false;
       _reminderSettingsCtaVisible = false;
     });
+  }
+
+  void _dismissUnansweredReminder() {
+    if (!_reminderOfferEligible || _enablingReminder || _reminderEnabled)
+      return;
+    _reminderOfferEligible = false;
+    final preferences = ref.read(preferencesControllerProvider.notifier);
+    ref
+        .read(analyticsServiceProvider)
+        .retentionEvent('mf2_reminder_prompt_dismissed', {
+          'exercise_type': 'pushup',
+          'entry_point': 'workout_summary',
+          'completed_workout_count': _reminderOfferWorkoutCount ?? 0,
+        });
+    unawaited(
+      preferences
+          .setReminderPromptResponse(ReminderPromptResponse.dismissed)
+          .catchError((Object _) {}),
+    );
   }
 
   Future<void> _finish({
@@ -540,6 +616,7 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
     String destination = '/squat',
   }) async {
     if (_finishing) return;
+    _dismissUnansweredReminder();
     setState(() => _finishing = true);
     try {
       final sessionController = ref.read(

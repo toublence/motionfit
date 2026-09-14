@@ -11,6 +11,7 @@ class PrivacyConsentService {
   final CrashReportingService _crashReporting;
   Future<void>? _requestOperation;
   Future<void>? _trackingAuthorizationOperation;
+  bool _consentInfoResolved = false;
 
   Future<void> requestTrackingAuthorization() =>
       _trackingAuthorizationOperation ??= _requestTrackingAuthorization();
@@ -19,8 +20,16 @@ class PrivacyConsentService {
       _requestOperation ??= _requestTrackingAndConsent();
 
   Future<void> _requestTrackingAndConsent() async {
-    await requestTrackingAuthorization();
-    await refreshUmpConsent();
+    try {
+      await requestTrackingAuthorization();
+      await refreshUmpConsent();
+    } finally {
+      // A consent info update that never resolved (offline launch, transient
+      // network failure, timeout) leaves `canRequestAds()` false for the rest
+      // of the process. Drop the memo so the next caller retries instead of
+      // awaiting the failed result and serving no ads for the whole session.
+      if (!_consentInfoResolved) _requestOperation = null;
+    }
   }
 
   Future<void> _requestTrackingAuthorization() async {
@@ -47,7 +56,10 @@ class PrivacyConsentService {
     try {
       ConsentInformation.instance.requestConsentInfoUpdate(
         ConsentRequestParameters(),
-        () => unawaited(_loadConsentForm(completer)),
+        () {
+          _consentInfoResolved = true;
+          unawaited(_loadConsentForm(completer));
+        },
         (error) => unawaited(
           _finishConsentFlow(
             completer,

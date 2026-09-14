@@ -984,11 +984,14 @@ class MotionfitPosePlugin :
             recordingCommand = RecordingCommand.START
             resetVideoTimeline()
             val outputOptions = FileOutputOptions.Builder(partialFile).build()
+            val recordingGeneration = generation.get()
             recording =
                 videoCapture!!
                     .output
                     .prepareRecording(applicationContext, outputOptions)
-                    .start(ContextCompat.getMainExecutor(applicationContext), ::handleVideoRecordEvent)
+                    .start(ContextCompat.getMainExecutor(applicationContext)) { event ->
+                        if (generation.get() == recordingGeneration) handleVideoRecordEvent(event)
+                    }
         } catch (error: Exception) {
             recordingPartialFile?.delete()
             recordingPartialFile = null
@@ -1026,6 +1029,14 @@ class MotionfitPosePlugin :
             result.success(null)
             return
         }
+        if (operationInProgress && recordingCommand == RecordingCommand.START) {
+            finishOperationError(ERROR_VIDEO_RECORDING_FAILED, "Optional video preparation was cancelled.")
+            recordingCommand = RecordingCommand.ABORT
+            recordingCancelRequested = true
+            activeRecording.stop()
+            result.success(null)
+            return
+        }
         if (!beginOperation(result)) return
         recordingCommand = RecordingCommand.CANCEL
         recordingCancelRequested = true
@@ -1034,6 +1045,7 @@ class MotionfitPosePlugin :
 
     private fun handleVideoRecordEvent(event: VideoRecordEvent) {
         checkMainThread()
+        if (recordingCancelRequested && event !is VideoRecordEvent.Finalize) return
         when (event) {
             is VideoRecordEvent.Start -> {
                 val nowNs = SystemClock.elapsedRealtimeNanos()
@@ -1240,6 +1252,9 @@ class MotionfitPosePlugin :
     }
 
     private fun dispose(result: MethodChannel.Result) {
+        if (operationInProgress && recordingCommand == RecordingCommand.START) {
+            finishOperationError(ERROR_VIDEO_RECORDING_FAILED, "Optional video preparation was cancelled.")
+        }
         if (operationInProgress) {
             if (!startOperationInProgress) {
                 result.error(ERROR_BUSY, "Another pose engine operation is still running.", null)

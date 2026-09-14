@@ -9,6 +9,9 @@ class WorkoutAnalyticsSession {
     required this.challengeActive,
     required this.targetSets,
     required this.targetReps,
+    this.exerciseType = 'squat',
+    this.isFirstWorkout,
+    this.hadPriorCount = false,
   });
 
   final String sessionId;
@@ -16,6 +19,16 @@ class WorkoutAnalyticsSession {
   final bool challengeActive;
   final int targetSets;
   final int targetReps;
+  final String exerciseType;
+  bool? isFirstWorkout;
+  final bool hadPriorCount;
+  final Stopwatch clock = Stopwatch()..start();
+  bool hadValidPose = false;
+  bool calibrationCompleted = false;
+  bool firstCountCompleted = false;
+  bool calibrationObserved = false;
+  int calibrationAttemptIndex = 1;
+  String? preparationReason;
 
   final Set<String> _loggedOnce = <String>{};
   String? _terminalEvent;
@@ -30,6 +43,14 @@ class WorkoutAnalyticsSession {
 
   Map<String, Object> get parameters => <String, Object>{
     'workout_session_id': sessionId,
+    'attempt_id': sessionId,
+    'exercise_type': exerciseType,
+    'target_unit': exerciseType == 'plank' ? 'seconds' : 'reps',
+    'is_first_workout': isFirstWorkout == null
+        ? -1
+        : isFirstWorkout!
+        ? 1
+        : 0,
     'entry_point': entryPoint,
     'challenge_active': challengeActive ? 1 : 0,
     'target_sets': targetSets,

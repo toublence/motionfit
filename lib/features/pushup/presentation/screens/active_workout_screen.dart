@@ -1,3 +1,5 @@
+import 'package:motionfit_squat/core/widgets/upright_camera_preview.dart';
+import 'package:motionfit_squat/core/widgets/preparation_feedback.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -144,10 +146,6 @@ class _ActiveWorkoutScreenState extends ConsumerState<ActiveWorkoutScreen>
     }
     await Future<void>.delayed(const Duration(milliseconds: 850));
     if (!mounted) return;
-    if (challengeWorkout) {
-      await _returnToChallenge();
-      return;
-    }
     context.go('/pushup/workout/summary');
     _navigating = false;
   }
@@ -200,8 +198,9 @@ class _ActiveWorkoutScreenState extends ConsumerState<ActiveWorkoutScreen>
       final messenger = ScaffoldMessenger.maybeOf(context);
       if (messenger == null) return;
       final text = switch (notice.kind) {
-        ProgressCaptureKind.bodyProgress =>
-          AppLocalizations.of(context).bodyProgressAutoSaved,
+        ProgressCaptureKind.bodyProgress => AppLocalizations.of(
+          context,
+        ).bodyProgressAutoSaved,
         ProgressCaptureKind.formProgress => AppLocalizations.of(
           context,
         ).formProgressAutoSaved(_progressExerciseLabel(context, notice)),
@@ -241,7 +240,7 @@ class _ActiveWorkoutScreenState extends ConsumerState<ActiveWorkoutScreen>
                 child: Stack(
                   fit: StackFit.expand,
                   children: [
-                    _UprightCameraPreview(
+                    UprightCameraPreview(
                       textureId: textureId,
                       rotationDegrees: state.previewRotationDegrees,
                       handlesCropAndRotation:
@@ -351,6 +350,15 @@ class _WorkoutCountOverlay extends ConsumerWidget {
     final calibrating =
         state.status == WorkoutSessionStatus.preparing ||
         state.status == WorkoutSessionStatus.calibrating;
+    final calibrationGuidance = preparationFeedbackText(
+      state.calibrationFeedback,
+      camera: l10n.loadingCamera,
+      noPerson: l10n.errorNoPerson,
+      partialBody: l10n.guideWholeBody,
+      angle: l10n.calibrationBody,
+      hold: l10n.calibrationStayStill,
+      ready: l10n.coachReady1,
+    );
     return Semantics(
       liveRegion: true,
       child: Container(
@@ -430,7 +438,7 @@ class _WorkoutCountOverlay extends ConsumerWidget {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      l10n.calibrationBody,
+                      calibrationGuidance,
                       textAlign: TextAlign.center,
                       style: Theme.of(
                         context,
@@ -498,58 +506,6 @@ class _WorkoutCountOverlay extends ConsumerWidget {
                 ),
         ),
       ),
-    );
-  }
-}
-
-class _UprightCameraPreview extends StatelessWidget {
-  const _UprightCameraPreview({
-    required this.textureId,
-    required this.rotationDegrees,
-    required this.handlesCropAndRotation,
-    required this.mirrorInFlutter,
-    required this.sourceWidth,
-    required this.sourceHeight,
-  });
-
-  final int textureId;
-  final int rotationDegrees;
-  final bool handlesCropAndRotation;
-  final bool mirrorInFlutter;
-  final int sourceWidth;
-  final int sourceHeight;
-
-  @override
-  Widget build(BuildContext context) {
-    final normalizedRotation = ((rotationDegrees % 360) + 360) % 360;
-    final manualQuarterTurns = normalizedRotation ~/ 90;
-    final hasSourceSize = sourceWidth > 0 && sourceHeight > 0;
-    final rawWidth = !handlesCropAndRotation && manualQuarterTurns.isOdd
-        ? sourceHeight
-        : sourceWidth;
-    final rawHeight = !handlesCropAndRotation && manualQuarterTurns.isOdd
-        ? sourceWidth
-        : sourceHeight;
-    Widget preview = hasSourceSize
-        ? SizedBox(
-            width: rawWidth.toDouble(),
-            height: rawHeight.toDouble(),
-            child: Texture(textureId: textureId),
-          )
-        : Texture(textureId: textureId);
-    if (!handlesCropAndRotation) {
-      // ImageReader-backed Flutter textures do not apply CameraX rotation or
-      // front-camera mirror metadata, so correct both in the widget layer.
-      preview = RotatedBox(quarterTurns: manualQuarterTurns, child: preview);
-      if (mirrorInFlutter) {
-        preview = Transform.flip(flipX: true, child: preview);
-      }
-    } else if (mirrorInFlutter) {
-      preview = Transform.flip(flipX: true, child: preview);
-    }
-    if (!hasSourceSize) return ClipRect(child: preview);
-    return ClipRect(
-      child: FittedBox(fit: BoxFit.cover, child: preview),
     );
   }
 }

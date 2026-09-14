@@ -37,6 +37,7 @@ class _SquatHomeScreenState extends ConsumerState<SquatHomeScreen> {
       ref.read(analyticsServiceProvider)
         ..screenView('workout_setup')
         ..workoutSetupViewed(
+          exerciseType: 'squat',
           plannedSets: plan.setCount,
           plannedRepsPerSet: plan.targetRepsPerSet,
         );

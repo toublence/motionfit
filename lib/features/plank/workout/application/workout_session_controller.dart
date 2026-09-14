@@ -1,3 +1,5 @@
+import 'package:motionfit_squat/core/analytics/calibration_feedback.dart';
+import 'package:motionfit_squat/core/analytics/workout_retention.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -125,6 +127,11 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
   bool _videoReviewRequested = false;
   bool _engineVideoCapabilityRequested = false;
   bool _videoRecordingActive = false;
+  int _runtimeGeneration = 0;
+  int _videoGeneration = 0;
+  bool _videoStarting = false;
+  int _observedCalibrationRetries = 0;
+  bool _unfinishedCalibrationCaptured = false;
   PoseVideoRecordingResult? _finalizedWorkoutVideo;
 
   static const _calibrationPromptInterval = Duration(seconds: 12);
@@ -325,6 +332,9 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
           : null,
       trackingState: previewState.trackingState,
       calibrationProgress: _repDetector?.snapshot.calibrationProgress ?? 0,
+      calibrationFeedback:
+          _repDetector?.snapshot.calibrationFeedback ??
+          CalibrationFeedback.connecting,
       overlayLandmarks: previewState.overlayLandmarks,
       previewTransform: previewState.previewTransform,
       previewMirrored: previewState.previewMirrored,
@@ -362,7 +372,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
       if (!reusePreparedRuntime) {
         await _startEnginesAndWarmPreview(messages);
       }
-      await _startWorkoutVideoIfAvailable(session.id);
+      unawaited(_startWorkoutVideoIfAvailable(session.id));
       final calibrationSnapshot = _repDetector!.snapshot;
       final calibrated = calibrationSnapshot.calibrationProgress >= 1;
       _adoptPreparedCalibration(calibrationSnapshot);
@@ -581,6 +591,9 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
           : null,
       trackingState: previewState.trackingState,
       calibrationProgress: _repDetector?.snapshot.calibrationProgress ?? 0,
+      calibrationFeedback:
+          _repDetector?.snapshot.calibrationFeedback ??
+          CalibrationFeedback.connecting,
       overlayLandmarks: previewState.overlayLandmarks,
       previewTransform: previewState.previewTransform,
       previewMirrored: previewState.previewMirrored,
@@ -656,6 +669,8 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
   }
 
   Future<void> _startEngines(WorkoutCoachMessages messages) async {
+    final generation = ++_runtimeGeneration;
+    final reporting = ref.read(crashReportingServiceProvider);
     ref.read(analyticsServiceProvider).cameraInitializationStarted();
     unawaited(_setDiagnosticState('camera_state', 'initializing'));
     unawaited(_diagnosticLog('camera_initialization_started'));
@@ -696,27 +711,43 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
             'Camera and pose initialization timed out.',
           ),
         );
-    final voiceInitialization = (() async {
+    final queue = _coachQueue!;
+    queue.setEnabled(false);
+    state = state.copyWith(voiceAvailable: false);
+    unawaited(() async {
+      var available = false;
       try {
-        return await voiceEngine
+        available = await voiceEngine
             .configure(locale: messages.locale, rate: preferences.ttsRate)
             .timeout(_voiceInitializationTimeout);
       } on Object catch (error, stackTrace) {
-        unawaited(_recordNonFatal(error, stackTrace, 'tts_configuration'));
-        return false;
+        unawaited(
+          reporting.recordNonFatal(
+            error,
+            stackTrace,
+            reason: 'tts_configuration',
+          ),
+        );
       }
-    })();
+      if (_disposed ||
+          generation != _runtimeGeneration ||
+          !identical(queue, _coachQueue))
+        return;
+      final current = ref.read(preferencesControllerProvider);
+      queue.setEnabled(
+        available && (_isChallengeWorkout || current.voiceCoachingEnabled),
+      );
+      state = state.copyWith(voiceAvailable: available);
+    }());
     await poseInitialization;
-    final voiceAvailable = await voiceInitialization;
+    if (_disposed || generation != _runtimeGeneration) {
+      throw const PoseEngineException(
+        'initialization_cancelled',
+        'Preparation was cancelled.',
+      );
+    }
     _engineVideoCapabilityRequested = _videoReviewRequested;
-    _coachQueue!.setEnabled(
-      voiceAvailable &&
-          (_isChallengeWorkout || preferences.voiceCoachingEnabled),
-    );
-    state = state.copyWith(
-      voiceAvailable: voiceAvailable,
-      previewTextureId: _poseEngine?.previewTextureId,
-    );
+    state = state.copyWith(previewTextureId: _poseEngine?.previewTextureId);
     unawaited(_setDiagnosticState('camera_state', 'initialized'));
     unawaited(_diagnosticLog('camera_initialization_completed'));
     unawaited(_diagnosticLog('pose_engine_started'));
@@ -780,6 +811,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
       final before = _repDetector!.snapshot;
       final events = _repDetector!.addFrame(frame);
       final snapshot = _repDetector!.snapshot;
+      _observeCalibration(snapshot);
       try {
         _recordDebugFrame(frame, before, snapshot, events);
       } on Object {
@@ -797,6 +829,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
         phase: snapshot.phase,
         trackingState: frame.trackingState,
         calibrationProgress: snapshot.calibrationProgress,
+        calibrationFeedback: snapshot.calibrationFeedback,
         overlayLandmarks: overlayLandmarks,
         previewTransform: frame.previewTransform,
         previewMirrored: frame.mirrored,
@@ -931,6 +964,12 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
         // A later stable frame can still complete preparation.
       }
     }
+    final preparationSnapshot = _repDetector!.snapshot;
+    _observeCalibration(preparationSnapshot);
+    state = state.copyWith(
+      calibrationProgress: preparationSnapshot.calibrationProgress,
+      calibrationFeedback: preparationSnapshot.calibrationFeedback,
+    );
     final firstFrameAt = _prewarmFirstFrameLocalUs;
     final inferenceReady =
         _prewarmInferenceFrames >= _minimumPrewarmInferenceFrames;
@@ -1015,18 +1054,20 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
     if (engine is! FrameCapturingPoseEngine || session == null) return;
     final capturing = engine as FrameCapturingPoseEngine;
     unawaited(
-      ref.read(bodyProgressAutoCaptureProvider).captureIfNeeded(
-        sessionId: session.id,
-        captureFrame: () async {
-          final frame = await capturing.captureWorkoutFrame();
-          return (
-            directory: frame.directory,
-            fileName: frame.fileName,
-            width: frame.width,
-            height: frame.height,
-          );
-        },
-      ),
+      ref
+          .read(bodyProgressAutoCaptureProvider)
+          .captureIfNeeded(
+            sessionId: session.id,
+            captureFrame: () async {
+              final frame = await capturing.captureWorkoutFrame();
+              return (
+                directory: frame.directory,
+                fileName: frame.fileName,
+                width: frame.width,
+                height: frame.height,
+              );
+            },
+          ),
     );
   }
 
@@ -1127,6 +1168,9 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
         : session.startedAt.add(
             Duration(milliseconds: videoBottomMilliseconds!),
           );
+    final analyticsAttemptId = ref
+        .read(analyticsServiceProvider)
+        .currentWorkoutSessionId;
     final repIndex = expectedRepIndex;
     final rep = RepRecord(
       id: '${session.id}:${_repSequenceOffset + trace.repSequence}',
@@ -1171,6 +1215,9 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
       await ref
           .read(workoutRepositoryProvider)
           .saveProgress(rep: rep, set: updatedSet, session: updatedSession);
+      ref
+          .read(analyticsServiceProvider)
+          .firstCountCommitted(attemptId: analyticsAttemptId);
       _saveFormPoseSnapshot(rep: rep, trace: trace, analysis: analysis);
       if (_disposed) return false;
       _pendingRepSaves.remove(expectedRepIndex);
@@ -1358,7 +1405,26 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
           sets: completed.completedSetCount,
           durationSeconds: completed.totalDurationSeconds,
         );
-    unawaited(_logCompletionMilestone());
+    final completionContext = ref.read(analyticsServiceProvider).workoutContext;
+    final retentionReporting = ref.read(crashReportingServiceProvider);
+    if (completionContext != null) {
+      unawaited(
+        recordWorkoutRetention(
+          ref,
+          sessionId: completed.id,
+          exercise: 'plank',
+          context: completionContext,
+        ).catchError((Object error, StackTrace stack) {
+          unawaited(
+            retentionReporting.recordNonFatal(
+              error,
+              stack,
+              reason: 'retention_analytics',
+            ),
+          );
+        }),
+      );
+    }
     _logDetectionSummary(completed: true);
     ref
       ..invalidate(allSessionsProvider)
@@ -1829,6 +1895,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
     await _checkpointProgress(checkpointStatus);
     if (state.saveState == WorkoutSaveState.failed) return false;
 
+    _logDetectionSummary(completed: false);
     await _releaseRuntimeResources();
     state = WorkoutSessionState.idle();
     ref
@@ -1857,7 +1924,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
       _totalStopwatch.stop();
       _ticker?.cancel();
       _ticker = null;
-      _captureUnfinishedCalibration();
+      _logDetectionSummary(completed: false);
       await _releaseRuntimeResources();
       if (sessionId != null) {
         await ref.read(workoutRepositoryProvider).discardSession(sessionId);
@@ -2037,6 +2104,8 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
     _confidenceTotal = 0;
     _confidenceSampleCount = 0;
     _detectionSummaryLogged = false;
+    _unfinishedCalibrationCaptured = false;
+    if (!preservePreparedRuntime) _observedCalibrationRetries = 0;
     _calibrationCompletedLogged = false;
     _firstRepLogged = false;
     _workoutStartedLogged = false;
@@ -2253,6 +2322,7 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
   }
 
   void _beginCalibrationWindow() {
+    _unfinishedCalibrationCaptured = false;
     _calibrationRequired = true;
     final nowUs = _localClock.elapsedMicroseconds;
     _calibrationWindowStartedLocalUs = nowUs;
@@ -2547,8 +2617,26 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
         );
   }
 
+  void _observeCalibration(RepDetectorSnapshot snapshot) {
+    if (_calibrationCompletedLogged) return;
+    final retryDelta = snapshot.calibrationRetries > _observedCalibrationRetries
+        ? snapshot.calibrationRetries - _observedCalibrationRetries
+        : 0;
+    _observedCalibrationRetries = snapshot.calibrationRetries;
+    ref
+        .read(analyticsServiceProvider)
+        .preparationChanged(
+          reason: snapshot.calibrationFeedback.analyticsName,
+          hadValidPose: snapshot.lastMetrics != null,
+          ready: snapshot.calibrationProgress >= 1,
+          resetCount: retryDelta,
+          resetReason: snapshot.calibrationResetReason?.analyticsName,
+        );
+  }
+
   void _logCalibrationCompleted() {
     if (_calibrationCompletedLogged) return;
+    _observeCalibration(_repDetector!.snapshot);
     _calibrationCompletedLogged = true;
     final plan = state.plan;
     final analytics = ref.read(analyticsServiceProvider);
@@ -2574,23 +2662,6 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
           .firstRepDetected(elapsed: _totalElapsed);
     }
     state = state.copyWith(workoutStarted: true);
-  }
-
-  Future<void> _logCompletionMilestone() async {
-    try {
-      final sessions = await ref.read(workoutRepositoryProvider).loadSessions();
-      final completedCount = sessions
-          .where(
-            (details) =>
-                details.session.completed && !details.session.interrupted,
-          )
-          .length;
-      if (completedCount == 2) {
-        ref.read(analyticsServiceProvider).secondWorkoutCompleted();
-      }
-    } on Object {
-      // Milestone analytics must not affect workout completion.
-    }
   }
 
   String _cancelStage(WorkoutSessionStatus status, int reps) =>
@@ -2664,8 +2735,10 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
   }
 
   void _captureUnfinishedCalibration() {
+    if (_unfinishedCalibrationCaptured) return;
     final snapshot = _repDetector?.snapshot;
     if (snapshot == null || snapshot.calibrationProgress >= 1) return;
+    _unfinishedCalibrationCaptured = true;
     final startedAt = _calibrationWindowStartedLocalUs;
     final localElapsedUs = startedAt == null
         ? 0
@@ -2696,27 +2769,74 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
       };
 
   Future<void> _startWorkoutVideoIfAvailable(String sessionId) async {
-    if (!_videoReviewRequested || _videoRecordingActive) return;
+    if (!_videoReviewRequested || _videoRecordingActive || _videoStarting)
+      return;
     final engine = _poseEngine;
-    final RecordablePoseEngine? recorder = engine is RecordablePoseEngine
-        ? engine as RecordablePoseEngine
-        : null;
-    if (recorder == null || !recorder.recordingSupported) return;
+    if (engine is! RecordablePoseEngine) return;
+    final recorder = engine as RecordablePoseEngine;
+    if (!recorder.recordingSupported) return;
+    final generation = ++_videoGeneration;
+    final reporting = ref.read(crashReportingServiceProvider);
+    _videoStarting = true;
+    bool current() =>
+        !_disposed &&
+        generation == _videoGeneration &&
+        identical(engine, _poseEngine) &&
+        state.session?.id == sessionId &&
+        state.isWorkoutInProgress;
     try {
-      await recorder.startVideoRecording(sessionId);
-      _videoRecordingActive = true;
+      final start = recorder.startVideoRecording(sessionId);
+      // A timed-out native Future can still finish; only clean up its own
+      // runtime. Never cancel the recorder belonging to a newer workout.
+      unawaited(
+        start
+            .then((_) async {
+              if (generation != _videoGeneration &&
+                  identical(engine, _poseEngine)) {
+                try {
+                  await recorder.cancelVideoRecording();
+                } on Object {
+                  /* best effort */
+                }
+              }
+            })
+            .catchError((Object _) {}),
+      );
+      await start.timeout(const Duration(seconds: 2));
+      if (current()) _videoRecordingActive = true;
     } on Object catch (error, stackTrace) {
-      _videoReviewRequested = false;
-      unawaited(_recordNonFatal(error, stackTrace, 'video_recording_start'));
-      try {
-        await recorder.cancelVideoRecording();
-      } on Object {
-        // Recording is optional; pose detection remains authoritative.
+      if (generation == _videoGeneration) {
+        ++_videoGeneration;
+        _videoReviewRequested = false;
+        _videoRecordingActive = false;
+        // Cancellation is asynchronous; detection never awaits video cleanup.
+        unawaited(recorder.cancelVideoRecording().catchError((Object _) {}));
       }
+      unawaited(
+        reporting.recordNonFatal(
+          error,
+          stackTrace,
+          reason: 'video_recording_start',
+        ),
+      );
+    } finally {
+      if (identical(engine, _poseEngine)) _videoStarting = false;
     }
   }
 
   Future<WorkoutSession> _finalizeWorkoutVideo(WorkoutSession session) async {
+    ++_videoGeneration;
+    if (_videoStarting) {
+      _videoReviewRequested = false;
+      final engine = _poseEngine;
+      if (engine is RecordablePoseEngine) {
+        unawaited(
+          (engine as RecordablePoseEngine).cancelVideoRecording().catchError(
+            (Object _) {},
+          ),
+        );
+      }
+    }
     final finalized = _finalizedWorkoutVideo;
     if (!_videoRecordingActive && finalized != null) {
       return session.copyWith(
@@ -2771,8 +2891,9 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
   }
 
   Future<void> _cancelWorkoutVideo({bool disableForSession = false}) async {
+    ++_videoGeneration;
     if (disableForSession) _videoReviewRequested = false;
-    if (!_videoRecordingActive) return;
+    if (!_videoRecordingActive && !_videoStarting) return;
     _videoRecordingActive = false;
     _finalizedWorkoutVideo = null;
     final engine = _poseEngine;
@@ -2878,6 +2999,9 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
       ref.read(crashReportingServiceProvider).log(message);
 
   Future<void> _disposeEngineOnly() async {
+    _videoStarting = false;
+    ++_runtimeGeneration;
+    ++_videoGeneration;
     _prewarming = false;
     _resetOverlayTracking();
     await _cancelWorkoutVideo(disableForSession: true);
@@ -2911,6 +3035,8 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
   }
 
   Future<void> _releaseRuntimeResources() async {
+    ++_runtimeGeneration;
+    ++_videoGeneration;
     _ticker?.cancel();
     _ticker = null;
     try {
@@ -2930,11 +3056,15 @@ class WorkoutSessionController extends Notifier<WorkoutSessionState> {
     }
     _subtitleSubscription = null;
     await _disposeEngineOnly();
-    try {
-      await _coachQueue?.dispose().timeout(const Duration(seconds: 3));
-    } on Object {
-      // TTS cleanup cannot block a new or completed workout session.
-    }
+    final queue = _coachQueue;
     _coachQueue = null;
+    if (queue != null) {
+      unawaited(
+        queue
+            .dispose()
+            .timeout(const Duration(seconds: 3))
+            .catchError((Object _) {}),
+      );
+    }
   }
 }

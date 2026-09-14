@@ -113,9 +113,19 @@ class PreferencesController extends Notifier<UserPreferences> {
     () => _commit(
       state.copyWith(
         postWorkoutReminderPromptedAtWorkoutCount: completedWorkoutCount,
+        reminderPromptCount: state.reminderPromptCount + 1,
+        reminderPromptResponse: ReminderPromptResponse.notDecided,
       ),
     ),
   );
+
+  Future<void> setReminderPromptResponse(ReminderPromptResponse response) =>
+      _serialize(
+        () => _commit(state.copyWith(reminderPromptResponse: response)),
+      );
+
+  Future<void> setLastExercise(String exercise) =>
+      _serialize(() => _commit(state.copyWith(lastExercise: exercise)));
 
   Future<void> setReminderPromptDeferred(bool deferred) => _serialize(
     () => _commit(state.copyWith(postWorkoutReminderDeferred: deferred)),

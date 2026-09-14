@@ -1,3 +1,4 @@
+import 'package:motionfit_squat/core/analytics/calibration_feedback.dart';
 import 'package:motionfit_squat/features/squat/domain/models/calibration_profile.dart';
 import 'package:motionfit_squat/features/squat/domain/models/pose_frame.dart';
 import 'package:motionfit_squat/features/squat/domain/models/squat_metrics.dart';
@@ -46,6 +47,8 @@ class RepDetectorSnapshot {
     required this.trackingState,
     required this.lastMetrics,
     required this.calibration,
+    this.calibrationFeedback = CalibrationFeedback.connecting,
+    this.calibrationResetReason,
   });
 
   final SquatPhase phase;
@@ -56,6 +59,8 @@ class RepDetectorSnapshot {
   final TrackingState trackingState;
   final SquatMetrics? lastMetrics;
   final CalibrationProfile? calibration;
+  final CalibrationFeedback calibrationFeedback;
+  final CalibrationFeedback? calibrationResetReason;
 }
 
 abstract interface class RepDetector {
@@ -114,6 +119,10 @@ class SquatRepDetector implements RepDetector {
     trackingState: _trackingState,
     lastMetrics: _lastMetrics,
     calibration: _profile,
+    calibrationFeedback: _profile != null
+        ? CalibrationFeedback.ready
+        : _calibration.feedback,
+    calibrationResetReason: _calibration.lastResetReason,
   );
 
   void prepareForWorkout() {
@@ -140,7 +149,20 @@ class SquatRepDetector implements RepDetector {
 
     if (!frame.hasCompletePose || frame.peopleCount != 1) {
       _trackingState = frame.trackingState;
-      if (_profile == null) _calibration.interrupt();
+      if (_profile == null) {
+        final shortGap =
+            _lastValidAtUs != null &&
+            frame.timestampUs - _lastValidAtUs! <= config.shortTrackingHoldUs;
+        _calibration.interrupt(
+          reason: shortGap
+              ? CalibrationFeedback.temporaryTrackingLoss
+              : frame.peopleCount == 0
+              ? CalibrationFeedback.noPerson
+              : frame.trackingState == TrackingState.partialBody
+              ? CalibrationFeedback.partialBody
+              : CalibrationFeedback.trackingLost,
+        );
+      }
       return _handleTrackingGap(frame.timestampUs, startIfNeeded: true);
     }
 
@@ -148,7 +170,12 @@ class SquatRepDetector implements RepDetector {
     if (metrics == null ||
         metrics.confidence < config.aggregateConfidenceFloor) {
       _trackingState = TrackingState.lost;
-      if (_profile == null) _calibration.interrupt();
+      if (_profile == null)
+        _calibration.interrupt(
+          reason: frame.trackingState == TrackingState.partialBody
+              ? CalibrationFeedback.partialBody
+              : CalibrationFeedback.lowConfidence,
+        );
       return _handleTrackingGap(frame.timestampUs, startIfNeeded: true);
     }
     _lastValidAtUs = frame.timestampUs;

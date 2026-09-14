@@ -1,3 +1,4 @@
+import 'package:motionfit_squat/core/analytics/calibration_feedback.dart';
 import 'package:motionfit_squat/features/squat/domain/models/calibration_profile.dart';
 import 'package:motionfit_squat/features/squat/domain/models/squat_metrics.dart';
 import 'package:motionfit_squat/features/squat/domain/models/workout_enums.dart';
@@ -12,6 +13,8 @@ class CalibrationAccumulator {
   int? _firstObservedAtUs;
   int? _lastObservedAtUs;
   int _retryCount = 0;
+  CalibrationFeedback feedback = CalibrationFeedback.insufficientValidFrames;
+  CalibrationFeedback? lastResetReason;
 
   int get retryCount => _retryCount;
 
@@ -44,9 +47,13 @@ class CalibrationAccumulator {
         (!kneeObservable || metrics.kneeAngle >= 145) &&
         metrics.hipAngle >= 145;
     if (!standingLike || metrics.confidence < config.aggregateConfidenceFloor) {
+      feedback = !standingLike
+          ? CalibrationFeedback.invalidAngle
+          : CalibrationFeedback.lowConfidence;
       _restart();
       return null;
     }
+    feedback = CalibrationFeedback.insufficientValidFrames;
     _startedAtUs ??= metrics.timestampUs;
     _samples.add(metrics);
     final duration = metrics.timestampUs - _startedAtUs!;
@@ -55,12 +62,14 @@ class CalibrationAccumulator {
       return null;
     }
     if (!_isStable()) {
+      feedback = CalibrationFeedback.unstablePose;
       _restart(withInitialSample: metrics);
       return null;
     }
     final hipYs = _samples.map((sample) => sample.hipY).toList();
     final hipMedian = _median(hipYs);
     final deviations = hipYs.map((value) => (value - hipMedian).abs()).toList();
+    feedback = CalibrationFeedback.ready;
     return CalibrationProfile(
       baselineKneeAngle: _median(
         _samples.map((sample) => sample.kneeAngle).toList(),
@@ -91,7 +100,12 @@ class CalibrationAccumulator {
     );
   }
 
-  void interrupt() {
+  // Keep short gaps distinct from hard failures. Sample preservation is
+  // deliberately disabled until a validated gap policy is available.
+  void interrupt({
+    CalibrationFeedback reason = CalibrationFeedback.trackingLost,
+  }) {
+    feedback = reason;
     _restart();
   }
 
@@ -118,7 +132,10 @@ class CalibrationAccumulator {
   }
 
   void _restart({SquatMetrics? withInitialSample}) {
-    if (_samples.isNotEmpty) _retryCount++;
+    if (_samples.isNotEmpty) {
+      _retryCount++;
+      lastResetReason = feedback;
+    }
     _samples.clear();
     _startedAtUs = null;
     if (withInitialSample != null) {
@@ -153,5 +170,7 @@ class CalibrationAccumulator {
     _firstObservedAtUs = null;
     _lastObservedAtUs = null;
     _retryCount = 0;
+    feedback = CalibrationFeedback.insufficientValidFrames;
+    lastResetReason = null;
   }
 }

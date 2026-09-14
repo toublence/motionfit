@@ -39,6 +39,7 @@ class _PushupHomeScreenState extends ConsumerState<PushupHomeScreen> {
       ref.read(analyticsServiceProvider)
         ..screenView('workout_setup')
         ..workoutSetupViewed(
+          exerciseType: 'pushup',
           plannedSets: plan.setCount,
           plannedRepsPerSet: plan.targetRepsPerSet,
         );

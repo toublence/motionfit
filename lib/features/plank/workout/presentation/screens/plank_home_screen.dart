@@ -37,6 +37,7 @@ class _PlankHomeScreenState extends ConsumerState<PlankHomeScreen> {
       ref.read(analyticsServiceProvider)
         ..screenView('workout_setup')
         ..workoutSetupViewed(
+          exerciseType: 'plank',
           plannedSets: plan.setCount,
           plannedRepsPerSet: plan.targetRepsPerSet,
         );

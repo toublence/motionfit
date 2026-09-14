@@ -15,7 +15,6 @@ class AdService extends ChangeNotifier {
        _crashReporting = crashReporting;
 
   static const _interstitialMaxAge = Duration(minutes: 55);
-  static const _interstitialLoadWait = Duration(seconds: 8);
   static const _retryDelays = <Duration>[
     Duration(seconds: 5),
     Duration(seconds: 15),
@@ -91,7 +90,7 @@ class AdService extends ChangeNotifier {
       _analytics.adSkippedByPolicy(
         format: 'interstitial',
         placement: 'workout_complete',
-        skipReason: 'before_first_workout',
+        skipReason: 'first_workout_protected',
         workoutCompletionCount: completedWorkoutCount,
         onboardingCompleted: _onboardingCompleted,
       );
@@ -115,17 +114,12 @@ class AdService extends ChangeNotifier {
       );
       return false;
     }
-    if (!_ready) await initialize();
+    // Completion navigation must never await SDK initialization.
     if (!_ready || _disposed || _fullScreenShowing) {
       return false;
     }
-    var ad = _validInterstitialAd();
-    if (ad == null) {
-      final loaded = await _waitForInterstitial();
-      if (!loaded || _disposed || _fullScreenShowing) return false;
-      ad = _validInterstitialAd();
-      if (ad == null) return false;
-    }
+    final ad = _validInterstitialAd();
+    if (ad == null) return false;
     final loadedAd = ad;
 
     _interstitialAd = null;
@@ -218,17 +212,6 @@ class AdService extends ChangeNotifier {
     _interstitialLoadedAt = null;
     unawaited(ad.dispose());
     return null;
-  }
-
-  Future<bool> _waitForInterstitial() async {
-    if (_validInterstitialAd() != null) return true;
-    _loadInterstitial();
-    final pending = _interstitialLoadCompleter;
-    if (pending == null) return _validInterstitialAd() != null;
-    return pending.future.timeout(
-      _interstitialLoadWait,
-      onTimeout: () => false,
-    );
   }
 
   void _loadInterstitial() {

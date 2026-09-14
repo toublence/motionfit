@@ -48,6 +48,28 @@ class NotificationService {
   final CrashReportingService? _crashReporting;
   Future<void>? _initialization;
   bool _initialized = false;
+  void Function(String)? _notificationHandler;
+  String? _pendingNotificationPayload;
+
+  void setNotificationHandler(void Function(String)? handler) {
+    _notificationHandler = handler;
+    final pending = _pendingNotificationPayload;
+    if (handler != null && pending != null) {
+      _pendingNotificationPayload = null;
+      handler(pending);
+    }
+  }
+
+  void _notificationOpened(String? payload) {
+    if (payload == null || payload.isEmpty) return;
+    final handler = _notificationHandler;
+    if (handler == null) {
+      _pendingNotificationPayload = payload;
+    } else {
+      handler(payload);
+    }
+  }
+
   bool _timezoneDataInitialized = false;
   String? _timezoneIdentifier;
   int? _timezoneOffsetMinutes;
@@ -81,7 +103,15 @@ class NotificationService {
         requestSoundPermission: false,
       ),
     );
-    await _plugin.initialize(settings: settings);
+    await _plugin.initialize(
+      settings: settings,
+      onDidReceiveNotificationResponse: (response) =>
+          _notificationOpened(response.payload),
+    );
+    final launch = await _plugin.getNotificationAppLaunchDetails();
+    if (launch?.didNotificationLaunchApp == true) {
+      _notificationOpened(launch?.notificationResponse?.payload);
+    }
     _initialized = true;
   }
 

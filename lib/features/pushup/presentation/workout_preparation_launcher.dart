@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'package:motionfit_squat/features/exercise/application/combined_workout_metrics.dart';
+import 'package:motionfit_squat/core/notifications/notification_destination.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -14,12 +17,39 @@ Future<void> openWorkoutPreparation(
   ref
       .read(analyticsServiceProvider)
       .workoutStartTapped(
+        exerciseType: 'pushup',
+        entryPointOverride: ref
+            .read(notificationEntryProvider.notifier)
+            .consume('pushup'),
+        isFirstWorkout: ref.read(combinedWorkoutMetricsProvider).value == null
+            ? null
+            : ref
+                      .read(combinedWorkoutMetricsProvider)
+                      .value!
+                      .completedWorkoutCount ==
+                  0,
+        hadPriorCount:
+            preparation.recovery?.session.totalReps != null &&
+            preparation.recovery!.session.totalReps > 0,
         plannedSets: preparation.plan.setCount,
         plannedRepsPerSet: preparation.plan.targetRepsPerSet,
         launchSource: preparation.launchSource.name,
         isRecovery: preparation.isRecovery,
         challengeActive: preparation.challenge != null,
       );
+  final analytics = ref.read(analyticsServiceProvider);
+  final attemptId = analytics.currentWorkoutSessionId!;
+  unawaited(
+    ref
+        .read(combinedWorkoutMetricsProvider.future)
+        .then((metrics) {
+          analytics.resolveFirstWorkout(
+            attemptId,
+            metrics.completedWorkoutCount == 0,
+          );
+        })
+        .catchError((Object _) {}),
+  );
   final challenge = preparation.challenge;
   if (challenge != null) {
     ref

@@ -8,6 +8,8 @@ import 'package:motionfit_squat/features/pushup/domain/models/workout_plan.dart'
 import 'package:motionfit_squat/features/squat/domain/models/workout_enums.dart';
 import 'package:motionfit_squat/features/squat/domain/models/workout_plan.dart';
 
+enum ReminderPromptResponse { notDecided, accepted, declined, dismissed }
+
 class UserPreferences {
   UserPreferences({
     required this.locale,
@@ -34,6 +36,9 @@ class UserPreferences {
     this.lastInterstitialShownAt,
     this.postWorkoutReminderPromptedAtWorkoutCount = 0,
     this.postWorkoutReminderDeferred = false,
+    this.reminderPromptResponse = ReminderPromptResponse.notDecided,
+    this.reminderPromptCount = 0,
+    this.lastExercise = 'squat',
     this.postWorkoutReminderPermissionDenied = false,
     required this.lastWorkoutPlan,
     pushup.WorkoutPlan? pushupLastWorkoutPlan,
@@ -103,6 +108,24 @@ class UserPreferences {
   final DateTime? lastInterstitialShownAt;
   final int postWorkoutReminderPromptedAtWorkoutCount;
   final bool postWorkoutReminderDeferred;
+  final ReminderPromptResponse reminderPromptResponse;
+  final int reminderPromptCount;
+  final String lastExercise;
+
+  bool shouldOfferWorkoutReminder(int completedCount) {
+    if (postWorkoutReminderPermissionDenied ||
+        reminderPromptResponse == ReminderPromptResponse.accepted ||
+        reminderPromptCount >= 2 ||
+        completedCount < 1)
+      return false;
+    if (reminderPromptCount == 0) return true;
+    final interval = reminderPromptResponse == ReminderPromptResponse.declined
+        ? 2
+        : 1;
+    return completedCount >=
+        postWorkoutReminderPromptedAtWorkoutCount + interval;
+  }
+
   final bool postWorkoutReminderPermissionDenied;
   final WorkoutPlan lastWorkoutPlan;
   final pushup.WorkoutPlan pushupLastWorkoutPlan;
@@ -137,6 +160,9 @@ class UserPreferences {
     DateTime? lastInterstitialShownAt,
     int? postWorkoutReminderPromptedAtWorkoutCount,
     bool? postWorkoutReminderDeferred,
+    ReminderPromptResponse? reminderPromptResponse,
+    int? reminderPromptCount,
+    String? lastExercise,
     bool? postWorkoutReminderPermissionDenied,
     WorkoutPlan? lastWorkoutPlan,
     pushup.WorkoutPlan? pushupLastWorkoutPlan,
@@ -184,6 +210,10 @@ class UserPreferences {
                   this.postWorkoutReminderPromptedAtWorkoutCount)
               .clamp(0, 1 << 31)
               .toInt(),
+      reminderPromptResponse:
+          reminderPromptResponse ?? this.reminderPromptResponse,
+      reminderPromptCount: reminderPromptCount ?? this.reminderPromptCount,
+      lastExercise: lastExercise ?? this.lastExercise,
       postWorkoutReminderDeferred:
           postWorkoutReminderDeferred ?? this.postWorkoutReminderDeferred,
       postWorkoutReminderPermissionDenied:
@@ -227,6 +257,9 @@ class UserPreferences {
     'postWorkoutReminderPromptedAtWorkoutCount':
         postWorkoutReminderPromptedAtWorkoutCount,
     'postWorkoutReminderDeferred': postWorkoutReminderDeferred,
+    'reminderPromptResponse': reminderPromptResponse.name,
+    'reminderPromptCount': reminderPromptCount,
+    'lastExercise': lastExercise,
     'postWorkoutReminderPermissionDenied': postWorkoutReminderPermissionDenied,
     'lastWorkoutPlan': lastWorkoutPlan.toMap(),
     'pushupLastWorkoutPlan': pushupLastWorkoutPlan.toMap(),
@@ -309,6 +342,20 @@ class UserPreferences {
           },
       postWorkoutReminderDeferred:
           map['postWorkoutReminderDeferred'] as bool? ?? false,
+      reminderPromptResponse:
+          ReminderPromptResponse.values
+              .where((value) => value.name == map['reminderPromptResponse'])
+              .firstOrNull ??
+          ReminderPromptResponse.notDecided,
+      reminderPromptCount:
+          map['reminderPromptCount'] as int? ??
+          (((map['postWorkoutReminderPromptedAtWorkoutCount'] as int?) ?? 0) > 0
+              ? 1
+              : 0),
+      lastExercise:
+          const ['squat', 'pushup', 'plank'].contains(map['lastExercise'])
+          ? map['lastExercise'] as String
+          : 'squat',
       postWorkoutReminderPermissionDenied:
           map['postWorkoutReminderPermissionDenied'] as bool? ?? false,
       lastWorkoutPlan: WorkoutPlan.fromMap(

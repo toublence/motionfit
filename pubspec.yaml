@@ -1,7 +1,7 @@
 name: motionfit_squat
 description: Offline-first real-time squat counting and form coaching.
 publish_to: "none"
-version: 1.6.13+2026082073
+version: 1.6.14+2026082074
 
 environment:
   sdk: ">=3.11.0 <4.0.0"

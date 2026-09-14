@@ -1,3 +1,6 @@
+import 'package:motionfit_squat/core/widgets/upright_camera_preview.dart';
+import 'package:motionfit_squat/core/widgets/preparation_feedback.dart';
+import 'package:motionfit_squat/features/pushup/presentation/widgets/pose_overlay.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -197,7 +200,11 @@ class _WorkoutCountdownScreenState
     ref
         .read(analyticsServiceProvider)
         .workoutCancelled(
-          cancelStage: 'camera_initialization',
+          cancelStage:
+              ref.read(workoutSessionControllerProvider).previewTextureId ==
+                  null
+              ? 'camera_initialization'
+              : 'calibration',
           cancelReason: 'user_exit',
           elapsed: DateTime.now().difference(_startedAt),
           detectedReps: 0,
@@ -227,6 +234,16 @@ class _WorkoutCountdownScreenState
   @override
   Widget build(BuildContext context) {
     final l10n = PushupLocalizations.of(context);
+    final state = ref.watch(workoutSessionControllerProvider);
+    final guidance = preparationFeedbackText(
+      state.calibrationFeedback,
+      camera: l10n.loadingCamera,
+      noPerson: l10n.errorNoPerson,
+      partialBody: l10n.guideWholeBody,
+      angle: l10n.calibrationBody,
+      hold: l10n.calibrationStayStill,
+      ready: l10n.coachReady1,
+    );
     final isLandscape =
         MediaQuery.orientationOf(context) == Orientation.landscape;
     final orientationGuide = Column(
@@ -247,7 +264,7 @@ class _WorkoutCountdownScreenState
         ),
         const SizedBox(height: 8),
         Text(
-          l10n.guideWholeBody,
+          guidance,
           textAlign: TextAlign.center,
           style: Theme.of(
             context,
@@ -257,115 +274,136 @@ class _WorkoutCountdownScreenState
     );
     final countdown = AnimatedSwitcher(
       duration: const Duration(milliseconds: 180),
-      child: Text(
-        NumberFormat.decimalPattern(l10n.localeName).format(_seconds),
-        key: ValueKey(_seconds),
-        style: Theme.of(
-          context,
-        ).textTheme.displayLarge?.copyWith(fontSize: 88, color: Colors.white),
-      ),
+      child: _starting
+          ? const CircularProgressIndicator(color: Colors.white)
+          : Text(
+              NumberFormat.decimalPattern(l10n.localeName).format(_seconds),
+              key: ValueKey(_seconds),
+              style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                fontSize: 88,
+                color: Colors.white,
+              ),
+            ),
     );
-    final statusBadges = Wrap(
-      alignment: WrapAlignment.center,
-      spacing: 8,
-      runSpacing: 8,
-      children: [
-        _StatusBadge(
-          icon: Icons.person_outline_rounded,
-          label: l10n.guideOnePerson,
-        ),
-        _StatusBadge(
-          icon: Icons.check_circle_outline_rounded,
-          label: l10n.guideStableCamera,
-        ),
-      ],
+    final statusBadges = LinearProgressIndicator(
+      value: state.calibrationProgress > 0 ? state.calibrationProgress : null,
+      color: Colors.white,
+      backgroundColor: Colors.white24,
     );
     final screen = Scaffold(
       backgroundColor: const Color(0xFF111419),
-      body: SafeArea(
-        child: Semantics(
-          liveRegion: true,
-          label: l10n.countdownBeginsIn(_seconds),
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: [
-                Row(
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          if (state.previewTextureId case final textureId?) ...[
+            UprightCameraPreview(
+              textureId: textureId,
+              rotationDegrees: state.previewRotationDegrees,
+              handlesCropAndRotation: state.previewHandlesCropAndRotation,
+              mirrorInFlutter: false,
+              sourceWidth: state.previewInputWidth,
+              sourceHeight: state.previewInputHeight,
+            ),
+            if (state.previewInputWidth > 0 && state.previewInputHeight > 0)
+              PoseOverlay(
+                landmarks: state.overlayLandmarks,
+                previewTransform: state.previewTransform,
+                sourceWidth: state.previewInputWidth,
+                sourceHeight: state.previewInputHeight,
+                feedbackLevel: state.poseFeedbackLevel,
+              ),
+          ],
+          const ColoredBox(color: Color(0x44000000)),
+          SafeArea(
+            child: Semantics(
+              liveRegion: true,
+              label: _starting ? guidance : l10n.countdownBeginsIn(_seconds),
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
                   children: [
-                    IconButton(
-                      onPressed: _committingWorkout || _leaving
-                          ? null
-                          : _cancelCountdown,
-                      color: Colors.white,
-                      icon: const Icon(Icons.close_rounded),
+                    Row(
+                      children: [
+                        IconButton(
+                          onPressed: _committingWorkout || _leaving
+                              ? null
+                              : _cancelCountdown,
+                          color: Colors.white,
+                          icon: const Icon(Icons.close_rounded),
+                        ),
+                        const Spacer(),
+                        TextButton.icon(
+                          onPressed:
+                              _committingWorkout || _openingGuide || _leaving
+                              ? null
+                              : _openGuide,
+                          icon: const Icon(Icons.help_outline_rounded),
+                          label: Text(l10n.guideTitle),
+                          style: TextButton.styleFrom(
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ],
                     ),
-                    const Spacer(),
-                    TextButton.icon(
-                      onPressed: _committingWorkout || _openingGuide || _leaving
-                          ? null
-                          : _openGuide,
-                      icon: const Icon(Icons.help_outline_rounded),
-                      label: Text(l10n.guideTitle),
-                      style: TextButton.styleFrom(
-                        foregroundColor: Colors.white,
+                    if (isLandscape)
+                      Expanded(
+                        child: Row(
+                          children: [
+                            Expanded(child: orientationGuide),
+                            const SizedBox(width: 24),
+                            Expanded(child: Center(child: countdown)),
+                          ],
+                        ),
+                      )
+                    else ...[
+                      const Spacer(),
+                      orientationGuide,
+                      const SizedBox(height: 20),
+                      countdown,
+                      const SizedBox(height: 16),
+                    ],
+                    statusBadges,
+                    if (isLandscape)
+                      const SizedBox(height: 8)
+                    else
+                      const Spacer(),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 8,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.black.withValues(alpha: .35),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Icon(
+                            Icons.shield_outlined,
+                            size: 17,
+                            color: Colors.white70,
+                          ),
+                          const SizedBox(width: 7),
+                          Flexible(
+                            child: Text(
+                              l10n.guidePrivacy,
+                              maxLines: 2,
+                              style: const TextStyle(
+                                color: Colors.white70,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
-                if (isLandscape)
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Expanded(child: orientationGuide),
-                        const SizedBox(width: 24),
-                        Expanded(child: Center(child: countdown)),
-                      ],
-                    ),
-                  )
-                else ...[
-                  const Spacer(),
-                  orientationGuide,
-                  const SizedBox(height: 20),
-                  countdown,
-                  const SizedBox(height: 16),
-                ],
-                statusBadges,
-                if (isLandscape) const SizedBox(height: 8) else const Spacer(),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 8,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withValues(alpha: .35),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Icon(
-                        Icons.shield_outlined,
-                        size: 17,
-                        color: Colors.white70,
-                      ),
-                      const SizedBox(width: 7),
-                      Flexible(
-                        child: Text(
-                          l10n.guidePrivacy,
-                          maxLines: 2,
-                          style: const TextStyle(
-                            color: Colors.white70,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
-        ),
+        ],
       ),
     );
     return PopScope(
@@ -376,37 +414,4 @@ class _WorkoutCountdownScreenState
       child: screen,
     );
   }
-}
-
-class _StatusBadge extends StatelessWidget {
-  const _StatusBadge({required this.icon, required this.label});
-
-  final IconData icon;
-  final String label;
-
-  @override
-  Widget build(BuildContext context) => Container(
-    constraints: const BoxConstraints(minHeight: 44),
-    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-    decoration: BoxDecoration(
-      color: Colors.white.withValues(alpha: .12),
-      borderRadius: BorderRadius.circular(16),
-    ),
-    child: Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(icon, size: 18, color: Colors.white),
-        const SizedBox(width: 7),
-        ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 130),
-          child: Text(
-            label,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(color: Colors.white, fontSize: 14),
-          ),
-        ),
-      ],
-    ),
-  );
 }

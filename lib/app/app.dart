@@ -1,3 +1,5 @@
+import 'package:motionfit_squat/core/notifications/notification_destination.dart';
+import 'package:motionfit_squat/features/exercise/application/exercise_selection.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -36,6 +38,10 @@ class MotionFitApp extends ConsumerStatefulWidget {
 class _MotionFitAppState extends ConsumerState<MotionFitApp>
     with WidgetsBindingObserver {
   late final GoRouter _router;
+  String? _pendingNotification;
+  String? _lastNotification;
+  DateTime? _lastNotificationAt;
+  late final NotificationService _notifications;
   int? _lastAdPolicyCount;
   String? _lastCrashScreen;
   bool? _usingPushupWorkoutOrientation;
@@ -51,9 +57,53 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
     _router.routeInformationProvider.addListener(_syncOrientation);
     _syncCrashScreen();
     _syncOrientation();
+    _notifications = ref.read(notificationServiceProvider);
+    _notifications.setNotificationHandler(_receiveNotification);
+    _router.routeInformationProvider.addListener(_drainNotification);
+    unawaited(_notifications.initialize().catchError((Object _) {}));
     WidgetsBinding.instance.addObserver(this);
     _refreshReminderEnvironment(force: true);
     if (onboardingCompleted) _refreshPrivacyConsent();
+  }
+
+  void _receiveNotification(String payload) {
+    final now = DateTime.now();
+    if (_lastNotification == payload &&
+        _lastNotificationAt != null &&
+        now.difference(_lastNotificationAt!) < const Duration(seconds: 2))
+      return;
+    _lastNotification = payload;
+    _lastNotificationAt = now;
+    _pendingNotification = payload;
+    _drainNotification();
+  }
+
+  void _drainNotification() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || _pendingNotification == null) return;
+      if (!ref.read(preferencesControllerProvider).onboardingCompleted) return;
+      final path = _router.routeInformationProvider.value.uri.path;
+      if (path.contains('/prepare') || path.contains('/workout')) return;
+      final destination = NotificationDestination.parse(
+        _pendingNotification!,
+        fallbackExercise: ref.read(preferencesControllerProvider).lastExercise,
+      );
+      _pendingNotification = null;
+      if (destination == null) return;
+      ref.read(selectedExerciseProvider.notifier).select(destination.exercise);
+      ref
+          .read(notificationEntryProvider.notifier)
+          .opened(destination.exercise.name);
+      ref
+          .read(analyticsServiceProvider)
+          .retentionEvent('mf2_notification_opened', {
+            'exercise_type': destination.exercise.name,
+            'entry_point': 'notification',
+            'destination': destination.challenge ? 'challenge' : 'workout',
+          });
+      _router.go(destination.route);
+    });
+    WidgetsBinding.instance.ensureVisualUpdate();
   }
 
   @override
@@ -61,6 +111,8 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
     WidgetsBinding.instance.removeObserver(this);
     _router.routeInformationProvider.removeListener(_syncCrashScreen);
     _router.routeInformationProvider.removeListener(_syncOrientation);
+    _notifications.setNotificationHandler(null);
+    _router.routeInformationProvider.removeListener(_drainNotification);
     _router.dispose();
     super.dispose();
   }
@@ -229,15 +281,15 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
           completedWorkoutCount: completedWorkoutCount,
         );
     final privacyConsent = ref.read(privacyConsentServiceProvider);
-    if (completedWorkoutCount < 1 &&
+    if (completedWorkoutCount < 2 &&
         _lastAdPolicyCount != completedWorkoutCount) {
       _lastAdPolicyCount = completedWorkoutCount;
       ref
           .read(analyticsServiceProvider)
           .adSkippedByPolicy(
-            format: 'all',
+            format: 'interstitial',
             placement: 'app_initialization',
-            skipReason: 'before_first_workout',
+            skipReason: 'first_workout_protected',
             workoutCompletionCount: completedWorkoutCount,
             onboardingCompleted: preferences.onboardingCompleted,
           );
@@ -259,7 +311,10 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
         (value) => value.onboardingCompleted,
       ),
       (previous, next) {
-        if (previous != true && next) _refreshPrivacyConsent();
+        if (previous != true && next) {
+          _refreshPrivacyConsent();
+          _drainNotification();
+        }
       },
     );
     ref.listen(

@@ -10,13 +10,17 @@ void main() {
     );
   });
 
-  test('interstitial ads start after the first workout', () {
+  test('first workout is protected; interstitials start at the second', () {
     expect(AdEligibility.canShowNative(completedWorkoutCount: 1), isTrue);
     expect(
       AdEligibility.canShowInterstitial(completedWorkoutCount: 0),
       isFalse,
     );
-    expect(AdEligibility.canShowInterstitial(completedWorkoutCount: 1), isTrue);
+    expect(
+      AdEligibility.canShowInterstitial(completedWorkoutCount: 1),
+      isFalse,
+    );
+    expect(AdEligibility.canShowInterstitial(completedWorkoutCount: 2), isTrue);
   });
 
   test('interstitial cooldown is ten minutes from the last impression', () {
