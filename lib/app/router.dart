@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:motionfit_squat/app/localization/generated/app_localizations.dart';
 import 'package:motionfit_squat/core/ads/ad_eligibility.dart';
-import 'package:motionfit_squat/core/ads/bottom_native_ad.dart';
+import 'package:motionfit_squat/core/ads/bottom_banner_ad.dart';
 import 'package:motionfit_squat/core/providers.dart';
 import 'package:motionfit_squat/features/challenges/application/challenge_controller.dart';
 import 'package:motionfit_squat/features/challenges/presentation/challenge_screen.dart';
@@ -414,7 +414,7 @@ class _AppNavigationShell extends ConsumerWidget {
             ?.completedWorkoutCount ??
         0;
     final showBottomAd =
-        AdEligibility.canShowNative(
+        AdEligibility.canShowBanner(
           completedWorkoutCount: completedWorkoutCount,
         ) &&
         (currentRoute == '/squat' ||
@@ -425,7 +425,7 @@ class _AppNavigationShell extends ConsumerWidget {
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (showBottomAd) const BottomNativeAd(),
+          if (showBottomAd) const BottomBannerAd(),
           MediaQuery.removePadding(
             context: context,
             removeBottom: true,

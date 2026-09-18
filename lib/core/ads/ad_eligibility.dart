@@ -1,9 +1,13 @@
 abstract final class AdEligibility {
   // Primary-screen native ads are available after onboarding. Interstitials
   // become eligible from the user's second completed workout.
+  static const minimumBannerCompletedWorkouts = 0;
   static const minimumNativeCompletedWorkouts = 0;
   static const minimumInterstitialCompletedWorkouts = 2;
   static const interstitialCooldown = Duration(minutes: 10);
+
+  static bool canShowBanner({required int completedWorkoutCount}) =>
+      completedWorkoutCount >= minimumBannerCompletedWorkouts;
 
   static bool canShowNative({required int completedWorkoutCount}) =>
       completedWorkoutCount >= minimumNativeCompletedWorkouts;

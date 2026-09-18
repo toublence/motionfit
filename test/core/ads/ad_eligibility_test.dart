@@ -2,7 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:motionfit_squat/core/ads/ad_eligibility.dart';
 
 void main() {
-  test('native ads are available while interstitials stay initially gated', () {
+  test('banner and native ads are available while interstitials stay initially gated', () {
+    expect(AdEligibility.canShowBanner(completedWorkoutCount: 0), isTrue);
     expect(AdEligibility.canShowNative(completedWorkoutCount: 0), isTrue);
     expect(
       AdEligibility.canShowInterstitial(completedWorkoutCount: 0),
