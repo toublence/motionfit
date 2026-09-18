@@ -127,6 +127,9 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
     if (state == AppLifecycleState.resumed) {
       _refreshDeniedNotificationPermission();
       _refreshReminderEnvironment();
+      if (!ref.read(adServiceProvider).ready) {
+        _refreshPrivacyConsent();
+      }
     }
   }
 

@@ -66,101 +66,122 @@ class _BottomBannerAdState extends ConsumerState<BottomBannerAd> {
     final screenWidth = mediaQuery.size.width;
     if (screenWidth <= 0) return;
 
-    final adWidth = math.min(screenWidth, _maxWidth).truncate();
-    final size =
-        await AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(adWidth);
-    if (size == null || !mounted) return;
-
-    if (_loading || _loaded || _ad != null) return;
-
-    final completedWorkoutCount =
-        ref.read(combinedWorkoutMetricsProvider).value?.completedWorkoutCount ??
-        0;
-    final onboardingCompleted = ref
-        .read(preferencesControllerProvider)
-        .onboardingCompleted;
-
     _loading = true;
-    ref
-        .read(analyticsServiceProvider)
-        .adRequested(
-          format: 'banner',
-          placement: 'bottom_navigation',
-          workoutCompletionCount: completedWorkoutCount,
-          onboardingCompleted: onboardingCompleted,
+    try {
+      final adWidth = math.min(screenWidth, _maxWidth).truncate();
+      final size =
+          await AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(adWidth);
+      if (!mounted) {
+        _loading = false;
+        return;
+      }
+      if (size == null) {
+        debugPrint(
+          '[MotionFitAds] adaptive banner size was null, scheduling retry',
         );
+        _loading = false;
+        _scheduleRetry();
+        return;
+      }
 
-    late final BannerAd ad;
-    ad = BannerAd(
-      adUnitId: adUnitId,
-      size: size,
-      request: const AdRequest(),
-      listener: BannerAdListener(
-        onAdLoaded: (loadedAd) {
-          if (!mounted || !identical(_ad, loadedAd)) {
-            unawaited(loadedAd.dispose());
-            return;
-          }
-          _retryTimer?.cancel();
-          _failures = 0;
-          setState(() {
-            _loading = false;
-            _loaded = true;
-          });
-          ref
-              .read(analyticsServiceProvider)
-              .adLoaded(
-                format: 'banner',
-                placement: 'bottom_navigation',
-                workoutCompletionCount: completedWorkoutCount,
-                onboardingCompleted: onboardingCompleted,
-              );
-        },
-        onAdFailedToLoad: (failedAd, error) {
-          if (identical(_ad, failedAd)) {
-            _ad = null;
-            _adSize = null;
-          }
-          _loading = false;
-          _loaded = false;
-          unawaited(failedAd.dispose());
-          if (mounted) {
-            debugPrint('[MotionFitAds] adaptive banner failed to load: $error');
+      final completedWorkoutCount =
+          ref.read(combinedWorkoutMetricsProvider).value?.completedWorkoutCount ??
+          0;
+      final onboardingCompleted = ref
+          .read(preferencesControllerProvider)
+          .onboardingCompleted;
+
+      ref
+          .read(analyticsServiceProvider)
+          .adRequested(
+            format: 'banner',
+            placement: 'bottom_navigation',
+            workoutCompletionCount: completedWorkoutCount,
+            onboardingCompleted: onboardingCompleted,
+          );
+
+      late final BannerAd ad;
+      ad = BannerAd(
+        adUnitId: adUnitId,
+        size: size,
+        request: const AdRequest(),
+        listener: BannerAdListener(
+          onAdLoaded: (loadedAd) {
+            if (!mounted || !identical(_ad, loadedAd)) {
+              unawaited(loadedAd.dispose());
+              return;
+            }
+            _retryTimer?.cancel();
+            _failures = 0;
+            setState(() {
+              _loading = false;
+              _loaded = true;
+            });
             ref
                 .read(analyticsServiceProvider)
-                .adFailed(
+                .adLoaded(
                   format: 'banner',
                   placement: 'bottom_navigation',
-                  failureStage: 'load',
                   workoutCompletionCount: completedWorkoutCount,
                   onboardingCompleted: onboardingCompleted,
                 );
-            _scheduleRetry();
-          }
-        },
-        onAdImpression: (_) {
-          if (!mounted) return;
-          ref
-              .read(analyticsServiceProvider)
-              .adShown(
-                format: 'banner',
-                placement: 'bottom_navigation',
-                workoutCompletionCount: completedWorkoutCount,
-                onboardingCompleted: onboardingCompleted,
-              );
-        },
-        onAdClicked: (_) {
-          if (!mounted) return;
-          ref
-              .read(analyticsServiceProvider)
-              .adClick(format: 'banner', placement: 'bottom_navigation');
-        },
-      ),
-    );
+          },
+          onAdFailedToLoad: (failedAd, error) {
+            if (identical(_ad, failedAd)) {
+              _ad = null;
+              _adSize = null;
+            }
+            _loading = false;
+            _loaded = false;
+            unawaited(failedAd.dispose());
+            if (mounted) {
+              debugPrint('[MotionFitAds] adaptive banner failed to load: $error');
+              ref
+                  .read(analyticsServiceProvider)
+                  .adFailed(
+                    format: 'banner',
+                    placement: 'bottom_navigation',
+                    failureStage: 'load',
+                    workoutCompletionCount: completedWorkoutCount,
+                    onboardingCompleted: onboardingCompleted,
+                  );
+              _scheduleRetry();
+            }
+          },
+          onAdImpression: (_) {
+            if (!mounted) return;
+            ref
+                .read(analyticsServiceProvider)
+                .adShown(
+                  format: 'banner',
+                  placement: 'bottom_navigation',
+                  workoutCompletionCount: completedWorkoutCount,
+                  onboardingCompleted: onboardingCompleted,
+                );
+          },
+          onAdClicked: (_) {
+            if (!mounted) return;
+            ref
+                .read(analyticsServiceProvider)
+                .adClick(format: 'banner', placement: 'bottom_navigation');
+          },
+        ),
+      );
 
-    _ad = ad;
-    _adSize = size;
-    unawaited(ad.load());
+      _ad = ad;
+      _adSize = size;
+      unawaited(ad.load());
+    } on Object catch (error) {
+      debugPrint(
+        '[MotionFitAds] exception during adaptive banner load: $error',
+      );
+      _loading = false;
+      _ad = null;
+      _adSize = null;
+      if (mounted) {
+        _scheduleRetry();
+      }
+    }
   }
 
   void _scheduleRetry() {
