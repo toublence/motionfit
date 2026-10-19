@@ -12,6 +12,9 @@ abstract final class AdEligibility {
   static bool canShowNative({required int completedWorkoutCount}) =>
       completedWorkoutCount >= minimumNativeCompletedWorkouts;
 
+  static bool canPreloadInterstitial({required int completedWorkoutCount}) =>
+      completedWorkoutCount >= minimumInterstitialCompletedWorkouts - 1;
+
   static bool canShowInterstitial({required int completedWorkoutCount}) =>
       completedWorkoutCount >= minimumInterstitialCompletedWorkouts;
 

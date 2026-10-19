@@ -1,0 +1,19 @@
+{
+  "initial_available": "144 MiB (df)",
+  "final_available": "9.1 GiB (df)",
+  "available_bytes_now": 9722662912,
+  "deleted_directory_count": 8,
+  "deleted_crash_reports": 19,
+  "failures": [],
+  "preserved": [
+    "source code",
+    "original benchmark videos",
+    "verification reports",
+    "app user data",
+    "Xcode Archives",
+    "active Xcode DerivedData",
+    "SDK installations",
+    "Gradle wrappers and credentials"
+  ],
+  "note": "Deleted caches/build outputs regenerate on the next build; Gradle may download dependencies again."
+}

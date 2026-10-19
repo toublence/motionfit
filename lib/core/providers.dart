@@ -43,7 +43,9 @@ final permissionServiceProvider = Provider<PermissionService>((ref) {
 });
 
 final privacyConsentServiceProvider = Provider<PrivacyConsentService>((ref) {
-  return PrivacyConsentService(ref.watch(crashReportingServiceProvider));
+  return PrivacyConsentService(
+    crashReporting: ref.watch(crashReportingServiceProvider),
+  );
 });
 
 final crashReportingServiceProvider = Provider<CrashReportingService>((ref) {
@@ -57,6 +59,7 @@ final analyticsServiceProvider = Provider<AnalyticsService>((ref) {
 final adServiceProvider = Provider<AdService>((ref) {
   final service = AdService(
     analytics: ref.watch(analyticsServiceProvider),
+    consent: ref.watch(privacyConsentServiceProvider),
     crashReporting: ref.watch(crashReportingServiceProvider),
   );
   ref.onDispose(service.dispose);

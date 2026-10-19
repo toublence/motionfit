@@ -425,7 +425,7 @@ class _AppNavigationShell extends ConsumerWidget {
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (showBottomAd) const BottomBannerAd(),
+          BottomBannerAd(active: showBottomAd),
           MediaQuery.removePadding(
             context: context,
             removeBottom: true,

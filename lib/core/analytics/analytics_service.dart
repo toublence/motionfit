@@ -190,7 +190,7 @@ class AnalyticsService {
     required Duration elapsed,
   }) => _logV2('mf2_onboarding_completed', {
     'step_index': totalSteps - 1,
-    'step_name': 'continuity',
+    'step_name': onboardingStepName(totalSteps - 1),
     'total_steps': totalSteps,
     'elapsed_time_bucket': elapsedTimeBucket(elapsed),
   });
@@ -740,42 +740,79 @@ class AnalyticsService {
     ),
   );
 
+  void adEvent(String name, Map<String, Object> parameters) => _logV2(name, {
+    ...parameters,
+    'ad_telemetry_revision': 1,
+    'release_sha': const String.fromEnvironment(
+      'RELEASE_SHA',
+      defaultValue: 'unrecorded',
+    ),
+  });
+
   void adLoaded({
     required String format,
     required String placement,
     required int workoutCompletionCount,
     required bool onboardingCompleted,
-  }) {}
-
+  }) => adEvent('mf2_ad_load_result', {
+    ..._adParameters(
+      format: format,
+      placement: placement,
+      workoutCompletionCount: workoutCompletionCount,
+      onboardingCompleted: onboardingCompleted,
+    ),
+    'result': 'loaded',
+  });
   void adShown({
     required String format,
     required String placement,
     required int workoutCompletionCount,
     required bool onboardingCompleted,
-  }) {}
-
+  }) => adEvent(
+    'mf2_ad_impression_callback',
+    _adParameters(
+      format: format,
+      placement: placement,
+      workoutCompletionCount: workoutCompletionCount,
+      onboardingCompleted: onboardingCompleted,
+    ),
+  );
   void adDismissed({
     required String format,
     required String placement,
     required int workoutCompletionCount,
     required bool onboardingCompleted,
-  }) {}
-
+  }) => adEvent('mf2_ad_disposed', {
+    ..._adParameters(
+      format: format,
+      placement: placement,
+      workoutCompletionCount: workoutCompletionCount,
+      onboardingCompleted: onboardingCompleted,
+    ),
+    'reason': 'dismissed',
+  });
   void adFailed({
     required String format,
     required String placement,
     required String failureStage,
     required int workoutCompletionCount,
     required bool onboardingCompleted,
-  }) {}
-
+  }) => adEvent('mf2_ad_failure', {
+    ..._adParameters(
+      format: format,
+      placement: placement,
+      workoutCompletionCount: workoutCompletionCount,
+      onboardingCompleted: onboardingCompleted,
+    ),
+    'failure_stage': failureStage,
+  });
   void adSkippedByPolicy({
     required String format,
     required String placement,
     required String skipReason,
     required int workoutCompletionCount,
     required bool onboardingCompleted,
-  }) => _logV2('mf2_ad_skipped_by_policy', {
+  }) => adEvent('mf2_ad_skipped_by_policy', {
     ..._adParameters(
       format: format,
       placement: placement,
@@ -784,9 +821,11 @@ class AnalyticsService {
     ),
     'skip_reason': skipReason,
   });
-
-  // AdMob/Firebase ad_impression and ad_click remain the source of truth.
-  void adClick({required String format, String placement = 'unknown'}) {}
+  void adClick({required String format, String placement = 'unknown'}) =>
+      adEvent('mf2_ad_clicked', {
+        'ad_format': format,
+        'ad_placement': placement,
+      });
 
   static Map<String, Object> _adParameters({
     required String format,
@@ -817,9 +856,9 @@ class AnalyticsService {
   };
 
   static String onboardingStepName(int index) => switch (index) {
-    0 => 'automatic_count',
-    1 => 'realtime_coaching',
-    2 => 'continuity',
+    0 => 'measurement',
+    1 => 'improvement',
+    2 => 'first_measurement',
     _ => 'unknown',
   };
 

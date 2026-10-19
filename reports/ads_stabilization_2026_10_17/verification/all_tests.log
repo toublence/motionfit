@@ -1,0 +1,826 @@
+00:00 +0: loading /Users/nam/projects/flutter/motionfit/test/debug_session_replay_test.dart
+00:00 +0: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_eligibility_test.dart: banner and native ads are available while interstitials stay initially gated
+00:00 +1: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_eligibility_test.dart: first workout is protected; interstitials start at the second
+00:00 +2: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_eligibility_test.dart: interstitial cooldown is ten minutes from the last impression
+00:00 +3: /Users/nam/projects/flutter/motionfit/test/debug_session_replay_test.dart: replays a saved MotionFit debug session
+Set --dart-define=MOTIONFIT_REPLAY_SESSION=/absolute/session.json
+00:01 +4: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: UMP info failure retries and recovers without restarting
+00:01 +5: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: UMP form failure retries and recovers without restarting
+00:01 +6: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: UMP normal not-allowed result is not repeatedly prompted
+00:01 +7: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: ATT and UMP pending modals are never stacked after a deadline
+00:01 +8: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: existing permitted consent remains usable after an update error
+00:01 +9: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.interstitial invocation error releases loading and retries once
+00:01 +10: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.interstitial timeout rejects old callbacks and recovers
+00:01 +11: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.native invocation error releases loading and retries once
+00:01 +12: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.native timeout rejects old callbacks and recovers
+00:01 +13: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.banner invocation error releases loading and retries once
+00:01 +14: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.banner timeout rejects old callbacks and recovers
+00:01 +15: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: no fill and invalid configuration remain distinct
+00:01 +16: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: SDK init retries after failure and consent false sends no ad requests
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:02 +17: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: ready eligible opportunity shows exactly once; success is callback based
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:03 +18: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: first completion stays protected while next completion is preloaded
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+00:03 +19: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: saved completion snapshot is reconciled without double counting
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:03 +20: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: 55 minute expiry discards old cache and prepares a new ad
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:03 +21: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: native timeout falls back after 15 seconds and ignores stale callbacks
+00:03 +21: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: show invocation failure completes navigation once and releases ownership
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:03 +22: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: native timeout falls back after 15 seconds and ignores stale callbacks
+00:03 +22: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: show callback failure completes navigation once and releases ownership
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:03 +23: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: native timeout falls back after 15 seconds and ignores stale callbacks
+00:03 +23: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: show race failure completes navigation once and releases ownership
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:03 +24: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: native timeout falls back after 15 seconds and ignores stale callbacks
+00:03 +24: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: inactive opportunity never invokes show and explains the skip
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+00:03 +25: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: native timeout falls back after 15 seconds and ignores stale callbacks
+00:03 +25: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: pending load is explained; completion does not cause a late show
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:03 +26: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: native timeout falls back after 15 seconds and ignores stale callbacks
+00:03 +26: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: cooldown starts at actual show callback and remains ten minutes
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:03 +26: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: native timeout falls back after 15 seconds and ignores stale callbacks
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+00:03 +26: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: cooldown starts at actual show callback and remains ten minutes
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+00:03 +26: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: native timeout falls back after 15 seconds and ignores stale callbacks
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+00:03 +26: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: cooldown starts at actual show callback and remains ten minutes
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+00:03 +27: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: native timeout falls back after 15 seconds and ignores stale callbacks
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:03 +27: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: unconfirmed native show releases navigation but cannot overlap a late show
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:03 +28: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: native timeout falls back after 15 seconds and ignores stale callbacks
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_fallback session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+00:03 +29: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: native invocation error uses banner; background holds pending retries
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_fallback session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+00:03 +30: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: adaptive size lookup timeout cannot strand loading or adopt a late size
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:03 +31: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: release/test unit resolution is platform specific and owner confirmed
+00:03 +32: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: width changes replace a banner once; inactive slots retain loaded ads
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_view_state session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_view_state session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_view_state session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_view_state session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_view_state session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+00:03 +33: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: offscreen native slot waits until its scroll position is near the viewport
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_view_state session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+00:04 +34: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: production bootstrap initializes ads despite DB error
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:04 +35: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: production bootstrap initializes ads despite DB pending
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:04 +36: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: foreground retries consent even while the workout DB never answers
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:04 +37: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: SDK initialization timeout can retry and ignores the late first answer
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:04 +38: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: UMP transient error automatically retries and initializes SDK only once
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:04 +39: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: cached normal choice reflects changed SDK permission without another modal
+00:04 +40: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: late factory result is disposed without ever starting an SDK load
+00:04 +41: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: ATT channel failure does not block the onboarding caller
+00:04 +42: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: unresolved ATT status schedules recovery without caching completion
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:04 +43: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: completed ATT invocation does not cache an unresolved OS status
+00:05 +44: /Users/nam/projects/flutter/motionfit/test/core/database/progress_schema_migration_test.dart: upgrading from version 6 adds the progress tables
+00:05 +45: /Users/nam/projects/flutter/motionfit/test/core/database/progress_schema_migration_test.dart: an upgrade keeps the workout rows that were already there
+00:05 +46: /Users/nam/projects/flutter/motionfit/test/core/database/progress_schema_migration_test.dart: a photo is stored and read back after the upgrade
+00:06 +47: /Users/nam/projects/flutter/motionfit/test/core/database/progress_schema_migration_test.dart: a photo is stored and read back after the upgrade
+00:06 +48: /Users/nam/projects/flutter/motionfit/test/core/database/progress_schema_migration_test.dart: a second photo on the same day and view replaces the first
+00:06 +49: /Users/nam/projects/flutter/motionfit/test/core/database/progress_schema_migration_test.dart: the same day keeps one photo per body view
+00:06 +50: /Users/nam/projects/flutter/motionfit/test/core/database/progress_schema_migration_test.dart: deleting a session removes its pose snapshot
+00:06 +51: /Users/nam/projects/flutter/motionfit/test/core/database/progress_schema_migration_test.dart: upgrading from version 7 keeps one pose per day
+00:07 +52: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: analytics duration buckets use documented boundaries
+00:07 +53: /Users/nam/projects/flutter/motionfit/test/core/diagnostics/crash_reporting_service_test.dart: concurrent initialization runs once and installs diagnostic context
+00:07 +54: /Users/nam/projects/flutter/motionfit/test/core/diagnostics/crash_reporting_service_test.dart: concurrent initialization runs once and installs diagnostic context
+00:07 +55: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: v2 logger rejects legacy names
+00:07 +56: /Users/nam/projects/flutter/motionfit/test/core/diagnostics/crash_reporting_service_test.dart: Firebase initialization failure never prevents app continuation
+[Crashlytics] initialization failed: Bad state: Firebase unavailable
+00:07 +56: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: all custom events use mf2 prefix and schema context
+AnalyticsV2: mf2_onboarding_started session=- platform=android version=1.2.6
+AnalyticsV2: mf2_workout_setup_viewed session=- platform=android version=1.2.6
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_first_rep_detected session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_reminder_permission_result session=- platform=android version=1.2.6
+AnalyticsV2: mf2_manual_rate_tapped session=- platform=android version=1.2.6
+AnalyticsV2: mf2_challenge_started session=- platform=android version=1.2.6
+AnalyticsV2: mf2_ad_skipped_by_policy session=- platform=android version=1.2.6
+00:07 +57: /Users/nam/projects/flutter/motionfit/test/core/diagnostics/crash_reporting_service_test.dart: Firebase initialization failure never prevents app continuation
+#0      main.<anonymous closure>.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/core/diagnostics/crash_reporting_service_test.dart:62:11)
+#1      CrashReportingService._initialize (package:motionfit_squat/core/diagnostics/crash_reporting_service.dart:106:33)
+#2      CrashReportingService.initialize (package:motionfit_squat/core/diagnostics/crash_reporting_service.dart:98:23)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/core/diagnostics/crash_reporting_service_test.dart:66:28)
+#4      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:25)
+<asynchronous suspension>
+#5      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#6      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+00:07 +58: /Users/nam/projects/flutter/motionfit/test/core/reviews/review_prompt_policy_test.dart: first and second valid workouts do not request review
+00:07 +58: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: Android and iOS use the same names and platform parameters
+AnalyticsV2: mf2_workout_setup_viewed session=- platform=android version=1.2.6
+AnalyticsV2: mf2_workout_setup_viewed session=- platform=ios version=1.2.6
+00:07 +59: /Users/nam/projects/flutter/motionfit/test/core/reviews/review_prompt_policy_test.dart: first and second valid workouts do not request review
+00:07 +60: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: one session id spans camera, calibration, reps, and completion
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_first_rep_detected session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_completed session=session-id platform=android version=1.2.6
+00:07 +61: /Users/nam/projects/flutter/motionfit/test/core/reviews/review_prompt_policy_test.dart: third valid workout becomes eligible
+00:07 +62: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: a new workout creates a new session id
+AnalyticsV2: mf2_workout_start_tapped session=session-1 platform=android version=1.2.6
+AnalyticsV2: mf2_workout_start_tapped session=session-2 platform=android version=1.2.6
+00:07 +63: /Users/nam/projects/flutter/motionfit/test/core/reviews/review_prompt_policy_test.dart: review is requested once per version
+00:07 +64: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: frame-driven once events fire only once per workout
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_first_rep_detected session=session-id platform=android version=1.2.6
+00:07 +65: /Users/nam/projects/flutter/motionfit/test/core/reviews/review_prompt_policy_test.dart: review respects the 90 day cooldown across versions
+00:07 +66: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: workout completion fires once
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_completed session=session-id platform=android version=1.2.6
+00:07 +67: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: cancelled and completed cannot both fire
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_cancelled session=session-id platform=android version=1.2.6
+00:07 +68: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: failed and completed cannot both fire
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_failed session=session-id platform=android version=1.2.6
+00:07 +69: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: camera failure and zero-rep exit do not report workout success
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_failed session=session-id platform=android version=1.2.6
+00:07 +70: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: v2 workout flow emits no legacy custom workout names
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_first_rep_detected session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_completed session=session-id platform=android version=1.2.6
+00:08 +71: /Users/nam/projects/flutter/motionfit/test/core/reviews/review_prompt_service_test.dart: review is requested after a valid result is displayed
+00:08 +72: /Users/nam/projects/flutter/motionfit/test/core/reviews/review_prompt_service_test.dart: review request is idempotent in one app session
+00:08 +73: /Users/nam/projects/flutter/motionfit/test/core/reviews/review_prompt_service_test.dart: cancelled workout never requests review
+00:08 +74: /Users/nam/projects/flutter/motionfit/test/core/reviews/review_prompt_service_test.dart: review API failure does not throw or block the app
+00:09 +75: /Users/nam/projects/flutter/motionfit/test/core/reviews/review_prompt_service_test.dart: review is not requested after leaving the result screen
+00:09 +76: /Users/nam/projects/flutter/motionfit/test/core/reviews/review_prompt_service_test.dart: manual rate opens the store without changing automatic limits
+00:11 +77: /Users/nam/projects/flutter/motionfit/test/features/settings/domain/user_preferences_test.dart: new installs enable rep video review by default
+00:11 +78: /Users/nam/projects/flutter/motionfit/test/features/settings/domain/user_preferences_test.dart: camera guide state remains independent per exercise
+00:11 +79: /Users/nam/projects/flutter/motionfit/test/features/settings/domain/user_preferences_test.dart: missing video preference defaults on and explicit false is kept
+00:11 +80: /Users/nam/projects/flutter/motionfit/test/features/settings/domain/user_preferences_test.dart: all user preferences survive JSON serialization
+00:11 +81: /Users/nam/projects/flutter/motionfit/test/features/settings/domain/user_preferences_test.dart: decode applies safe enum, locale, rate, and plan bounds
+00:11 +82: /Users/nam/projects/flutter/motionfit/test/features/settings/domain/user_preferences_test.dart: copyWith can return to system locale and clamps mutable values
+00:11 +83: /Users/nam/projects/flutter/motionfit/test/features/settings/domain/user_preferences_test.dart: legacy payload gets retention-safe persistence defaults
+00:11 +84: /Users/nam/projects/flutter/motionfit/test/app/localization_layout_smoke_test.dart: ships exactly the nine required locales
+00:12 +85: /Users/nam/projects/flutter/motionfit/test/app/localization_layout_smoke_test.dart: ar localization loads with directionality
+00:12 +86: /Users/nam/projects/flutter/motionfit/test/app/localization_layout_smoke_test.dart: de localization loads with directionality
+00:12 +87: /Users/nam/projects/flutter/motionfit/test/app/localization_layout_smoke_test.dart: en localization loads with directionality
+00:12 +88: /Users/nam/projects/flutter/motionfit/test/app/localization_layout_smoke_test.dart: es localization loads with directionality
+00:12 +89: /Users/nam/projects/flutter/motionfit/test/app/localization_layout_smoke_test.dart: fr localization loads with directionality
+00:12 +90: /Users/nam/projects/flutter/motionfit/test/app/localization_layout_smoke_test.dart: ja localization loads with directionality
+00:12 +91: /Users/nam/projects/flutter/motionfit/test/app/localization_layout_smoke_test.dart: ko localization loads with directionality
+00:12 +92: /Users/nam/projects/flutter/motionfit/test/app/localization_layout_smoke_test.dart: zh localization loads with directionality
+00:12 +93: /Users/nam/projects/flutter/motionfit/test/app/localization_layout_smoke_test.dart: zh localization loads with directionality
+00:12 +94: /Users/nam/projects/flutter/motionfit/test/app/localization_layout_smoke_test.dart: small screen with 200% text remains scrollable without overflow
+00:13 +95: /Users/nam/projects/flutter/motionfit/test/features/records/progress_entry_cards_test.dart: the Progress tab lays out with no workout history
+00:14 +96: /Users/nam/projects/flutter/motionfit/test/features/records/progress_entry_cards_test.dart: the Progress tab lays out with no workout history
+00:14 +97: /Users/nam/projects/flutter/motionfit/test/features/records/progress_entry_cards_test.dart: the Progress tab lays out with no workout history
+00:14 +98: /Users/nam/projects/flutter/motionfit/test/features/records/progress_entry_cards_test.dart: the Progress tab lays out with no workout history
+00:14 +99: /Users/nam/projects/flutter/motionfit/test/features/records/progress_entry_cards_test.dart: the Progress tab lays out with no workout history
+00:14 +100: /Users/nam/projects/flutter/motionfit/test/features/records/progress_entry_cards_test.dart: both progress entry cards are shown
+00:14 +101: /Users/nam/projects/flutter/motionfit/test/features/squat/data/rep_timeline_repository_test.dart: rep timeline and workout video metadata survive a restart
+00:14 +102: /Users/nam/projects/flutter/motionfit/test/features/records/progress_entry_cards_test.dart: the entry cards share one height
+00:14 +103: /Users/nam/projects/flutter/motionfit/test/features/records/progress_entry_cards_test.dart: the entry cards share one height
+00:15 +104: /Users/nam/projects/flutter/motionfit/test/features/squat/data/rep_timeline_repository_test.dart: video-less legacy-style rep remains loadable as text analysis
+00:15 +105: /Users/nam/projects/flutter/motionfit/test/features/squat/data/rep_timeline_repository_test.dart: video-less legacy-style rep remains loadable as text analysis
+00:15 +106: /Users/nam/projects/flutter/motionfit/test/features/squat/data/rep_timeline_repository_test.dart: v4 migration adds nullable timeline and video defaults
+00:16 +107: /Users/nam/projects/flutter/motionfit/test/features/squat/data/replay_pose_engine_test.dart: replays landmark frames in source order without image payloads
+00:17 +108: /Users/nam/projects/flutter/motionfit/test/features/squat/data/sqlite_workout_repository_test.dart: camera failure session is hidden and can be discarded
+00:17 +109: /Users/nam/projects/flutter/motionfit/test/features/squat/data/sqlite_workout_repository_test.dart: camera failure session is hidden and can be discarded
+00:17 +110: /Users/nam/projects/flutter/motionfit/test/features/squat/data/sqlite_workout_repository_test.dart: corrupt legacy workout plan is ignored and reported
+00:17 +111: /Users/nam/projects/flutter/motionfit/test/features/squat/data/sqlite_workout_repository_test.dart: v2 migration restores only the latest unfinished workout
+00:18 +112: /Users/nam/projects/flutter/motionfit/test/features/squat/data/sqlite_workout_repository_test.dart: workout plan and progress survive a database restart
+00:18 +113: /Users/nam/projects/flutter/motionfit/test/features/squat/data/sqlite_workout_repository_test.dart: multiple sessions aggregate by day and preserve interrupted durations
+00:20 +114: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_clip_test.dart: RepClipWindow clamps padded bounds to the video duration
+00:20 +115: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_clip_test.dart: RepClipWindow collapses an out-of-range rep to a valid empty window
+00:20 +116: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_clip_test.dart: RepClipPlaybackController Rep 3 play seeks to its padded timestamp before playing
+00:20 +117: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_clip_test.dart: RepClipPlaybackController automatically pauses when playback reaches the clip end
+00:20 +118: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_clip_test.dart: RepClipPlaybackController replay seeks back to the clip start
+00:20 +119: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_clip_test.dart: RepClipPlaybackController calls onPlay once for each successful play only
+00:20 +120: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_analysis_test.dart: RepAnalysis.fromRecords creates a good analysis from stored rep summary data
+00:20 +121: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_analysis_test.dart: RepAnalysis.fromRecords classifies persisted depth, upper-body, and knee issues
+00:20 +122: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_analysis_test.dart: RepAnalysis.fromRecords marks a clearly resolved issue as improved
+00:20 +123: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_analysis_test.dart: RepAnalysis.fromRecords requires same set, angle, confidence, and a passed metric to improve
+00:20 +124: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_analysis_test.dart: RepAnalysis.fromRecords falls back to wall-clock offsets for a legacy rep
+00:20 +125: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector counts a complete down-bottom-up cycle exactly once
+00:20 +126: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector counts a complete down-bottom-up cycle exactly once
+00:20 +127: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector counts a complete down-bottom-up cycle exactly once
+00:20 +128: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector counts a complete down-bottom-up cycle exactly once
+00:20 +129: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector counts a complete down-bottom-up cycle exactly once
+00:20 +130: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector counts a complete down-bottom-up cycle exactly once
+00:20 +131: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector counts a complete down-bottom-up cycle exactly once
+00:20 +132: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector counts a complete down-bottom-up cycle exactly once
+00:20 +133: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector counts a continuous fast repetition without a bottom hold
+00:20 +134: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector counts a continuous fast repetition without a bottom hold
+00:20 +135: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector counts a continuous fast repetition without a bottom hold
+00:20 +136: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector counts when usable landmarks have moderate confidence
+00:20 +137: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector falls back to image landmarks when world landmarks are empty
+00:20 +138: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector counts ten separated valid repetitions
+00:20 +139: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector small standing jitter never becomes a repetition
+00:20 +140: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector standing side-to-side sway never becomes a repetition
+00:20 +141: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector a short tracking loss holds the in-progress repetition
+00:20 +142: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector tracking loss never pauses the workout phase
+00:20 +143: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector reports a shallow attempt without counting it as a rep
+00:20 +144: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector calibrates and counts with shoulders through knees only
+00:20 +145: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector pause cancels an attempt and resume cannot count paused movement
+00:20 +146: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector refractory prevents duplicates but accepts the next full cycle
+00:20 +147: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector an interrupted shallow descent cannot double-count the next rep
+00:20 +148: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector a detector-valid shallow rep is counted and receives a depth flag
+00:20 +149: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector incomplete lockout never merges consecutive repetitions
+00:20 +150: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector a torso-lean flag does not invalidate a counted repetition
+00:20 +151: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector a heel-lift flag does not invalidate a counted repetition
+00:20 +152: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/rep_detector_test.dart: SquatRepDetector multiple bad-form flags never subtract a completed repetition
+00:21 +153: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/workout_session_policy_test.dart: camera failure does not create a valid or paused workout
+00:21 +154: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/workout_session_policy_test.dart: zero rep session is not completed
+00:21 +155: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/workout_session_policy_test.dart: valid early end can be persisted after a detected rep
+00:21 +156: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/workout_session_policy_test.dart: only completed valid workout updates challenge
+00:22 +157: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/pose_landmark_smoother_test.dart: smooths jitter and resets after a long frame gap
+00:22 +158: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/pose_landmark_smoother_test.dart: holds a reliable coordinate while confidence briefly drops
+00:22 +159: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/pose_landmark_smoother_test.dart: stops rendering a stale joint after the confidence grace period
+00:22 +160: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/pose_feedback_classifier_test.dart: uses green level for a confident pose inside live thresholds
+00:22 +161: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/pose_feedback_classifier_test.dart: uses yellow level near a form threshold
+00:22 +162: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/pose_feedback_classifier_test.dart: uses red level for a severe or compound deviation
+00:22 +163: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/pose_feedback_classifier_test.dart: does not label an untracked body as good form
+00:23 +164: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/coach_engine_test.dart: CoachPolicy coaches an issue observed twice within three repetitions
+00:24 +165: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/coach_engine_test.dart: CoachPolicy coaches a clearly observed safety issue immediately
+00:24 +166: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/coach_engine_test.dart: CoachPolicy does not repeat the same cue again within three repetitions
+00:24 +167: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/coach_engine_test.dart: CoachPolicy leaves at least one repetition between different form cues
+00:24 +168: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/coach_engine_test.dart: CoachQueue rep count preempts a lower-priority message
+00:24 +169: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/coach_engine_test.dart: CoachQueue deduplicates messages during cooldown
+00:24 +170: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/coach_engine_test.dart: CoachQueue allows at most one form cue per rep sequence
+00:24 +171: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/coach_engine_test.dart: CoachQueue drops expired messages before speech
+00:24 +172: /Users/nam/projects/flutter/motionfit/test/features/squat/domain/coach_engine_test.dart: CoachQueue retries one transient speech failure
+00:26 +173: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: Workout Result shows five persisted reps in order
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _KeyWidgetFinder:<Found 0 widgets with key [<'rep-timeline-row-1'>]: []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart:39:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart line 39
+The test description was:
+  Workout Result shows five persisted reps in order
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:26 +173 -1: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: Workout Result shows five persisted reps in order [E]
+  Test failed. See exception logs above.
+  The test description was: Workout Result shows five persisted reps in order
+  
+00:26 +173 -1: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: video disabled keeps rows and hides play buttons
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _KeyWidgetFinder:<Found 0 widgets with key [<'rep-timeline-row-3'>]: []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart:64:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart line 64
+The test description was:
+  video disabled keeps rows and hides play buttons
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:26 +173 -2: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: video disabled keeps rows and hides play buttons [E]
+  Test failed. See exception logs above.
+  The test description was: video disabled keeps rows and hides play buttons
+  
+00:26 +173 -2: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: valid video shows play and opens Rep 3 timestamps
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: No element
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:694:25)
+#1      WidgetController.widget (package:flutter_test/src/controller.dart:823:30)
+#2      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart:90:25)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  valid video shows play and opens Rep 3 timestamps
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:26 +173 -3: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: valid video shows play and opens Rep 3 timestamps [E]
+  Test failed. See exception logs above.
+  The test description was: valid video shows play and opens Rep 3 timestamps
+  
+00:26 +173 -3: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: deleted video keeps Timeline and hides play
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _KeyWidgetFinder:<Found 0 widgets with key [<'rep-timeline-row-3'>]: []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart:120:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart line 120
+The test description was:
+  deleted video keeps Timeline and hides play
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:27 +173 -4: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: deleted video keeps Timeline and hides play [E]
+  Test failed. See exception logs above.
+  The test description was: deleted video keeps Timeline and hides play
+  
+00:27 +173 -4: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: row tap opens the matching rep detail
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+The finder "Found 0 widgets with key [<'rep-timeline-row-4'>]: []" (used in a call to "tap()") could
+not find any matching widgets.
+
+When the exception was thrown, this was the stack:
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2090:7)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1942:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1075:7)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart:138:18)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  row tap opens the matching rep detail
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:27 +173 -5: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: row tap opens the matching rep detail [E]
+  Test failed. See exception logs above.
+  The test description was: row tap opens the matching rep detail
+  
+00:27 +173 -5: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: Improve filter keeps only reps needing attention
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+The finder "Found 0 widgets with key [<'rep-timeline-filter-attention'>]: []" (used in a call to
+"tap()") could not find any matching widgets.
+
+When the exception was thrown, this was the stack:
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2090:7)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1942:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1075:7)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart:157:18)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  Improve filter keeps only reps needing attention
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:27 +173 -6: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: Improve filter keeps only reps needing attention [E]
+  Test failed. See exception logs above.
+  The test description was: Improve filter keeps only reps needing attention
+  
+00:27 +173 -6: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: 100 reps render without overflow at compact width
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _KeyWidgetFinder:<Found 0 widgets with key [<'rep-timeline-row-100'>]: []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart:183:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart line 183
+The test description was:
+  100 reps render without overflow at compact width
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:27 +173 -7: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: 100 reps render without overflow at compact width [E]
+  Test failed. See exception logs above.
+  The test description was: 100 reps render without overflow at compact width
+  
+00:27 +173 -7: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: History detail renders the same persisted timeline
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _KeyWidgetFinder:<Found 0 widgets with key [<'rep-timeline-row-5'>]: []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart:211:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart line 211
+The test description was:
+  History detail renders the same persisted timeline
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:27 +173 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: History detail renders the same persisted timeline [E]
+  Test failed. See exception logs above.
+  The test description was: History detail renders the same persisted timeline
+  
+00:27 +173 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: Settings owns the Rep Video Review switch
+00:27 +174 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: Rep review exposes previous and next navigation states
+00:27 +175 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/rep_timeline_ui_test.dart: Workout Setup no longer contains the video review setting
+00:28 +176 -8: /Users/nam/projects/flutter/motionfit/test/features/body_progress/body_progress_summary_test.dart: an empty summary reports no photos and pending milestones
+00:28 +177 -8: /Users/nam/projects/flutter/motionfit/test/features/body_progress/body_progress_summary_test.dart: photos are ordered oldest first regardless of input order
+00:28 +178 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle continue navigates once and is not recorded as cancellation
+00:28 +179 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle continue navigates once and is not recorded as cancellation
+00:28 +180 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle continue navigates once and is not recorded as cancellation
+00:28 +181 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle continue navigates once and is not recorded as cancellation
+00:28 +182 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle continue navigates once and is not recorded as cancellation
+00:28 +183 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle continue navigates once and is not recorded as cancellation
+00:28 +184 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle continue navigates once and is not recorded as cancellation
+00:29 +185 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle system back records one explicit cancellation
+00:29 +186 -8: /Users/nam/projects/flutter/motionfit/test/features/body_progress/body_progress_layout_test.dart: the history grid lays out at the default text scale
+00:29 +187 -8: /Users/nam/projects/flutter/motionfit/test/features/body_progress/body_progress_layout_test.dart: the history grid lays out at the default text scale
+00:29 +188 -8: /Users/nam/projects/flutter/motionfit/test/features/body_progress/body_progress_layout_test.dart: the history grid lays out at the default text scale
+00:29 +189 -8: /Users/nam/projects/flutter/motionfit/test/features/body_progress/body_progress_layout_test.dart: the history grid lays out at the default text scale
+00:29 +190 -8: /Users/nam/projects/flutter/motionfit/test/features/body_progress/body_progress_layout_test.dart: the history grid lays out at the default text scale
+00:29 +191 -8: /Users/nam/projects/flutter/motionfit/test/features/body_progress/body_progress_layout_test.dart: the history grid lays out at the default text scale
+00:30 +192 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:30 +193 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:30 +194 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:30 +195 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:31 +196 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:31 +197 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:31 +198 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:31 +199 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:31 +200 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:31 +201 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:31 +202 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:31 +203 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:31 +204 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:31 +205 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraGuideScreen lifecycle 20 alternating exits tolerate rapid repeated taps
+00:32 +206 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle system back records one explicit cancellation
+00:32 +207 -8: /Users/nam/projects/flutter/motionfit/test/features/form_progress/form_progress_series_test.dart: an empty series exposes no scores or deltas
+00:32 +208 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle status completion after removal does not access ref
+00:32 +209 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle status completion after removal does not access ref
+00:32 +210 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle status completion after removal does not access ref
+00:32 +211 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle status completion after removal does not access ref
+00:32 +212 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle status completion after removal does not access ref
+00:32 +213 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle status completion after removal does not access ref
+00:32 +214 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle status completion after removal does not access ref
+00:32 +215 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle status completion after removal does not access ref
+00:32 +216 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle status completion after removal does not access ref
+00:32 +217 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle status completion after removal does not access ref
+00:32 +218 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle status completion after removal does not access ref
+00:32 +219 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle status completion after removal does not access ref
+00:32 +220 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle request status completion after removal does not access ref
+00:32 +221 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle permission callback after removal does not navigate
+00:33 +222 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle first granted status opens the exercise guide
+00:33 +223 -8: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle an already seen exercise guide is not repeated
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Tried to use a notifier in an uninitialized state.
+This means that you tried to either:
+- Use ref/state inside the constructor of a notifier.
+  In this case you should move your logic inside the "build" method instead.
+- Use ref/state after the notifier was disposed.
+  In this case, consider using `ref.onDispose` earlier in your notifier's lifecycle
+  to abort any pending logic that could try to use `ref/state`.
+
+When the exception was thrown, this was the stack:
+#0      ClassBaseX.$ref (package:riverpod/src/core/provider/notifier_provider.dart:373:22)
+#1      AnyNotifier.state (package:riverpod/src/core/provider/notifier_provider.dart:81:17)
+#2      ControlledPreferencesController.setSquatGuideSeen (file:///Users/nam/projects/flutter/motionfit/test/support/preparation_lifecycle_harness.dart:123:13)
+#3      main.<anonymous closure>.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart:266:27)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  an already seen exercise guide is not repeated
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:33 +223 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: CameraPermissionScreen lifecycle an already seen exercise guide is not repeated [E]
+  Test failed. See exception logs above.
+  The test description was: an already seen exercise guide is not repeated
+  
+00:33 +223 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle normal countdown completes once without cancellation
+00:33 +224 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle system back during countdown cancels timer and preparation
+00:33 +225 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle close button cancellation runs provider cleanup once
+00:33 +226 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle zero-second tick racing system back cancels only once
+00:33 +227 -9: /Users/nam/projects/flutter/motionfit/test/features/form_progress/form_pose_recorder_test.dart: an unscored rep produces no snapshot
+00:33 +228 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle removal while timer is active prevents late timer work
+00:33 +229 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle removal while timer is active prevents late timer work
+00:33 +230 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle removal while timer is active prevents late timer work
+00:33 +231 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle removal while timer is active prevents late timer work
+00:33 +232 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle removal while timer is active prevents late timer work
+00:33 +233 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle removal while timer is active prevents late timer work
+00:33 +234 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle removal while timer is active prevents late timer work
+00:33 +235 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle removal while timer is active prevents late timer work
+00:33 +236 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle removal while timer is active prevents late timer work
+00:33 +237 -9: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle removal while timer is active prevents late timer work
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <2>
+  Actual: <1>
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure>.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart:362:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart line 362
+The test description was:
+  removal while timer is active prevents late timer work
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:33 +237 -10: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle removal while timer is active prevents late timer work [E]
+  Test failed. See exception logs above.
+  The test description was: removal while timer is active prevents late timer work
+  
+00:33 +237 -10: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle rapid open and close leaves no late callback
+00:33 +238 -10: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle guide pushReplacement is not recorded as cancellation
+00:33 +239 -10: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle prewarm failure offers retry and starts a fresh attempt
+00:34 +240 -10: /Users/nam/projects/flutter/motionfit/test/features/challenges/data/challenge_repository_test.dart: corrupt legacy challenge data is skipped and reported
+00:34 +241 -10: /Users/nam/projects/flutter/motionfit/test/features/challenges/data/challenge_repository_test.dart: corrupt legacy challenge data is skipped and reported
+00:34 +242 -10: /Users/nam/projects/flutter/motionfit/test/features/challenges/data/challenge_repository_test.dart: corrupt legacy challenge data is skipped and reported
+00:34 +243 -10: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle 20 alternating completions and cancellations stay single-shot
+00:34 +244 -10: /Users/nam/projects/flutter/motionfit/test/features/squat/presentation/preparation_lifecycle_test.dart: WorkoutCountdownScreen lifecycle 20 alternating completions and cancellations stay single-shot
+00:36 +245 -10: /Users/nam/projects/flutter/motionfit/test/tool/corpus_evaluator_test.dart: synthetic smoke corpus is deterministic but never 97%-qualified
+00:36 +246 -10: /Users/nam/projects/flutter/motionfit/test/p0_growth_test.dart: application and all exercise routes compile
+00:36 +247 -10: /Users/nam/projects/flutter/motionfit/test/p0_growth_test.dart: same-day second workout is distinct from next-day return across exercises
+00:36 +248 -10: /Users/nam/projects/flutter/motionfit/test/p0_growth_test.dart: dismissed reminder gets one retry; permission denial never does
+00:36 +249 -10: /Users/nam/projects/flutter/motionfit/test/p0_growth_test.dart: notification destinations preserve explicit or last exercise
+00:36 +250 -10: /Users/nam/projects/flutter/motionfit/test/p0_growth_test.dart: count commits, preparation transitions and exits are deduplicated per attempt
+AnalyticsV2: mf2_workout_start_tapped session=attempt platform=android version=1.6.13
+AnalyticsV2: mf2_calibration_started session=attempt platform=android version=1.6.13
+AnalyticsV2: mf2_preparation_state_changed session=attempt platform=android version=1.6.13
+AnalyticsV2: mf2_workout_exit session=attempt platform=android version=1.6.13
+AnalyticsV2: mf2_calibration_exit session=attempt platform=android version=1.6.13
+AnalyticsV2: mf2_workout_start_tapped session=attempt platform=android version=1.6.13
+AnalyticsV2: mf2_first_count_committed session=attempt platform=android version=1.6.13
+00:36 +251 -10: Some tests failed.

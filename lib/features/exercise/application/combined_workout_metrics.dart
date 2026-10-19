@@ -12,12 +12,14 @@ class CombinedWorkoutMetrics {
     required this.streakAtRisk,
     required this.completedWorkoutCount,
     required this.distinctWorkoutDays,
+    this.completedSessionIds = const {},
   });
 
   final int currentStreak;
   final bool streakAtRisk;
   final int completedWorkoutCount;
   final int distinctWorkoutDays;
+  final Set<String> completedSessionIds;
 }
 
 final combinedWorkoutMetricsProvider = FutureProvider<CombinedWorkoutMetrics>((
@@ -31,8 +33,10 @@ final combinedWorkoutMetricsProvider = FutureProvider<CombinedWorkoutMetrics>((
   final plankSessions = await plankFuture;
   final workoutDates = <DateTime>{};
   var completedWorkoutCount = 0;
+  final completedSessionIds = <String>{};
 
   void addSession({
+    required String key,
     required DateTime startedAt,
     required DateTime? endedAt,
     required bool completed,
@@ -41,6 +45,7 @@ final combinedWorkoutMetricsProvider = FutureProvider<CombinedWorkoutMetrics>((
   }) {
     if (!completed || interrupted || totalReps <= 0) return;
     completedWorkoutCount++;
+    completedSessionIds.add(key);
     final completedAt = (endedAt ?? startedAt).toLocal();
     workoutDates.add(
       DateTime(completedAt.year, completedAt.month, completedAt.day),
@@ -50,6 +55,7 @@ final combinedWorkoutMetricsProvider = FutureProvider<CombinedWorkoutMetrics>((
   for (final details in squatSessions) {
     final session = details.session;
     addSession(
+      key: 'squat:${session.id}',
       startedAt: session.startedAt,
       endedAt: session.endedAt,
       completed: session.completed,
@@ -60,6 +66,7 @@ final combinedWorkoutMetricsProvider = FutureProvider<CombinedWorkoutMetrics>((
   for (final details in pushupSessions) {
     final session = details.session;
     addSession(
+      key: 'pushup:${session.id}',
       startedAt: session.startedAt,
       endedAt: session.endedAt,
       completed: session.completed,
@@ -70,6 +77,7 @@ final combinedWorkoutMetricsProvider = FutureProvider<CombinedWorkoutMetrics>((
   for (final details in plankSessions) {
     final session = details.session;
     addSession(
+      key: 'plank:${session.id}',
       startedAt: session.startedAt,
       endedAt: session.endedAt,
       completed: session.completed,
@@ -95,5 +103,6 @@ final combinedWorkoutMetricsProvider = FutureProvider<CombinedWorkoutMetrics>((
     streakAtRisk: !trainedToday && currentStreak > 0,
     completedWorkoutCount: completedWorkoutCount,
     distinctWorkoutDays: workoutDates.length,
+    completedSessionIds: Set.unmodifiable(completedSessionIds),
   );
 });

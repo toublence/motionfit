@@ -1,0 +1,59 @@
+Running Gradle task 'assembleRelease'...                        
+"ar": 2 untranslated message(s).
+"de": 2 untranslated message(s).
+"es": 2 untranslated message(s).
+"fr": 2 untranslated message(s).
+"ja": 2 untranslated message(s).
+"ko": 2 untranslated message(s).
+To see a detailed report, use the untranslated-messages-file 
+option in the l10n.yaml file:
+untranslated-messages-file: desiredFileName.txt
+<other option>: <other selection> 
+
+
+This will generate a JSON format file containing all messages that 
+need to be translated.
+Expected to find fonts for (packages/cupertino_icons/CupertinoIcons, MaterialIcons), but found (MaterialIcons). This usually means you are referring to font families in an IconData class but not including them in the assets section of your pubspec.yaml, are missing the package that would include them, or are missing "uses-material-design: true".
+Font asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 15424 bytes (99.1% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+Note: /Users/nam/.pub-cache/hosted/pub.dev/google_mobile_ads-9.0.0/android/src/playServices/java/io/flutter/plugins/googlemobileads/FlutterRequestConfiguration.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+The message received from the daemon indicates that the daemon has disappeared.
+Build request sent: Build{id=9c3db49f-29ae-4df1-a1a4-0c7395b7c49b, currentDir=/Users/nam/projects/flutter/motionfit/android}
+Attempting to read last messages from the daemon log...
+Daemon pid: 8506
+  log file: /Users/nam/.gradle/daemon/8.14/daemon-8506.out.log
+----- Last 20 lines from daemon log file - daemon-8506.out.log -----
+2026-10-17T16:30:53.086+0900 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=216ead21-3928-4406-a7bd-eae05b4f90af,javaHome=/opt/homebrew/Cellar/openjdk@17/17.0.17/libexec/openjdk.jdk/Contents/Home,javaVersion=17,javaVendor=Homebrew,daemonRegistryDir=/Users/nam/.gradle/daemon,pid=8506,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=1G,-XX:ReservedCodeCacheSize=512m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx4G,-Dfile.encoding=UTF-8,-Duser.country=KR,-Duser.language=ko,-Duser.variant]
+"ar": 2 untranslated message(s).
+"de": 2 untranslated message(s).
+"es": 2 untranslated message(s).
+"fr": 2 untranslated message(s).
+"ja": 2 untranslated message(s).
+"ko": 2 untranslated message(s).
+To see a detailed report, use the untranslated-messages-file 
+option in the l10n.yaml file:
+untranslated-messages-file: desiredFileName.txt
+<other option>: <other selection> 
+
+
+This will generate a JSON format file containing all messages that 
+need to be translated.
+Expected to find fonts for (packages/cupertino_icons/CupertinoIcons, MaterialIcons), but found (MaterialIcons). This usually means you are referring to font families in an IconData class but not including them in the assets section of your pubspec.yaml, are missing the package that would include them, or are missing "uses-material-design: true".
+Font asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 15424 bytes (99.1% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+Note: /Users/nam/.pub-cache/hosted/pub.dev/google_mobile_ads-9.0.0/android/src/playServices/java/io/flutter/plugins/googlemobileads/FlutterRequestConfiguration.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Daemon vm is shutting down... The daemon has exited normally or was terminated in response to a user interrupt.----- End of the daemon log -----
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+Running Gradle task 'assembleRelease'...                          476.7s
+Gradle task assembleRelease failed with exit code 1

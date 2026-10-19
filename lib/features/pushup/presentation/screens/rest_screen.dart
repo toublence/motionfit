@@ -219,7 +219,12 @@ class _RestScreenState extends ConsumerState<RestScreen> {
         session.totalReps > 0 &&
         state.saveState == WorkoutSaveState.saved) {
       try {
-        await showPostWorkoutInterstitial(ref);
+        await showPostWorkoutInterstitial(
+          ref,
+          workoutSessionId: 'pushup:${session.id}',
+          isOpportunityValid: () =>
+              mounted && (ModalRoute.of(context)?.isCurrent ?? false),
+        );
       } on Object catch (error, stackTrace) {
         unawaited(
           ref

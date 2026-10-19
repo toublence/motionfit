@@ -1,0 +1,4 @@
+17:31:15  Acquired tunnel connection to device.
+17:31:15  Enabling developer disk image services.
+17:31:15  Acquired usage assertion.
+ERROR: Command timeout of 30.0 seconds exceeded. Assuming command got stuck and aborting.

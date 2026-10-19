@@ -1,0 +1,48 @@
+{
+  "info" : {
+    "arguments" : [
+      "devicectl",
+      "device",
+      "info",
+      "apps",
+      "--device",
+      "315AE942-B017-5187-A2DA-A0B2490459AD",
+      "--bundle-id",
+      "fit.motionfit.app",
+      "--timeout",
+      "20",
+      "--json-output",
+      "/tmp/motionfit-ios-original-app-final.json"
+    ],
+    "commandType" : "devicectl.device.info.apps",
+    "environment" : {
+      "TERM" : "dumb"
+    },
+    "jsonVersion" : 2,
+    "outcome" : "success",
+    "version" : "477.39"
+  },
+  "result" : {
+    "apps" : [
+      {
+        "appClip" : false,
+        "builtByDeveloper" : true,
+        "bundleIdentifier" : "fit.motionfit.app",
+        "bundleVersion" : "67",
+        "defaultApp" : false,
+        "hidden" : false,
+        "internalApp" : false,
+        "name" : "MotionFit",
+        "removable" : true,
+        "url" : "file:///private/var/containers/Bundle/Application/3248FB29-96FF-4B90-8742-13E3864FA5AD/MotionFit.app/",
+        "version" : "1.7.0"
+      }
+    ],
+    "defaultAppsIncluded" : false,
+    "deviceIdentifier" : "315AE942-B017-5187-A2DA-A0B2490459AD",
+    "hiddenAppsIncluded" : false,
+    "internalAppsIncluded" : false,
+    "matchingBundleIdentifier" : "fit.motionfit.app",
+    "removableAppsIncluded" : true
+  }
+}

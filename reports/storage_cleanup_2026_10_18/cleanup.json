@@ -1,0 +1,161 @@
+[
+  {
+    "path": "/private/tmp/motionfit-ios-ads-build",
+    "type": "regenerable isolated test build/copied resources",
+    "status": "deleted"
+  },
+  {
+    "path": "/private/tmp/motionfit-ios-video-build",
+    "type": "regenerable isolated test build/copied resources",
+    "status": "deleted"
+  },
+  {
+    "path": "/private/tmp/motionfit-ios-video-validation",
+    "type": "regenerable isolated test build/copied resources",
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/projects/flutter/motionfit/build",
+    "type": "Flutter generated build outputs",
+    "allocated_kib_before": 2540328,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/projects/flutter/motionfit/.dart_tool/flutter_build",
+    "type": "Flutter compilation cache",
+    "allocated_kib_before": 809600,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/projects/android/motionfit/app/build",
+    "type": "Android generated app build outputs",
+    "allocated_kib_before": 1471512,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/projects/android/motionfit/build",
+    "type": "Android generated project build outputs",
+    "allocated_kib_before": 144,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/.gradle/caches",
+    "type": "Gradle regenerable/downloadable caches",
+    "allocated_kib_before": 1432484,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/Godot-2026-10-17-182604.ips",
+    "type": "crash/diagnostic report",
+    "bytes_before": 27459,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/SFA-sos.json_2026-10-18-083847_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 368,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/SFA-pcs.json_2026-10-18-083848_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 1178,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/SFA-local.json_2026-10-18-083848_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 370,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/SFA-transparency.json_2026-10-17-203822_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 6958,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/Godot-2026-10-17-210805.ips",
+    "type": "crash/diagnostic report",
+    "bytes_before": 27660,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/SFA-ckks.json_2026-10-18-083847_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 15869,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/SFA-swtransparency.json_2026-10-17-203821_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 767,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/SFA-pcs.json_2026-10-17-203823_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 1178,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/SFA-sos.json_2026-10-17-203822_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 368,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/SFA-local.json_2026-10-17-203823_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 370,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/SFA-swtransparency.json_2026-10-18-083846_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 646,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/SFA-transparency.json_2026-10-18-083847_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 4941,
+    "status": "deleted"
+  },
+  {
+    "path": "/Users/nam/Library/Logs/DiagnosticReports/SFA-ckks.json_2026-10-17-203822_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 17448,
+    "status": "deleted"
+  },
+  {
+    "path": "/Library/Logs/DiagnosticReports/WindowServer-2026-10-17-180336.ips",
+    "type": "crash/diagnostic report",
+    "bytes_before": 3856949,
+    "status": "deleted"
+  },
+  {
+    "path": "/Library/Logs/DiagnosticReports/SWBBuildService_2026-10-17-181711_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 1139284,
+    "status": "deleted"
+  },
+  {
+    "path": "/Library/Logs/DiagnosticReports/WindowServer_2026-10-17-180354_Namui-MacBookAir.userspace_watchdog_timeout.spin",
+    "type": "crash/diagnostic report",
+    "bytes_before": 9501943,
+    "status": "deleted"
+  },
+  {
+    "path": "/Library/Logs/DiagnosticReports/Google Chrome_2026-10-18-070640_Namui-MacBookAir.diag",
+    "type": "crash/diagnostic report",
+    "bytes_before": 34372,
+    "status": "deleted"
+  },
+  {
+    "path": "/Library/Logs/DiagnosticReports/com.apple.FaceTime.FTConversationService-2026-10-17-180356.ips",
+    "type": "crash/diagnostic report",
+    "bytes_before": 12473,
+    "status": "deleted"
+  }
+]

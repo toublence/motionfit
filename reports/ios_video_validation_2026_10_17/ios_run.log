@@ -1,0 +1,41 @@
+17:10:55  Acquired tunnel connection to device.
+17:10:55  Enabling developer disk image services.
+17:10:55  Acquired usage assertion.
+Launched application with fit.motionfit.app.videovalidation bundle identifier.
+Waiting for the application to terminate…
+VIDEO_BEGIN squat_depth_after_5
+I0000 00:00:1792224656.052635 3520976 init-domain.cc:128] Fiber init: default domain = pthread, concurrency = 8, prefix = pthread-default
+I0000 00:00:1792224656.090853 3520976 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 Metal - 104.1), renderer: Apple M2 GPU
+INFO: Initialized TensorFlow Lite runtime.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1792224656.137963 3521015 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792224656.152280 3521019 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792224656.410349 3521015 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+VIDEO_DONE squat_depth_after_5 frames=685
+VIDEO_BEGIN squat_fast_10
+I0000 00:00:1792224665.179366 3520976 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 Metal - 104.1), renderer: Apple M2 GPU
+W0000 00:00:1792224665.219614 3521144 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792224665.225131 3521149 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+VIDEO_DONE squat_fast_10 frames=705
+VIDEO_BEGIN pushup_good_repeat_10
+I0000 00:00:1792224674.225667 3520976 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 Metal - 104.1), renderer: Apple M2 GPU
+W0000 00:00:1792224674.265275 3521230 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792224674.270817 3521237 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+VIDEO_DONE pushup_good_repeat_10 frames=820
+I0000 00:00:1792224684.682617 3520976 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 Metal - 104.1), renderer: Apple M2 GPU
+VIDEO_BEGIN pushup_shallow_10
+W0000 00:00:1792224684.723672 3521363 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792224684.730531 3521370 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+VIDEO_DONE pushup_shallow_10 frames=741
+VIDEO_BEGIN plank_near_20s
+I0000 00:00:1792224694.295189 3520976 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 Metal - 104.1), renderer: Apple M2 GPU
+W0000 00:00:1792224694.334925 3521476 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792224694.340352 3521476 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+VIDEO_DONE plank_near_20s frames=521
+VIDEO_BEGIN plank_hip_high_20s
+I0000 00:00:1792224701.091296 3520976 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 Metal - 104.1), renderer: Apple M2 GPU
+W0000 00:00:1792224701.131174 3521547 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792224701.136699 3521552 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+VIDEO_DONE plank_hip_high_20s frames=741
+VIDEO_ALL_DONE
+The app terminated with the exit code 0.

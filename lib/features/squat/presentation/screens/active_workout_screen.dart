@@ -158,7 +158,12 @@ class _ActiveWorkoutScreenState extends ConsumerState<ActiveWorkoutScreen>
         session.totalReps > 0 &&
         state.saveState == WorkoutSaveState.saved) {
       try {
-        await showPostWorkoutInterstitial(ref);
+        await showPostWorkoutInterstitial(
+          ref,
+          workoutSessionId: 'squat:${session.id}',
+          isOpportunityValid: () =>
+              mounted && (ModalRoute.of(context)?.isCurrent ?? false),
+        );
       } on Object catch (error, stackTrace) {
         unawaited(
           ref

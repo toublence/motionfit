@@ -1,0 +1,68 @@
+{
+  "os" : "26.6.2",
+  "mode" : "video",
+  "model" : "lite",
+  "cases" : [
+    {
+      "processingSeconds" : 8.5672881249920465,
+      "sourceTransform" : "[0, 1, -1, 0, 0, 0]",
+      "frames" : 685,
+      "durationSeconds" : 22.838799999999999,
+      "id" : "squat_depth_after_5",
+      "exercise" : "squat",
+      "os" : "26.6.2",
+      "skippedNonIncreasingTimestamps" : 0
+    },
+    {
+      "frames" : 705,
+      "skippedNonIncreasingTimestamps" : 0,
+      "processingSeconds" : 8.5812107916572131,
+      "durationSeconds" : 23.498799999999999,
+      "os" : "26.6.2",
+      "id" : "squat_fast_10",
+      "sourceTransform" : "[0, 1, -1, 0, 0, 0]",
+      "exercise" : "squat"
+    },
+    {
+      "frames" : 820,
+      "skippedNonIncreasingTimestamps" : 0,
+      "sourceTransform" : "[1, 0, 0, 1, 0, 0]",
+      "processingSeconds" : 9.9949768333462998,
+      "os" : "26.6.2",
+      "id" : "pushup_good_repeat_10",
+      "exercise" : "pushup",
+      "durationSeconds" : 27.329499999999999
+    },
+    {
+      "id" : "pushup_shallow_10",
+      "os" : "26.6.2",
+      "durationSeconds" : 24.6553,
+      "exercise" : "pushup",
+      "skippedNonIncreasingTimestamps" : 0,
+      "processingSeconds" : 9.0872593750245869,
+      "frames" : 741,
+      "sourceTransform" : "[1, 0, 0, 1, 0, 0]"
+    },
+    {
+      "processingSeconds" : 6.3633002083515748,
+      "id" : "plank_near_20s",
+      "durationSeconds" : 17.331299999999999,
+      "exercise" : "plank",
+      "skippedNonIncreasingTimestamps" : 0,
+      "sourceTransform" : "[1, 0, 0, 1, 0, 0]",
+      "os" : "26.6.2",
+      "frames" : 521
+    },
+    {
+      "os" : "26.6.2",
+      "id" : "plank_hip_high_20s",
+      "exercise" : "plank",
+      "frames" : 741,
+      "skippedNonIncreasingTimestamps" : 0,
+      "processingSeconds" : 9.1544128750101663,
+      "sourceTransform" : "[1, 0, 0, 1, 0, 0]",
+      "durationSeconds" : 24.6632
+    }
+  ],
+  "device" : "iPad"
+}

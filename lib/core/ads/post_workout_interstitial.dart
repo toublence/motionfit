@@ -1,26 +1,40 @@
 import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:motionfit_squat/core/providers.dart';
-import 'package:motionfit_squat/features/exercise/application/combined_workout_metrics.dart';
 import 'package:motionfit_squat/features/settings/application/preferences_controller.dart';
 
-/// Only an already-ready ad may interrupt a later completion transition.
-/// Policy/consent/SDK preparation runs independently in MotionFitApp.
-Future<bool> showPostWorkoutInterstitial(WidgetRef ref) async {
-  final metrics = ref.read(combinedWorkoutMetricsProvider).value;
-  // Unknown counts fail closed: never risk an ad on the first completion.
-  if (metrics == null || metrics.completedWorkoutCount < 2) return false;
+Future<bool> showPostWorkoutInterstitial(
+  WidgetRef ref, {
+  required String workoutSessionId,
+  bool Function()? isOpportunityValid,
+}) async {
   final ads = ref.read(adServiceProvider);
-  if (!ads.ready) return false;
+  // This key is supplied only for an already saved, valid completion.
+  ads.workoutCompleted(workoutSessionId);
+  final count = ads.completedWorkoutCount;
+  if (count == null) {
+    ads.record('mf2_ad_decision', {
+      'ad_format': 'interstitial',
+      'ad_placement': 'workout_complete',
+      'workout_session_id': workoutSessionId,
+      'result': 'skipped',
+      'skip_reason': 'workout_metrics_unavailable',
+    });
+    return false;
+  }
   final preferences = ref.read(preferencesControllerProvider);
   final controller = ref.read(preferencesControllerProvider.notifier);
-  final didShow = await ads.showInterstitialIfAvailable(
+  return ads.showInterstitialIfAvailable(
     lastInterstitialShownAt: preferences.lastInterstitialShownAt,
-    completedWorkoutCount: metrics.completedWorkoutCount,
+    completedWorkoutCount: count,
+    workoutSessionId: workoutSessionId,
+    isOpportunityValid: isOpportunityValid,
+    onShown: (at) => unawaited(
+      controller
+          .markInterstitialShown(shownAt: at)
+          .catchError(
+            (Object _) => ads.record('mf2_ad_cooldown_persist_failed', {}),
+          ),
+    ),
   );
-  if (didShow) {
-    // Persist the cooldown without holding up the destination screen.
-    unawaited(controller.markInterstitialShown().catchError((Object _) {}));
-  }
-  return didShow;
 }

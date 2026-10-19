@@ -1,0 +1,3108 @@
+{
+  "analysis_date": "2026-10-17",
+  "period": {
+    "start_inclusive": "2026-09-19",
+    "end_inclusive": "2026-10-16",
+    "report_timezone": null,
+    "user_confirmed_filters_applied": false
+  },
+  "source": {
+    "pasted_file": "/Users/nam/.codex/attachments/1ea7cdaa-1c79-488d-9496-d6afc3cbee03/붙여넣은 텍스트.txt",
+    "pasted_file_sha256": "bec310253dfa551d4d96a6c4f15a8e1f9d258149ebcaa8731726fc37a2e94a7f",
+    "file_ranks": [
+      1,
+      250
+    ],
+    "message_ranks": [
+      251,
+      277
+    ],
+    "reported_event_total": 50717,
+    "reported_total_users": 354,
+    "parsed_event_total": 50717,
+    "event_types": 277
+  },
+  "attribution": {
+    "ios_166_event_count": null,
+    "ios_166_user_count": null,
+    "reason": "Aggregated rows have no platform, stream_id, app_info.version, build, event timestamp, or request identifiers. Source compatibility is not cohort membership. Missing literal is not proof of absence after AOT compilation. Common names can also be emitted manually. No mixed row is assigned to iOS 1.6.6."
+  },
+  "source_revisions": {
+    "motionfit_head": "0f608c59abbe59afe20da257f169a1ab48c54735",
+    "motionfit_candidate": "f8999266c3ee12c7f10fa3b0c3f2559809f06cb5",
+    "nasdaq_head": "a4fb39d4a1cfd5fc8aceca8baf3420e67061a9ef"
+  },
+  "archives": [
+    {
+      "path": "/Users/nam/Library/Developer/Xcode/Archives/2026-09-08/Runner 9-8-26, 8.28 PM.xcarchive",
+      "bundle_id": "fit.motionfit.app",
+      "version": "1.6.6",
+      "build": "66",
+      "created_utc": "2026-09-08 11:28:32",
+      "binary_path": "/Users/nam/Library/Developer/Xcode/Archives/2026-09-08/Runner 9-8-26, 8.28 PM.xcarchive/Products/Applications/Runner.app/Frameworks/App.framework/App",
+      "binary_sha256": "aa868e068f3d9cc2ef3f0813ddb3ade23a69865eea2c441757889460f98304a6",
+      "binary_size_bytes": 10641584,
+      "distributions": [
+        {
+          "destination": "App Store",
+          "uploaded_build": "66",
+          "upload_date_utc": "2026-09-08T11:31:47Z",
+          "upload_state": "success",
+          "upload_errors": []
+        }
+      ],
+      "exact_source_sha": null,
+      "app_store_public_release_confirmed": false
+    }
+  ],
+  "archive_selected_literal_presence": {
+    "before_first_workout": true,
+    "first_workout_protected": false,
+    "_waitForInterstitial": true,
+    "BottomNativeAd": true,
+    "BottomBannerAd": false,
+    "/1414718708": true,
+    "/2998795518": true,
+    "/2773965626": false
+  },
+  "admob_screenshot": {
+    "platform_confirmed": false,
+    "version_dimension": "1.6.6",
+    "matched_requests": null,
+    "rows": [
+      {
+        "format": "native_advanced",
+        "requests": 36,
+        "impressions": 16,
+        "observed_ecpm_usd": 0.35
+      },
+      {
+        "format": "interstitial",
+        "requests": 72,
+        "impressions": 1,
+        "observed_ecpm_usd": 4.0
+      }
+    ],
+    "summary": {
+      "requests": 154,
+      "impressions": 17,
+      "observed_ecpm_usd": 0.57
+    },
+    "visible_row_requests": 108,
+    "summary_minus_visible_rows": 46,
+    "difference_attributed": false
+  },
+  "events": [
+    {
+      "rank": 1,
+      "event_name": "anonymous_auth_started",
+      "mixed_event_count": 4418,
+      "mixed_total_users": 197,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 2,
+      "event_name": "anonymous_auth_failed",
+      "mixed_event_count": 4164,
+      "mixed_total_users": 196,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 3,
+      "event_name": "mf2_preparation_state_changed",
+      "mixed_event_count": 4108,
+      "mixed_total_users": 45,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:344"
+      ],
+      "archive_literal_found": false,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 4,
+      "event_name": "screen_view",
+      "mixed_event_count": 3173,
+      "mixed_total_users": 252,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:856",
+        "f899926:lib/core/analytics/analytics_service.dart:858"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:960",
+        "HEAD:lib/core/analytics/analytics_service.dart:962"
+      ],
+      "archive_literal_found": true,
+      "classification": "common_or_sdk_event_platform_version_unresolved"
+    },
+    {
+      "rank": 5,
+      "event_name": "entitlement_changed",
+      "mixed_event_count": 1897,
+      "mixed_total_users": 170,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 6,
+      "event_name": "user_engagement",
+      "mixed_event_count": 1843,
+      "mixed_total_users": 244,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "common_or_sdk_event_platform_version_unresolved"
+    },
+    {
+      "rank": 7,
+      "event_name": "entitlement_query_started",
+      "mixed_event_count": 1572,
+      "mixed_total_users": 105,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 8,
+      "event_name": "entitlement_query_finished",
+      "mixed_event_count": 1565,
+      "mixed_total_users": 109,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 9,
+      "event_name": "record_migration_finished",
+      "mixed_event_count": 1488,
+      "mixed_total_users": 109,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 10,
+      "event_name": "mf2_ad_request_attempted",
+      "mixed_event_count": 1451,
+      "mixed_total_users": 119,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:630"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:734"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 11,
+      "event_name": "legacy_ownership_checked",
+      "mixed_event_count": 1397,
+      "mixed_total_users": 98,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 12,
+      "event_name": "ad_eligibility_checked",
+      "mixed_event_count": 1033,
+      "mixed_total_users": 108,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 13,
+      "event_name": "ad_request_started",
+      "mixed_event_count": 881,
+      "mixed_total_users": 93,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 14,
+      "event_name": "mf2_workout_setup_viewed",
+      "mixed_event_count": 811,
+      "mixed_total_users": 124,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:214"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:215"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 15,
+      "event_name": "app_telemetry_health",
+      "mixed_event_count": 730,
+      "mixed_total_users": 81,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 16,
+      "event_name": "ad_impression",
+      "mixed_event_count": 653,
+      "mixed_total_users": 117,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "common_or_sdk_event_platform_version_unresolved"
+    },
+    {
+      "rank": 17,
+      "event_name": "ad_opportunity",
+      "mixed_event_count": 650,
+      "mixed_total_users": 96,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 18,
+      "event_name": "motionfit_ads_log",
+      "mixed_event_count": 612,
+      "mixed_total_users": 11,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 19,
+      "event_name": "mf2_calibration_reset",
+      "mixed_event_count": 558,
+      "mixed_total_users": 34,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:348"
+      ],
+      "archive_literal_found": false,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 20,
+      "event_name": "ad_load_succeeded",
+      "mixed_event_count": 533,
+      "mixed_total_users": 82,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 21,
+      "event_name": "ad_paid",
+      "mixed_event_count": 497,
+      "mixed_total_users": 65,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 22,
+      "event_name": "progress_viewed",
+      "mixed_event_count": 459,
+      "mixed_total_users": 68,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 23,
+      "event_name": "app_return",
+      "mixed_event_count": 458,
+      "mixed_total_users": 145,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 24,
+      "event_name": "session_start",
+      "mixed_event_count": 452,
+      "mixed_total_users": 306,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "common_or_sdk_event_platform_version_unresolved"
+    },
+    {
+      "rank": 25,
+      "event_name": "mf2_onboarding_step_viewed",
+      "mixed_event_count": 343,
+      "mixed_total_users": 108,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:144"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:144"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 26,
+      "event_name": "camera_setup_failed",
+      "mixed_event_count": 340,
+      "mixed_total_users": 88,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 27,
+      "event_name": "monetization_app_backgrounded",
+      "mixed_event_count": 340,
+      "mixed_total_users": 91,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 28,
+      "event_name": "camera_setup_started",
+      "mixed_event_count": 337,
+      "mixed_total_users": 95,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 29,
+      "event_name": "ad_show_attempted",
+      "mixed_event_count": 315,
+      "mixed_total_users": 64,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 30,
+      "event_name": "today_focus_viewed",
+      "mixed_event_count": 313,
+      "mixed_total_users": 98,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 31,
+      "event_name": "today_viewed",
+      "mixed_event_count": 312,
+      "mixed_total_users": 98,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 32,
+      "event_name": "ad_show_succeeded",
+      "mixed_event_count": 311,
+      "mixed_total_users": 64,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 33,
+      "event_name": "mf2_workout_start_tapped",
+      "mixed_event_count": 304,
+      "mixed_total_users": 90,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:244"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:254"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 34,
+      "event_name": "mf2_camera_permission_result",
+      "mixed_event_count": 295,
+      "mixed_total_users": 83,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:253"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:263"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 35,
+      "event_name": "first_check_started",
+      "mixed_event_count": 289,
+      "mixed_total_users": 93,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 36,
+      "event_name": "mf2_camera_init_started",
+      "mixed_event_count": 285,
+      "mixed_total_users": 82,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:262"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:272"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 37,
+      "event_name": "mf2_onboarding_next_tapped",
+      "mixed_event_count": 274,
+      "mixed_total_users": 103,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:156"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:156"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 38,
+      "event_name": "camera_setup_abandoned",
+      "mixed_event_count": 270,
+      "mixed_total_users": 85,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 39,
+      "event_name": "motionfit_app_open",
+      "mixed_event_count": 270,
+      "mixed_total_users": 147,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:128"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:128"
+      ],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 40,
+      "event_name": "first_open",
+      "mixed_event_count": 269,
+      "mixed_total_users": 269,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "common_or_sdk_event_platform_version_unresolved"
+    },
+    {
+      "rank": 41,
+      "event_name": "mf2_camera_init_completed",
+      "mixed_event_count": 261,
+      "mixed_total_users": 79,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:265"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:275"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 42,
+      "event_name": "mf2_calibration_started",
+      "mixed_event_count": 247,
+      "mixed_total_users": 77,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:300"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:314"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 43,
+      "event_name": "ad_load_failed",
+      "mixed_event_count": 243,
+      "mixed_total_users": 37,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 44,
+      "event_name": "ads_sdk_init_started",
+      "mixed_event_count": 229,
+      "mixed_total_users": 103,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 45,
+      "event_name": "consent_update_succeeded",
+      "mixed_event_count": 229,
+      "mixed_total_users": 133,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 46,
+      "event_name": "mf2_workout_screen_viewed",
+      "mixed_event_count": 227,
+      "mixed_total_users": 76,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:293"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:306"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 47,
+      "event_name": "consent_form_dismissed",
+      "mixed_event_count": 212,
+      "mixed_total_users": 116,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 48,
+      "event_name": "ad_banner_visibility",
+      "mixed_event_count": 205,
+      "mixed_total_users": 21,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 49,
+      "event_name": "arcade_viewed",
+      "mixed_event_count": 198,
+      "mixed_total_users": 61,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 50,
+      "event_name": "mf2_ad_skipped_by_policy",
+      "mixed_event_count": 193,
+      "mixed_total_users": 122,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:674"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:778"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 51,
+      "event_name": "paywall_viewed",
+      "mixed_event_count": 192,
+      "mixed_total_users": 39,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 52,
+      "event_name": "pro_feature_tapped",
+      "mixed_event_count": 191,
+      "mixed_total_users": 38,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 53,
+      "event_name": "consent_update_started",
+      "mixed_event_count": 187,
+      "mixed_total_users": 96,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 54,
+      "event_name": "ads_sdk_init_succeeded",
+      "mixed_event_count": 182,
+      "mixed_total_users": 94,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 55,
+      "event_name": "mf2_workout_exit",
+      "mixed_event_count": 179,
+      "mixed_total_users": 48,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:386"
+      ],
+      "archive_literal_found": false,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 56,
+      "event_name": "mf2_challenge_tab_viewed",
+      "mixed_event_count": 177,
+      "mixed_total_users": 83,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:567"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:671"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 57,
+      "event_name": "paywall_dismissed",
+      "mixed_event_count": 173,
+      "mixed_total_users": 38,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 58,
+      "event_name": "ad_skipped",
+      "mixed_event_count": 172,
+      "mixed_total_users": 37,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 59,
+      "event_name": "mf2_workout_detection_summary",
+      "mixed_event_count": 168,
+      "mixed_total_users": 58,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:438"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:542"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 60,
+      "event_name": "mf2_workout_cancelled",
+      "mixed_event_count": 151,
+      "mixed_total_users": 66,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:378"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:478"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 61,
+      "event_name": "interstitial_request_started",
+      "mixed_event_count": 149,
+      "mixed_total_users": 62,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 62,
+      "event_name": "mf2_calibration_exit",
+      "mixed_event_count": 145,
+      "mixed_total_users": 41,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:388"
+      ],
+      "archive_literal_found": false,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 63,
+      "event_name": "onboarding_started",
+      "mixed_event_count": 142,
+      "mixed_total_users": 140,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 64,
+      "event_name": "mf2_calibration_completed",
+      "mixed_event_count": 136,
+      "mixed_total_users": 43,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:303"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:397"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 65,
+      "event_name": "workout_started",
+      "mixed_event_count": 132,
+      "mixed_total_users": 13,
+      "candidate_source_literal_locations": [
+        "f899926:lib/features/plank/workout/application/workout_session_controller.dart:388",
+        "f899926:lib/features/pushup/application/workout_session_controller.dart:388",
+        "f899926:lib/features/squat/application/workout_session_controller.dart:388"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/features/plank/workout/application/workout_session_controller.dart:404",
+        "HEAD:lib/features/pushup/application/workout_session_controller.dart:404",
+        "HEAD:lib/features/squat/application/workout_session_controller.dart:407"
+      ],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 66,
+      "event_name": "ad_banner_attached",
+      "mixed_event_count": 131,
+      "mixed_total_users": 21,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 67,
+      "event_name": "notification_scheduled",
+      "mixed_event_count": 131,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 68,
+      "event_name": "exercise_selected",
+      "mixed_event_count": 129,
+      "mixed_total_users": 61,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 69,
+      "event_name": "mf2_workout_started",
+      "mixed_event_count": 129,
+      "mixed_total_users": 43,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:323"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:417"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 70,
+      "event_name": "mf2_first_rep_detected",
+      "mixed_event_count": 127,
+      "mixed_total_users": 42,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:315"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:409"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 71,
+      "event_name": "result_viewed",
+      "mixed_event_count": 126,
+      "mixed_total_users": 11,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 72,
+      "event_name": "form_score_generated",
+      "mixed_event_count": 121,
+      "mixed_total_users": 11,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 73,
+      "event_name": "workout_completed",
+      "mixed_event_count": 121,
+      "mixed_total_users": 11,
+      "candidate_source_literal_locations": [
+        "f899926:lib/features/plank/workout/application/workout_session_controller.dart:1260",
+        "f899926:lib/features/pushup/application/workout_session_controller.dart:1256",
+        "f899926:lib/features/squat/application/workout_session_controller.dart:1256"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/features/plank/workout/application/workout_session_controller.dart:1400",
+        "HEAD:lib/features/pushup/application/workout_session_controller.dart:1396",
+        "HEAD:lib/features/squat/application/workout_session_controller.dart:1399"
+      ],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 74,
+      "event_name": "progress_proof_viewed",
+      "mixed_event_count": 120,
+      "mixed_total_users": 5,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 75,
+      "event_name": "notification_cancelled",
+      "mixed_event_count": 117,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 76,
+      "event_name": "exercise_card_impression",
+      "mixed_event_count": 114,
+      "mixed_total_users": 9,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 77,
+      "event_name": "mf2_onboarding_started",
+      "mixed_event_count": 113,
+      "mixed_total_users": 108,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:137"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:137"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 78,
+      "event_name": "ad_banner_detached",
+      "mixed_event_count": 112,
+      "mixed_total_users": 17,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 79,
+      "event_name": "first_rep_detected",
+      "mixed_event_count": 111,
+      "mixed_total_users": 11,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 80,
+      "event_name": "ads_sdk_init_requested",
+      "mixed_event_count": 110,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 81,
+      "event_name": "ad_cache_ready",
+      "mixed_event_count": 109,
+      "mixed_total_users": 22,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 82,
+      "event_name": "progress_period_tapped",
+      "mixed_event_count": 109,
+      "mixed_total_users": 27,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 83,
+      "event_name": "mf2_onboarding_completed",
+      "mixed_event_count": 105,
+      "mixed_total_users": 103,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:191"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:191"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 84,
+      "event_name": "interstitial_load_succeeded",
+      "mixed_event_count": 103,
+      "mixed_total_users": 51,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 85,
+      "event_name": "access_state_changed",
+      "mixed_event_count": 98,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 86,
+      "event_name": "app_remove",
+      "mixed_event_count": 97,
+      "mixed_total_users": 97,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "common_or_sdk_event_platform_version_unresolved"
+    },
+    {
+      "rank": 87,
+      "event_name": "mf2_rep_timeline_viewed",
+      "mixed_event_count": 95,
+      "mixed_total_users": 31,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:348"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:443"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 88,
+      "event_name": "onboarding_completed",
+      "mixed_event_count": 92,
+      "mixed_total_users": 92,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:696"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:800"
+      ],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 89,
+      "event_name": "arcade_stage_viewed",
+      "mixed_event_count": 84,
+      "mixed_total_users": 24,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 90,
+      "event_name": "correction_viewed",
+      "mixed_event_count": 84,
+      "mixed_total_users": 5,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 91,
+      "event_name": "mf2_workout_completed",
+      "mixed_event_count": 84,
+      "mixed_total_users": 31,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:335"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:430"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 92,
+      "event_name": "mf2_workout_summary_viewed",
+      "mixed_event_count": 82,
+      "mixed_total_users": 31,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:345"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:440"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 93,
+      "event_name": "ad_request",
+      "mixed_event_count": 76,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 94,
+      "event_name": "mf2_camera_permission_requested",
+      "mixed_event_count": 72,
+      "mixed_total_users": 70,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:259"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:269"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 95,
+      "event_name": "camera_permission_requested",
+      "mixed_event_count": 70,
+      "mixed_total_users": 56,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 96,
+      "event_name": "mf2_calibration_ready",
+      "mixed_event_count": 70,
+      "mixed_total_users": 20,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:356"
+      ],
+      "archive_literal_found": false,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 97,
+      "event_name": "today_focus_started",
+      "mixed_event_count": 70,
+      "mixed_total_users": 44,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 98,
+      "event_name": "ad_readiness_changed",
+      "mixed_event_count": 63,
+      "mixed_total_users": 35,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 99,
+      "event_name": "today_secondary_action_started",
+      "mixed_event_count": 63,
+      "mixed_total_users": 32,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 100,
+      "event_name": "camera_ready",
+      "mixed_event_count": 62,
+      "mixed_total_users": 11,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 101,
+      "event_name": "camera_permission_granted",
+      "mixed_event_count": 59,
+      "mixed_total_users": 49,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 102,
+      "event_name": "mf2_review_request_skipped",
+      "mixed_event_count": 59,
+      "mixed_total_users": 31,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:503"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:607"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 103,
+      "event_name": "ad_prerequisites_ready",
+      "mixed_event_count": 55,
+      "mixed_total_users": 35,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 104,
+      "event_name": "mf2_first_count_committed",
+      "mixed_event_count": 54,
+      "mixed_total_users": 16,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:367"
+      ],
+      "archive_literal_found": false,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 105,
+      "event_name": "ad_banner_render_ready",
+      "mixed_event_count": 52,
+      "mixed_total_users": 20,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 106,
+      "event_name": "ad_clicked",
+      "mixed_event_count": 47,
+      "mixed_total_users": 12,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 107,
+      "event_name": "correction_history_opened",
+      "mixed_event_count": 46,
+      "mixed_total_users": 26,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 108,
+      "event_name": "privacy_bootstrap_started",
+      "mixed_event_count": 46,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 109,
+      "event_name": "ump_update_started",
+      "mixed_event_count": 46,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 110,
+      "event_name": "ump_update_succeeded",
+      "mixed_event_count": 46,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 111,
+      "event_name": "retry_cta_viewed",
+      "mixed_event_count": 44,
+      "mixed_total_users": 10,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 112,
+      "event_name": "ad_foreground_checked",
+      "mixed_event_count": 43,
+      "mixed_total_users": 13,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 113,
+      "event_name": "ad_loaded",
+      "mixed_event_count": 41,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 114,
+      "event_name": "mf2_reminder_prompt_shown",
+      "mixed_event_count": 39,
+      "mixed_total_users": 28,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:398"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:499"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 115,
+      "event_name": "mf2_rep_clip_played",
+      "mixed_event_count": 36,
+      "mixed_total_users": 8,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:356"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:451"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 116,
+      "event_name": "ad_invalidated",
+      "mixed_event_count": 35,
+      "mixed_total_users": 12,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 117,
+      "event_name": "app_exception",
+      "mixed_event_count": 35,
+      "mixed_total_users": 9,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "common_or_sdk_event_platform_version_unresolved"
+    },
+    {
+      "rank": 118,
+      "event_name": "arcade_stage_started",
+      "mixed_event_count": 35,
+      "mixed_total_users": 5,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 119,
+      "event_name": "motionfit_screen_view",
+      "mixed_event_count": 33,
+      "mixed_total_users": 12,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 120,
+      "event_name": "route_view",
+      "mixed_event_count": 33,
+      "mixed_total_users": 12,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 121,
+      "event_name": "main_tab_view",
+      "mixed_event_count": 32,
+      "mixed_total_users": 11,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 122,
+      "event_name": "interstitial_loaded",
+      "mixed_event_count": 30,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 123,
+      "event_name": "mf2_workout_day_completed",
+      "mixed_event_count": 30,
+      "mixed_total_users": 13,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/workout_retention.dart:57",
+        "HEAD:lib/core/analytics/workout_retention.dart:127"
+      ],
+      "archive_literal_found": false,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 124,
+      "event_name": "ads_sdk_init_partial",
+      "mixed_event_count": 29,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 125,
+      "event_name": "att_not_requested",
+      "mixed_event_count": 29,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 126,
+      "event_name": "ump_form_dismissed",
+      "mixed_event_count": 29,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 127,
+      "event_name": "ump_form_presented",
+      "mixed_event_count": 29,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 128,
+      "event_name": "mf2_challenge_recommendation_viewed",
+      "mixed_event_count": 28,
+      "mixed_total_users": 18,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:584"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:688"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 129,
+      "event_name": "app_update",
+      "mixed_event_count": 27,
+      "mixed_total_users": 19,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "common_or_sdk_event_platform_version_unresolved"
+    },
+    {
+      "rank": 130,
+      "event_name": "native_ad_failed",
+      "mixed_event_count": 27,
+      "mixed_total_users": 3,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 131,
+      "event_name": "arcade_ad_preload_requested",
+      "mixed_event_count": 26,
+      "mixed_total_users": 15,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 132,
+      "event_name": "interstitial_load_failed",
+      "mixed_event_count": 25,
+      "mixed_total_users": 9,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 133,
+      "event_name": "camera_first_frame",
+      "mixed_event_count": 24,
+      "mixed_total_users": 5,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 134,
+      "event_name": "mf2_calibration_failed",
+      "mixed_event_count": 24,
+      "mixed_total_users": 18,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:309"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:403"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 135,
+      "event_name": "mf2_workout_interrupted",
+      "mixed_event_count": 24,
+      "mixed_total_users": 14,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:366"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:463"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 136,
+      "event_name": "mf2_review_request_eligible",
+      "mixed_event_count": 23,
+      "mixed_total_users": 9,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:469"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:573"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 137,
+      "event_name": "arcade_stage_abandoned",
+      "mixed_event_count": 22,
+      "mixed_total_users": 17,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 138,
+      "event_name": "consent_form_required",
+      "mixed_event_count": 22,
+      "mixed_total_users": 22,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 139,
+      "event_name": "correction_shown",
+      "mixed_event_count": 22,
+      "mixed_total_users": 3,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 140,
+      "event_name": "mf2_camera_init_failed",
+      "mixed_event_count": 22,
+      "mixed_total_users": 6,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:270"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:280"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 141,
+      "event_name": "restore_started",
+      "mixed_event_count": 22,
+      "mixed_total_users": 14,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 142,
+      "event_name": "home_view",
+      "mixed_event_count": 21,
+      "mixed_total_users": 11,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 143,
+      "event_name": "consent_update_failed",
+      "mixed_event_count": 20,
+      "mixed_total_users": 14,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 144,
+      "event_name": "fcm_token_registration_failed",
+      "mixed_event_count": 20,
+      "mixed_total_users": 15,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 145,
+      "event_name": "mf2_reminder_permission_result",
+      "mixed_event_count": 20,
+      "mixed_total_users": 6,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:421"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:522"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 146,
+      "event_name": "banner_impression",
+      "mixed_event_count": 19,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 147,
+      "event_name": "improvement_proven",
+      "mixed_event_count": 19,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 148,
+      "event_name": "device_media_volume_checked",
+      "mixed_event_count": 18,
+      "mixed_total_users": 6,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 149,
+      "event_name": "restore_empty",
+      "mixed_event_count": 18,
+      "mixed_total_users": 11,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 150,
+      "event_name": "app_open",
+      "mixed_event_count": 16,
+      "mixed_total_users": 12,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 151,
+      "event_name": "entry_source_resolved",
+      "mixed_event_count": 16,
+      "mixed_total_users": 12,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 152,
+      "event_name": "arcade_stage_cleared",
+      "mixed_event_count": 15,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 153,
+      "event_name": "mf2_challenge_selected",
+      "mixed_event_count": 15,
+      "mixed_total_users": 13,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:595"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:699"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 154,
+      "event_name": "mf2_reminder_prompt_dismissed",
+      "mixed_event_count": 15,
+      "mixed_total_users": 8,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [
+        "HEAD:lib/features/plank/workout/presentation/screens/workout_summary_screen.dart:608",
+        "HEAD:lib/features/pushup/presentation/screens/workout_summary_screen.dart:602",
+        "HEAD:lib/features/squat/presentation/screens/workout_summary_screen.dart:602"
+      ],
+      "archive_literal_found": false,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 155,
+      "event_name": "category_tab_click",
+      "mixed_event_count": 14,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 156,
+      "event_name": "mf2_challenge_workout_started",
+      "mixed_event_count": 14,
+      "mixed_total_users": 6,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:609"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:713"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 157,
+      "event_name": "mf2_first_workout_completed",
+      "mixed_event_count": 13,
+      "mixed_total_users": 12,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/workout_retention.dart:53"
+      ],
+      "archive_literal_found": false,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 158,
+      "event_name": "streak_updated",
+      "mixed_event_count": 13,
+      "mixed_total_users": 10,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 159,
+      "event_name": "ad_dismissed",
+      "mixed_event_count": 12,
+      "mixed_total_users": 3,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 160,
+      "event_name": "ad_retry_scheduled",
+      "mixed_event_count": 12,
+      "mixed_total_users": 6,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 161,
+      "event_name": "arcade_retry_started",
+      "mixed_event_count": 12,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 162,
+      "event_name": "arcade_stage_failed",
+      "mixed_event_count": 12,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 163,
+      "event_name": "form_issue_detected",
+      "mixed_event_count": 12,
+      "mixed_total_users": 3,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 164,
+      "event_name": "review_suppressed",
+      "mixed_event_count": 11,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 165,
+      "event_name": "mf2_reminder_prompt_declined",
+      "mixed_event_count": 10,
+      "mixed_total_users": 7,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:408"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:509"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 166,
+      "event_name": "ads_sdk_init_failed",
+      "mixed_event_count": 9,
+      "mixed_total_users": 3,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 167,
+      "event_name": "arcade_fail_ad_opportunity",
+      "mixed_event_count": 9,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 168,
+      "event_name": "camera_permission_denied",
+      "mixed_event_count": 9,
+      "mixed_total_users": 8,
+      "candidate_source_literal_locations": [
+        "f899926:lib/features/plank/workout/presentation/screens/camera_permission_screen.dart:67",
+        "f899926:lib/features/pushup/presentation/screens/camera_permission_screen.dart:65",
+        "f899926:lib/features/squat/presentation/screens/camera_permission_screen.dart:65"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/features/plank/workout/presentation/screens/camera_permission_screen.dart:67",
+        "HEAD:lib/features/pushup/presentation/screens/camera_permission_screen.dart:65",
+        "HEAD:lib/features/squat/presentation/screens/camera_permission_screen.dart:65"
+      ],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 169,
+      "event_name": "mf2_reminder_enabled",
+      "mixed_event_count": 9,
+      "mixed_total_users": 3,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:391"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:492"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 170,
+      "event_name": "notification_opened",
+      "mixed_event_count": 9,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 171,
+      "event_name": "purchase_started",
+      "mixed_event_count": 9,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 172,
+      "event_name": "retry_started",
+      "mixed_event_count": 9,
+      "mixed_total_users": 3,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 173,
+      "event_name": "routine_card_click",
+      "mixed_event_count": 9,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 174,
+      "event_name": "arcade_fail_ad_dismissed",
+      "mixed_event_count": 8,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 175,
+      "event_name": "arcade_fail_ad_shown",
+      "mixed_event_count": 8,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 176,
+      "event_name": "audio_readiness_card_shown",
+      "mixed_event_count": 8,
+      "mixed_total_users": 6,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 177,
+      "event_name": "mf2_review_request_attempted",
+      "mixed_event_count": 8,
+      "mixed_total_users": 8,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:521"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:625"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 178,
+      "event_name": "mf2_workout_resumed",
+      "mixed_event_count": 8,
+      "mixed_total_users": 5,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:455"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:559"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 179,
+      "event_name": "premium_tab_view",
+      "mixed_event_count": 8,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 180,
+      "event_name": "volume_hint_not_counted_as_voice_trial",
+      "mixed_event_count": 8,
+      "mixed_total_users": 6,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 181,
+      "event_name": "volume_hint_shown",
+      "mixed_event_count": 8,
+      "mixed_total_users": 6,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 182,
+      "event_name": "arcade_fail_result_viewed",
+      "mixed_event_count": 7,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 183,
+      "event_name": "first_score_generated",
+      "mixed_event_count": 7,
+      "mixed_total_users": 7,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 184,
+      "event_name": "mf2_app_second_workout_completed",
+      "mixed_event_count": 7,
+      "mixed_total_users": 7,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/workout_retention.dart:54"
+      ],
+      "archive_literal_found": false,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 185,
+      "event_name": "mf2_challenge_started",
+      "mixed_event_count": 7,
+      "mixed_total_users": 6,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:604"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:708"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 186,
+      "event_name": "mf2_second_workout_completed",
+      "mixed_event_count": 7,
+      "mixed_total_users": 7,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:342"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:437"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 187,
+      "event_name": "mf2_workout_failed",
+      "mixed_event_count": 7,
+      "mixed_total_users": 5,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:284"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:296"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 188,
+      "event_name": "notification_permission_preprompt_viewed",
+      "mixed_event_count": 7,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 189,
+      "event_name": "notification_permission_result",
+      "mixed_event_count": 7,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 190,
+      "event_name": "personal_best_achieved",
+      "mixed_event_count": 7,
+      "mixed_total_users": 5,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 191,
+      "event_name": "ad_cache_discarded",
+      "mixed_event_count": 6,
+      "mixed_total_users": 3,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 192,
+      "event_name": "arcade_fail_retry_tapped",
+      "mixed_event_count": 6,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 193,
+      "event_name": "camera_retry_started",
+      "mixed_event_count": 6,
+      "mixed_total_users": 5,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 194,
+      "event_name": "notification_shown",
+      "mixed_event_count": 6,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 195,
+      "event_name": "purchase_failed",
+      "mixed_event_count": 6,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 196,
+      "event_name": "retry_completed",
+      "mixed_event_count": 6,
+      "mixed_total_users": 3,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 197,
+      "event_name": "ad_click",
+      "mixed_event_count": 5,
+      "mixed_total_users": 6,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "common_or_sdk_event_platform_version_unresolved"
+    },
+    {
+      "rank": 198,
+      "event_name": "arcade_fail_ad_eligible",
+      "mixed_event_count": 5,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 199,
+      "event_name": "fcm_token_refreshed",
+      "mixed_event_count": 5,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 200,
+      "event_name": "legacy_user_detected",
+      "mixed_event_count": 5,
+      "mixed_total_users": 5,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 201,
+      "event_name": "legacy_welcome_viewed",
+      "mixed_event_count": 5,
+      "mixed_total_users": 5,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 202,
+      "event_name": "native_ad_request_started",
+      "mixed_event_count": 5,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 203,
+      "event_name": "notification_permission_requested",
+      "mixed_event_count": 5,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 204,
+      "event_name": "app_resume",
+      "mixed_event_count": 4,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 205,
+      "event_name": "exercise_card_click",
+      "mixed_event_count": 4,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 206,
+      "event_name": "interstitial_dismissed",
+      "mixed_event_count": 4,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 207,
+      "event_name": "interstitial_impression",
+      "mixed_event_count": 4,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 208,
+      "event_name": "interstitial_paid",
+      "mixed_event_count": 4,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 209,
+      "event_name": "interstitial_show_attempted",
+      "mixed_event_count": 4,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 210,
+      "event_name": "interstitial_show_eligible",
+      "mixed_event_count": 4,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 211,
+      "event_name": "interstitial_show_succeeded",
+      "mixed_event_count": 4,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 212,
+      "event_name": "mf2_onboarding_abandoned",
+      "mixed_event_count": 4,
+      "mixed_total_users": 3,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:203"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:203"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 213,
+      "event_name": "native_ad_eligible",
+      "mixed_event_count": 4,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 214,
+      "event_name": "os_update",
+      "mixed_event_count": 4,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "common_or_sdk_event_platform_version_unresolved"
+    },
+    {
+      "rank": 215,
+      "event_name": "pose_detection_started",
+      "mixed_event_count": 4,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 216,
+      "event_name": "pose_detection_waiting",
+      "mixed_event_count": 4,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 217,
+      "event_name": "workout_screen_entered",
+      "mixed_event_count": 4,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 218,
+      "event_name": "workout_selected",
+      "mixed_event_count": 4,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 219,
+      "event_name": "workout_volume_hint_shown",
+      "mixed_event_count": 4,
+      "mixed_total_users": 4,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 220,
+      "event_name": "ad_preload_started",
+      "mixed_event_count": 3,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 221,
+      "event_name": "app_clear_data",
+      "mixed_event_count": 3,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 222,
+      "event_name": "arcade_next_stage_started",
+      "mixed_event_count": 3,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 223,
+      "event_name": "arcade_stage_measurement_issue",
+      "mixed_event_count": 3,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 224,
+      "event_name": "notification_suppressed",
+      "mixed_event_count": 3,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 225,
+      "event_name": "pro_plan_selected",
+      "mixed_event_count": 3,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 226,
+      "event_name": "voice_coaching_volume_warning_shown",
+      "mixed_event_count": 3,
+      "mixed_total_users": 3,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 227,
+      "event_name": "workout_ad_request_started",
+      "mixed_event_count": 3,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 228,
+      "event_name": "workout_cancelled",
+      "mixed_event_count": 3,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": true,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 229,
+      "event_name": "workout_session_start",
+      "mixed_event_count": 3,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 230,
+      "event_name": "ad_preload_failed",
+      "mixed_event_count": 2,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 231,
+      "event_name": "arcade_exit_after_fail",
+      "mixed_event_count": 2,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 232,
+      "event_name": "camera_setup_volume_hint_shown",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 233,
+      "event_name": "device_media_volume_low_detected",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 234,
+      "event_name": "first_workout_abandoned",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 235,
+      "event_name": "first_workout_exit_reason",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 236,
+      "event_name": "first_workout_onboarding_viewed",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 237,
+      "event_name": "first_workout_volume_hint_shown",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 238,
+      "event_name": "interstitial_show_blocked",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 239,
+      "event_name": "mf2_reminder_prompt_accepted",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [
+        "f899926:lib/core/analytics/analytics_service.dart:403"
+      ],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:504"
+      ],
+      "archive_literal_found": true,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 240,
+      "event_name": "mf2_reminder_scheduled",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/analytics_service.dart:526"
+      ],
+      "archive_literal_found": false,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 241,
+      "event_name": "restore_failed",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 242,
+      "event_name": "voice_coaching_session_unlocked",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 243,
+      "event_name": "voice_trial_reserved",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 244,
+      "event_name": "workout_ad_failed",
+      "mixed_event_count": 2,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 245,
+      "event_name": "workout_feedback_summary",
+      "mixed_event_count": 2,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 246,
+      "event_name": "workout_pose_blocked",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 247,
+      "event_name": "workout_session_created",
+      "mixed_event_count": 2,
+      "mixed_total_users": 2,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 248,
+      "event_name": "ad_preload_succeeded",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 249,
+      "event_name": "ad_retry_executed",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 250,
+      "event_name": "ad_show_requested",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 251,
+      "event_name": "arcade_fail_ad_skipped",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 252,
+      "event_name": "camera_setup_exit_before_ready",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 253,
+      "event_name": "device_media_volume_muted_detected",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 254,
+      "event_name": "interstitial_shown",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 255,
+      "event_name": "legacy_archive_opened",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 256,
+      "event_name": "mf2_next_workout_action_tapped",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [
+        "HEAD:lib/features/plank/workout/presentation/screens/workout_summary_screen.dart:298",
+        "HEAD:lib/features/pushup/presentation/screens/workout_summary_screen.dart:292",
+        "HEAD:lib/features/squat/presentation/screens/workout_summary_screen.dart:292"
+      ],
+      "archive_literal_found": false,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 257,
+      "event_name": "mf2_second_workout_day_completed",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [
+        "HEAD:lib/core/analytics/workout_retention.dart:56"
+      ],
+      "archive_literal_found": false,
+      "classification": "flutter_mf2_source_compatible_platform_version_unresolved"
+    },
+    {
+      "rank": 258,
+      "event_name": "native_ad_impression",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 259,
+      "event_name": "native_ad_loaded",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 260,
+      "event_name": "native_ad_render_attempted",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 261,
+      "event_name": "native_ad_rendered",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 262,
+      "event_name": "native_ad_show_requested",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 263,
+      "event_name": "native_ad_skipped_pose_not_ready",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 264,
+      "event_name": "native_ad_visible",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 265,
+      "event_name": "native_ad_visible_not_impression",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 266,
+      "event_name": "paywall_source",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 267,
+      "event_name": "product_selected",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 268,
+      "event_name": "progress_to_workout_started",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 269,
+      "event_name": "purchase_completed",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 270,
+      "event_name": "quick_workout_offered",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 271,
+      "event_name": "realtime_judge_shown",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 272,
+      "event_name": "rep0_exit_with_camera_issue",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 273,
+      "event_name": "restore_completed",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 274,
+      "event_name": "result_done_tapped",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 275,
+      "event_name": "workout_ad_loaded",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 276,
+      "event_name": "workout_pose_ready",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    },
+    {
+      "rank": 277,
+      "event_name": "workout_session_exit",
+      "mixed_event_count": 1,
+      "mixed_total_users": 1,
+      "candidate_source_literal_locations": [],
+      "head_source_literal_locations": [],
+      "archive_literal_found": false,
+      "classification": "emitter_unverified_platform_version_unresolved"
+    }
+  ]
+}

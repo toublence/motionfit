@@ -1,0 +1,266 @@
+00:00 +0: loading /Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart
+00:00 +0: three pages and completion in ar at large text
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: The SharedPreferencesAsyncPlatform instance must be set.
+
+When the exception was thrown, this was the stack:
+#0      new SharedPreferencesAsync (package:shared_preferences/src/shared_preferences_async.dart:25:7)
+#1      new PreferencesService (package:motionfit_squat/features/settings/data/preferences_service.dart:8:37)
+#2      new _Preferences (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart:23:27)
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:29)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  three pages and completion in ar at large text
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -1: three pages and completion in ar at large text [E]
+  Test failed. See exception logs above.
+  The test description was: three pages and completion in ar at large text
+  
+00:01 +0 -1: three pages and completion in de at large text
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: The SharedPreferencesAsyncPlatform instance must be set.
+
+When the exception was thrown, this was the stack:
+#0      new SharedPreferencesAsync (package:shared_preferences/src/shared_preferences_async.dart:25:7)
+#1      new PreferencesService (package:motionfit_squat/features/settings/data/preferences_service.dart:8:37)
+#2      new _Preferences (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart:23:27)
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:29)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  three pages and completion in de at large text
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -2: three pages and completion in de at large text [E]
+  Test failed. See exception logs above.
+  The test description was: three pages and completion in de at large text
+  
+00:01 +0 -2: three pages and completion in en at large text
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: The SharedPreferencesAsyncPlatform instance must be set.
+
+When the exception was thrown, this was the stack:
+#0      new SharedPreferencesAsync (package:shared_preferences/src/shared_preferences_async.dart:25:7)
+#1      new PreferencesService (package:motionfit_squat/features/settings/data/preferences_service.dart:8:37)
+#2      new _Preferences (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart:23:27)
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:29)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  three pages and completion in en at large text
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -3: three pages and completion in en at large text [E]
+  Test failed. See exception logs above.
+  The test description was: three pages and completion in en at large text
+  
+00:01 +0 -3: three pages and completion in es at large text
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: The SharedPreferencesAsyncPlatform instance must be set.
+
+When the exception was thrown, this was the stack:
+#0      new SharedPreferencesAsync (package:shared_preferences/src/shared_preferences_async.dart:25:7)
+#1      new PreferencesService (package:motionfit_squat/features/settings/data/preferences_service.dart:8:37)
+#2      new _Preferences (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart:23:27)
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:29)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  three pages and completion in es at large text
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -4: three pages and completion in es at large text [E]
+  Test failed. See exception logs above.
+  The test description was: three pages and completion in es at large text
+  
+00:01 +0 -4: three pages and completion in fr at large text
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: The SharedPreferencesAsyncPlatform instance must be set.
+
+When the exception was thrown, this was the stack:
+#0      new SharedPreferencesAsync (package:shared_preferences/src/shared_preferences_async.dart:25:7)
+#1      new PreferencesService (package:motionfit_squat/features/settings/data/preferences_service.dart:8:37)
+#2      new _Preferences (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart:23:27)
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:29)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  three pages and completion in fr at large text
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -5: three pages and completion in fr at large text [E]
+  Test failed. See exception logs above.
+  The test description was: three pages and completion in fr at large text
+  
+00:01 +0 -5: three pages and completion in ja at large text
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: The SharedPreferencesAsyncPlatform instance must be set.
+
+When the exception was thrown, this was the stack:
+#0      new SharedPreferencesAsync (package:shared_preferences/src/shared_preferences_async.dart:25:7)
+#1      new PreferencesService (package:motionfit_squat/features/settings/data/preferences_service.dart:8:37)
+#2      new _Preferences (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart:23:27)
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:29)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  three pages and completion in ja at large text
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -6: three pages and completion in ja at large text [E]
+  Test failed. See exception logs above.
+  The test description was: three pages and completion in ja at large text
+  
+00:01 +0 -6: three pages and completion in ko at large text
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: The SharedPreferencesAsyncPlatform instance must be set.
+
+When the exception was thrown, this was the stack:
+#0      new SharedPreferencesAsync (package:shared_preferences/src/shared_preferences_async.dart:25:7)
+#1      new PreferencesService (package:motionfit_squat/features/settings/data/preferences_service.dart:8:37)
+#2      new _Preferences (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart:23:27)
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:29)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  three pages and completion in ko at large text
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -7: three pages and completion in ko at large text [E]
+  Test failed. See exception logs above.
+  The test description was: three pages and completion in ko at large text
+  
+00:01 +0 -7: three pages and completion in zh at large text
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: The SharedPreferencesAsyncPlatform instance must be set.
+
+When the exception was thrown, this was the stack:
+#0      new SharedPreferencesAsync (package:shared_preferences/src/shared_preferences_async.dart:25:7)
+#1      new PreferencesService (package:motionfit_squat/features/settings/data/preferences_service.dart:8:37)
+#2      new _Preferences (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart:23:27)
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:29)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  three pages and completion in zh at large text
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -8: three pages and completion in zh at large text [E]
+  Test failed. See exception logs above.
+  The test description was: three pages and completion in zh at large text
+  
+00:01 +0 -8: three pages and completion in zh_Hant at large text
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: The SharedPreferencesAsyncPlatform instance must be set.
+
+When the exception was thrown, this was the stack:
+#0      new SharedPreferencesAsync (package:shared_preferences/src/shared_preferences_async.dart:25:7)
+#1      new PreferencesService (package:motionfit_squat/features/settings/data/preferences_service.dart:8:37)
+#2      new _Preferences (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart:23:27)
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:29)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  three pages and completion in zh_Hant at large text
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -9: three pages and completion in zh_Hant at large text [E]
+  Test failed. See exception logs above.
+  The test description was: three pages and completion in zh_Hant at large text
+  
+00:01 +0 -9: skip completes once without waiting for animation
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: The SharedPreferencesAsyncPlatform instance must be set.
+
+When the exception was thrown, this was the stack:
+#0      new SharedPreferencesAsync (package:shared_preferences/src/shared_preferences_async.dart:25:7)
+#1      new PreferencesService (package:motionfit_squat/features/settings/data/preferences_service.dart:8:37)
+#2      new _Preferences (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart:65:25)
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:29)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  skip completes once without waiting for animation
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -10: skip completes once without waiting for animation [E]
+  Test failed. See exception logs above.
+  The test description was: skip completes once without waiting for animation
+  
+00:01 +0 -10: landscape animated pages pause and resume with the app
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: The SharedPreferencesAsyncPlatform instance must be set.
+
+When the exception was thrown, this was the stack:
+#0      new SharedPreferencesAsync (package:shared_preferences/src/shared_preferences_async.dart:25:7)
+#1      new PreferencesService (package:motionfit_squat/features/settings/data/preferences_service.dart:8:37)
+#2      new _Preferences (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart)
+#3      main.<anonymous closure> (file:///Users/nam/projects/flutter/motionfit/test/features/onboarding/onboarding_screen_test.dart:97:7)
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:29)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  landscape animated pages pause and resume with the app
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -11: landscape animated pages pause and resume with the app [E]
+  Test failed. See exception logs above.
+  The test description was: landscape animated pages pause and resume with the app
+  
+00:01 +0 -11: Some tests failed.

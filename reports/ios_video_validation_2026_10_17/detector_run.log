@@ -1,0 +1,6 @@
+plank_hip_high_20s: calibrated=false, count=0, tracking={noPerson: 1, partialBody: 24, tracking: 697, lost: 19}, latencyP95=12ms
+plank_near_20s: calibrated=true, count=6, tracking={noPerson: 1, partialBody: 15, tracking: 505}, latencyP95=12ms
+pushup_good_repeat_10: calibrated=false, count=0, tracking={noPerson: 5, tracking: 785, lost: 14, partialBody: 16}, latencyP95=12ms
+pushup_shallow_10: calibrated=false, count=0, tracking={noPerson: 3, partialBody: 44, tracking: 691, lost: 3}, latencyP95=12ms
+squat_depth_after_5: calibrated=false, count=0, tracking={noPerson: 1, tracking: 684}, latencyP95=11ms
+squat_fast_10: calibrated=true, count=10, tracking={noPerson: 1, tracking: 704}, latencyP95=11ms

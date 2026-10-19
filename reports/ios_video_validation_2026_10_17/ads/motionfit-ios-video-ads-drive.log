@@ -1,0 +1,13 @@
+Wireless debugging on iOS 26 may be slower than expected. For better performance, consider using a wired (USB) connection.
+Installing and launching...                                     
+LLDB is taking longer than expected to start debugging the app. LLDB debugging can be disabled for the project by adding the following in the project's pubspec.yaml:
+flutter:
+  config:
+    enable-lldb-debugging: false
+Or disable LLDB debugging globally with the following command:
+  "flutter config --no-enable-lldb-debugging"
+The Dart VM Service was not discovered after 75 seconds. This is taking much longer than expected...
+
+Your debugging device seems wirelessly connected. Consider plugging it in and trying again.
+
+Click "Allow" to the prompt asking if you would like to find and connect devices on your local network. This is required for wireless debugging. If you selected "Don't Allow", you can turn it on in Settings > Your App Name > Local Network. If you don't see your app in the Settings, uninstall the app and rerun to see the prompt again.

@@ -623,19 +623,29 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
         workoutSessionControllerProvider.notifier,
       );
       if (!mounted) return;
-      await sessionController.clearCompletedSession();
-      if (!mounted) return;
+      final workoutState = ref.read(workoutSessionControllerProvider);
+      final session = workoutState.session;
       ref.invalidate(allSessionsProvider);
       ref.invalidate(todaySessionsProvider);
       ref.invalidate(workoutStatisticsProvider);
       ref.invalidate(challengeDashboardProvider);
-      if (showInterstitial) {
+      if (showInterstitial &&
+          session != null &&
+          session.totalReps > 0 &&
+          workoutState.saveState == WorkoutSaveState.saved) {
         try {
-          await showPostWorkoutInterstitial(ref);
+          await showPostWorkoutInterstitial(
+            ref,
+            workoutSessionId: 'squat:${session.id}',
+            isOpportunityValid: () =>
+                mounted && (ModalRoute.of(context)?.isCurrent ?? false),
+          );
         } on Object catch (error, stackTrace) {
           _recordNonFatal(error, stackTrace, 'post_workout_ad');
         }
       }
+      if (!mounted) return;
+      await sessionController.clearCompletedSession();
       if (!mounted) return;
       ref.read(workoutLaunchContextProvider.notifier).clear();
       context.go(destination);

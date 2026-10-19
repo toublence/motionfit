@@ -1,0 +1,3 @@
+Wireless debugging on iOS 26 may be slower than expected. For better performance, consider using a wired (USB) connection.
+Installing and launching...                                     
+You may be prompted to give access to control Xcode. Flutter uses Xcode to run your app. If access is not allowed, you can change this through your Settings > Privacy & Security > Automation.

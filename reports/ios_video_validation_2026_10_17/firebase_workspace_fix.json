@@ -1,0 +1,18 @@
+{
+  "reported_error": "AppDelegate.swift:1 Unable to find module dependency FirebaseCore",
+  "observed_xcode_container_before": "ios/Runner.xcodeproj",
+  "observed_xcode_container_after": "ios/Runner.xcworkspace",
+  "workspace_ui_projects": [
+    "Runner",
+    "Pods"
+  ],
+  "active_scheme": "Runner",
+  "normal_flutter_target_restored": "lib/main.dart",
+  "ads_test_mode_define_removed": true,
+  "verification": "xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -configuration Debug -sdk iphonesimulator -showBuildSettings -json",
+  "verification_exit_code": 0,
+  "firebasecore_framework_search_path_configured": true,
+  "pods_root": "/Users/nam/projects/flutter/motionfit/ios/Pods",
+  "appdelegate_modified": false,
+  "full_build_run_this_turn": false
+}

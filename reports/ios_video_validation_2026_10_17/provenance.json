@@ -1,0 +1,121 @@
+{
+  "source_root": "/Users/nam/projects/flutter/motionfit",
+  "cases": [
+    {
+      "exercise": "squat",
+      "id": "squat_depth_after_5",
+      "video_sha256": "5e0dfb7e840e2eafa376a423a444671d718c9526b878413197b18a4b834682af"
+    },
+    {
+      "exercise": "squat",
+      "id": "squat_fast_10",
+      "video_sha256": "d840b80c9a381c2715af3a1af68ccc4ab82c402f86c52f3349f2837ec1e4577e"
+    },
+    {
+      "exercise": "pushup",
+      "id": "pushup_good_repeat_10",
+      "video_sha256": "859f69f84cdc0deb40966dced2105f45fc9a90856099ee1d39b71eed35cbbb8d"
+    },
+    {
+      "exercise": "pushup",
+      "id": "pushup_shallow_10",
+      "video_sha256": "931f27dcb14ff256c44ecfabd1922b4a066d0899efb738bac5c47d0443718153"
+    },
+    {
+      "exercise": "plank",
+      "id": "plank_near_20s",
+      "video_sha256": "c5f43fbbb1ba2f5a95dfeda2f698198042c957cd4e86880e439272df6d4e6aab"
+    },
+    {
+      "exercise": "plank",
+      "id": "plank_hip_high_20s",
+      "video_sha256": "00595b786dfbd230569f5c99afbd03e50973469519a7b6e3e21ce8e60f393ae3"
+    }
+  ],
+  "mode_difference": "video instead of liveStream; no camera, frame drops or Flutter bridge",
+  "production_sources_sha256": {
+    "MotionfitPoseEngine.swift": "640265a446c00af78bb00e489374c294e568d9b5e576ffb3dbe6a7ab55c59734",
+    "MotionfitPoseTypes.swift": "a73d16f443b826d0c44f1ff5386865c28f040b6e19e895a8cf9c2c0fb4a7cf21",
+    "MotionfitStillCapture.swift": "466560658ef32e8078cd7c04a745b127e0f11f31ea167299a5a382e248cd206d"
+  },
+  "dart_domain_sha256": {
+    "lib/features/plank/workout/domain/models/calibration_profile.dart": "b9740701461178939424d7902e30ed55254db8ab6191a15eb8d2bc1219290f67",
+    "lib/features/plank/workout/domain/models/pose_frame.dart": "e1cd377be2234d7c88077b60357a65ff63014f9c51924e184f53f249d94ee89c",
+    "lib/features/plank/workout/domain/models/rep_analysis.dart": "750593d1c90db8f961e0d65380cd1deba3d4945bc03efadb4aebe129139ea917",
+    "lib/features/plank/workout/domain/models/rep_record.dart": "4897f1dd487b99e819790a9439b1fef19af2fba01e416ed0fb6f538e1f91b424",
+    "lib/features/plank/workout/domain/models/squat_metrics.dart": "77033cd2ed70ab2debc054dbee7f022f92603bc0763f26bd726c44dae67f168d",
+    "lib/features/plank/workout/domain/models/workout_enums.dart": "51dac511283dfe6c680857da9cfec32461059da5fdf1d97eefe6c96680477d10",
+    "lib/features/plank/workout/domain/models/workout_journal.dart": "92ad52856ca9a3ea72c38b5481df3dc24002cddfb56346309c119e0ad7314da8",
+    "lib/features/plank/workout/domain/models/workout_plan.dart": "ccbd3757d9296f862ba612c3233e5d3e0fde3cdd15ada22d5152020f973426b9",
+    "lib/features/plank/workout/domain/models/workout_session.dart": "5e13d4f079670b8e78e88761e3285bfb7848063c3eb07b700a61ec7c7894f90e",
+    "lib/features/plank/workout/domain/models/workout_set.dart": "4fc6beb4701e64360cfd20c2d5ffaceb064ca1d222cba24f716220bc5f824d21",
+    "lib/features/plank/workout/domain/services/calibration_accumulator.dart": "31763188eab40ee48c312f944018eef9823e2632ff00529a3b53c3b33bd133c6",
+    "lib/features/plank/workout/domain/services/coach_engine.dart": "53deb2efa7489a279c9b4b9377318fe1435354f9e4b5bdd225b55948d8896208",
+    "lib/features/plank/workout/domain/services/form_analyzer.dart": "a4d3f9ab31064a78df9a37fd0f9cabd418933a54e3838b8b72f9d818275ba966",
+    "lib/features/plank/workout/domain/services/one_euro_filter.dart": "f15165227b4a64d2e3810438f9b9b00f1f0299bf7c38ff711697a8be558dacce",
+    "lib/features/plank/workout/domain/services/pose_engine.dart": "ade0e75e8a283f4ada93bfe67879d469091720bda11c45caddbcae34bc348a35",
+    "lib/features/plank/workout/domain/services/pose_feedback_classifier.dart": "bbad1f1e5c390e39f7e225b7e160741f0ab1a689b14a1b351f7080a7e8852abb",
+    "lib/features/plank/workout/domain/services/pose_landmark_smoother.dart": "a8bc3cb37c74b6853e1c917697c4948c229190decc0ab0f1bd163a71d13be540",
+    "lib/features/plank/workout/domain/services/rep_clip.dart": "e37e98ff36997b9bcb0629f7d6461172ce43eee7587a75757dc64044ad99de7a",
+    "lib/features/plank/workout/domain/services/rep_detector.dart": "05b6c9efa4b2f9c21dc4e3bb32a07f3179e6065119c81630794524dd591b7c65",
+    "lib/features/plank/workout/domain/services/squat_detection_config.dart": "92b0ce92bb57d90b3ec49ce728ccc71f8a3f1963c3b3065299c024e6030430a9",
+    "lib/features/plank/workout/domain/services/squat_feature_extractor.dart": "fc86f682422485f0ec0398a9792f9c1bd732e7d31fe1e8204b2395162f04ef80",
+    "lib/features/plank/workout/domain/services/workout_repository.dart": "44136d89f32559c42152292dd5b09a807676caed3f495294722c83e4d63f8f3a",
+    "lib/features/plank/workout/domain/services/workout_session_policy.dart": "a22f4f390131571570aea96a127b392de8435230b0d0711a2d562705a8af48b9",
+    "lib/features/pushup/domain/models/calibration_profile.dart": "633779af709525e5b3a9a62fa570259be74b715b318c9df5ddd5d33e75fa89c1",
+    "lib/features/pushup/domain/models/pose_frame.dart": "a0468ffe4ff304ac4f4fc1d8caf479ac2396955598820c9b46ad7c1f70ddf76c",
+    "lib/features/pushup/domain/models/pushup_metrics.dart": "536daf2acbbfb1c98972e76ad030b7e12078dfc44ba5dd980c822261334c93c9",
+    "lib/features/pushup/domain/models/rep_analysis.dart": "c32cbe9d08de0bde315a8922d01b4f2d3f963e137b8453c86ce2622fb1aa6d85",
+    "lib/features/pushup/domain/models/rep_record.dart": "6fbd05edf147f67320e4b7f436dbbf2ba5385d1e63630f5430e779d0ea606a30",
+    "lib/features/pushup/domain/models/workout_enums.dart": "b420e9ff97446b55b33c243c7a1246aaedd01fb029acbe7c73b17e57bcecfa1d",
+    "lib/features/pushup/domain/models/workout_journal.dart": "c24e1c08ea5b7c5726f832d256ce38008d1991ff759f15cb282869f032e9a160",
+    "lib/features/pushup/domain/models/workout_plan.dart": "d393d3abb9c840d98a197435e5e188e3702379b6c4feba41c2c634f4834a9aec",
+    "lib/features/pushup/domain/models/workout_session.dart": "5e13d4f079670b8e78e88761e3285bfb7848063c3eb07b700a61ec7c7894f90e",
+    "lib/features/pushup/domain/models/workout_set.dart": "4fc6beb4701e64360cfd20c2d5ffaceb064ca1d222cba24f716220bc5f824d21",
+    "lib/features/pushup/domain/services/calibration_accumulator.dart": "666c5fe51f60fd6fdc464b41353974b81e671a3fec7ce0608bb7ea1c382b8d31",
+    "lib/features/pushup/domain/services/coach_engine.dart": "178ea5a5931fe7ae44d088111e161fdf7f9af8421ff5e5f0f79558ce374ac0ce",
+    "lib/features/pushup/domain/services/form_analyzer.dart": "9dfe94cb12e2ad6c9779eb2a1977539cd3c1387912f8b6171d70fea4f477bcf5",
+    "lib/features/pushup/domain/services/one_euro_filter.dart": "f15165227b4a64d2e3810438f9b9b00f1f0299bf7c38ff711697a8be558dacce",
+    "lib/features/pushup/domain/services/pose_engine.dart": "aefab7c193976ab3ca9ec947ec3908021939cd5ecdb93f46ba990c7e163a7409",
+    "lib/features/pushup/domain/services/pose_feedback_classifier.dart": "11e65e7d7066be04222c1e825844d1411fe9e2469fd2cdffb658ec44937e5ae7",
+    "lib/features/pushup/domain/services/pose_landmark_smoother.dart": "36f82463c6a83134208b767c29713291bdb2d39106c52854069e9e9ec3848f29",
+    "lib/features/pushup/domain/services/pushup_detection_config.dart": "863c8c8038bfe15085374537dc8543ab0067e04678a44864954cdb5d533a6161",
+    "lib/features/pushup/domain/services/pushup_feature_extractor.dart": "7938f028bd36a1fd933398f8c636c4637f6e99802605dda57b43dc2464e0f0ab",
+    "lib/features/pushup/domain/services/rep_clip.dart": "e37e98ff36997b9bcb0629f7d6461172ce43eee7587a75757dc64044ad99de7a",
+    "lib/features/pushup/domain/services/rep_detector.dart": "91312992ea10abba36f51a71060b918c73801c7e5adc0311a77393e360a09189",
+    "lib/features/pushup/domain/services/workout_repository.dart": "9acc4b0b52e3d1629b9ede4fa2c49db93bc8f8761cc62b9a1d3bc3b2b51e903a",
+    "lib/features/pushup/domain/services/workout_session_policy.dart": "5e01b465266aebd2eceba8fc278932a227ef031fec14fe0d39d96e9f206b56d4",
+    "lib/features/squat/domain/models/calibration_profile.dart": "eb1a45f811a58c4f975f785beb42744c209eb9e3bf3dcbb9806577620ec9548e",
+    "lib/features/squat/domain/models/pose_frame.dart": "bcd7fa7ac305bf71df778b52bae634f0ca1fa041bba84a16a7b8ca2203100699",
+    "lib/features/squat/domain/models/rep_analysis.dart": "d3853d8c5097e42cf4b9969fdf9728ec809a9911168872502bb3a57d03bff5e0",
+    "lib/features/squat/domain/models/rep_record.dart": "5ba8a045776e5b075c5e083b5291be7c9511a71a4f60d0e97d798f055b71688a",
+    "lib/features/squat/domain/models/squat_metrics.dart": "92640458217459724361619160a2a67a6f9001935ef414e96cef2f7812177bab",
+    "lib/features/squat/domain/models/workout_enums.dart": "67f58f4db8cd394506ca19fe9389bad38adc81d79f3cc4c129c6c555b1c14855",
+    "lib/features/squat/domain/models/workout_journal.dart": "922e8df92204372d3abd9ac0385c4b7cd4a78a76d41c72f86c5ba1a6d6e47876",
+    "lib/features/squat/domain/models/workout_plan.dart": "d393d3abb9c840d98a197435e5e188e3702379b6c4feba41c2c634f4834a9aec",
+    "lib/features/squat/domain/models/workout_session.dart": "5e13d4f079670b8e78e88761e3285bfb7848063c3eb07b700a61ec7c7894f90e",
+    "lib/features/squat/domain/models/workout_set.dart": "4fc6beb4701e64360cfd20c2d5ffaceb064ca1d222cba24f716220bc5f824d21",
+    "lib/features/squat/domain/services/calibration_accumulator.dart": "66bfd79ad88f302c5709131adbb84297f9618e8b302fc72e79aca00aa63c7adf",
+    "lib/features/squat/domain/services/coach_engine.dart": "a799c0f0740921ccc13ff3f9b97ad08b3a0a79f6d287d45b10a4c138ec9fbeab",
+    "lib/features/squat/domain/services/form_analyzer.dart": "10317f8338a631e5a494b3b46476834e54955da40e9127c9c83eec5b7e3bba16",
+    "lib/features/squat/domain/services/one_euro_filter.dart": "f15165227b4a64d2e3810438f9b9b00f1f0299bf7c38ff711697a8be558dacce",
+    "lib/features/squat/domain/services/pose_engine.dart": "e8421defeda26d92adc28d55e71b12e16d228f50d51c21b17b20c26b8c06f0ad",
+    "lib/features/squat/domain/services/pose_feedback_classifier.dart": "b13c9b7922b4cf9218af3031b299558d1144c27786b6961d5750620e58eda40d",
+    "lib/features/squat/domain/services/pose_landmark_smoother.dart": "e0a1c24ee8b6b5f6d40dcce88ab6ddac89638715a17847c07a7edb620c089a3a",
+    "lib/features/squat/domain/services/rep_clip.dart": "e37e98ff36997b9bcb0629f7d6461172ce43eee7587a75757dc64044ad99de7a",
+    "lib/features/squat/domain/services/rep_detector.dart": "f1cd0a4afec2b40331464521d3c60586a91a7973b8c7108987d8ec5c079e4b64",
+    "lib/features/squat/domain/services/squat_detection_config.dart": "13237b8d81ef7598f6e75badb97093c568ab7adcd8c7ed5bf696e062ebbf8504",
+    "lib/features/squat/domain/services/squat_feature_extractor.dart": "cf6b16c6f93724cae22c80724751e0d5b08983fe9c6c83f10505b7cbc4e7d195",
+    "lib/features/squat/domain/services/workout_repository.dart": "55bc2fc73537306f3db62c8b18f5ca30b8693bf0cb03d2c16146ba1097f30344",
+    "lib/features/squat/domain/services/workout_session_policy.dart": "93b1935bf3b067b66e39f55045049dc7c82325daa65a960c6c051629fc8d2326"
+  },
+  "model_sha256": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a",
+  "device": {
+    "model": "iPad Air 11-inch (M2)",
+    "os": "26.6.2",
+    "mediapipe": "0.10.35"
+  },
+  "native_total_frames": 4213,
+  "native_processing_seconds": 51.74844820838189,
+  "source_native_or_detector_modified_for_test": false
+}

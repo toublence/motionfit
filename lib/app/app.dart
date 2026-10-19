@@ -1,3 +1,4 @@
+import 'package:motionfit_squat/core/ads/ad_bootstrap.dart';
 import 'package:motionfit_squat/core/notifications/notification_destination.dart';
 import 'package:motionfit_squat/features/exercise/application/exercise_selection.dart';
 import 'dart:async';
@@ -42,7 +43,6 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
   String? _lastNotification;
   DateTime? _lastNotificationAt;
   late final NotificationService _notifications;
-  int? _lastAdPolicyCount;
   String? _lastCrashScreen;
   bool? _usingPushupWorkoutOrientation;
 
@@ -62,6 +62,12 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
     _router.routeInformationProvider.addListener(_drainNotification);
     unawaited(_notifications.initialize().catchError((Object _) {}));
     WidgetsBinding.instance.addObserver(this);
+    final lifecycle = WidgetsBinding.instance.lifecycleState;
+    if (lifecycle != null) {
+      ref
+          .read(adServiceProvider)
+          .setForeground(lifecycle == AppLifecycleState.resumed);
+    }
     _refreshReminderEnvironment(force: true);
     if (onboardingCompleted) _refreshPrivacyConsent();
   }
@@ -124,12 +130,13 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
           .read(crashReportingServiceProvider)
           .setCustomKey('app_lifecycle', state.name),
     );
+    ref
+        .read(adServiceProvider)
+        .setForeground(state == AppLifecycleState.resumed);
     if (state == AppLifecycleState.resumed) {
       _refreshDeniedNotificationPermission();
       _refreshReminderEnvironment();
-      if (!ref.read(adServiceProvider).ready) {
-        _refreshPrivacyConsent();
-      }
+      _refreshPrivacyConsent();
     }
   }
 
@@ -272,35 +279,14 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
     });
   }
 
-  Future<void> _runPrivacyConsentRefresh() async {
-    final metrics = await ref.read(combinedWorkoutMetricsProvider.future);
-    if (!mounted) return;
-    final completedWorkoutCount = metrics.completedWorkoutCount;
-    final preferences = ref.read(preferencesControllerProvider);
-    ref
-        .read(adServiceProvider)
-        .updatePolicyContext(
-          onboardingCompleted: preferences.onboardingCompleted,
-          completedWorkoutCount: completedWorkoutCount,
-        );
-    final privacyConsent = ref.read(privacyConsentServiceProvider);
-    if (completedWorkoutCount < 2 &&
-        _lastAdPolicyCount != completedWorkoutCount) {
-      _lastAdPolicyCount = completedWorkoutCount;
-      ref
-          .read(analyticsServiceProvider)
-          .adSkippedByPolicy(
-            format: 'interstitial',
-            placement: 'app_initialization',
-            skipReason: 'first_workout_protected',
-            workoutCompletionCount: completedWorkoutCount,
-            onboardingCompleted: preferences.onboardingCompleted,
-          );
-    }
-    await privacyConsent.requestTrackingAndConsent();
-    if (!mounted) return;
-    await ref.read(adServiceProvider).initialize();
-  }
+  Future<void> _runPrivacyConsentRefresh() => prepareAds(
+    ref.read(adServiceProvider),
+    onboardingCompleted: ref
+        .read(preferencesControllerProvider)
+        .onboardingCompleted,
+    readMetrics: () => ref.read(combinedWorkoutMetricsProvider.future),
+    isMounted: () => mounted,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -329,6 +315,9 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
             (previous?.id == next.id && previous?.completed == true)) {
           return;
         }
+        if (next.totalReps > 0) {
+          ref.read(adServiceProvider).workoutCompleted('squat:${next.id}');
+        }
         _refreshReminderEnvironment(force: true);
         _refreshPrivacyConsent();
       },
@@ -343,6 +332,9 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
             next.interrupted ||
             (previous?.id == next.id && previous?.completed == true)) {
           return;
+        }
+        if (next.totalReps > 0) {
+          ref.read(adServiceProvider).workoutCompleted('pushup:${next.id}');
         }
         _refreshReminderEnvironment(force: true);
         _refreshPrivacyConsent();
@@ -359,10 +351,25 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
             (previous?.id == next.id && previous?.completed == true)) {
           return;
         }
+        if (next.totalReps > 0) {
+          ref.read(adServiceProvider).workoutCompleted('plank:${next.id}');
+        }
         _refreshReminderEnvironment(force: true);
         _refreshPrivacyConsent();
       },
     );
+    ref.listen(combinedWorkoutMetricsProvider, (_, next) {
+      final metrics = next.value;
+      if (metrics != null) {
+        ref
+            .read(adServiceProvider)
+            .updatePolicyContext(
+              onboardingCompleted: preferences.onboardingCompleted,
+              completedWorkoutCount: metrics.completedWorkoutCount,
+              completedSessionIds: metrics.completedSessionIds,
+            );
+      }
+    });
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       onGenerateTitle: (context) => AppLocalizations.of(context).appName,

@@ -1,0 +1,10 @@
+00:00 +0: loading /private/tmp/motionfit-ads-baseline-20261017/test/p0_growth_test.dart
+00:00 +0: count commits, preparation transitions and exits are deduplicated per attempt
+AnalyticsV2: mf2_workout_start_tapped session=attempt platform=android version=1.6.13
+AnalyticsV2: mf2_calibration_started session=attempt platform=android version=1.6.13
+AnalyticsV2: mf2_preparation_state_changed session=attempt platform=android version=1.6.13
+AnalyticsV2: mf2_workout_exit session=attempt platform=android version=1.6.13
+AnalyticsV2: mf2_calibration_exit session=attempt platform=android version=1.6.13
+AnalyticsV2: mf2_workout_start_tapped session=attempt platform=android version=1.6.13
+AnalyticsV2: mf2_first_count_committed session=attempt platform=android version=1.6.13
+00:00 +1: All tests passed!

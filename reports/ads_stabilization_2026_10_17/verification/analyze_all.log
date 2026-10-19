@@ -1,0 +1,21 @@
+Analyzing motionfit...                                          
+
+   info • Statements in an if should be enclosed in a block • lib/app/app.dart:80:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/core/analytics/analytics_service.dart:365:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/core/notifications/notification_destination.dart:19:7 • curly_braces_in_flow_control_structures
+   info • Constructors for public widgets should have a named 'key' parameter • lib/core/widgets/upright_camera_preview.dart:4:9 • use_key_in_widget_constructors
+   info • Statements in an if should be enclosed in a block • lib/features/plank/workout/application/workout_session_controller.dart:735:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/features/plank/workout/application/workout_session_controller.dart:2773:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/features/plank/workout/domain/services/rep_detector.dart:171:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/features/plank/workout/presentation/screens/workout_summary_screen.dart:603:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/features/pushup/application/workout_session_controller.dart:735:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/features/pushup/application/workout_session_controller.dart:2739:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/features/pushup/domain/services/rep_detector.dart:174:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/features/pushup/presentation/screens/workout_summary_screen.dart:597:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/features/settings/domain/user_preferences.dart:120:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/features/squat/application/workout_session_controller.dart:738:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/features/squat/application/workout_session_controller.dart:2760:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/features/squat/domain/services/rep_detector.dart:174:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/features/squat/presentation/screens/workout_summary_screen.dart:597:7 • curly_braces_in_flow_control_structures
+
+17 issues found. (ran in 26.2s)

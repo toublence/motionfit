@@ -105,8 +105,10 @@ class PreferencesController extends Notifier<UserPreferences> {
     ),
   );
 
-  Future<void> markInterstitialShown() => _serialize(
-    () => _commit(state.copyWith(lastInterstitialShownAt: DateTime.now())),
+  Future<void> markInterstitialShown({DateTime? shownAt}) => _serialize(
+    () => _commit(
+      state.copyWith(lastInterstitialShownAt: shownAt ?? DateTime.now()),
+    ),
   );
 
   Future<void> markReminderPromptShown(int completedWorkoutCount) => _serialize(

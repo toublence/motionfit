@@ -1,0 +1,46 @@
+{
+  "overall_app_verdict": "FAIL",
+  "ios_ad_fix_verified": false,
+  "native_ipad_video_inference": {
+    "status": "PASS",
+    "videos": 6,
+    "frames": 4213
+  },
+  "host_dart_detector_replay": {
+    "status": "FAIL",
+    "passed": 2,
+    "failed": 4
+  },
+  "ios_flutter_detector_replay": {
+    "status": "NOT_VERIFIED",
+    "reason": "test host launch did not complete; no result file"
+  },
+  "ios_sdk_ads": {
+    "status": "NOT_VERIFIED",
+    "load": null,
+    "impression": null,
+    "showed": null,
+    "dismissed": null,
+    "cooldown_persisted": null
+  },
+  "test_builds": {
+    "ios_debug": "PASS",
+    "ios_profile": "PASS",
+    "scoped_analyze": "PASS"
+  },
+  "test_app_launch": {
+    "debug": "VM service/debugger startup did not complete",
+    "profile": "install/launch did not complete; cancelled"
+  },
+  "att_dialog_observed": false,
+  "user_available_for_device_interaction": false,
+  "test_mode": "official test ad units only",
+  "full_workout_ui_and_database_exercised": false,
+  "production_pose_or_exercise_logic_changed": false,
+  "baseline_head": "0f608c59abbe59afe20da257f169a1ab48c54735",
+  "cleanup": {
+    "native_video_host": "removed",
+    "ads_validation_host": "still_installed; uninstall timed out at 30 seconds",
+    "original_app": "unchanged"
+  }
+}

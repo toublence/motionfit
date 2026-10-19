@@ -1,0 +1,48 @@
+{
+  "info" : {
+    "arguments" : [
+      "devicectl",
+      "device",
+      "info",
+      "apps",
+      "--device",
+      "315AE942-B017-5187-A2DA-A0B2490459AD",
+      "--bundle-id",
+      "fit.motionfit.app.adsvalidation",
+      "--timeout",
+      "20",
+      "--json-output",
+      "/tmp/motionfit-ios-ads-final-state.json"
+    ],
+    "commandType" : "devicectl.device.info.apps",
+    "environment" : {
+      "TERM" : "dumb"
+    },
+    "jsonVersion" : 2,
+    "outcome" : "success",
+    "version" : "477.39"
+  },
+  "result" : {
+    "apps" : [
+      {
+        "appClip" : false,
+        "builtByDeveloper" : true,
+        "bundleIdentifier" : "fit.motionfit.app.adsvalidation",
+        "bundleVersion" : "66",
+        "defaultApp" : false,
+        "hidden" : false,
+        "internalApp" : false,
+        "name" : "motionfit - workout coach",
+        "removable" : true,
+        "url" : "file:///private/var/containers/Bundle/Application/0DDB11FC-3AC8-41C0-8EDF-73D0B8C4B063/Runner.app/",
+        "version" : "1.6.6"
+      }
+    ],
+    "defaultAppsIncluded" : false,
+    "deviceIdentifier" : "315AE942-B017-5187-A2DA-A0B2490459AD",
+    "hiddenAppsIncluded" : false,
+    "internalAppsIncluded" : false,
+    "matchingBundleIdentifier" : "fit.motionfit.app.adsvalidation",
+    "removableAppsIncluded" : true
+  }
+}

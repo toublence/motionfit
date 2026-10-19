@@ -1,0 +1,85 @@
+{
+  "native_videos_processed": 6,
+  "native_integrity_passed": 6,
+  "exercise_behavior_passed": 2,
+  "exercise_behavior_failed": 4,
+  "overall": "FAIL",
+  "scope": "iPad native video inference + unchanged Dart detector replay; not full app UI",
+  "checks": [
+    {
+      "id": "plank_hip_high_20s",
+      "native_data_integrity": "PASS",
+      "exercise_behavior": "PASS",
+      "details": [
+        {
+          "criterion": "invalid_start_posture_rejected_only"
+        }
+      ]
+    },
+    {
+      "id": "plank_near_20s",
+      "native_data_integrity": "PASS",
+      "exercise_behavior": "FAIL",
+      "details": [
+        {
+          "latest_possible_hold_end_seconds": 15.0,
+          "checkpoints_after_hold_end": [
+            15.435,
+            16.435
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pushup_good_repeat_10",
+      "native_data_integrity": "PASS",
+      "exercise_behavior": "FAIL",
+      "details": [
+        {
+          "expected_repetitions": 10,
+          "actual": 0
+        },
+        {
+          "failure": "automatic_calibration_not_completed"
+        }
+      ]
+    },
+    {
+      "id": "pushup_shallow_10",
+      "native_data_integrity": "PASS",
+      "exercise_behavior": "FAIL",
+      "details": [
+        {
+          "criterion": "ready_to_assess_shallow_movements",
+          "observed_attempts": 12,
+          "calibrated": false
+        }
+      ]
+    },
+    {
+      "id": "squat_depth_after_5",
+      "native_data_integrity": "PASS",
+      "exercise_behavior": "FAIL",
+      "details": [
+        {
+          "expected_repetitions": 5,
+          "actual": 0
+        },
+        {
+          "failure": "automatic_calibration_not_completed"
+        }
+      ]
+    },
+    {
+      "id": "squat_fast_10",
+      "native_data_integrity": "PASS",
+      "exercise_behavior": "PASS",
+      "details": [
+        {
+          "expected_repetitions": 10,
+          "actual": 10
+        }
+      ]
+    }
+  ]
+}

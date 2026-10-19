@@ -1,0 +1,105 @@
+{
+  "all_tests": {
+    "passed": 251,
+    "failed": 10,
+    "result": "FAIL"
+  },
+  "focused_ads_and_analytics": {
+    "passed": 56,
+    "failed": 0,
+    "result": "PASS"
+  },
+  "preexisting_failure_names": [
+    "100 reps render without overflow at compact width",
+    "CameraPermissionScreen lifecycle an already seen exercise guide is not repeated",
+    "History detail renders the same persisted timeline",
+    "Improve filter keeps only reps needing attention",
+    "Workout Result shows five persisted reps in order",
+    "WorkoutCountdownScreen lifecycle removal while timer is active prevents late timer work",
+    "deleted video keeps Timeline and hides play",
+    "row tap opens the matching rep detail",
+    "valid video shows play and opens Rep 3 timestamps",
+    "video disabled keeps rows and hides play buttons"
+  ],
+  "current_failure_names": [
+    "100 reps render without overflow at compact width",
+    "CameraPermissionScreen lifecycle an already seen exercise guide is not repeated",
+    "History detail renders the same persisted timeline",
+    "Improve filter keeps only reps needing attention",
+    "Workout Result shows five persisted reps in order",
+    "WorkoutCountdownScreen lifecycle removal while timer is active prevents late timer work",
+    "deleted video keeps Timeline and hides play",
+    "row tap opens the matching rep detail",
+    "valid video shows play and opens Rep 3 timestamps",
+    "video disabled keeps rows and hides play buttons"
+  ],
+  "failure_sets_identical": true,
+  "new_failures": [],
+  "cleared_caches": [
+    "Gradle caches",
+    "Xcode DerivedData",
+    "iOS DeviceSupport Symbols",
+    "NASDAQ build output",
+    "temporary baseline snapshot and failed build output",
+    "CocoaPods downloads",
+    "Sparkle update downloads",
+    "unused untracked Gradle app/build outputs of steady, pixapdf, notiflow, vobrief",
+    "own generated debug intermediates and test APK copies after device validation"
+  ],
+  "crash_diagnostics_removed": 12,
+  "source_archives_deleted": false,
+  "scoped_analyzer": {
+    "result": "PASS",
+    "errors": 0,
+    "warnings": 0,
+    "infos": 0
+  },
+  "android_build": {
+    "result": "PASS",
+    "exit_code": 0,
+    "mode": "release",
+    "test_ads": true,
+    "package": "fit.motionfit.app",
+    "version": "1.6.15+2026091801",
+    "log": "android_build.log",
+    "duration_seconds": 62.9
+  },
+  "ios_build": {
+    "result": "PASS",
+    "exit_code": 0,
+    "mode": "release",
+    "signed": false,
+    "test_ads": true,
+    "bundle": "fit.motionfit.app",
+    "version": "1.6.6+66",
+    "log": "ios_build.log",
+    "real_device_test": "NOT_VERIFIED",
+    "duration_seconds": 119.5
+  },
+  "android_device": {
+    "result": "PASS",
+    "sdk_scenarios_passed": 3,
+    "runner_passed_including_teardown": 4,
+    "model": "SM-S926N",
+    "android": "16/API36",
+    "package": "fit.motionfit.app.adsvalidation",
+    "test_ads": true,
+    "actual_impressions": [
+      "banner",
+      "native",
+      "interstitial"
+    ],
+    "interstitial_actual_show_and_dismiss": true,
+    "production_app_replaced": false,
+    "validation_package_removed": true,
+    "duration_seconds": 22,
+    "scope": "isolated SDK host, not complete workout UX",
+    "logs": [
+      "device_build.log",
+      "device_smoke.log"
+    ],
+    "cleanup": "Package already absent after Flutter Driver; verified by pm path (exit 1). Original app pm path still exists."
+  },
+  "diff_check": "PASS",
+  "nasdaq_git_status": "clean; source unchanged"
+}

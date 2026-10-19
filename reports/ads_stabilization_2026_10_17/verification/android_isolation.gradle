@@ -1,0 +1,11 @@
+// Temporary test host only: preserve the installed MotionFit application/data.
+gradle.beforeProject { project ->
+  project.plugins.withId('com.android.application') {
+    project.extensions.getByName('androidComponents').finalizeDsl { dsl ->
+      dsl.defaultConfig.applicationId = 'fit.motionfit.app.adsvalidation'
+    }
+    project.tasks.configureEach { task ->
+      if (task.name.endsWith('GoogleServices')) task.enabled = false
+    }
+  }
+}

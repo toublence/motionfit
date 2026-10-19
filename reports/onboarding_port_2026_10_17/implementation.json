@@ -1,0 +1,45 @@
+{
+  "target": "/Users/nam/projects/flutter/motionfit",
+  "reference": "/Users/nam/projects/android/motionfit",
+  "reference_sources": [
+    "app/src/main/java/com/namslab/motionfit/ui/welcome/Welcome.kt",
+    "app/src/main/java/com/namslab/motionfit/ui/welcome/OnboardingMotion.kt",
+    "app/src/main/java/com/namslab/motionfit/ui/welcome/OnboardingVisuals.kt",
+    "app/src/main/res/values*/onboarding.xml"
+  ],
+  "changes": [
+    "기존 Flutter 온보딩을 검은 배경·민트 버튼의 3단계 측정/교정/첫 측정 준비 화면으로 교체",
+    "스쿼트와 관절선, 3회 카운트, 폼 스코어 61과 지표, 무릎 안정성 54→66·폼 스코어 61→69 예시를 Flutter Canvas로 이식",
+    "카메라 프레임·뒤로 이동·3/2/1 카운트다운 시각 예시 구현",
+    "건너뛰기·다음·이전 단계, 단계 표시, RTL, 스크롤, 최대 560 너비, 동작 줄이기와 foreground/TickerMode 대응",
+    "한국어·영어·일본어·독일어·스페인어·프랑스어·아랍어·중국어 간체/번체 원문 이식",
+    "기존 온보딩 완료 저장 및 ATT 요청을 유지하고 완료 뒤 /squat 진입 유지",
+    "단계 Analytics 이름을 measurement/improvement/first_measurement로 맞춤"
+  ],
+  "scope_limits": [
+    "Android 참조 프로젝트 원본 수정 없음",
+    "첫 3회 측정은 온보딩의 시각 예시이며, 완료 뒤 기존 Flutter 운동 홈으로 이동함. Android의 firstScanPlan 운동 실행 기능은 이식하지 않음",
+    "완료한 기존 사용자에게 온보딩을 강제로 다시 표시하지 않음",
+    "카메라·광고·운동 판정 로직 수정 없음"
+  ],
+  "verification": {
+    "previous_interrupted_attempt": "디스크 부족 errno 28로 컴파일 중단",
+    "resumed_command": "flutter test --no-pub --concurrency=1 test/features/onboarding/onboarding_screen_test.dart --reporter expanded",
+    "resumed_result": "FAIL: 0 PASS / 11 FAIL, SharedPreferencesAsyncPlatform 미설정으로 fixture 생성 단계 실패",
+    "compiler_status": "온보딩 소스 및 테스트 로드 성공",
+    "fixture_fix": "_Preferences가 PreferencesService를 상속하지 않고 implements로 메모리 저장소를 제공하도록 수정",
+    "rerun_after_fixture_fix": false,
+    "rerun_reason": "사용자의 한 번의 가벼운 검증 제한 준수",
+    "widget_behavior_verified": false,
+    "device_test": "NOT_RUN",
+    "full_build": "NOT_RUN",
+    "format": "PASS"
+  },
+  "files_sha256": {
+    "lib/features/onboarding/presentation/onboarding_screen.dart": "e2ac66451791ffeb2b2c28a6431cda603703f45d26ba04ab1da6df991846c7af",
+    "lib/features/onboarding/presentation/onboarding_demo.dart": "0e7cf20726b1820e877434fb6a00fa158ecd456ac37c703b6e9566aaee854163",
+    "lib/features/onboarding/presentation/onboarding_copy.dart": "4e95e8f3787eb94cdd5adbc05f45c8ccb8b5526d453a235db49188be0729e3ba",
+    "lib/core/analytics/analytics_service.dart": "a7cada36f89c882f0dad7b77622de3d4d73f982b60b407b9d15ec333825ec10d",
+    "test/features/onboarding/onboarding_screen_test.dart": "deb842714a17dad9f55f9eb923a52285bdd87f0479e52262e592e802600dfd36"
+  }
+}

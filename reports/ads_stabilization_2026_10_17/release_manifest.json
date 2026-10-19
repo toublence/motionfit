@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-17",
+  "source_head": "0f608c59abbe59afe20da257f169a1ab48c54735",
+  "working_tree_dirty": true,
+  "source_tree_sha256": "5ab9e4e52f790a656d688f9f6d8f0459424642a43aa5aa194843d18cc32ed5b1",
+  "source_scope": [
+    "lib",
+    "assets",
+    "android",
+    "ios",
+    "plugins",
+    "pubspec.yaml",
+    "pubspec.lock",
+    "packages"
+  ],
+  "source_file_count": 541,
+  "changed_source_sha256": {
+    "integration_test/ads_sdk_driver.dart": "2f80a384a6d27eaff7c355e92644a0ab171504857103a4d53579236e8ecdb05f",
+    "integration_test/ads_sdk_smoke_test.dart": "c69b6b2a29153377a446d79fafd27476c1a011484b0828ae1c15c5cc36c5ef07",
+    "lib/app/app.dart": "39131458ecc5f243215919f787ca84870058f04879702e8bf8887e52656d050f",
+    "lib/app/router.dart": "e9b43d78b9942588456336256b7ea3e567d8b7e303a436313fe689339a5edb05",
+    "lib/core/ads/ad_bootstrap.dart": "c13f2d1ab19592d03dd999fd1e74b178731b74210e0ee2d7f27f2ec6aa01d7a7",
+    "lib/core/ads/ad_eligibility.dart": "49a1b3ac22331cfa6cd5e69b52db1089d9919cce4d9b9302bf94ae9968482f70",
+    "lib/core/ads/ad_failure.dart": "10c643f3debad07d5f762601ed9889127f82e8ba076388429839fa6b39e1211c",
+    "lib/core/ads/ad_loader.dart": "e1ca6f6f92d0a65e0055fc1248041d69dfb7f3eddf028025d145f1b19cd2678d",
+    "lib/core/ads/ad_sdk.dart": "7e06e31c75dfea82869b8b7dbd801b2385b15f292f6008b5674123bba8a5fdaa",
+    "lib/core/ads/ad_service.dart": "ffa96ef2467271e27c85f7babf8c43f48e8f54cf916013fcaeecbb4ddf948381",
+    "lib/core/ads/ad_slot.dart": "1a501f12e5d05e4dccc83c26f66425d97b3019d63368829c8eb7916cebb25497",
+    "lib/core/ads/ad_slot_controller.dart": "730f5bd3abf0ed5223ff2b81559e6c0dc2c3273d9546e0fc40604ccb0bea52f6",
+    "lib/core/ads/ad_unit_ids.dart": "8c7ee3fdff0d12138e38c0f774675886a9c0a928da1033023d3a1d35369033f7",
+    "lib/core/ads/bottom_banner_ad.dart": "9d053c7d3176d0ac8164fff3a594b233da36c9036ca56272800cf7c1124227df",
+    "lib/core/ads/bottom_native_ad.dart": "7060f617d5c6627b0d7cab789ef776beddf4804b2828d14bbf31540e7facca06",
+    "lib/core/ads/post_workout_interstitial.dart": "4a68c8eb89fd78dec70f1379ff7debc1586c73639a23e39a2751d10a711b5d16",
+    "lib/core/analytics/analytics_service.dart": "2b558e44a7c44defc6774dcd7d46c0d35dc90197588f7ac68a4dae1793db0577",
+    "lib/core/privacy/privacy_consent_service.dart": "0684679dc140390b64c2ecebaeca4eeb94ad136cdbb18a34b0ea0c079c1510f8",
+    "lib/core/providers.dart": "a2e1d56af7b53e14572eeca21021c29cd2975b45e2e8a5421c07b2167825c74a",
+    "lib/features/exercise/application/combined_workout_metrics.dart": "209e79c14b24ea0a78f2ad24dc0dc1de3303496d7f5e67b5bfb7d444e70fdfee",
+    "lib/features/plank/workout/presentation/screens/active_workout_screen.dart": "03f038d5b9183af6f4737c362767a3b016df05e8771a0fe75bbac5d49a1f5748",
+    "lib/features/plank/workout/presentation/screens/rest_screen.dart": "0316def4bf36bfe51220b9199063d66f670c25f57cff04ed5e8e82135c5bd79f",
+    "lib/features/plank/workout/presentation/screens/workout_summary_screen.dart": "4c2e09ce13dbc117aac69966b018201eaa3d67a48fc3d9e3489d4ef8b98ec3df",
+    "lib/features/pushup/presentation/screens/active_workout_screen.dart": "4d5123b5e52bc34dce8fdcc0183888fd9df85d7adcc68620ef8e0d3a3eff0300",
+    "lib/features/pushup/presentation/screens/rest_screen.dart": "61a712fe869671706df736d885de43c3a90df7f89dc117084655a622bb7bdbe4",
+    "lib/features/pushup/presentation/screens/workout_summary_screen.dart": "69c2c97ab8b572eb304a7408809913184852a5381bf4935d889f4924fd82d4d2",
+    "lib/features/settings/application/preferences_controller.dart": "866c59143b2c1852c9567fa3222f8e4a3257584d7e1ac5bb66976017ac4374c5",
+    "lib/features/squat/presentation/screens/active_workout_screen.dart": "2ef0ea184e5a7983879c8ebd72a492bc92dfd9cb11fc96939603a2175ed5e60c",
+    "lib/features/squat/presentation/screens/rest_screen.dart": "6ff9fc0cc595c58fde26428454cb21a176180439940912d9156c3982a1b4c551",
+    "lib/features/squat/presentation/screens/workout_summary_screen.dart": "93a0310992642352c7bf2ae943ded5f70ecab728e5a559e5c44c4da75a4c27c9",
+    "pubspec.lock": "07b3a36206c90f679eb79d98f8bae2aa1a71bef743df6197d88b2fdf08b30e86",
+    "pubspec.yaml": "454dd1d67f7a60aa2cab03d88926c85d8141bed0a3f87c2965d38021a95d7340",
+    "test/core/ads/ad_recovery_test.dart": "19ce1f41bb3315c551b859223c32f27b9978f21e5b7f09f542afd9472797a0c2",
+    "test/core/ads/ad_slot_test.dart": "dd9e236d3c87174997de31321ce939669fcc3ef55059b1d8799029960ad370a7",
+    "test/core/ads/ads_integration_test.dart": "539def7794407fe18275618aad4ff33345a1c14d27a195705e5eb8896623b3d5",
+    "test/core/ads/interstitial_test.dart": "ec6252c6de69bd9451fccd2018ef89b7bf9ad7db8a10dcbc8a73d63bc7db017e",
+    "test/core/ads/support/fakes.dart": "60631197a2cc95acb0903f507958f54a8facff4b5035b86517353b8a410eb14c"
+  },
+  "build_defines": {
+    "ADS_TEST_MODE": true,
+    "RELEASE_SHA": "0f608c59-ads-validation"
+  },
+  "version": {
+    "ios": "1.6.6+66",
+    "android": "1.6.15+2026091801"
+  },
+  "sdk": {
+    "flutter": "3.41.9",
+    "google_mobile_ads": "9.0.0",
+    "ios_google_mobile_ads": "13.3.0",
+    "ios_ump": "3.1.0"
+  },
+  "production_units": {
+    "ios": {
+      "app_id": "ca-app-pub-6169297934919363~5425389550",
+      "banner": "ca-app-pub-6169297934919363/9696065805",
+      "interstitial": "ca-app-pub-6169297934919363/2998795518",
+      "native": "ca-app-pub-6169297934919363/1414718708",
+      "app_open_unused": "ca-app-pub-6169297934919363/9732714503"
+    },
+    "android": {
+      "banner": "ca-app-pub-6169297934919363/2773965626",
+      "interstitial": "ca-app-pub-6169297934919363/8790349687",
+      "native": "ca-app-pub-6169297934919363/4174749653"
+    }
+  },
+  "nasdaq_source_modified": false,
+  "new_motionfit_project_modified": false,
+  "artifacts": {
+    "android_release": {
+      "path": "/Users/nam/projects/flutter/motionfit/build/app/outputs/flutter-apk/app-release.apk",
+      "sha256": "b8f8407ae739fb85c005610e41a8f8d172da0e703b256885c069e793a61f25e0",
+      "test_ads": true,
+      "installed": false
+    },
+    "ios_release": {
+      "path": "/Users/nam/projects/flutter/motionfit/build/ios/iphoneos/Runner.app",
+      "app_framework_sha256": "73df6048af2945b62bf238413bf9332b1656c7ab462a981b756597fa203fbda6",
+      "signed": false,
+      "test_ads": true,
+      "installed": false
+    },
+    "android_device_validation": {
+      "package": "fit.motionfit.app.adsvalidation",
+      "sha256": "9e8cffd9b9cfbcd4d90a837a1534da2df69b983bfa8486f3206053b08789445d",
+      "test_ads": true,
+      "installed_for_validation": true,
+      "uninstalled_after_validation": true
+    }
+  }
+}

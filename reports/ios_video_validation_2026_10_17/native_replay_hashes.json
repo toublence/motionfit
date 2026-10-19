@@ -1,0 +1,26 @@
+{
+  "pushup_good_repeat_10.json": {
+    "sha256_uncompressed": "5f14fdd0eeb3b1a88799cb3ff2a28653075279a4d10accf8d287a056987d788e",
+    "bytes_uncompressed": 5612061
+  },
+  "plank_hip_high_20s.json": {
+    "sha256_uncompressed": "308262555858b0b36487b04486d7ca595285ddfafcd0e23c34f551df47b8560d",
+    "bytes_uncompressed": 5042413
+  },
+  "squat_fast_10.json": {
+    "sha256_uncompressed": "2f6900dcd7049a7c63f54ea633adf64d38740d8219d3c235bac3643d0e624350",
+    "bytes_uncompressed": 4923637
+  },
+  "squat_depth_after_5.json": {
+    "sha256_uncompressed": "a56d92ace63b91017e786f870a9933c1e7dd75438f4d3f5edb8ba83fbf1ac761",
+    "bytes_uncompressed": 4786123
+  },
+  "plank_near_20s.json": {
+    "sha256_uncompressed": "807f957770721bdd293ea84cc254bb6abce840b01aff7e027c15e03143ea86f5",
+    "bytes_uncompressed": 3636852
+  },
+  "pushup_shallow_10.json": {
+    "sha256_uncompressed": "eafb80b2773d14c0bc3d8d2fd42fa920f3292d8503caa67f07aedf0089847c6a",
+    "bytes_uncompressed": 5127583
+  }
+}

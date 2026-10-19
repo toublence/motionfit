@@ -1,0 +1,9 @@
+{
+  "benchmark/ios/assert_video_results.py": "24d89e3824ffd5d2e27fc3c6ad906436fbf2517c46bf672d3f1ac1b8782e3b2c",
+  "benchmark/ios/VideoHost.swift": "85d43029d6b42509a789e0f0f7797880024002483b66899ae7139dc27a41f531",
+  "benchmark/ios/prepare_ad_host.py": "439904487ee38c5ab4f520783575938b0106dc574f339223b4e58dbd62b741b0",
+  "benchmark/ios/prepare_harness.py": "cab4db5214b9375b1e17c70b2861db34465b68fe6c3da77273ec3c3d2d99443a",
+  "benchmark/ios/evaluate_replays.dart": "c86ff54105234e3bf8869830f434bd8e0b3ae5bf2d7ced867df5fd74fefee5b4",
+  "integration_test/ios_video_ads_test.dart": "be3ebc6086554a5e5d3cf277b4b16b8f996a7f8db065fb01a946b99a7f532e92",
+  "integration_test/ads_sdk_smoke_test.dart": "261c3819e9fe581a92e0d6fe49e6286dcb40136298ef2cabf49185f084dc75bf"
+}
