@@ -1,0 +1,25 @@
+{
+  "bundle": "fit.motionfit.app",
+  "version": "1.6.7",
+  "build": "67",
+  "configuration": "Release",
+  "native_qa_bridge_absent": true,
+  "frameworks": {},
+  "source_sha256": {
+    "lib/main.dart": "b5cc53d64c84b6f0200eabd9f5647d135e3cd6a436dc0a9bcf09e15b4214a304",
+    "lib/app/app.dart": "b20f608da80620c5b996e399340b60e73bb00af16cedabb567a678f00416773c",
+    "lib/core/ads/ad_unit_ids.dart": "cf1cbfd4618cd7362206543a02adc2b4f40310d7c668dd25433c676946d8df8a",
+    "lib/core/ads/ad_service.dart": "ce5a7bf6a8dfd66c0055f0a7fcabbeedba5de53cb9db78bf8b27a95391b8fd11",
+    "lib/core/ads/ad_sdk.dart": "c720d0f993ee952782f46930e87474802bdaa96713e7d9527a4583b884e17eb5",
+    "ios/Runner/AppDelegate.swift": "d24f8b664f6790d8f547032922917aeb39a2e61e4a282fef47f9e07e48f060ab",
+    "ios/Podfile.lock": "bb28cc31b5e1c00023d77ee137cfcb23b4cc09d5d859e50d009627d3bba374cc"
+  },
+  "device": "iPad Air 11-inch (M2), iPad14,8, iPadOS 26.6.2",
+  "ui_test_status": "PASS: onboarding screenshots, completion screen, growth/settings/workout navigation and background/foreground recovery",
+  "static_unity_adapter_linked": true,
+  "static_unity_sdk_linked": true,
+  "unity_sdk_version_from_lock": "4.21.0",
+  "unity_adapter_version_from_lock": "4.21.0.0",
+  "trust_status": "No manual trust change required; direct runner launch and stopped Xcode session allowed tests to proceed",
+  "ads_runtime": "Unity production initialization and valid bidding token verified; Google Test mode banner visible; Unity interstitial creative not re-tested in this run"
+}

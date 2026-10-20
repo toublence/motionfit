@@ -1,0 +1,79 @@
+{
+  "baseline_head": "fd25e08",
+  "feature": "iOS App Open Ads enabled",
+  "ios_operating_unit": "ca-app-pub-6169297934919363/9732714503",
+  "ios_test_unit": "ca-app-pub-3940256099942544/5575463023",
+  "android_app_open": "not enabled; no confirmed operating unit supplied",
+  "policy": {
+    "entry": "cold start or paused→resumed only; inactive→resumed does not create an opportunity",
+    "routes": [
+      "/squat",
+      "/records",
+      "/challenge",
+      "/settings"
+    ],
+    "protection": "onboarding completed, verified workout count >= 2",
+    "cooldown": "10 minutes shared with workout interstitial, persisted only on showed callback using the existing preferences field",
+    "load_opportunity": "3 seconds of loading cover; late load cached for next entry",
+    "presentation_check": "cover remains during consent recheck/presentation until showed, terminal callback or 30-second unconfirmed watchdog",
+    "cache_max_age": "4 hours; discard and reload automatically"
+  },
+  "recovery": [
+    "Existing consent/SDK initialization and canRequestAds recheck reused; no policy bypass",
+    "Common loader handles create/load Future exceptions, 15-second timeout, backoff and generation-based late callback rejection",
+    "App-open and interstitial share one fullscreen lock and presentation state machine",
+    "Route, foreground and consent rechecked immediately before show",
+    "Cache is consumed once; duplicate callback cannot duplicate cooldown or dispose",
+    "Ad opportunity, decision, skip reason, load, actual showed/impression and disposal tracked in Analytics"
+  ],
+  "validation": {
+    "command": "flutter test --no-pub --concurrency=1 test/core/ads test/core/analytics/analytics_service_test.dart --reporter expanded",
+    "status": "PASS",
+    "passed": 76,
+    "failed": 0,
+    "new_test_counts": {
+      "app_open_test.dart": 15,
+      "app_open_gate_test.dart": 3
+    },
+    "duration_reported": "7 seconds",
+    "mode": "Fake SDK, official iOS test units for app-open scenarios",
+    "ios_build": "NOT_RUN",
+    "android_build": "NOT_RUN",
+    "real_device_app_open_load_impression_show_dismiss": "NOT_VERIFIED"
+  },
+  "limits": [
+    "No Fill, network, actual UMP permission, AdMob account and mediation behavior are not code-controlled fill guarantees",
+    "If native SDK never emits any terminal callback, the 30-second watchdog releases the loading cover but retains uncertain fullscreen ownership to prevent overlapping a late native ad. A later terminal callback recovers; without one, process restart is needed. This residual SDK-boundary risk is not reported as fixed.",
+    "Real iOS initial-install/upgrade consent, cold/warm entry, background during load, ad click/return, actual impression/dismiss and mediation adapters require device validation.",
+    "No full regression/build/production inventory claim; one scoped verification command only."
+  ],
+  "references": [
+    {
+      "title": "Google AdMob Flutter App open ads",
+      "url": "https://developers.google.com/admob/flutter/app-open"
+    },
+    {
+      "title": "Installed SDK API",
+      "path": "/Users/nam/.pub-cache/hosted/pub.dev/google_mobile_ads-9.0.0/lib/src/ad_containers.dart"
+    }
+  ],
+  "preserved_existing_user_changes": [
+    "ios/Podfile",
+    "ios/Podfile.lock",
+    "ios/Runner/AppDelegate.swift",
+    "ios/Runner/Info.plist",
+    "docs/validation/",
+    "tool/unity_ads_device_test.dart"
+  ],
+  "files_sha256": {
+    "lib/core/ads/ad_sdk.dart": "c720d0f993ee952782f46930e87474802bdaa96713e7d9527a4583b884e17eb5",
+    "lib/core/ads/ad_unit_ids.dart": "cf1cbfd4618cd7362206543a02adc2b4f40310d7c668dd25433c676946d8df8a",
+    "lib/core/ads/ad_service.dart": "32d00cf9965debdaa7a3d6f87625df36b35acfef8bb15c822e887560371c6a06",
+    "lib/core/ads/app_open_gate.dart": "f6b32ea7116a4c50e3803525f27ca432cd8eb536ad0d3e1349df09295f47fefc",
+    "lib/app/app.dart": "17b0f5b2b89b609b63f322a3161c964a7e6e9db0f06c00fdb0141fd2e7f61450",
+    "test/core/ads/app_open_test.dart": "0418033b05d5aff33b79a81c8d945e44b6c85f2d9f59cd3e8b823b084c16a80d",
+    "test/core/ads/app_open_gate_test.dart": "b0113dfa52bc56c4bb409ff36381b3b75230297bac99f2aab80bdf602c6741a5",
+    "test/core/ads/ad_slot_test.dart": "a2208967df9725b752fe22f87bd6daa61ca6ea9dea4cf431d35cbabd0a375c6f"
+  },
+  "policy_superseded_by": "reports/ad_revenue_policy_2026_10_20/implementation.json"
+}

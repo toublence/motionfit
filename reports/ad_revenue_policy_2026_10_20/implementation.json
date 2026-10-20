@@ -1,0 +1,96 @@
+{
+  "policy_version": "revenue_v1",
+  "authorization": "User explicitly requested less restrictive ad rules to maximize monetization while respecting platform policies. This replaces the previously preserved first-workout and 10-minute business limits.",
+  "before_after": [
+    {
+      "item": "workout interstitial eligibility",
+      "before": "from second completed workout",
+      "after": "from first saved valid workout completion at existing natural breaks"
+    },
+    {
+      "item": "shared fullscreen interval",
+      "before_seconds": 600,
+      "after_seconds": 120
+    },
+    {
+      "item": "interstitial preload",
+      "before": "after first workout completion",
+      "after": "after onboarding, before first completion; independent of workout DB readiness"
+    },
+    {
+      "item": "app-open eligibility",
+      "before": "workout DB count >= 2",
+      "after": "third qualifying app entry; no workout-completion or DB dependency"
+    }
+  ],
+  "business_choices_not_platform_mandates": {
+    "fullscreen_interval_seconds": 120,
+    "introductory_app_entries_without_app_open": 2
+  },
+  "implementation": [
+    "App-open visits persisted in existing user preferences; safe zero default for older installs",
+    "Only completed onboarding and supported home routes count; true paused/resumed entries count, inactive/resumed and ad-return do not",
+    "Same workout ID is monetized at most once per process, recorded on actual showed callback only",
+    "Policy version, cooldown seconds and app-open visit count are attached to ad Analytics",
+    "Existing banner/native placements and native→banner fallback retained; no added manual refresh or retry storm"
+  ],
+  "policy_constraints_retained": [
+    "Interstitials at existing completed-workout natural breaks, not per navigation action or app launch/exit",
+    "No fullscreen ads during exercise, preparation or ATT/UMP explanations",
+    "App-open only during bounded launch/foreground loading opportunities; late loads wait for next entry",
+    "Shared fullscreen lock; no immediately consecutive ads; cooldown based on actual showed callback and persisted",
+    "Actual ATT and UMP/canRequestAds checks remain; denied tracking does not force permissions",
+    "No production unit guesses; iOS/Android IDs unchanged; Android app-open stays unconfigured"
+  ],
+  "validation": {
+    "command": "flutter test --no-pub --concurrency=1 test/core/ads test/core/privacy/tracking_explainer_test.dart test/core/analytics/analytics_service_test.dart test/features/settings/domain/user_preferences_test.dart --reporter expanded",
+    "result": "PASS",
+    "passed": 100,
+    "failed": 0,
+    "duration_seconds": 8,
+    "scope": "Fake SDK, dialog/platform-channel mocks, lifecycle widgets and preferences serialization",
+    "new_policy_scenarios": [
+      "first completion eligible",
+      "120-second boundary",
+      "same workout duplicate prevention",
+      "third entry without a completed workout",
+      "app-open with unavailable workout DB",
+      "visit count serialization and legacy defaults"
+    ],
+    "att_explainer_previous_fixture_errors": "Both corrected widget tests now PASS in this run",
+    "ios_android_builds": "NOT_RUN",
+    "real_device_ads": "NOT_VERIFIED",
+    "actual_revenue_uplift": "NOT_MEASURED",
+    "integration_test_source": "updated to new policy and dedup skip reason, not run on device"
+  },
+  "limits": [
+    "120 seconds and three app entries are business tuning choices, not policy-specified numbers or evidence of the highest achievable revenue.",
+    "Observe ARPDAU, impressions per user, retention, load-to-impression rate and complaints before further increasing frequency. AdMob console/mediation/eCPM-floor optimization was not performed.",
+    "Actual No Fill, inventory, account restrictions and SDK callbacks remain external factors. The existing uncertain native presentation lock after a missing terminal callback is retained; this SDK-boundary residual risk is not claimed fixed.",
+    "Validation is scoped, not full app regression, platform build, actual-device monetization or a guarantee of platform approval."
+  ],
+  "references": [
+    {
+      "url": "https://support.google.com/admob/answer/6201362?hl=en",
+      "used_for": "natural breaks, not every action, no consecutive interstitials, preload rather than unexpected delayed display"
+    },
+    {
+      "url": "https://developers.google.com/admob/flutter/app-open",
+      "used_for": "loading/foreground placements, initial familiarization, ad cache expiration"
+    }
+  ],
+  "files_sha256": {
+    "lib/core/ads/ad_eligibility.dart": "b4cb5f633ccc6980958013de05e2f4d3b6ef026edf58565130db1b781712af7b",
+    "lib/core/ads/ad_service.dart": "ce5a7bf6a8dfd66c0055f0a7fcabbeedba5de53cb9db78bf8b27a95391b8fd11",
+    "lib/core/ads/app_open_gate.dart": "9e9b91dd97f50c75e7899d272f15e8a83df31e1230350e7b527a62e39d6813e4",
+    "lib/features/settings/domain/user_preferences.dart": "83b0ff784e5d99d58d0217388cc4bbca657090bca2c0d4f36303607ed3760c68",
+    "lib/features/settings/application/preferences_controller.dart": "0f14c0c0953527067bffd60d0442fe90759e1df799e656e3db3c4692329b8cb3",
+    "test/core/ads/ad_eligibility_test.dart": "cf2ecf9ec1fdcbb842cf9fabfa4db1565bbb8904eca44fc8d36c6c26243440b2",
+    "test/core/ads/interstitial_test.dart": "b84b364527a20bc00124bb2005e40e3ff0e33324acc16b6f38cd6d3560bb39b2",
+    "test/core/ads/app_open_test.dart": "c5032bda9cb1316e486070e0b15372a44dba8261d81f9cd1f041d25d81949706",
+    "test/core/ads/app_open_gate_test.dart": "9a5fe3b9dadfb7f8cd5f63b046efd054b4ae7ef367e788ba94e82191574fc7ce",
+    "test/core/ads/ads_integration_test.dart": "e1ae5c0bde739602882251b2d5fcc7f3bc32c006f3fb603aabe25bfd5bf96010",
+    "test/features/settings/domain/user_preferences_test.dart": "c0c04e9473220992aac93e637ddb636b271d25fed0c2f65e940e3273ec767382",
+    "integration_test/ios_video_ads_test.dart": "cc96e5cada31299131db95437784e6f8144bd7208fdabf18074f699343594659"
+  }
+}

@@ -1,0 +1,29 @@
+03:00:48  Acquired tunnel connection to device.
+03:00:48  Enabling developer disk image services.
+03:00:48  Acquired usage assertion.
+Launched application with fit.motionfit.app bundle identifier.
+Waiting for the application to terminate…
+2026-10-20 03:00:48.707 Runner[20216:4829182] [Firebase/Crashlytics] Version 12.15.0
+[Crashlytics] The signal SIGABRT has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGBUS has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGFPE has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGILL has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGSEGV has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGSYS has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGTRAP has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+2026-10-20 03:01:31.591 Runner[20216:4829182] <UMP SDK> To enable debug mode for this device, set: UMPDebugSettings.testDeviceIdentifiers = @[ @"19DDDFF4-E375-4614-9CB4-97EEAB4DE1C2" ];
+[UnityAds][Info] Initializing SDK 4.21.0 42100 with game id 6208809 in production mode, session 5E47B332-F5AC-49CF-9D4E-240C32892082
+[UnityAds][Info] Initialized successfully!
+[UnityAds][Info] Generated a valid token.
+[UnityAds][Info] Generated a valid token.
+[UnityAds][Info] Generated a valid token.
+[UnityAds][Info] Generated a valid token.
+[UnityAds][Info] Generated a valid token.
+I0000 00:00:1792432915.612530 4830168 init-domain.cc:128] Fiber init: default domain = pthread, concurrency = 8, prefix = pthread-default
+I0000 00:00:1792432915.650339 4830168 gl_context.cc:407] GL version: 3.0 (OpenGL ES 3.0 Metal - 104.1), renderer: Apple M2 GPU
+INFO: Initialized TensorFlow Lite runtime.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1792432915.695113 4830515 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792432915.715380 4830519 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792432916.209238 4830515 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+The app terminated with the exit code 0.

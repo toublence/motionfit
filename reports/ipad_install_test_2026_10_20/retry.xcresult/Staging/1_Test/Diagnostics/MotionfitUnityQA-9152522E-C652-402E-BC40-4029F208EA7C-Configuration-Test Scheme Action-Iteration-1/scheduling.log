@@ -1,0 +1,6 @@
+2026-10-19 17:58:06 +0000: Received worker from worker provider: <XCTHTestRunner: 0x11eea5f20, PID: 0, device: iPad (4) (00008112-001848821413601E)>
+2026-10-19 17:58:08 +0000: Worker <XCTHTestRunner: 0x11eea5f20, PID: 20201, device: iPad (4) (00008112-001848821413601E)> finished bootstrapping
+2026-10-19 17:58:08 +0000: Parallelization disabled; test execution driven by the test process
+2026-10-19 17:59:16 +0000: Test operation cancelled
+2026-10-19 17:59:17 +0000: Worker <XCTHTestRunner: 0x11eea5f20, PID: 20201, device: iPad (4) (00008112-001848821413601E)> finished with cancellation
+2026-10-19 17:59:17 +0000: Finished executing tests (cancelled: Yes)

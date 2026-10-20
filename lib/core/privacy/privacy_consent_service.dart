@@ -14,6 +14,9 @@ abstract interface class ConsentBackend {
 }
 
 class GoogleConsentBackend implements ConsentBackend {
+  GoogleConsentBackend({this.beforeTrackingAuthorization});
+  Future<bool> Function()? beforeTrackingAuthorization;
+  bool _explainerAcknowledged = false;
   @override
   bool get supported =>
       !kIsWeb &&
@@ -26,6 +29,18 @@ class GoogleConsentBackend implements ConsentBackend {
     if (defaultTargetPlatform != TargetPlatform.iOS) return;
     if (await AppTrackingTransparency.trackingAuthorizationStatus ==
         TrackingStatus.notDetermined) {
+      if (!_explainerAcknowledged) {
+        final explain = beforeTrackingAuthorization;
+        if (explain == null || !await explain()) {
+          throw const AdFailure('att_pending');
+        }
+        _explainerAcknowledged = true;
+      }
+      // Settings may have changed while the explanation was open.
+      if (await AppTrackingTransparency.trackingAuthorizationStatus !=
+          TrackingStatus.notDetermined) {
+        return;
+      }
       final status =
           await AppTrackingTransparency.requestTrackingAuthorization();
       if (status == TrackingStatus.notDetermined) {
@@ -96,6 +111,14 @@ class PrivacyConsentService {
   Future<void>? _form;
   bool _foreground = true;
   bool get supported => _backend.supported;
+  bool get trackingAuthorizationPending => _tracking != null;
+  void setTrackingExplainer(Future<bool> Function()? explain) {
+    final backend = _backend;
+    if (backend is GoogleConsentBackend) {
+      backend.beforeTrackingAuthorization = explain;
+    }
+  }
+
   void setForeground(bool value) => _foreground = value;
   void invalidate() => _settled = null;
 

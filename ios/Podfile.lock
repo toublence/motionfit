@@ -110,6 +110,9 @@ PODS:
   - GoogleDataTransport (10.1.0):
     - nanopb (~> 3.30910.0)
     - PromisesObjC (~> 2.4)
+  - GoogleMobileAdsMediationUnity (4.21.0.0):
+    - Google-Mobile-Ads-SDK (~> 13.3)
+    - UnityAds (= 4.21.0)
   - GoogleUserMessagingPlatform (3.1.0)
   - GoogleUtilities/AppDelegateSwizzler (8.1.1):
     - GoogleUtilities/Environment
@@ -166,6 +169,9 @@ PODS:
   - sqflite_darwin (0.0.4):
     - Flutter
     - FlutterMacOS
+  - UnityAds (4.21.0):
+    - UnityCoherenceLib (~> 0.2.0)
+  - UnityCoherenceLib (0.2.0)
   - url_launcher_ios (0.0.1):
     - Flutter
   - video_player_avfoundation (0.0.1):
@@ -185,6 +191,7 @@ DEPENDENCIES:
   - flutter_timezone (from `.symlinks/plugins/flutter_timezone/ios`)
   - flutter_tts (from `.symlinks/plugins/flutter_tts/ios`)
   - google_mobile_ads (from `.symlinks/plugins/google_mobile_ads/ios`)
+  - GoogleMobileAdsMediationUnity (= 4.21.0.0)
   - in_app_review (from `.symlinks/plugins/in_app_review/ios`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
   - motionfit_pose (from `.symlinks/plugins/motionfit_pose/ios`)
@@ -211,6 +218,7 @@ SPEC REPOS:
     - GoogleAdsOnDeviceConversion
     - GoogleAppMeasurement
     - GoogleDataTransport
+    - GoogleMobileAdsMediationUnity
     - GoogleUserMessagingPlatform
     - GoogleUtilities
     - MediaPipeTasksCommon
@@ -218,6 +226,8 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - PromisesSwift
+    - UnityAds
+    - UnityCoherenceLib
 
 EXTERNAL SOURCES:
   app_tracking_transparency:
@@ -282,6 +292,7 @@ SPEC CHECKSUMS:
   GoogleAdsOnDeviceConversion: 80ce443fa1b4b5750913d53a04ecda644ff57744
   GoogleAppMeasurement: a6d37949071d456e9147dac6789c4342e0e7a8c5
   GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
+  GoogleMobileAdsMediationUnity: 788c57963a25f7b55be54052d79ab8a6d152528d
   GoogleUserMessagingPlatform: befe603da6501006420c206222acd449bba45a9c
   GoogleUtilities: 4f2618a4a1e762a1ee134a1e2323bba9843e06da
   in_app_review: 7dd1ea365263f834b8464673f9df72c80c17c937
@@ -296,10 +307,12 @@ SPEC CHECKSUMS:
   PromisesSwift: 217dea0fd5d2ad65222a109c48698add13cc1c5b
   shared_preferences_foundation: 7036424c3d8ec98dfe75ff1667cb0cd531ec82bb
   sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0
+  UnityAds: caaccd3367f77a9a64b061404c5cc8eb2df20103
+  UnityCoherenceLib: 9f7a49d0b53897b6627ad2ecf3b8369d015c66f4
   url_launcher_ios: 7a95fa5b60cc718a708b8f2966718e93db0cef1b
   video_player_avfoundation: 3453f792138786248960ca029747fcd9f318ef52
   webview_flutter_wkwebview: 8ebf4fded22593026f7dbff1fbff31ea98573c8d
 
-PODFILE CHECKSUM: 3e85edf0cc3fd845b5514d8edc82cbb17e5adbd8
+PODFILE CHECKSUM: 9e343711744a26b04f4dbcd018aa0bb8bb7a5324
 
 COCOAPODS: 1.16.2

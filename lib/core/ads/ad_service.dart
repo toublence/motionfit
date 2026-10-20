@@ -36,7 +36,23 @@ class AdService extends ChangeNotifier {
     AdFormat.interstitial => MotionFitAdUnits.interstitial,
     AdFormat.native => MotionFitAdUnits.native,
     AdFormat.banner => MotionFitAdUnits.banner,
+    AdFormat.appOpen => MotionFitAdUnits.appOpen,
   };
+  static const appOpenMaxAge = Duration(hours: 4);
+  static const appOpenWait = Duration(seconds: 3);
+  AdLoader? _appOpen;
+  DateTime? _appOpenLoadedAt;
+  Timer? _appOpenExpiry;
+  Timer? _appOpenDeadline;
+  bool _appOpenEnabled = false;
+  int _appOpenEntryCount = 0;
+  final Set<String> _monetizedWorkoutIds = {};
+  bool Function()? _appOpenValid;
+  void Function(DateTime)? _appOpenOnShown;
+  Map<String, Object>? _appOpenOpportunity;
+  bool _appOpenPresenting = false;
+  bool get appOpenPending => _appOpenOpportunity != null || _appOpenPresenting;
+
   static const interstitialMaxAge = Duration(minutes: 55);
   bool _ready = false;
   bool _sdkInitialized = false;
@@ -67,6 +83,10 @@ class AdService extends ChangeNotifier {
 
   void record(String name, Map<String, Object> fields) =>
       _analytics.adEvent(name, {
+        'ad_policy_version': AdEligibility.policyVersion,
+        'fullscreen_cooldown_seconds':
+            AdEligibility.interstitialCooldown.inSeconds,
+        'app_open_visit_count': _appOpenEntryCount,
         'workout_completion_count': _completedWorkoutCount,
         'onboarding_completed': _onboardingCompleted,
         'foreground': _foreground,
@@ -99,7 +119,7 @@ class AdService extends ChangeNotifier {
       _completedWorkoutCount =
           _snapshotCount! + _savedCompletions.difference(_snapshotIds).length;
     }
-    _syncInterstitial();
+    _syncFullScreenLoads();
   }
 
   void setForeground(bool value) {
@@ -107,9 +127,10 @@ class AdService extends ChangeNotifier {
     _foreground = value;
     _consent.setForeground(value);
     if (!value) {
+      cancelAppOpenOpportunity('background');
       _initializationRetry?.cancel();
     }
-    _syncInterstitial();
+    _syncFullScreenLoads();
     notifyListeners();
     if (value && _onboardingCompleted) unawaited(initialize());
   }
@@ -131,7 +152,7 @@ class AdService extends ChangeNotifier {
       if (_ready) {
         final allowed = await _consent.canRequestAds();
         if (allowed && !_consentRetryRequired) {
-          _syncInterstitial();
+          _syncFullScreenLoads();
           return true;
         }
         if (!allowed) _consent.invalidate();
@@ -178,7 +199,7 @@ class AdService extends ChangeNotifier {
         'elapsed_ms': elapsed.elapsedMilliseconds,
       });
       if (_consentRetryRequired) _scheduleInitializationRetry();
-      _syncInterstitial();
+      _syncFullScreenLoads();
       return true;
     } on Object catch (error, stack) {
       if (!_disposed) {
@@ -220,6 +241,8 @@ class AdService extends ChangeNotifier {
     if (!value) {
       _interstitial?.setEnabled(false);
       _interstitial?.discard('consent_change');
+      _appOpen?.setEnabled(false);
+      _appOpen?.discard('consent_change');
     }
     notifyListeners();
   }
@@ -253,6 +276,11 @@ class AdService extends ChangeNotifier {
     );
   }
 
+  void _syncFullScreenLoads() {
+    _syncInterstitial();
+    _syncAppOpen();
+  }
+
   void _syncInterstitial() {
     if (_disposed) return;
     final unit = unitFor(AdFormat.interstitial);
@@ -272,6 +300,7 @@ class AdService extends ChangeNotifier {
       _ready &&
           _foreground &&
           !_fullScreenShowing &&
+          _onboardingCompleted &&
           AdEligibility.canPreloadInterstitial(
             completedWorkoutCount: _completedWorkoutCount,
           ),
@@ -290,7 +319,7 @@ class AdService extends ChangeNotifier {
       _expiry = Timer(interstitialMaxAge, () {
         _loadedAt = null;
         _interstitial?.discard('expired');
-        _syncInterstitial();
+        _syncFullScreenLoads();
       });
     }
   }
@@ -325,12 +354,15 @@ class AdService extends ChangeNotifier {
     if (!AdEligibility.canShowInterstitial(
       completedWorkoutCount: completedWorkoutCount,
     )) {
-      reason = 'first_workout_protected';
+      reason = 'no_completed_workout';
+    } else if (workoutSessionId != null &&
+        _monetizedWorkoutIds.contains(workoutSessionId)) {
+      reason = 'workout_already_monetized';
     } else if (!AdEligibility.isInterstitialCooldownElapsed(
       lastShownAt: latest,
       now: current,
     )) {
-      reason = 'cooldown_10_minutes';
+      reason = 'fullscreen_cooldown';
     } else if (_disposed ||
         !_foreground ||
         isOpportunityValid?.call() == false) {
@@ -346,7 +378,7 @@ class AdService extends ChangeNotifier {
         'result': 'skipped',
         'skip_reason': reason,
       });
-      if (!_disposed) _syncInterstitial();
+      if (!_disposed) _syncFullScreenLoads();
       return false;
     }
     if (_loadedAt != null &&
@@ -362,14 +394,28 @@ class AdService extends ChangeNotifier {
         'result': 'skipped',
         'skip_reason': loader?.loading == true ? 'load_pending' : 'cache_empty',
       });
-      _syncInterstitial();
+      _syncFullScreenLoads();
       return false;
     }
     fields.addAll(loader!.context);
     _expiry?.cancel();
     _loadedAt = null;
+    return _presentFullScreen(
+      ad,
+      fields,
+      isOpportunityValid: isOpportunityValid,
+      onShown: onShown,
+    );
+  }
+
+  Future<bool> _presentFullScreen(
+    AdHandle ad,
+    Map<String, Object> fields, {
+    bool Function()? isOpportunityValid,
+    void Function(DateTime)? onShown,
+  }) {
     _fullScreenShowing = true;
-    loader.setEnabled(false);
+    _syncFullScreenLoads();
     var shown = false;
     var finished = false;
     final done = Completer<bool>();
@@ -409,7 +455,7 @@ class AdService extends ChangeNotifier {
       });
       unawaited(ad.dispose().catchError((Object _) {}));
       if (!done.isCompleted) done.complete(shown);
-      _syncInterstitial();
+      _syncFullScreenLoads();
     }
 
     unawaited(
@@ -442,6 +488,8 @@ class AdService extends ChangeNotifier {
                 if (finished || shown) return;
                 shown = true;
                 _lastInterstitialShownAt = _clock();
+                final workoutId = fields['workout_session_id'];
+                if (workoutId is String) _monetizedWorkoutIds.add(workoutId);
                 record('mf2_ad_show_result', {...fields, 'result': 'showed'});
                 try {
                   onShown?.call(_lastInterstitialShownAt!);
@@ -470,9 +518,190 @@ class AdService extends ChangeNotifier {
     return done.future;
   }
 
+  String? _appOpenBlockReason() {
+    if (_disposed || !_foreground || _appOpenValid?.call() != true) {
+      return 'inactive_opportunity';
+    }
+    if (!_onboardingCompleted) return 'onboarding_incomplete';
+    if (_consent.trackingAuthorizationPending) return 'tracking_prompt_pending';
+    if (!AdEligibility.canShowAppOpen(appEntryCount: _appOpenEntryCount)) {
+      return 'app_open_intro_protected';
+    }
+    if (!AdEligibility.isInterstitialCooldownElapsed(
+      lastShownAt: _lastInterstitialShownAt,
+      now: _clock(),
+    )) {
+      return 'fullscreen_cooldown';
+    }
+    if (_fullScreenShowing) return 'full_screen_showing';
+    return null;
+  }
+
+  /// One bounded loading-screen opportunity. A late load is cached for a later
+  /// foreground, never displayed after the user has entered the app.
+  void beginAppOpenOpportunity({
+    required String trigger,
+    required int appEntryCount,
+    required DateTime? lastFullScreenShownAt,
+    required bool Function() isOpportunityValid,
+    required void Function(DateTime) onShown,
+  }) {
+    if (_disposed) return;
+    if (unitFor(AdFormat.appOpen) == null) {
+      record('mf2_ad_decision', {
+        'ad_format': 'appOpen',
+        'ad_placement': 'app_open',
+        'result': 'skipped',
+        'skip_reason': 'unconfigured',
+      });
+      return;
+    }
+    // Repeated resume notifications cannot extend the deadline or show twice.
+    if (appOpenPending) return;
+    _appOpenEnabled = true;
+    _appOpenEntryCount = appEntryCount;
+    if (lastFullScreenShownAt != null &&
+        (_lastInterstitialShownAt == null ||
+            lastFullScreenShownAt.isAfter(_lastInterstitialShownAt!))) {
+      _lastInterstitialShownAt = lastFullScreenShownAt;
+    }
+    _appOpenValid = isOpportunityValid;
+    _appOpenOnShown = onShown;
+    _appOpenOpportunity = {
+      'ad_format': 'appOpen',
+      'ad_placement': 'app_open',
+      'opportunity_id': const Uuid().v7(),
+      'trigger': trigger,
+    };
+    record('mf2_ad_opportunity', _appOpenOpportunity!);
+    final reason = _appOpenBlockReason();
+    if (reason != null) {
+      cancelAppOpenOpportunity(reason);
+      _syncFullScreenLoads();
+      return;
+    }
+    _appOpenDeadline = Timer(appOpenWait, () {
+      cancelAppOpenOpportunity(
+        _appOpenBlockReason() ??
+            (!_ready ? 'sdk_not_ready' : 'load_not_ready_within_window'),
+      );
+    });
+    notifyListeners();
+    _syncFullScreenLoads();
+    unawaited(initialize());
+  }
+
+  void cancelAppOpenOpportunity(String reason, {bool notify = true}) {
+    final fields = _appOpenOpportunity;
+    if (fields == null) return;
+    _appOpenOpportunity = null;
+    _appOpenDeadline?.cancel();
+    _appOpenValid = null;
+    _appOpenOnShown = null;
+    record('mf2_ad_decision', {
+      ...fields,
+      'result': 'skipped',
+      'skip_reason': reason,
+    });
+    if (!_disposed && notify) notifyListeners();
+  }
+
+  void _syncAppOpen() {
+    if (_disposed || !_appOpenEnabled) return;
+    final unit = unitFor(AdFormat.appOpen);
+    if (unit == null) return;
+    _appOpen ??= AdLoader(
+      format: AdFormat.appOpen,
+      placement: 'app_open',
+      unitId: unit,
+      telemetry: record,
+      create: (callbacks) => createAd(
+        format: AdFormat.appOpen,
+        unitId: unit,
+        callbacks: callbacks,
+      ),
+    )..addListener(_onAppOpenChanged);
+    _appOpen!.setEnabled(
+      _ready && _foreground && !_fullScreenShowing && _onboardingCompleted,
+    );
+    _maybeShowAppOpen();
+  }
+
+  void _onAppOpenChanged() {
+    if (_disposed) return;
+    if (_appOpen?.ad == null) {
+      _appOpenLoadedAt = null;
+      _appOpenExpiry?.cancel();
+    } else if (_appOpenLoadedAt == null) {
+      _appOpenLoadedAt = _clock();
+      _appOpenExpiry?.cancel();
+      _appOpenExpiry = Timer(appOpenMaxAge, () {
+        _appOpen?.discard('expired');
+        _syncAppOpen();
+      });
+    }
+    _maybeShowAppOpen();
+  }
+
+  void _maybeShowAppOpen() {
+    if (_appOpenOpportunity == null || !_ready || _fullScreenShowing) return;
+    final reason = _appOpenBlockReason();
+    if (reason != null) {
+      cancelAppOpenOpportunity(reason);
+      return;
+    }
+    if (_appOpenLoadedAt != null &&
+        _clock().difference(_appOpenLoadedAt!) >= appOpenMaxAge) {
+      _appOpen?.discard('expired');
+      _syncAppOpen();
+      return;
+    }
+    final ad = _appOpen?.takeAd();
+    if (ad == null) return;
+    final fields = {
+      ..._appOpenOpportunity!,
+      ..._appOpen!.context,
+      'cache_age_ms': _clock().difference(_appOpenLoadedAt!).inMilliseconds,
+    };
+    final valid = _appOpenValid!;
+    final onShown = _appOpenOnShown;
+    _appOpenOpportunity = null;
+    _appOpenDeadline?.cancel();
+    _appOpenValid = null;
+    _appOpenOnShown = null;
+    _appOpenLoadedAt = null;
+    _appOpenExpiry?.cancel();
+    // Keep the loading cover until a real presentation/terminal callback.
+    _appOpenPresenting = true;
+    void releaseCover() {
+      if (!_appOpenPresenting) return;
+      _appOpenPresenting = false;
+      if (!_disposed) notifyListeners();
+    }
+
+    // Synchronously reserve the same fullscreen lock as workout interstitials.
+    final result = _presentFullScreen(
+      ad,
+      fields,
+      isOpportunityValid: valid,
+      onShown: (at) {
+        releaseCover();
+        onShown?.call(at);
+      },
+    );
+    notifyListeners();
+    unawaited(result.then((_) => releaseCover()));
+  }
+
   @override
   void dispose() {
+    cancelAppOpenOpportunity('disposed', notify: false);
     _disposed = true;
+    _appOpenPresenting = false;
+    _appOpenDeadline?.cancel();
+    _appOpenExpiry?.cancel();
+    _appOpen?.removeListener(_onAppOpenChanged);
+    _appOpen?.dispose();
     _initializationRetry?.cancel();
     _expiry?.cancel();
     _interstitial?.removeListener(_onInterstitialChanged);

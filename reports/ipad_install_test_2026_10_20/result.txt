@@ -1,0 +1,40 @@
+Motionfit iPad 설치 및 실기기 테스트 결과
+2026-10-20 (Asia/Seoul)
+프로젝트: /Users/nam/projects/flutter/motionfit
+기기: iPad Air 11-inch (M2), iPadOS 26.6.2
+앱: fit.motionfit.app / 1.6.7(67) / Release / lib/main.dart
+
+완료
+- flutter build ios --release --no-pub 성공, iPad 설치 성공.
+- 기존 Xcode 버전 설정 유지. 앱 데이터 삭제/초기화 명령 사용 없음.
+- 일반 Release 실행 파일에 Unity SDK/어댑터 링크 확인, QA 채널 제외 확인.
+- 온보딩 3단계 이동과 광고/추적 설명 화면 표시 확인.
+- 사용자 직접 조작 중 운동 화면으로 진행되어 자동 설명 화면 버튼 테스트는 화면 불일치로 실패.
+  이 테스트는 앱 기능 실패로 분류하지 않음. 추적/카메라 권한을 에이전트가 변경하지 않음.
+- 이후 운동 완료 화면에서 스쿼트 5회, 1세트, 13초 기록과 저장 완료 문구 확인.
+  실제 자세 인식 정확도나 5회 운동 수행을 에이전트가 독립 검증한 것은 아님.
+- 성장/설정/운동 탭 이동, Home 버튼으로 백그라운드 전환 후 복귀 테스트 PASS.
+- 최종 홈 화면에 5회 기록 유지 및 Test mode 배너 표시 확인.
+- Unity 4.21.0 production mode, Game ID 6208809 초기화 성공 및 valid bidding token 로그 확인.
+- 앱 소스 수정 없음. 테스트 스크립트·빌드 로그·스크린샷은 본 reports 디렉터리에 저장.
+
+인증서 안내 정정
+- 초기 Xcode 테스트 오류 문구는 Developer App Certificate is not trusted 였으나,
+  실제 인증서/기기 프로비저닝은 유효했고 iPad 설정의 수동 신뢰 변경 없이 테스트 실행에 성공했다.
+- 중단되어 있던 Xcode의 동일 앱 디버깅 세션을 종료하고 테스트 실행기를 직접 실행한 뒤 정상 진행.
+- 따라서 설정에서 Apple Development 항목을 찾거나 새로 신뢰할 필요 없음.
+
+범위
+- 이번 최신 일반 앱 빌드에서는 Unity 초기화와 토큰 생성, 테스트 배너 표시를 확인.
+- 화면의 테스트 배너가 Unity에서 제공됐다는 어댑터 응답은 이번 실행에서 수집하지 않음.
+- Unity 전면의 로드/표시/노출/닫기 재검증은 수행하지 않음.
+  이전 빌드의 해당 결과는 docs/validation/unity-ios-2026-10-20/result.txt 참조.
+- 전체 회귀, 모든 운동의 자세 인식 정확도, App Store 아카이브/업로드는 범위에 포함하지 않음.
+
+증거
+- build.log / install.log / build-verification.json
+- relaunch-console.log: Unity 초기화/토큰 및 운동 런타임 로그.
+- onboarding.xcresult / current.xcresult: 온보딩/운동 완료 화면.
+- navigation.xcresult / ui-navigation.log: 화면 이동·앱 복귀 테스트 PASS.
+- final-home.png / navigation-screenshots/: 실제 iPad 화면.
+- initial/system/retry 결과는 최초 테스트 도구 실행 문제 진단 기록으로 보존.

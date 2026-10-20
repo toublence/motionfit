@@ -3,9 +3,10 @@ import 'ad_sdk.dart';
 
 abstract final class MotionFitAdUnits {
   static const iosAppId = 'ca-app-pub-6169297934919363~5425389550';
-  // Supplied and confirmed by the app owner; no app-open placement is enabled.
+  // Supplied and confirmed by the app owner. Android app-open is unconfigured.
   static const iosAppOpen = 'ca-app-pub-6169297934919363/9732714503';
   static const _ios = {
+    AdFormat.appOpen: iosAppOpen,
     AdFormat.banner: String.fromEnvironment(
       'ADMOB_IOS_BANNER',
       defaultValue: 'ca-app-pub-6169297934919363/9696065805',
@@ -19,6 +20,7 @@ abstract final class MotionFitAdUnits {
     AdFormat.interstitial: 'ca-app-pub-6169297934919363/8790349687',
   };
   static const _testIos = {
+    AdFormat.appOpen: 'ca-app-pub-3940256099942544/5575463023',
     AdFormat.banner: 'ca-app-pub-3940256099942544/2934735716',
     AdFormat.native: 'ca-app-pub-3940256099942544/3986624511',
     AdFormat.interstitial: 'ca-app-pub-3940256099942544/4411468910',
@@ -61,19 +63,21 @@ abstract final class MotionFitAdUnits {
     isWeb: kIsWeb,
     useTestAds: testMode,
   );
+  static String? get appOpen => forFormat(AdFormat.appOpen);
   static String? get banner => forFormat(AdFormat.banner);
   static String? get native => forFormat(AdFormat.native);
   static String? get interstitial => forFormat(AdFormat.interstitial);
   static Map<String, String> releaseUnits(TargetPlatform platform) => {
     for (final format in AdFormat.values)
-      format.name:
-          resolve(
-            format,
-            platform: platform,
-            isWeb: false,
-            useTestAds: false,
-          ) ??
-          'unconfigured',
+      if (format != AdFormat.appOpen || platform == TargetPlatform.iOS)
+        format.name:
+            resolve(
+              format,
+              platform: platform,
+              isWeb: false,
+              useTestAds: false,
+            ) ??
+            'unconfigured',
   };
   static List<String> validateReleaseUnits(TargetPlatform platform) {
     final units = releaseUnits(platform);

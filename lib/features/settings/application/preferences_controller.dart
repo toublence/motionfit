@@ -105,6 +105,11 @@ class PreferencesController extends Notifier<UserPreferences> {
     ),
   );
 
+  Future<void> recordAppOpenVisit() => _serialize(
+    () =>
+        _commit(state.copyWith(appOpenVisitCount: state.appOpenVisitCount + 1)),
+  );
+
   Future<void> markInterstitialShown({DateTime? shownAt}) => _serialize(
     () => _commit(
       state.copyWith(lastInterstitialShownAt: shownAt ?? DateTime.now()),

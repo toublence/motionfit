@@ -1,0 +1,279 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project reports/ipad_install_test_2026_10_20/ui/MotionfitUnityQA.xcodeproj -scheme MotionfitUnityQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-ipad-ui-20261020 -resultBundlePath reports/ipad_install_test_2026_10_20/system.xcresult "-only-testing:MotionfitUnityQA/MotionfitUnityQA/testSystem"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/system.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'MotionfitUnityQA' in project 'MotionfitUnityQA' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: a76d978163d8a6395cc70d717b79e68f
+Build description path: /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/XCBuildData/a76d978163d8a6395cc70d717b79e68f.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk /tmp/motionfit-ipad-ui-20261020/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui/MotionfitUnityQA.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -o /tmp/motionfit-ipad-ui-20261020/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache
+
+ProcessProductPackaging "" /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA.xctest.xcent (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "2CZQR7Q423.fit.motionfit.app.unityqa.xctrunner";
+    "com.apple.developer.team-identifier" = 2CZQR7Q423;
+    "get-task-allow" = 1;
+    "keychain-access-groups" =     (
+        "2CZQR7Q423.fit.motionfit.app.unityqa.xctrunner"
+    );
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA.xctest.xcent
+
+ProcessProductPackagingDER /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA.xctest.xcent /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA.xctest.xcent.der (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    /usr/bin/derq query -f xml -i /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA.xctest.xcent -o /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA.xctest.xcent.der --raw
+
+SwiftDriver MotionfitUnityQA normal arm64 com.apple.xcode.tools.swift.compiler (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name MotionfitUnityQA -Onone -enforce-exclusivity\=checked @/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -target arm64-apple-ios26.0 -g -module-cache-path /tmp/motionfit-ipad-ui-20261020/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /tmp/motionfit-ipad-ui-20261020/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /tmp/motionfit-ipad-ui-20261020/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache -output-file-map /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /tmp/motionfit-ipad-ui-20261020/ModuleCache.noindex -sdk-module-cache-path /tmp/motionfit-ipad-ui-20261020/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.swiftmodule -validate-clang-modules-once -clang-build-session-file /tmp/motionfit-ipad-ui-20261020/ModuleCache.noindex/Session.modulevalidation -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA_const_extract_protocols.json -Xcc -iquote -Xcc /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA-generated-files.hmap -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA-own-target-headers.hmap -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA-all-target-headers.hmap -Xcc -iquote -Xcc /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA-project-headers.hmap -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/include -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/DerivedSources-normal/arm64 -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/DerivedSources/arm64 -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA-Swift.h -working-directory /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ MotionfitUnityQA.swift /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui/MotionfitUnityQA.swift (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+
+SwiftCompile normal arm64 /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui/MotionfitUnityQA.swift (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ MotionfitUnityQA (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+
+SwiftCompile normal arm64 /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui/MotionfitUnityQA.swift (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling MotionfitUnityQA.swift (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+
+SwiftDriver\ Compilation MotionfitUnityQA normal arm64 com.apple.xcode.tools.swift.compiler (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name MotionfitUnityQA -Onone -enforce-exclusivity\=checked @/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -target arm64-apple-ios26.0 -g -module-cache-path /tmp/motionfit-ipad-ui-20261020/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /tmp/motionfit-ipad-ui-20261020/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /tmp/motionfit-ipad-ui-20261020/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache -output-file-map /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /tmp/motionfit-ipad-ui-20261020/ModuleCache.noindex -sdk-module-cache-path /tmp/motionfit-ipad-ui-20261020/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.swiftmodule -validate-clang-modules-once -clang-build-session-file /tmp/motionfit-ipad-ui-20261020/ModuleCache.noindex/Session.modulevalidation -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA_const_extract_protocols.json -Xcc -iquote -Xcc /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA-generated-files.hmap -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA-own-target-headers.hmap -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA-all-target-headers.hmap -Xcc -iquote -Xcc /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA-project-headers.hmap -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/include -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/DerivedSources-normal/arm64 -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/DerivedSources/arm64 -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA-Swift.h -working-directory /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for MotionfitUnityQA (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+
+SwiftDriver\ Compilation\ Requirements MotionfitUnityQA normal arm64 com.apple.xcode.tools.swift.compiler (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name MotionfitUnityQA -Onone -enforce-exclusivity\=checked @/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -target arm64-apple-ios26.0 -g -module-cache-path /tmp/motionfit-ipad-ui-20261020/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /tmp/motionfit-ipad-ui-20261020/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /tmp/motionfit-ipad-ui-20261020/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache -output-file-map /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /tmp/motionfit-ipad-ui-20261020/ModuleCache.noindex -sdk-module-cache-path /tmp/motionfit-ipad-ui-20261020/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.swiftmodule -validate-clang-modules-once -clang-build-session-file /tmp/motionfit-ipad-ui-20261020/ModuleCache.noindex/Session.modulevalidation -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA_const_extract_protocols.json -Xcc -iquote -Xcc /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA-generated-files.hmap -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA-own-target-headers.hmap -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA-all-target-headers.hmap -Xcc -iquote -Xcc /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA-project-headers.hmap -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/include -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/DerivedSources-normal/arm64 -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/DerivedSources/arm64 -Xcc -I/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA-Swift.h -working-directory /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui -experimental-emit-module-separately -disable-cmo
+
+Copy /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA.swiftmodule/arm64-apple-ios.abi.json /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.abi.json (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.abi.json /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA.swiftmodule/arm64-apple-ios.abi.json
+
+Copy /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA.swiftmodule/arm64-apple-ios.swiftmodule /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.swiftmodule (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.swiftmodule /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA.swiftmodule/arm64-apple-ios.swiftmodule
+
+Copy /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.swiftsourceinfo (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.swiftsourceinfo /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo
+
+Ld /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/MotionfitUnityQA normal (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios26.0 -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -O0 -L/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphoneos -L/tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphoneos -F/tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -filelist /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.LinkFileList -Xlinker -rpath -Xlinker @loader_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.swiftmodule @/tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA-linker-args.resp -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport -framework Foundation -Xlinker -no_adhoc_codesign -o /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/MotionfitUnityQA
+
+ExtractAppIntentsMetadata (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name MotionfitUnityQA --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk --xcode-version 17B100 --platform-family iOS --deployment-target 26.0 --bundle-identifier fit.motionfit.app.unityqa --output /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest --target-triple arm64-apple-ios26.0 --binary-file /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/MotionfitUnityQA --dependency-file /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA_dependency_info.dat --stringsdata-file /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.SwiftFileList --metadata-file-list /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA.DependencyMetadataFileList --static-metadata-file-list /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA.DependencyStaticMetadataFileList --swift-const-vals-list /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/Objects-normal/arm64/MotionfitUnityQA.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-10-20 02:59:20.234 appintentsmetadataprocessor[77683:5533197] Starting appintentsmetadataprocessor export
+2026-10-20 02:59:20.235 appintentsmetadataprocessor[77683:5533197] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+ProcessInfoPlistFile /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/Info.plist /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/empty-MotionfitUnityQA.plist (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    builtin-infoPlistUtility /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/empty-MotionfitUnityQA.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/ProductTypeInfoPlistAdditions.plist -requiredArchitecture arm64 -o /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/Info.plist
+
+GenerateDSYMFile /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest.dSYM /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/MotionfitUnityQA (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/MotionfitUnityQA -o /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest.dSYM
+
+CopySwiftLibs /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    builtin-swiftStdLibTool --copy --verbose --sign F6E1562BAA0DE14FEC77153D483EA318853A7AAB --scan-executable /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/MotionfitUnityQA --scan-folder /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/Frameworks --scan-folder /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/PlugIns --scan-folder /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/SystemExtensions --scan-folder /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/Extensions --scan-folder /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework --platform iphoneos --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+CodeSign /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    
+    Signing Identity:     "Apple Development: ChangHyun Nam (67BGHNS3RH)"
+    Provisioning Profile: "iOS Team Provisioning Profile: *"
+                          (2cb1a10e-b3e6-49d3-9767-f111dd993f9b)
+    
+    /usr/bin/codesign --force --sign F6E1562BAA0DE14FEC77153D483EA318853A7AAB --entitlements /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA.xctest.xcent --timestamp\=none --generate-entitlement-der /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest
+
+CodeSign /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app (in target 'MotionfitUnityQA' from project 'MotionfitUnityQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/ui
+    
+    Signing Identity:     "Apple Development: ChangHyun Nam (67BGHNS3RH)"
+    Provisioning Profile: "iOS Team Provisioning Profile: *"
+                          (2cb1a10e-b3e6-49d3-9767-f111dd993f9b)
+    
+    /usr/bin/codesign --force --sign F6E1562BAA0DE14FEC77153D483EA318853A7AAB --entitlements /tmp/motionfit-ipad-ui-20261020/Build/Intermediates.noindex/MotionfitUnityQA.build/Debug-iphoneos/MotionfitUnityQA.build/MotionfitUnityQA.xctest.xcent --timestamp\=none --generate-entitlement-der /tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app
+/tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app: replacing existing signature
+
+2026-10-20 02:59:22.290 xcodebuild[77644:5532990]  IDELaunchReport: c0dc5c1a56242b50:c0dc5c1a56242b50: Finished with error: The application could not be launched because the Developer App Certificate is not trusted.
+Domain: IDELaunchCoreDevice
+Code: 0
+Recovery Suggestion: Verify that the Developer App certificate for your account is trusted on your device. Open Settings on the device and navigate to General -> VPN & Device Management, then select your Developer App certificate to trust it.
+User Info: {
+    DVTErrorCreationDateKey = "2026-10-19 17:59:22 +0000";
+    IDERunOperationFailingWorker = IDELaunchCoreDeviceWorker;
+}
+--
+The application failed to launch.
+Domain: com.apple.dt.CoreDeviceError
+Code: 10002
+User Info: {
+    BundleIdentifier = "fit.motionfit.app.unityqa.xctrunner";
+}
+--
+The request to open "fit.motionfit.app.unityqa.xctrunner" failed.
+Domain: FBSOpenApplicationServiceErrorDomain
+Code: 1
+Failure Reason: The request was denied by service delegate (SBMainWorkspace) for reason: Security ("Unable to launch fit.motionfit.app.unityqa.xctrunner because it has an invalid code signature, inadequate entitlements or its profile has not been explicitly trusted by the user").
+User Info: {
+    BSErrorCodeDescription = RequestDenied;
+    FBSOpenApplicationRequestID = 0xc0fa;
+}
+--
+The operation couldn’t be completed. Unable to launch fit.motionfit.app.unityqa.xctrunner because it has an invalid code signature, inadequate entitlements or its profile has not been explicitly trusted by the user.
+Domain: FBSOpenApplicationErrorDomain
+Code: 3
+Failure Reason: Unable to launch fit.motionfit.app.unityqa.xctrunner because it has an invalid code signature, inadequate entitlements or its profile has not been explicitly trusted by the user.
+User Info: {
+    BSErrorCodeDescription = Security;
+}
+--
+
+2026-10-20 02:59:22.290 xcodebuild[77644:5532990]  IDELaunchReport: c0dc5c1a56242b50:c0dc5c1a56242b50: com.apple.dt.IDERunOperationWorkerFinished {
+    "device_identifier" = "00008112-001848821413601E";
+    "device_isCoreDevice" = 1;
+    "device_model" = "iPad14,8";
+    "device_osBuild" = "26.6.2 (23G90)";
+    "device_osBuild_monotonic" = 2306009000;
+    "device_os_variant" = 1;
+    "device_platform" = "com.apple.platform.iphoneos";
+    "device_platform_family" = 2;
+    "device_reality" = 1;
+    "device_thinningType" = "iPad14,8";
+    "device_transport" = 1;
+    "launchSession_schemeCommand" = Test;
+    "launchSession_schemeCommand_enum" = 2;
+    "launchSession_targetArch" = arm64;
+    "launchSession_targetArch_enum" = 6;
+    "operation_duration_ms" = 1519;
+    "operation_errorCode" = 0;
+    "operation_errorDomain" = IDELaunchCoreDevice;
+    "operation_errorWorker" = IDELaunchCoreDeviceWorker;
+    "operation_error_reportable" = 0;
+    "operation_name" = IDERunOperationWorkerGroup;
+    "param_consoleMode" = 0;
+    "param_debugger_attachToExtensions" = 0;
+    "param_debugger_attachToXPC" = 0;
+    "param_debugger_type" = 1;
+    "param_destination_isProxy" = 0;
+    "param_destination_platform" = "com.apple.platform.iphoneos";
+    "param_diag_MTE_enable" = 0;
+    "param_diag_MainThreadChecker_stopOnIssue" = 0;
+    "param_diag_MallocStackLogging_enableDuringAttach" = 0;
+    "param_diag_MallocStackLogging_enableForXPC" = 0;
+    "param_diag_allowLocationSimulation" = 1;
+    "param_diag_checker_mtc_enable" = 0;
+    "param_diag_checker_tpc_enable" = 1;
+    "param_diag_gpu_frameCapture_enable" = 3;
+    "param_diag_gpu_shaderValidation_enable" = 0;
+    "param_diag_gpu_validation_enable" = 1;
+    "param_diag_guardMalloc_enable" = 0;
+    "param_diag_memoryGraphOnResourceException" = 0;
+    "param_diag_queueDebugging_enable" = 1;
+    "param_diag_runtimeProfile_generate" = 0;
+    "param_diag_sanitizer_asan_enable" = 0;
+    "param_diag_sanitizer_tsan_enable" = 0;
+    "param_diag_sanitizer_tsan_stopOnIssue" = 0;
+    "param_diag_sanitizer_ubsan_enable" = 0;
+    "param_diag_sanitizer_ubsan_stopOnIssue" = 0;
+    "param_diag_showNonLocalizedStrings" = 0;
+    "param_diag_viewDebugging_enabled" = 0;
+    "param_diag_viewDebugging_insertDylibOnLaunch" = 0;
+    "param_install_style" = 2;
+    "param_launcher_UID" = 2;
+    "param_launcher_allowDeviceSensorReplayData" = 0;
+    "param_launcher_kind" = 0;
+    "param_launcher_style" = 0;
+    "param_launcher_substyle" = 64;
+    "param_lldbVersion_component_idx_1" = 0;
+    "param_lldbVersion_monotonic" = 170302340003;
+    "param_runnable_appExtensionHostRunMode" = 0;
+    "param_runnable_productType" = "com.apple.product-type.application";
+    "param_testing_launchedForTesting" = 1;
+    "param_testing_suppressSimulatorApp" = 1;
+    "param_testing_usingCLI" = 0;
+    "sdk_canonicalName" = "iphoneos26.1";
+    "sdk_osVersion" = "26.1";
+    "sdk_platformID" = 2;
+    "sdk_variant" = iphoneos;
+    "sdk_version_monotonic" = 2301007700;
+}
+
+
+*** If you believe this error represents a bug, please attach the result bundle at /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/system.xcresult
+
+2026-10-20 02:59:22.630 xcodebuild[77644:5532983]  IDETestOperationsObserverDebug: Failure collecting diagnostics from devices: Process exited with error 1:
+ ERROR: The operation couldn’t be completed. (CoreDeviceCLISupport.DiagnoseError error 0.)
+This tool generates files that allow Apple to investigate issues with your
+computer and help improve Apple products. The files might contain personal
+information found on your device or associated with your Apple Account(s),
+including but not limited to your name, serial numbers of your device,
+your device name, your device's location over the last one to two days,
+your attached peripheral devices, your user name, your email address and
+email settings, file paths, file names, Siri suggestions, your computer's
+IP addresses, and network connection information.
+
+This information is used by Apple in accordance with its privacy policy
+(www.apple.com/privacy) and is not shared with any other company. By using
+this tool and sending the results to Apple, you consent to Apple using the
+contents of these files to improve Apple products.
+
+An error occurred while running devicectl diagnose. Will archive the diagnostics collected thus far.
+Wrote file to /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/system.xcresult/Staging/1_Test/Diagnostics/devicectl_diagnostics.zip
+Partial devicectl diagnose bundle located here: /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/system.xcresult/Staging/1_Test/Diagnostics/devicectl_diagnostics.zip
+
+2026-10-20 02:59:22.637 xcodebuild[77644:5532911] [MT] IDETestOperationsObserverDebug: 2.091 elapsed -- Testing started completed.
+2026-10-20 02:59:22.637 xcodebuild[77644:5532911] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-20 02:59:22.637 xcodebuild[77644:5532911] [MT] IDETestOperationsObserverDebug: 2.091 sec, +2.091 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/system.xcresult
+
+Testing failed:
+	The application could not be launched because the Developer App Certificate is not trusted.
+	MotionfitUnityQA-Runner encountered an error (Failed to install or launch the test runner. (Underlying Error: The application could not be launched because the Developer App Certificate is not trusted. Verify that the Developer App certificate for your account is trusted on your device. Open Settings on the device and navigate to General -> VPN & Device Management, then select your Developer App certificate to trust it. (Underlying Error: The application failed to launch. (Underlying Error: The request to open "fit.motionfit.app.unityqa.xctrunner" failed. The request was denied by service delegate (SBMainWorkspace) for reason: Security ("Unable to launch fit.motionfit.app.unityqa.xctrunner because it has an invalid code signature, inadequate entitlements or its profile has not been explicitly trusted by the user"). (Underlying Error: The operation couldn’t be completed. Unable to launch fit.motionfit.app.unityqa.xctrunner because it has an invalid code signature, inadequate entitlements or its profile has not been explicitly trusted by the user.)))))
+
+** TEST FAILED **
+
+Testing started

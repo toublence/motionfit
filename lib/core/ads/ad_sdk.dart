@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'ad_failure.dart';
 
-enum AdFormat { interstitial, native, banner }
+enum AdFormat { interstitial, native, banner, appOpen }
 
 class AdCallbacks {
   const AdCallbacks({
@@ -110,6 +110,7 @@ class _GoogleAdHandle implements AdHandle {
   final AdCallbacks callbacks;
   AdWithView? _view;
   InterstitialAd? _interstitial;
+  AppOpenAd? _appOpen;
   bool _disposed = false;
   void _loaded(Ad ad) {
     if (_disposed) {
@@ -121,6 +122,23 @@ class _GoogleAdHandle implements AdHandle {
 
   @override
   Future<void> load() {
+    if (format == AdFormat.appOpen) {
+      return AppOpenAd.load(
+        adUnitId: unit,
+        request: const AdRequest(),
+        adLoadCallback: AppOpenAdLoadCallback(
+          onAdLoaded: (ad) {
+            if (_disposed) {
+              unawaited(ad.dispose());
+              return;
+            }
+            _appOpen = ad;
+            _loaded(ad);
+          },
+          onAdFailedToLoad: (e) => callbacks.failed(AdFailure.sdk(e)),
+        ),
+      );
+    }
     if (format != AdFormat.interstitial) return _view!.load();
     return InterstitialAd.load(
       adUnitId: unit,
@@ -141,6 +159,20 @@ class _GoogleAdHandle implements AdHandle {
 
   @override
   Future<void> show(AdShowCallbacks events) {
+    if (format == AdFormat.appOpen) {
+      final ad = _appOpen;
+      if (_disposed || ad == null)
+        return Future.error(StateError('Ad not ready'));
+      ad.fullScreenContentCallback = FullScreenContentCallback<AppOpenAd>(
+        onAdShowedFullScreenContent: (_) => events.showed(),
+        onAdDismissedFullScreenContent: (_) => events.dismissed(),
+        onAdFailedToShowFullScreenContent: (_, e) =>
+            events.failed(AdFailure.sdk(e)),
+        onAdImpression: (_) => callbacks.impression(),
+        onAdClicked: (_) => callbacks.clicked(),
+      );
+      return ad.show();
+    }
     final ad = _interstitial;
     if (_disposed || ad == null) {
       return Future.error(StateError('Ad not ready'));
@@ -162,6 +194,6 @@ class _GoogleAdHandle implements AdHandle {
   Future<void> dispose() async {
     if (_disposed) return;
     _disposed = true;
-    await (_view ?? _interstitial)?.dispose();
+    await (_view ?? _interstitial ?? _appOpen)?.dispose();
   }
 }

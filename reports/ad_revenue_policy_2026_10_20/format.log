@@ -1,0 +1,10 @@
+Formatted lib/core/ads/ad_service.dart
+Formatted lib/core/ads/app_open_gate.dart
+Formatted lib/features/settings/domain/user_preferences.dart
+Formatted lib/features/settings/application/preferences_controller.dart
+Formatted test/core/ads/ad_eligibility_test.dart
+Formatted test/core/ads/interstitial_test.dart
+Formatted test/core/ads/app_open_test.dart
+Formatted test/core/ads/app_open_gate_test.dart
+Formatted test/features/settings/domain/user_preferences_test.dart
+Formatted 12 files (9 changed) in 0.04 seconds.

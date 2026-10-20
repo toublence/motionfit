@@ -1,0 +1,17 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "CD0A2485-483B-4625-B1A4-39614B4738FB.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "installed-app_0_11CF2F34-118E-425B-99D8-1EA7770E1286.png",
+        "timestamp" : 1792432824.985
+      }
+    ],
+    "testIdentifier" : "MotionfitUnityQA/testSnapshot()",
+    "testIdentifierURL" : "test://com.apple.xcode/MotionfitUnityQA/MotionfitUnityQA/MotionfitUnityQA/testSnapshot"
+  }
+]

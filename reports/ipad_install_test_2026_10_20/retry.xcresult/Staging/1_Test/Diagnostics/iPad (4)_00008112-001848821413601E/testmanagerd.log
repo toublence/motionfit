@@ -1,0 +1,24 @@
+02:58:06.836 xcodebuild[77570:5531835] Waiting for Core Device device iPad (4) (Connected, iOS 26.6.2 23G90, 315AE942-B017-5187-A2DA-A0B2490459AD) to become available
+02:58:06.836 xcodebuild[77570:5531834] Connecting to service com.apple.dt.testmanagerd.remote on Core Device device iPad (4) (Connected, iOS 26.6.2 23G90, 315AE942-B017-5187-A2DA-A0B2490459AD)
+02:58:06.855 xcodebuild[77570:5531835] Successfully connected to service com.apple.dt.testmanagerd.remote on Core Device device iPad (4) (Connected, iOS 26.6.2 23G90, 315AE942-B017-5187-A2DA-A0B2490459AD)
+02:58:06.855 xcodebuild[77570:5531835] Successfully connected to testmanagerd
+02:58:06.855 xcodebuild[77570:5531835] Initiating control session with IDE capabilities: <XCTCapabilities: 0x121cb4490>: {
+}
+02:58:06.863 xcodebuild[77570:5531875] Got reply to control session initiation request (result:error): <XCTCapabilities: 0x11991d0a0>: {
+    "authorize test session capability" = 1;
+    "automation mode" = 1;
+    "daemon container sandbox extension" = 1;
+    "initiate daemon control session capability" = 4;
+    "initiate test runner session capability" = 2;
+    "record UI interaction capability" = 2;
+    "recording events as source code" = 1;
+    "report crashes capability" = 1;
+    "request log archive capability" = 1;
+    "request spindump capability" = 2;
+    "request tailspin capability" = 1;
+    "supports delayed attachment transfers" = 1;
+}: (null)
+02:58:06.938 xcodebuild[77570:5531834] Requesting crash report collection for process names: runningboardd, MotionfitUnityQA-Runner, SpringBoard, DTServiceHub, testmanagerd, FrontBoard, debugserver, backboardd, assertiond, xctest, MotionfitUnityQA
+02:58:06.945 xcodebuild[77570:5531875] Got reply to crash report collection request (error: (null))
+02:58:08.636 xcodebuild[77570:5531874] Requesting authorization for pid 20201
+02:58:08.640 xcodebuild[77570:5531875] Got reply to authorization request for pid 20201 (result:error): 1: (null)

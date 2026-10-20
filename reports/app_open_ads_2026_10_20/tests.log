@@ -1,0 +1,662 @@
+00:00 +0: loading /Users/nam/projects/flutter/motionfit/test/core/ads/ad_eligibility_test.dart
+00:00 +0: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_eligibility_test.dart: banner and native ads are available while interstitials stay initially gated
+00:00 +1: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_eligibility_test.dart: first workout is protected; interstitials start at the second
+00:00 +2: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_eligibility_test.dart: interstitial cooldown is ten minutes from the last impression
+00:00 +3: loading /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_gate_test.dart
+00:02 +3: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_gate_test.dart: cold start is covered until actual show; inactive is not a new entry
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:03 +4: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_gate_test.dart: workout screen never presents app-open
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+00:03 +5: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_gate_test.dart: loading cover ends at deadline; late load never interrupts home
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:03 +6: loading /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart
+00:03 +6: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: UMP info failure retries and recovers without restarting
+00:03 +7: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: UMP form failure retries and recovers without restarting
+00:03 +8: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: UMP normal not-allowed result is not repeatedly prompted
+00:03 +9: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: ATT and UMP pending modals are never stacked after a deadline
+00:03 +10: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: existing permitted consent remains usable after an update error
+00:03 +11: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.interstitial invocation error releases loading and retries once
+00:03 +12: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.interstitial timeout rejects old callbacks and recovers
+00:03 +13: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.native invocation error releases loading and retries once
+00:03 +14: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.native timeout rejects old callbacks and recovers
+00:03 +15: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.banner invocation error releases loading and retries once
+00:03 +16: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.banner timeout rejects old callbacks and recovers
+00:03 +17: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.appOpen invocation error releases loading and retries once
+00:03 +18: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: AdFormat.appOpen timeout rejects old callbacks and recovers
+00:03 +19: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: no fill and invalid configuration remain distinct
+00:03 +20: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_recovery_test.dart: SDK init retries after failure and consent false sends no ad requests
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:03 +21: loading /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart
+00:04 +21: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: native timeout falls back after 15 seconds and ignores stale callbacks
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_fallback session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+00:04 +22: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: native invocation error uses banner; background holds pending retries
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_fallback session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+00:04 +23: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: adaptive size lookup timeout cannot strand loading or adopt a late size
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:04 +24: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: release/test unit resolution is platform specific and owner confirmed
+00:04 +25: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: width changes replace a banner once; inactive slots retain loaded ads
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_view_state session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_view_state session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_view_state session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_view_state session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_view_state session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+00:04 +26: /Users/nam/projects/flutter/motionfit/test/core/ads/ad_slot_test.dart: offscreen native slot waits until its scroll position is near the viewport
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_view_state session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+00:04 +27: loading /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart
+00:05 +27: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: ready eligible opportunity shows exactly once; success is callback based
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +28: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: first completion stays protected while next completion is preloaded
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+00:05 +29: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: saved completion snapshot is reconciled without double counting
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +30: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: 55 minute expiry discards old cache and prepares a new ad
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +31: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: show invocation failure completes navigation once and releases ownership
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +32: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: show callback failure completes navigation once and releases ownership
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +33: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: show race failure completes navigation once and releases ownership
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +34: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: inactive opportunity never invokes show and explains the skip
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+00:05 +35: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: pending load is explained; completion does not cause a late show
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +36: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: cooldown starts at actual show callback and remains ten minutes
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+00:05 +37: /Users/nam/projects/flutter/motionfit/test/core/ads/interstitial_test.dart: unconfirmed native show releases navigation but cannot overlap a late show
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +38: loading /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart
+00:05 +38: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: iOS owner app-open unit and official test unit; Android stays disabled
+00:05 +39: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: valid opening shows once; actual callbacks persist cooldown once
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+00:05 +40: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: first-workout protection with 0 completions
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+00:05 +41: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: first-workout protection with 1 completions
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +42: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: 3-second opportunity expires; late ready ad waits for next entry
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +43: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: load Future exception and no-fill recover without stuck loading
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +44: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: 15-second load timeout rejects stale callback then recovers
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +45: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: background cancels opportunity and stale load; foreground recovers
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +46: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: app-open shares the interstitial lock and cooldown
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+00:05 +47: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: interstitial already showing blocks app-open
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +48: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: route invalidated during async consent recheck never shows
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +49: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: cached app-open expires at four hours and is automatically replaced
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +50: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: missing show callback releases loading cover and awaits safe terminal recovery
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +51: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: DB pending has bounded cover; a later entry works after DB recovers
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +52: /Users/nam/projects/flutter/motionfit/test/core/ads/app_open_test.dart: consent revoked before loading blocks requests and recovers on next entry
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_opportunity session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_show_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_disposed session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_request_attempted session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ad_load_result session=- platform=android version=1.0.0
+00:05 +53: loading /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart
+00:06 +53: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: production bootstrap initializes ads despite DB error
+AnalyticsV2: mf2_ad_decision session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:06 +54: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: production bootstrap initializes ads despite DB pending
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:06 +55: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: foreground retries consent even while the workout DB never answers
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:06 +56: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: SDK initialization timeout can retry and ignores the late first answer
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:06 +57: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: UMP transient error automatically retries and initializes SDK only once
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:06 +58: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: cached normal choice reflects changed SDK permission without another modal
+00:06 +59: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: late factory result is disposed without ever starting an SDK load
+00:06 +60: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: ATT channel failure does not block the onboarding caller
+00:06 +61: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: unresolved ATT status schedules recovery without caching completion
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_configuration session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_started session=- platform=android version=1.0.0
+AnalyticsV2: mf2_ads_init_result session=- platform=android version=1.0.0
+00:06 +62: /Users/nam/projects/flutter/motionfit/test/core/ads/ads_integration_test.dart: completed ATT invocation does not cache an unresolved OS status
+00:06 +63: loading /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart
+00:07 +63: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: analytics duration buckets use documented boundaries
+00:07 +64: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: workout telemetry is reduced to non-identifying buckets
+00:07 +65: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: v2 logger rejects legacy names
+00:07 +66: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: all custom events use mf2 prefix and schema context
+AnalyticsV2: mf2_onboarding_started session=- platform=android version=1.2.6
+AnalyticsV2: mf2_workout_setup_viewed session=- platform=android version=1.2.6
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_first_rep_detected session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_reminder_permission_result session=- platform=android version=1.2.6
+AnalyticsV2: mf2_manual_rate_tapped session=- platform=android version=1.2.6
+AnalyticsV2: mf2_challenge_started session=- platform=android version=1.2.6
+AnalyticsV2: mf2_ad_skipped_by_policy session=- platform=android version=1.2.6
+00:07 +67: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: Android and iOS use the same names and platform parameters
+AnalyticsV2: mf2_workout_setup_viewed session=- platform=android version=1.2.6
+AnalyticsV2: mf2_workout_setup_viewed session=- platform=ios version=1.2.6
+00:07 +68: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: one session id spans camera, calibration, reps, and completion
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_first_rep_detected session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_completed session=session-id platform=android version=1.2.6
+00:07 +69: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: a new workout creates a new session id
+AnalyticsV2: mf2_workout_start_tapped session=session-1 platform=android version=1.2.6
+AnalyticsV2: mf2_workout_start_tapped session=session-2 platform=android version=1.2.6
+00:07 +70: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: frame-driven once events fire only once per workout
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_first_rep_detected session=session-id platform=android version=1.2.6
+00:07 +71: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: workout completion fires once
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_completed session=session-id platform=android version=1.2.6
+00:07 +72: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: cancelled and completed cannot both fire
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_cancelled session=session-id platform=android version=1.2.6
+00:07 +73: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: failed and completed cannot both fire
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_failed session=session-id platform=android version=1.2.6
+00:07 +74: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: camera failure and zero-rep exit do not report workout success
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_camera_init_failed session=session-id platform=android version=1.2.6
+00:07 +75: /Users/nam/projects/flutter/motionfit/test/core/analytics/analytics_service_test.dart: v2 workout flow emits no legacy custom workout names
+AnalyticsV2: mf2_workout_start_tapped session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_calibration_completed session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_started session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_first_rep_detected session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_exit session=session-id platform=android version=1.2.6
+AnalyticsV2: mf2_workout_completed session=session-id platform=android version=1.2.6
+00:07 +76: All tests passed!

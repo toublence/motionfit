@@ -1,0 +1,66 @@
+{
+  "reference": "/Users/nam/projects/flutter/nasdaq/lib/app.dart: _showTrackingExplainer / _requestTrackingAuthorization",
+  "reference_modified": false,
+  "feature": "iOS ATT前 무료 광고 안내 팝업",
+  "sequence": [
+    "Read current iOS ATT status",
+    "If notDetermined, show the MotionFit explanation",
+    "User taps Continue",
+    "Wait for DialogRoute.completed (overlay removed)",
+    "Recheck OS status",
+    "Request native ATT only if still notDetermined"
+  ],
+  "copy": {
+    "ko_title": "광고로 무료 기능을 지원합니다",
+    "meaning": "MotionFit 무료 기능이 광고로 지원됨을 안내하며, 추적을 거부해도 이용 가능한 기능은 동일함을 명시",
+    "continue_is_permission_or_ump_consent": false
+  },
+  "languages": [
+    "ko",
+    "en",
+    "ja",
+    "de",
+    "es",
+    "fr",
+    "ar",
+    "zh",
+    "zh_Hant"
+  ],
+  "safety_and_recovery": [
+    "Existing shared tracking Future serializes onboarding and ad-init requests; one explanation/ATT flow",
+    "Already authorized/denied/restricted/notSupported users and Android do not see the explanation",
+    "Missing UI/background/workout/fullscreen ad defers ATT with retryable att_pending; no silent bypass",
+    "Acknowledged explanation is retained in memory across unresolved native ATT retries; OS status decides future prompts",
+    "App-open loading opportunity cancelled before the explanation; a pending tracking flow blocks another app-open opportunity",
+    "Existing UMP and canRequestAds checks unchanged; Continue never substitutes for OS permission or UMP consent"
+  ],
+  "validation": {
+    "command": "flutter test --no-pub --concurrency=1 test/core/privacy/tracking_explainer_test.dart test/core/ads test/core/analytics/analytics_service_test.dart --reporter expanded",
+    "status": "FAIL",
+    "passed": 86,
+    "failed": 2,
+    "duration": "6 seconds",
+    "failure": "Both new widget tests failed at binding invariant verification because debugDefaultTargetPlatformOverride was restored in outer tearDown, after the binding checked it.",
+    "functional_assertions": "Both widget test bodies completed their dialog, ordering and layout assertions before the binding invariant failure; their final test status remains FAIL.",
+    "fix": "Reset the test-only target platform override at the end of each widget test body, before binding verification.",
+    "after_fix_rerun": false,
+    "reason_not_rerun": "User instruction permits at most one cheap verification step; no repeated test/fix loop.",
+    "real_ios_att": "NOT_VERIFIED",
+    "ios_build": "NOT_RUN",
+    "full_app_root_integration": "NOT_VERIFIED",
+    "format": "PASS"
+  },
+  "files_sha256": {
+    "lib/core/privacy/tracking_explainer.dart": "444261005e5fe11040e2af1e4d1cec5981fc1a45af85f132316720ffa3051eb7",
+    "lib/core/privacy/privacy_consent_service.dart": "18ffeb18b9b9728f4db1abdaac4e84bee3750c1feffa5cd01bdef8d1bc567fc9",
+    "lib/app/app.dart": "b20f608da80620c5b996e399340b60e73bb00af16cedabb567a678f00416773c",
+    "lib/core/ads/ad_service.dart": "55caeecdf6e672db4123a4d4bf9001c80129879f62c59da5df6b0aaf597e613f",
+    "test/core/privacy/tracking_explainer_test.dart": "36cf281884902ed4ac0351e055ed550fa251fa407af7dc0dc47c9ecd84f2f39c"
+  },
+  "followup_validation": {
+    "result": "PASS",
+    "suite_passed": 100,
+    "previous_two_widget_fixture_failures_resolved": true,
+    "evidence": "reports/ad_revenue_policy_2026_10_20/tests.log"
+  }
+}

@@ -1,0 +1,201 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project reports/ipad_install_test_2026_10_20/ui/MotionfitUnityQA.xcodeproj -scheme MotionfitUnityQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-ipad-ui-20261020 -resultBundlePath reports/ipad_install_test_2026_10_20/onboarding.xcresult "-only-testing:MotionfitUnityQA/MotionfitUnityQA/testOnboarding"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/onboarding.xcresult
+
+2026-10-20 03:01:23.654803+0900 MotionfitUnityQA-Runner[20222:4829898] [Default] Running tests...
+2026-10-20 03:01:23.666161+0900 MotionfitUnityQA-Runner[20222:4829898] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-20 03:01:24.054.
+Test Suite 'MotionfitUnityQA.xctest' started at 2026-10-20 03:01:24.054.
+Test Suite 'MotionfitUnityQA' started at 2026-10-20 03:01:24.054.
+Test Case '-[MotionfitUnityQA.MotionfitUnityQA testOnboarding]' started.
+    t =     0.00s Start Test at 2026-10-20 03:01:24.055
+    t =     0.01s Set Up
+    t =     0.01s Open fit.motionfit.app
+    t =     0.01s     Activate fit.motionfit.app
+    t =     0.11s         Wait for fit.motionfit.app to idle
+    t =     2.13s Tap Application 'fit.motionfit.app'[0.00, 0.00] -> (410.0, 1112.0)
+    t =     2.14s     Wait for fit.motionfit.app to idle
+    t =     2.14s     Find the Application 'fit.motionfit.app'
+    t =     2.18s     Check for interrupting elements affecting "motionfit - workout coach" Application
+    t =     2.19s         Wait for com.apple.DocumentManager.DockFolderViewService to idle
+    t =     2.22s     Synthesize event
+    t =     2.22s         Find the Application 'fit.motionfit.app'
+    t =     2.23s         Find the Application 'fit.motionfit.app'
+    t =     2.24s         Find the Application 'fit.motionfit.app'
+    t =     2.53s     Wait for fit.motionfit.app to idle
+    t =     4.72s Added attachment named 'onboarding-step-1'
+    t =     4.72s Requesting snapshot of accessibility hierarchy for app with pid 20216
+    t =     4.78s Requesting snapshot of accessibility hierarchy for app with pid 20216
+MOTIONFIT_IPAD_UI onboarding-step-1
+Attributes: Application, 0x1085e3700, pid: 20216, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x1085e3700, pid: 20216, label: 'motionfit - workout coach'
+    Window (Main), 0x1085e3840, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x1085e3980, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x1085e3ac0, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x1085e3c00, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x1085e3d40, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x1085e3e80, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x10b6e4000, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x10b6e4140, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10b6e4280, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10b6e43c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10b6e4500, {{0.0, 0.0}, {820.0, 1180.0}}
+                    StaticText, 0x10b6e4640, {{158.0, 58.0}, {425.4, 20.0}}, label: 'MotionFit'
+                    Button, 0x10b6e4780, {{583.4, 44.0}, {78.6, 48.0}}, label: '건너뛰기'
+                    Other, 0x10b6e48c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10b6e4a00, {{158.0, 104.0}, {504.0, 936.0}}
+                      Other, 0x10b6e4b40, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10b6e4c80, {{158.0, 104.0}, {504.0, 936.0}}
+                        Other, 0x10b6e4dc0, {{0.0, 0.0}, {820.0, 1180.0}}
+                          Other, 0x10b6e4f00, {{158.0, 104.0}, {504.0, 936.0}}
+                          Other, 0x10b6e5040, {{0.0, 0.0}, {820.0, 1180.0}}
+                            ScrollView, 0x10b6e5180, {{158.0, 104.0}, {504.0, 936.0}}
+                            Other, 0x10b6e52c0, {{158.0, 104.0}, {504.0, 129.0}}, label: '측정하고,
+하나를 고치고,
+다시 확인하세요.'
+                            Image, 0x10b6e5400, {{158.0, 257.0}, {504.0, 736.0}}, label: '교정 예시: 스쿼트 후 무릎 안정성 54를 확인합니다. 무릎을 바깥으로 고쳐 다시 2회 수행하면 무릎 안정성이 54에서 66, 폼 스코어가 61에서 69로 바뀝니다.'
+                    StaticText, 0x10b6e5540, {{158.0, 1056.0}, {504.0, 7.0}}, label: '탭 3개 중 2번째'
+                    Button, 0x10b6e5680, {{158.0, 1083.0}, {504.0, 60.0}}, label: '다음'
+    Window, 0x10b6e57c0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10b6e5900, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10b6e5a40, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x1085e3700, pid: 20216, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x10b6e5b80, pid: 20216, label: 'motionfit - workout coach'
+  }
+
+MOTIONFIT_IPAD_UI_END
+    t =     4.81s Tap Application 'fit.motionfit.app'[0.00, 0.00] -> (410.0, 1112.0)
+    t =     4.81s     Wait for fit.motionfit.app to idle
+    t =     4.81s     Find the Application 'fit.motionfit.app'
+    t =     4.81s     Check for interrupting elements affecting "motionfit - workout coach" Application
+    t =     4.82s         Wait for com.apple.DocumentManager.DockFolderViewService to idle
+    t =     4.84s     Synthesize event
+    t =     4.84s         Find the Application 'fit.motionfit.app'
+    t =     4.84s         Find the Application 'fit.motionfit.app'
+    t =     4.85s         Find the Application 'fit.motionfit.app'
+    t =     5.13s     Wait for fit.motionfit.app to idle
+    t =     7.32s Added attachment named 'onboarding-step-2'
+    t =     7.32s Requesting snapshot of accessibility hierarchy for app with pid 20216
+    t =     7.38s Requesting snapshot of accessibility hierarchy for app with pid 20216
+MOTIONFIT_IPAD_UI onboarding-step-2
+Attributes: Application, 0x1085e35c0, pid: 20216, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x1085e35c0, pid: 20216, label: 'motionfit - workout coach'
+    Window (Main), 0x1085e3840, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x1085e3980, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x1085e3ac0, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x1085e3c00, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x1085e3d40, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x1085e3e80, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x10b6e4000, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x10b6e4140, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10b6e4280, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10b6e43c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10b6e4500, {{0.0, 0.0}, {820.0, 1180.0}}
+                    StaticText, 0x10b6e4640, {{158.0, 58.0}, {425.4, 20.0}}, label: 'MotionFit'
+                    Button, 0x10b6e4780, {{583.4, 44.0}, {78.6, 48.0}}, label: '건너뛰기'
+                    Other, 0x10b6e48c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10b6e4a00, {{158.0, 104.0}, {504.0, 936.0}}
+                      Other, 0x10b6e4b40, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10b6e4c80, {{158.0, 104.0}, {504.0, 936.0}}
+                        Other, 0x10b6e4dc0, {{0.0, 0.0}, {820.0, 1180.0}}
+                          Other, 0x10b6e4f00, {{158.0, 104.0}, {504.0, 936.0}}
+                          Other, 0x10b6e5040, {{0.0, 0.0}, {820.0, 1180.0}}
+                            ScrollView, 0x10b6e5180, {{158.0, 104.0}, {504.0, 936.0}}
+                            Other, 0x10b6e52c0, {{158.0, 104.0}, {504.0, 43.0}}, label: '직접 확인해보세요.'
+                            StaticText, 0x10b6e5400, {{158.0, 159.0}, {504.0, 23.0}}, label: '스쿼트 3번이면 충분합니다.'
+                            Image, 0x10b6e5540, {{158.0, 206.0}, {504.0, 786.0}}, label: '카메라 준비 예시: 가까이 서 있던 사람이 한 걸음 뒤로 이동해 프레임 안에 들어옵니다. 준비 안내와 3, 2, 1 카운트다운 후 스쿼트를 1회 수행합니다.'
+                    StaticText, 0x10b6e5680, {{158.0, 1056.0}, {504.0, 7.0}}, label: '탭 3개 중 3번째'
+                    Button, 0x10b6e57c0, {{158.0, 1083.0}, {504.0, 60.0}}, label: '첫 측정 시작'
+    Window, 0x10b6e5900, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10b6e5a40, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10b6e5b80, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x1085e35c0, pid: 20216, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x10b6e5cc0, pid: 20216, label: 'motionfit - workout coach'
+  }
+
+MOTIONFIT_IPAD_UI_END
+    t =     7.40s Tap Application 'fit.motionfit.app'[0.00, 0.00] -> (410.0, 1112.0)
+    t =     7.40s     Wait for fit.motionfit.app to idle
+    t =     7.41s     Find the Application 'fit.motionfit.app'
+    t =     7.41s     Check for interrupting elements affecting "motionfit - workout coach" Application
+    t =     7.42s         Wait for com.apple.DocumentManager.DockFolderViewService to idle
+    t =     7.44s     Synthesize event
+    t =     7.44s         Find the Application 'fit.motionfit.app'
+    t =     7.45s         Find the Application 'fit.motionfit.app'
+    t =     7.46s         Find the Application 'fit.motionfit.app'
+    t =     7.74s     Wait for fit.motionfit.app to idle
+    t =     9.92s Added attachment named 'onboarding-step-3'
+    t =     9.92s Requesting snapshot of accessibility hierarchy for app with pid 20216
+    t =     9.98s Requesting snapshot of accessibility hierarchy for app with pid 20216
+MOTIONFIT_IPAD_UI onboarding-step-3
+Attributes: Application, 0x11682c140, pid: 20216, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x11682c140, pid: 20216, label: 'motionfit - workout coach'
+    Window (Main), 0x11682c280, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x11682c3c0, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x11682c500, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x11682c640, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x11682c780, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x11682c8c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x11682ca00, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x11682cb40, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x11682cc80, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x11682cdc0, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x11682cf00, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x11682d040, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x11682d180, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x11682d2c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x11682d400, {{0.0, 32.0}, {820.0, 1123.0}}
+                        StaticText, 0x11682d540, {{64.0, 476.5}, {692.0, 30.0}}, label: '광고로 무료 기능을 지원합니다'
+                        Other, 0x11682d680, {{0.0, 0.0}, {820.0, 1180.0}}
+                          Other, 0x11682d7c0, {{64.0, 522.5}, {692.0, 124.0}}
+                          Other, 0x11682d900, {{0.0, 0.0}, {820.0, 1180.0}}
+                            ScrollView, 0x11682da40, {{64.0, 522.5}, {692.0, 124.0}}
+                            StaticText, 0x11682db80, {{64.0, 522.5}, {692.0, 124.0}}, label: 'MotionFit의 무료 기능은 광고로 지원됩니다.
+다음 화면에서 추적 허용 여부를 선택할 수 있습니다. 허용하면 다른 회사의 앱과 웹사이트에서 얻은 정보를 활용해 관심사에 맞는 광고를 제공하는 데 도움이 됩니다.
+
+추적을 허용하지 않아도 이용할 수 있는 기능은 동일합니다.'
+                        Button, 0x11682dcc0, {{56.0, 670.5}, {708.0, 52.0}}, label: '계속'
+    Window, 0x11682de00, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x11682df40, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x11682e080, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x11682c140, pid: 20216, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x11682c000, pid: 20216, label: 'motionfit - workout coach'
+  }
+
+MOTIONFIT_IPAD_UI_END
+    t =    10.00s Tear Down
+Test Case '-[MotionfitUnityQA.MotionfitUnityQA testOnboarding]' passed (10.059 seconds).
+Test Suite 'MotionfitUnityQA' passed at 2026-10-20 03:01:34.114.
+	 Executed 1 test, with 0 failures (0 unexpected) in 10.059 (10.059) seconds
+Test Suite 'MotionfitUnityQA.xctest' passed at 2026-10-20 03:01:34.114.
+	 Executed 1 test, with 0 failures (0 unexpected) in 10.059 (10.060) seconds
+Test Suite 'Selected tests' passed at 2026-10-20 03:01:34.114.
+	 Executed 1 test, with 0 failures (0 unexpected) in 10.059 (10.061) seconds
+2026-10-20 03:01:34.608 xcodebuild[77910:5537622] [MT] IDETestOperationsObserverDebug: 12.814 elapsed -- Testing started completed.
+2026-10-20 03:01:34.608 xcodebuild[77910:5537622] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-20 03:01:34.608 xcodebuild[77910:5537622] [MT] IDETestOperationsObserverDebug: 12.814 sec, +12.814 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/onboarding.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

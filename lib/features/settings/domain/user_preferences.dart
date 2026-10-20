@@ -32,6 +32,7 @@ class UserPreferences {
     this.lastReviewRequestAttemptAt,
     this.lastReviewRequestAppVersion,
     this.completedWorkoutCount = 0,
+    this.appOpenVisitCount = 0,
     required this.installedAt,
     this.lastInterstitialShownAt,
     this.postWorkoutReminderPromptedAtWorkoutCount = 0,
@@ -104,6 +105,7 @@ class UserPreferences {
   final DateTime? lastReviewRequestAttemptAt;
   final String? lastReviewRequestAppVersion;
   final int completedWorkoutCount;
+  final int appOpenVisitCount;
   final DateTime installedAt;
   final DateTime? lastInterstitialShownAt;
   final int postWorkoutReminderPromptedAtWorkoutCount;
@@ -156,6 +158,7 @@ class UserPreferences {
     DateTime? lastReviewRequestAttemptAt,
     String? lastReviewRequestAppVersion,
     int? completedWorkoutCount,
+    int? appOpenVisitCount,
     DateTime? installedAt,
     DateTime? lastInterstitialShownAt,
     int? postWorkoutReminderPromptedAtWorkoutCount,
@@ -202,6 +205,9 @@ class UserPreferences {
           (completedWorkoutCount ?? this.completedWorkoutCount)
               .clamp(0, 1 << 31)
               .toInt(),
+      appOpenVisitCount: (appOpenVisitCount ?? this.appOpenVisitCount)
+          .clamp(0, 1 << 31)
+          .toInt(),
       installedAt: installedAt ?? this.installedAt,
       lastInterstitialShownAt:
           lastInterstitialShownAt ?? this.lastInterstitialShownAt,
@@ -254,6 +260,7 @@ class UserPreferences {
     'completedWorkoutCount': completedWorkoutCount,
     'installedAt': installedAt.millisecondsSinceEpoch,
     'lastInterstitialShownAt': lastInterstitialShownAt?.millisecondsSinceEpoch,
+    'appOpenVisitCount': appOpenVisitCount,
     'postWorkoutReminderPromptedAtWorkoutCount':
         postWorkoutReminderPromptedAtWorkoutCount,
     'postWorkoutReminderDeferred': postWorkoutReminderDeferred,
@@ -324,6 +331,10 @@ class UserPreferences {
       lastReviewRequestAppVersion:
           map['lastReviewRequestAppVersion'] as String?,
       completedWorkoutCount: switch (map['completedWorkoutCount']) {
+        final num value => value.toInt().clamp(0, 1 << 31).toInt(),
+        _ => 0,
+      },
+      appOpenVisitCount: switch (map['appOpenVisitCount']) {
         final num value => value.toInt().clamp(0, 1 << 31).toInt(),
         _ => 0,
       },

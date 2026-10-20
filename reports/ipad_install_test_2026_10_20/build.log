@@ -1,0 +1,6 @@
+Building fit.motionfit.app for device (ios-release)...
+Automatically signing iOS for device deployment using specified development team in Xcode project: 2CZQR7Q423
+Running pod install...                                           1,980ms
+Running Xcode build...                                          
+Xcode build done.                                           88.9s
+✓ Built build/ios/iphoneos/Runner.app (120.2MB)

@@ -102,12 +102,12 @@ void main() {
       expect(
         await ads.showInterstitialIfAvailable(
           lastInterstitialShownAt: null,
-          completedWorkoutCount: 1,
+          completedWorkoutCount: 0,
         ),
         false,
       );
       expect(
-        sink.has('mf2_ad_decision', skipReason: 'first_workout_protected'),
+        sink.has('mf2_ad_decision', skipReason: 'no_completed_workout'),
         true,
       );
       final preferences = PreferencesService();
@@ -168,7 +168,7 @@ void main() {
         false,
       );
       expect(
-        sink.has('mf2_ad_decision', skipReason: 'cooldown_10_minutes'),
+        sink.has('mf2_ad_decision', skipReason: 'workout_already_monetized'),
         true,
       );
       expect(

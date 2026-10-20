@@ -1,0 +1,9 @@
+Formatted lib/core/ads/ad_sdk.dart
+Formatted lib/core/ads/ad_service.dart
+Formatted lib/core/ads/ad_unit_ids.dart
+Formatted lib/core/ads/app_open_gate.dart
+Formatted lib/app/app.dart
+Formatted test/core/ads/app_open_test.dart
+Formatted test/core/ads/app_open_gate_test.dart
+Formatted test/core/ads/ad_slot_test.dart
+Formatted 8 files (8 changed) in 0.03 seconds.

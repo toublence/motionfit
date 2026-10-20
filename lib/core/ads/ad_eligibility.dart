@@ -1,10 +1,15 @@
 abstract final class AdEligibility {
-  // Primary-screen native ads are available after onboarding. Interstitials
-  // become eligible from the user's second completed workout.
+  // Business settings, not platform-mandated time limits. Fullscreen ads stay
+  // at natural breaks; app-open uses real app entries rather than workout DB.
+  static const policyVersion = 'revenue_v1';
+  static const minimumAppOpenVisits = 3;
+  static bool canShowAppOpen({required int appEntryCount}) =>
+      appEntryCount >= minimumAppOpenVisits;
+
   static const minimumBannerCompletedWorkouts = 0;
   static const minimumNativeCompletedWorkouts = 0;
-  static const minimumInterstitialCompletedWorkouts = 2;
-  static const interstitialCooldown = Duration(minutes: 10);
+  static const minimumInterstitialCompletedWorkouts = 1;
+  static const interstitialCooldown = Duration(seconds: 120);
 
   static bool canShowBanner({required int completedWorkoutCount}) =>
       completedWorkoutCount >= minimumBannerCompletedWorkouts;

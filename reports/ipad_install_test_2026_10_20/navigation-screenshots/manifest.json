@@ -1,0 +1,53 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "09AA7F64-CD99-42AD-ADC8-B08396B4C8D0.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "foreground-restored_0_FC5BE795-8B0A-499F-95C8-85F22D5755AE.png",
+        "timestamp" : 1792433016.702
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "986140CC-0839-4E5C-8173-F4549502D72F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "navigation-운동_0_08DA3A7E-2A20-44EB-808B-648B1D901791.png",
+        "timestamp" : 1792433008.666
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "198345F6-48E9-4B35-9184-6E54B6DACCD3.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "navigation-설정_0_70703973-C7A1-4123-883E-7E9ACF6DD15D.png",
+        "timestamp" : 1792433004.791
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "0DDE4953-249E-4BC9-9CEB-A24C74D79B59.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "navigation-성장_0_660859A4-089E-4BDC-98EF-DF5263909182.png",
+        "timestamp" : 1792433000.615
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "472ADD1C-E43D-4851-834C-990C63F5D031.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "workout-finished_0_952C7F09-45BB-4BF6-B068-893F10AF30CA.png",
+        "timestamp" : 1792432996.905
+      }
+    ],
+    "testIdentifier" : "MotionfitUnityQA/testNavigation()",
+    "testIdentifierURL" : "test://com.apple.xcode/MotionfitUnityQA/MotionfitUnityQA/MotionfitUnityQA/testNavigation"
+  }
+]

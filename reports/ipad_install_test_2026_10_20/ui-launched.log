@@ -1,0 +1,205 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project reports/ipad_install_test_2026_10_20/ui/MotionfitUnityQA.xcodeproj -scheme MotionfitUnityQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-ipad-ui-20261020 -resultBundlePath reports/ipad_install_test_2026_10_20/launched.xcresult "-only-testing:MotionfitUnityQA/MotionfitUnityQA/testSnapshot"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/launched.xcresult
+
+2026-10-20 03:00:20.374423+0900 MotionfitUnityQA-Runner[20214:4828819] [Default] Running tests...
+2026-10-20 03:00:20.385106+0900 MotionfitUnityQA-Runner[20214:4828819] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-20 03:00:20.772.
+Test Suite 'MotionfitUnityQA.xctest' started at 2026-10-20 03:00:20.772.
+Test Suite 'MotionfitUnityQA' started at 2026-10-20 03:00:20.772.
+Test Case '-[MotionfitUnityQA.MotionfitUnityQA testSnapshot]' started.
+    t =     0.00s Start Test at 2026-10-20 03:00:20.773
+    t =     0.01s Set Up
+    t =     0.01s Open fit.motionfit.app
+    t =     0.01s     Activate fit.motionfit.app
+    t =     0.04s         Wait for fit.motionfit.app to idle
+    t =     0.05s Wait for fit.motionfit.app to become Running Foreground
+    t =     4.21s Added attachment named 'installed-app'
+    t =     4.21s Requesting snapshot of accessibility hierarchy for app with pid 20208
+    t =     4.25s Requesting snapshot of accessibility hierarchy for app with pid 20208
+MOTIONFIT_IPAD_UI installed-app
+Attributes: Application, 0x1065e30c0, pid: 20208, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x1065e30c0, pid: 20208, label: 'motionfit - workout coach'
+    Window (Main), 0x1065e3200, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x1065e3340, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x1065e3840, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x1065e3980, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x1065e3ac0, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x1065e3c00, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x1065e3d40, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x1065e3e80, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x1065e30c0, pid: 20208, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x109728000, pid: 20208, label: 'motionfit - workout coach'
+  }
+
+MOTIONFIT_IPAD_UI_END
+    t =     4.27s Requesting snapshot of accessibility hierarchy for app with pid 19948
+    t =     4.51s Requesting snapshot of accessibility hierarchy for app with pid 19948
+SPRINGBOARD_UI
+Attributes: Application, 0x10972a440, pid: 19948, label: ' '
+Element subtree:
+ →Application, 0x10972a440, pid: 19948, label: ' '
+    Window, 0x10972a580, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10972a6c0, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x10972a800, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10972a940, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10972aa80, {{962.5, -150.0}, {7.5, 7.5}}
+    Window, 0x10972abc0, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x10972ad00, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10972ae40, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x10972af80, {{0.0, 0.0}, {820.0, 1180.0}}, identifier: 'SBSwitcherWindow:Main'
+      Other, 0x10972b0c0, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10972b200, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x10972b340, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x10972b480, {{0.0, 0.0}, {820.0, 1180.0}}
+              ScrollView, 0x10972b5c0, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x10972b700, {{0.0, 0.0}, {820.0, 1180.0}}, identifier: 'AppSwitcherContentView'
+                Other, 0x10972b840, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10972b980, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10972bac0, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x10972bc00, {{0.0, 0.0}, {820.0, 1180.0}}, identifier: 'card:fit.motionfit.app:sceneID:fit.motionfit.app-default', label: 'motionfit - workout coach'
+                  Other, 0x10972bd40, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10972be80, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10972c000, {{-196.0, -294.0}, {1212.0, 1768.0}}
+                        Other, 0x10972c140, {{0.0, 0.0}, {820.0, 1180.0}}
+                          Other, 0x10972c280, {{0.0, 0.0}, {820.0, 1180.0}}
+                            ScrollView, 0x10972c3c0, {{0.0, -590.0}, {820.0, 1770.0}}
+                              Other, 0x10972c500, {{0.0, 0.0}, {820.0, 1180.0}}
+                                Other, 0x10972c640, {{0.0, 0.0}, {820.0, 1180.0}}
+                                  Other, 0x10972c780, {{0.0, 0.0}, {820.0, 1180.0}}
+                                    Other, 0x10972c8c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                                      Other, 0x10972ca00, {{0.0, 0.0}, {820.0, 1180.0}}
+                                        Other, 0x10972cb40, {{0.0, 0.0}, {820.0, 1180.0}}
+                                          Other, 0x10972cc80, {{0.0, 0.0}, {820.0, 1180.0}}
+                                            Other, 0x10972cdc0, {{0.0, 0.0}, {820.0, 1180.0}}
+                                              Other, 0x10972cf00, {{0.0, 0.0}, {820.0, 1180.0}}
+                                                Other, 0x10972d040, {{0.0, 0.0}, {820.0, 1180.0}}
+                                                  Other, 0x10972d180, {{0.0, 0.0}, {820.0, 1180.0}}
+                                                    StatusBar, 0x10972d2c0, {{0.0, 0.0}, {820.0, 32.0}}
+                                                      Other, 0x10972d400, {{0.0, 0.0}, {820.0, 32.0}}
+                                                        Other, 0x10972d540, {{0.0, 0.0}, {820.0, 32.0}}
+                                                          Other, 0x10972d680, {{16.0, 11.0}, {356.0, 10.0}}
+                                                            StaticText, 0x10972d7c0, {{16.0, 7.5}, {59.0, 17.0}}, label: '오전 3:00'
+                                                            StaticText, 0x10972d900, {{85.0, 7.5}, {101.0, 17.0}}, label: '10월 20일 화요일'
+                                                          Other, 0x10972da40, {{448.0, 11.0}, {357.0, 10.0}}
+                                                            Other, 0x10972db80, {{705.5, 11.0}, {15.0, 10.0}}, identifier: '총 3개의 Wi‑Fi 막대 중 2개', value: SSID, 총 3개의 Wi‑Fi ...
+                                                            Image, 0x10972dcc0, {{724.5, 9.0}, {13.5, 13.5}}, identifier: 'lock.rotation', label: '화면 방향 고정'
+                                                            StaticText, 0x10972de00, {{742.0, 7.5}, {33.5, 17.0}}, label: '36%'
+                                                            Other, 0x10972df40, {{777.5, 9.5}, {27.5, 13.0}}, label: '배터리 전원 36%', value: 충전 중
+                                              Other, 0x10972e080, {{0.0, 0.0}, {820.0, 1180.0}}
+                                                Other, 0x10972e1c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                                                  Other, 0x10972e300, {{0.0, 0.0}, {820.0, 1180.0}}
+                                            Other, 0x10972e440, {{0.0, 0.0}, {820.0, 1180.0}}
+                                  Other, 0x10972e580, {{0.0, 0.0}, {820.0, 1180.0}}
+                                  Other, 0x10972e6c0, {{0.0, 32.0}, {820.0, 1148.0}}
+                Other, 0x10972e800, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10972e940, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10972ea80, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10972ebc0, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x10972ed00, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10972ee40, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10972ef80, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x10972f0c0, {{0.0, 0.0}, {410.0, 590.0}}
+      Other, 0x10972f200, {{0.0, 0.0}, {410.0, 590.0}}
+        Other, 0x10972f340, {{0.0, 0.0}, {410.0, 590.0}}
+    Window (Main), 0x10972f480, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10972f5c0, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10972f700, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x10972f840, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x10972f980, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x10972fac0, {{0.0, 1199.5}, {820.0, 115.0}}, identifier: 'Multitasking Dock'
+            Other, 0x10972fc00, {{84.0, 1199.5}, {282.0, 107.0}}, identifier: 'user icon list view', label: 'Dock'
+              Icon, 0x10972fd40, {{103.5, 1219.0}, {68.0, 68.0}}, identifier: 'Roblox', label: 'Roblox'
+                Other, 0x10972fe80, {{103.5, 1219.0}, {68.0, 68.0}}
+                  Other, 0x109734000, {{103.5, 1219.0}, {68.0, 68.0}}
+                    Other, 0x109734140, {{103.5, 1219.0}, {68.0, 68.0}}
+                      Other, 0x109734280, {{103.5, 1219.0}, {68.0, 68.0}}
+              Icon, 0x1097343c0, {{191.0, 1219.0}, {68.0, 68.0}}, identifier: 'YouTube', label: 'YouTube'
+                Other, 0x109734500, {{191.0, 1219.0}, {68.0, 68.0}}
+                  Other, 0x109734640, {{191.0, 1219.0}, {68.0, 68.0}}
+                    Other, 0x109734780, {{191.0, 1219.0}, {68.0, 68.0}}
+                      Other, 0x1097348c0, {{191.0, 1219.0}, {68.0, 68.0}}
+              Icon, 0x109734a00, {{278.5, 1219.0}, {68.0, 68.0}}, identifier: '카카오톡', label: '카카오톡', value: 17개의 새로운 항목
+                Other, 0x109734b40, {{278.5, 1219.0}, {68.0, 68.0}}
+                  Other, 0x109734c80, {{278.5, 1219.0}, {68.0, 68.0}}
+                    Other, 0x109734dc0, {{278.5, 1219.0}, {68.0, 68.0}}
+                      Other, 0x109734f00, {{278.5, 1219.0}, {68.0, 68.0}}
+                    Other, 0x109735040, {{329.5, 1208.0}, {28.0, 26.0}}
+                      Other, 0x109735180, {{329.5, 1208.0}, {28.0, 26.0}}
+                        Image, 0x1097352c0, {{335.5, 1211.0}, {16.0, 19.0}}
+            Other, 0x109735400, {{386.5, 1219.0}, {243.0, 68.0}}, identifier: 'Recent icon list view', label: '제안'
+              Icon, 0x109735540, {{386.5, 1219.0}, {68.0, 68.0}}, identifier: 'motionfit - workout coach', label: 'motionfit - workout coach'
+                Other, 0x109735680, {{386.5, 1219.0}, {68.0, 68.0}}
+                  Other, 0x1097357c0, {{386.5, 1219.0}, {68.0, 68.0}}
+                    Other, 0x109735900, {{386.5, 1219.0}, {68.0, 68.0}}
+                      Other, 0x109735a40, {{386.5, 1219.0}, {68.0, 68.0}}
+              Icon, 0x109735b80, {{474.0, 1219.0}, {68.0, 68.0}}, identifier: 'MotionfitUnityQA-Runner', label: 'MotionfitUnityQA-Runner'
+                Other, 0x109735cc0, {{474.0, 1219.0}, {68.0, 68.0}}
+                  Other, 0x109735e00, {{474.0, 1219.0}, {68.0, 68.0}}
+                    Other, 0x109735f40, {{474.0, 1219.0}, {68.0, 68.0}}
+                      Other, 0x109736080, {{474.0, 1219.0}, {68.0, 68.0}}
+              Icon, 0x1097361c0, {{561.5, 1219.0}, {68.0, 68.0}}, identifier: '설정', label: '설정', value: 2개의 새로운 항목
+                Other, 0x109736300, {{561.5, 1219.0}, {68.0, 68.0}}
+                  Other, 0x109736440, {{561.5, 1219.0}, {68.0, 68.0}}
+                    Other, 0x109736580, {{561.5, 1219.0}, {68.0, 68.0}}
+                      Other, 0x1097366c0, {{561.5, 1219.0}, {68.0, 68.0}}
+                    Other, 0x109736800, {{614.5, 1208.0}, {26.0, 26.0}}
+                      Other, 0x109736940, {{614.5, 1208.0}, {26.0, 26.0}}
+                        Image, 0x109736a80, {{622.5, 1211.0}, {10.0, 19.0}}
+            Other, 0x109736bc0, {{629.5, 1199.5}, {19.5, 107.0}}, identifier: 'utilities icon list view', label: '유틸리티'
+            Icon, 0x109736d00, {{647.0, 1217.0}, {72.0, 72.0}}, identifier: 'AppLibrary', label: '앱 보관함'
+              Other, 0x109736e40, {{685.5, 1255.5}, {22.5, 22.5}}, identifier: 'SBHLibraryCategoryStackView-innerIcon-3:com.apple.mobiletimer'
+              Other, 0x109736f80, {{658.0, 1228.0}, {22.5, 22.5}}, identifier: 'SBHLibraryCategoryStackView-innerIcon-0:com.namslab.idfareader'
+              Other, 0x1097370c0, {{685.5, 1228.0}, {22.5, 22.5}}, identifier: 'SBHLibraryCategoryStackView-innerIcon-2:com.google.ios.youtube'
+              Other, 0x109737200, {{658.0, 1255.5}, {22.5, 22.5}}, identifier: 'SBHLibraryCategoryStackView-innerIcon-3:com.iwilab.KakaoTalk'
+        Other, 0x109737340, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x109737480, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x1097375c0, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x109737700, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x109737840, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x109737980, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x109737ac0, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x109737c00, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x109737d40, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x109737e80, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x10973c000, {{0.0, 0.0}, {820.0, 1180.0}}
+      StatusBar, 0x10973c140, {{0.0, 0.0}, {820.0, 32.0}}
+      Other, 0x10973c280, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x10973c3c0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10973c500, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x10973c640, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10973c780, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x10972a440, pid: 19948, label: ' '
+Query chain:
+ →Find: Application 'com.apple.springboard'
+  Output: {
+    Application, 0x10973c8c0, pid: 19948, label: ' '
+  }
+
+    t =     4.61s Tear Down
+Test Case '-[MotionfitUnityQA.MotionfitUnityQA testSnapshot]' passed (4.633 seconds).
+Test Suite 'MotionfitUnityQA' passed at 2026-10-20 03:00:25.406.
+	 Executed 1 test, with 0 failures (0 unexpected) in 4.633 (4.634) seconds
+Test Suite 'MotionfitUnityQA.xctest' passed at 2026-10-20 03:00:25.407.
+	 Executed 1 test, with 0 failures (0 unexpected) in 4.633 (4.634) seconds
+Test Suite 'Selected tests' passed at 2026-10-20 03:00:25.407.
+	 Executed 1 test, with 0 failures (0 unexpected) in 4.633 (4.636) seconds
+2026-10-20 03:00:25.864 xcodebuild[77785:5535270] [MT] IDETestOperationsObserverDebug: 7.456 elapsed -- Testing started completed.
+2026-10-20 03:00:25.864 xcodebuild[77785:5535270] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-20 03:00:25.864 xcodebuild[77785:5535270] [MT] IDETestOperationsObserverDebug: 7.456 sec, +7.456 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/launched.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

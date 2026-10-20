@@ -1,0 +1,456 @@
+Xcode version: 26.1.1 (17B100)
+02:58:06.933 xcodebuild[77570:5531830] Beginning test session MotionfitUnityQA-BC468E23-355F-42AB-BEDD-821FA72AA552 at 2026-10-20 02:58:06.933 on target <DVTCoreDeviceCore.DVTCoreDevice_Impl: 0x11870afd0 (iPad (4) | arm64e)> (26.6.2 (23G90))
+02:58:06.933 xcodebuild[77570:5531830] 	/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
+test-without-building
+-project
+reports/ipad_install_test_2026_10_20/ui/MotionfitUnityQA.xcodeproj
+-scheme
+MotionfitUnityQA
+-destination
+platform=iOS,id=00008112-001848821413601E
+-derivedDataPath
+/tmp/motionfit-ipad-ui-20261020
+-resultBundlePath
+reports/ipad_install_test_2026_10_20/retry.xcresult
+-only-testing:MotionfitUnityQA/MotionfitUnityQA/testSnapshot
+02:58:06.933 xcodebuild[77570:5531830] Test standard output and standard error is at /Users/nam/projects/flutter/motionfit/reports/ipad_install_test_2026_10_20/retry.xcresult/Staging/1_Test/Diagnostics/MotionfitUnityQA-9152522E-C652-402E-BC40-4029F208EA7C-Configuration-Test Scheme Action-Iteration-1/MotionfitUnityQA-F6BD1752-C7A4-466B-A58C-E9AB264A7503/StandardOutputAndStandardError.txt
+02:58:06.937 xcodebuild[77570:5531830] Setting up test runner session
+02:58:06.937 xcodebuild[77570:5531830] Waiting for Core Device device iPad (4) (Connected, iOS 26.6.2 23G90, 315AE942-B017-5187-A2DA-A0B2490459AD) to become available
+02:58:06.937 xcodebuild[77570:5531835] Connecting to service com.apple.dt.testmanagerd.remote on Core Device device iPad (4) (Connected, iOS 26.6.2 23G90, 315AE942-B017-5187-A2DA-A0B2490459AD)
+02:58:06.938 xcodebuild[77570:5531830] Registering/updating daemon-based crash report observer for process names (
+    xctest,
+    debugserver,
+    FrontBoard,
+    assertiond,
+    runningboardd,
+    SpringBoard,
+    testmanagerd,
+    backboardd,
+    DTServiceHub,
+    "MotionfitUnityQA-Runner",
+    MotionfitUnityQA
+)
+02:58:06.945 xcodebuild[77570:5531830] Finished requesting crash reports. Continuing with testing.
+02:58:06.948 xcodebuild[77570:5531830] Launch session started.
+02:58:06.956 xcodebuild[77570:5531892] iPad (4) installing application bundle at <DVTFilePath:0x11960ee20:'/tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app'>
+02:58:06.958 xcodebuild[77570:5531892] Successfully connected to service com.apple.dt.testmanagerd.remote on Core Device device iPad (4) (Connected, iOS 26.6.2 23G90, 315AE942-B017-5187-A2DA-A0B2490459AD)
+02:58:06.958 xcodebuild[77570:5531892] Successfully connected to testmanagerd
+02:58:06.958 xcodebuild[77570:5531874] Received connection for test runner session
+02:58:06.958 xcodebuild[77570:5531874] Listening for proxy connection request from the test bundle
+02:58:06.959 xcodebuild[77570:5531830] Test runner session acquired connection.
+02:58:06.959 xcodebuild[77570:5531874] Initiating session with identifier: BC468E23-355F-42AB-BEDD-821FA72AA552
+02:58:06.969 xcodebuild[77570:5531874] Got reply to session initiation request with identifier BC468E23-355F-42AB-BEDD-821FA72AA552 (error: (null))
+02:58:08.353 xcodebuild[77570:5531834] iPad (4) installApplicationWithLaunchSession succeeded
+02:58:08.353 xcodebuild[77570:5531834] iPad (4) RemotePath '/private/var/containers/Bundle/Application/0EE6C113-BC38-4F3F-A39A-65256D5A2271/MotionfitUnityQA-Runner.app' for bundleIdentifier: fit.motionfit.app.unityqa.xctrunner
+02:58:08.354 xcodebuild[77570:5531834] iPad (4) updated testing environment variables: {
+    "DYLD_FRAMEWORK_PATH" = "/System/Developer/Library/Frameworks";
+    "DYLD_INSERT_LIBRARIES" = "/usr/lib/libMainThreadChecker.dylib:/usr/lib/libRPAC.dylib";
+    "DYLD_LIBRARY_PATH" = "/System/Developer/usr/lib";
+    "PERFC_SUPPRESS_SYSTEM_REPORTS" = 1;
+    "RUN_DESTINATION_DEVICE_ECID" = 6835122960818206;
+    "RUN_DESTINATION_DEVICE_NAME" = "iPad (4)";
+    "RUN_DESTINATION_DEVICE_PLATFORM_IDENTIFIER" = "com.apple.platform.iphoneos";
+    "RUN_DESTINATION_DEVICE_UDID" = "00008112-001848821413601E";
+    "XCODE_SCHEME_NAME" = MotionfitUnityQA;
+    XCTestBundlePath = "PlugIns/MotionfitUnityQA.xctest";
+    XCTestConfigurationFilePath = "";
+    XCTestManagerVariant = DDI;
+    XCTestSessionIdentifier = "BC468E23-355F-42AB-BEDD-821FA72AA552";
+}
+02:58:08.509 xcodebuild[77570:5531830] Test process runnable PID is 20201.
+02:58:08.509 xcodebuild[77570:5531875] XCTHTestOperationStateMachine: Transitioning from state Initial to AcquiredPID
+2026-10-20 02:58:08.465935+0900 MotionfitUnityQA-Runner[20201:4826944] [Default] Running tests...
+2026-10-20 02:58:08.476536+0900 MotionfitUnityQA-Runner[20201:4826944] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+02:58:08.635 xcodebuild[77570:5531835] Handling proxy channel request from test runner
+02:58:08.478 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'requesting test configuration' with timeout 600.00
+02:58:08.478 MotionfitUnityQA-Runner[20201:4826944] Notifying test runner ready
+02:58:08.635 xcodebuild[77570:5531835] Test runner is ready with capabilities: <XCTCapabilities: 0x1557ea280>: {
+    "delayed attachment transfer" = 1;
+    "fetch all test identifiers" = 1;
+    "ubiquitous test identifiers" = 1;
+}
+02:58:08.636 xcodebuild[77570:5531830] Test runner session successfully initiated.
+02:58:08.636 xcodebuild[77570:5531830] Authorizing test process ID 20201
+02:58:08.478 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x1162f13e0> entering wait loop for 600.00s with expectations: `requesting test configuration`
+02:58:08.636 xcodebuild[77570:5531835] XCTHTestOperationStateMachine: Transitioning from state AcquiredPID to ReportedReady
+02:58:08.482 MotionfitUnityQA-Runner[20201:4826951] Received test runner ready reply. Waiting for request to start running tests.
+02:58:08.482 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x1162f13e0>
+02:58:08.482 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x1162a1940> completed after 0.004s
+02:58:08.482 MotionfitUnityQA-Runner[20201:4826944] cleaning up requesting test configuration
+02:58:08.482 MotionfitUnityQA-Runner[20201:4826944] Loading test bundle at: file:///private/var/containers/Bundle/Application/0EE6C113-BC38-4F3F-A39A-65256D5A2271/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/
+02:58:08.640 xcodebuild[77570:5531830] Got authorization response from test daemon: Success
+02:58:08.640 xcodebuild[77570:5531830] Registering/updating daemon-based crash report observer for process names (
+    xctest,
+    debugserver,
+    FrontBoard,
+    assertiond,
+    runningboardd,
+    SpringBoard,
+    testmanagerd,
+    backboardd,
+    DTServiceHub,
+    "MotionfitUnityQA-Runner",
+    MotionfitUnityQA
+)
+02:58:08.640 xcodebuild[77570:5531830] Telling test runner to start executing tests.
+02:58:08.486 MotionfitUnityQA-Runner[20201:4826954] _IDE_startExecutingTestPlanWithProtocolVersion:36
+02:58:08.496 MotionfitUnityQA-Runner[20201:4826944] Finished loading test bundle
+02:58:08.496 MotionfitUnityQA-Runner[20201:4826944] Registering in-process symbolication service with image names: MotionfitUnityQA
+02:58:08.496 MotionfitUnityQA-Runner[20201:4826944] Running tests with active test configuration: <XCTestConfiguration: 0x11617d040>
+	                  testBundleURL:file:///private/var/containers/Bundle/Application/0EE6C113-BC38-4F3F-A39A-65256D5A2271/MotionfitUnityQA-Runner.app/PlugIns/MotionfitUnityQA.xctest/
+	         testBundleRelativePath:PlugIns/MotionfitUnityQA.xctest
+	              productModuleName:MotionfitUnityQA
+	                  testSelection:<XCTTestSelection: 0x1162f27c0>
+	            identifiersToRun:<XCTTestIdentifier leaf, method ["MotionfitUnityQA", "testSnapshot"]>, <XCTTestIdentifier container ["MotionfitUnityQA", "testSnapshot"]>
+	            identifiersToSkip:
+	            tagsToRun:(null)
+	            tagsToSkip:<XCTTagSelection: 0x11618b440>
+	            mode:and
+	            tags:{(
+)}
+	  includeXCTests:NO
+
+
+	             reportResultsToIDE:YES
+	               testsDrivenByIDE:NO
+	inProcessParallelizationEnabled:NO
+	              sessionIdentifier:BC468E23-355F-42AB-BEDD-821FA72AA552
+	      disablePerformanceMetrics:NO
+	treatMissingBaselinesAsFailures:NO
+	                baselineFileURL:(null)
+	       baselineFileRelativePath:(null)
+	          targetApplicationPath:(null)
+	      targetApplicationBundleID:(null)
+	 testApplicationDependencies:
+{
+    "fit.motionfit.app.unityqa.xctrunner" = "/private/tmp/motionfit-ipad-ui-20261020/Build/Products/Debug-iphoneos/MotionfitUnityQA-Runner.app";
+}
+	 bundleIDsForCrashReportEmphasis:
+{(
+    "fit.motionfit.app.unityqa"
+)}
+	 testApplicationUserOverrides:(null)
+	     targetApplicationArguments:
+	   targetApplicationEnvironment:
+{
+    "APP_DISTRIBUTOR_ID_OVERRIDE" = "com.apple.AppStore";
+    "XCODE_SCHEME_NAME" = MotionfitUnityQA;
+}
+	                  reportActivities:YES
+	          testsMustRunOnMainThread:YES
+	            initializeForUITesting:YES
+	            traceCollectionEnabled:(null)
+	 enablePerformanceTestsDiagnostics:(null)
+	 aggregateStatisticsBeforeCrash:
+{
+    XCSuiteRecordsKey =     {
+    };
+}
+	        automationFrameworkPath:/System/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework
+	                     emitOSLogs:NO
+	       systemAttachmentLifetime:deleteOnSuccess
+	         userAttachmentLifetime:deleteOnSuccess
+	   preferredScreenCaptureFormat:screenRecording
+	   gatherLocalizableStringsData:NO
+	          testExecutionOrdering:alphabetical
+	    randomExecutionOrderingSeed:(null)
+	               repetitionPolicy:<XCTRepetitionPolicy: 0x11618b360>
+	            mode:None
+	            maximumIterations:1
+	            repeatInNewRunnerProcess:NO
+
+	       runtimeDiagnosticsPolicy:<XCTRuntimeDiagnosticsPolicy: 0x1162f2a60>
+	            otherRuntimeIssuesDetectionPolicy:<XCTRuntimeIssueDetectionPolicy: 0x11618bce0>
+	            detectionEnabled:YES
+	            severity:warning
+
+	            threadPerformanceCheckerRuntimeIssueDetectionPolicy:<XCTRuntimeIssueDetectionPolicy: 0x11618bce0>
+	            detectionEnabled:YES
+	            severity:warning
+
+	            mainThreadCheckerDetectionPolicy:<XCTRuntimeIssueDetectionPolicy: 0x11618bce0>
+	            detectionEnabled:YES
+	            severity:warning
+
+	            checkedAllocations:disabled
+
+	            testTimeoutsEnabled:NO
+	              leaksCheckingMode:off
+	 defaultTestExecutionTimeAllowance:600
+	 maximumTestExecutionTimeAllowance:0
+	                IDECapabilities:<XCTCapabilities: 0x116278690>: {
+    "XCTIssue capability" = 1;
+    "daemon container sandbox extension" = 1;
+    "delayed attachment transfer" = 1;
+    "expected failure test capability" = 1;
+    "in-process test parallelization capability" = 1;
+    "request diagnostics for specific devices" = 1;
+    "runner plan" = 1;
+    "skipped suite capability" = 1;
+    "skipped test capability" = 1;
+    "test case run configurations" = 1;
+    "test iterations" = 2;
+    "test timeout capability" = 1;
+    traits = 1;
+    "ubiquitous test identifiers" = 1;
+    "unified issue recorded" = 1;
+}
+	         applicationBundleInfos:
+{
+    "fit.motionfit.app.unityqa.xctrunner" = "<XCTApplicationBundleInfo localizations:[en] infoDictionary:[UISupportedInterfaceOrientations~ipad: (\n    UIInterfaceOrientationPortrait,\n    UIInterfaceOrientationPortraitUpsideDown,\n    UIInterfaceOrientationLandscapeLeft,\n    UIInterfaceOrientationLandscapeRight\n), UISupportedInterfaceOrientations: (\n    UIInterfaceOrientationPortrait,\n    UIInterfaceOrientationLandscapeLeft,\n    UIInterfaceOrientationLandscapeRight\n)]>";
+}
+
+02:58:08.496 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x1162f1f80> entering wait loop for 600.00s with expectations: `requesting ready for testing`
+02:58:08.496 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x1162f1f80>
+02:58:08.496 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x1162a2000> completed after 0.000s
+02:58:08.496 MotionfitUnityQA-Runner[20201:4826944] cleaning up requesting ready for testing
+02:58:08.497 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x1162f26a0> entering wait loop for 600.00s with expectations: `IDE proxy`
+02:58:08.497 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x1162f26a0>
+02:58:08.497 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x1162a2140> completed after 0.000s
+02:58:08.497 MotionfitUnityQA-Runner[20201:4826944] cleaning up IDE proxy
+02:58:08.497 MotionfitUnityQA-Runner[20201:4826944] Initializing for UI testing.
+02:58:08.498 MotionfitUnityQA-Runner[20201:4826944] Linked XCTAutomationSupport.framework from /System/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework/XCTAutomationSupport, built with Xcode 2610(17B51), modified on 2025년 10월 18일 토요일 오전 9시 39분 4초 한국 표준시, bundle version: 24419
+02:58:08.500 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x1162f0120> entering wait loop for 60.00s with expectations: `initiating daemon session`
+02:58:08.500 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x1162f0120>
+02:58:08.500 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x1162a2300> completed after 0.000s
+02:58:08.500 MotionfitUnityQA-Runner[20201:4826944] cleaning up initiating daemon session
+02:58:08.500 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'enabling automation mode' with timeout 60.00
+02:58:08.500 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x1162f2d30> entering wait loop for 60.00s with expectations: `enabling automation mode`
+02:58:08.504 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x1162f2d30>
+02:58:08.504 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x1162a24c0> completed after 0.004s
+02:58:08.504 MotionfitUnityQA-Runner[20201:4826944] cleaning up enabling automation mode
+02:58:08.504 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'loading Accessibility' with timeout 70.00
+02:58:08.504 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x1162f2f70> entering wait loop for 70.00s with expectations: `loading Accessibility`
+02:58:08.821 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x1162f2f70>
+02:58:08.821 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x1162a2640> completed after 0.317s
+02:58:08.821 MotionfitUnityQA-Runner[20201:4826944] cleaning up loading Accessibility
+02:58:08.821 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'enabling localized string gathering' with timeout 70.00
+02:58:08.822 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d59890> entering wait loop for 70.00s with expectations: `enabling localized string gathering`
+02:58:08.822 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d59890>
+02:58:08.822 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605bec0> completed after 0.000s
+02:58:08.822 MotionfitUnityQA-Runner[20201:4826944] cleaning up enabling localized string gathering
+02:58:08.822 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'setting AX timeout to 60.00s' with timeout 65.00
+02:58:08.823 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d59740> entering wait loop for 65.00s with expectations: `setting AX timeout to 60.00s`
+02:58:08.823 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d59740>
+02:58:08.823 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605bd80> completed after 0.000s
+02:58:08.823 MotionfitUnityQA-Runner[20201:4826944] cleaning up setting AX timeout to 60.00s
+02:58:08.823 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'registering for kAXUserTestingNotification' with timeout 65.00
+02:58:08.823 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d593b0> entering wait loop for 65.00s with expectations: `registering for kAXUserTestingNotification`
+    t =      nans Interface orientation changed to Portrait
+02:58:08.827 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d593b0>
+02:58:08.827 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605bc80> completed after 0.004s
+02:58:08.827 MotionfitUnityQA-Runner[20201:4826944] cleaning up registering for kAXUserTestingNotification
+02:58:08.828 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'registering for kAXAlertNotification' with timeout 65.00
+02:58:08.828 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d58f30> entering wait loop for 65.00s with expectations: `registering for kAXAlertNotification`
+02:58:08.828 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d58f30>
+02:58:08.828 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605a540> completed after 0.000s
+02:58:08.828 MotionfitUnityQA-Runner[20201:4826944] cleaning up registering for kAXAlertNotification
+02:58:08.828 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'registering for kAXPidStatusChangedNotification' with timeout 65.00
+02:58:08.829 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d58cf0> entering wait loop for 65.00s with expectations: `registering for kAXPidStatusChangedNotification`
+02:58:08.829 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d58cf0>
+02:58:08.829 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605bac0> completed after 0.000s
+02:58:08.829 MotionfitUnityQA-Runner[20201:4826944] cleaning up registering for kAXPidStatusChangedNotification
+02:58:08.829 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'registering for AXNotification 3031' with timeout 65.00
+02:58:08.829 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d58990> entering wait loop for 65.00s with expectations: `registering for AXNotification 3031`
+02:58:08.830 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d58990>
+02:58:08.830 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605b980> completed after 0.000s
+02:58:08.830 MotionfitUnityQA-Runner[20201:4826944] cleaning up registering for AXNotification 3031
+02:58:08.830 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'requesting background assertion for test process' with timeout 30.00
+02:58:08.830 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d58660> entering wait loop for 30.00s with expectations: `requesting background assertion for test process`
+02:58:08.831 MotionfitUnityQA-Runner[20201:4826950] Got reply for background assertion for 20201, acquired: YES.
+02:58:08.831 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d58660>
+02:58:08.831 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605b840> completed after 0.001s
+02:58:08.831 MotionfitUnityQA-Runner[20201:4826944] cleaning up requesting background assertion for test process
+02:58:08.831 MotionfitUnityQA-Runner[20201:4826944] Test runner is already executing in the background.
+02:58:08.831 MotionfitUnityQA-Runner[20201:4826944] Done initializing for UI testing.
+02:58:08.989 xcodebuild[77570:5531830] Test runner began initialization for UI testing.
+02:58:08.833 MotionfitUnityQA-Runner[20201:4826944] Loading test suite...
+02:58:08.834 MotionfitUnityQA-Runner[20201:4826944] Error (com.apple.dt.xctest.ui-testing.error) 10100, userInfo keys: (null): Unknown application: 'fit.motionfit.app'
+02:58:08.834 MotionfitUnityQA-Runner[20201:4826944] Error (com.apple.dt.xctest.ui-testing.error) 10100, userInfo keys: (null): Unknown application: 'fit.motionfit.app'
+02:58:08.834 MotionfitUnityQA-Runner[20201:4826944] XCUIApplicationImplDepot: Creating XCUIApplicationImpl for identifier: fit.motionfit.app
+02:58:08.834 MotionfitUnityQA-Runner[20201:4826944] KVO change: checked status of Expect value of 'isApplicationStateKnown' of Application 'fit.motionfit.app' to be '1': fulfill=NO
+02:58:08.835 MotionfitUnityQA-Runner[20201:4826944] KVO change: checked status of Expect value of 'isApplicationStateKnown' of Application 'fit.motionfit.app' to be '1': fulfill=NO
+02:58:08.835 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d59da0> entering wait loop for 60.00s with expectations: `Expect value of 'isApplicationStateKnown' of Application 'fit.motionfit.app' to be '1'`
+02:58:08.836 MotionfitUnityQA-Runner[20201:4826950] -[XCTRunnerDaemonSession(XCTMessagingRole_UIApplicationStateUpdating) _XCT_applicationDidUpdateState:] fit.motionfit.app@/private/var/containers/Bundle/Application/D06E4035-5494-428B-A9F3-BDF669A22814/Runner.app pid: 20166 state: not running
+02:58:08.836 MotionfitUnityQA-Runner[20201:4826944] [AM:0] Processing state snapshot fit.motionfit.app@/private/var/containers/Bundle/Application/D06E4035-5494-428B-A9F3-BDF669A22814/Runner.app pid: 20166 state: not running
+02:58:08.836 MotionfitUnityQA-Runner[20201:4826944] <XCUIApplicationImpl: 0x116d58000 fit.motionfit.app> changing currentProcess from (null) to fit.motionfit.app (pid:0)
+02:58:08.836 MotionfitUnityQA-Runner[20201:4826944] KVO change: checked status of Expect value of 'isApplicationStateKnown' of Application 'fit.motionfit.app' to be '1': fulfill=NO
+02:58:08.837 MotionfitUnityQA-Runner[20201:4826944] Setting pid for 0x116cee680 0 -> 0
+02:58:08.837 MotionfitUnityQA-Runner[20201:4826956] fit.motionfit.app (pid:0) application state Unknown (0) -> Not Running (1)
+02:58:08.837 MotionfitUnityQA-Runner[20201:4826950] -[XCTRunnerDaemonSession(XCTMessagingRole_UIApplicationStateUpdating) _XCT_applicationDidUpdateState:] fit.motionfit.app@/private/var/containers/Bundle/Application/D06E4035-5494-428B-A9F3-BDF669A22814/Runner.app pid: 20166 state: not running
+02:58:08.837 MotionfitUnityQA-Runner[20201:4826944] KVO change: checked status of Expect value of 'isApplicationStateKnown' of Application 'fit.motionfit.app' to be '1': fulfill=YES
+02:58:08.837 MotionfitUnityQA-Runner[20201:4826944] KVO change: checked status of Expect value of 'isApplicationStateKnown' of Application 'fit.motionfit.app' to be '1': fulfill=YES
+02:58:08.837 MotionfitUnityQA-Runner[20201:4826944] App state updated for <XCUIApplicationImpl: 0x116d58000 fit.motionfit.app>: Not Running (1)
+02:58:08.837 MotionfitUnityQA-Runner[20201:4826944] KVO change: checked status of Expect value of 'isApplicationStateKnown' of Application 'fit.motionfit.app' to be '1': fulfill=YES
+02:58:08.837 MotionfitUnityQA-Runner[20201:4826944] Done setting pid for <XCUIApplicationImpl: 0x116d58000 fit.motionfit.app> to 0
+02:58:08.837 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d59da0>
+02:58:08.837 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605b2c0> completed after 0.002s
+02:58:08.837 MotionfitUnityQA-Runner[20201:4826944] cleaning up Expect value of 'isApplicationStateKnown' of Application 'fit.motionfit.app' to be '1'
+02:58:08.838 MotionfitUnityQA-Runner[20201:4826944] cleaning up Expect value of 'isApplicationStateKnown' of Application 'fit.motionfit.app' to be '1'
+02:58:08.838 MotionfitUnityQA-Runner[20201:4826944] Error (com.apple.dt.xctest.ui-testing.error) 10100, userInfo keys: (null): Unknown application: 'fit.motionfit.app'
+02:58:08.838 MotionfitUnityQA-Runner[20201:4826944] Error (com.apple.dt.xctest.ui-testing.error) 10100, userInfo keys: (null): Unknown application: 'fit.motionfit.app'
+02:58:08.838 MotionfitUnityQA-Runner[20201:4826944] KVO change: checked status of Expect value of 'isApplicationStateKnown' of Application 'fit.motionfit.app' to be '1': fulfill=YES
+02:58:08.838 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d5a430> entering wait loop for 60.00s with expectations: `Expect value of 'isApplicationStateKnown' of Application 'fit.motionfit.app' to be '1'`
+02:58:08.838 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d5a430>
+02:58:08.838 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605a900> completed after 0.000s
+02:58:08.839 MotionfitUnityQA-Runner[20201:4826944] cleaning up Expect value of 'isApplicationStateKnown' of Application 'fit.motionfit.app' to be '1'
+02:58:08.839 MotionfitUnityQA-Runner[20201:4826944] cleaning up Expect value of 'isApplicationStateKnown' of Application 'fit.motionfit.app' to be '1'
+02:58:08.839 MotionfitUnityQA-Runner[20201:4826944] Finished loading test suite, took 0.005s
+02:58:08.840 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x1162f0510> entering wait loop for 599.63s with expectations: `preparing execution worker`
+02:58:08.841 MotionfitUnityQA-Runner[20201:4826944] [AM:0] Processing state snapshot fit.motionfit.app@/private/var/containers/Bundle/Application/D06E4035-5494-428B-A9F3-BDF669A22814/Runner.app pid: 20166 state: not running
+02:58:08.841 MotionfitUnityQA-Runner[20201:4826944] Done setting pid for <XCUIApplicationImpl: 0x116d58000 fit.motionfit.app> to 0
+Test Suite 'Selected tests' started at 2026-10-20 02:58:08.859.
+Test Suite 'MotionfitUnityQA.xctest' started at 2026-10-20 02:58:08.860.
+Test Suite 'MotionfitUnityQA' started at 2026-10-20 02:58:08.860.
+Test Case '-[MotionfitUnityQA.MotionfitUnityQA testSnapshot]' started.
+    t =     0.00s Start Test at 2026-10-20 02:58:08.860
+02:58:08.859 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x1162f0510>
+02:58:08.859 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605aec0> completed after 0.018s
+02:58:08.859 MotionfitUnityQA-Runner[20201:4826944] cleaning up preparing execution worker
+02:58:09.028 xcodebuild[77570:5531830] Test runner started executing tests.
+02:58:09.028 xcodebuild[77570:5531834] XCTHTestOperationStateMachine: Transitioning from state ReportedReady to ExecutingTests
+02:58:08.859 MotionfitUnityQA-Runner[20201:4826944] Entering test execution event loop
+02:58:08.859 MotionfitUnityQA-Runner[20201:4826944] -[XCTRunnerIDESession(_XCTestObservationInternal) testBundleWillStart:]
+02:58:08.859 MotionfitUnityQA-Runner[20201:4826944] Running suite...
+02:58:08.859 MotionfitUnityQA-Runner[20201:4826944] -[XCTRunnerIDESession(_XCTestObservationInternal) testSuiteWillStart:]
+02:58:09.028 xcodebuild[77570:5531830] _XCT_testSuiteWithIdentifier:<XCTTestIdentifier container ["Selected tests"]> didStartAt:2026-10-19 17:58:08 +0000
+02:58:09.028 xcodebuild[77570:5531830] Nothing to delete
+02:58:08.860 MotionfitUnityQA-Runner[20201:4826944] -[XCTRunnerIDESession(_XCTestObservationInternal) testSuiteWillStart:]
+02:58:09.028 xcodebuild[77570:5531830] _XCT_testSuiteWithIdentifier:<XCTTestIdentifier container []> didStartAt:2026-10-19 17:58:08 +0000
+02:58:09.028 xcodebuild[77570:5531830] Nothing to delete
+02:58:08.860 MotionfitUnityQA-Runner[20201:4826944] -[XCTRunnerIDESession(_XCTestObservationInternal) testSuiteWillStart:]
+02:58:09.028 xcodebuild[77570:5531830] _XCT_testSuiteWithIdentifier:<XCTTestIdentifier container, class ["MotionfitUnityQA"]> didStartAt:2026-10-19 17:58:08 +0000
+02:58:09.028 xcodebuild[77570:5531830] Nothing to delete
+02:58:08.860 MotionfitUnityQA-Runner[20201:4826944] -[XCTRuntimeIssueDetectionManager runtimeIssueDetectionEnabled] runtimeIssueDetectionEnabled based on XCTDisableRuntimeIssues and runtime diagnostics policies: YES
+02:58:08.860 MotionfitUnityQA-Runner[20201:4826944] -[XCTRunnerIDESession(_XCTestObservationInternal) testCaseWillStart:] MotionfitUnityQA.MotionfitUnityQA testSnapshot
+02:58:09.028 xcodebuild[77570:5531830] _XCT_testCaseDidStartWithIdentifier:<XCTTestIdentifier leaf, method, swift ["MotionfitUnityQA", "testSnapshot"]>testCaseRunConfiguration:<XCTestCaseRunConfiguration: 0x135b1b6b0>
+02:58:09.028 xcodebuild[77570:5531830] Test case did start: <XCTTestIdentifier leaf, method, swift ["MotionfitUnityQA", "testSnapshot"]>
+02:58:09.028 xcodebuild[77570:5531830] Nothing to delete
+02:58:08.860 MotionfitUnityQA-Runner[20201:4826944] <XCTContext: 0x116d689b0> started activity <XCActivityRecord: 0x116d68a00> 2026-10-19 17:58:08 +0000: Start Test at 2026-10-20 02:58:08.860
+02:58:09.028 xcodebuild[77570:5531830] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method ["none", "none"]> willStartActivity:<XCActivityRecord: 0x135b1b610> 2026-10-19 17:58:08 +0000: Start Test at 2026-10-20 02:58:08.860
+02:58:09.029 xcodebuild[77570:5531830] Nothing to delete
+02:58:08.861 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'requesting to start screen recording' with timeout 30.00
+02:58:08.861 MotionfitUnityQA-Runner[20201:4826944] Starting diagnostic screen recording.
+02:58:08.861 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d5b090> entering wait loop for 30.00s with expectations: `requesting to start screen recording`
+02:58:09.032 xcodebuild[77570:5531830] Nothing to delete
+02:58:09.032 xcodebuild[77570:5531830] Nothing to delete
+02:58:09.033 xcodebuild[77570:5531830] Nothing to delete
+02:58:09.036 xcodebuild[77570:5531830] Nothing to delete
+    t =     0.01s Set Up
+    t =     0.01s Open fit.motionfit.app
+    t =     0.02s     Launch fit.motionfit.app
+02:58:09.037 xcodebuild[77570:5531830] Nothing to delete
+02:58:08.873 MotionfitUnityQA-Runner[20201:4826956] Did start diagnostic screen recording with UUID 8962B8BF-484C-425A-A2EF-6E5A5FA6C010.
+02:58:08.873 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d5b090>
+02:58:08.873 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605ac80> completed after 0.012s
+02:58:08.873 MotionfitUnityQA-Runner[20201:4826944] cleaning up requesting to start screen recording
+02:58:08.873 MotionfitUnityQA-Runner[20201:4826944] Activity 01F49397-02D6-4A29-B43F-1D04A71C910B added attachment with name 'kXCTAttachmentScreenRecording', Uniform Type Identifier 'public.mpeg-4', lifetime 'deleteOnSuccess', hasPayload: NO, size (in bytes): 0.
+02:58:08.873 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'getting screen identifiers' with timeout 30.00
+02:58:08.874 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d5a100> entering wait loop for 30.00s with expectations: `getting screen identifiers`
+02:58:08.874 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d5a100>
+02:58:08.874 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605a680> completed after 0.000s
+02:58:08.874 MotionfitUnityQA-Runner[20201:4826944] cleaning up getting screen identifiers
+02:58:08.874 MotionfitUnityQA-Runner[20201:4826944] <XCTContext: 0x116d689b0> finished activity <XCActivityRecord: 0x116d68a00> 2026-10-19 17:58:08 +0000: Start Test at 2026-10-20 02:58:08.860 (0.0133319s)
+02:58:09.037 xcodebuild[77570:5531830] Nothing to delete
+02:58:09.037 xcodebuild[77570:5531830] Nothing to delete
+02:58:09.037 xcodebuild[77570:5531830] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method ["none", "none"]> didFinishActivity:<XCActivityRecord: 0x11860f7a0> 2026-10-19 17:58:08 +0000: Start Test at 2026-10-20 02:58:08.860 (0.0133319s)
+02:58:09.037 xcodebuild[77570:5531830] Did finish activity with attachment future (<XCTAttachmentFuture 8962B8BF-484C-425A-A2EF-6E5A5FA6C010>) for test identifier <XCTTestIdentifier leaf, method, swift ["MotionfitUnityQA", "testSnapshot"]>
+02:58:09.037 xcodebuild[77570:5531830] Nothing to delete
+02:58:08.874 MotionfitUnityQA-Runner[20201:4826944] <XCTContext: 0x116d689b0> started activity <XCActivityRecord: 0x116d68a00> 2026-10-19 17:58:08 +0000: Set Up
+02:58:09.037 xcodebuild[77570:5531830] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method ["none", "none"]> willStartActivity:<XCActivityRecord: 0x135b10f70> 2026-10-19 17:58:08 +0000: Set Up
+02:58:09.037 xcodebuild[77570:5531830] Nothing to delete
+02:58:08.874 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d5a9a0> entering indefinite wait loop for expectations: `failable invocation block completion`
+02:58:08.874 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d5a9a0>
+02:58:08.874 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605a680> completed after 0.000s
+02:58:08.874 MotionfitUnityQA-Runner[20201:4826944] cleaning up failable invocation block completion
+02:58:08.874 MotionfitUnityQA-Runner[20201:4826944] <XCTContext: 0x116d689b0> finished activity <XCActivityRecord: 0x116d68a00> 2026-10-19 17:58:08 +0000: Set Up (0.00037694s)
+02:58:09.037 xcodebuild[77570:5531830] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method ["none", "none"]> didFinishActivity:<XCActivityRecord: 0x135b166a0> 2026-10-19 17:58:08 +0000: Set Up (0.00037694s)
+02:58:09.037 xcodebuild[77570:5531830] Nothing to delete
+02:58:08.875 MotionfitUnityQA-Runner[20201:4826944] _assertObjectsInvalidAfterScope
+02:58:08.875 MotionfitUnityQA-Runner[20201:4826944] Activating Application 'fit.motionfit.app' with arguments and environment variables:
+(
+)
+{
+    "APP_DISTRIBUTOR_ID_OVERRIDE" = "com.apple.AppStore";
+    "XCODE_SCHEME_NAME" = MotionfitUnityQA;
+}
+02:58:08.875 MotionfitUnityQA-Runner[20201:4826944] <XCTContext: 0x116211590> started activity <XCActivityRecord: 0x116d68a00> 2026-10-19 17:58:08 +0000: Open fit.motionfit.app
+02:58:09.037 xcodebuild[77570:5531830] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method ["none", "none"]> willStartActivity:<XCActivityRecord: 0x135b10df0> 2026-10-19 17:58:08 +0000: Open fit.motionfit.app
+02:58:09.037 xcodebuild[77570:5531830] Nothing to delete
+02:58:08.875 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'getting screen identifiers' with timeout 30.00
+02:58:08.875 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d5b450> entering wait loop for 30.00s with expectations: `getting screen identifiers`
+02:58:08.875 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d5b450>
+02:58:08.875 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x11605a680> completed after 0.000s
+02:58:08.875 MotionfitUnityQA-Runner[20201:4826944] cleaning up getting screen identifiers
+02:58:08.875 MotionfitUnityQA-Runner[20201:4826944] <XCTContext: 0x116211590> started activity <XCActivityRecord: 0x116d68a50> 2026-10-19 17:58:08 +0000: Launch fit.motionfit.app
+02:58:09.037 xcodebuild[77570:5531830] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method ["none", "none"]> willStartActivity:<XCActivityRecord: 0x135b0ed60> 2026-10-19 17:58:08 +0000: Launch fit.motionfit.app
+02:58:09.037 xcodebuild[77570:5531830] Nothing to delete
+02:58:08.875 MotionfitUnityQA-Runner[20201:4826944] Overriding open request to use platform launcher: application path is nil
+02:58:08.875 MotionfitUnityQA-Runner[20201:4826944] KVO change: checked status of Expect value of 'activated' of <XCUIApplicationImpl: 0x116d58000 fit.motionfit.app> to be '1': fulfill=NO
+02:58:08.875 MotionfitUnityQA-Runner[20201:4826944] KVO change: checked status of Expect value of 'activated' of <XCUIApplicationImpl: 0x116d58000 fit.motionfit.app> to be '1': fulfill=NO
+02:58:08.875 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'launching application via platform mechanisms' with timeout 60.00
+02:58:08.876 MotionfitUnityQA-Runner[20201:4826944] Launching <XCUIPlatformApplicationManager: 0x1162784c0> via platform with args: env:{
+    "APP_DISTRIBUTOR_ID_OVERRIDE" = "com.apple.AppStore";
+    "XCODE_SCHEME_NAME" = MotionfitUnityQA;
+}
+02:58:08.876 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'launching application via platform mechanisms' with timeout 60.00
+02:58:08.876 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d5b900> entering wait loop for 60.00s with expectations: `launching application via platform mechanisms`
+02:58:09.038 xcodebuild[77570:5531830] Nothing to delete
+02:58:08.928 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d5b900>
+02:58:08.928 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x116059300> completed after 0.052s
+02:58:08.928 MotionfitUnityQA-Runner[20201:4826944] cleaning up launching application via platform mechanisms
+02:58:08.928 MotionfitUnityQA-Runner[20201:4826954] Handling kAXPidStatusChangedNotification
+02:58:08.928 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d5b7b0> entering wait loop for 59.95s with expectations: `launching application via platform mechanisms`
+02:58:08.928 MotionfitUnityQA-Runner[20201:4826954] Got kAXPidStatusChangedNotification for invalid pid 0, full payload {
+    pid = 0;
+    pipPid = 1;
+}
+02:58:08.928 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x116d5b7b0>
+02:58:08.929 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x116059300> completed after 0.000s
+02:58:08.929 MotionfitUnityQA-Runner[20201:4826944] cleaning up launching application via platform mechanisms
+02:58:08.929 MotionfitUnityQA-Runner[20201:4826944] KVO change: checked status of Expect value of 'isProcessIDValid' of fit.motionfit.app (pid:0) to be '1': fulfill=NO
+02:58:08.929 MotionfitUnityQA-Runner[20201:4826944] KVO change: checked status of Expect value of 'isProcessIDValid' of fit.motionfit.app (pid:0) to be '1': fulfill=NO
+02:58:08.929 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d3af40> entering wait loop for 60.00s with expectations: `Expect value of 'isProcessIDValid' of fit.motionfit.app (pid:0) to be '1'`
+02:58:08.956 MotionfitUnityQA-Runner[20201:4826949] Handling kAXUserTestingNotification
+02:58:08.957 MotionfitUnityQA-Runner[20201:4826949] Received kAXUserTestingNotification from AX element pid: 19948, elementOrHash.elementID: 0.1: {
+    controllerClass = SBMedusaDecoratedDeviceApplicationSceneViewController;
+    event = ViewDidAppear;
+}
+02:58:08.957 MotionfitUnityQA-Runner[20201:4826949] Handling kAXUserTestingNotification
+02:58:08.957 MotionfitUnityQA-Runner[20201:4826949] Received kAXUserTestingNotification from AX element pid: 19948, elementOrHash.elementID: 0.1: {
+    controllerClass = SBDeviceApplicationSceneViewController;
+    event = ViewDidAppear;
+}
+02:58:08.957 MotionfitUnityQA-Runner[20201:4826949] Handling kAXUserTestingNotification
+02:58:08.957 MotionfitUnityQA-Runner[20201:4826949] Received kAXUserTestingNotification from AX element pid: 19948, elementOrHash.elementID: 0.1: {
+    controllerClass = SBTopAffordanceViewController;
+    event = ViewDidAppear;
+}
+02:58:08.957 MotionfitUnityQA-Runner[20201:4826949] Handling kAXUserTestingNotification
+02:58:08.957 MotionfitUnityQA-Runner[20201:4826949] Received kAXUserTestingNotification from AX element pid: 19948, elementOrHash.elementID: 0.1: {
+    controllerClass = SWKWindowControlsViewController;
+    event = ViewDidAppear;
+}
+02:58:08.958 MotionfitUnityQA-Runner[20201:4826956] Handling kAXUserTestingNotification
+02:58:08.958 MotionfitUnityQA-Runner[20201:4826956] Received kAXUserTestingNotification from AX element pid: 19948, elementOrHash.elementID: 0.1: {
+    controllerClass = SBSwitcherViewController;
+    event = ViewDidAppear;
+}
+02:58:08.958 MotionfitUnityQA-Runner[20201:4826956] Handling kAXUserTestingNotification
+02:58:08.958 MotionfitUnityQA-Runner[20201:4826956] Received kAXUserTestingNotification from AX element pid: 19948, elementOrHash.elementID: 0.1: {
+    controllerClass = SBGridSwitcherViewController;
+    event = ViewDidAppear;
+}
+02:58:09.127 MotionfitUnityQA-Runner[20201:4826956] Handling AXNotification 3031
+02:59:08.980 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d3af40> reporting timed out failure with Expect value of 'isProcessIDValid' of fit.motionfit.app (pid:0) to be '1'
+02:59:08.981 MotionfitUnityQA-Runner[20201:4826944] Returning result XCTWaiterResultTimedOut for synchronous waiter <XCTWaiter: 0x116d3af40>
+02:59:08.981 MotionfitUnityQA-Runner[20201:4826944] Wait <XCTWaiterWait: 0x116059ac0> completed after 60.052s
+02:59:08.982 MotionfitUnityQA-Runner[20201:4826944] cleaning up Expect value of 'isProcessIDValid' of fit.motionfit.app (pid:0) to be '1'
+02:59:08.982 MotionfitUnityQA-Runner[20201:4826944] cleaning up Expect value of 'isProcessIDValid' of fit.motionfit.app (pid:0) to be '1'
+02:59:08.983 MotionfitUnityQA-Runner[20201:4826944] Creating future for 'getting spindump' with timeout 600.00
+02:59:08.984 MotionfitUnityQA-Runner[20201:4826944] <XCTWaiter: 0x116d3bfc0> entering wait loop for 600.00s with expectations: `getting spindump`
+02:59:16.831 xcodebuild[77570:5531830] Test operation failure: Error Domain=XCTHTestOperationCoordinatorErrorDomain Code=9 "Testing was canceled" UserInfo={NSLocalizedDescription=Testing was canceled}
+02:59:16.831 xcodebuild[77570:5531830] _finishWithError:Error Domain=XCTHTestOperationCoordinatorErrorDomain Code=9 "Testing was canceled" UserInfo={NSLocalizedDescription=Testing was canceled}
+02:59:16.831 xcodebuild[77570:5531830] Current state: testRunnerLaunchSessionHasFinishedReceivingData: NO, delegateBlockQueue.count: 0
+02:59:16.831 xcodebuild[77570:5531830] <XCTHTestOperationCoordinator: 0x121897a60>: _considerFlushingDelegateBlockQueue - nothing to flush
+02:59:16.831 xcodebuild[77570:5531830] Before finishing, reporting pending attachment <XCTAttachmentFuture 8962B8BF-484C-425A-A2EF-6E5A5FA6C010> as failed for <XCTTestIdentifier leaf, method, swift ["MotionfitUnityQA", "testSnapshot"]>

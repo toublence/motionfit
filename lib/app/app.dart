@@ -1,4 +1,5 @@
 import 'package:motionfit_squat/core/ads/ad_bootstrap.dart';
+import 'package:motionfit_squat/core/ads/app_open_gate.dart';
 import 'package:motionfit_squat/core/notifications/notification_destination.dart';
 import 'package:motionfit_squat/features/exercise/application/exercise_selection.dart';
 import 'dart:async';
@@ -12,6 +13,7 @@ import 'package:motionfit_squat/app/router.dart';
 import 'package:motionfit_squat/app/theme/motionfit_theme.dart';
 import 'package:motionfit_squat/core/notifications/notification_service.dart';
 import 'package:motionfit_squat/core/providers.dart';
+import 'package:motionfit_squat/core/privacy/tracking_explainer.dart';
 import 'package:motionfit_squat/features/exercise/application/combined_workout_metrics.dart';
 import 'package:motionfit_squat/features/plank/localization/generated/plank_localizations.dart';
 import 'package:motionfit_squat/features/plank/records/application/records_providers.dart'
@@ -43,6 +45,7 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
   String? _lastNotification;
   DateTime? _lastNotificationAt;
   late final NotificationService _notifications;
+  late final VoidCallback _detachTrackingExplainer;
   String? _lastCrashScreen;
   bool? _usingPushupWorkoutOrientation;
 
@@ -53,6 +56,9 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
         .read(preferencesControllerProvider)
         .onboardingCompleted;
     _router = createAppRouter(onboardingCompleted: onboardingCompleted);
+    final privacy = ref.read(privacyConsentServiceProvider);
+    privacy.setTrackingExplainer(_explainTracking);
+    _detachTrackingExplainer = () => privacy.setTrackingExplainer(null);
     _router.routeInformationProvider.addListener(_syncCrashScreen);
     _router.routeInformationProvider.addListener(_syncOrientation);
     _syncCrashScreen();
@@ -70,6 +76,28 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
     }
     _refreshReminderEnvironment(force: true);
     if (onboardingCompleted) _refreshPrivacyConsent();
+  }
+
+  Future<bool> _explainTracking() async {
+    if (!mounted) return false;
+    final context = rootNavigatorKey.currentContext;
+    final state = WidgetsBinding.instance.lifecycleState;
+    final path = _router.routeInformationProvider.value.uri.path;
+    if (context == null ||
+        !context.mounted ||
+        (state != null && state != AppLifecycleState.resumed) ||
+        path.contains('/prepare') ||
+        path.contains('/workout')) {
+      return false;
+    }
+    final ads = ref.read(adServiceProvider);
+    if (ads.fullScreenShowing) return false;
+    ads.cancelAppOpenOpportunity('tracking_explainer');
+    final acknowledged = await showTrackingExplainer(context);
+    final currentState = WidgetsBinding.instance.lifecycleState;
+    return mounted &&
+        acknowledged &&
+        (currentState == null || currentState == AppLifecycleState.resumed);
   }
 
   void _receiveNotification(String payload) {
@@ -119,6 +147,7 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
     _router.routeInformationProvider.removeListener(_syncOrientation);
     _notifications.setNotificationHandler(null);
     _router.routeInformationProvider.removeListener(_drainNotification);
+    _detachTrackingExplainer();
     _router.dispose();
     super.dispose();
   }
@@ -403,7 +432,10 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
         ref
             .read(analyticsServiceProvider)
             .updateDeviceCategory(MediaQuery.sizeOf(context).shortestSide);
-        return child ?? const SizedBox.shrink();
+        return AppOpenGate(
+          router: _router,
+          child: child ?? const SizedBox.shrink(),
+        );
       },
     );
   }

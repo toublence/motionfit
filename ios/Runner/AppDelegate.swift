@@ -3,11 +3,42 @@ import Flutter
 import UIKit
 import UserNotifications
 import WebKit
+#if DEBUG || UNITY_ADS_QA
+import UnityAdapter
+import UnityAds
+#endif
 
 @main
 @objc class AppDelegate: FlutterAppDelegate, FlutterImplicitEngineDelegate {
   private var legacyStorageChannel: FlutterMethodChannel?
   private var legacyStorageReader: LegacyCapacitorStorageReader?
+
+  #if DEBUG || UNITY_ADS_QA
+  // Only the opt-in tool/unity_ads_device_test.dart entry point invokes this bridge.
+  private func configureUnityQAChannel(_ messenger: FlutterBinaryMessenger) {
+    let channel = FlutterMethodChannel(name: "fit.motionfit.app/unity_ads_qa", binaryMessenger: messenger)
+    channel.setMethodCallHandler { call, result in
+      switch call.method {
+      case "initializeUnity":
+        // AdMob initializes Unity with the server-mapped iOS Game ID.
+        GADMediationAdapterUnity.testMode = true
+        result(UnityAds.getVersion())
+      case "testMode":
+        result(GADMediationAdapterUnity.testMode)
+      case "record":
+        if let line = call.arguments as? String {
+          let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("unity-ads-qa.log")
+          let previous = (try? String(contentsOf: url, encoding: .utf8)) ?? ""
+          try? (previous + line + "\n").write(to: url, atomically: true, encoding: .utf8)
+        }
+        result(nil)
+      default:
+        result(FlutterMethodNotImplemented)
+      }
+    }
+  }
+  #endif
 
   override func application(
     _ application: UIApplication,
@@ -26,6 +57,9 @@ import WebKit
 
   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
     GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
+    #if DEBUG || UNITY_ADS_QA
+    configureUnityQAChannel(engineBridge.applicationRegistrar.messenger())
+    #endif
     guard let registrar = engineBridge.pluginRegistry.registrar(
       forPlugin: "LegacyCapacitorStorage"
     ) else { return }
