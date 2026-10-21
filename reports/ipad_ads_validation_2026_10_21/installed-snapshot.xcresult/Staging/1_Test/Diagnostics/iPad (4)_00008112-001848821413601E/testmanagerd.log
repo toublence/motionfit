@@ -1,0 +1,22 @@
+22:45:31.594 xcodebuild[68575:1183403] Waiting for Core Device device iPad (4) (Connected, iOS 26.6.2 23G90, 315AE942-B017-5187-A2DA-A0B2490459AD) to become available
+22:45:31.594 xcodebuild[68575:1183406] Connecting to service com.apple.dt.testmanagerd.remote on Core Device device iPad (4) (Connected, iOS 26.6.2 23G90, 315AE942-B017-5187-A2DA-A0B2490459AD)
+22:45:31.621 xcodebuild[68575:1183400] Successfully connected to service com.apple.dt.testmanagerd.remote on Core Device device iPad (4) (Connected, iOS 26.6.2 23G90, 315AE942-B017-5187-A2DA-A0B2490459AD)
+22:45:31.621 xcodebuild[68575:1183400] Successfully connected to testmanagerd
+22:45:31.622 xcodebuild[68575:1183400] Initiating control session with IDE capabilities: <XCTCapabilities: 0x11be73550>: {
+}
+22:45:31.664 xcodebuild[68575:1183400] Got reply to control session initiation request (result:error): <XCTCapabilities: 0x115cc3470>: {
+    "authorize test session capability" = 1;
+    "automation mode" = 1;
+    "daemon container sandbox extension" = 1;
+    "initiate daemon control session capability" = 4;
+    "initiate test runner session capability" = 2;
+    "record UI interaction capability" = 2;
+    "recording events as source code" = 1;
+    "report crashes capability" = 1;
+    "request log archive capability" = 1;
+    "request spindump capability" = 2;
+    "request tailspin capability" = 1;
+    "supports delayed attachment transfers" = 1;
+}: (null)
+22:45:31.693 xcodebuild[68575:1183400] Requesting crash report collection for process names: testmanagerd, MotionfitMetaQA, DTServiceHub, SpringBoard, runningboardd, assertiond, debugserver, MotionfitMetaQA-Runner, xctest, FrontBoard, backboardd
+22:45:31.726 xcodebuild[68575:1183372] Got reply to crash report collection request (error: (null))

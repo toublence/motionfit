@@ -15,3 +15,7 @@ Waiting for the application to terminate…
 2026-10-21 15:07:03.826 Runner[22033:5475475] -canOpenURL: failed for URL: "fb://" - error: "작업을 완료할 수 없습니다.(OSStatus 오류 -10814.)"
 [UnityAds][Info] Initializing SDK 4.21.0 42100 with game id 6208809 in production mode, session D7E5B1B6-DEF7-4CC1-85D0-D9D3E083B49F
 [UnityAds][Info] Initialized successfully!
+ERROR: An error occurred while communicating with a remote process. (com.apple.dt.CoreDeviceError error 3 (0x03))
+       ----------------------------------------
+           The connection was invalidated. (com.apple.Mercury.error error 1001 (0x3E9))
+           XPCConnectionDescription = <RemoteXPCPeerConnection 0x12e105370> { <remote connection: 0x12e1123a0> { type = preconnected, state = canceled, remote service name = (null), server mode = 0, protocol version number = 1, protocol feature flags = 0x6, local service version = 0, remote service version = 0, traffic class = 0, (root, reply) helo received = (1, 1), next msg id = 5, first msg id = 1, send in progress = 0, preexisting socket = -1 }

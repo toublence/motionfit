@@ -1,0 +1,46 @@
+Xcode version: 26.1.1 (17B100)
+22:45:31.688 xcodebuild[68575:1183370] Beginning test session MotionfitMetaQA-2ABCE9B7-60A0-4FC6-A1F7-7D105FB4CC8C at 2026-10-21 22:45:31.688 on target <DVTCoreDeviceCore.DVTCoreDevice_Impl: 0x115cfc690 (iPad (4) | arm64e)> (26.6.2 (23G90))
+22:45:31.688 xcodebuild[68575:1183370] 	/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
+test-without-building
+-project
+reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.xcodeproj
+-scheme
+MotionfitMetaQA
+-destination
+platform=iOS,id=00008112-001848821413601E
+-derivedDataPath
+/tmp/motionfit-meta-ui
+-resultBundlePath
+reports/ipad_ads_validation_2026_10_21/installed-snapshot.xcresult
+-only-testing:MotionfitMetaQA/MotionfitMetaQA/testSnapshot
+22:45:31.689 xcodebuild[68575:1183370] Test standard output and standard error is at /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/installed-snapshot.xcresult/Staging/1_Test/Diagnostics/MotionfitMetaQA-AC195F5D-A51F-412C-B339-256799EC4A3A-Configuration-Test Scheme Action-Iteration-1/MotionfitMetaQA-15D6A5B8-77B7-4D4A-BD72-460B66D55B46/StandardOutputAndStandardError.txt
+22:45:31.693 xcodebuild[68575:1183370] Setting up test runner session
+22:45:31.693 xcodebuild[68575:1183370] Waiting for Core Device device iPad (4) (Connected, iOS 26.6.2 23G90, 315AE942-B017-5187-A2DA-A0B2490459AD) to become available
+22:45:31.693 xcodebuild[68575:1183406] Connecting to service com.apple.dt.testmanagerd.remote on Core Device device iPad (4) (Connected, iOS 26.6.2 23G90, 315AE942-B017-5187-A2DA-A0B2490459AD)
+22:45:31.693 xcodebuild[68575:1183370] Registering/updating daemon-based crash report observer for process names (
+    xctest,
+    debugserver,
+    FrontBoard,
+    assertiond,
+    runningboardd,
+    SpringBoard,
+    testmanagerd,
+    backboardd,
+    DTServiceHub,
+    "MotionfitMetaQA-Runner",
+    MotionfitMetaQA
+)
+22:45:31.721 xcodebuild[68575:1183403] Successfully connected to service com.apple.dt.testmanagerd.remote on Core Device device iPad (4) (Connected, iOS 26.6.2 23G90, 315AE942-B017-5187-A2DA-A0B2490459AD)
+22:45:31.721 xcodebuild[68575:1183403] Successfully connected to testmanagerd
+22:45:31.721 xcodebuild[68575:1183371] Received connection for test runner session
+22:45:31.721 xcodebuild[68575:1183371] Listening for proxy connection request from the test bundle
+22:45:31.722 xcodebuild[68575:1183370] Test runner session acquired connection.
+22:45:31.722 xcodebuild[68575:1183371] Initiating session with identifier: 2ABCE9B7-60A0-4FC6-A1F7-7D105FB4CC8C
+22:45:31.727 xcodebuild[68575:1183370] Finished requesting crash reports. Continuing with testing.
+22:45:31.729 xcodebuild[68575:1183370] Launch session started.
+22:45:31.737 xcodebuild[68575:1183403] iPad (4) installing application bundle at <DVTFilePath:0x11d9f0720:'/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app'>
+22:45:31.747 xcodebuild[68575:1183403] Got reply to session initiation request with identifier 2ABCE9B7-60A0-4FC6-A1F7-7D105FB4CC8C (error: (null))
+22:46:14.680 xcodebuild[68575:1183370] Test operation failure: Error Domain=XCTHTestOperationCoordinatorErrorDomain Code=9 "Testing was canceled" UserInfo={NSLocalizedDescription=Testing was canceled}
+22:46:14.680 xcodebuild[68575:1183370] _finishWithError:Error Domain=XCTHTestOperationCoordinatorErrorDomain Code=9 "Testing was canceled" UserInfo={NSLocalizedDescription=Testing was canceled}
+22:46:14.680 xcodebuild[68575:1183370] Current state: testRunnerLaunchSessionHasFinishedReceivingData: YES, delegateBlockQueue.count: 0
+22:46:14.680 xcodebuild[68575:1183370] <XCTHTestOperationCoordinator: 0x12261f0c0>: _considerFlushingDelegateBlockQueue - nothing to flush

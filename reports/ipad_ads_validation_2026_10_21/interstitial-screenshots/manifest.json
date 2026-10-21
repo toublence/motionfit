@@ -1,0 +1,26 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "771CDBA9-796F-4F98-830F-6FE9400B9419.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "production-interstitial-showing_0_0DC1428D-0D97-44B2-B0B0-56473EEEDCBD.png",
+        "timestamp" : 1792591245.197
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "C2669304-457B-4E14-BD27-29CBA7BE6FA8.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "production-before-interstitial_0_0422C961-F4BD-4CDB-BF48-56B6356C003C.png",
+        "timestamp" : 1792591239.133
+      }
+    ],
+    "testIdentifier" : "MotionfitMetaQA/testProductionInterstitial()",
+    "testIdentifierURL" : "test://com.apple.xcode/MotionfitMetaQA/MotionfitMetaQA/MotionfitMetaQA/testProductionInterstitial"
+  }
+]

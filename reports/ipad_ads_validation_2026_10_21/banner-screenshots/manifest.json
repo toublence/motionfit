@@ -1,0 +1,44 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "105C9205-87CA-41A0-8C91-61ED582C442B.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "banner-after-background_0_CA10EADF-89A9-4B52-BB23-D5FD47723356.png",
+        "timestamp" : 1792590803.023
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "2AF877F7-D876-4879-B5AC-8B1831D38D77.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "banner-after-inactive_0_E83D58E6-6FC6-4560-B8FE-0701C870254A.png",
+        "timestamp" : 1792590800.082
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "FF12BB72-833D-49D7-BEF9-A533137677BA.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "banner-under-control-center_0_4035F404-A59B-4D05-AE96-2812282020A2.png",
+        "timestamp" : 1792590796.484
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "B76A9C15-090B-40D4-BD1B-5AEF6E6D97D0.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "banner-before-inactive_0_FEE1DC16-842F-492F-B57A-6C731D713573.png",
+        "timestamp" : 1792590793.543
+      }
+    ],
+    "testIdentifier" : "MotionfitMetaQA/testBannerLifecycle()",
+    "testIdentifierURL" : "test://com.apple.xcode/MotionfitMetaQA/MotionfitMetaQA/MotionfitMetaQA/testBannerLifecycle"
+  }
+]

@@ -36,9 +36,9 @@ void main() {
         expect(ads.ready, true);
         expect(sdk.initializations, 1);
         expect(
-          sdk.ads,
-          isEmpty,
-        ); // Unknown workout count fails closed for interstitial.
+          sdk.ads.length,
+          1,
+        ); // revenue_v1 preloads independently of the workout DB.
         if (mode == 'error') {
           expect(
             sink.events.any(
@@ -210,33 +210,36 @@ void main() {
     expect(result.allowed, true);
     expect(backend.trackingRequests, 2);
   });
-  test(
-    'unresolved ATT status schedules recovery without caching completion',
-    () {
-      fakeAsync((time) {
-        final backend = FakeConsent()..allowed = false;
-        backend.tracking = () async {
-          if (backend.trackingRequests == 1) {
-            throw const AdFailure('att_pending');
-          }
-          backend.allowed = true;
-        };
-        final ads = AdService(
-          analytics: AnalyticsService(sink: EventSink()),
-          sdk: FakeSdk(),
-          consent: PrivacyConsentService(backend: backend),
-        );
-        ads.initialize();
-        time.flushMicrotasks();
-        expect(ads.ready, false);
-        time.elapse(const Duration(seconds: 5));
-        expect(ads.ready, true);
-        expect(backend.trackingRequests, 2);
-        ads.dispose();
-        time.flushMicrotasks();
-      });
-    },
-  );
+  test('unresolved ATT status waits for resume without polling', () {
+    fakeAsync((time) {
+      final backend = FakeConsent()..allowed = false;
+      backend.tracking = () async {
+        if (backend.trackingRequests == 1) {
+          throw const AdFailure('att_pending');
+        }
+        backend.allowed = true;
+      };
+      final ads = AdService(
+        analytics: AnalyticsService(sink: EventSink()),
+        sdk: FakeSdk(),
+        consent: PrivacyConsentService(backend: backend),
+      );
+      ads.initialize();
+      time.flushMicrotasks();
+      expect(ads.ready, false);
+      time.elapse(const Duration(seconds: 5));
+      expect(ads.ready, false);
+      expect(backend.trackingRequests, 1);
+      ads.updateOnboardingContext(true);
+      ads.setForeground(false);
+      ads.setForeground(true);
+      time.flushMicrotasks();
+      expect(ads.ready, true);
+      expect(backend.trackingRequests, 2);
+      ads.dispose();
+      time.flushMicrotasks();
+    });
+  });
   test(
     'completed ATT invocation does not cache an unresolved OS status',
     () async {

@@ -1,0 +1,15 @@
+consentAllowed=true
+unitySdk=4.21.0
+adapter=GADMediationAdapterFacebook state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x1153bb340; state = Ready>
+adapter=GADMediationAdapterUnity state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x1153bb480; state = Ready>
+adapter=GADMobileAds state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x11519a8a0; state = Ready>
+unityTestMode=true
+googleTestPreflightLoaded=true
+inspectorClosed=OK
+request=ca-app-pub-6169297934919363/2998795518
+loadedAdapter=GADMediationAdapterUnity
+showed=true
+impression=true
+dismissed=true
+PASS
+inspectorClosed=OK

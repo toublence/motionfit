@@ -1,0 +1,163 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.xcodeproj -scheme MotionfitMetaQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-meta-ui -resultBundlePath reports/ipad_ads_validation_2026_10_21/meta-source.xcresult "-only-testing:MotionfitMetaQA/MotionfitMetaQA/testMetaSource"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/meta-source.xcresult
+
+2026-10-21 23:02:51.542843+0900 MotionfitMetaQA-Runner[22872:5627982] [Default] Running tests...
+2026-10-21 23:02:51.554132+0900 MotionfitMetaQA-Runner[22872:5627982] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-21 23:02:51.969.
+Test Suite 'MotionfitMetaQA.xctest' started at 2026-10-21 23:02:51.969.
+Test Suite 'MotionfitMetaQA' started at 2026-10-21 23:02:51.970.
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testMetaSource]' started.
+    t =     0.00s Start Test at 2026-10-21 23:02:51.970
+    t =     0.01s Set Up
+    t =     0.01s Terminate fit.motionfit.app:22856
+    t =     1.06s Open fit.motionfit.app
+    t =     1.06s     Launch fit.motionfit.app
+    t =     1.14s         Setting up automation session
+    t =     1.39s         Wait for fit.motionfit.app to idle
+    t =     2.54s Waiting 20.0s for "Test Meta" Button to exist
+    t =     3.56s     Checking `Expect predicate `existsNoRetry == 1` for object "Test Meta" Button`
+    t =     3.56s         Checking existence of `"Test Meta" Button`
+    t =     3.59s         Capturing element debug description
+    t =     4.54s     Checking `Expect predicate `existsNoRetry == 1` for object "Test Meta" Button`
+    t =     4.55s         Checking existence of `"Test Meta" Button`
+    t =     4.58s Tap "Test Meta" Button
+    t =     4.58s     Wait for fit.motionfit.app to idle
+    t =     4.58s     Find the "Test Meta" Button
+    t =     4.60s     Check for interrupting elements affecting "Test Meta" Button
+    t =     4.63s     Synthesize event
+    t =     4.93s     Wait for fit.motionfit.app to idle
+    t =     4.94s Waiting 20.0s for "Open Ad Inspector" Button to exist
+    t =     5.97s     Checking `Expect predicate `existsNoRetry == 1` for object "Open Ad Inspector" Button`
+    t =     5.97s         Checking existence of `"Open Ad Inspector" Button`
+    t =     7.03s Checking `Expect predicate `enabled == 1` for object "Open Ad Inspector" Button`
+    t =     7.03s     Find the "Open Ad Inspector" Button
+    t =     7.05s     Capturing element debug description
+    t =     7.12s         Requesting snapshot of accessibility hierarchy for app with pid 22873
+    t =     7.13s         Find: Descendants matching type Button
+    t =     7.13s         Find: Elements matching predicate '"Open Ad Inspector" IN identifiers'
+    t =     7.13s         Requesting snapshot of accessibility hierarchy for app with pid 22873
+    t =     7.14s         Find: Descendants matching type Button
+    t =     7.15s         Requesting snapshot of accessibility hierarchy for app with pid 22873
+    t =     8.08s Checking `Expect predicate `enabled == 1` for object "Open Ad Inspector" Button`
+    t =     8.09s     Find the "Open Ad Inspector" Button
+    t =     8.12s Tap "Open Ad Inspector" Button
+    t =     8.12s     Wait for fit.motionfit.app to idle
+    t =     8.12s     Find the "Open Ad Inspector" Button
+    t =     8.15s     Check for interrupting elements affecting "Open Ad Inspector" Button
+    t =     8.18s     Synthesize event
+    t =     8.47s     Wait for fit.motionfit.app to idle
+    t =     8.81s Waiting 20.0s for Switch (First Match) to exist
+    t =     9.84s     Checking `Expect predicate `existsNoRetry == 1` for object Switch (First Match)`
+    t =     9.84s         Checking existence of `Switch (First Match)`
+    t =     9.92s Find the Switch (First Match)
+    t =     9.96s Tap "0" Switch
+    t =     9.96s     Wait for fit.motionfit.app to idle
+    t =     9.97s     Find the "0" Switch
+    t =    10.01s     Check for interrupting elements affecting "0" Switch
+    t =    10.06s     Synthesize event
+    t =    10.36s     Wait for fit.motionfit.app to idle
+    t =    10.36s Waiting 15.0s for "Meta Audience Network (Bidding)" StaticText to exist
+    t =    11.39s     Checking `Expect predicate `existsNoRetry == 1` for object "Meta Audience Network (Bidding)" StaticText`
+    t =    11.39s         Checking existence of `"Meta Audience Network (Bidding)" StaticText`
+    t =    11.47s Tap "Meta Audience Network (Bidding)" StaticText
+    t =    11.47s     Wait for fit.motionfit.app to idle
+    t =    11.48s     Find the "Meta Audience Network (Bidding)" StaticText
+    t =    11.52s     Check for interrupting elements affecting "Meta Audience Network (Bidding)" StaticText
+    t =    11.57s     Synthesize event
+    t =    11.86s     Wait for fit.motionfit.app to idle
+    t =    11.87s Tap "Start test" Button
+    t =    11.87s     Wait for fit.motionfit.app to idle
+    t =    11.87s     Find the "Start test" Button
+    t =    11.91s     Check for interrupting elements affecting "Start test" Button
+    t =    11.95s     Synthesize event
+    t =    12.25s     Wait for fit.motionfit.app to idle
+    t =    12.25s Tap "Close" Button
+    t =    12.25s     Wait for fit.motionfit.app to idle
+    t =    12.26s     Find the "Close" Button
+    t =    12.34s     Check for interrupting elements affecting "Close" Button
+    t =    12.40s     Synthesize event
+    t =    12.69s     Wait for fit.motionfit.app to idle
+    t =    13.02s Tap "Load Meta interstitial" Button
+    t =    13.02s     Wait for fit.motionfit.app to idle
+    t =    13.03s     Find the "Load Meta interstitial" Button
+    t =    14.04s         Find the "Load Meta interstitial" Button (retry 1)
+    t =    14.18s     Check for interrupting elements affecting "Load Meta interstitial" Button
+    t =    14.22s     Synthesize event
+    t =    14.53s     Wait for fit.motionfit.app to idle
+    t =    34.54s Requesting snapshot of accessibility hierarchy for app with pid 22873
+    t =    34.72s Requesting snapshot of accessibility hierarchy for app with pid 22873
+IPAD_ADS_STATE meta-source-result
+Attributes: Application, 0x116451680, pid: 22873, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x116451680, pid: 22873, label: 'motionfit - workout coach'
+    Window (Main), 0x116453480, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x116452080, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x116452800, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x116451b80, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x116452300, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x116451a40, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x1164517c0, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x1164521c0, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x116451540, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x116451f40, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x116451e00, {{0.0, 0.0}, {820.0, 1180.0}}
+                    WebView, 0x1164526c0, {{0.0, 0.0}, {820.0, 1180.0}}, identifier: 'fb-ad-dsl-full-screen-webview'
+                      WebView, 0x116451cc0, {{0.0, 0.0}, {820.0, 1180.0}}
+                        WebView, 0x116452940, {{0.0, 0.0}, {820.0, 1180.0}}
+                          Other, 0x10b2f1b80, {{0.0, 0.0}, {820.0, 1180.0}}
+                            Other, 0x116457840, {{0.0, 0.0}, {820.0, 1180.0}}
+                              Other, 0x116457c00, {{0.0, 0.0}, {820.0, 1180.0}}
+                                Other, 0x116457ac0, {{0.0, 0.0}, {820.0, 1180.0}}, Focused
+                                  Button, 0x116456940, {{772.0, 16.0}, {32.0, 32.0}}, Focused
+                                  Other, 0x116456a80, {{292.0, 519.0}, {236.0, 25.0}}, label: 'FB bidding Advertiser', value: 1, Focused
+                                    StaticText, 0x116457e80, {{292.0, 516.0}, {236.0, 30.0}}, label: 'FB bidding Advertiser', value: FB bidding Adverti..., Focused
+                                  StaticText, 0x116457d40, {{281.0, 564.0}, {258.0, 21.0}}, label: 'Your ad integration works. Woohoo!', value: Your ad integratio..., Focused
+                                  Button, 0x1164570c0, {{36.0, 1031.0}, {748.0, 48.0}}, label: 'Install Now', Focused
+                                  Other, 0x116457340, {{40.0, 1095.0}, {740.0, 4.0}}, Focused
+                                  Other, 0x116456e40, {{776.0, 1119.0}, {8.0, 8.0}}, Focused
+                                  Other, 0x1164575c0, {{771.0, 1115.0}, {17.0, 10.0}}, Focused
+                        Other, 0x116457480, {{787.0, 18.0}, {30.0, 1144.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                          Other, 0x116457980, {{814.0, 21.0}, {3.0, 1138.0}}
+                        Other, 0x116456800, {{18.0, 1147.0}, {784.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                          Other, 0x116455b80, {{21.0, 1174.0}, {778.0, 3.0}}
+                        Other, 0x116456d00, {{787.0, 18.0}, {30.0, 1144.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                          Other, 0x116456f80, {{814.0, 21.0}, {3.0, 1138.0}}
+                        Other, 0x116457200, {{18.0, 1147.0}, {784.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                          Other, 0x116456bc0, {{21.0, 1174.0}, {778.0, 3.0}}
+          Other, 0x116457700, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x116458000, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x116458140, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x116458280, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x1164583c0, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x116458500, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x116451680, pid: 22873, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x116458640, pid: 22873, label: 'motionfit - workout coach'
+  }
+
+    t =    34.95s Added attachment named 'meta-source-result'
+    t =    34.95s Tear Down
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testMetaSource]' passed (35.207 seconds).
+Test Suite 'MotionfitMetaQA' passed at 2026-10-21 23:03:27.178.
+	 Executed 1 test, with 0 failures (0 unexpected) in 35.207 (35.208) seconds
+Test Suite 'MotionfitMetaQA.xctest' passed at 2026-10-21 23:03:27.181.
+	 Executed 1 test, with 0 failures (0 unexpected) in 35.207 (35.211) seconds
+Test Suite 'Selected tests' passed at 2026-10-21 23:03:27.183.
+	 Executed 1 test, with 0 failures (0 unexpected) in 35.207 (35.214) seconds
+2026-10-21 23:03:27.616 xcodebuild[77745:1226854] [MT] IDETestOperationsObserverDebug: 38.481 elapsed -- Testing started completed.
+2026-10-21 23:03:27.616 xcodebuild[77745:1226854] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 23:03:27.616 xcodebuild[77745:1226854] [MT] IDETestOperationsObserverDebug: 38.481 sec, +38.481 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/meta-source.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

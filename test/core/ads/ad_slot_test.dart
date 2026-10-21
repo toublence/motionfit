@@ -28,7 +28,7 @@ AdService makeService(FakeSdk sdk, {EventSink? sink}) => AdService(
 
 void main() {
   test(
-    'native timeout falls back after 15 seconds and ignores stale callbacks',
+    'native timeout falls back after 60 seconds and ignores stale callbacks',
     () {
       fakeAsync((time) {
         final sdk = FakeSdk();
@@ -44,7 +44,7 @@ void main() {
         slot.setActive(true);
         time.flushMicrotasks();
         final native = sdk.ads.single;
-        time.elapse(const Duration(seconds: 15));
+        time.elapse(const Duration(seconds: 60));
         expect(slot.format, AdFormat.banner);
         expect(sdk.ads.length, 2);
         expect(sdk.formats.last, AdFormat.banner);
@@ -59,6 +59,60 @@ void main() {
       });
     },
   );
+  test('slow native mediation fill past 15 seconds is kept', () {
+    fakeAsync((time) {
+      final sdk = FakeSdk();
+      final service = makeService(sdk);
+      service.initialize();
+      time.flushMicrotasks();
+      final slot = AdSlotController(
+        service: service,
+        preferredFormat: AdFormat.native,
+        placement: 'records',
+      );
+      slot.setWidth(320);
+      slot.setActive(true);
+      time.flushMicrotasks();
+      time.elapse(const Duration(seconds: 16));
+      sdk.ads.single.callbacks.loaded();
+      expect(slot.format, AdFormat.native);
+      expect(slot.ad, sdk.ads.single);
+      slot.dispose();
+      service.dispose();
+      time.flushMicrotasks();
+    });
+  });
+  test('iOS inactive keeps a loaded banner; background hides it', () {
+    fakeAsync((time) {
+      final sdk = FakeSdk()
+        ..configure = (ad) => ad.onLoad = () async => ad.callbacks.loaded();
+      final service = makeService(sdk);
+      service.initialize();
+      time.flushMicrotasks();
+      final slot = AdSlotController(
+        service: service,
+        preferredFormat: AdFormat.banner,
+        placement: 'bottom',
+      );
+      slot.setWidth(320);
+      slot.setActive(true);
+      time.flushMicrotasks();
+      final banner = slot.ad;
+      expect(banner, isNotNull);
+      service.setForeground(false, visible: true);
+      time.flushMicrotasks();
+      expect(slot.ad, banner);
+      service.setForeground(false);
+      expect(slot.ad, null);
+      service.setForeground(true);
+      time.flushMicrotasks();
+      expect(slot.ad, banner);
+      expect(sdk.ads.length, 1);
+      slot.dispose();
+      service.dispose();
+      time.flushMicrotasks();
+    });
+  });
   test(
     'native invocation error uses banner; background holds pending retries',
     () {
@@ -141,6 +195,10 @@ void main() {
       );
       for (final platform in [TargetPlatform.iOS, TargetPlatform.android]) {
         for (final format in AdFormat.values) {
+          if (platform == TargetPlatform.android &&
+              format == AdFormat.appOpen) {
+            continue;
+          }
           final test = MotionFitAdUnits.resolve(
             format,
             platform: platform,

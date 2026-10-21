@@ -1,0 +1,17 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "44CBC7A5-AEE3-491D-A89E-93A4C398A29F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "initial_0_6F4AC6FD-00F8-49A7-8687-1AEF4938510F.png",
+        "timestamp" : 1792590731.289
+      }
+    ],
+    "testIdentifier" : "MotionfitMetaQA/testSnapshot()",
+    "testIdentifierURL" : "test://com.apple.xcode/MotionfitMetaQA/MotionfitMetaQA/MotionfitMetaQA/testSnapshot"
+  }
+]

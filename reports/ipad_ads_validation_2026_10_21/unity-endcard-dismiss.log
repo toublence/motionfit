@@ -1,0 +1,157 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.xcodeproj -scheme MotionfitMetaQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-meta-ui -resultBundlePath reports/ipad_ads_validation_2026_10_21/unity-endcard-dismiss.xcresult "-only-testing:MotionfitMetaQA/MotionfitMetaQA/testFinishMediation"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/unity-endcard-dismiss.xcresult
+
+2026-10-21 23:12:48.583102+0900 MotionfitMetaQA-Runner[22910:5634274] [Default] Running tests...
+2026-10-21 23:12:48.594853+0900 MotionfitMetaQA-Runner[22910:5634274] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-21 23:12:49.041.
+Test Suite 'MotionfitMetaQA.xctest' started at 2026-10-21 23:12:49.042.
+Test Suite 'MotionfitMetaQA' started at 2026-10-21 23:12:49.042.
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testFinishMediation]' started.
+    t =     0.00s Start Test at 2026-10-21 23:12:49.042
+    t =     0.02s Set Up
+    t =     0.02s Open fit.motionfit.app
+    t =     0.02s     Activate fit.motionfit.app
+    t =     0.04s         Wait for fit.motionfit.app to idle
+    t =     0.05s Checking existence of `"Close" Button`
+    t =     0.09s Waiting 20.0s for "Close" Button to exist
+    t =     1.12s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =     1.12s         Checking existence of `"Close" Button`
+    t =     1.19s Tap "Close" Button
+    t =     1.19s     Wait for fit.motionfit.app to idle
+    t =     1.20s     Find the "Close" Button
+    t =     1.25s     Check for interrupting elements affecting "Close" Button
+    t =     1.31s     Synthesize event
+    t =     1.61s     Wait for fit.motionfit.app to idle
+    t =     1.95s Waiting 15.0s for StaticText (First Match) to exist
+    t =     2.97s     Checking `Expect predicate `existsNoRetry == 1` for object StaticText (First Match)`
+    t =     2.97s         Checking existence of `StaticText (First Match)`
+    t =     2.98s         Capturing element debug description
+    t =     4.01s     Checking `Expect predicate `existsNoRetry == 1` for object StaticText (First Match)`
+    t =     4.01s         Checking existence of `StaticText (First Match)`
+    t =     4.04s Requesting snapshot of accessibility hierarchy for app with pid 22885
+    t =     4.14s Requesting snapshot of accessibility hierarchy for app with pid 22885
+IPAD_ADS_STATE mediation-dismissed-pass
+Attributes: Application, 0x10b68a940, pid: 22885, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x10b68a940, pid: 22885, label: 'motionfit - workout coach'
+    Window (Main), 0x10b689680, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10b689900, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10b689a40, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x10b689e00, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x10b68b340, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x10b68b480, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x10b68a800, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x10b68a1c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10b688000, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10b688780, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10b688640, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10b68a580, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10b68a440, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10b68a300, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10b68af80, {{0.0, 0.0}, {820.0, 88.0}}
+                        Other, 0x10b68a080, {{348.2, 46.0}, {123.6, 28.0}}, label: 'Unity Ads QA'
+                      Button, 0x10b688280, {{334.1, 88.0}, {151.8, 48.0}}, label: 'Open Ad Inspector'
+                      Button, 0x10b688a00, {{324.7, 136.0}, {170.6, 48.0}}, label: 'Load Unity interstitial'
+                      Other, 0x10b688b40, {{0.0, 0.0}, {820.0, 1180.0}}
+                        ScrollView, 0x10b689b80, {{0.0, 184.0}, {820.0, 996.0}}
+                        StaticText, 0x10b688c80, {{0.0, 184.0}, {820.0, 340.0}}, label: 'consentAllowed=true
+unitySdk=4.21.0
+adapter=GADMediationAdapterFacebook state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x1153bb340; state = Ready>
+adapter=GADMediationAdapterUnity state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x1153bb480; state = Ready>
+adapter=GADMobileAds state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x11519a8a0; state = Ready>
+unityTestMode=true
+googleTestPreflightLoaded=true
+inspectorClosed=OK
+request=ca-app-pub-6169297934919363/2998795518
+loadedAdapter=GADMediationAdapterUnity
+showed=true
+impression=true
+dismissed=true
+PASS'
+    Window, 0x10b688dc0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10b689040, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10b688f00, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x10b68a940, pid: 22885, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x10b6892c0, pid: 22885, label: 'motionfit - workout coach'
+  }
+
+    t =     4.30s Added attachment named 'mediation-dismissed-pass'
+    t =     4.30s Tap "Open Ad Inspector" Button
+    t =     4.30s     Wait for fit.motionfit.app to idle
+    t =     4.30s     Find the "Open Ad Inspector" Button
+    t =     4.32s     Check for interrupting elements affecting "Open Ad Inspector" Button
+    t =     4.33s     Synthesize event
+    t =     4.61s     Wait for fit.motionfit.app to idle
+    t =     4.96s Waiting 20.0s for Switch (First Match) to exist
+    t =     5.98s     Checking `Expect predicate `existsNoRetry == 1` for object Switch (First Match)`
+    t =     5.98s         Checking existence of `Switch (First Match)`
+    t =     6.07s Find the Switch (First Match)
+    t =     6.13s Tap "1" Switch
+    t =     6.13s     Wait for fit.motionfit.app to idle
+    t =     6.13s     Find the "1" Switch
+    t =     6.18s     Check for interrupting elements affecting "1" Switch
+    t =     6.24s     Synthesize event
+    t =     6.53s     Wait for fit.motionfit.app to idle
+    t =     6.54s Checking existence of `"Stop test" Button`
+    t =     6.57s Tap "Stop test" Button
+    t =     6.57s     Wait for fit.motionfit.app to idle
+    t =     6.57s     Find the "Stop test" Button
+    t =     6.60s     Check for interrupting elements affecting "Stop test" Button
+    t =     6.64s     Synthesize event
+    t =     6.94s     Wait for fit.motionfit.app to idle
+    t =     6.94s Find the "1" Switch
+    t =     7.00s Tap "Close" Button
+    t =     7.00s     Wait for fit.motionfit.app to idle
+    t =     7.01s     Find the "Close" Button
+    t =     7.08s     Check for interrupting elements affecting "Close" Button
+    t =     7.13s     Synthesize event
+    t =     7.42s     Wait for fit.motionfit.app to idle
+    t =     7.75s Requesting snapshot of accessibility hierarchy for app with pid 22885
+    t =     7.80s Requesting snapshot of accessibility hierarchy for app with pid 22885
+IPAD_ADS_STATE single-source-disabled
+Attributes: Application, 0x116891180, pid: 22885, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x116891180, pid: 22885, label: 'motionfit - workout coach'
+    Window (Main), 0x1168412c0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x116840c80, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x116840500, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x116840f00, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x116840dc0, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x116840b40, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x116840a00, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x116841180, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x116891180, pid: 22885, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x116841680, pid: 22885, label: 'motionfit - workout coach'
+  }
+
+    t =     7.95s Added attachment named 'single-source-disabled'
+    t =     7.95s Tear Down
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testFinishMediation]' passed (7.973 seconds).
+Test Suite 'MotionfitMetaQA' passed at 2026-10-21 23:12:57.015.
+	 Executed 1 test, with 0 failures (0 unexpected) in 7.973 (7.973) seconds
+Test Suite 'MotionfitMetaQA.xctest' passed at 2026-10-21 23:12:57.015.
+	 Executed 1 test, with 0 failures (0 unexpected) in 7.973 (7.974) seconds
+Test Suite 'Selected tests' passed at 2026-10-21 23:12:57.016.
+	 Executed 1 test, with 0 failures (0 unexpected) in 7.973 (7.974) seconds
+2026-10-21 23:12:57.269 xcodebuild[81171:1248945] [MT] IDETestOperationsObserverDebug: 11.279 elapsed -- Testing started completed.
+2026-10-21 23:12:57.269 xcodebuild[81171:1248945] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 23:12:57.269 xcodebuild[81171:1248945] [MT] IDETestOperationsObserverDebug: 11.279 sec, +11.279 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/unity-endcard-dismiss.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

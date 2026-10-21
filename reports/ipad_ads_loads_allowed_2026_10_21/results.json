@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-21",
+  "device": "iPad Air 11-inch (M2)",
+  "device_id": "315AE942-B017-5187-A2DA-A0B2490459AD",
+  "status": "PASS for loadsAllowed fix; separate native accessibility automation crash recorded",
+  "automated_tests": {
+    "command": "flutter test test/core/ads test/core/privacy",
+    "passed": 59,
+    "failed": 0,
+    "log": "flutter-tests.log"
+  },
+  "interstitial": {
+    "status": "PASS",
+    "checks": {
+      "real_sdk_interstitial_showed": true,
+      "paused_still_allows_loads": true,
+      "no_cancelled_events": true,
+      "resumed_before_sdk_dismissal": true,
+      "dismissal_completed_successfully": true,
+      "real_background_stops_loads": true,
+      "interstitial_request_count_is_two": true,
+      "interstitial_same_request_loaded_while_covered": true,
+      "interstitial_no_new_request_after_dismissal": true,
+      "banner_request_count_is_two": true,
+      "banner_same_request_loaded_while_covered": true,
+      "banner_no_new_request_after_dismissal": true
+    },
+    "loads_completed_while_covered": {
+      "interstitial": {
+        "request_id": "01a15edd-abfe-7b7d-b705-30f7559f8dff",
+        "loaded_at": "2026-10-21T14:29:10.121741Z"
+      },
+      "banner": {
+        "request_id": "01a15edd-abfe-768c-aa7c-4d69be4e705f",
+        "loaded_at": "2026-10-21T14:29:09.385861Z"
+      }
+    },
+    "paused_at": "2026-10-21T14:29:08.772906Z",
+    "resumed_at": "2026-10-21T14:29:19.870180Z",
+    "sdk_dismissal_at": "2026-10-21T14:29:19.880774Z",
+    "evidence": "interstitial-complete-trace.jsonl",
+    "scope": "Production AdService and AdSlot, actual iPad lifecycle and real Google demo ads; QA policy context is in memory, no workout DB writes."
+  },
+  "app_open": {
+    "status": "PASS",
+    "checks": {
+      "app_open_showed": true,
+      "next_app_open_loaded_while_presented": true,
+      "no_cancelled_events": true
+    },
+    "evidence": "app-open-trace.jsonl",
+    "ui": "app-open-ui.log",
+    "scope": "Real Google demo app-open ad. This creative did not emit hidden/paused; those states were exercised by the interstitial test. Interstitial was already cached in this app-open run."
+  },
+  "build": {
+    "mode": "Profile",
+    "test_ads": "Official Google demo units; this run did not repeat Meta/Unity single-source tests",
+    "qa_build_log": "qa-build.log",
+    "normal_build_log": "normal-build.log",
+    "normal_bundle_version": "1.6.8",
+    "normal_bundle_build": "68",
+    "source_provenance": "source-hashes.json",
+    "sources_unchanged_since_qa_build": {
+      "lib/core/ads/ad_service.dart": true,
+      "lib/core/ads/ad_slot_controller.dart": true,
+      "lib/app/app.dart": true,
+      "tool/ios_ads_regression_device_test.dart": true,
+      "test/core/ads/interstitial_test.dart": true
+    }
+  },
+  "automation_issue": {
+    "initial_ui_run": "FAILED after dismissal when XCTest queried the Flutter accessibility hierarchy; application exited",
+    "current_crash": "Runner-232651.ips",
+    "prior_to_fix_crash": "Runner-before-fix-230135.ips",
+    "shared_stack": "Flutter SemanticsObject(UIFocusSystem) parentFocusEnvironment -> UIAccessibility geometry sorting / snapshot",
+    "difference": "Current termination=CODESIGNING Invalid Page; previous termination=SIGSEGV. Shared stack establishes this code path also crashed before the loadsAllowed change; exact root cause is unproven.",
+    "followup": "Re-ran the device scenario with saved telemetry and screenshots instead of querying the Flutter AX hierarchy after dismissal. This run completed, including Home/background/return, with 12/12 trace checks passing.",
+    "initial_ui_log": "interstitial-ui.log",
+    "followup_ui_log": "interstitial-telemetry-ui.log"
+  },
+  "observations": [
+    "Google native demo ad validator in the QA screen reported one implementation issue; separate from load cancellation and not investigated here."
+  ],
+  "limitations": [
+    "Inverted native SDK dismissal/resume order was not observed; real device resumed before dismissal callback.",
+    "QA uses in-memory onboarding/completion counts and actual production AdService/AdSlot with real SDK demo ads, not a newly performed workout.",
+    "No Firebase DebugView/post-release metrics were checked; QA logs use a local sink."
+  ],
+  "cleanup": {
+    "installed_entrypoint": "lib/main.dart",
+    "build_includes_current_fix": true,
+    "install_log": "restore-install.log",
+    "launch_log": "restore-launch.log",
+    "ui_log": "restored-ui.log",
+    "firebase_debug_mode": "Launch requested -FIRDebugDisabled",
+    "workout_data": "Retained; no uninstall, no QA workout DB writes"
+  }
+}

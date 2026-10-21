@@ -1,0 +1,268 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project reports/ipad_ads_loads_allowed_2026_10_21/ui/MotionfitMetaQA.xcodeproj -scheme MotionfitMetaQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-meta-ui -resultBundlePath reports/ipad_ads_loads_allowed_2026_10_21/interstitial.xcresult "-only-testing:MotionfitMetaQA/MotionfitMetaQA/testFixedInterstitial"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/interstitial.xcresult
+
+2026-10-21 23:26:17.891156+0900 MotionfitMetaQA-Runner[22930:5640307] [Default] Running tests...
+2026-10-21 23:26:17.903491+0900 MotionfitMetaQA-Runner[22930:5640307] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-21 23:26:18.324.
+Test Suite 'MotionfitMetaQA.xctest' started at 2026-10-21 23:26:18.324.
+Test Suite 'MotionfitMetaQA' started at 2026-10-21 23:26:18.324.
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testFixedInterstitial]' started.
+    t =     0.00s Start Test at 2026-10-21 23:26:18.325
+    t =     0.01s Set Up
+    t =     0.01s Terminate fit.motionfit.app:0
+    t =     0.02s Open fit.motionfit.app
+    t =     0.02s     Launch fit.motionfit.app
+    t =     0.06s         Setting up automation session
+    t =     0.47s         Wait for fit.motionfit.app to idle
+    t =     1.63s Waiting 20.0s for "Test production ad service" Button to exist
+    t =     2.64s     Checking `Expect predicate `existsNoRetry == 1` for object "Test production ad service" Button`
+    t =     2.64s         Checking existence of `"Test production ad service" Button`
+    t =     2.67s         Capturing element debug description
+    t =     3.68s     Checking `Expect predicate `existsNoRetry == 1` for object "Test production ad service" Button`
+    t =     3.68s         Checking existence of `"Test production ad service" Button`
+    t =     3.72s Tap "Test production ad service" Button
+    t =     3.72s     Wait for fit.motionfit.app to idle
+    t =     3.73s     Find the "Test production ad service" Button
+    t =     3.75s     Check for interrupting elements affecting "Test production ad service" Button
+    t =     3.78s     Synthesize event
+    t =     4.08s     Wait for fit.motionfit.app to idle
+    t =     4.09s Waiting 20.0s for "Show interstitial + reload banner" Button to exist
+    t =     5.09s     Checking `Expect predicate `existsNoRetry == 1` for object "Show interstitial + reload banner" Button`
+    t =     5.10s         Checking existence of `"Show interstitial + reload banner" Button`
+    t =     6.14s Checking `Expect predicate `enabled == 1` for object "Show interstitial + reload banner" Button`
+    t =     6.14s     Find the "Show interstitial + reload banner" Button
+    t =    18.21s Requesting snapshot of accessibility hierarchy for app with pid 22931
+    t =    18.48s Requesting snapshot of accessibility hierarchy for app with pid 22931
+LOADS_ALLOWED_UI before-show
+Attributes: Application, 0x108577e80, pid: 22931, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x108577e80, pid: 22931, label: 'motionfit - workout coach'
+    Window (Main), 0x108577340, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x108577c00, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x108577d40, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x1085775c0, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x108577980, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x108577ac0, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x108577700, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x108577840, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x108577480, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10b6e4000, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10b6e4140, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10b6e4280, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10b6e43c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10b6e4500, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10b6e4640, {{0.0, 0.0}, {820.0, 88.0}}
+                        Other, 0x10b6e4780, {{291.1, 46.0}, {237.8, 28.0}}, label: 'Production Ad Service QA'
+                      Button, 0x10b6e48c0, {{342.7, 88.0}, {134.5, 48.0}}, label: 'Show interstitial'
+                      Button, 0x10b6e4a00, {{286.8, 136.0}, {246.3, 48.0}}, label: 'Show interstitial + reload banner'
+                      Button, 0x10b6e4b40, {{343.0, 184.0}, {134.0, 48.0}}, label: 'Prime app-open'
+                      Button, 0x10b6e4c80, {{344.1, 232.0}, {131.8, 48.0}}, label: 'Show app-open'
+                      Other, 0x10b6e4dc0, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10b6e4f00, {{50.0, 280.0}, {720.0, 101.0}}
+                        Other, 0x10b6e5040, {{50.0, 280.0}, {720.0, 101.0}}
+                          Other, 0x10b6e5180, {{50.0, 280.0}, {720.0, 101.0}}, identifier: 'platform_view[1]'
+                            Other, 0x10b6e52c0, {{50.0, 280.0}, {720.0, 101.0}}, Disabled
+                      Other, 0x10b6e5400, {{0.0, 0.0}, {820.0, 1180.0}}
+                        ScrollView, 0x10b6e5540, {{0.0, 381.0}, {820.0, 710.0}}
+                        StaticText, 0x10b6e5680, {{0.0, 381.0}, {820.0, 710.0}}, label: '{"at":"2026-10-21T14:26:22.431867Z","event":"mf2_ads_init_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"stage":"allowed","allowed":1,"retryable":0,"elapsed_ms":222,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:26:22.433331Z","event":"mf2_ads_configuration","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"test_mode":1,"interstitial_unit":"ca-app-pub-3940256099942544/4411468910","native_unit":"ca-app-pub-3940256099942544/3986624511","banner_unit":"ca-app-pub-3940256099942544/2934735716","appOpen_unit":"ca-app-pub-3940256099942544/5575463023","sdk":"google_mobile_ads_9.0.0","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:26:22.433896Z","event":"mf2_ads_init_started","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"stage":"sdk","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:26:22.916081Z","event":"qa_initialized","parameters":{"ready":true}}
+{"at":"2026-10-21T14:26:22.916492Z","event":"mf2_ads_init_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"stage":"sdk","result":"ready","elapsed_ms":484,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:26:22.916934Z","event":"mf2_ad_request_attempted","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"native","ad_placement":"device_qa_native","ad_unit_id":"ca-app-pub-3940256099942544/3986624511","request_id":"01a15edb-2644-70fb-a518-cd018761a40f","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:26:22.917196Z","event":"mf2_ad_request_attempted","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"interstitial","ad_placement":"workout_complete","ad_unit_id":"ca-app-pub-3940256099942544/4411468910","request_id":"01a15edb-2644-7726-9d17-4613a9b41430","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:26:22.917680Z","event":"mf2_ad_request_attempted","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"banner","ad_placement":"device_qa_banner","ad_unit_id":"ca-app-pub-3940256099942544/2934735716","request_id":"01a15edb-2644-7382-a24e-7c223bcb7d9b","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:26:23.704307Z","event":"mf2_ad_load_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"banner","ad_placement":"device_qa_banner","ad_unit_id":"ca-app-pub-3940256099942544/2934735716","request_id":"01a15edb-2644-7382-a24e-7c223bcb7d9b","retry_attempt":0,"result":"loaded","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:26:23.719480Z","event":"mf2_ad_view_state","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"banner","ad_placement":"device_qa_banner","request_id":"01a15edb-2644-7382-a24e-7c223bcb7d9b","state":"attached","visible":1,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:26:23.743208Z","event":"mf2_ad_impression_callback","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"banner","ad_placement":"device_qa_banner","ad_unit_id":"ca-app-pub-3940256099942544/2934735716","request_id":"01a15edb-2644-7382-a24e-7c223bcb7d9b","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:26:23.774184Z","event":"mf2_ad_load_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"native","ad_placement":"device_qa_native","ad_unit_id":"ca-app-pub-3940256099942544/3986624511","request_id":"01a15edb-2644-70fb-a518-cd018761a40f","retry_attempt":0,"result":"loaded","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:26:23.787091Z","event":"mf2_ad_view_state","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"native","ad_placement":"device_qa_native","request_id":"01a15edb-2644-70fb-a518-cd018761a40f","state":"attached","visible":1,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:26:23.838941Z","event":"mf2_ad_impression_callback","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"native","ad_placement":"device_qa_native","ad_unit_id":"ca-app-pub-3940256099942544/3986624511","request_id":"01a15edb-2644-70fb-a518-cd018761a40f","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:26:24.510760Z","event":"mf2_ad_load_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"interstitial","ad_placement":"workout_complete","ad_unit_id":"ca-app-pub-3940256099942544/4411468910","request_id":"01a15edb-2644-7726-9d17-4613a9b41430","retry_attempt":0,"result":"loaded","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}'
+                      Other, 0x10b6e57c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10b6e5900, {{50.0, 1091.0}, {720.0, 89.0}}
+                        Other, 0x10b6e5a40, {{50.0, 1091.0}, {720.0, 89.0}}
+                          Other, 0x10b6e5b80, {{50.0, 1091.0}, {720.0, 89.0}}, identifier: 'platform_view[0]'
+                            Other, 0x10b6e5cc0, {{50.0, 1091.0}, {720.0, 89.0}}
+                              Other, 0x10b6e5e00, {{50.0, 1091.0}, {720.0, 89.0}}
+                                Other, 0x10b6e5f40, {{50.0, 1091.0}, {720.0, 89.0}}
+                                  Other, 0x10b6e6080, {{50.0, 1091.0}, {720.0, 89.0}}
+                                    WebView, 0x10b6e61c0, {{50.0, 1091.0}, {720.0, 89.0}}
+                                      WebView, 0x10b6e6300, {{50.0, 1091.0}, {720.0, 89.0}}
+                                        WebView, 0x10b6e6440, {{50.0, 1091.0}, {720.0, 89.0}}
+                                          Other, 0x10b6e6580, {{0.0, 0.0}, {720.0, 89.0}}
+                                            Other, 0x10b6e66c0, {{0.0, 0.0}, {720.0, 89.0}}
+                                              Other, 0x10b6e6800, {{50.0, 1091.0}, {720.0, 89.0}}
+                                                Other, 0x10b6e6940, {{50.0, 1091.0}, {720.0, 89.0}}, Focused
+                                                  Other, 0x10b6e6a80, {{50.0, 1091.0}, {720.0, 89.0}}, Focused
+                                                    Link, 0x10b6e6bc0, {{87.0, 1094.0}, {646.0, 83.0}}, Focused
+                                                      Link, 0x10b6e6d00, {{87.0, 1094.0}, {646.0, 83.0}}, Focused
+                                        Other, 0x10b6e6e40, {{737.0, 1091.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                          Other, 0x10b6e6f80, {{764.0, 1094.0}, {3.0, 83.0}}
+                                        Other, 0x10b6e70c0, {{50.0, 1147.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                          Other, 0x10b6e7200, {{53.0, 1174.0}, {714.0, 3.0}}
+                                        Other, 0x10b6e7340, {{737.0, 1091.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                          Other, 0x10b6e7480, {{764.0, 1094.0}, {3.0, 83.0}}
+                                        Other, 0x10b6e75c0, {{50.0, 1147.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                          Other, 0x10b6e7700, {{53.0, 1174.0}, {714.0, 3.0}}
+                                      StaticText, 0x10b6e7840, {{358.0, 1095.0}, {104.0, 34.0}}, label: 'Test mode'
+      Other, 0x10b6e7980, {{50.0, 366.0}, {335.0, 155.0}}, identifier: 'nativeValidator'
+        WebView, 0x10b6e7ac0, {{50.0, 366.0}, {335.0, 155.0}}, identifier: 'overlayWebView'
+          WebView, 0x10b6e7c00, {{50.0, 366.0}, {335.0, 155.0}}
+            WebView, 0x10b6e7d40, {{50.0, 366.0}, {335.0, 155.0}}
+              Other, 0x10b6e7e80, {{0.0, 0.0}, {335.0, 155.0}}
+                Other, 0x10b748000, {{0.0, 0.0}, {335.0, 155.0}}
+                  Other, 0x10b748140, {{50.0, 366.0}, {335.0, 155.0}}
+                    Other, 0x10b748280, {{50.0, 366.0}, {335.0, 155.0}}, Focused
+                      Other, 0x10b7483c0, {{66.0, 366.0}, {48.0, 48.0}}, Focused
+                      Other, 0x10b748500, {{55.0, 394.0}, {304.0, 117.0}}, Focused
+                        Other, 0x10b748640, {{79.0, 422.0}, {20.0, 20.0}}, Focused
+                        Other, 0x10b748780, {{115.0, 410.0}, {224.0, 44.0}}, Focused
+                          Other, 0x10b7488c0, {{115.0, 410.0}, {188.0, 24.0}}, Focused
+                            StaticText, 0x10b748a00, {{115.0, 411.0}, {188.0, 21.0}}, label: 'AdMob native ad validator', value: AdMob native ad va..., Focused
+                          Other, 0x10b748b40, {{115.0, 434.0}, {183.0, 20.0}}, Focused
+                            StaticText, 0x10b748c80, {{115.0, 434.0}, {184.0, 19.0}}, label: '1 implementation issue found', value: 1 implementation i..., Focused
+                        Link, 0x10b748dc0, {{184.0, 475.0}, {50.0, 19.0}}, label: 'Dismiss', Focused
+                          StaticText, 0x10b748f00, {{184.0, 475.0}, {50.0, 19.0}}, label: 'Dismiss', value: Dismiss, Focused
+                        Link, 0x10b749040, {{262.0, 475.0}, {68.0, 19.0}}, label: 'See issues', Focused
+                          StaticText, 0x10b749180, {{262.0, 475.0}, {68.0, 19.0}}, label: 'See issues', value: See issues, Focused
+            Other, 0x10b7492c0, {{352.0, 366.0}, {30.0, 155.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+              Other, 0x10b749400, {{379.0, 511.0}, {3.0, 7.0}}
+            Other, 0x10b749540, {{50.0, 488.0}, {335.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+              Other, 0x10b749680, {{375.0, 515.0}, {7.0, 3.0}}
+            Other, 0x10b7497c0, {{352.0, 366.0}, {30.0, 155.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+              Other, 0x10b749900, {{379.0, 511.0}, {3.0, 7.0}}
+            Other, 0x10b749a40, {{50.0, 488.0}, {335.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+              Other, 0x10b749b80, {{375.0, 515.0}, {7.0, 3.0}}
+    Window, 0x10b749cc0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10b749e00, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10b749f40, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x108577e80, pid: 22931, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x10b74a080, pid: 22931, label: 'motionfit - workout coach'
+  }
+
+    t =    18.69s Added attachment named 'before-show'
+    t =    18.69s Tap "Show interstitial + reload banner" Button
+    t =    18.69s     Wait for fit.motionfit.app to idle
+    t =    18.69s     Find the "Show interstitial + reload banner" Button
+    t =    18.74s     Check for interrupting elements affecting "Show interstitial + reload banner" Button
+    t =    18.78s     Synthesize event
+    t =    19.07s     Wait for fit.motionfit.app to idle
+    t =    19.43s Waiting 30.0s for "Close" Button to exist
+    t =    20.46s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    20.46s         Checking existence of `"Close" Button`
+    t =    20.51s         Capturing element debug description
+    t =    21.44s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    21.44s         Checking existence of `"Close" Button`
+    t =    21.48s         Capturing element debug description
+    t =    22.51s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    22.51s         Checking existence of `"Close" Button`
+    t =    22.55s         Capturing element debug description
+    t =    23.48s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    23.48s         Checking existence of `"Close" Button`
+    t =    23.52s         Capturing element debug description
+    t =    24.45s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    24.45s         Checking existence of `"Close" Button`
+    t =    29.51s Requesting snapshot of accessibility hierarchy for app with pid 22931
+    t =    29.65s Requesting snapshot of accessibility hierarchy for app with pid 22931
+LOADS_ALLOWED_UI interstitial-visible-next-loads
+Attributes: Application, 0x116c55cc0, pid: 22931, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x116c55cc0, pid: 22931, label: 'motionfit - workout coach'
+    Window (Main), 0x116c56e40, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x116c561c0, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x116c57ac0, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x116c57d40, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x116c57e80, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x116c55680, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x116c552c0, {{0.0, 0.0}, {820.0, 1180.0}}
+            WebView, 0x116c55180, {{0.0, 0.0}, {820.0, 1180.0}}
+              WebView, 0x116c56300, {{0.0, 0.0}, {820.0, 1180.0}}
+                WebView, 0x116c56440, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x116c56580, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x116c566c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x116c56800, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x116c570c0, {{0.0, 0.0}, {820.0, 1180.0}}, Focused
+                          Link, 0x116c57200, {{0.0, 6.0}, {820.0, 10.0}}, Focused
+                          Other, 0x116c57340, {{733.0, -3.0}, {90.0, 90.0}}, Focused
+                          Button, 0x116c57480, {{760.0, 24.0}, {36.0, 36.0}}, label: 'Close', Focused
+                Other, 0x116c575c0, {{787.0, 18.0}, {30.0, 1144.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                  Other, 0x116c57700, {{814.0, 21.0}, {3.0, 1138.0}}
+                Other, 0x116c57840, {{18.0, 1147.0}, {784.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                  Other, 0x116c55b80, {{21.0, 1174.0}, {778.0, 3.0}}
+                Other, 0x116c56f80, {{787.0, 18.0}, {30.0, 1144.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                  Other, 0x116c56940, {{814.0, 21.0}, {3.0, 1138.0}}
+                Other, 0x116c58000, {{18.0, 1147.0}, {784.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                  Other, 0x116c58140, {{21.0, 1174.0}, {778.0, 3.0}}
+              StaticText, 0x116c58280, {{358.0, 4.0}, {104.0, 34.0}}, label: 'Test mode'
+          Button, 0x116c583c0, {{768.0, 0.0}, {52.0, 52.0}}, label: 'Close Advertisement', Disabled
+    Window, 0x116c58500, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x116c58640, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x116c58780, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x116c55cc0, pid: 22931, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x116c588c0, pid: 22931, label: 'motionfit - workout coach'
+  }
+
+    t =    29.78s Added attachment named 'interstitial-visible-next-loads'
+    t =    29.78s Tap "Close" Button
+    t =    29.78s     Wait for fit.motionfit.app to idle
+    t =    29.78s     Find the "Close" Button
+    t =    29.80s     Check for interrupting elements affecting "Close" Button
+    t =    29.82s     Synthesize event
+    t =    30.11s     Wait for fit.motionfit.app to idle
+    t =    30.50s Waiting 20.0s for "Show interstitial" Button to exist
+    t =    31.53s     Checking `Expect predicate `existsNoRetry == 1` for object "Show interstitial" Button`
+    t =    31.53s         Checking existence of `"Show interstitial" Button`
+/Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui/MotionfitMetaQA.swift:34: error: -[MotionfitMetaQA.MotionfitMetaQA testFixedInterstitial] : Failed to get matching snapshots: Lost connection to the application (pid 22931). (Underlying Error: 보조 응용 프로그램과 통신할 수 없습니다. 작업을 다시 시도하십시오. 실패할 경우 응용 프로그램을 종료했다가 재실행한 후 다시 시도하십시오. connection to service created from an endpoint)
+    t =    31.63s         Capturing element debug description
+    t =    31.63s Tear Down
+    t =    31.69s     Checking for crash reports corresponding to unexpected termination of fit.motionfit.app
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testFixedInterstitial]' failed (51.710 seconds).
+Test Suite 'MotionfitMetaQA' failed at 2026-10-21 23:27:10.036.
+	 Executed 1 test, with 1 failure (0 unexpected) in 51.710 (51.712) seconds
+Test Suite 'MotionfitMetaQA.xctest' failed at 2026-10-21 23:27:10.039.
+	 Executed 1 test, with 1 failure (0 unexpected) in 51.710 (51.715) seconds
+Test Suite 'Selected tests' failed at 2026-10-21 23:27:10.041.
+	 Executed 1 test, with 1 failure (0 unexpected) in 51.710 (51.717) seconds
+2026-10-21 23:27:12.306 xcodebuild[85282:1281620]  IDETestOperationsObserverDebug: Failure collecting diagnostics from devices: Process exited with error 1:
+ ERROR: The operation couldn’t be completed. (CoreDeviceCLISupport.DiagnoseError error 0.)
+This tool generates files that allow Apple to investigate issues with your
+computer and help improve Apple products. The files might contain personal
+information found on your device or associated with your Apple Account(s),
+including but not limited to your name, serial numbers of your device,
+your device name, your device's location over the last one to two days,
+your attached peripheral devices, your user name, your email address and
+email settings, file paths, file names, Siri suggestions, your computer's
+IP addresses, and network connection information.
+
+This information is used by Apple in accordance with its privacy policy
+(www.apple.com/privacy) and is not shared with any other company. By using
+this tool and sending the results to Apple, you consent to Apple using the
+contents of these files to improve Apple products.
+
+An error occurred while running devicectl diagnose. Will archive the diagnostics collected thus far.
+Wrote file to /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/interstitial.xcresult/Staging/1_Test/Diagnostics/devicectl_diagnostics.zip
+Partial devicectl diagnose bundle located here: /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/interstitial.xcresult/Staging/1_Test/Diagnostics/devicectl_diagnostics.zip
+
+2026-10-21 23:27:12.316 xcodebuild[85282:1274400] [MT] IDETestOperationsObserverDebug: 56.972 elapsed -- Testing started completed.
+2026-10-21 23:27:12.317 xcodebuild[85282:1274400] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 23:27:12.317 xcodebuild[85282:1274400] [MT] IDETestOperationsObserverDebug: 56.972 sec, +56.972 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/interstitial.xcresult
+
+** TEST EXECUTE FAILED **
+
+Testing started

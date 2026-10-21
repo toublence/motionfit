@@ -134,7 +134,10 @@ void main() {
         loader.setEnabled(true);
         time.flushMicrotasks();
         final old = sdk.ads.single;
+        // A slow mediation fill is still awaited past the setup deadline.
         time.elapse(const Duration(seconds: 15));
+        expect(loader.loading, true);
+        time.elapse(const Duration(seconds: 45));
         expect(loader.loading, false);
         expect(old.disposals, 1);
         old.callbacks.loaded();
@@ -169,7 +172,7 @@ void main() {
       AdFailure.sdk(
         LoadAdError(0, 'com.google.admob', 'invalid', null),
       ).retryable,
-      false,
+      true,
     );
   });
   test(

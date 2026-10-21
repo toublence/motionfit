@@ -1,0 +1,403 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project reports/ipad_ads_loads_allowed_2026_10_21/ui/MotionfitMetaQA.xcodeproj -scheme MotionfitMetaQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-meta-ui -resultBundlePath reports/ipad_ads_loads_allowed_2026_10_21/app-open.xcresult "-only-testing:MotionfitMetaQA/MotionfitMetaQA/testFixedAppOpen"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/app-open.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'MotionfitMetaQA' in project 'MotionfitMetaQA' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 7101c8cd0a2e86d50fb066850b47fae5
+Build description path: /tmp/motionfit-meta-ui/Build/Intermediates.noindex/XCBuildData/7101c8cd0a2e86d50fb066850b47fae5.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui/MotionfitMetaQA.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -o /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache
+
+ProcessProductPackaging "" /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "2CZQR7Q423.fit.motionfit.app.metaqa.xctrunner";
+    "com.apple.developer.team-identifier" = 2CZQR7Q423;
+    "get-task-allow" = 1;
+    "keychain-access-groups" =     (
+        "2CZQR7Q423.fit.motionfit.app.metaqa.xctrunner"
+    );
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent
+
+ProcessProductPackagingDER /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent.der (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    /usr/bin/derq query -f xml -i /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent -o /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent.der --raw
+
+SwiftDriver MotionfitMetaQA normal arm64 com.apple.xcode.tools.swift.compiler (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name MotionfitMetaQA -Onone -enforce-exclusivity\=checked @/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -target arm64-apple-ios26.0 -g -module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /tmp/motionfit-meta-ui/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache -output-file-map /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -sdk-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule -validate-clang-modules-once -clang-build-session-file /tmp/motionfit-meta-ui/ModuleCache.noindex/Session.modulevalidation -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_const_extract_protocols.json -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-generated-files.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-own-target-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-all-target-headers.hmap -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-project-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/include -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources-normal/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-Swift.h -working-directory /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ MotionfitMetaQA.swift /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui/MotionfitMetaQA.swift (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+
+SwiftCompile normal arm64 /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui/MotionfitMetaQA.swift (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ MotionfitMetaQA (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+
+SwiftCompile normal arm64 /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui/MotionfitMetaQA.swift (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling MotionfitMetaQA.swift (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+
+SwiftDriver\ Compilation MotionfitMetaQA normal arm64 com.apple.xcode.tools.swift.compiler (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name MotionfitMetaQA -Onone -enforce-exclusivity\=checked @/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -target arm64-apple-ios26.0 -g -module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /tmp/motionfit-meta-ui/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache -output-file-map /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -sdk-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule -validate-clang-modules-once -clang-build-session-file /tmp/motionfit-meta-ui/ModuleCache.noindex/Session.modulevalidation -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_const_extract_protocols.json -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-generated-files.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-own-target-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-all-target-headers.hmap -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-project-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/include -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources-normal/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-Swift.h -working-directory /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for MotionfitMetaQA (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+
+SwiftDriver\ Compilation\ Requirements MotionfitMetaQA normal arm64 com.apple.xcode.tools.swift.compiler (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name MotionfitMetaQA -Onone -enforce-exclusivity\=checked @/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -target arm64-apple-ios26.0 -g -module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /tmp/motionfit-meta-ui/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache -output-file-map /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -sdk-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule -validate-clang-modules-once -clang-build-session-file /tmp/motionfit-meta-ui/ModuleCache.noindex/Session.modulevalidation -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_const_extract_protocols.json -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-generated-files.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-own-target-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-all-target-headers.hmap -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-project-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/include -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources-normal/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-Swift.h -working-directory /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui -experimental-emit-module-separately -disable-cmo
+
+Copy /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/arm64-apple-ios.abi.json /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.abi.json (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.abi.json /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/arm64-apple-ios.abi.json
+
+Copy /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftsourceinfo (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftsourceinfo /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo
+
+Ld /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA normal (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios26.0 -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -O0 -L/tmp/motionfit-meta-ui/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphoneos -L/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F/tmp/motionfit-meta-ui/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphoneos -F/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -filelist /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.LinkFileList -Xlinker -rpath -Xlinker @loader_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule @/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-linker-args.resp -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport -framework Foundation -Xlinker -no_adhoc_codesign -o /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA
+
+ExtractAppIntentsMetadata (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name MotionfitMetaQA --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk --xcode-version 17B100 --platform-family iOS --deployment-target 26.0 --bundle-identifier fit.motionfit.app.metaqa --output /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest --target-triple arm64-apple-ios26.0 --binary-file /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA --dependency-file /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_dependency_info.dat --stringsdata-file /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftFileList --metadata-file-list /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.DependencyMetadataFileList --static-metadata-file-list /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.DependencyStaticMetadataFileList --swift-const-vals-list /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-10-21 23:30:11.725 appintentsmetadataprocessor[87819:1294513] Starting appintentsmetadataprocessor export
+2026-10-21 23:30:11.726 appintentsmetadataprocessor[87819:1294513] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+ProcessInfoPlistFile /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Info.plist /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/empty-MotionfitMetaQA.plist (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    builtin-infoPlistUtility /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/empty-MotionfitMetaQA.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/ProductTypeInfoPlistAdditions.plist -requiredArchitecture arm64 -o /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Info.plist
+
+CopySwiftLibs /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    builtin-swiftStdLibTool --copy --verbose --sign F6E1562BAA0DE14FEC77153D483EA318853A7AAB --scan-executable /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA --scan-folder /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Frameworks --scan-folder /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/PlugIns --scan-folder /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/SystemExtensions --scan-folder /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Extensions --scan-folder /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework --platform iphoneos --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+GenerateDSYMFile /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest.dSYM /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA -o /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest.dSYM
+
+CodeSign /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    
+    Signing Identity:     "Apple Development: ChangHyun Nam (67BGHNS3RH)"
+    Provisioning Profile: "iOS Team Provisioning Profile: *"
+                          (2cb1a10e-b3e6-49d3-9767-f111dd993f9b)
+    
+    /usr/bin/codesign --force --sign F6E1562BAA0DE14FEC77153D483EA318853A7AAB --entitlements /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent --timestamp\=none --generate-entitlement-der /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest
+
+CodeSign /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/ui
+    
+    Signing Identity:     "Apple Development: ChangHyun Nam (67BGHNS3RH)"
+    Provisioning Profile: "iOS Team Provisioning Profile: *"
+                          (2cb1a10e-b3e6-49d3-9767-f111dd993f9b)
+    
+    /usr/bin/codesign --force --sign F6E1562BAA0DE14FEC77153D483EA318853A7AAB --entitlements /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent --timestamp\=none --generate-entitlement-der /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app
+/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app: replacing existing signature
+
+2026-10-21 23:30:14.881465+0900 MotionfitMetaQA-Runner[22973:5643521] [Default] Running tests...
+2026-10-21 23:30:14.893728+0900 MotionfitMetaQA-Runner[22973:5643521] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-21 23:30:15.740.
+Test Suite 'MotionfitMetaQA.xctest' started at 2026-10-21 23:30:15.741.
+Test Suite 'MotionfitMetaQA' started at 2026-10-21 23:30:15.741.
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testFixedAppOpen]' started.
+    t =     0.00s Start Test at 2026-10-21 23:30:15.741
+    t =     0.01s Set Up
+    t =     0.02s Terminate fit.motionfit.app:22947
+    t =     1.05s Open fit.motionfit.app
+    t =     1.05s     Launch fit.motionfit.app
+    t =     1.10s         Setting up automation session
+    t =     1.16s         Wait for fit.motionfit.app to idle
+    t =     2.28s Waiting 20.0s for "Test production ad service" Button to exist
+    t =     3.31s     Checking `Expect predicate `existsNoRetry == 1` for object "Test production ad service" Button`
+    t =     3.31s         Checking existence of `"Test production ad service" Button`
+    t =     3.33s         Capturing element debug description
+    t =     4.35s     Checking `Expect predicate `existsNoRetry == 1` for object "Test production ad service" Button`
+    t =     4.35s         Checking existence of `"Test production ad service" Button`
+    t =     4.39s Tap "Test production ad service" Button
+    t =     4.39s     Wait for fit.motionfit.app to idle
+    t =     4.40s     Find the "Test production ad service" Button
+    t =     4.41s     Check for interrupting elements affecting "Test production ad service" Button
+    t =     4.44s     Synthesize event
+    t =     4.74s     Wait for fit.motionfit.app to idle
+    t =     4.75s Waiting 20.0s for "Show interstitial + reload banner" Button to exist
+    t =     5.77s     Checking `Expect predicate `existsNoRetry == 1` for object "Show interstitial + reload banner" Button`
+    t =     5.77s         Checking existence of `"Show interstitial + reload banner" Button`
+    t =     6.81s Checking `Expect predicate `enabled == 1` for object "Show interstitial + reload banner" Button`
+    t =     6.81s     Find the "Show interstitial + reload banner" Button
+    t =    18.91s Tap "Prime app-open" Button
+    t =    18.91s     Wait for fit.motionfit.app to idle
+    t =    18.92s     Find the "Prime app-open" Button
+    t =    19.01s     Check for interrupting elements affecting "Prime app-open" Button
+    t =    19.08s     Synthesize event
+    t =    19.37s     Wait for fit.motionfit.app to idle
+    t =    31.39s Tap "Show app-open" Button
+    t =    31.39s     Wait for fit.motionfit.app to idle
+    t =    31.40s     Find the "Show app-open" Button
+    t =    31.48s     Check for interrupting elements affecting "Show app-open" Button
+    t =    31.55s     Synthesize event
+    t =    31.85s     Wait for fit.motionfit.app to idle
+    t =    37.21s Requesting snapshot of accessibility hierarchy for app with pid 22974
+    t =    37.66s Requesting snapshot of accessibility hierarchy for app with pid 22974
+LOADS_ALLOWED_UI app-open-visible-next-loads
+Attributes: Application, 0x10a1eb5c0, pid: 22974, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x10a1eb5c0, pid: 22974, label: 'motionfit - workout coach'
+    Window (Main), 0x10a1eb700, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10a1eb480, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10a1eb840, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x10a1eb980, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x10a1ebac0, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x10a1ebc00, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x10a1ebd40, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x10a1ebe80, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10a1eb340, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10d304000, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10d304140, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10d304280, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10d3043c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10d304500, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10d304640, {{0.0, 0.0}, {820.0, 56.0}}
+                        Other, 0x10d304780, {{291.1, 14.0}, {237.8, 28.0}}, label: 'Production Ad Service QA'
+                      Button, 0x10d3048c0, {{342.7, 56.0}, {134.5, 48.0}}, label: 'Show interstitial'
+                      Button, 0x10d304a00, {{286.8, 104.0}, {246.3, 48.0}}, label: 'Show interstitial + reload banner'
+                      Button, 0x10d304b40, {{343.0, 152.0}, {134.0, 48.0}}, label: 'Prime app-open'
+                      Button, 0x10d304c80, {{344.1, 200.0}, {131.8, 48.0}}, label: 'Show app-open'
+                      Other, 0x10d304dc0, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10d304f00, {{50.0, 248.0}, {720.0, 101.0}}
+                        Other, 0x10d305040, {{50.0, 248.0}, {720.0, 101.0}}
+                          Other, 0x10d305180, {{50.0, 248.0}, {720.0, 101.0}}, identifier: 'platform_view[1]'
+                            Other, 0x10d3052c0, {{50.0, 248.0}, {720.0, 101.0}}, Disabled
+                      Other, 0x10d305400, {{0.0, 0.0}, {820.0, 1180.0}}
+                        ScrollView, 0x10d305540, {{0.0, 349.0}, {820.0, 742.0}}
+                        StaticText, 0x10d305680, {{0.0, 349.0}, {820.0, 742.0}}, label: '{"at":"2026-10-21T14:30:20.556997Z","event":"mf2_ads_init_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"stage":"allowed","allowed":1,"retryable":0,"elapsed_ms":269,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:20.558513Z","event":"mf2_ads_configuration","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"test_mode":1,"interstitial_unit":"ca-app-pub-3940256099942544/4411468910","native_unit":"ca-app-pub-3940256099942544/3986624511","banner_unit":"ca-app-pub-3940256099942544/2934735716","appOpen_unit":"ca-app-pub-3940256099942544/5575463023","sdk":"google_mobile_ads_9.0.0","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:20.559112Z","event":"mf2_ads_init_started","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"stage":"sdk","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:20.925789Z","event":"qa_initialized","parameters":{"ready":true}}
+{"at":"2026-10-21T14:30:20.926008Z","event":"mf2_ads_init_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"stage":"sdk","result":"ready","elapsed_ms":368,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:20.926289Z","event":"mf2_ad_request_attempted","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"native","ad_placement":"device_qa_native","ad_unit_id":"ca-app-pub-3940256099942544/3986624511","request_id":"01a15ede-c7fd-7057-be9f-8f06ffcd16b9","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:20.926470Z","event":"mf2_ad_request_attempted","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"interstitial","ad_placement":"workout_complete","ad_unit_id":"ca-app-pub-3940256099942544/4411468910","request_id":"01a15ede-c7fd-757c-90ce-454e75aa0f98","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:20.926859Z","event":"mf2_ad_request_attempted","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"banner","ad_placement":"device_qa_banner","ad_unit_id":"ca-app-pub-3940256099942544/2934735716","request_id":"01a15ede-c7fd-7e56-962a-6a5b6ea88458","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:21.685305Z","event":"mf2_ad_load_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"banner","ad_placement":"device_qa_banner","ad_unit_id":"ca-app-pub-3940256099942544/2934735716","request_id":"01a15ede-c7fd-7e56-962a-6a5b6ea88458","retry_attempt":0,"result":"loaded","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:21.698810Z","event":"mf2_ad_view_state","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"banner","ad_placement":"device_qa_banner","request_id":"01a15ede-c7fd-7e56-962a-6a5b6ea88458","state":"attached","visible":1,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:21.717590Z","event":"mf2_ad_load_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"native","ad_placement":"device_qa_native","ad_unit_id":"ca-app-pub-3940256099942544/3986624511","request_id":"01a15ede-c7fd-7057-be9f-8f06ffcd16b9","retry_attempt":0,"result":"loaded","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:21.720878Z","event":"mf2_ad_view_state","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"native","ad_placement":"device_qa_native","request_id":"01a15ede-c7fd-7057-be9f-8f06ffcd16b9","state":"attached","visible":1,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:21.724127Z","event":"mf2_ad_impression_callback","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"banner","ad_placement":"device_qa_banner","ad_unit_id":"ca-app-pub-3940256099942544/2934735716","request_id":"01a15ede-c7fd-7e56-962a-6a5b6ea88458","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:21.767399Z","event":"mf2_ad_impression_callback","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"native","ad_placement":"device_qa_native","ad_unit_id":"ca-app-pub-3940256099942544/3986624511","request_id":"01a15ede-c7fd-7057-be9f-8f06ffcd16b9","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:23.038430Z","event":"mf2_ad_load_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"interstitial","ad_placement":"workout_complete","ad_unit_id":"ca-app-pub-3940256099942544/4411468910","request_id":"01a15ede-c7fd-757c-90ce-454e75aa0f98","retry_attempt":0,"result":"loaded","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:34.912829Z","event":"mf2_ad_opportunity","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"appOpen","ad_placement":"app_open","opportunity_id":"01a15ede-fea0-7538-93d5-abfec2f45890","trigger":"device_qa","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:34.914196Z","event":"mf2_ad_decision","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"appOpen","ad_placement":"app_open","opportunity_id":"01a15ede-fea0-7538-93d5-abfec2f45890","trigger":"device_qa","result":"skipped","skip_reason":"app_open_intro_protected","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:34.926767Z","event":"mf2_ad_request_attempted","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"appOpen","ad_placement":"app_open","ad_unit_id":"ca-app-pub-3940256099942544/5575463023","request_id":"01a15ede-fea0-7d12-b86e-b5cd098b7570","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:36.126894Z","event":"mf2_ad_load_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"appOpen","ad_placement":"app_open","ad_unit_id":"ca-app-pub-3940256099942544/5575463023","request_id":"01a15ede-fea0-7d12-b86e-b5cd098b7570","retry_attempt":0,"result":"loaded","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:47.394374Z","event":"mf2_ad_opportunity","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":3,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"appOpen","ad_placement":"app_open","opportunity_id":"01a15edf-2f62-7679-90d3-6f2c8bac8afe","trigger":"device_qa","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:47.407625Z","event":"mf2_ad_request_attempted","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":3,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"appOpen","ad_placement":"app_open","ad_unit_id":"ca-app-pub-3940256099942544/5575463023","request_id":"01a15edf-2f62-78a9-b0d2-fcfc476b57f5","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:47.408191Z","event":"mf2_ad_decision","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":3,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"appOpen","ad_placement":"app_open","opportunity_id":"01a15edf-2f62-7679-90d3-6f2c8bac8afe","trigger":"device_qa","ad_unit_id":"ca-app-pub-3940256099942544/5575463023","request_id":"01a15ede-fea0-7d12-b86e-b5cd098b7570","retry_attempt":0,"cache_age_ms":11267,"result":"allowed","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:47.408678Z","event":"mf2_ad_show_attempted","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":3,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"appOpen","ad_placement":"app_open","opportunity_id":"01a15edf-2f62-7679-90d3-6f2c8bac8afe","trigger":"device_qa","ad_unit_id":"ca-app-pub-3940256099942544/5575463023","request_id":"01a15ede-fea0-7d12-b86e-b5cd098b7570","retry_attempt":0,"cache_age_ms":11267,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:47.409726Z","event":"qa_app_open_shown","parameters":{}}
+{"at":"2026-10-21T14:30:47.411484Z","event":"mf2_ad_show_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":3,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"appOpen","ad_placement":"app_open","opportunity_id":"01a15edf-2f62-7679-90d3-6f2c8bac8afe","trigger":"device_qa","ad_unit_id":"ca-app-pub-3940256099942544/5575463023","request_id":"01a15ede-fea0-7d12-b86e-b5cd098b7570","retry_attempt":0,"cache_age_ms":11267,"result":"showed","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:30:48.951510Z","event":"mf2_ad_load_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":3,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"appOpen","ad_placement":"app_open","ad_unit_id":"ca-app-pub-3940256099942544/5575463023","request_id":"01a15edf-2f62-78a9-b0d2-fcfc476b57f5","retry_attempt":0,"result":"loaded","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}'
+                      Other, 0x10d3057c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10d305900, {{50.0, 1091.0}, {720.0, 89.0}}
+                        Other, 0x10d305a40, {{50.0, 1091.0}, {720.0, 89.0}}
+                          Other, 0x10d305b80, {{50.0, 1091.0}, {720.0, 89.0}}, identifier: 'platform_view[0]'
+                            Other, 0x10d305cc0, {{50.0, 1091.0}, {720.0, 89.0}}
+                              Other, 0x10d305e00, {{50.0, 1091.0}, {720.0, 89.0}}
+                                Other, 0x10d305f40, {{50.0, 1091.0}, {720.0, 89.0}}
+                                  Other, 0x10d306080, {{50.0, 1091.0}, {720.0, 89.0}}
+                                    WebView, 0x10d3061c0, {{50.0, 1091.0}, {720.0, 89.0}}
+                                      WebView, 0x10d306300, {{50.0, 1091.0}, {720.0, 89.0}}
+                                        WebView, 0x10d306440, {{50.0, 1091.0}, {720.0, 89.0}}
+                                          Other, 0x10d306580, {{0.0, 0.0}, {720.0, 89.0}}
+                                            Other, 0x10d3066c0, {{0.0, 0.0}, {720.0, 89.0}}
+                                              Other, 0x10d306800, {{50.0, 1091.0}, {720.0, 89.0}}
+                                                Other, 0x10d306940, {{50.0, 1091.0}, {720.0, 89.0}}, Focused
+                                                  Other, 0x10d306a80, {{50.0, 1091.0}, {720.0, 89.0}}, Focused
+                                                    Link, 0x10d306bc0, {{50.0, 1091.0}, {720.0, 89.0}}, Focused
+                                                      Link, 0x10d306d00, {{50.0, 1091.0}, {720.0, 89.0}}, Focused
+                                        Other, 0x10d306e40, {{737.0, 1091.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                          Other, 0x10d306f80, {{764.0, 1094.0}, {3.0, 83.0}}
+                                        Other, 0x10d3070c0, {{50.0, 1147.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                          Other, 0x10d307200, {{53.0, 1174.0}, {714.0, 3.0}}
+                                        Other, 0x10d307340, {{737.0, 1091.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                          Other, 0x10d307480, {{764.0, 1094.0}, {3.0, 83.0}}
+                                        Other, 0x10d3075c0, {{50.0, 1147.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                          Other, 0x10d307700, {{53.0, 1174.0}, {714.0, 3.0}}
+                                      StaticText, 0x10d307840, {{358.0, 1095.0}, {104.0, 34.0}}, label: 'Test mode'
+      Other, 0x10d307980, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10d307ac0, {{0.0, 0.0}, {820.0, 1180.0}}
+          Button, 0x10d307c00, {{0.0, 0.0}, {52.0, 52.0}}, label: 'Close Advertisement', Disabled
+          Other, 0x10d307d40, {{0.0, 0.0}, {820.0, 1180.0}}
+            WebView, 0x10d307e80, {{0.0, 0.0}, {820.0, 1180.0}}
+              WebView, 0x10d368000, {{0.0, 0.0}, {820.0, 1180.0}}
+                WebView, 0x10d368140, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10d368280, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10d3683c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10d368500, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10d368640, {{0.0, 0.0}, {820.0, 1200.0}}, Focused
+                          Other, 0x10d368780, {{517.0, 51.0}, {22.0, 22.0}}, Focused
+                          Other, 0x10d3688c0, {{551.0, 54.0}, {31.0, 16.0}}, Focused
+                            StaticText, 0x10d368a00, {{551.0, 54.0}, {32.0, 16.0}}, label: '모션핏', value: 모션핏, Focused
+                          Other, 0x10d368b40, {{655.0, 55.0}, {120.0, 14.0}}, Focused
+                            StaticText, 0x10d368c80, {{728.0, 55.0}, {48.0, 14.0}}, label: '앱으로 이동', value: 앱으로 이동, Focused
+                          Other, 0x10d368dc0, {{783.0, 50.0}, {25.0, 24.0}}, Focused
+                          Other, 0x10d368f00, {{0.0, 62.0}, {820.0, 22.0}}, Focused
+                            Other, 0x10d369040, {{5.0, 65.0}, {41.0, 17.0}}, Focused
+                              StaticText, 0x10d369180, {{15.0, 66.0}, {21.0, 15.0}}, label: '광고', value: 광고, Focused
+                          Other, 0x10d3692c0, {{8.0, 84.0}, {804.0, 1108.0}}, label: 'Blank', Focused
+                            Other, 0x10d369400, {{8.0, 84.0}, {804.0, 1108.0}}, Focused
+                              Other, 0x10d369540, {{8.0, 84.0}, {804.0, 1108.0}}, label: 'Blank', Focused
+                                Link, 0x10d369680, {{8.0, 84.0}, {1063.0, 451.0}}, Focused
+                                Link, 0x10d3697c0, {{366.0, 608.0}, {88.0, 89.0}}, Focused
+                                Other, 0x10d369900, {{23.0, 755.0}, {774.0, 96.0}}, Focused
+                                  Link, 0x10d369a40, {{355.0, 775.0}, {110.0, 57.0}}, label: 'Flood', Focused
+                                    StaticText, 0x10d369b80, {{355.0, 775.0}, {110.0, 57.0}}, label: 'Flood', value: Flood, Focused
+                                Other, 0x10d369cc0, {{352.0, 908.0}, {33.0, 30.0}}, Focused
+                                  Link, 0x10d369e00, {{352.0, 908.0}, {33.0, 30.0}}, label: '3.7', Focused
+                                    StaticText, 0x10d369f40, {{352.0, 908.0}, {33.0, 30.0}}, label: '3.7', value: 3.7, Focused
+                                Link, 0x10d36a080, {{387.0, 911.0}, {25.0, 25.0}}, Focused
+                                Link, 0x10d36a1c0, {{426.0, 908.0}, {42.0, 30.0}}, label: '무료', Focused
+                                  Link, 0x10d36a300, {{426.0, 908.0}, {42.0, 30.0}}, label: '무료', Focused
+                                    StaticText, 0x10d36a440, {{426.0, 908.0}, {42.0, 30.0}}, label: '무료', value: 무료, Focused
+                                Link, 0x10d36a580, {{365.0, 995.0}, {90.0, 29.0}}, Focused
+                                Link, 0x10d36a6c0, {{396.0, 1090.0}, {28.0, 21.0}}, label: '받기', Focused
+                                  Link, 0x10d36a800, {{396.0, 1090.0}, {28.0, 21.0}}, label: '받기', Focused
+                                    StaticText, 0x10d36a940, {{396.0, 1090.0}, {28.0, 21.0}}, label: '받기', value: 받기, Focused
+                Other, 0x10d36aa80, {{787.0, 18.0}, {30.0, 1144.0}}, label: '수직 스크롤 막대, 2페이지', value: 0%
+                  Other, 0x10d36abc0, {{814.0, 21.0}, {3.0, 1119.0}}
+                Other, 0x10d36ad00, {{18.0, 1147.0}, {784.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                  Other, 0x10d36ae40, {{21.0, 1174.0}, {778.0, 3.0}}
+                Other, 0x10d36af80, {{787.0, 18.0}, {30.0, 1144.0}}, label: '수직 스크롤 막대, 2페이지', value: 0%
+                  Other, 0x10d36b0c0, {{814.0, 21.0}, {3.0, 1119.0}}
+                Other, 0x10d36b200, {{18.0, 1147.0}, {784.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                  Other, 0x10d36b340, {{21.0, 1174.0}, {778.0, 3.0}}
+              StaticText, 0x10d36b480, {{358.0, 4.0}, {104.0, 34.0}}, label: 'Test mode'
+      Other, 0x10d36b5c0, {{50.0, 334.0}, {335.0, 155.0}}, identifier: 'nativeValidator'
+        WebView, 0x10d36b700, {{50.0, 334.0}, {335.0, 155.0}}, identifier: 'overlayWebView'
+          WebView, 0x10d36b840, {{50.0, 334.0}, {335.0, 155.0}}
+            WebView, 0x10d36b980, {{50.0, 334.0}, {335.0, 155.0}}
+              Other, 0x10d36bac0, {{0.0, 0.0}, {335.0, 155.0}}
+                Other, 0x10d36bc00, {{0.0, 0.0}, {335.0, 155.0}}
+                  Other, 0x10d36bd40, {{50.0, 334.0}, {335.0, 155.0}}
+                    Other, 0x10d36be80, {{50.0, 334.0}, {335.0, 155.0}}, Focused
+                      Other, 0x10d370000, {{66.0, 334.0}, {48.0, 48.0}}, Focused
+                      Other, 0x10d370140, {{55.0, 362.0}, {304.0, 117.0}}, Focused
+                        Other, 0x10d370280, {{79.0, 390.0}, {20.0, 20.0}}, Focused
+                        Other, 0x10d3703c0, {{115.0, 378.0}, {224.0, 44.0}}, Focused
+                          Other, 0x10d370500, {{115.0, 378.0}, {188.0, 24.0}}, Focused
+                            StaticText, 0x10d370640, {{115.0, 379.0}, {188.0, 21.0}}, label: 'AdMob native ad validator', value: AdMob native ad va..., Focused
+                          Other, 0x10d370780, {{115.0, 402.0}, {183.0, 20.0}}, Focused
+                            StaticText, 0x10d3708c0, {{115.0, 402.0}, {184.0, 19.0}}, label: '1 implementation issue found', value: 1 implementation i..., Focused
+                        Link, 0x10d370a00, {{184.0, 443.0}, {50.0, 19.0}}, label: 'Dismiss', Focused
+                          StaticText, 0x10d370b40, {{184.0, 443.0}, {50.0, 19.0}}, label: 'Dismiss', value: Dismiss, Focused
+                        Link, 0x10d370c80, {{262.0, 443.0}, {68.0, 19.0}}, label: 'See issues', Focused
+                          StaticText, 0x10d370dc0, {{262.0, 443.0}, {68.0, 19.0}}, label: 'See issues', value: See issues, Focused
+            Other, 0x10d370f00, {{352.0, 334.0}, {30.0, 155.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+              Other, 0x10d371040, {{379.0, 479.0}, {3.0, 7.0}}
+            Other, 0x10d371180, {{50.0, 456.0}, {335.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+              Other, 0x10d3712c0, {{375.0, 483.0}, {7.0, 3.0}}
+            Other, 0x10d371400, {{352.0, 334.0}, {30.0, 155.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+              Other, 0x10d371540, {{379.0, 479.0}, {3.0, 7.0}}
+            Other, 0x10d371680, {{50.0, 456.0}, {335.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+              Other, 0x10d3717c0, {{375.0, 483.0}, {7.0, 3.0}}
+    Window, 0x10d371900, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10d371a40, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10d371b80, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x10a1eb5c0, pid: 22974, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x10d371cc0, pid: 22974, label: 'motionfit - workout coach'
+  }
+
+    t =    37.90s Added attachment named 'app-open-visible-next-loads'
+    t =    37.90s Waiting 10.0s for "Close" Button to exist
+    t =    38.92s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    38.92s         Checking existence of `"Close" Button`
+    t =    39.05s         Capturing element debug description
+    t =    39.97s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    39.97s         Checking existence of `"Close" Button`
+    t =    40.09s         Capturing element debug description
+    t =    40.91s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    40.92s         Checking existence of `"Close" Button`
+    t =    41.05s         Capturing element debug description
+    t =    41.95s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    41.95s         Checking existence of `"Close" Button`
+    t =    42.07s         Capturing element debug description
+    t =    43.00s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    43.00s         Checking existence of `"Close" Button`
+    t =    43.13s         Capturing element debug description
+    t =    43.95s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    43.95s         Checking existence of `"Close" Button`
+    t =    44.06s         Capturing element debug description
+    t =    44.98s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    44.98s         Checking existence of `"Close" Button`
+    t =    45.12s         Capturing element debug description
+    t =    45.94s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    45.95s         Checking existence of `"Close" Button`
+    t =    46.06s         Capturing element debug description
+    t =    46.98s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    46.98s         Checking existence of `"Close" Button`
+    t =    47.10s         Capturing element debug description
+    t =    47.91s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =    47.91s         Checking existence of `"Close" Button`
+    t =    48.05s         Capturing element debug description
+    t =    48.05s     Checking existence of `"Close" Button`
+    t =    48.15s Collecting debug information to assist test failure triage
+    t =    48.15s     Requesting snapshot of accessibility hierarchy for app with pid 22974
+    t =    48.30s Tear Down
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testFixedAppOpen]' passed (48.606 seconds).
+Test Suite 'MotionfitMetaQA' passed at 2026-10-21 23:31:04.348.
+	 Executed 1 test, with 0 failures (0 unexpected) in 48.606 (48.607) seconds
+Test Suite 'MotionfitMetaQA.xctest' passed at 2026-10-21 23:31:04.349.
+	 Executed 1 test, with 0 failures (0 unexpected) in 48.606 (48.608) seconds
+Test Suite 'Selected tests' passed at 2026-10-21 23:31:04.349.
+	 Executed 1 test, with 0 failures (0 unexpected) in 48.606 (48.609) seconds
+2026-10-21 23:31:04.739 xcodebuild[87788:1293985] [MT] IDETestOperationsObserverDebug: 52.586 elapsed -- Testing started completed.
+2026-10-21 23:31:04.739 xcodebuild[87788:1293985] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 23:31:04.739 xcodebuild[87788:1293985] [MT] IDETestOperationsObserverDebug: 52.586 sec, +52.586 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_loads_allowed_2026_10_21/app-open.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started

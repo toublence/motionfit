@@ -1,0 +1,17 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "5F867286-F94B-4D78-ACE0-3FBCC77E2428.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "unity-store-card-closed_0_C8CAEF46-78DB-4ABA-B7AE-B5A652902969.png",
+        "timestamp" : 1792591574
+      }
+    ],
+    "testIdentifier" : "MotionfitMetaQA/testCloseUnityStoreCard()",
+    "testIdentifierURL" : "test://com.apple.xcode/MotionfitMetaQA/MotionfitMetaQA/MotionfitMetaQA/testCloseUnityStoreCard"
+  }
+]

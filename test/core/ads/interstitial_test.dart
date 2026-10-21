@@ -1,6 +1,8 @@
 import 'package:fake_async/fake_async.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:motionfit_squat/core/ads/ad_failure.dart';
+import 'package:motionfit_squat/core/ads/ad_sdk.dart';
+import 'package:motionfit_squat/core/ads/ad_slot_controller.dart';
 import 'package:motionfit_squat/core/ads/ad_service.dart';
 import 'package:motionfit_squat/core/analytics/analytics_service.dart';
 import 'package:motionfit_squat/core/privacy/privacy_consent_service.dart';
@@ -80,30 +82,36 @@ void main() {
       });
     },
   );
-  test(
-    'first completion stays protected while next completion is preloaded',
-    () {
-      scenario((time, service, sdk, sink) {
-        expect(sdk.ads.length, 1);
-        bool? result;
-        service
-            .showInterstitialIfAvailable(
-              lastInterstitialShownAt: null,
-              completedWorkoutCount: 1,
-            )
-            .then((r) => result = r);
-        time.flushMicrotasks();
-        expect(result, false);
-        expect(sdk.ads.single.shows, 0);
-        expect(
-          sink.events.any(
-            (e) => e.parameters['skip_reason'] == 'first_workout_protected',
-          ),
-          true,
-        );
-      }, count: 1);
-    },
-  );
+  test('first completion shows the preloaded interstitial', () {
+    scenario((time, service, sdk, sink) {
+      expect(sdk.ads.length, 1);
+      bool? result;
+      service
+          .showInterstitialIfAvailable(
+            lastInterstitialShownAt: null,
+            completedWorkoutCount: 1,
+          )
+          .then((r) => result = r);
+      time.flushMicrotasks();
+      expect(result, null);
+      final shown = sdk.ads.first;
+      expect(shown.shows, 1);
+      // The next interstitial preloads while this one is on screen.
+      expect(sdk.ads.length, 2);
+      shown.showCallbacks!.showed();
+      shown.showCallbacks!.dismissed();
+      time.flushMicrotasks();
+      expect(result, true);
+      expect(
+        sink.events.any(
+          (e) =>
+              e.name == 'mf2_ad_show_result' &&
+              e.parameters['result'] == 'showed',
+        ),
+        true,
+      );
+    }, count: 1);
+  });
   test('saved completion snapshot is reconciled without double counting', () {
     scenario((time, service, sdk, sink) {
       service.updatePolicyContext(
@@ -205,7 +213,87 @@ void main() {
       );
     }, autoLoad: false);
   });
-  test('cooldown starts at actual show callback and remains ten minutes', () {
+  test('iOS inactive keeps an interstitial load running', () {
+    scenario((time, service, sdk, sink) {
+      expect(service.interstitialLoading, true);
+      service.setForeground(false, visible: true);
+      time.flushMicrotasks();
+      expect(service.interstitialLoading, true);
+      service.setForeground(true);
+      sdk.ads.single.callbacks.loaded();
+      time.flushMicrotasks();
+      expect(sdk.ads.length, 1);
+      service.setForeground(false);
+      expect(service.interstitialLoading, false);
+    }, autoLoad: false);
+  });
+  test('presentation pausing the Flutter view keeps the next loads alive', () {
+    scenario((time, service, sdk, sink) {
+      final first = sdk.ads.single;
+      first.callbacks.loaded();
+      final slot = AdSlotController(
+        service: service,
+        preferredFormat: AdFormat.banner,
+        placement: 'bottom',
+      );
+      slot.setWidth(320);
+      slot.setActive(true);
+      time.flushMicrotasks();
+      service.showInterstitialIfAvailable(
+        lastInterstitialShownAt: null,
+        completedWorkoutCount: 2,
+      );
+      time.flushMicrotasks();
+      expect(first.shows, 1);
+      first.showCallbacks!.showed();
+      // iOS while the ad covers the view: inactive → hidden → paused.
+      service.setForeground(false, visible: true);
+      service.setForeground(false);
+      time.flushMicrotasks();
+      expect(service.interstitialLoading, true);
+      expect(slot.loading, true);
+      expect(slot.ad, null);
+      // Dismissal: inactive → resumed, then the SDK's dismissed callback.
+      service.setForeground(false, visible: true);
+      service.setForeground(true);
+      first.showCallbacks!.dismissed();
+      time.flushMicrotasks();
+      expect(service.interstitialLoading, true);
+      expect(slot.loading, true);
+      expect(sdk.ads.length, 3);
+      expect(
+        sink.events.any((e) => e.parameters['result'] == 'cancelled'),
+        false,
+      );
+      slot.dispose();
+    }, autoLoad: false);
+  });
+  test('app-open presentation does not cancel the interstitial load', () {
+    scenario((time, service, sdk, sink) {
+      service.beginAppOpenOpportunity(
+        trigger: 'foreground',
+        appEntryCount: 3,
+        lastFullScreenShownAt: null,
+        isOpportunityValid: () => true,
+        onShown: (_) {},
+      );
+      time.flushMicrotasks();
+      final appOpen = sdk.ads[sdk.formats.indexOf(AdFormat.appOpen)];
+      appOpen.callbacks.loaded();
+      time.flushMicrotasks();
+      expect(appOpen.shows, 1);
+      expect(service.fullScreenShowing, true);
+      expect(service.interstitialLoading, true);
+      expect(
+        sink.events.any((e) => e.parameters['result'] == 'cancelled'),
+        false,
+      );
+      appOpen.showCallbacks!.showed();
+      appOpen.showCallbacks!.dismissed();
+      time.flushMicrotasks();
+    }, autoLoad: false);
+  });
+  test('cooldown starts at actual show callback and remains 120 seconds', () {
     scenario((time, service, sdk, sink) {
       service.showInterstitialIfAvailable(
         lastInterstitialShownAt: null,
@@ -221,19 +309,20 @@ void main() {
         completedWorkoutCount: 2,
       );
       time.flushMicrotasks();
-      expect(sdk.ads.last.shows, 0);
-      time.elapse(const Duration(minutes: 10));
+      final next = sdk.ads[1];
+      expect(next.shows, 0);
+      time.elapse(const Duration(seconds: 120));
       service.showInterstitialIfAvailable(
         lastInterstitialShownAt: null,
         completedWorkoutCount: 2,
       );
       time.flushMicrotasks();
-      expect(sdk.ads.last.shows, 1);
-      sdk.ads.last.showCallbacks!.failed(const AdFailure('sdk_error'));
+      expect(next.shows, 1);
+      next.showCallbacks!.failed(const AdFailure('sdk_error'));
     });
   });
   test(
-    'unconfirmed native show releases navigation but cannot overlap a late show',
+    'unconfirmed native show releases the session; a late show starts cooldown',
     () {
       scenario((time, service, sdk, sink) {
         bool? result;
@@ -244,21 +333,49 @@ void main() {
             )
             .then((r) => result = r);
         time.flushMicrotasks();
-        final ad = sdk.ads.first;
+        final stuck = sdk.ads.first;
         time.elapse(const Duration(seconds: 30));
         expect(result, false);
-        expect(service.fullScreenShowing, true);
+        expect(service.fullScreenShowing, false);
+        expect(
+          sink.events.any(
+            (e) =>
+                e.name == 'mf2_ad_show_result' &&
+                e.parameters['result'] == 'unconfirmed_timeout',
+          ),
+          true,
+        );
+        expect(stuck.disposals, 0);
+        // The rest of the session can still present.
+        final next = sdk.ads[1];
         service.showInterstitialIfAvailable(
           lastInterstitialShownAt: null,
           completedWorkoutCount: 2,
         );
         time.flushMicrotasks();
-        expect(ad.shows, 1);
-        ad.showCallbacks!.showed();
-        ad.showCallbacks!.dismissed();
+        expect(next.shows, 1);
+        next.showCallbacks!.failed(const AdFailure('sdk_error'));
         time.flushMicrotasks();
-        expect(service.fullScreenShowing, false);
+        stuck.showCallbacks!.showed();
+        time.flushMicrotasks();
         expect(service.lastInterstitialShownAt, isNotNull);
+        expect(
+          sink.events.any((e) => e.parameters['result'] == 'late_showed'),
+          true,
+        );
+        stuck.showCallbacks!.dismissed();
+        time.flushMicrotasks();
+        expect(stuck.disposals, 1);
+        expect(service.fullScreenShowing, false);
+        service.showInterstitialIfAvailable(
+          lastInterstitialShownAt: null,
+          completedWorkoutCount: 2,
+        );
+        time.flushMicrotasks();
+        expect(
+          sink.events.last.parameters['skip_reason'],
+          'fullscreen_cooldown',
+        );
       });
     },
   );

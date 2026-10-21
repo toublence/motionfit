@@ -14,13 +14,38 @@ String get _testModeMethod => _meta ? 'metaTestMode' : 'testMode';
 
 Future<void> main() => runMediationQa();
 
-Future<void> runMediationQa({bool meta = false}) async {
+Future<void> runMediationQa({bool meta = false, bool chooseSource = false}) async {
   _meta = meta;
   WidgetsFlutterBinding.ensureInitialized();
   if (kReleaseMode || defaultTargetPlatform != TargetPlatform.iOS) {
     throw StateError('This QA entry point requires iOS Debug or QA Profile');
   }
-  runApp(const MaterialApp(home: _UnityQa()));
+  runApp(
+    MaterialApp(home: chooseSource ? const _SourcePicker() : const _UnityQa()),
+  );
+}
+
+class _SourcePicker extends StatelessWidget {
+  const _SourcePicker();
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: const Text('iOS Mediation QA')),
+    body: Column(
+      children: [
+        for (final meta in [true, false])
+          TextButton(
+            onPressed: () {
+              _meta = meta;
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => const _UnityQa()),
+              );
+            },
+            child: Text(meta ? 'Test Meta' : 'Test Unity'),
+          ),
+      ],
+    ),
+  );
 }
 
 class _UnityQa extends StatefulWidget {

@@ -1,0 +1,14 @@
+Launching lib/main.dart on iPad (4) (wireless) in profile mode...
+Wireless debugging on iOS 26 may be slower than expected. For better performance, consider using a wired (USB) connection.
+Automatically signing iOS for device deployment using specified development team in Xcode project: 2CZQR7Q423
+Running Xcode build...                                          
+Xcode build done.                                           68.2s
+Installing and launching...                                     
+warning: (arm64) /private/var/containers/Bundle/Application/A3963BA7-0B6F-4C6E-AC1C-BC2BDFC346CD/Runner.app/Frameworks/FirebaseRemoteConfigInterop.framework/FirebaseRemoteConfigInterop(0x0000000107488000) address 0x0000000107488000 maps to more than one section: FirebaseRemoteConfigInterop.__TEXT and dyld.__DATA_CONST
+warning: (arm64) /private/var/containers/Bundle/Application/A3963BA7-0B6F-4C6E-AC1C-BC2BDFC346CD/Runner.app/Frameworks/FirebaseRemoteConfigInterop.framework/FirebaseRemoteConfigInterop(0x0000000107488000) address 0x0000000107490000 maps to more than one section: FirebaseRemoteConfigInterop.__DATA_CONST and dyld.__AUTH_CONST
+warning: (arm64) /private/var/containers/Bundle/Application/A3963BA7-0B6F-4C6E-AC1C-BC2BDFC346CD/Runner.app/Frameworks/FirebaseRemoteConfigInterop.framework/FirebaseRemoteConfigInterop(0x0000000107488000) address 0x0000000107494000 maps to more than one section: FirebaseRemoteConfigInterop.__DATA and dyld.__DATA
+The Dart VM Service was not discovered after 75 seconds. This is taking much longer than expected...
+
+Your debugging device seems wirelessly connected. Consider plugging it in and trying again.
+
+Click "Allow" to the prompt asking if you would like to find and connect devices on your local network. This is required for wireless debugging. If you selected "Don't Allow", you can turn it on in Settings > Your App Name > Local Network. If you don't see your app in the Settings, uninstall the app and rerun to see the prompt again.

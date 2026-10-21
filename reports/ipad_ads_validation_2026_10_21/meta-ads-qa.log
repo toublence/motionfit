@@ -1,0 +1,48 @@
+consentAllowed=true
+adapter=GADMediationAdapterFacebook state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x11de02940; state = Ready>
+adapter=GADMediationAdapterUnity state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x11de02f30; state = Ready>
+adapter=GADMobileAds state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x11d6ca4e0; state = Ready>
+metaTestMode=true
+googleTestPreflightLoaded=true
+inspectorClosed=OK
+request=ca-app-pub-6169297934919363/2998795518
+FAIL load: 1 com.google.admob Request Error: No ad to show.
+responseInfo=ResponseInfo(responseId: 5VTYaqSeObeKjeYPvdiUuQg, mediationAdapterClassName: null, adapterResponses: [AdapterResponseInfo(adapterClassName: GADMediationAdapterFacebook, latencyMillis: 745, description: {
+    "Ad Source ID" = 11198165126854996598;
+    "Ad Source Instance ID" = 2600661560325760;
+    "Ad Source Instance Name" = "Meta Audience Network(\Uc785\Ucc30)";
+    "Ad Source Name" = "Meta Audience Network (bidding)";
+    AdUnitMapping =     {
+        "placement_id" = "1059151487163037_1059152357162950";
+        pubid = "ca-app-pub-6169297934919363/2998795518/cak=no_cache&cadc=68&caqid=5VTYas6iNteO3NMPhde2iAc";
+    };
+    Error = "Error Domain=com.google.admob Code=1 \"Request Error: No ad to show.\" UserInfo={NSLocalizedDescription=Request Error: No ad to show., NSUnderlyingError=0x12e661650 {Error Domain=FBAdDSLDataLoaderDomain Code=0 \"Something went wrong\" UserInfo={NSLocalizedDescription=Something went wrong}}}";
+    Latency = "0.745";
+    Network = GADMediationAdapterFacebook;
+}, adUnitMapping: {pubid: ca-app-pub-6169297934919363/2998795518/cak=no_cache&cadc=68&caqid=5VTYas6iNteO3NMPhde2iAc, placement_id: 1059151487163037_1059152357162950}, adError: AdError(code: 1, domain: com.google.admob, message: Request Error: No ad to show.), adSourceName: Meta Audience Network (bidding), adSourceId: 11198165126854996598, adSourceInstanceName: Meta Audience Network(입찰), adSourceInstanceId: 2600661560325760)], loadedAdapterResponseInfo: AdapterResponseInfo(adapterClassName: , latencyMillis: 0, description: , adUnitMapping: {}, adError: null, adSourceName: , adSourceId: , adSourceInstanceName: , adSourceInstanceId: )), responseExtras: {mediation_group_name: 포즈 전면}
+inspectorClosed=OK
+consentAllowed=true
+adapter=GADMediationAdapterFacebook state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x1290ee620; state = Ready>
+adapter=GADMediationAdapterUnity state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x1290ee760; state = Ready>
+adapter=GADMobileAds state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x10ead4640; state = Ready>
+metaTestMode=true
+googleTestPreflightLoaded=true
+inspectorClosed=OK
+request=ca-app-pub-6169297934919363/2998795518
+loadedAdapter=GADMediationAdapterFacebook
+showed=true
+impression=true
+dismissed=true
+PASS
+inspectorClosed=OK
+consentAllowed=true
+adapter=GADMediationAdapterFacebook state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x1133b7070; state = Ready>
+adapter=GADMediationAdapterUnity state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x1133b71b0; state = Ready>
+adapter=GADMobileAds state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x11318e670; state = Ready>
+metaTestMode=true
+googleTestPreflightLoaded=true
+inspectorClosed=OK
+request=ca-app-pub-6169297934919363/2998795518
+loadedAdapter=GADMediationAdapterFacebook
+showed=true
+impression=true

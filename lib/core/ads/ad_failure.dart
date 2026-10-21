@@ -23,7 +23,9 @@ class AdFailure implements Exception {
   final int? code;
   final String domain;
   final String message;
-  bool get retryable => !{'configuration', 'consent_blocked'}.contains(kind);
+  bool get retryable =>
+      !{'invalid_unit', 'consent_blocked'}.contains(kind) &&
+      (kind != 'configuration' || domain == 'com.google.admob');
   Map<String, Object> get parameters => {
     'error_kind': kind,
     'error_code': ?code,

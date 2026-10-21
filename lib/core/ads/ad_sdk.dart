@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'ad_failure.dart';
+import '../diagnostics/crash_reporting_service.dart';
 
 enum AdFormat { interstitial, native, banner, appOpen }
 
@@ -53,12 +54,21 @@ abstract interface class AdSdk {
 }
 
 class GoogleAdSdk implements AdSdk {
+  GoogleAdSdk({CrashReportingService? crashReporting})
+    : _crash = crashReporting;
+  final CrashReportingService? _crash;
   @override
   Future<void> initialize() async {
     if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
-      await const MethodChannel(
-        'fit.motionfit.app/meta_ads_privacy',
-      ).invokeMethod<void>('syncTrackingAuthorization');
+      try {
+        await const MethodChannel(
+          'fit.motionfit.app/meta_ads_privacy',
+        ).invokeMethod<void>('syncTrackingAuthorization');
+      } on Object catch (error, stack) {
+        unawaited(
+          _crash?.recordNonFatal(error, stack, reason: 'meta_ads_privacy_sync'),
+        );
+      }
     }
     await MobileAds.instance.initialize();
   }

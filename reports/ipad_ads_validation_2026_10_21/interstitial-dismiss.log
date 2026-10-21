@@ -1,0 +1,51 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.xcodeproj -scheme MotionfitMetaQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-meta-ui -resultBundlePath reports/ipad_ads_validation_2026_10_21/interstitial-dismiss.xcresult "-only-testing:MotionfitMetaQA/MotionfitMetaQA/testCloseGoogleAd"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/interstitial-dismiss.xcresult
+
+2026-10-21 23:01:31.322401+0900 MotionfitMetaQA-Runner[22853:5626477] [Default] Running tests...
+2026-10-21 23:01:31.334020+0900 MotionfitMetaQA-Runner[22853:5626477] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-21 23:01:31.874.
+Test Suite 'MotionfitMetaQA.xctest' started at 2026-10-21 23:01:31.874.
+Test Suite 'MotionfitMetaQA' started at 2026-10-21 23:01:31.875.
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testCloseGoogleAd]' started.
+    t =     0.00s Start Test at 2026-10-21 23:01:31.875
+    t =     0.01s Set Up
+    t =     0.01s Open fit.motionfit.app
+    t =     0.02s     Activate fit.motionfit.app
+    t =     0.04s         Wait for fit.motionfit.app to idle
+    t =     0.05s Waiting 30.0s for "Close" Button to exist
+    t =     1.13s     Checking `Expect predicate `existsNoRetry == 1` for object "Close" Button`
+    t =     1.13s         Checking existence of `"Close" Button`
+    t =     1.18s Tap "Close" Button
+    t =     1.18s     Wait for fit.motionfit.app to idle
+    t =     1.19s     Find the "Close" Button
+    t =     1.22s     Check for interrupting elements affecting "Close" Button
+    t =     1.26s     Synthesize event
+    t =     1.58s     Wait for fit.motionfit.app to idle
+    t =     1.97s Requesting snapshot of accessibility hierarchy for app with pid 22835
+IPAD_ADS_STATE google-ad-dismissed
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+
+    t =     2.27s Added attachment named 'google-ad-dismissed'
+    t =     2.27s Tear Down
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testCloseGoogleAd]' passed (2.283 seconds).
+Test Suite 'MotionfitMetaQA' passed at 2026-10-21 23:01:34.158.
+	 Executed 1 test, with 0 failures (0 unexpected) in 2.283 (2.283) seconds
+Test Suite 'MotionfitMetaQA.xctest' passed at 2026-10-21 23:01:34.158.
+	 Executed 1 test, with 0 failures (0 unexpected) in 2.283 (2.284) seconds
+Test Suite 'Selected tests' passed at 2026-10-21 23:01:34.159.
+	 Executed 1 test, with 0 failures (0 unexpected) in 2.283 (2.285) seconds
+2026-10-21 23:01:34.893 xcodebuild[76948:1223777] [MT] IDETestOperationsObserverDebug: 6.161 elapsed -- Testing started completed.
+2026-10-21 23:01:34.893 xcodebuild[76948:1223777] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 23:01:34.893 xcodebuild[76948:1223777] [MT] IDETestOperationsObserverDebug: 6.161 sec, +6.161 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/interstitial-dismiss.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

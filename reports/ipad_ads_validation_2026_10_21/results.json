@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-21",
+  "device": "iPad Air 11-inch (M2)",
+  "device_id": "315AE942-B017-5187-A2DA-A0B2490459AD",
+  "automated_tests": {
+    "command": "flutter test test/core/ads test/core/privacy",
+    "passed": 58,
+    "failed": 0,
+    "requested_four_regressions": "All included and passed",
+    "log": "flutter-tests.log"
+  },
+  "build": {
+    "mode": "Profile",
+    "result": "PASS",
+    "duration_seconds": 68.2,
+    "entry": "lib/main.dart",
+    "bundle_version": "1.6.8",
+    "bundle_build": "68",
+    "release_sha": "0fe499f-dirty",
+    "note": "pubspec version differs from built Info.plist; source hashes identify the tested checkout."
+  },
+  "device_execution": {
+    "app_launch": "PASS via devicectl direct launch",
+    "unity_sdk_initialization": "PASS; SDK 4.21.0, game id 6208809; does not prove a Unity creative was served",
+    "console": "direct-launch.log",
+    "ui_test": "CONNECTED after user unlocked device; banner lifecycle passed",
+    "ui_log": "banner-lifecycle.log"
+  },
+  "not_verified": [
+    "Split View on physical iPad",
+    "Very Bad Network / native fill over 15 seconds on physical iPad (automated slow-fill regression passed)",
+    "Deliberately dropped native show callback on device (automated watchdog regression passed)",
+    "In-flight interstitial survival under an app-open ad (automated regression passed; physical run had an already-cached interstitial)",
+    "Actual workout completion navigation with a newly performed workout",
+    "Firebase DebugView parameter verification and post-release metrics",
+    "Meta/Unity formats other than interstitial"
+  ],
+  "source_sha256": {
+    "lib/app/app.dart": "ad5d79fce982252e66eeb0fa33be226966446da3fe083b42018136ade706dc02",
+    "lib/core/ads/ad_service.dart": "583ca430dd6529d829844c4bf3426270ad29e595b9ea7d544aa071b0fdcbb654",
+    "lib/core/ads/ad_loader.dart": "720b03b1a3be45829fbd1b941d8b7decb9eb67ecca83920d0833930af37dd8b0",
+    "lib/core/ads/ad_sdk.dart": "810de5b2874b367228c999932b4529b34c37f6340b30075d56b3fac0265e188e",
+    "lib/core/ads/ad_slot_controller.dart": "0c38b72b68ef512febb41eec5f7b57dcf6aa749f477c27ecb48a731227f9dde2",
+    "lib/core/privacy/privacy_consent_service.dart": "5b289a53634d50af566e01302209fafb545f8b8a59043264f70610853465043e",
+    "ios/Podfile.lock": "bb04841d464b84f29187472062afbe0624dc598cffa4f08583f0202467b3930a"
+  },
+  "next_step": "Address the reproduced iOS hidden/paused transition cancelling a next-ad request during an interstitial presentation.",
+  "status": "PARTIAL PASS: Meta/Unity interstitial mediation and banner lifecycle passed; interstitial preload cancellation reproduced",
+  "device_checks": {
+    "banner_control_center": {
+      "result": "PASS",
+      "scope": "Normal lib/main.dart app",
+      "native_view_before": "platform_view[0]",
+      "during": "platform_view[0]",
+      "after": "platform_view[0]",
+      "visible_during_inactive": true,
+      "log": "banner-lifecycle.log"
+    },
+    "banner_background_return": {
+      "result": "PASS: banner visible after Home and return",
+      "note": "No SDK request identity was recorded in the normal app; identical underlying ad identity after background was not independently proven."
+    },
+    "google_native_banner": {
+      "result": "PASS: real demo ads loaded and emitted impressions",
+      "evidence": "interstitial-complete-trace.jsonl"
+    },
+    "google_interstitial": {
+      "result": "PASS: showed and dismissed; QA completion returned shown=true",
+      "evidence": "interstitial-complete-trace.jsonl"
+    },
+    "interstitial_next_load": {
+      "result": "FAIL",
+      "finding": "interstitial-regression.json"
+    },
+    "app_open": {
+      "result": "PASS: real demo ad showed; next app-open load completed with no cancelled event in this trace",
+      "scope": "QA AdService entry count=3; interstitial was already cached, so this run does not prove survival of an in-flight interstitial load under app-open.",
+      "evidence": "app-open-trace.jsonl"
+    },
+    "meta_interstitial": {
+      "result": "PASS: load/show/impression/dismiss/PASS",
+      "adapter": "GADMediationAdapterFacebook",
+      "test_mode": true,
+      "evidence": "meta-ads-qa-complete.log",
+      "ui": "meta-dismiss.log"
+    },
+    "unity_interstitial": {
+      "result": "PASS: load/show/impression/dismiss/PASS",
+      "adapter": "GADMediationAdapterUnity",
+      "test_mode": true,
+      "evidence": "unity-ads-qa-final.log",
+      "ui": "unity-endcard-dismiss.log",
+      "note": "Unity creative had StoreKit card and multiple close/end-card stages. Initial finish assertion ran before the final end-card close; final callback PASS confirmed."
+    }
+  },
+  "qa_observations": [
+    "Google demo native ad validator showed one implementation issue in the QA screen; not diagnosed in this task."
+  ],
+  "cleanup": {
+    "single_source_testing": "Meta and Unity disabled; UI asserted switch=0 after each",
+    "normal_app_backup": "/tmp/motionfit-normal-ipad-20261021.app",
+    "normal_app_native_qa_bridge_present": false,
+    "restore": "PASS: normal Profile app reinstalled and launched; UI snapshot passed",
+    "workout_data": "No uninstall or workout DB mutation; test policy context was in memory only.",
+    "restore_install_log": "restore-install.log",
+    "restore_launch_log": "restore-launch.log",
+    "restore_ui_log": "restored-app.log",
+    "generated_flutter_target": "lib/main.dart",
+    "firebase_debug_mode": "Launched with -FIRDebugDisabled",
+    "available_disk_after_cleanup": "4.3 GiB"
+  },
+  "qa_source_sha256": {
+    "tool/ios_ads_device_test.dart": "917756d5a28760a19554f5a9330f1d085f3c0a801d91a9cc1b38d47e215b591d",
+    "tool/ios_ads_regression_device_test.dart": "e7a317cbd946705dd5ffca47000990b175966321001a089baa1edd2c4d936ca9"
+  }
+}

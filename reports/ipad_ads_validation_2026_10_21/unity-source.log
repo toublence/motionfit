@@ -1,0 +1,247 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.xcodeproj -scheme MotionfitMetaQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-meta-ui -resultBundlePath reports/ipad_ads_validation_2026_10_21/unity-source.xcresult "-only-testing:MotionfitMetaQA/MotionfitMetaQA/testUnitySource"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/unity-source.xcresult
+
+2026-10-21 23:04:56.619302+0900 MotionfitMetaQA-Runner[22884:5629640] [Default] Running tests...
+2026-10-21 23:04:56.630806+0900 MotionfitMetaQA-Runner[22884:5629640] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-21 23:04:57.058.
+Test Suite 'MotionfitMetaQA.xctest' started at 2026-10-21 23:04:57.058.
+Test Suite 'MotionfitMetaQA' started at 2026-10-21 23:04:57.058.
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testUnitySource]' started.
+    t =     0.00s Start Test at 2026-10-21 23:04:57.059
+    t =     0.01s Set Up
+    t =     0.02s Terminate fit.motionfit.app:22873
+    t =     1.03s Open fit.motionfit.app
+    t =     1.03s     Launch fit.motionfit.app
+    t =     1.10s         Setting up automation session
+    t =     1.36s         Wait for fit.motionfit.app to idle
+    t =     2.51s Waiting 20.0s for "Test Unity" Button to exist
+    t =     3.53s     Checking `Expect predicate `existsNoRetry == 1` for object "Test Unity" Button`
+    t =     3.54s         Checking existence of `"Test Unity" Button`
+    t =     3.56s         Capturing element debug description
+    t =     4.56s     Checking `Expect predicate `existsNoRetry == 1` for object "Test Unity" Button`
+    t =     4.56s         Checking existence of `"Test Unity" Button`
+    t =     4.60s Tap "Test Unity" Button
+    t =     4.60s     Wait for fit.motionfit.app to idle
+    t =     4.61s     Find the "Test Unity" Button
+    t =     4.63s     Check for interrupting elements affecting "Test Unity" Button
+    t =     4.66s     Synthesize event
+    t =     4.96s     Wait for fit.motionfit.app to idle
+    t =     4.97s Waiting 20.0s for "Open Ad Inspector" Button to exist
+    t =     5.97s     Checking `Expect predicate `existsNoRetry == 1` for object "Open Ad Inspector" Button`
+    t =     5.97s         Checking existence of `"Open Ad Inspector" Button`
+    t =     7.00s Checking `Expect predicate `enabled == 1` for object "Open Ad Inspector" Button`
+    t =     7.00s     Find the "Open Ad Inspector" Button
+    t =     7.03s     Capturing element debug description
+    t =     7.11s         Requesting snapshot of accessibility hierarchy for app with pid 22885
+    t =     7.15s         Find: Descendants matching type Button
+    t =     7.15s         Find: Elements matching predicate '"Open Ad Inspector" IN identifiers'
+    t =     7.15s         Requesting snapshot of accessibility hierarchy for app with pid 22885
+    t =     7.18s         Find: Descendants matching type Button
+    t =     7.18s         Requesting snapshot of accessibility hierarchy for app with pid 22885
+    t =     8.04s Checking `Expect predicate `enabled == 1` for object "Open Ad Inspector" Button`
+    t =     8.04s     Find the "Open Ad Inspector" Button
+    t =     8.07s Tap "Open Ad Inspector" Button
+    t =     8.07s     Wait for fit.motionfit.app to idle
+    t =     8.08s     Find the "Open Ad Inspector" Button
+    t =     8.10s     Check for interrupting elements affecting "Open Ad Inspector" Button
+    t =     8.12s     Synthesize event
+    t =     8.42s     Wait for fit.motionfit.app to idle
+    t =     8.77s Waiting 20.0s for Switch (First Match) to exist
+    t =     9.79s     Checking `Expect predicate `existsNoRetry == 1` for object Switch (First Match)`
+    t =     9.79s         Checking existence of `Switch (First Match)`
+    t =     9.87s Find the Switch (First Match)
+    t =     9.92s Tap "0" Switch
+    t =     9.92s     Wait for fit.motionfit.app to idle
+    t =     9.92s     Find the "0" Switch
+    t =     9.96s     Check for interrupting elements affecting "0" Switch
+    t =    10.01s     Synthesize event
+    t =    10.31s     Wait for fit.motionfit.app to idle
+    t =    10.31s Waiting 15.0s for "Unity Ads (Bidding)" StaticText to exist
+    t =    11.33s     Checking `Expect predicate `existsNoRetry == 1` for object "Unity Ads (Bidding)" StaticText`
+    t =    11.34s         Checking existence of `"Unity Ads (Bidding)" StaticText`
+    t =    11.42s Tap "Unity Ads (Bidding)" StaticText
+    t =    11.42s     Wait for fit.motionfit.app to idle
+    t =    11.43s     Find the "Unity Ads (Bidding)" StaticText
+    t =    11.47s     Check for interrupting elements affecting "Unity Ads (Bidding)" StaticText
+    t =    11.51s     Synthesize event
+    t =    11.81s     Wait for fit.motionfit.app to idle
+    t =    11.81s Tap "Start test" Button
+    t =    11.81s     Wait for fit.motionfit.app to idle
+    t =    11.82s     Find the "Start test" Button
+    t =    11.86s     Check for interrupting elements affecting "Start test" Button
+    t =    11.90s     Synthesize event
+    t =    12.20s     Wait for fit.motionfit.app to idle
+    t =    12.21s Tap "Close" Button
+    t =    12.21s     Wait for fit.motionfit.app to idle
+    t =    12.21s     Find the "Close" Button
+    t =    12.28s     Check for interrupting elements affecting "Close" Button
+    t =    12.34s     Synthesize event
+    t =    12.63s     Wait for fit.motionfit.app to idle
+    t =    12.96s Tap "Load Unity interstitial" Button
+    t =    12.96s     Wait for fit.motionfit.app to idle
+    t =    12.96s     Find the "Load Unity interstitial" Button
+    t =    13.98s         Find the "Load Unity interstitial" Button (retry 1)
+    t =    14.00s     Check for interrupting elements affecting "Load Unity interstitial" Button
+    t =    14.03s     Synthesize event
+    t =    14.33s     Wait for fit.motionfit.app to idle
+    t =    34.35s Requesting snapshot of accessibility hierarchy for app with pid 22885
+    t =    34.65s Requesting snapshot of accessibility hierarchy for app with pid 22885
+IPAD_ADS_STATE unity-source-result
+Attributes: Application, 0x116451680, pid: 22885, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x116451680, pid: 22885, label: 'motionfit - workout coach'
+    Window (Main), 0x116453480, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x116452080, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x116452800, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x116451b80, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x116452300, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x116451a40, {{0.0, 0.0}, {820.0, 1180.0}}
+          WebView, 0x1164517c0, {{0.0, 0.0}, {820.0, 1180.0}}
+            WebView, 0x1164521c0, {{0.0, 0.0}, {820.0, 1180.0}}
+              WebView, 0x116451540, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x116451f40, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x116451e00, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x1164526c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x116451cc0, {{0.0, 0.0}, {820.0, 1180.0}}, label: 'Unity Ad Viewer - v1.75.5-ad-viewer', Focused
+                        Other, 0x116452940, {{0.0, 0.0}, {820.0, 32.0}}, Focused
+                        Other, 0x10b305b80, {{20.0, 52.0}, {780.0, 654.0}}, Focused
+                          Image, 0x116457840, {{20.0, 52.0}, {780.0, 654.0}}, Focused
+                        StaticText, 0x116457c00, {{41.0, 753.0}, {330.0, 59.0}}, label: 'Test game ios', value: Test game ios, Focused
+                        Other, 0x116457ac0, {{41.0, 811.0}, {144.0, 37.0}}, Focused
+                        Other, 0x116456940, {{41.0, 811.0}, {160.0, 37.0}}, Focused
+                        StaticText, 0x116456a80, {{41.0, 847.0}, {38.0, 25.0}}, label: '10 k', value: 10 k, Focused
+                        Other, 0x116457e80, {{32.0, 973.0}, {35.0, 26.0}}, Focused
+                          StaticText, 0x116457d40, {{32.0, 973.0}, {35.0, 26.0}}, label: '가격', value: 가격, Focused
+                        Other, 0x1164570c0, {{32.0, 996.0}, {69.0, 49.0}}, Focused
+                          StaticText, 0x116457340, {{32.0, 996.0}, {70.0, 49.0}}, label: '무료', value: 무료, Focused
+                        Button, 0x116456e40, {{394.0, 956.0}, {404.0, 106.0}}, label: '받기', Focused
+                        Other, 0x1164575c0, {{0.0, 919.0}, {820.0, 10.0}}, Focused
+                          Button, 0x116457480, {{20.0, 1109.0}, {30.0, 46.0}}, label: 'Privacy', Focused
+      Other, 0x116457980, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x116456800, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x116455b80, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x116456d00, {{-820.0, -1180.0}, {2460.0, 3540.0}}, identifier: 'PopoverDismissRegion', label: '팝업 닫기'
+        Other, 0x116456f80, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x116457200, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x116456bc0, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x116457700, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x116458000, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x116458140, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x116458280, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x1164583c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x116458500, {{0.0, 0.0}, {820.0, 1180.0}}
+                          Other, 0x116458640, {{0.0, 0.0}, {820.0, 1180.0}}
+                            Other, 0x116458780, {{0.0, 0.0}, {820.0, 1180.0}}
+                              Other, 0x1164588c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                                Other, 0x116458a00, {{120.0, 270.0}, {580.0, 640.0}}
+                                  Image, 0x116458b40, {{-30.0, 120.0}, {880.0, 940.0}}
+                                  Other, 0x116458c80, {{120.0, 270.0}, {580.0, 640.0}}
+                                    Other, 0x116458dc0, {{120.0, 270.0}, {580.0, 640.0}}
+                                      Other, 0x116458f00, {{120.0, 270.0}, {580.0, 640.0}}
+                                        Other, 0x116459040, {{120.0, 270.0}, {580.0, 640.0}}
+                                          Other, 0x116459180, {{120.0, 270.0}, {580.0, 640.0}}
+                                            Other, 0x1164592c0, {{120.0, 270.0}, {580.0, 640.0}}
+                                              Other, 0x116459400, {{120.0, 270.0}, {580.0, 640.0}}
+                                                NavigationBar, 0x116459540, {{120.0, 280.0}, {580.0, 54.0}}, identifier: 'ProductPageExtension.ProductDiffablePageView'
+                                                  Button, 0x116459680, {{134.0, 284.0}, {36.0, 36.0}}, label: '닫기'
+                                                  Button, 0x1164597c0, {{650.0, 284.0}, {36.0, 36.0}}, identifier: 'ProductPageExtension.shelfItemSubComponent.shareButton', label: '공유'
+                                                Other, 0x116459900, {{120.0, 270.0}, {580.0, 640.0}}
+                                                  Other, 0x116459a40, {{120.0, 270.0}, {580.0, 640.0}}
+                                                    Other, 0x116459b80, {{120.0, 270.0}, {580.0, 640.0}}
+                                                      CollectionView, 0x116459cc0, {{120.0, 270.0}, {580.0, 640.0}}, identifier: 'ProductPageExtension.productPage'
+                                                        Other, 0x116459e00, {{120.0, 270.0}, {580.0, 640.0}}
+                                                        Other, 0x116459f40, {{120.0, 270.0}, {580.0, 640.0}}
+                                                        Cell, 0x11645a080, {{120.0, 334.0}, {580.0, 148.0}}, identifier: 'ProductPageExtension.shelfItem.productTopLockup[id=ProductTopLockup.id,parentId=topLockup,cellType=ProductLockupCollectionViewCell,index=0,shelfIndex=0]'
+                                                          Other, 0x11645a1c0, {{120.0, 334.0}, {580.0, 148.0}}
+                                                            Other, 0x11645a300, {{120.0, 334.0}, {580.0, 148.0}}
+                                                            Other, 0x11645a440, {{120.0, 334.0}, {580.0, 148.0}}
+                                                            Image, 0x11645a580, {{154.0, 344.0}, {118.0, 118.0}}, identifier: 'ProductPageExtension.shelfItemSubComponent.icon', label: '표지', value: Unity Remote 5
+                                                            StaticText, 0x11645a6c0, {{288.0, 344.0}, {153.5, 26.5}}, identifier: 'ProductPageExtension.shelfItemSubComponent.title', label: 'Unity Remote 5'
+                                                            StaticText, 0x11645a800, {{288.0, 373.5}, {52.0, 18.0}}, identifier: 'ProductPageExtension.shelfItemSubComponent.tagline', label: '유틸리티'
+                                                            Button, 0x11645a940, {{288.0, 430.0}, {74.0, 32.0}}, identifier: 'ProductPageExtension.offerButton[state=get]', label: '받기'
+                                                        ScrollView, 0x11645aa80, {{154.0, 482.0}, {512.0, 94.0}}
+                                                          Other, 0x11645abc0, {{154.0, 482.0}, {105.0, 0.5}}
+                                                            Other, 0x11645ad00, {{154.0, 482.0}, {105.0, 0.5}}
+                                                          Cell, 0x11645ae40, {{154.0, 482.0}, {105.0, 94.0}}, identifier: 'ProductPageExtension.shelfItem.productBadge[id=AF5F5082-A504-4053-AFD1-CEC9DE845561,parentId=informationRibbon,cellType=BadgeCollectionViewCell,index=0,shelfIndex=1]'
+                                                            Other, 0x11645af80, {{154.0, 482.0}, {105.0, 94.0}}
+                                                              Button, 0x11645b0c0, {{154.0, 482.0}, {105.0, 94.0}}, identifier: 'ProductPageExtension.productPage.badge.rating', label: '8개의 평가, 3.1'
+                                                          Other, 0x11645b200, {{258.5, 482.0}, {0.5, 94.0}}
+                                                            Other, 0x11645b340, {{258.5, 509.0}, {0.5, 40.0}}
+                                                          Other, 0x11645b480, {{259.0, 482.0}, {105.0, 0.5}}
+                                                            Other, 0x11645b5c0, {{259.0, 482.0}, {105.0, 0.5}}
+                                                          Cell, 0x11645b700, {{259.0, 482.0}, {105.0, 94.0}}, identifier: 'ProductPageExtension.shelfItem.productBadge[id=E5B59FCB-210E-4F0F-A459-1C0331045DAF,parentId=informationRibbon,cellType=BadgeCollectionViewCell,index=1,shelfIndex=1]'
+                                                            Other, 0x11645b840, {{259.0, 482.0}, {105.0, 94.0}}
+                                                              Button, 0x11645b980, {{259.0, 482.0}, {105.0, 94.0}}, identifier: 'ProductPageExtension.productPage.badge.contentRating', label: '연령 등급, 전체, 세'
+                                                          Other, 0x11645bac0, {{363.5, 482.0}, {0.5, 94.0}}
+                                                            Other, 0x11645bc00, {{363.5, 509.0}, {0.5, 40.0}}
+                                                          Other, 0x11645bd40, {{364.0, 482.0}, {105.0, 0.5}}
+                                                            Other, 0x11645be80, {{364.0, 482.0}, {105.0, 0.5}}
+                                                          Cell, 0x1164a4000, {{364.0, 482.0}, {105.0, 94.0}}, identifier: 'ProductPageExtension.shelfItem.productBadge[id=41BF3F23-5C71-47CE-8BCC-95C7165E6AC9,parentId=informationRibbon,cellType=BadgeCollectionViewCell,index=2,shelfIndex=1]'
+                                                            Other, 0x1164a4140, {{364.0, 482.0}, {105.0, 94.0}}
+                                                              Button, 0x1164a4280, {{364.0, 482.0}, {105.0, 94.0}}, identifier: 'ProductPageExtension.productPage.badge.카테고리', label: '카테고리, 유틸리티'
+                                                          Other, 0x1164a43c0, {{468.5, 482.0}, {0.5, 94.0}}
+                                                            Other, 0x1164a4500, {{468.5, 509.0}, {0.5, 40.0}}
+                                                          Other, 0x1164a4640, {{469.0, 482.0}, {136.0, 0.5}}
+                                                            Other, 0x1164a4780, {{469.0, 482.0}, {136.0, 0.5}}
+                                                          Cell, 0x1164a48c0, {{469.0, 482.0}, {136.0, 94.0}}, identifier: 'ProductPageExtension.shelfItem.productBadge[id=99AC697E-9E9C-44D3-BDD1-E265453D6C78,parentId=informationRibbon,cellType=BadgeCollectionViewCell,index=3,shelfIndex=1]'
+                                                            Other, 0x1164a4a00, {{469.0, 482.0}, {136.0, 94.0}}
+                                                              Button, 0x1164a4b40, {{469.0, 482.0}, {136.0, 94.0}}, identifier: 'ProductPageExtension.productPage.badge.개발자', label: '개발자, Unity Technologies ApS'
+                                                          Other, 0x1164a4c80, {{604.5, 482.0}, {0.5, 94.0}}
+                                                            Other, 0x1164a4dc0, {{604.5, 509.0}, {0.5, 40.0}}
+                                                          Other, 0x1164a4f00, {{605.0, 482.0}, {105.0, 0.5}}
+                                                            Other, 0x1164a5040, {{605.0, 482.0}, {105.0, 0.5}}
+                                                          Cell, 0x1164a5180, {{605.0, 482.0}, {105.0, 94.0}}, identifier: 'ProductPageExtension.shelfItem.productBadge[id=465BD354-EBC7-4869-8D69-0ECE0741C22E,parentId=informationRibbon,cellType=BadgeCollectionViewCell,index=4,shelfIndex=1]'
+                                                            Other, 0x1164a52c0, {{605.0, 482.0}, {105.0, 94.0}}
+                                                              Button, 0x1164a5400, {{605.0, 482.0}, {105.0, 94.0}}, identifier: 'ProductPageExtension.productPage.badge.언어', label: '언어, EN, 영어'
+                                                        ScrollView, 0x1164a5540, {{154.0, 592.0}, {512.0, 328.0}}
+                                                          Cell, 0x1164a5680, {{154.0, 592.0}, {246.0, 328.0}}, identifier: 'ProductPageExtension.shelfItem.productMediaItem[id=444C63D4-18FE-4175-9275-96EAC56D8714,parentId=product_media_pad_,cellType=ProductMediaItemCollectionViewCell,index=0,shelfIndex=2]'
+                                                            Other, 0x1164a57c0, {{154.0, 592.0}, {246.0, 328.0}}
+                                                              Other, 0x1164a5900, {{154.0, 592.0}, {246.0, 328.0}}
+                                                                Image, 0x1164a5a40, {{154.0, 592.0}, {246.0, 328.0}}, identifier: 'ProductPageExtension.shelfItemSubComponent.artwork', label: '표지'
+                                                        Other, 0x1164a5b80, {{667.0, 334.0}, {30.0, 544.0}}, label: '수직 스크롤 막대, 5페이지', value: 0%
+                                                          Other, 0x1164a5cc0, {{694.0, 868.0}, {3.0, 7.0}}
+                                                        Other, 0x1164a5e00, {{152.0, 877.0}, {516.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                                          Other, 0x1164a5f40, {{155.0, 904.0}, {510.0, 3.0}}
+                                                        Other, 0x1164a6080, {{667.0, 334.0}, {30.0, 544.0}}, label: '수직 스크롤 막대, 5페이지', value: 0%
+                                                          Other, 0x1164a61c0, {{694.0, 868.0}, {3.0, 7.0}}
+                                                        Other, 0x1164a6300, {{152.0, 877.0}, {516.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                                          Other, 0x1164a6440, {{155.0, 904.0}, {510.0, 3.0}}
+                                                Other, 0x1164a6580, {{120.0, 270.0}, {580.0, 640.0}}
+                                                  Other, 0x1164a66c0, {{120.0, 270.0}, {580.0, 640.0}}
+                            Other, 0x1164a6800, {{0.0, 0.0}, {820.0, 1180.0}}
+                              Other, 0x1164a6940, {{0.0, 0.0}, {820.0, 1180.0}}
+                                Other, 0x1164a6a80, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x1164a6bc0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x1164a6d00, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x1164a6e40, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x116451680, pid: 22885, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x1164a6f80, pid: 22885, label: 'motionfit - workout coach'
+  }
+
+    t =    34.88s Added attachment named 'unity-source-result'
+    t =    34.89s Tear Down
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testUnitySource]' passed (35.351 seconds).
+Test Suite 'MotionfitMetaQA' passed at 2026-10-21 23:05:32.412.
+	 Executed 1 test, with 0 failures (0 unexpected) in 35.351 (35.353) seconds
+Test Suite 'MotionfitMetaQA.xctest' passed at 2026-10-21 23:05:32.413.
+	 Executed 1 test, with 0 failures (0 unexpected) in 35.351 (35.355) seconds
+Test Suite 'Selected tests' passed at 2026-10-21 23:05:32.414.
+	 Executed 1 test, with 0 failures (0 unexpected) in 35.351 (35.357) seconds
+2026-10-21 23:05:32.702 xcodebuild[78018:1229471] [MT] IDETestOperationsObserverDebug: 38.474 elapsed -- Testing started completed.
+2026-10-21 23:05:32.702 xcodebuild[78018:1229471] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 23:05:32.702 xcodebuild[78018:1229471] [MT] IDETestOperationsObserverDebug: 38.474 sec, +38.474 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/unity-source.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

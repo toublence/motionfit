@@ -1,0 +1,4 @@
+2026-10-21 13:45:31 +0000: Received worker from worker provider: <XCTHTestRunner: 0x121de8d90, PID: 0, device: iPad (4) (00008112-001848821413601E)>
+2026-10-21 13:46:14 +0000: Test operation cancelled
+2026-10-21 13:46:14 +0000: Worker <XCTHTestRunner: 0x121de8d90, PID: 0, device: iPad (4) (00008112-001848821413601E)> finished with error: Error Domain=XCTHTestOperationCoordinatorErrorDomain Code=9 "Testing was canceled" UserInfo={NSLocalizedDescription=Testing was canceled}
+2026-10-21 13:46:14 +0000: Finished executing tests (cancelled: Yes)

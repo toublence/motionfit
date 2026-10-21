@@ -1,0 +1,79 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.xcodeproj -scheme MotionfitMetaQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-meta-ui -resultBundlePath reports/ipad_ads_validation_2026_10_21/unlocked-snapshot.xcresult "-only-testing:MotionfitMetaQA/MotionfitMetaQA/testSnapshot"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/unlocked-snapshot.xcresult
+
+2026-10-21 22:52:10.462658+0900 MotionfitMetaQA-Runner[22798:5619881] [Default] Running tests...
+2026-10-21 22:52:10.474689+0900 MotionfitMetaQA-Runner[22798:5619881] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-21 22:52:10.913.
+Test Suite 'MotionfitMetaQA.xctest' started at 2026-10-21 22:52:10.914.
+Test Suite 'MotionfitMetaQA' started at 2026-10-21 22:52:10.914.
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testSnapshot]' started.
+    t =     0.00s Start Test at 2026-10-21 22:52:10.914
+    t =     0.04s Set Up
+    t =     0.04s Open fit.motionfit.app
+    t =     0.04s     Activate fit.motionfit.app
+    t =     0.06s         Wait for fit.motionfit.app to idle
+    t =     0.07s Wait for fit.motionfit.app to become Running Foreground
+    t =     0.08s Requesting snapshot of accessibility hierarchy for app with pid 22775
+    t =     0.19s Requesting snapshot of accessibility hierarchy for app with pid 22775
+IPAD_ADS_STATE initial
+Attributes: Application, 0x12e1dee40, pid: 22775, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x12e1dee40, pid: 22775, label: 'motionfit - workout coach'
+    Window (Main), 0x12e1def80, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x12e1df200, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x12e1df340, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x12e1dd680, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x12e1df480, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x12e1df5c0, {{50.0, 1031.0}, {720.0, 89.0}}
+                Other, 0x12e1df700, {{50.0, 1031.0}, {720.0, 89.0}}
+                  Other, 0x12e1df840, {{50.0, 1031.0}, {720.0, 89.0}}, identifier: 'platform_view[0]'
+                    Other, 0x12e1df980, {{50.0, 1031.0}, {720.0, 89.0}}
+                      Other, 0x12e1dfac0, {{50.0, 1031.0}, {720.0, 89.0}}
+                        Other, 0x12e1dfc00, {{50.0, 1031.0}, {720.0, 89.0}}
+                          Other, 0x12e1dfd40, {{50.0, 1031.0}, {720.0, 89.0}}
+                            Other, 0x12e1dfe80, {{50.0, 1031.0}, {720.0, 89.0}}
+                              WebView, 0x12ee2c000, {{50.0, 1031.0}, {720.0, 89.0}}
+                                TextView, 0x12ee2c140, {{50.0, 1031.0}, {720.0, 89.0}}
+                                Other, 0x12ee2c280, {{0.0, 0.0}, {0.0, 0.0}}, label: '0페이지', value: 0%
+                                  Other, 0x12ee2c3c0, {{764.0, 994.0}, {3.0, 35.0}}
+                                Other, 0x12ee2c500, {{0.0, 0.0}, {0.0, 0.0}}, label: '0페이지', value: 0%
+                                  Other, 0x12ee2c640, {{13.0, 1114.0}, {35.0, 3.0}}
+                                Other, 0x12ee2c780, {{0.0, 0.0}, {0.0, 0.0}}, label: '0페이지', value: 0%
+                                  Other, 0x12ee2c8c0, {{764.0, 994.0}, {3.0, 35.0}}
+                                Other, 0x12ee2ca00, {{0.0, 0.0}, {0.0, 0.0}}, label: '0페이지', value: 0%
+                                  Other, 0x12ee2cb40, {{13.0, 1114.0}, {35.0, 3.0}}
+                              StaticText, 0x12ee2cc80, {{358.0, 1035.0}, {104.0, 34.0}}, label: 'Test mode'
+    Window, 0x12ee2cdc0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x12ee2cf00, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x12ee2d040, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x12e1dee40, pid: 22775, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x12ee2d180, pid: 22775, label: 'motionfit - workout coach'
+  }
+
+    t =     0.38s Added attachment named 'initial'
+    t =     0.38s Tear Down
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testSnapshot]' passed (0.407 seconds).
+Test Suite 'MotionfitMetaQA' passed at 2026-10-21 22:52:11.322.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.407 (0.408) seconds
+Test Suite 'MotionfitMetaQA.xctest' passed at 2026-10-21 22:52:11.322.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.407 (0.408) seconds
+Test Suite 'Selected tests' passed at 2026-10-21 22:52:11.322.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.407 (0.409) seconds
+2026-10-21 22:52:11.607 xcodebuild[69115:1191074] [MT] IDETestOperationsObserverDebug: 3.579 elapsed -- Testing started completed.
+2026-10-21 22:52:11.607 xcodebuild[69115:1191074] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 22:52:11.607 xcodebuild[69115:1191074] [MT] IDETestOperationsObserverDebug: 3.579 sec, +3.579 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/unlocked-snapshot.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

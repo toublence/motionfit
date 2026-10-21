@@ -1,0 +1,220 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.xcodeproj -scheme MotionfitMetaQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-meta-ui -resultBundlePath reports/ipad_ads_validation_2026_10_21/production-interstitial.xcresult "-only-testing:MotionfitMetaQA/MotionfitMetaQA/testProductionInterstitial"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/production-interstitial.xcresult
+
+2026-10-21 23:00:18.742585+0900 MotionfitMetaQA-Runner[22834:5625404] [Default] Running tests...
+2026-10-21 23:00:18.755434+0900 MotionfitMetaQA-Runner[22834:5625404] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-21 23:00:19.439.
+Test Suite 'MotionfitMetaQA.xctest' started at 2026-10-21 23:00:19.439.
+Test Suite 'MotionfitMetaQA' started at 2026-10-21 23:00:19.439.
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testProductionInterstitial]' started.
+    t =     0.00s Start Test at 2026-10-21 23:00:19.440
+    t =     0.03s Set Up
+    t =     0.03s Terminate fit.motionfit.app:22833
+    t =     1.09s Open fit.motionfit.app
+    t =     1.09s     Launch fit.motionfit.app
+    t =     1.16s         Setting up automation session
+    t =     1.45s         Wait for fit.motionfit.app to idle
+    t =     2.65s Waiting 20.0s for "Test production ad service" Button to exist
+    t =     3.65s     Checking `Expect predicate `existsNoRetry == 1` for object "Test production ad service" Button`
+    t =     3.65s         Checking existence of `"Test production ad service" Button`
+    t =     3.69s         Capturing element debug description
+    t =     4.66s     Checking `Expect predicate `existsNoRetry == 1` for object "Test production ad service" Button`
+    t =     4.66s         Checking existence of `"Test production ad service" Button`
+    t =     4.69s Tap "Test production ad service" Button
+    t =     4.69s     Wait for fit.motionfit.app to idle
+    t =     4.70s     Find the "Test production ad service" Button
+    t =     4.72s     Check for interrupting elements affecting "Test production ad service" Button
+    t =     4.76s     Synthesize event
+    t =     5.07s     Wait for fit.motionfit.app to idle
+    t =     5.08s Waiting 20.0s for "Show interstitial" Button to exist
+    t =     6.09s     Checking `Expect predicate `existsNoRetry == 1` for object "Show interstitial" Button`
+    t =     6.09s         Checking existence of `"Show interstitial" Button`
+    t =     7.12s Checking `Expect predicate `enabled == 1` for object "Show interstitial" Button`
+    t =     7.12s     Find the "Show interstitial" Button
+    t =    19.17s Requesting snapshot of accessibility hierarchy for app with pid 22835
+    t =    19.47s Requesting snapshot of accessibility hierarchy for app with pid 22835
+IPAD_ADS_STATE production-before-interstitial
+Attributes: Application, 0x10dafb5c0, pid: 22835, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x10dafb5c0, pid: 22835, label: 'motionfit - workout coach'
+    Window (Main), 0x10daf9680, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10daf97c0, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10daf9900, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x10daf9a40, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x10dafb700, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x10dafb840, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x10dafb980, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x10dafbac0, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10dafbc00, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10dafbd40, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10dafbe80, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10a987480, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10a987700, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10a985900, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10a987840, {{0.0, 0.0}, {820.0, 88.0}}
+                        Other, 0x10a987980, {{291.1, 46.0}, {237.8, 28.0}}, label: 'Production Ad Service QA'
+                      Button, 0x10a987ac0, {{342.7, 88.0}, {134.5, 48.0}}, label: 'Show interstitial'
+                      Button, 0x10a987c00, {{343.0, 136.0}, {134.0, 48.0}}, label: 'Prime app-open'
+                      Button, 0x10a987d40, {{344.1, 184.0}, {131.8, 48.0}}, label: 'Show app-open'
+                      Other, 0x10a987e80, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10a987340, {{50.0, 232.0}, {720.0, 101.0}}
+                        Other, 0x10db34000, {{50.0, 232.0}, {720.0, 101.0}}
+                          Other, 0x10db34140, {{50.0, 232.0}, {720.0, 101.0}}, identifier: 'platform_view[1]'
+                            Other, 0x10db34280, {{50.0, 232.0}, {720.0, 101.0}}, Disabled
+                      Other, 0x10db343c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                        ScrollView, 0x10db34500, {{0.0, 333.0}, {820.0, 758.0}}
+                        StaticText, 0x10db34640, {{0.0, 333.0}, {820.0, 758.0}}, label: '{"at":"2026-10-21T14:00:24.583048Z","event":"mf2_ads_init_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"stage":"allowed","allowed":1,"retryable":0,"elapsed_ms":271,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:00:24.589138Z","event":"mf2_ads_configuration","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"test_mode":1,"interstitial_unit":"ca-app-pub-3940256099942544/4411468910","native_unit":"ca-app-pub-3940256099942544/3986624511","banner_unit":"ca-app-pub-3940256099942544/2934735716","appOpen_unit":"ca-app-pub-3940256099942544/5575463023","sdk":"google_mobile_ads_9.0.0","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:00:24.589661Z","event":"mf2_ads_init_started","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"stage":"sdk","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:00:25.260875Z","event":"qa_initialized","parameters":{"ready":true}}
+{"at":"2026-10-21T14:00:25.261250Z","event":"mf2_ads_init_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"stage":"sdk","result":"ready","elapsed_ms":677,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:00:25.261528Z","event":"mf2_ad_request_attempted","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"native","ad_placement":"device_qa_native","ad_unit_id":"ca-app-pub-3940256099942544/3986624511","request_id":"01a15ec3-61ac-7b86-a06e-119b72962b14","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:00:25.261684Z","event":"mf2_ad_request_attempted","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"interstitial","ad_placement":"workout_complete","ad_unit_id":"ca-app-pub-3940256099942544/4411468910","request_id":"01a15ec3-61ac-7132-8679-e593ffc3f63a","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:00:25.262031Z","event":"mf2_ad_request_attempted","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"banner","ad_placement":"device_qa_banner","ad_unit_id":"ca-app-pub-3940256099942544/2934735716","request_id":"01a15ec3-61ac-777c-a037-b1456dbb23b5","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:00:26.031417Z","event":"mf2_ad_load_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"banner","ad_placement":"device_qa_banner","ad_unit_id":"ca-app-pub-3940256099942544/2934735716","request_id":"01a15ec3-61ac-777c-a037-b1456dbb23b5","retry_attempt":0,"result":"loaded","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:00:26.038953Z","event":"mf2_ad_view_state","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"banner","ad_placement":"device_qa_banner","request_id":"01a15ec3-61ac-777c-a037-b1456dbb23b5","state":"attached","visible":1,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:00:26.064564Z","event":"mf2_ad_impression_callback","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"banner","ad_placement":"device_qa_banner","ad_unit_id":"ca-app-pub-3940256099942544/2934735716","request_id":"01a15ec3-61ac-777c-a037-b1456dbb23b5","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:00:26.149395Z","event":"mf2_ad_load_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"native","ad_placement":"device_qa_native","ad_unit_id":"ca-app-pub-3940256099942544/3986624511","request_id":"01a15ec3-61ac-7b86-a06e-119b72962b14","retry_attempt":0,"result":"loaded","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:00:26.155846Z","event":"mf2_ad_view_state","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"native","ad_placement":"device_qa_native","request_id":"01a15ec3-61ac-7b86-a06e-119b72962b14","state":"attached","visible":1,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:00:26.217736Z","event":"mf2_ad_impression_callback","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"native","ad_placement":"device_qa_native","ad_unit_id":"ca-app-pub-3940256099942544/3986624511","request_id":"01a15ec3-61ac-7b86-a06e-119b72962b14","retry_attempt":0,"ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}
+{"at":"2026-10-21T14:00:27.439427Z","event":"mf2_ad_load_result","parameters":{"ad_policy_version":"revenue_v1","fullscreen_cooldown_seconds":120,"app_open_visit_count":0,"workout_completion_count":2,"onboarding_completed":1,"foreground":1,"ad_format":"interstitial","ad_placement":"workout_complete","ad_unit_id":"ca-app-pub-3940256099942544/4411468910","request_id":"01a15ec3-61ac-7132-8679-e593ffc3f63a","retry_attempt":0,"result":"loaded","ad_telemetry_revision":1,"release_sha":"unrecorded","analytics_schema":2,"analytics_revision":3,"platform":"ios","app_version":"1.0.0","build_number":"1","device_category":"unknown"}}'
+                      Other, 0x10db34780, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10db348c0, {{50.0, 1091.0}, {720.0, 89.0}}
+                        Other, 0x10db34a00, {{50.0, 1091.0}, {720.0, 89.0}}
+                          Other, 0x10db34b40, {{50.0, 1091.0}, {720.0, 89.0}}, identifier: 'platform_view[0]'
+                            Other, 0x10db34c80, {{50.0, 1091.0}, {720.0, 89.0}}
+                              Other, 0x10db34dc0, {{50.0, 1091.0}, {720.0, 89.0}}
+                                Other, 0x10db34f00, {{50.0, 1091.0}, {720.0, 89.0}}
+                                  Other, 0x10db35040, {{50.0, 1091.0}, {720.0, 89.0}}
+                                    WebView, 0x10db35180, {{50.0, 1091.0}, {720.0, 89.0}}
+                                      WebView, 0x10db352c0, {{50.0, 1091.0}, {720.0, 89.0}}
+                                        WebView, 0x10db35400, {{50.0, 1091.0}, {720.0, 89.0}}
+                                          Other, 0x10db35540, {{0.0, 0.0}, {720.0, 89.0}}
+                                            Other, 0x10db35680, {{0.0, 0.0}, {720.0, 89.0}}
+                                              Other, 0x10db357c0, {{50.0, 1091.0}, {720.0, 89.0}}
+                                                Other, 0x10db35900, {{50.0, 1091.0}, {720.0, 89.0}}, Focused
+                                                  Other, 0x10db35a40, {{50.0, 1091.0}, {720.0, 89.0}}, Focused
+                                                    Link, 0x10db35b80, {{50.0, 1091.0}, {720.0, 89.0}}, Focused
+                                                      Link, 0x10db35cc0, {{50.0, 1091.0}, {720.0, 89.0}}, Focused
+                                        Other, 0x10db35e00, {{737.0, 1091.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                          Other, 0x10db35f40, {{764.0, 1094.0}, {3.0, 83.0}}
+                                        Other, 0x10db36080, {{50.0, 1147.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                          Other, 0x10db361c0, {{53.0, 1174.0}, {714.0, 3.0}}
+                                        Other, 0x10db36300, {{737.0, 1091.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                          Other, 0x10db36440, {{764.0, 1094.0}, {3.0, 83.0}}
+                                        Other, 0x10db36580, {{50.0, 1147.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                          Other, 0x10db366c0, {{53.0, 1174.0}, {714.0, 3.0}}
+                                      StaticText, 0x10db36800, {{358.0, 1095.0}, {104.0, 34.0}}, label: 'Test mode'
+      Other, 0x10db36940, {{50.0, 318.0}, {335.0, 155.0}}, identifier: 'nativeValidator'
+        WebView, 0x10db36a80, {{50.0, 318.0}, {335.0, 155.0}}, identifier: 'overlayWebView'
+          WebView, 0x10db36bc0, {{50.0, 318.0}, {335.0, 155.0}}
+            WebView, 0x10db36d00, {{50.0, 318.0}, {335.0, 155.0}}
+              Other, 0x10db36e40, {{0.0, 0.0}, {335.0, 155.0}}
+                Other, 0x10db36f80, {{0.0, 0.0}, {335.0, 155.0}}
+                  Other, 0x10db370c0, {{50.0, 318.0}, {335.0, 155.0}}
+                    Other, 0x10db37200, {{50.0, 318.0}, {335.0, 155.0}}, Focused
+                      Other, 0x10db37340, {{66.0, 318.0}, {48.0, 48.0}}, Focused
+                      Other, 0x10db37480, {{55.0, 346.0}, {304.0, 117.0}}, Focused
+                        Other, 0x10db375c0, {{79.0, 374.0}, {20.0, 20.0}}, Focused
+                        Other, 0x10db37700, {{115.0, 362.0}, {224.0, 44.0}}, Focused
+                          Other, 0x10db37840, {{115.0, 362.0}, {188.0, 24.0}}, Focused
+                            StaticText, 0x10db37980, {{115.0, 363.0}, {188.0, 21.0}}, label: 'AdMob native ad validator', value: AdMob native ad va..., Focused
+                          Other, 0x10db37ac0, {{115.0, 386.0}, {183.0, 20.0}}, Focused
+                            StaticText, 0x10db37c00, {{115.0, 386.0}, {184.0, 19.0}}, label: '1 implementation issue found', value: 1 implementation i..., Focused
+                        Link, 0x10db37d40, {{184.0, 427.0}, {50.0, 19.0}}, label: 'Dismiss', Focused
+                          StaticText, 0x10db37e80, {{184.0, 427.0}, {50.0, 19.0}}, label: 'Dismiss', value: Dismiss, Focused
+                        Link, 0x10db3c000, {{262.0, 427.0}, {68.0, 19.0}}, label: 'See issues', Focused
+                          StaticText, 0x10db3c140, {{262.0, 427.0}, {68.0, 19.0}}, label: 'See issues', value: See issues, Focused
+            Other, 0x10db3c280, {{352.0, 318.0}, {30.0, 155.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+              Other, 0x10db3c3c0, {{379.0, 463.0}, {3.0, 7.0}}
+            Other, 0x10db3c500, {{50.0, 440.0}, {335.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+              Other, 0x10db3c640, {{375.0, 467.0}, {7.0, 3.0}}
+            Other, 0x10db3c780, {{352.0, 318.0}, {30.0, 155.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+              Other, 0x10db3c8c0, {{379.0, 463.0}, {3.0, 7.0}}
+            Other, 0x10db3ca00, {{50.0, 440.0}, {335.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+              Other, 0x10db3cb40, {{375.0, 467.0}, {7.0, 3.0}}
+    Window, 0x10db3cc80, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10db3cdc0, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10db3cf00, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x10dafb5c0, pid: 22835, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x10db3d040, pid: 22835, label: 'motionfit - workout coach'
+  }
+
+    t =    19.69s Added attachment named 'production-before-interstitial'
+    t =    19.69s Tap "Show interstitial" Button
+    t =    19.69s     Wait for fit.motionfit.app to idle
+    t =    19.70s     Find the "Show interstitial" Button
+    t =    19.75s     Check for interrupting elements affecting "Show interstitial" Button
+    t =    19.78s     Synthesize event
+    t =    20.07s     Wait for fit.motionfit.app to idle
+    t =    25.43s Requesting snapshot of accessibility hierarchy for app with pid 22835
+    t =    25.59s Requesting snapshot of accessibility hierarchy for app with pid 22835
+IPAD_ADS_STATE production-interstitial-showing
+Attributes: Application, 0x118c71e00, pid: 22835, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x118c71e00, pid: 22835, label: 'motionfit - workout coach'
+    Window (Main), 0x118c717c0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x118c73c00, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x118c73d40, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x118c73e80, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10dafaf80, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10dafb0c0, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x10dafb200, {{0.0, 0.0}, {820.0, 1180.0}}
+            WebView, 0x10dafb340, {{0.0, 0.0}, {820.0, 1180.0}}
+              WebView, 0x10daf8000, {{0.0, 0.0}, {820.0, 1180.0}}
+                WebView, 0x10daf8140, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10daf9040, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10daf9180, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10daf9400, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x10daf9540, {{0.0, 0.0}, {820.0, 1180.0}}, Focused
+                          Link, 0x10daf92c0, {{0.0, 46.0}, {820.0, 1094.0}}, Focused
+                          Other, 0x10dafa800, {{733.0, -3.0}, {90.0, 90.0}}, Focused
+                          Button, 0x10daf9b80, {{760.0, 24.0}, {36.0, 36.0}}, label: 'Close', Focused
+                Other, 0x10daf9cc0, {{787.0, 18.0}, {30.0, 1144.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                  Other, 0x10daf9e00, {{814.0, 21.0}, {3.0, 1138.0}}
+                Other, 0x10daf9f40, {{18.0, 1147.0}, {784.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                  Other, 0x10dafa080, {{21.0, 1174.0}, {778.0, 3.0}}
+                Other, 0x10dafa1c0, {{787.0, 18.0}, {30.0, 1144.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                  Other, 0x10dafa300, {{814.0, 21.0}, {3.0, 1138.0}}
+                Other, 0x10dafa440, {{18.0, 1147.0}, {784.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                  Other, 0x10dafa580, {{21.0, 1174.0}, {778.0, 3.0}}
+              StaticText, 0x10dafa6c0, {{358.0, 4.0}, {104.0, 34.0}}, label: 'Test mode'
+          Button, 0x10dafa940, {{768.0, 0.0}, {52.0, 52.0}}, label: 'Close Advertisement', Disabled
+    Window, 0x10dafaa80, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10dafabc0, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10dafad00, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x118c71e00, pid: 22835, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x10dafb5c0, pid: 22835, label: 'motionfit - workout coach'
+  }
+
+    t =    25.76s Added attachment named 'production-interstitial-showing'
+    t =    25.76s Tear Down
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testProductionInterstitial]' passed (26.054 seconds).
+Test Suite 'MotionfitMetaQA' passed at 2026-10-21 23:00:45.495.
+	 Executed 1 test, with 0 failures (0 unexpected) in 26.054 (26.056) seconds
+Test Suite 'MotionfitMetaQA.xctest' passed at 2026-10-21 23:00:45.497.
+	 Executed 1 test, with 0 failures (0 unexpected) in 26.054 (26.058) seconds
+Test Suite 'Selected tests' passed at 2026-10-21 23:00:45.500.
+	 Executed 1 test, with 0 failures (0 unexpected) in 26.054 (26.061) seconds
+2026-10-21 23:00:45.791 xcodebuild[76783:1221883] [MT] IDETestOperationsObserverDebug: 30.017 elapsed -- Testing started completed.
+2026-10-21 23:00:45.791 xcodebuild[76783:1221883] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 23:00:45.791 xcodebuild[76783:1221883] [MT] IDETestOperationsObserverDebug: 30.017 sec, +30.017 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/production-interstitial.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

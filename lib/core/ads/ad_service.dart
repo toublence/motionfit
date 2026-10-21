@@ -23,7 +23,7 @@ class AdService extends ChangeNotifier {
        _crash = crashReporting,
        _consent =
            consent ?? PrivacyConsentService(crashReporting: crashReporting),
-       sdk = sdk ?? GoogleAdSdk(),
+       sdk = sdk ?? GoogleAdSdk(crashReporting: crashReporting),
        _clock = clock ?? DateTime.now,
        _unitResolver = unitResolver ?? _defaultUnit;
   final AnalyticsService _analytics;
@@ -57,8 +57,17 @@ class AdService extends ChangeNotifier {
   bool _ready = false;
   bool _sdkInitialized = false;
   bool _consentRetryRequired = false;
+  bool _trackingDeferred = false;
+
+  void retryDeferredTrackingAuthorization() {
+    if (_trackingDeferred && _foreground && _onboardingCompleted) {
+      unawaited(initialize(retryDeferredTracking: true));
+    }
+  }
+
   bool _disposed = false;
   bool _foreground = true;
+  bool _visible = true;
   bool _fullScreenShowing = false;
   int _completedWorkoutCount = 0;
   int? _snapshotCount;
@@ -76,6 +85,12 @@ class AdService extends ChangeNotifier {
   DateTime? _lastInterstitialShownAt;
   bool get ready => _ready;
   bool get foreground => _foreground;
+  bool get visible => _visible;
+
+  // A presented fullscreen ad covers the Flutter view, which iOS reports as
+  // inactive → hidden → paused until dismissal. Loads keep running meanwhile so
+  // the next ad is ready instead of being cancelled and restarted.
+  bool get loadsAllowed => _visible || _fullScreenShowing;
   bool get fullScreenShowing => _fullScreenShowing;
   DateTime? get lastInterstitialShownAt => _lastInterstitialShownAt;
   bool get interstitialLoading => _interstitial?.loading ?? false;
@@ -122,9 +137,14 @@ class AdService extends ChangeNotifier {
     _syncFullScreenLoads();
   }
 
-  void setForeground(bool value) {
-    if (_disposed || value == _foreground) return;
+  /// [value] is the active (resumed) app; consent and fullscreen ads need it.
+  /// [visible] also covers iOS inactive (system alerts, Control Center, the
+  /// unfocused side of iPad split view), where view ads and loads continue.
+  void setForeground(bool value, {bool? visible}) {
+    final shown = value || (visible ?? false);
+    if (_disposed || (value == _foreground && shown == _visible)) return;
     _foreground = value;
+    _visible = shown;
     _consent.setForeground(value);
     if (!value) {
       cancelAppOpenOpportunity('background');
@@ -132,12 +152,17 @@ class AdService extends ChangeNotifier {
     }
     _syncFullScreenLoads();
     notifyListeners();
-    if (value && _onboardingCompleted) unawaited(initialize());
+    if (value && _onboardingCompleted) {
+      unawaited(initialize(retryDeferredTracking: true));
+    }
   }
 
-  Future<bool> initialize() {
+  Future<bool> initialize({bool retryDeferredTracking = false}) {
     if (_disposed || !_foreground || !_consent.supported) {
       return Future.value(false);
+    }
+    if (_trackingDeferred && !retryDeferredTracking) {
+      return Future.value(_ready);
     }
     return _initialization ??= Future<bool>.microtask(
       _initialize,
@@ -155,9 +180,12 @@ class AdService extends ChangeNotifier {
           _syncFullScreenLoads();
           return true;
         }
-        if (!allowed) _consent.invalidate();
+        if (!allowed) {
+          _setReady(false);
+          _consent.invalidate();
+        }
       }
-      _setReady(false);
+      _trackingDeferred = false;
       final result = await _consent.requestTrackingAndConsent();
       if (_disposed) return false;
       record('mf2_ads_init_result', {
@@ -168,7 +196,10 @@ class AdService extends ChangeNotifier {
         ...?result.failure?.parameters,
       });
       _consentRetryRequired = result.retryable;
+      _trackingDeferred = result.failure?.kind == 'att_pending';
+      if (!result.retryable) _initializationFailures = 0;
       if (!result.allowed) {
+        _setReady(false);
         if (result.retryable) _scheduleInitializationRetry();
         return false;
       }
@@ -187,11 +218,11 @@ class AdService extends ChangeNotifier {
       }
       if (_disposed) return false;
       if (!await _consent.canRequestAds()) {
+        _setReady(false);
         _consent.invalidate();
         _scheduleInitializationRetry();
         return false;
       }
-      _initializationFailures = 0;
       _setReady(true);
       record('mf2_ads_init_result', {
         'stage': 'sdk',
@@ -203,6 +234,7 @@ class AdService extends ChangeNotifier {
       return true;
     } on Object catch (error, stack) {
       if (!_disposed) {
+        _setReady(false);
         record('mf2_ads_init_result', {
           'stage': stage,
           'result': 'failed',
@@ -223,7 +255,10 @@ class AdService extends ChangeNotifier {
   }
 
   void _scheduleInitializationRetry() {
-    if (_disposed || !_foreground || _initializationRetry?.isActive == true) {
+    if (_disposed ||
+        !_foreground ||
+        _trackingDeferred ||
+        _initializationRetry?.isActive == true) {
       return;
     }
     _initializationRetry = Timer(
@@ -254,8 +289,10 @@ class AdService extends ChangeNotifier {
     AdSize? size,
     NativeTemplateStyle? templateStyle,
   }) async {
-    if (!MotionFitAdUnits.valid(unitId)) throw const AdFailure('configuration');
-    if (_disposed || !_ready || !_foreground || !callbacks.isActive()) {
+    if (!MotionFitAdUnits.valid(unitId)) {
+      throw const AdFailure('invalid_unit');
+    }
+    if (_disposed || !_ready || !loadsAllowed || !callbacks.isActive()) {
       throw const AdFailure('inactive');
     }
     if (!await _consent.canRequestAds()) {
@@ -264,7 +301,7 @@ class AdService extends ChangeNotifier {
       unawaited(initialize());
       throw const AdFailure('consent_blocked');
     }
-    if (_disposed || !_ready || !_foreground || !callbacks.isActive()) {
+    if (_disposed || !_ready || !loadsAllowed || !callbacks.isActive()) {
       throw const AdFailure('inactive');
     }
     return sdk.create(
@@ -298,8 +335,7 @@ class AdService extends ChangeNotifier {
     )..addListener(_onInterstitialChanged);
     _interstitial!.setEnabled(
       _ready &&
-          _foreground &&
-          !_fullScreenShowing &&
+          loadsAllowed &&
           _onboardingCompleted &&
           AdEligibility.canPreloadInterstitial(
             completedWorkoutCount: _completedWorkoutCount,
@@ -418,19 +454,10 @@ class AdService extends ChangeNotifier {
     _syncFullScreenLoads();
     var shown = false;
     var finished = false;
+    var abandoned = false;
     final done = Completer<bool>();
-    // A missing native callback must not strand navigation. Keep ownership of
-    // the uncertain native presentation until its terminal callback, so a late
-    // presentation can never overlap a second ad.
-    final watchdog = Timer(const Duration(seconds: 30), () {
-      if (!shown && !finished) {
-        record('mf2_ad_show_result', {
-          ...fields,
-          'result': 'unconfirmed_timeout',
-        });
-        if (!done.isCompleted) done.complete(false);
-      }
-    });
+    void release() => unawaited(ad.dispose().catchError((Object _) {}));
+    late final Timer watchdog;
     void finish([AdFailure? error]) {
       if (finished) return;
       finished = true;
@@ -439,7 +466,9 @@ class AdService extends ChangeNotifier {
       if (error != null) {
         record(shown ? 'mf2_ad_show_terminal' : 'mf2_ad_show_result', {
           ...fields,
-          'result': 'failed',
+          'result': error.kind == 'unconfirmed_timeout'
+              ? 'unconfirmed_timeout'
+              : 'failed',
           ...error.parameters,
         });
       }
@@ -449,15 +478,28 @@ class AdService extends ChangeNotifier {
           'result': 'dismissed_without_show',
         });
       }
-      record('mf2_ad_disposed', {
-        ...fields,
-        'reason': error == null ? 'dismissed' : 'show_failed',
-      });
-      unawaited(ad.dispose().catchError((Object _) {}));
+      // An abandoned ad stays alive so a late presentation still reports its
+      // callbacks; its own terminal callback disposes it.
+      if (!abandoned) {
+        record('mf2_ad_disposed', {
+          ...fields,
+          'reason': error == null ? 'dismissed' : 'show_failed',
+        });
+        release();
+      }
       if (!done.isCompleted) done.complete(shown);
       _syncFullScreenLoads();
     }
 
+    // A missing native callback must not strand navigation or the session:
+    // the iOS plugin drops show() without any callback when its native ad is
+    // gone. A presentation that still arrives late starts the cooldown, so no
+    // second fullscreen ad can follow it.
+    watchdog = Timer(const Duration(seconds: 30), () {
+      if (shown) return;
+      abandoned = true;
+      finish(const AdFailure('unconfirmed_timeout'));
+    });
     unawaited(
       Future<void>.microtask(() async {
         try {
@@ -485,20 +527,23 @@ class AdService extends ChangeNotifier {
           await ad.show(
             AdShowCallbacks(
               showed: () {
-                if (finished || shown) return;
+                if (shown || (finished && !abandoned)) return;
                 shown = true;
                 _lastInterstitialShownAt = _clock();
                 final workoutId = fields['workout_session_id'];
                 if (workoutId is String) _monetizedWorkoutIds.add(workoutId);
-                record('mf2_ad_show_result', {...fields, 'result': 'showed'});
+                record('mf2_ad_show_result', {
+                  ...fields,
+                  'result': abandoned ? 'late_showed' : 'showed',
+                });
                 try {
                   onShown?.call(_lastInterstitialShownAt!);
                 } on Object {
                   record('mf2_ad_cooldown_persist_failed', fields);
                 }
               },
-              dismissed: () => finish(),
-              failed: finish,
+              dismissed: () => abandoned ? release() : finish(),
+              failed: (error) => abandoned ? release() : finish(error),
             ),
           );
         } on Object catch (error) {
@@ -621,9 +666,7 @@ class AdService extends ChangeNotifier {
         callbacks: callbacks,
       ),
     )..addListener(_onAppOpenChanged);
-    _appOpen!.setEnabled(
-      _ready && _foreground && !_fullScreenShowing && _onboardingCompleted,
-    );
+    _appOpen!.setEnabled(_ready && loadsAllowed && _onboardingCompleted);
     _maybeShowAppOpen();
   }
 

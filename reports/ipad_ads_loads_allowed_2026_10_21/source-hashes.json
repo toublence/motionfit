@@ -1,0 +1,7 @@
+{
+  "lib/core/ads/ad_service.dart": "38bbf34fafad5af5df6bf2019ffa318bc76963f9cb30205d40af3d0df7c37e9f",
+  "lib/core/ads/ad_slot_controller.dart": "52758b3e076cca5780c1316bb9bb30c015623294ae7e4ef8f3829b30e99234fc",
+  "lib/app/app.dart": "ad5d79fce982252e66eeb0fa33be226966446da3fe083b42018136ade706dc02",
+  "tool/ios_ads_regression_device_test.dart": "a2dbec9bec3af64b46a9ee4895f0d6953b650f85a43a954ba04ecc95e242f570",
+  "test/core/ads/interstitial_test.dart": "6b463e101e98e978242ed56b5f3ff8eec9449ff3e51159f0ae2ac92f1ea507dc"
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "4E7D9B30-B15D-4487-ABBA-84F73CF418B6.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "real-background-return-screen-only_0_651DEA95-B7A9-4458-A315-E4703A3E523B.png",
+        "timestamp" : 1792592969.666
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "7C8BFB15-88B0-416C-B64B-8CC17656941B.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "interstitial-dismissed-screen-only_0_7EE5A49D-BAAD-44D3-B53F-157E26CAC143.png",
+        "timestamp" : 1792592963.076
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "5585F62B-C71F-4D34-93DF-374949CD3ABF.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "interstitial-visible-next-loads_0_951C91C3-C78A-482B-B6D0-0F2B7B195CFD.png",
+        "timestamp" : 1792592959.15
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "00008112-001848821413601E",
+        "deviceName" : "iPad (4)",
+        "exportedFileName" : "0036FF31-3B7C-499F-A561-2E67E0BC4DDD.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "before-show_0_182EFF6B-92E8-4C16-A73F-A867D1DD8EB9.png",
+        "timestamp" : 1792592948.036
+      }
+    ],
+    "testIdentifier" : "MotionfitMetaQA/testFixedInterstitial()",
+    "testIdentifierURL" : "test://com.apple.xcode/MotionfitMetaQA/MotionfitMetaQA/MotionfitMetaQA/testFixedInterstitial"
+  }
+]

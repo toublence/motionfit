@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-21",
+  "platform": "iOS simulator",
+  "integration": "Already present in Podfile and Podfile.lock; no production dependency changes needed",
+  "versions": {
+    "GoogleMobileAdsMediationFacebook": "6.22.0.0",
+    "FBAudienceNetwork": "6.22.0",
+    "GoogleMobileAdsMediationUnity": "4.21.0.0",
+    "UnityAds": "4.21.0",
+    "Google-Mobile-Ads-SDK": "13.3.0"
+  },
+  "entry_point": "tool/mediation_simulator_test.dart",
+  "command": "flutter build ios --simulator --debug --no-pub --target tool/mediation_simulator_test.dart",
+  "build": "BLOCKED: No space left on device",
+  "available_disk_at_failure": "87 MiB",
+  "meta_simulator_ad_test": "NOT RUN: build failed before installation",
+  "unity_simulator_ad_test": "NOT RUN: build failed before installation",
+  "previous_meta_device_evidence": "reports/meta_mediation_2026_10_21/results.json (physical iPad; does not establish simulator success)",
+  "evidence": "build.log",
+  "resume": "Free disk space, build QA entry point, test Meta and Unity individually in Ad Inspector single-source mode, verify expected adapter + showed/impression/dismissed/PASS, then disable single-source testing."
+}

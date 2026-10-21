@@ -1,0 +1,84 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.xcodeproj -scheme MotionfitMetaQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-meta-ui -resultBundlePath reports/ipad_ads_validation_2026_10_21/unity-endcard.xcresult "-only-testing:MotionfitMetaQA/MotionfitMetaQA/testSnapshot"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/unity-endcard.xcresult
+
+2026-10-21 23:06:59.672408+0900 MotionfitMetaQA-Runner[22905:5631716] [Default] Running tests...
+2026-10-21 23:06:59.685152+0900 MotionfitMetaQA-Runner[22905:5631716] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+2026-10-21 23:06:59.878427+0900 MotionfitMetaQA-Runner[22905:5631746] [General] Failed to send CA Event for app launch measurements for ca_event_type: 1 event_name: com.apple.app_launch_measurement.ExtendedLaunchMetrics
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-21 23:07:00.131.
+Test Suite 'MotionfitMetaQA.xctest' started at 2026-10-21 23:07:00.131.
+Test Suite 'MotionfitMetaQA' started at 2026-10-21 23:07:00.132.
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testSnapshot]' started.
+    t =     0.00s Start Test at 2026-10-21 23:07:00.132
+    t =     0.01s Set Up
+    t =     0.02s Open fit.motionfit.app
+    t =     0.02s     Activate fit.motionfit.app
+    t =     0.04s         Wait for fit.motionfit.app to idle
+    t =     0.04s Wait for fit.motionfit.app to become Running Foreground
+    t =     0.04s Requesting snapshot of accessibility hierarchy for app with pid 22885
+    t =     0.15s Requesting snapshot of accessibility hierarchy for app with pid 22885
+IPAD_ADS_STATE initial
+Attributes: Application, 0x10a993480, pid: 22885, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x10a993480, pid: 22885, label: 'motionfit - workout coach'
+    Window (Main), 0x10a9935c0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10a993700, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10a993840, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x10a993980, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10a993ac0, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10a993c00, {{0.0, 0.0}, {820.0, 1180.0}}
+          WebView, 0x10a993d40, {{0.0, 0.0}, {820.0, 1180.0}}
+            WebView, 0x10a993e80, {{0.0, 0.0}, {820.0, 1180.0}}
+              WebView, 0x10daa4000, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x10daa4140, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x10daa4280, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x10daa43c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x10daa4500, {{0.0, 0.0}, {820.0, 1180.0}}, label: 'Unity Ad Viewer - v1.75.5-ad-viewer', Focused
+                        Button, 0x10daa4640, {{28.0, 28.0}, {90.0, 90.0}}, label: 'Close', Focused
+                        Other, 0x10daa4780, {{0.0, 0.0}, {820.0, 10.0}}, Focused
+                        Other, 0x10daa48c0, {{20.0, 20.0}, {780.0, 686.0}}, Focused
+                          Image, 0x10daa4a00, {{20.0, 20.0}, {780.0, 686.0}}, Focused
+                        StaticText, 0x10daa4b40, {{41.0, 753.0}, {330.0, 59.0}}, label: 'Test game ios', value: Test game ios, Focused
+                        Other, 0x10daa4f00, {{41.0, 811.0}, {144.0, 37.0}}, Focused
+                        Other, 0x10daa5400, {{41.0, 811.0}, {160.0, 37.0}}, Focused
+                        StaticText, 0x10daa5540, {{41.0, 847.0}, {38.0, 25.0}}, label: '10 k', value: 10 k, Focused
+                        Other, 0x10daa5680, {{32.0, 973.0}, {35.0, 26.0}}, Focused
+                          StaticText, 0x10daa57c0, {{32.0, 973.0}, {35.0, 26.0}}, label: '가격', value: 가격, Focused
+                        Other, 0x10daa5900, {{32.0, 996.0}, {69.0, 49.0}}, Focused
+                          StaticText, 0x10daa5a40, {{32.0, 996.0}, {70.0, 49.0}}, label: '무료', value: 무료, Focused
+                        Button, 0x10daa5b80, {{398.0, 957.0}, {396.0, 104.0}}, label: '받기', Focused
+                        Other, 0x10daa5cc0, {{0.0, 919.0}, {820.0, 10.0}}, Focused
+                          Button, 0x10daa5e00, {{20.0, 1109.0}, {30.0, 46.0}}, label: 'Privacy', Focused
+    Window, 0x10daa5f40, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x10daa6080, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x10daa61c0, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x10a993480, pid: 22885, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x10daa4c80, pid: 22885, label: 'motionfit - workout coach'
+  }
+
+    t =     0.32s Added attachment named 'initial'
+    t =     0.32s Tear Down
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testSnapshot]' passed (0.338 seconds).
+Test Suite 'MotionfitMetaQA' passed at 2026-10-21 23:07:00.470.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.338 (0.338) seconds
+Test Suite 'MotionfitMetaQA.xctest' passed at 2026-10-21 23:07:00.470.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.338 (0.339) seconds
+Test Suite 'Selected tests' passed at 2026-10-21 23:07:00.470.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.338 (0.340) seconds
+2026-10-21 23:07:00.985 xcodebuild[78725:1234334] [MT] IDETestOperationsObserverDebug: 3.845 elapsed -- Testing started completed.
+2026-10-21 23:07:00.985 xcodebuild[78725:1234334] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 23:07:00.985 xcodebuild[78725:1234334] [MT] IDETestOperationsObserverDebug: 3.845 sec, +3.845 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/unity-endcard.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

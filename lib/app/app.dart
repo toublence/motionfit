@@ -61,6 +61,7 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
     _detachTrackingExplainer = () => privacy.setTrackingExplainer(null);
     _router.routeInformationProvider.addListener(_syncCrashScreen);
     _router.routeInformationProvider.addListener(_syncOrientation);
+    _router.routeInformationProvider.addListener(_retryDeferredTracking);
     _syncCrashScreen();
     _syncOrientation();
     _notifications = ref.read(notificationServiceProvider);
@@ -69,13 +70,19 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
     unawaited(_notifications.initialize().catchError((Object _) {}));
     WidgetsBinding.instance.addObserver(this);
     final lifecycle = WidgetsBinding.instance.lifecycleState;
-    if (lifecycle != null) {
-      ref
-          .read(adServiceProvider)
-          .setForeground(lifecycle == AppLifecycleState.resumed);
-    }
+    if (lifecycle != null) _syncAdLifecycle(lifecycle);
     _refreshReminderEnvironment(force: true);
     if (onboardingCompleted) _refreshPrivacyConsent();
+  }
+
+  void _retryDeferredTracking() {
+    final path = _router.routeInformationProvider.value.uri.path;
+    if (path.contains('/prepare') || path.contains('/workout')) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        ref.read(adServiceProvider).retryDeferredTrackingAuthorization();
+      }
+    });
   }
 
   Future<bool> _explainTracking() async {
@@ -145,6 +152,7 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
     WidgetsBinding.instance.removeObserver(this);
     _router.routeInformationProvider.removeListener(_syncCrashScreen);
     _router.routeInformationProvider.removeListener(_syncOrientation);
+    _router.routeInformationProvider.removeListener(_retryDeferredTracking);
     _notifications.setNotificationHandler(null);
     _router.routeInformationProvider.removeListener(_drainNotification);
     _detachTrackingExplainer();
@@ -159,15 +167,24 @@ class _MotionFitAppState extends ConsumerState<MotionFitApp>
           .read(crashReportingServiceProvider)
           .setCustomKey('app_lifecycle', state.name),
     );
-    ref
-        .read(adServiceProvider)
-        .setForeground(state == AppLifecycleState.resumed);
+    _syncAdLifecycle(state);
     if (state == AppLifecycleState.resumed) {
       _refreshDeniedNotificationPermission();
       _refreshReminderEnvironment();
       _refreshPrivacyConsent();
     }
   }
+
+  // iOS reports inactive while the app stays on screen (system alerts,
+  // Control Center, iPad split view); view ads must not vanish then.
+  void _syncAdLifecycle(AppLifecycleState state) => ref
+      .read(adServiceProvider)
+      .setForeground(
+        state == AppLifecycleState.resumed,
+        visible:
+            state == AppLifecycleState.resumed ||
+            state == AppLifecycleState.inactive,
+      );
 
   void _syncCrashScreen() {
     final path = _router.routeInformationProvider.value.uri.path;

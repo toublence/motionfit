@@ -1,0 +1,46 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.xcodeproj -scheme MotionfitMetaQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-meta-ui -resultBundlePath reports/ipad_ads_validation_2026_10_21/active-snapshot.xcresult "-only-testing:MotionfitMetaQA/MotionfitMetaQA/testSnapshot"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/active-snapshot.xcresult
+
+2026-10-21 22:47:19.186454+0900 MotionfitMetaQA-Runner[22789:5617826] [Default] Running tests...
+2026-10-21 22:47:19.199261+0900 MotionfitMetaQA-Runner[22789:5617826] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+2026-10-21 22:48:19.353925+0900 MotionfitMetaQA-Runner[22789:5617826] [Default] Failed to initialize for UI testing: Error Domain=com.apple.dt.XCTest.XCTFuture Code=1000 "Timed out while enabling automation mode." UserInfo={NSLocalizedDescription=Timed out while enabling automation mode.}
+
+
+*** If you believe this error represents a bug, please attach the result bundle at /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/active-snapshot.xcresult
+
+2026-10-21 22:48:19.662 xcodebuild[68640:1185336]  IDETestOperationsObserverDebug: Failure collecting diagnostics from devices: Process exited with error 1:
+ ERROR: The operation couldn’t be completed. (CoreDeviceCLISupport.DiagnoseError error 0.)
+This tool generates files that allow Apple to investigate issues with your
+computer and help improve Apple products. The files might contain personal
+information found on your device or associated with your Apple Account(s),
+including but not limited to your name, serial numbers of your device,
+your device name, your device's location over the last one to two days,
+your attached peripheral devices, your user name, your email address and
+email settings, file paths, file names, Siri suggestions, your computer's
+IP addresses, and network connection information.
+
+This information is used by Apple in accordance with its privacy policy
+(www.apple.com/privacy) and is not shared with any other company. By using
+this tool and sending the results to Apple, you consent to Apple using the
+contents of these files to improve Apple products.
+
+An error occurred while running devicectl diagnose. Will archive the diagnostics collected thus far.
+Wrote file to /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/active-snapshot.xcresult/Staging/1_Test/Diagnostics/devicectl_diagnostics.zip
+Partial devicectl diagnose bundle located here: /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/active-snapshot.xcresult/Staging/1_Test/Diagnostics/devicectl_diagnostics.zip
+
+2026-10-21 22:48:19.668 xcodebuild[68640:1184712] [MT] IDETestOperationsObserverDebug: 63.025 elapsed -- Testing started completed.
+2026-10-21 22:48:19.668 xcodebuild[68640:1184712] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 22:48:19.668 xcodebuild[68640:1184712] [MT] IDETestOperationsObserverDebug: 63.025 sec, +63.025 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/active-snapshot.xcresult
+
+Testing failed:
+	MotionfitMetaQA-Runner (22789) encountered an error (The test runner failed to initialize for UI testing. (Underlying Error: Timed out while enabling automation mode.))
+
+** TEST EXECUTE FAILED **
+
+Testing started

@@ -110,6 +110,7 @@ class PrivacyConsentService {
   Future<void>? _tracking;
   Future<void>? _form;
   bool _foreground = true;
+  Completer<void>? _resumed;
   bool get supported => _backend.supported;
   bool get trackingAuthorizationPending => _tracking != null;
   void setTrackingExplainer(Future<bool> Function()? explain) {
@@ -119,7 +120,23 @@ class PrivacyConsentService {
     }
   }
 
-  void setForeground(bool value) => _foreground = value;
+  void setForeground(bool value) {
+    _foreground = value;
+    if (value) {
+      _resumed?.complete();
+      _resumed = null;
+    }
+  }
+
+  Future<void> _waitForResume() async {
+    if (_foreground) return;
+    final resumed = _resumed ??= Completer<void>();
+    await resumed.future.timeout(
+      const Duration(seconds: 2),
+      onTimeout: () => throw const AdFailure('inactive'),
+    );
+  }
+
   void invalidate() => _settled = null;
 
   // Retain pending prompts after a caller's deadline; never stack native modals.
@@ -179,7 +196,8 @@ class PrivacyConsentService {
       if (!_foreground) throw const AdFailure('inactive');
       stage = 'att';
       await _requestTrackingAuthorization().timeout(timeout);
-      if (!_foreground) throw const AdFailure('inactive');
+      // ATT's completion can precede Flutter's resumed notification.
+      await _waitForResume();
       stage = 'consent_form';
       _form ??= Future<void>.sync(
         _backend.showRequiredForm,

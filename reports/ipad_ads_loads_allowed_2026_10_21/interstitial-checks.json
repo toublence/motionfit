@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "checks": {
+    "real_sdk_interstitial_showed": true,
+    "paused_still_allows_loads": true,
+    "no_cancelled_events": true,
+    "resumed_before_sdk_dismissal": true,
+    "dismissal_completed_successfully": true,
+    "real_background_stops_loads": true,
+    "interstitial_request_count_is_two": true,
+    "interstitial_same_request_loaded_while_covered": true,
+    "interstitial_no_new_request_after_dismissal": true,
+    "banner_request_count_is_two": true,
+    "banner_same_request_loaded_while_covered": true,
+    "banner_no_new_request_after_dismissal": true
+  },
+  "loads_completed_while_covered": {
+    "interstitial": {
+      "request_id": "01a15edd-abfe-7b7d-b705-30f7559f8dff",
+      "loaded_at": "2026-10-21T14:29:10.121741Z"
+    },
+    "banner": {
+      "request_id": "01a15edd-abfe-768c-aa7c-4d69be4e705f",
+      "loaded_at": "2026-10-21T14:29:09.385861Z"
+    }
+  },
+  "paused_at": "2026-10-21T14:29:08.772906Z",
+  "resumed_at": "2026-10-21T14:29:19.870180Z",
+  "sdk_dismissal_at": "2026-10-21T14:29:19.880774Z",
+  "evidence": "interstitial-complete-trace.jsonl",
+  "scope": "Production AdService and AdSlot, actual iPad lifecycle and real Google demo ads; QA policy context is in memory, no workout DB writes."
+}

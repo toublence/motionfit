@@ -33,7 +33,7 @@ class AdSlotController extends ChangeNotifier {
   bool _missingReported = false;
   AdFormat get format => _format;
   AdHandle? get ad =>
-      service.ready && service.foreground && _active ? _loader?.ad : null;
+      service.ready && service.visible && _active ? _loader?.ad : null;
   AdSize? get size => _size;
   bool get loading => _loader?.loading ?? false;
   String? get requestId => _loader?.requestId;
@@ -58,7 +58,7 @@ class AdSlotController extends ChangeNotifier {
   void _sync() {
     if (_disposed) return;
     final enabled =
-        _active && service.ready && service.foreground && _width != null;
+        _active && service.ready && service.loadsAllowed && _width != null;
     if (!service.ready && _loader?.ad != null) {
       _retire('consent_change');
     }

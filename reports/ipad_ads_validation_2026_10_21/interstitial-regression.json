@@ -1,0 +1,85 @@
+{
+  "status": "FAIL: next interstitial load cancelled during actual iOS fullscreen presentation",
+  "scope": "Real Google SDK demo ad and production AdService; QA forwards lifecycle exactly as MotionFitApp._syncAdLifecycle. In-memory QA policy context uses onboarding=true and completion count=2; no workout database writes.",
+  "evidence": "interstitial-complete-trace.jsonl",
+  "showed": {
+    "at": "2026-10-21T14:00:39.318133Z",
+    "event": "mf2_ad_show_result",
+    "parameters": {
+      "ad_policy_version": "revenue_v1",
+      "fullscreen_cooldown_seconds": 120,
+      "app_open_visit_count": 0,
+      "workout_completion_count": 2,
+      "onboarding_completed": 1,
+      "foreground": 1,
+      "opportunity_id": "01a15ec3-9886-746d-9dee-f41e8eaac117",
+      "ad_format": "interstitial",
+      "ad_placement": "workout_complete",
+      "cache_age_ms": 11862,
+      "ad_unit_id": "ca-app-pub-3940256099942544/4411468910",
+      "request_id": "01a15ec3-61ac-7132-8679-e593ffc3f63a",
+      "retry_attempt": 0,
+      "result": "showed",
+      "ad_telemetry_revision": 1,
+      "release_sha": "unrecorded",
+      "analytics_schema": 2,
+      "analytics_revision": 3,
+      "platform": "ios",
+      "app_version": "1.0.0",
+      "build_number": "1",
+      "device_category": "unknown"
+    }
+  },
+  "lifecycle": [
+    {
+      "at": "2026-10-21T14:00:39.326523Z",
+      "event": "qa_lifecycle",
+      "parameters": {
+        "state": "inactive"
+      }
+    },
+    {
+      "at": "2026-10-21T14:00:39.854702Z",
+      "event": "qa_lifecycle",
+      "parameters": {
+        "state": "hidden"
+      }
+    },
+    {
+      "at": "2026-10-21T14:00:39.858001Z",
+      "event": "qa_lifecycle",
+      "parameters": {
+        "state": "paused"
+      }
+    }
+  ],
+  "cancelled": {
+    "at": "2026-10-21T14:00:39.859361Z",
+    "event": "mf2_ad_load_result",
+    "parameters": {
+      "ad_policy_version": "revenue_v1",
+      "fullscreen_cooldown_seconds": 120,
+      "app_open_visit_count": 0,
+      "workout_completion_count": 2,
+      "onboarding_completed": 1,
+      "foreground": 0,
+      "ad_format": "interstitial",
+      "ad_placement": "workout_complete",
+      "ad_unit_id": "ca-app-pub-3940256099942544/4411468910",
+      "request_id": "01a15ec3-9886-7362-bfe0-a8e83c09e673",
+      "retry_attempt": 0,
+      "result": "cancelled",
+      "reason": "inactive",
+      "ad_telemetry_revision": 1,
+      "release_sha": "unrecorded",
+      "analytics_schema": 2,
+      "analytics_revision": 3,
+      "platform": "ios",
+      "app_version": "1.0.0",
+      "build_number": "1",
+      "device_category": "unknown"
+    }
+  },
+  "code": "lib/app/app.dart:180 forwards hidden/paused as visible=false; AdService disables the loading request despite its fullscreen lock being held.",
+  "production_changes": "None in this validation task; issue reproduced and recorded."
+}

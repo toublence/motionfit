@@ -1,0 +1,141 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.xcodeproj -scheme MotionfitMetaQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-meta-ui -resultBundlePath reports/ipad_ads_validation_2026_10_21/snapshot.xcresult "-only-testing:MotionfitMetaQA/MotionfitMetaQA/testSnapshot"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/snapshot.xcresult
+
+2026-10-21 22:44:35.529 xcodebuild[68359:1181840]  IDELaunchReport: 509a92c4af1212f0:509a92c4af1212f0: Finished with error: The application failed to launch.
+Domain: com.apple.dt.CoreDeviceError
+Code: 10002
+User Info: {
+    BundleIdentifier = "fit.motionfit.app.metaqa.xctrunner";
+    DVTErrorCreationDateKey = "2026-10-21 13:44:35 +0000";
+    IDERunOperationFailingWorker = IDELaunchCoreDeviceWorker;
+}
+--
+The request to open "fit.motionfit.app.metaqa.xctrunner" failed.
+Domain: FBSOpenApplicationServiceErrorDomain
+Code: 1
+Failure Reason: The request was denied by service delegate (SBMainWorkspace) for reason: NotFound ("Unknown application display identifier fit.motionfit.app.metaqa.xctrunner").
+User Info: {
+    BSErrorCodeDescription = RequestDenied;
+    FBSOpenApplicationRequestID = 0xe48a;
+}
+--
+The operation couldn’t be completed. Unknown application display identifier fit.motionfit.app.metaqa.xctrunner.
+Domain: FBSOpenApplicationErrorDomain
+Code: 4
+Failure Reason: Unknown application display identifier fit.motionfit.app.metaqa.xctrunner.
+User Info: {
+    BSErrorCodeDescription = NotFound;
+}
+--
+
+2026-10-21 22:44:35.529 xcodebuild[68359:1181840]  IDELaunchReport: 509a92c4af1212f0:509a92c4af1212f0: com.apple.dt.IDERunOperationWorkerFinished {
+    "device_identifier" = "00008112-001848821413601E";
+    "device_isCoreDevice" = 1;
+    "device_isWireless" = 1;
+    "device_model" = "iPad14,8";
+    "device_osBuild" = "26.6.2 (23G90)";
+    "device_osBuild_monotonic" = 2306009000;
+    "device_os_variant" = 1;
+    "device_platform" = "com.apple.platform.iphoneos";
+    "device_platform_family" = 2;
+    "device_reality" = 1;
+    "device_thinningType" = "iPad14,8";
+    "device_transport" = 2;
+    "launchSession_schemeCommand" = Test;
+    "launchSession_schemeCommand_enum" = 2;
+    "launchSession_targetArch" = arm64;
+    "launchSession_targetArch_enum" = 6;
+    "operation_duration_ms" = 12172;
+    "operation_errorCode" = 1;
+    "operation_errorDomain" = "com.apple.dt.CoreDeviceError.10002.FBSOpenApplicationServiceErrorDomain";
+    "operation_errorWorker" = IDELaunchCoreDeviceWorker;
+    "operation_error_reportable" = 1;
+    "operation_name" = IDERunOperationWorkerGroup;
+    "param_consoleMode" = 0;
+    "param_debugger_attachToExtensions" = 0;
+    "param_debugger_attachToXPC" = 0;
+    "param_debugger_type" = 1;
+    "param_destination_isProxy" = 0;
+    "param_destination_platform" = "com.apple.platform.iphoneos";
+    "param_diag_MTE_enable" = 0;
+    "param_diag_MainThreadChecker_stopOnIssue" = 0;
+    "param_diag_MallocStackLogging_enableDuringAttach" = 0;
+    "param_diag_MallocStackLogging_enableForXPC" = 0;
+    "param_diag_allowLocationSimulation" = 1;
+    "param_diag_checker_mtc_enable" = 0;
+    "param_diag_checker_tpc_enable" = 1;
+    "param_diag_gpu_frameCapture_enable" = 3;
+    "param_diag_gpu_shaderValidation_enable" = 0;
+    "param_diag_gpu_validation_enable" = 1;
+    "param_diag_guardMalloc_enable" = 0;
+    "param_diag_memoryGraphOnResourceException" = 0;
+    "param_diag_queueDebugging_enable" = 1;
+    "param_diag_runtimeProfile_generate" = 0;
+    "param_diag_sanitizer_asan_enable" = 0;
+    "param_diag_sanitizer_tsan_enable" = 0;
+    "param_diag_sanitizer_tsan_stopOnIssue" = 0;
+    "param_diag_sanitizer_ubsan_enable" = 0;
+    "param_diag_sanitizer_ubsan_stopOnIssue" = 0;
+    "param_diag_showNonLocalizedStrings" = 0;
+    "param_diag_viewDebugging_enabled" = 0;
+    "param_diag_viewDebugging_insertDylibOnLaunch" = 0;
+    "param_install_style" = 2;
+    "param_launcher_UID" = 2;
+    "param_launcher_allowDeviceSensorReplayData" = 0;
+    "param_launcher_kind" = 0;
+    "param_launcher_style" = 0;
+    "param_launcher_substyle" = 64;
+    "param_lldbVersion_component_idx_1" = 0;
+    "param_lldbVersion_monotonic" = 170302340003;
+    "param_runnable_appExtensionHostRunMode" = 0;
+    "param_runnable_productType" = "com.apple.product-type.application";
+    "param_testing_launchedForTesting" = 1;
+    "param_testing_suppressSimulatorApp" = 1;
+    "param_testing_usingCLI" = 0;
+    "sdk_canonicalName" = "iphoneos26.1";
+    "sdk_osVersion" = "26.1";
+    "sdk_platformID" = 2;
+    "sdk_variant" = iphoneos;
+    "sdk_version_monotonic" = 2301007700;
+}
+
+
+*** If you believe this error represents a bug, please attach the result bundle at /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/snapshot.xcresult
+
+2026-10-21 22:44:35.917 xcodebuild[68359:1181840]  IDETestOperationsObserverDebug: Failure collecting diagnostics from devices: Process exited with error 1:
+ ERROR: The operation couldn’t be completed. (CoreDeviceCLISupport.DiagnoseError error 0.)
+This tool generates files that allow Apple to investigate issues with your
+computer and help improve Apple products. The files might contain personal
+information found on your device or associated with your Apple Account(s),
+including but not limited to your name, serial numbers of your device,
+your device name, your device's location over the last one to two days,
+your attached peripheral devices, your user name, your email address and
+email settings, file paths, file names, Siri suggestions, your computer's
+IP addresses, and network connection information.
+
+This information is used by Apple in accordance with its privacy policy
+(www.apple.com/privacy) and is not shared with any other company. By using
+this tool and sending the results to Apple, you consent to Apple using the
+contents of these files to improve Apple products.
+
+An error occurred while running devicectl diagnose. Will archive the diagnostics collected thus far.
+Wrote file to /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/snapshot.xcresult/Staging/1_Test/Diagnostics/devicectl_diagnostics.zip
+Partial devicectl diagnose bundle located here: /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/snapshot.xcresult/Staging/1_Test/Diagnostics/devicectl_diagnostics.zip
+
+2026-10-21 22:44:35.926 xcodebuild[68359:1181653] [MT] IDETestOperationsObserverDebug: 13.015 elapsed -- Testing started completed.
+2026-10-21 22:44:35.926 xcodebuild[68359:1181653] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 22:44:35.926 xcodebuild[68359:1181653] [MT] IDETestOperationsObserverDebug: 13.015 sec, +13.015 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/snapshot.xcresult
+
+Testing failed:
+	The application failed to launch.
+	MotionfitMetaQA-Runner encountered an error (Failed to install or launch the test runner. (Underlying Error: The application failed to launch. (Underlying Error: The request to open "fit.motionfit.app.metaqa.xctrunner" failed. The request was denied by service delegate (SBMainWorkspace) for reason: NotFound ("Unknown application display identifier fit.motionfit.app.metaqa.xctrunner"). (Underlying Error: The operation couldn’t be completed. Unknown application display identifier fit.motionfit.app.metaqa.xctrunner.))))
+
+** TEST EXECUTE FAILED **
+
+Testing started

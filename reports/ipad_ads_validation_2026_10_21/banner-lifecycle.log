@@ -1,0 +1,1058 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.xcodeproj -scheme MotionfitMetaQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-meta-ui -resultBundlePath reports/ipad_ads_validation_2026_10_21/banner-lifecycle.xcresult "-only-testing:MotionfitMetaQA/MotionfitMetaQA/testBannerLifecycle"
+
+Writing result bundle at path:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/banner-lifecycle.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'MotionfitMetaQA' in project 'MotionfitMetaQA' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: ebb3b12a37806b59bd42b2f4dc7c1fec
+Build description path: /tmp/motionfit-meta-ui/Build/Intermediates.noindex/XCBuildData/ebb3b12a37806b59bd42b2f4dc7c1fec.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -o /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache
+
+ProcessProductPackaging "" /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "2CZQR7Q423.fit.motionfit.app.metaqa.xctrunner";
+    "com.apple.developer.team-identifier" = 2CZQR7Q423;
+    "get-task-allow" = 1;
+    "keychain-access-groups" =     (
+        "2CZQR7Q423.fit.motionfit.app.metaqa.xctrunner"
+    );
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent
+
+ProcessProductPackagingDER /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent.der (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    /usr/bin/derq query -f xml -i /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent -o /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent.der --raw
+
+SwiftDriver MotionfitMetaQA normal arm64 com.apple.xcode.tools.swift.compiler (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name MotionfitMetaQA -Onone -enforce-exclusivity\=checked @/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -target arm64-apple-ios26.0 -g -module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /tmp/motionfit-meta-ui/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache -output-file-map /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -sdk-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule -validate-clang-modules-once -clang-build-session-file /tmp/motionfit-meta-ui/ModuleCache.noindex/Session.modulevalidation -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_const_extract_protocols.json -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-generated-files.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-own-target-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-all-target-headers.hmap -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-project-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/include -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources-normal/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-Swift.h -working-directory /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ MotionfitMetaQA.swift /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.swift (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+
+SwiftCompile normal arm64 /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.swift (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ MotionfitMetaQA (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+
+SwiftCompile normal arm64 /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui/MotionfitMetaQA.swift (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling MotionfitMetaQA.swift (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+
+SwiftDriver\ Compilation MotionfitMetaQA normal arm64 com.apple.xcode.tools.swift.compiler (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name MotionfitMetaQA -Onone -enforce-exclusivity\=checked @/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -target arm64-apple-ios26.0 -g -module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /tmp/motionfit-meta-ui/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache -output-file-map /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -sdk-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule -validate-clang-modules-once -clang-build-session-file /tmp/motionfit-meta-ui/ModuleCache.noindex/Session.modulevalidation -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_const_extract_protocols.json -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-generated-files.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-own-target-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-all-target-headers.hmap -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-project-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/include -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources-normal/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-Swift.h -working-directory /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for MotionfitMetaQA (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+
+SwiftDriver\ Compilation\ Requirements MotionfitMetaQA normal arm64 com.apple.xcode.tools.swift.compiler (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name MotionfitMetaQA -Onone -enforce-exclusivity\=checked @/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -target arm64-apple-ios26.0 -g -module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /tmp/motionfit-meta-ui/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache -output-file-map /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -sdk-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule -validate-clang-modules-once -clang-build-session-file /tmp/motionfit-meta-ui/ModuleCache.noindex/Session.modulevalidation -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_const_extract_protocols.json -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-generated-files.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-own-target-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-all-target-headers.hmap -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-project-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/include -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources-normal/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-Swift.h -working-directory /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui -experimental-emit-module-separately -disable-cmo
+
+Copy /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/arm64-apple-ios.swiftmodule /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/arm64-apple-ios.swiftmodule
+
+Copy /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftsourceinfo (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftsourceinfo /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo
+
+Copy /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/arm64-apple-ios.abi.json /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.abi.json (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.abi.json /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/arm64-apple-ios.abi.json
+
+Ld /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA normal (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios26.0 -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -O0 -L/tmp/motionfit-meta-ui/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphoneos -L/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F/tmp/motionfit-meta-ui/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphoneos -F/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -filelist /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.LinkFileList -Xlinker -rpath -Xlinker @loader_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule @/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-linker-args.resp -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport -framework Foundation -Xlinker -no_adhoc_codesign -o /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA
+
+ExtractAppIntentsMetadata (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name MotionfitMetaQA --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk --xcode-version 17B100 --platform-family iOS --deployment-target 26.0 --bundle-identifier fit.motionfit.app.metaqa --output /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest --target-triple arm64-apple-ios26.0 --binary-file /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA --dependency-file /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_dependency_info.dat --stringsdata-file /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftFileList --metadata-file-list /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.DependencyMetadataFileList --static-metadata-file-list /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.DependencyStaticMetadataFileList --swift-const-vals-list /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-10-21 22:53:08.837 appintentsmetadataprocessor[69806:1193542] Starting appintentsmetadataprocessor export
+2026-10-21 22:53:08.838 appintentsmetadataprocessor[69806:1193542] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+ProcessInfoPlistFile /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Info.plist /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/empty-MotionfitMetaQA.plist (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    builtin-infoPlistUtility /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/empty-MotionfitMetaQA.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/ProductTypeInfoPlistAdditions.plist -requiredArchitecture arm64 -o /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Info.plist
+
+CopySwiftLibs /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    builtin-swiftStdLibTool --copy --verbose --sign F6E1562BAA0DE14FEC77153D483EA318853A7AAB --scan-executable /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA --scan-folder /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Frameworks --scan-folder /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/PlugIns --scan-folder /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/SystemExtensions --scan-folder /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Extensions --scan-folder /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework --platform iphoneos --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+GenerateDSYMFile /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest.dSYM /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA -o /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest.dSYM
+
+CodeSign /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    
+    Signing Identity:     "Apple Development: ChangHyun Nam (67BGHNS3RH)"
+    Provisioning Profile: "iOS Team Provisioning Profile: *"
+                          (2cb1a10e-b3e6-49d3-9767-f111dd993f9b)
+    
+    /usr/bin/codesign --force --sign F6E1562BAA0DE14FEC77153D483EA318853A7AAB --entitlements /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent --timestamp\=none --generate-entitlement-der /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest
+
+CodeSign /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/ui
+    
+    Signing Identity:     "Apple Development: ChangHyun Nam (67BGHNS3RH)"
+    Provisioning Profile: "iOS Team Provisioning Profile: *"
+                          (2cb1a10e-b3e6-49d3-9767-f111dd993f9b)
+    
+    /usr/bin/codesign --force --sign F6E1562BAA0DE14FEC77153D483EA318853A7AAB --entitlements /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent --timestamp\=none --generate-entitlement-der /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app
+/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app: replacing existing signature
+
+2026-10-21 22:53:11.606095+0900 MotionfitMetaQA-Runner[22799:5620550] [Default] Running tests...
+2026-10-21 22:53:11.618181+0900 MotionfitMetaQA-Runner[22799:5620550] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-21 22:53:12.039.
+Test Suite 'MotionfitMetaQA.xctest' started at 2026-10-21 22:53:12.040.
+Test Suite 'MotionfitMetaQA' started at 2026-10-21 22:53:12.040.
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testBannerLifecycle]' started.
+    t =     0.00s Start Test at 2026-10-21 22:53:12.041
+    t =     0.01s Set Up
+    t =     0.01s Open fit.motionfit.app
+    t =     0.02s     Activate fit.motionfit.app
+    t =     0.04s         Wait for fit.motionfit.app to idle
+    t =     0.05s Waiting 30.0s for "Test mode" StaticText to exist
+    t =     1.06s     Checking `Expect predicate `existsNoRetry == 1` for object "Test mode" StaticText`
+    t =     1.06s         Checking existence of `"Test mode" StaticText`
+    t =     1.12s Get all elements bound by index for: Elements matching predicate 'identifier BEGINSWITH "platform_view["'
+    t =     1.14s Find the Other (Element at index 0)
+BANNER_VIEWS_BEFORE ["platform_view[0]"]
+    t =     1.17s Requesting snapshot of accessibility hierarchy for app with pid 22775
+    t =     1.33s Requesting snapshot of accessibility hierarchy for app with pid 22775
+IPAD_ADS_STATE banner-before-inactive
+Attributes: Application, 0x140ef4dc0, pid: 22775, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x140ef4dc0, pid: 22775, label: 'motionfit - workout coach'
+    Window (Main), 0x140ef57c0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x140ef5900, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x140ef5a40, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x140ef5b80, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x140ef5cc0, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x140ef5e00, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x140ef5f40, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x140ef6080, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x140ef61c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x140ef6300, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x140ef6440, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x140ef6580, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x140ef66c0, {{0.0, 0.0}, {820.0, 1031.0}}
+                      Other, 0x140ef6800, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x140ef6940, {{0.0, 0.0}, {820.0, 1031.0}}
+                        Button, 0x140ef6a80, {{20.0, 42.0}, {260.0, 48.0}}, label: '스쿼트', Selected
+                        Button, 0x140ef6bc0, {{280.0, 42.0}, {260.0, 48.0}}, label: '푸시업'
+                        Button, 0x140ef6d00, {{540.0, 42.0}, {260.0, 48.0}}, label: '플랭크'
+                        Other, 0x140ef6e40, {{0.0, 0.0}, {820.0, 1180.0}}
+                          ScrollView, 0x140ef6f80, {{70.0, 108.0}, {680.0, 514.0}}
+                          StaticText, 0x140ef70c0, {{70.0, 108.0}, {680.0, 17.0}}, label: 'MOTIONFIT - WORKOUT COACH'
+                          StaticText, 0x140ef7200, {{334.2, 145.0}, {151.7, 31.0}}, label: '🔥 연속 운동 · 1일'
+                          StaticText, 0x140ef7340, {{70.0, 182.0}, {680.0, 23.0}}, label: '1일'
+                          StaticText, 0x140ef7480, {{70.0, 219.0}, {97.1, 53.0}}, label: '월요일
+월'
+                          StaticText, 0x140ef75c0, {{167.1, 219.0}, {97.1, 53.0}}, label: '화요일
+화', value: 운동한 날
+                          StaticText, 0x140ef7700, {{264.3, 219.0}, {97.1, 53.0}}, label: '수요일
+수'
+                          StaticText, 0x140ef7840, {{361.4, 219.0}, {97.1, 53.0}}, label: '목요일
+목'
+                          StaticText, 0x140ef7980, {{458.6, 219.0}, {97.1, 53.0}}, label: '금요일
+금'
+                          StaticText, 0x140ef7ac0, {{555.7, 219.0}, {97.1, 53.0}}, label: '토요일
+토'
+                          StaticText, 0x140ef7c00, {{652.9, 219.0}, {97.1, 53.0}}, label: '일요일
+일'
+                          StaticText, 0x140ef7d40, {{70.0, 315.0}, {680.0, 18.0}}, label: '오늘 기록'
+                          StaticText, 0x140ef7e80, {{70.0, 340.0}, {369.6, 30.0}}, label: '첫 운동을 시작하면 오늘의 기록이 채워져요.'
+                          StaticText, 0x140efc000, {{70.0, 426.0}, {616.0, 18.0}}, label: '다음 운동'
+                          Button, 0x140efc140, {{686.0, 411.0}, {64.0, 48.0}}, label: '편집'
+                          StaticText, 0x140efc280, {{70.0, 463.0}, {680.0, 32.0}}, label: '스쿼트 5회'
+                          StaticText, 0x140efc3c0, {{70.0, 501.0}, {680.0, 23.0}}, label: '1세트 × 5회 · 휴식 시간 15초'
+                          Button, 0x140efc500, {{70.0, 542.0}, {680.0, 52.0}}, label: '스쿼트 시작'
+                    Other, 0x140efc640, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x140efc780, {{50.0, 1031.0}, {720.0, 89.0}}
+                      Other, 0x140efc8c0, {{50.0, 1031.0}, {720.0, 89.0}}
+                        Other, 0x140efca00, {{50.0, 1031.0}, {720.0, 89.0}}, identifier: 'platform_view[0]'
+                          Other, 0x140efcb40, {{50.0, 1031.0}, {720.0, 89.0}}
+                            Other, 0x140efcc80, {{50.0, 1031.0}, {720.0, 89.0}}
+                              Other, 0x140efcdc0, {{50.0, 1031.0}, {720.0, 89.0}}
+                                Other, 0x140efcf00, {{50.0, 1031.0}, {720.0, 89.0}}
+                                  WebView, 0x140efd040, {{50.0, 1031.0}, {720.0, 89.0}}
+                                    WebView, 0x140efd180, {{50.0, 1031.0}, {720.0, 89.0}}
+                                      WebView, 0x140efd2c0, {{50.0, 1031.0}, {720.0, 89.0}}
+                                        Other, 0x140efd400, {{0.0, 0.0}, {720.0, 89.0}}
+                                          Other, 0x140efd540, {{0.0, 0.0}, {720.0, 89.0}}
+                                            Other, 0x140efd680, {{50.0, 1031.0}, {720.0, 89.0}}
+                                              Other, 0x140efd7c0, {{50.0, 1031.0}, {720.0, 89.0}}, Focused
+                                                Other, 0x140efd900, {{50.0, 1031.0}, {720.0, 89.0}}, Focused
+                                                  Link, 0x140efda40, {{87.0, 1034.0}, {646.0, 83.0}}, Focused
+                                                    Link, 0x140efdb80, {{87.0, 1034.0}, {646.0, 83.0}}, Focused
+                                      Other, 0x140efdcc0, {{737.0, 1031.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x140efde00, {{764.0, 994.0}, {3.0, 35.0}}
+                                      Other, 0x140efdf40, {{50.0, 1087.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x140efe080, {{13.0, 1114.0}, {35.0, 3.0}}
+                                      Other, 0x140efe1c0, {{737.0, 1031.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x140efe300, {{764.0, 994.0}, {3.0, 35.0}}
+                                      Other, 0x140efe440, {{50.0, 1087.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x140efe580, {{13.0, 1114.0}, {35.0, 3.0}}
+                                    StaticText, 0x140efe6c0, {{358.0, 1035.0}, {104.0, 34.0}}, label: 'Test mode'
+                    Button, 0x140efe800, {{0.0, 1121.0}, {205.0, 59.0}}, label: '운동
+운동', Selected
+                    Button, 0x140efe940, {{205.0, 1121.0}, {205.0, 59.0}}, label: '챌린지
+챌린지'
+                    Button, 0x140efea80, {{410.0, 1121.0}, {205.0, 59.0}}, label: '성장
+성장'
+                    Button, 0x140efebc0, {{615.0, 1121.0}, {205.0, 59.0}}, label: '설정
+설정'
+    Window, 0x140efed00, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x140efee40, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x140efef80, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x140ef4dc0, pid: 22775, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x140eff0c0, pid: 22775, label: 'motionfit - workout coach'
+  }
+
+    t =     1.50s Added attachment named 'banner-before-inactive'
+    t =     1.50s Press Application 'fit.motionfit.app'[0.99, 0.01] for 0.1 seconds, then drag to Application 'fit.motionfit.app'[0.75, 0.50] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =     1.50s     Wait for fit.motionfit.app to idle
+    t =     1.51s     Find the Application 'fit.motionfit.app'
+    t =     1.53s     Check for interrupting elements affecting "motionfit - workout coach" Application
+    t =     1.56s     Synthesize event
+    t =     1.56s         Find the Application 'fit.motionfit.app'
+    t =     1.58s         Find the Application 'fit.motionfit.app'
+    t =     1.59s         Find the Application 'fit.motionfit.app'
+    t =     1.61s         Find the Application 'fit.motionfit.app'
+    t =     1.62s         Find the Application 'fit.motionfit.app'
+    t =     3.33s     Wait for fit.motionfit.app to idle
+    t =     3.34s Requesting snapshot of accessibility hierarchy for app with pid 21327
+    t =     3.96s Requesting snapshot of accessibility hierarchy for app with pid 21327
+CONTROL_CENTER_STATE
+Attributes: Application, 0x140ef6580, pid: 21327, label: ' '
+Element subtree:
+ →Application, 0x140ef6580, pid: 21327, label: ' '
+    Window, 0x140ef7c00, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x140ef75c0, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x140ef6a80, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x140ef6940, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x140ef66c0, {{962.5, -150.0}, {7.5, 7.5}}
+    Window, 0x140ef6440, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x140ef61c0, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x140ef5f40, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x140ef70c0, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x140ef6f80, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x140ef6d00, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x140ef6bc0, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x140ef7700, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x140ef7480, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x140ef7340, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x140ef7200, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x1412ccc80, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x1412ccdc0, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x1412ccf00, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x1412cd040, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x1412cd180, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x1412cd2c0, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x1412cd400, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x1412cd540, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x1412cd680, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x1412cd7c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x1412cd900, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x1412cda40, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x1412cdb80, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x1412cdcc0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x1412cde00, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x1412cdf40, {{0.0, 0.0}, {820.0, 1180.0}}, identifier: 'SBSwitcherWindow:Main'
+      Other, 0x1412ce080, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x1412ce1c0, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x1412ce300, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x1412cc780, {{0.0, 0.0}, {820.0, 1180.0}}
+              ScrollView, 0x1412cc8c0, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x1412cca00, {{0.0, 0.0}, {820.0, 1180.0}}, identifier: 'AppSwitcherContentView'
+                Other, 0x1412cc640, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x1412cc500, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x1412cc3c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x1412cc280, {{0.0, 0.0}, {820.0, 1180.0}}, identifier: 'card:fit.motionfit.app:sceneID:fit.motionfit.app-default', label: 'motionfit - workout coach'
+                  Other, 0x1412ce440, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x1412cc140, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x1412cc000, {{-196.0, -294.0}, {1212.0, 1768.0}}
+                        Other, 0x1412ce580, {{0.0, 0.0}, {820.0, 1180.0}}
+                          Other, 0x1412ce6c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                            ScrollView, 0x1412ce800, {{0.0, -590.0}, {820.0, 1770.0}}
+                              Other, 0x1412ce940, {{0.0, 0.0}, {820.0, 1180.0}}
+                                Other, 0x1412cebc0, {{0.0, 0.0}, {820.0, 1180.0}}
+                                  Other, 0x1412ced00, {{0.0, 0.0}, {820.0, 1180.0}}
+                                    Other, 0x1412cee40, {{0.0, 0.0}, {820.0, 1180.0}}
+                                      Other, 0x1412cef80, {{0.0, 0.0}, {820.0, 1180.0}}
+                                        Other, 0x1412cf200, {{0.0, 0.0}, {820.0, 1180.0}}
+                                          Other, 0x1412cf340, {{0.0, 0.0}, {820.0, 1180.0}}
+                                            Other, 0x1412cf480, {{0.0, 0.0}, {820.0, 1180.0}}
+                                              Other, 0x140efc000, {{0.0, 0.0}, {820.0, 1180.0}}
+                                                Other, 0x140efc140, {{0.0, 0.0}, {820.0, 1180.0}}
+                                                  Other, 0x140efc280, {{0.0, 0.0}, {820.0, 1180.0}}
+                                                    StatusBar, 0x140efc3c0, {{0.0, 0.0}, {820.0, 32.0}}
+                                              Other, 0x140efc500, {{0.0, 0.0}, {820.0, 1180.0}}
+                                                Other, 0x140efc640, {{0.0, 0.0}, {820.0, 1180.0}}
+                                                  Other, 0x140efc780, {{0.0, 0.0}, {820.0, 1180.0}}
+                                            Other, 0x140efc8c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                                  Other, 0x140efca00, {{0.0, 0.0}, {820.0, 1180.0}}
+                                  Other, 0x140efcb40, {{0.0, 32.0}, {820.0, 1148.0}}
+                Other, 0x140efcc80, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x140efcdc0, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x140efcf00, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x140efd040, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x140efd180, {{0.0, 0.0}, {410.0, 590.0}}
+      Other, 0x140efd2c0, {{0.0, 0.0}, {410.0, 590.0}}
+        Other, 0x140efd400, {{0.0, 0.0}, {410.0, 590.0}}
+    Window, 0x140efd540, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x140efd680, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x140efd7c0, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x140efd900, {{0.0, 0.0}, {410.0, 590.0}}
+      Other, 0x140efda40, {{0.0, 0.0}, {410.0, 590.0}}
+        Other, 0x140efdb80, {{0.0, 0.0}, {410.0, 590.0}}
+    Window, 0x140efdcc0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x140efde00, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x140efdf40, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x140efe080, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x140efe1c0, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x140efe300, {{0.0, 0.0}, {820.0, 1180.0}}
+      StatusBar, 0x140efe440, {{0.0, 0.0}, {820.0, 32.0}}
+      Other, 0x140efe580, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window (Main), 0x140efe6c0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x140efe800, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x140efe940, {{0.0, 0.0}, {820.0, 1180.0}}
+          StatusBar, 0x140efea80, {{0.0, 0.0}, {820.0, 18.0}}
+          Other, 0x140efebc0, {{426.0, 0.0}, {394.0, 83.0}}
+            Button, 0x140efed00, {{475.0, 23.0}, {29.0, 29.0}}, label: '제어 항목 추가'
+            Button, 0x140efee40, {{738.0, 23.0}, {29.0, 29.0}}, label: '전원'
+            Button, 0x140efef80, {{613.0, 57.0}, {20.0, 22.5}}, label: '사용 중인 서비스', Disabled
+            Other, 0x140eff0c0, {{426.0, 65.0}, {394.0, 18.0}}
+              StatusBar, 0x140eff200, {{452.7, 58.3}, {328.5, 19.4}}
+              StatusBar, 0x140eff340, {{476.0, 65.0}, {294.0, 18.0}}
+                Other, 0x140eff480, {{476.0, 65.0}, {294.0, 18.0}}
+                  Other, 0x140eff5c0, {{476.0, 65.0}, {294.0, 18.0}}
+                    Other, 0x140eff700, {{482.0, 70.5}, {137.5, 10.5}}
+                    Other, 0x140eff840, {{627.5, 70.5}, {137.5, 10.5}}
+                      Other, 0x140eff980, {{675.0, 69.0}, {17.5, 13.0}}, identifier: '총 3개의 Wi‑Fi 막대 중 3개', value: SSID, 총 3개의 Wi‑Fi ...
+                      StaticText, 0x140effac0, {{696.5, 66.5}, {35.5, 18.0}}, label: '58%'
+                      Other, 0x140effc00, {{734.0, 68.5}, {31.0, 14.0}}, label: '배터리 전원 58%', value: 충전 중 아님
+          Other, 0x140effd40, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x140effe80, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x1412c8000, {{426.0, 0.0}, {394.0, 774.0}}
+          Other, 0x1412c8140, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x1412c8280, {{426.0, 0.0}, {394.0, 1180.0}}
+              Other, 0x1412c83c0, {{426.0, 0.0}, {394.0, 1180.0}}
+                Other, 0x1412c8500, {{426.0, 0.0}, {394.0, 1180.0}}, identifier: 'cc-root-folder-view'
+                  Icon, 0x1412c8640, {{0.0, 0.0}, {0.0, 0.0}}
+                    Icon, 0x1412c8780, {{474.8, 100.4}, {145.2, 146.8}}, identifier: '연결', label: '연결', value: 제어
+                      Other, 0x1412c88c0, {{477.4, 101.7}, {140.0, 144.1}}
+                        Other, 0x1412c8a00, {{477.4, 101.7}, {140.0, 144.1}}
+                          Other, 0x1412c8b40, {{477.4, 101.7}, {140.0, 144.1}}
+                            Other, 0x1412c8c80, {{477.4, 101.7}, {140.0, 144.1}}
+                              Other, 0x1412c8dc0, {{477.4, 101.7}, {140.0, 144.1}}
+                                Other, 0x1412c8f00, {{477.4, 101.7}, {140.0, 144.1}}
+                                  Other, 0x1412c9040, {{477.4, 101.7}, {140.0, 144.1}}
+                                    Other, 0x1412c9180, {{477.4, 101.7}, {140.0, 144.1}}
+                                      Other, 0x1412c92c0, {{477.4, 101.7}, {140.0, 144.1}}
+                                        Other, 0x1412c9400, {{477.4, 101.7}, {140.0, 144.1}}
+                                          Other, 0x1412c9540, {{477.4, 101.7}, {140.0, 144.1}}
+                                            Other, 0x1412c9680, {{477.4, 101.7}, {140.0, 144.1}}
+                                              Other, 0x1412c97c0, {{477.4, 101.7}, {140.0, 144.1}}
+                                          Other, 0x1412c9900, {{477.4, 101.7}, {140.0, 144.1}}
+                                            Other, 0x1412c9a40, {{477.4, 101.7}, {140.0, 144.1}}
+                                    Other, 0x1412c9b80, {{490.7, 115.4}, {49.8, 51.2}}
+                                      Switch, 0x1412c9cc0, {{490.7, 115.4}, {49.8, 51.2}}, identifier: 'airplane-mode-button', label: '에어플레인 모드', value: 0
+                                    Other, 0x1412c9e00, {{553.8, 115.4}, {49.8, 51.2}}, identifier: 'airdrop-button', label: 'AirDrop', value: 끔
+                                      Image, 0x1412c9f40, {{567.1, 129.6}, {23.7, 23.3}}, identifier: 'airdrop', label: 'airdrop'
+                                      Image, 0x1412ca080, {{567.1, 129.6}, {23.7, 23.3}}, identifier: 'airdrop', label: 'airdrop'
+                                    Other, 0x1412ca1c0, {{490.7, 180.4}, {49.8, 51.2}}, identifier: 'wifi-button', label: 'Wi‑Fi', value: 켬
+                                      Image, 0x1412ca300, {{503.1, 196.6}, {25.1, 19.3}}, identifier: 'wifi', label: 'Wi-Fi'
+                                      Image, 0x1412ca440, {{503.1, 196.6}, {25.1, 19.3}}, identifier: 'wifi', label: 'Wi-Fi'
+                                    Other, 0x1412ca580, {{553.8, 180.4}, {22.2, 22.8}}, identifier: 'cellular-button', label: '셀룰러 데이터', value: 끔
+                                      Image, 0x1412ca6c0, {{555.8, 185.9}, {18.3, 12.2}}, identifier: 'cellularbars', label: 'cellularbars'
+                                      Image, 0x1412ca800, {{555.8, 185.9}, {18.3, 12.2}}, identifier: 'cellularbars', label: 'cellularbars'
+                                    Other, 0x1412ca940, {{581.4, 180.4}, {22.2, 22.8}}, identifier: 'bluetooth-button', label: 'Bluetooth'
+                                      Image, 0x1412caa80, {{586.8, 184.4}, {11.8, 14.6}}, identifier: 'bluetooth', label: 'Bluetooth'
+                                      Image, 0x1412cabc0, {{586.8, 184.4}, {11.8, 14.6}}, identifier: 'bluetooth', label: 'Bluetooth'
+                                    Other, 0x1412cad00, {{553.8, 208.8}, {22.2, 22.8}}, identifier: 'vpn-button', label: 'VPN', value: 끔
+                                      Image, 0x1412cae40, {{557.8, 211.8}, {14.2, 16.4}}, identifier: 'network.connected.to.line.below.fill', label: 'network.connected.to.line.below.fill'
+                                      Image, 0x1412caf80, {{557.8, 211.8}, {14.2, 16.4}}, identifier: 'network.connected.to.line.below.fill', label: 'network.connected.to.line.below.fill'
+                    Icon, 0x1412cb0c0, {{626.0, 100.4}, {145.2, 146.8}}, identifier: '지금 재생 중', label: '지금 재생 중', value: 제어
+                      Other, 0x1412cb200, {{628.6, 101.7}, {140.0, 144.1}}
+                        Other, 0x1412cb340, {{628.6, 101.7}, {140.0, 144.1}}
+                          Other, 0x1412cb480, {{628.6, 101.7}, {140.0, 144.1}}
+                            Other, 0x1412cb5c0, {{628.6, 101.7}, {140.0, 144.1}}
+                              Other, 0x1412cb700, {{628.6, 101.7}, {140.0, 144.1}}
+                                Other, 0x1412cb840, {{628.6, 101.7}, {140.0, 144.1}}
+                                  ScrollView, 0x1412cb980, {{628.6, 101.7}, {140.0, 144.1}}
+                                    Other, 0x1412cbac0, {{628.6, 101.7}, {140.0, 144.1}}
+                                      Other, 0x1412cbc00, {{628.6, 101.7}, {140.0, 144.1}}
+                                        Other, 0x1412cbd40, {{628.6, 101.7}, {140.0, 144.1}}
+                                          Other, 0x1412cbe80, {{616.8, 89.6}, {102.5, 105.5}}
+                                            Image, 0x141320000, {{616.8, 89.6}, {102.5, 105.5}}
+                                        Other, 0x141320140, {{628.6, 101.7}, {140.0, 144.1}}
+                                          Other, 0x141320280, {{642.4, 115.9}, {49.7, 51.2}}, Disabled
+                                            Other, 0x1413203c0, {{642.4, 115.9}, {49.7, 51.2}}
+                                              Other, 0x141320500, {{642.4, 115.9}, {49.7, 51.2}}
+                                              Image, 0x141320640, {{642.4, 115.9}, {49.7, 51.2}}
+                                          Button, 0x141320780, {{716.5, 115.9}, {38.3, 39.4}}, identifier: 'mru-router-upper', label: ' AirPlay', value: ￼ AirPlay
+                                            Image, 0x1413208c0, {{725.8, 125.7}, {19.7, 19.8}}, identifier: 'airplay.audio', label: 'airplay.audio'
+                                          Other, 0x141320a00, {{644.4, 170.7}, {108.4, 33.2}}
+                                            StaticText, 0x141320b40, {{644.4, 178.8}, {102.5, 16.7}}, label: 'adsmoloco.com'
+                                          Other, 0x141320c80, {{642.4, 208.0}, {112.4, 25.6}}
+                                            Button, 0x141320dc0, {{649.3, 208.0}, {24.9, 25.6}}, label: '10초 뒤로 건너뛰기'
+                                            Button, 0x141320f00, {{686.2, 208.0}, {24.9, 25.6}}, label: '재생'
+                                            Button, 0x141321040, {{723.0, 208.0}, {24.9, 25.6}}, label: '10초 앞으로 건너뛰기'
+                                        Other, 0x141321180, {{628.6, 101.7}, {140.0, 144.1}}
+                                          Other, 0x1413212c0, {{628.6, 101.7}, {140.0, 144.1}}
+                                            Other, 0x141321400, {{628.6, 101.7}, {140.0, 144.1}}
+                                              Other, 0x141321540, {{628.6, 101.7}, {140.0, 144.1}}
+                                                Other, 0x141321680, {{628.6, 101.7}, {140.0, 144.1}}
+                                                  Other, 0x1413217c0, {{628.6, 101.7}, {140.0, 144.1}}
+                                              Other, 0x141321900, {{628.6, 101.7}, {140.0, 144.1}}
+                                                Other, 0x141321a40, {{628.6, 101.7}, {140.0, 144.1}}
+                                        Other, 0x141321b80, {{628.6, 258.0}, {140.0, 424.0}}
+                                          CollectionView, 0x141321cc0, {{628.6, 258.0}, {140.0, 424.0}}, identifier: 'Route Picker Items'
+                                            Other, 0x141321e00, {{736.0, 258.0}, {29.6, 395.2}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                              Other, 0x141321f40, {{762.7, 643.0}, {3.0, 7.1}}
+                                            Other, 0x141322080, {{628.6, 619.7}, {140.0, 30.4}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                              Other, 0x1413221c0, {{631.6, 647.1}, {134.0, 3.0}}
+                                            Other, 0x141322300, {{736.0, 258.0}, {29.6, 395.2}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                              Other, 0x141322440, {{762.7, 643.0}, {3.0, 7.1}}
+                                            Other, 0x141322580, {{628.6, 619.7}, {140.0, 30.4}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                              Other, 0x1413226c0, {{631.6, 647.1}, {134.0, 3.0}}
+                                    Other, 0x141322800, {{628.6, 212.3}, {140.0, 30.4}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                      Other, 0x141322940, {{631.6, 239.7}, {134.0, 3.0}}
+                                    Other, 0x141322a80, {{628.6, 212.3}, {140.0, 30.4}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                      Other, 0x141322bc0, {{631.6, 239.7}, {134.0, 3.0}}
+                    Icon, 0x141322d00, {{474.8, 253.2}, {69.6, 70.4}}, identifier: '화면 방향 고정', label: '화면 방향 고정', value: 제어
+                      Other, 0x141322e40, {{477.1, 254.9}, {65.1, 67.0}}
+                        Other, 0x141322f80, {{477.1, 254.9}, {65.1, 67.0}}
+                          Other, 0x1413230c0, {{477.1, 254.9}, {65.1, 67.0}}
+                            Other, 0x141323200, {{477.1, 254.9}, {65.1, 67.0}}
+                              Other, 0x141323340, {{477.1, 254.9}, {65.1, 67.0}}
+                                Other, 0x141323480, {{477.1, 254.9}, {65.1, 67.0}}
+                                  Switch, 0x1413235c0, {{477.1, 254.9}, {65.1, 67.0}}, identifier: 'orientation-lock', label: '회전 잠금', value: 0
+                                Other, 0x141323700, {{477.1, 254.9}, {65.1, 67.0}}
+                                  Other, 0x141323840, {{477.1, 254.9}, {65.1, 67.0}}
+                                    Other, 0x141323980, {{477.1, 254.9}, {65.1, 67.0}}
+                                      Other, 0x141323ac0, {{477.1, 254.9}, {65.1, 67.0}}
+                                        Other, 0x141323c00, {{477.1, 254.9}, {65.1, 67.0}}
+                                          Other, 0x141323d40, {{477.1, 254.9}, {65.1, 67.0}}
+                                      Other, 0x141323e80, {{477.1, 254.9}, {65.1, 67.0}}
+                                        Other, 0x141324000, {{477.1, 254.9}, {65.1, 67.0}}
+                    Icon, 0x141324140, {{550.4, 253.2}, {69.6, 70.4}}, identifier: '화면 미러링', label: '화면 미러링', value: 제어
+                      Other, 0x141324280, {{552.7, 254.9}, {65.1, 67.0}}
+                        Other, 0x1413243c0, {{552.7, 254.9}, {65.1, 67.0}}
+                          Other, 0x141324500, {{552.7, 254.9}, {65.1, 67.0}}
+                            Other, 0x141324640, {{552.7, 254.9}, {65.1, 67.0}}
+                              Other, 0x141324780, {{552.7, 254.9}, {65.1, 67.0}}
+                                Other, 0x1413248c0, {{552.7, 254.9}, {65.1, 67.0}}
+                                  Button, 0x141324a00, {{552.7, 254.9}, {65.1, 67.0}}, identifier: '화면 미러링', label: '화면 미러링'
+                                  Other, 0x141324b40, {{552.7, 254.9}, {65.1, 67.0}}
+                                Other, 0x141324c80, {{552.7, 254.9}, {65.1, 67.0}}
+                                  Other, 0x141324dc0, {{552.7, 254.9}, {65.1, 67.0}}
+                                    Other, 0x141324f00, {{552.7, 254.9}, {65.1, 67.0}}
+                                      Other, 0x141325040, {{552.7, 254.9}, {65.1, 67.0}}
+                                        Other, 0x141325180, {{552.7, 254.9}, {65.1, 67.0}}
+                                          Other, 0x1413252c0, {{552.7, 254.9}, {65.1, 67.0}}
+                                      Other, 0x141325400, {{552.7, 254.9}, {65.1, 67.0}}
+                                        Other, 0x141325540, {{552.7, 254.9}, {65.1, 67.0}}
+                    Icon, 0x141325680, {{626.0, 253.2}, {69.6, 146.8}}, identifier: '밝기', label: '밝기', value: 제어
+                      Other, 0x1413257c0, {{628.3, 254.6}, {65.1, 144.1}}
+                        Other, 0x141325900, {{628.3, 254.6}, {65.1, 144.1}}
+                          Other, 0x141325a40, {{628.3, 254.6}, {65.1, 144.1}}
+                            Other, 0x141325b80, {{628.3, 254.6}, {65.1, 144.1}}
+                              Other, 0x141325cc0, {{628.3, 254.6}, {65.1, 144.1}}
+                                Other, 0x141325e00, {{628.3, 254.6}, {65.1, 144.1}}, identifier: 'cc-brightness-slider', label: '밝기', value: 27%
+                    Icon, 0x141325f40, {{701.6, 253.2}, {69.6, 146.8}}, identifier: '음량', label: '음량', value: 제어
+                      Other, 0x141326080, {{703.9, 254.6}, {65.1, 144.1}}
+                        Other, 0x1413261c0, {{703.9, 254.6}, {65.1, 144.1}}
+                          Other, 0x141326300, {{703.9, 254.6}, {65.1, 144.1}}
+                            Other, 0x141326440, {{703.9, 254.6}, {65.1, 144.1}}
+                              Other, 0x141326580, {{703.9, 254.6}, {65.1, 144.1}}
+                                Other, 0x1413266c0, {{703.9, 254.6}, {65.1, 144.1}}
+                                  Other, 0x141326800, {{703.9, 254.6}, {65.1, 144.1}}, identifier: 'cc-volume-slider', label: '음량', value: 0%
+                    Icon, 0x141326940, {{474.8, 329.6}, {145.2, 70.4}}, identifier: '집중 모드', label: '집중 모드', value: 제어
+                      Other, 0x141326a80, {{477.4, 331.3}, {140.0, 67.0}}
+                        Other, 0x141326bc0, {{477.4, 331.3}, {140.0, 67.0}}
+                          Other, 0x141326d00, {{477.4, 331.3}, {140.0, 67.0}}
+                            Other, 0x141326e40, {{477.4, 331.3}, {140.0, 67.0}}
+                              Other, 0x141326f80, {{477.4, 331.3}, {140.0, 67.0}}
+                                Other, 0x1413270c0, {{477.4, 331.3}, {140.0, 67.0}}
+                                  Other, 0x141327200, {{477.4, 331.3}, {140.0, 67.0}}
+                                    Button, 0x141327340, {{477.4, 331.3}, {140.0, 67.0}}, identifier: 'focus-module', label: '집중 모드'
+                    Icon, 0x141327480, {{474.8, 406.0}, {69.6, 70.4}}, identifier: '무음 모드', label: '무음 모드', value: 제어
+                      Other, 0x1413275c0, {{477.1, 407.7}, {65.1, 67.0}}
+                        Other, 0x141327700, {{477.1, 407.7}, {65.1, 67.0}}
+                          Other, 0x141327840, {{477.1, 407.7}, {65.1, 67.0}}
+                            Other, 0x141327980, {{477.1, 407.7}, {65.1, 67.0}}
+                              Other, 0x141327ac0, {{477.1, 407.7}, {65.1, 67.0}}
+                                Other, 0x141327c00, {{477.1, 407.7}, {65.1, 67.0}}
+                                  Switch, 0x141327d40, {{477.1, 407.7}, {65.1, 67.0}}, identifier: 'mute', label: '소리 끔', value: 1
+                                Other, 0x141327e80, {{477.1, 407.7}, {65.1, 67.0}}
+                                  Other, 0x141328000, {{477.1, 407.7}, {65.1, 67.0}}
+                                    Other, 0x141328140, {{477.1, 407.7}, {65.1, 67.0}}
+                                      Other, 0x141328280, {{477.1, 407.7}, {65.1, 67.0}}
+                                        Other, 0x1413283c0, {{477.1, 407.7}, {65.1, 67.0}}
+                                          Other, 0x141328500, {{477.1, 407.7}, {65.1, 67.0}}
+                                      Other, 0x141328640, {{477.1, 407.7}, {65.1, 67.0}}
+                                        Other, 0x141328780, {{477.1, 407.7}, {65.1, 67.0}}
+                    Icon, 0x1413288c0, {{550.4, 406.0}, {69.6, 70.4}}, identifier: '타이머', label: '타이머', value: 제어
+                      Other, 0x141328a00, {{552.7, 407.7}, {65.1, 67.0}}
+                        Other, 0x141328b40, {{552.7, 407.7}, {65.1, 67.0}}
+                          Other, 0x141328c80, {{552.7, 407.7}, {65.1, 67.0}}
+                            Other, 0x141328dc0, {{552.7, 407.7}, {65.1, 67.0}}
+                              Other, 0x141328f00, {{552.7, 407.7}, {65.1, 67.0}}
+                                Other, 0x141329040, {{552.7, 407.7}, {65.1, 67.0}}
+                                  Other, 0x141329180, {{552.7, 407.7}, {65.1, 67.0}}, label: '타이머', value: 1시간
+                                  Button, 0x1413292c0, {{552.7, 407.7}, {65.1, 67.0}}, identifier: 'com.apple.mobiletimer', label: '타이머'
+                    Icon, 0x141329400, {{626.0, 406.0}, {69.6, 70.4}}, identifier: '메모', label: '메모', value: 제어
+                      Other, 0x141329540, {{628.3, 407.7}, {65.1, 67.0}}
+                        Other, 0x141329680, {{628.3, 407.7}, {65.1, 67.0}}
+                          Other, 0x1413297c0, {{628.3, 407.7}, {65.1, 67.0}}
+                            Other, 0x141329900, {{628.3, 407.7}, {65.1, 67.0}}
+                              Other, 0x141329a40, {{628.3, 407.7}, {65.1, 67.0}}
+                                Other, 0x141329b80, {{628.3, 407.7}, {65.1, 67.0}}
+                                  Button, 0x141329cc0, {{628.3, 407.7}, {65.1, 67.0}}, identifier: 'com.apple.mobilenotes', label: '메모'
+                                  Other, 0x141329e00, {{628.3, 407.7}, {65.1, 67.0}}
+                                Other, 0x141329f40, {{628.3, 407.7}, {65.1, 67.0}}
+                                  Other, 0x14132a080, {{628.3, 407.7}, {65.1, 67.0}}
+                                    Other, 0x14132a1c0, {{628.3, 407.7}, {65.1, 67.0}}
+                                      Other, 0x14132a300, {{628.3, 407.7}, {65.1, 67.0}}
+                                        Other, 0x14132a440, {{628.3, 407.7}, {65.1, 67.0}}
+                                          Other, 0x14132a580, {{628.3, 407.7}, {65.1, 67.0}}
+                                      Other, 0x14132a6c0, {{628.3, 407.7}, {65.1, 67.0}}
+                                        Other, 0x14132a800, {{628.3, 407.7}, {65.1, 67.0}}
+                    Icon, 0x14132a940, {{701.6, 406.0}, {69.6, 70.4}}, identifier: '카메라', label: '카메라', value: 제어
+                      Other, 0x14132aa80, {{703.9, 407.7}, {65.1, 67.0}}
+                        Other, 0x14132abc0, {{703.9, 407.7}, {65.1, 67.0}}
+                          Other, 0x14132ad00, {{703.9, 407.7}, {65.1, 67.0}}
+                            Other, 0x14132ae40, {{703.9, 407.7}, {65.1, 67.0}}
+                              Other, 0x14132af80, {{703.9, 407.7}, {65.1, 67.0}}
+                                Other, 0x14132b0c0, {{703.9, 407.7}, {65.1, 67.0}}
+                                  Button, 0x14132b200, {{703.9, 407.7}, {65.1, 67.0}}, identifier: 'com.apple.camera.deeplink.button', label: '카메라'
+                                Other, 0x14132b340, {{703.9, 407.7}, {65.1, 67.0}}
+                                  Other, 0x14132b480, {{703.9, 407.7}, {65.1, 67.0}}
+                                    Other, 0x14132b5c0, {{703.9, 407.7}, {65.1, 67.0}}
+                                      Other, 0x14132b700, {{703.9, 407.7}, {65.1, 67.0}}
+                                        Other, 0x14132b840, {{703.9, 407.7}, {65.1, 67.0}}
+                                          Other, 0x14132b980, {{703.9, 407.7}, {65.1, 67.0}}
+                                      Other, 0x14132bac0, {{703.9, 407.7}, {65.1, 67.0}}
+                                        Other, 0x14132bc00, {{703.9, 407.7}, {65.1, 67.0}}
+                    Icon, 0x14132bd40, {{474.8, 482.4}, {69.6, 70.4}}, identifier: '계산기', label: '계산기', value: 제어
+                      Other, 0x14132be80, {{477.1, 484.1}, {65.1, 67.0}}
+                        Other, 0x141330000, {{477.1, 484.1}, {65.1, 67.0}}
+                          Other, 0x141330140, {{477.1, 484.1}, {65.1, 67.0}}
+                            Other, 0x141330280, {{477.1, 484.1}, {65.1, 67.0}}
+                              Other, 0x1413303c0, {{477.1, 484.1}, {65.1, 67.0}}
+                                Other, 0x141330500, {{477.1, 484.1}, {65.1, 67.0}}
+                                  Button, 0x141330640, {{477.1, 484.1}, {65.1, 67.0}}, identifier: 'com.apple.calculator.CalculatorWidget.control', label: '계산기'
+                                Other, 0x141330780, {{477.1, 484.1}, {65.1, 67.0}}
+                                  Other, 0x1413308c0, {{477.1, 484.1}, {65.1, 67.0}}
+                                    Other, 0x141330a00, {{477.1, 484.1}, {65.1, 67.0}}
+                                      Other, 0x141330b40, {{477.1, 484.1}, {65.1, 67.0}}
+                                        Other, 0x141330c80, {{477.1, 484.1}, {65.1, 67.0}}
+                                          Other, 0x141330dc0, {{477.1, 484.1}, {65.1, 67.0}}
+                                      Other, 0x141330f00, {{477.1, 484.1}, {65.1, 67.0}}
+                                        Other, 0x141331040, {{477.1, 484.1}, {65.1, 67.0}}
+                    Icon, 0x141331180, {{550.4, 482.4}, {69.6, 70.4}}, identifier: '멀티태스킹', label: '멀티태스킹', value: 제어
+                      Other, 0x1413312c0, {{552.7, 484.1}, {65.1, 67.0}}
+                        Other, 0x141331400, {{552.7, 484.1}, {65.1, 67.0}}
+                          Other, 0x141331540, {{552.7, 484.1}, {65.1, 67.0}}
+                            Other, 0x141331680, {{552.7, 484.1}, {65.1, 67.0}}
+                              Other, 0x1413317c0, {{552.7, 484.1}, {65.1, 67.0}}
+                                Other, 0x141331900, {{552.7, 484.1}, {65.1, 67.0}}
+                                  Switch, 0x141331a40, {{552.7, 484.1}, {65.1, 67.0}}, label: '스테이지 매니저', value: 0
+                                    Image, 0x141331b80, {{567.0, 504.9}, {37.0, 25.4}}, identifier: 'squares.leading.rectangle', label: 'squares.leading.rectangle'
+                                Other, 0x141331cc0, {{552.7, 484.1}, {65.1, 67.0}}
+                                  Other, 0x141331e00, {{552.7, 484.1}, {65.1, 67.0}}
+                                    Other, 0x141331f40, {{552.7, 484.1}, {65.1, 67.0}}
+                                      Other, 0x141332080, {{552.7, 484.1}, {65.1, 67.0}}
+                                        Other, 0x1413321c0, {{552.7, 484.1}, {65.1, 67.0}}
+                                          Other, 0x141332300, {{552.7, 484.1}, {65.1, 67.0}}
+                                      Other, 0x141332440, {{552.7, 484.1}, {65.1, 67.0}}
+                                        Other, 0x141332580, {{552.7, 484.1}, {65.1, 67.0}}
+                    Icon, 0x1413326c0, {{626.0, 482.4}, {69.6, 70.4}}, identifier: '화면 기록', label: '화면 기록', value: 제어
+                      Other, 0x141332800, {{628.3, 484.1}, {65.1, 67.0}}
+                        Other, 0x141332940, {{628.3, 484.1}, {65.1, 67.0}}
+                          Other, 0x141332a80, {{628.3, 484.1}, {65.1, 67.0}}
+                            Other, 0x141332bc0, {{628.3, 484.1}, {65.1, 67.0}}
+                              Other, 0x141332d00, {{628.3, 484.1}, {65.1, 67.0}}
+                                Other, 0x141332e40, {{628.3, 484.1}, {65.1, 67.0}}
+                                  Other, 0x141332f80, {{628.3, 484.1}, {65.1, 67.0}}
+                                  Button, 0x1413330c0, {{628.3, 484.1}, {65.1, 67.0}}, identifier: '화면 기록', label: '화면 기록'
+                                Other, 0x141333200, {{628.3, 484.1}, {65.1, 67.0}}
+                                  Other, 0x141333340, {{628.3, 484.1}, {65.1, 67.0}}
+                                    Other, 0x141333480, {{628.3, 484.1}, {65.1, 67.0}}
+                                      Other, 0x1413335c0, {{628.3, 484.1}, {65.1, 67.0}}
+                                        Other, 0x141333700, {{628.3, 484.1}, {65.1, 67.0}}
+                                          Other, 0x141333840, {{628.3, 484.1}, {65.1, 67.0}}
+                                      Other, 0x141333980, {{628.3, 484.1}, {65.1, 67.0}}
+                                        Other, 0x141333ac0, {{628.3, 484.1}, {65.1, 67.0}}
+                    Icon, 0x141333c00, {{701.6, 482.4}, {69.6, 70.4}}, identifier: '저전력 모드', label: '저전력 모드', value: 제어
+                      Other, 0x141333d40, {{703.9, 484.1}, {65.1, 67.0}}
+                        Other, 0x141333e80, {{703.9, 484.1}, {65.1, 67.0}}
+                          Other, 0x141338000, {{703.9, 484.1}, {65.1, 67.0}}
+                            Other, 0x141338140, {{703.9, 484.1}, {65.1, 67.0}}
+                              Other, 0x141338280, {{703.9, 484.1}, {65.1, 67.0}}
+                                Other, 0x1413383c0, {{703.9, 484.1}, {65.1, 67.0}}
+                                  Button, 0x141338500, {{703.9, 484.1}, {65.1, 67.0}}, identifier: '저전력 모드', label: '저전력 모드'
+                                  Other, 0x141338640, {{703.9, 484.1}, {65.1, 67.0}}
+                                Other, 0x141338780, {{703.9, 484.1}, {65.1, 67.0}}
+                                  Other, 0x1413388c0, {{703.9, 484.1}, {65.1, 67.0}}
+                                    Other, 0x141338a00, {{703.9, 484.1}, {65.1, 67.0}}
+                                      Other, 0x141338b40, {{703.9, 484.1}, {65.1, 67.0}}
+                                        Other, 0x141338c80, {{703.9, 484.1}, {65.1, 67.0}}
+                                          Other, 0x141338dc0, {{703.9, 484.1}, {65.1, 67.0}}
+                                      Other, 0x141338f00, {{703.9, 484.1}, {65.1, 67.0}}
+                                        Other, 0x141339040, {{703.9, 484.1}, {65.1, 67.0}}
+                  Icon, 0x141339180, {{0.0, 0.0}, {0.0, 0.0}}
+                    Icon, 0x1413392c0, {{0.0, 0.0}, {0.0, 0.0}}, identifier: '지금 재생 중', label: '지금 재생 중'
+                  Icon, 0x141339400, {{0.0, 0.0}, {0.0, 0.0}}
+                    Icon, 0x141339540, {{0.0, 0.0}, {0.0, 0.0}}, identifier: '연결', label: '연결'
+                  PageIndicator, 0x141339680, {{770.0, 325.0}, {50.0, 163.5}}, identifier: 'Page control', value: 총 3페이지 중 1페이지, 즐겨찾기
+    Window, 0x1413397c0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x141339900, {{0.0, 0.0}, {820.0, 1180.0}}
+    Window, 0x141339a40, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x141339b80, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x140ef6580, pid: 21327, label: ' '
+Query chain:
+ →Find: Application 'com.apple.springboard'
+  Output: {
+    Application, 0x141339cc0, pid: 21327, label: ' '
+  }
+
+    t =     4.13s Requesting snapshot of accessibility hierarchy for app with pid 22775
+    t =     4.26s Requesting snapshot of accessibility hierarchy for app with pid 22775
+IPAD_ADS_STATE banner-under-control-center
+Attributes: Application, 0x142280280, pid: 22775, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x142280280, pid: 22775, label: 'motionfit - workout coach'
+    Window (Main), 0x1422803c0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x142280500, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x142280640, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x142280780, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x1422808c0, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x142280a00, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x142280b40, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x142280c80, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x142280dc0, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x142280f00, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x142281040, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x142281180, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x1422812c0, {{0.0, 0.0}, {820.0, 1031.0}}
+                      Other, 0x142281400, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x142281540, {{0.0, 0.0}, {820.0, 1031.0}}
+                        Button, 0x142281680, {{20.0, 42.0}, {260.0, 48.0}}, label: '스쿼트', Selected
+                        Button, 0x1422817c0, {{280.0, 42.0}, {260.0, 48.0}}, label: '푸시업'
+                        Button, 0x142281900, {{540.0, 42.0}, {260.0, 48.0}}, label: '플랭크'
+                        Other, 0x142281a40, {{0.0, 0.0}, {820.0, 1180.0}}
+                          ScrollView, 0x142281b80, {{70.0, 108.0}, {680.0, 514.0}}
+                          StaticText, 0x142281cc0, {{70.0, 108.0}, {680.0, 17.0}}, label: 'MOTIONFIT - WORKOUT COACH'
+                          StaticText, 0x142281e00, {{334.2, 145.0}, {151.7, 31.0}}, label: '🔥 연속 운동 · 1일'
+                          StaticText, 0x142281f40, {{70.0, 182.0}, {680.0, 23.0}}, label: '1일'
+                          StaticText, 0x142282080, {{70.0, 219.0}, {97.1, 53.0}}, label: '월요일
+월'
+                          StaticText, 0x1422821c0, {{167.1, 219.0}, {97.1, 53.0}}, label: '화요일
+화', value: 운동한 날
+                          StaticText, 0x142282300, {{264.3, 219.0}, {97.1, 53.0}}, label: '수요일
+수'
+                          StaticText, 0x142282440, {{361.4, 219.0}, {97.1, 53.0}}, label: '목요일
+목'
+                          StaticText, 0x142282580, {{458.6, 219.0}, {97.1, 53.0}}, label: '금요일
+금'
+                          StaticText, 0x1422826c0, {{555.7, 219.0}, {97.1, 53.0}}, label: '토요일
+토'
+                          StaticText, 0x142282800, {{652.9, 219.0}, {97.1, 53.0}}, label: '일요일
+일'
+                          StaticText, 0x142282940, {{70.0, 315.0}, {680.0, 18.0}}, label: '오늘 기록'
+                          StaticText, 0x142282a80, {{70.0, 340.0}, {369.6, 30.0}}, label: '첫 운동을 시작하면 오늘의 기록이 채워져요.'
+                          StaticText, 0x142282bc0, {{70.0, 426.0}, {616.0, 18.0}}, label: '다음 운동'
+                          Button, 0x142282d00, {{686.0, 411.0}, {64.0, 48.0}}, label: '편집'
+                          StaticText, 0x142282e40, {{70.0, 463.0}, {680.0, 32.0}}, label: '스쿼트 5회'
+                          StaticText, 0x142282f80, {{70.0, 501.0}, {680.0, 23.0}}, label: '1세트 × 5회 · 휴식 시간 15초'
+                          Button, 0x1422830c0, {{70.0, 542.0}, {680.0, 52.0}}, label: '스쿼트 시작'
+                    Other, 0x142283200, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x142283340, {{50.0, 1031.0}, {720.0, 89.0}}
+                      Other, 0x142283480, {{50.0, 1031.0}, {720.0, 89.0}}
+                        Other, 0x1422835c0, {{50.0, 1031.0}, {720.0, 89.0}}, identifier: 'platform_view[0]'
+                          Other, 0x142283700, {{50.0, 1031.0}, {720.0, 89.0}}
+                            Other, 0x142283840, {{50.0, 1031.0}, {720.0, 89.0}}
+                              Other, 0x142283980, {{50.0, 1031.0}, {720.0, 89.0}}
+                                Other, 0x142283ac0, {{50.0, 1031.0}, {720.0, 89.0}}
+                                  WebView, 0x142283c00, {{50.0, 1031.0}, {720.0, 89.0}}
+                                    WebView, 0x142283d40, {{50.0, 1031.0}, {720.0, 89.0}}
+                                      WebView, 0x142283e80, {{50.0, 1031.0}, {720.0, 89.0}}
+                                        Other, 0x142284000, {{0.0, 0.0}, {720.0, 89.0}}
+                                          Other, 0x142284140, {{0.0, 0.0}, {720.0, 89.0}}
+                                            Other, 0x142284280, {{50.0, 1031.0}, {720.0, 89.0}}
+                                              Other, 0x1422843c0, {{50.0, 1031.0}, {720.0, 89.0}}, Focused
+                                                Other, 0x142284500, {{50.0, 1031.0}, {720.0, 89.0}}, Focused
+                                                  Link, 0x142284640, {{87.0, 1034.0}, {646.0, 83.0}}, Focused
+                                                    Link, 0x142284780, {{87.0, 1034.0}, {646.0, 83.0}}, Focused
+                                      Other, 0x1422848c0, {{737.0, 1031.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x142284a00, {{764.0, 994.0}, {3.0, 35.0}}
+                                      Other, 0x142284b40, {{50.0, 1087.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x142284c80, {{13.0, 1114.0}, {35.0, 3.0}}
+                                      Other, 0x142284dc0, {{737.0, 1031.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x142284f00, {{764.0, 994.0}, {3.0, 35.0}}
+                                      Other, 0x142285040, {{50.0, 1087.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x142285180, {{13.0, 1114.0}, {35.0, 3.0}}
+                                    StaticText, 0x1422852c0, {{358.0, 1035.0}, {104.0, 34.0}}, label: 'Test mode'
+                    Button, 0x142285400, {{0.0, 1121.0}, {205.0, 59.0}}, label: '운동
+운동', Selected
+                    Button, 0x142285540, {{205.0, 1121.0}, {205.0, 59.0}}, label: '챌린지
+챌린지'
+                    Button, 0x142285680, {{410.0, 1121.0}, {205.0, 59.0}}, label: '성장
+성장'
+                    Button, 0x1422857c0, {{615.0, 1121.0}, {205.0, 59.0}}, label: '설정
+설정'
+    Window, 0x142285900, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x142285a40, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x142285b80, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x142280280, pid: 22775, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x142285cc0, pid: 22775, label: 'motionfit - workout coach'
+  }
+
+    t =     4.44s Added attachment named 'banner-under-control-center'
+    t =     4.45s Checking existence of `"Test mode" StaticText`
+BANNER_EXISTS_DURING_INACTIVE true
+    t =     4.48s Get all elements bound by index for: Elements matching predicate 'identifier BEGINSWITH "platform_view["'
+    t =     4.50s Find the Other (Element at index 0)
+BANNER_VIEWS_DURING ["platform_view[0]"]
+    t =     4.52s Tap Application 'com.apple.springboard'[0.10, 0.50]
+    t =     4.52s     Wait for com.apple.springboard to idle
+    t =     4.52s     Find the Application 'com.apple.springboard'
+    t =     4.61s Ignoring failure to get hierarchy for remote element in process 21367 (Error getting main window kAXErrorServerNotFound)
+    t =     4.61s Ignoring failure to get hierarchy for remote element in process 21367 (Error getting main window kAXErrorServerNotFound)
+    t =     4.61s     Check for interrupting elements affecting " " Application
+    t =     4.68s Ignoring failure to get hierarchy for remote element in process 21367 (Error getting main window kAXErrorServerNotFound)
+    t =     4.69s Ignoring failure to get hierarchy for remote element in process 21367 (Error getting main window kAXErrorServerNotFound)
+    t =     4.69s     Synthesize event
+    t =     4.70s         Find the Application 'com.apple.springboard'
+    t =     4.74s             Ignoring failure to get hierarchy for remote element in process 21367 (Error getting main window kAXErrorServerNotFound)
+    t =     4.75s             Ignoring failure to get hierarchy for remote element in process 21367 (Error getting main window kAXErrorServerNotFound)
+    t =     4.75s         Find the Application 'com.apple.springboard'
+    t =     4.80s             Ignoring failure to get hierarchy for remote element in process 21367 (Error getting main window kAXErrorServerNotFound)
+    t =     4.80s             Ignoring failure to get hierarchy for remote element in process 21367 (Error getting main window kAXErrorServerNotFound)
+    t =     4.81s         Find the Application 'com.apple.springboard'
+    t =     4.86s             Ignoring failure to get hierarchy for remote element in process 21367 (Error getting main window kAXErrorServerNotFound)
+    t =     4.87s             Ignoring failure to get hierarchy for remote element in process 21367 (Error getting main window kAXErrorServerNotFound)
+    t =     5.16s     Wait for com.apple.springboard to idle
+    t =     6.41s Open fit.motionfit.app
+    t =     6.42s     Activate fit.motionfit.app
+    t =     6.45s         Wait for fit.motionfit.app to idle
+    t =     6.46s Waiting 15.0s for "Test mode" StaticText to exist
+    t =     7.55s     Checking `Expect predicate `existsNoRetry == 1` for object "Test mode" StaticText`
+    t =     7.55s         Checking existence of `"Test mode" StaticText`
+    t =     7.62s Get all elements bound by index for: Elements matching predicate 'identifier BEGINSWITH "platform_view["'
+    t =     7.65s Find the Other (Element at index 0)
+BANNER_VIEWS_AFTER ["platform_view[0]"]
+    t =     7.69s Requesting snapshot of accessibility hierarchy for app with pid 22775
+    t =     7.87s Requesting snapshot of accessibility hierarchy for app with pid 22775
+IPAD_ADS_STATE banner-after-inactive
+Attributes: Application, 0x1422dfd40, pid: 22775, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x1422dfd40, pid: 22775, label: 'motionfit - workout coach'
+    Window (Main), 0x1422dea80, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x1422ded00, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x1422df200, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x1422df340, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x1422df480, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x1422df5c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x1422debc0, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x140ef6580, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x140ef6440, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x140ef61c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x140ef5f40, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x140ef70c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x140ef6f80, {{0.0, 0.0}, {820.0, 1031.0}}
+                      Other, 0x140ef7200, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x140ef7340, {{0.0, 0.0}, {820.0, 1031.0}}
+                        Button, 0x140ef7480, {{20.0, 42.0}, {260.0, 48.0}}, label: '스쿼트', Selected
+                        Button, 0x140ef7700, {{280.0, 42.0}, {260.0, 48.0}}, label: '푸시업'
+                        Button, 0x140ef6bc0, {{540.0, 42.0}, {260.0, 48.0}}, label: '플랭크'
+                        Other, 0x140ef6d00, {{0.0, 0.0}, {820.0, 1180.0}}
+                          ScrollView, 0x140ef6a80, {{70.0, 108.0}, {680.0, 514.0}}
+                          StaticText, 0x140ef6940, {{70.0, 108.0}, {680.0, 17.0}}, label: 'MOTIONFIT - WORKOUT COACH'
+                          StaticText, 0x140ef66c0, {{334.2, 145.0}, {151.7, 31.0}}, label: '🔥 연속 운동 · 1일'
+                          StaticText, 0x140ef7c00, {{70.0, 182.0}, {680.0, 23.0}}, label: '1일'
+                          StaticText, 0x140ef75c0, {{70.0, 219.0}, {97.1, 53.0}}, label: '월요일
+월'
+                          StaticText, 0x142280000, {{167.1, 219.0}, {97.1, 53.0}}, label: '화요일
+화', value: 운동한 날
+                          StaticText, 0x141338000, {{264.3, 219.0}, {97.1, 53.0}}, label: '수요일
+수'
+                          StaticText, 0x141338140, {{361.4, 219.0}, {97.1, 53.0}}, label: '목요일
+목'
+                          StaticText, 0x141338280, {{458.6, 219.0}, {97.1, 53.0}}, label: '금요일
+금'
+                          StaticText, 0x1413383c0, {{555.7, 219.0}, {97.1, 53.0}}, label: '토요일
+토'
+                          StaticText, 0x141338500, {{652.9, 219.0}, {97.1, 53.0}}, label: '일요일
+일'
+                          StaticText, 0x141338640, {{70.0, 315.0}, {680.0, 18.0}}, label: '오늘 기록'
+                          StaticText, 0x141338780, {{70.0, 340.0}, {369.6, 30.0}}, label: '첫 운동을 시작하면 오늘의 기록이 채워져요.'
+                          StaticText, 0x1413388c0, {{70.0, 426.0}, {616.0, 18.0}}, label: '다음 운동'
+                          Button, 0x141338a00, {{686.0, 411.0}, {64.0, 48.0}}, label: '편집'
+                          StaticText, 0x141338b40, {{70.0, 463.0}, {680.0, 32.0}}, label: '스쿼트 5회'
+                          StaticText, 0x141338c80, {{70.0, 501.0}, {680.0, 23.0}}, label: '1세트 × 5회 · 휴식 시간 15초'
+                          Button, 0x141338dc0, {{70.0, 542.0}, {680.0, 52.0}}, label: '스쿼트 시작'
+                    Other, 0x141338f00, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x141339040, {{50.0, 1031.0}, {720.0, 89.0}}
+                      Other, 0x141339180, {{50.0, 1031.0}, {720.0, 89.0}}
+                        Other, 0x1413392c0, {{50.0, 1031.0}, {720.0, 89.0}}, identifier: 'platform_view[0]'
+                          Other, 0x141339400, {{50.0, 1031.0}, {720.0, 89.0}}
+                            Other, 0x141339540, {{50.0, 1031.0}, {720.0, 89.0}}
+                              Other, 0x141339680, {{50.0, 1031.0}, {720.0, 89.0}}
+                                Other, 0x1413397c0, {{50.0, 1031.0}, {720.0, 89.0}}
+                                  WebView, 0x141339900, {{50.0, 1031.0}, {720.0, 89.0}}
+                                    WebView, 0x141339a40, {{50.0, 1031.0}, {720.0, 89.0}}
+                                      WebView, 0x141339b80, {{50.0, 1031.0}, {720.0, 89.0}}
+                                        Other, 0x141339cc0, {{0.0, 0.0}, {720.0, 89.0}}
+                                          Other, 0x141339e00, {{0.0, 0.0}, {720.0, 89.0}}
+                                            Other, 0x141339f40, {{50.0, 1031.0}, {720.0, 89.0}}
+                                              Other, 0x14133a080, {{50.0, 1031.0}, {720.0, 89.0}}, Focused
+                                                Other, 0x14133a1c0, {{50.0, 1031.0}, {720.0, 89.0}}, Focused
+                                                  Link, 0x14133a300, {{87.0, 1034.0}, {646.0, 83.0}}, Focused
+                                                    Link, 0x14133a440, {{87.0, 1034.0}, {646.0, 83.0}}, Focused
+                                      Other, 0x14133a580, {{737.0, 1031.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x14133a6c0, {{764.0, 994.0}, {3.0, 35.0}}
+                                      Other, 0x14133a800, {{50.0, 1087.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x14133a940, {{13.0, 1114.0}, {35.0, 3.0}}
+                                      Other, 0x14133aa80, {{737.0, 1031.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x14133abc0, {{764.0, 994.0}, {3.0, 35.0}}
+                                      Other, 0x14133ad00, {{50.0, 1087.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x14133ae40, {{13.0, 1114.0}, {35.0, 3.0}}
+                                    StaticText, 0x14133af80, {{358.0, 1035.0}, {104.0, 34.0}}, label: 'Test mode'
+                    Button, 0x14133b0c0, {{0.0, 1121.0}, {205.0, 59.0}}, label: '운동
+운동', Selected
+                    Button, 0x14133b200, {{205.0, 1121.0}, {205.0, 59.0}}, label: '챌린지
+챌린지'
+                    Button, 0x14133b340, {{410.0, 1121.0}, {205.0, 59.0}}, label: '성장
+성장'
+                    Button, 0x14133b480, {{615.0, 1121.0}, {205.0, 59.0}}, label: '설정
+설정'
+    Window, 0x14133b5c0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x14133b700, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x14133b840, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x1422dfd40, pid: 22775, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x14133b980, pid: 22775, label: 'motionfit - workout coach'
+  }
+
+    t =     8.04s Added attachment named 'banner-after-inactive'
+    t =     8.04s Pressing Home button
+    t =     8.51s Wait for fit.motionfit.app to become Running Background
+    t =     9.35s Open fit.motionfit.app
+    t =     9.35s     Activate fit.motionfit.app
+    t =     9.39s         Wait for fit.motionfit.app to idle
+    t =     9.40s Waiting 20.0s for "Test mode" StaticText to exist
+    t =    10.42s     Checking `Expect predicate `existsNoRetry == 1` for object "Test mode" StaticText`
+    t =    10.42s         Checking existence of `"Test mode" StaticText`
+    t =    10.50s Requesting snapshot of accessibility hierarchy for app with pid 22775
+    t =    10.78s Requesting snapshot of accessibility hierarchy for app with pid 22775
+IPAD_ADS_STATE banner-after-background
+Attributes: Application, 0x142284140, pid: 22775, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x142284140, pid: 22775, label: 'motionfit - workout coach'
+    Window (Main), 0x1422870c0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x142287200, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x142287340, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x142287480, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x1422875c0, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x142287700, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x142287840, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x142287980, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x142287ac0, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x142287c00, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x142287d40, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x142287e80, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x1412cf5c0, {{0.0, 0.0}, {820.0, 1031.0}}
+                      Other, 0x1412cc000, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x1412cdf40, {{0.0, 0.0}, {820.0, 1031.0}}
+                        Button, 0x1412ce080, {{20.0, 10.0}, {260.0, 48.0}}, label: '스쿼트', Selected
+                        Button, 0x1412ce1c0, {{280.0, 10.0}, {260.0, 48.0}}, label: '푸시업'
+                        Button, 0x1412ce300, {{540.0, 10.0}, {260.0, 48.0}}, label: '플랭크'
+                        Other, 0x1412cc780, {{0.0, 0.0}, {820.0, 1180.0}}
+                          ScrollView, 0x1412cf200, {{70.0, 76.0}, {680.0, 514.0}}
+                          StaticText, 0x1412cf340, {{70.0, 76.0}, {680.0, 17.0}}, label: 'MOTIONFIT - WORKOUT COACH'
+                          StaticText, 0x1412cf480, {{334.2, 113.0}, {151.7, 31.0}}, label: '🔥 연속 운동 · 1일'
+                          StaticText, 0x1412cc640, {{70.0, 150.0}, {680.0, 23.0}}, label: '1일'
+                          StaticText, 0x1412cc500, {{70.0, 187.0}, {97.1, 53.0}}, label: '월요일
+월'
+                          StaticText, 0x1412cc3c0, {{167.1, 187.0}, {97.1, 53.0}}, label: '화요일
+화', value: 운동한 날
+                          StaticText, 0x1412cc8c0, {{264.3, 187.0}, {97.1, 53.0}}, label: '수요일
+수'
+                          StaticText, 0x1412cdcc0, {{361.4, 187.0}, {97.1, 53.0}}, label: '목요일
+목'
+                          StaticText, 0x1412cde00, {{458.6, 187.0}, {97.1, 53.0}}, label: '금요일
+금'
+                          StaticText, 0x1412cdb80, {{555.7, 187.0}, {97.1, 53.0}}, label: '토요일
+토'
+                          StaticText, 0x1412cd400, {{652.9, 187.0}, {97.1, 53.0}}, label: '일요일
+일'
+                          StaticText, 0x1412cd900, {{70.0, 283.0}, {680.0, 18.0}}, label: '오늘 기록'
+                          StaticText, 0x1412cd540, {{70.0, 308.0}, {369.6, 30.0}}, label: '첫 운동을 시작하면 오늘의 기록이 채워져요.'
+                          StaticText, 0x1412cd680, {{70.0, 394.0}, {616.0, 18.0}}, label: '다음 운동'
+                          Button, 0x1412cda40, {{686.0, 379.0}, {64.0, 48.0}}, label: '편집'
+                          StaticText, 0x1412cd2c0, {{70.0, 431.0}, {680.0, 32.0}}, label: '스쿼트 5회'
+                          StaticText, 0x1412cd180, {{70.0, 469.0}, {680.0, 23.0}}, label: '1세트 × 5회 · 휴식 시간 15초'
+                          Button, 0x1412cd040, {{70.0, 510.0}, {680.0, 52.0}}, label: '스쿼트 시작'
+                    Other, 0x1412ccf00, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x1412ccdc0, {{50.0, 1031.0}, {720.0, 89.0}}
+                      Other, 0x1412ccc80, {{50.0, 1031.0}, {720.0, 89.0}}
+                        Other, 0x14224c000, {{50.0, 1031.0}, {720.0, 89.0}}, identifier: 'platform_view[0]'
+                          Other, 0x14224c140, {{50.0, 1031.0}, {720.0, 89.0}}
+                            Other, 0x14224c280, {{50.0, 1031.0}, {720.0, 89.0}}
+                              Other, 0x14224c3c0, {{50.0, 1031.0}, {720.0, 89.0}}
+                                Other, 0x14224c500, {{50.0, 1031.0}, {720.0, 89.0}}
+                                  WebView, 0x14224c640, {{50.0, 1031.0}, {720.0, 89.0}}
+                                    WebView, 0x14224c780, {{50.0, 1031.0}, {720.0, 89.0}}
+                                      WebView, 0x14224c8c0, {{50.0, 1031.0}, {720.0, 89.0}}
+                                        Other, 0x14224ca00, {{0.0, 0.0}, {720.0, 89.0}}
+                                          Other, 0x14224cb40, {{0.0, 0.0}, {720.0, 89.0}}
+                                            Other, 0x14224cc80, {{50.0, 1031.0}, {720.0, 89.0}}
+                                              Other, 0x14224cdc0, {{50.0, 1031.0}, {720.0, 89.0}}, Focused
+                                                Other, 0x14224cf00, {{50.0, 1031.0}, {720.0, 89.0}}, Focused
+                                                  Link, 0x14224d040, {{87.0, 1034.0}, {646.0, 83.0}}, Focused
+                                                    Link, 0x14224d180, {{87.0, 1034.0}, {646.0, 83.0}}, Focused
+                                      Other, 0x14224d2c0, {{737.0, 1031.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x14224d400, {{764.0, 1034.0}, {3.0, 83.0}}
+                                      Other, 0x14224d540, {{50.0, 1087.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x14224d680, {{53.0, 1114.0}, {714.0, 3.0}}
+                                      Other, 0x14224d7c0, {{737.0, 1031.0}, {30.0, 89.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x14224d900, {{764.0, 1034.0}, {3.0, 83.0}}
+                                      Other, 0x14224da40, {{50.0, 1087.0}, {720.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                                        Other, 0x14224db80, {{53.0, 1114.0}, {714.0, 3.0}}
+                                    StaticText, 0x14224dcc0, {{358.0, 1035.0}, {104.0, 34.0}}, label: 'Test mode'
+                    Button, 0x14224de00, {{0.0, 1121.0}, {205.0, 59.0}}, label: '운동
+운동', Selected
+                    Button, 0x14224df40, {{205.0, 1121.0}, {205.0, 59.0}}, label: '챌린지
+챌린지'
+                    Button, 0x14224e080, {{410.0, 1121.0}, {205.0, 59.0}}, label: '성장
+성장'
+                    Button, 0x14224e1c0, {{615.0, 1121.0}, {205.0, 59.0}}, label: '설정
+설정'
+      Other, 0x14224e300, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x14224e440, {{0.0, 0.0}, {820.0, 1180.0}}
+          Button, 0x14224e580, {{0.0, 0.0}, {52.0, 52.0}}, label: 'Close Advertisement', Disabled
+          Other, 0x14224e6c0, {{0.0, 0.0}, {820.0, 1180.0}}
+            WebView, 0x14224e800, {{0.0, 0.0}, {820.0, 1180.0}}
+              WebView, 0x14224e940, {{0.0, 0.0}, {820.0, 1180.0}}
+                WebView, 0x14224ea80, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x14224ebc0, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x14224ed00, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x14224ee40, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x14224ef80, {{0.0, 0.0}, {820.0, 1200.0}}, Focused
+                          Other, 0x14224f0c0, {{517.0, 51.0}, {22.0, 22.0}}, Focused
+                          Other, 0x14224f200, {{551.0, 54.0}, {31.0, 16.0}}, Focused
+                            StaticText, 0x14224f340, {{551.0, 54.0}, {32.0, 16.0}}, label: '모션핏', value: 모션핏, Focused
+                          Other, 0x14224f480, {{0.0, 62.0}, {820.0, 22.0}}, Focused
+                            Other, 0x14224f5c0, {{5.0, 65.0}, {41.0, 17.0}}, Focused
+                              StaticText, 0x14224f700, {{15.0, 66.0}, {21.0, 15.0}}, label: '광고', value: 광고, Focused
+                          Other, 0x14224f840, {{8.0, 84.0}, {804.0, 1108.0}}, label: 'Blank', Focused
+                            Other, 0x14224f980, {{8.0, 84.0}, {804.0, 1108.0}}, Focused
+                              Other, 0x14224fac0, {{8.0, 84.0}, {804.0, 1108.0}}, label: 'Blank', Focused
+                                Link, 0x14224fc00, {{8.0, 84.0}, {1063.0, 451.0}}, Focused
+                                Link, 0x14224fd40, {{366.0, 608.0}, {88.0, 89.0}}, Focused
+                                Other, 0x14224fe80, {{23.0, 755.0}, {774.0, 96.0}}, Focused
+                                  Link, 0x142254000, {{355.0, 775.0}, {110.0, 57.0}}, label: 'Flood', Focused
+                                    StaticText, 0x142254140, {{355.0, 775.0}, {110.0, 57.0}}, label: 'Flood', value: Flood, Focused
+                                Other, 0x142254280, {{352.0, 908.0}, {33.0, 30.0}}, Focused
+                                  Link, 0x1422543c0, {{352.0, 908.0}, {33.0, 30.0}}, label: '3.7', Focused
+                                    StaticText, 0x142254500, {{352.0, 908.0}, {33.0, 30.0}}, label: '3.7', value: 3.7, Focused
+                                Link, 0x142254640, {{387.0, 911.0}, {25.0, 25.0}}, Focused
+                                Link, 0x142254780, {{426.0, 908.0}, {42.0, 30.0}}, label: '무료', Focused
+                                  Link, 0x1422548c0, {{426.0, 908.0}, {42.0, 30.0}}, label: '무료', Focused
+                                    StaticText, 0x142254a00, {{426.0, 908.0}, {42.0, 30.0}}, label: '무료', value: 무료, Focused
+                                Link, 0x142254b40, {{365.0, 995.0}, {90.0, 29.0}}, Focused
+                                Link, 0x142254c80, {{396.0, 1090.0}, {28.0, 21.0}}, label: '받기', Focused
+                                  Link, 0x142254dc0, {{396.0, 1090.0}, {28.0, 21.0}}, label: '받기', Focused
+                                    StaticText, 0x142254f00, {{396.0, 1090.0}, {28.0, 21.0}}, label: '받기', value: 받기, Focused
+                Other, 0x142255040, {{787.0, 18.0}, {30.0, 1144.0}}, label: '수직 스크롤 막대, 2페이지', value: 0%
+                  Other, 0x142255180, {{814.0, 21.0}, {3.0, 1119.0}}
+                Other, 0x1422552c0, {{18.0, 1147.0}, {784.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                  Other, 0x142255400, {{21.0, 1174.0}, {778.0, 3.0}}
+                Other, 0x142255540, {{787.0, 18.0}, {30.0, 1144.0}}, label: '수직 스크롤 막대, 2페이지', value: 0%
+                  Other, 0x142255680, {{814.0, 21.0}, {3.0, 1119.0}}
+                Other, 0x1422557c0, {{18.0, 1147.0}, {784.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+                  Other, 0x142255900, {{21.0, 1174.0}, {778.0, 3.0}}
+              StaticText, 0x142255a40, {{358.0, 4.0}, {104.0, 34.0}}, label: 'Test mode'
+    Window, 0x142255b80, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x142255cc0, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x142255e00, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x142284140, pid: 22775, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x142255f40, pid: 22775, label: 'motionfit - workout coach'
+  }
+
+    t =    10.98s Added attachment named 'banner-after-background'
+    t =    10.98s Tear Down
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testBannerLifecycle]' passed (11.090 seconds).
+Test Suite 'MotionfitMetaQA' passed at 2026-10-21 22:53:23.131.
+	 Executed 1 test, with 0 failures (0 unexpected) in 11.090 (11.091) seconds
+Test Suite 'MotionfitMetaQA.xctest' passed at 2026-10-21 22:53:23.131.
+	 Executed 1 test, with 0 failures (0 unexpected) in 11.090 (11.092) seconds
+Test Suite 'Selected tests' passed at 2026-10-21 22:53:23.132.
+	 Executed 1 test, with 0 failures (0 unexpected) in 11.090 (11.093) seconds
+2026-10-21 22:53:23.485 xcodebuild[69544:1192734] [MT] IDETestOperationsObserverDebug: 14.344 elapsed -- Testing started completed.
+2026-10-21 22:53:23.485 xcodebuild[69544:1192734] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 22:53:23.485 xcodebuild[69544:1192734] [MT] IDETestOperationsObserverDebug: 14.344 sec, +14.344 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/nam/projects/flutter/motionfit/reports/ipad_ads_validation_2026_10_21/banner-lifecycle.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started

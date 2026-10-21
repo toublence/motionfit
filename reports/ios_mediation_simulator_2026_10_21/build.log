@@ -1,0 +1,136 @@
+Building fit.motionfit.app for simulator (ios)...
+Running Xcode build...                                          
+Xcode build done.                                           74.0s
+Failed to build iOS app
+Swift Compiler Error (Xcode): Clang dependency scanner failure: error: unable to open output file '/Users/nam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/WXR5BVMEUSSM/QuartzCore-1PGA94LEHPAST.pcm': 'No space left on device'
+While building module 'FirebaseRemoteConfigInterop' imported from FirebaseRemoteConfigInterop-bab97750.input:1:
+While building module 'UIKit' imported from /Users/nam/projects/flutter/motionfit/ios/Pods/Target Support Files/FirebaseRemoteConfigInterop/FirebaseRemoteConfigInterop-umbrella.h:2:
+In file included from <module-includes>:1:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:9:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKitCore.h:34:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:15:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:11:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h:10:9: fatal error: could not build module 'QuartzCore'
+While building module 'FirebaseRemoteConfigInterop' imported from FirebaseRemoteConfigInterop-bab97750.input:1:
+In file included from <module-includes>:1:
+/Users/nam/projects/flutter/motionfit/ios/Pods/Target Support Files/FirebaseRemoteConfigInterop/FirebaseRemoteConfigInterop-umbrella.h:2:9: fatal error: could not build module 'UIKit'
+FirebaseRemoteConfigInterop-bab97750.input:1:1: fatal error: could not build module 'FirebaseRemoteConfigInterop'
+
+
+Swift Compiler Error (Xcode): Unable to find module dependency: 'FirebaseRemoteConfigInterop'
+
+Swift Compiler Error (Xcode): Clang dependency scanner failure: error: unable to open output file '/Users/nam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/3KMN7B214ETKW/CoreText-2C7KN0R8TNZFM.pcm': 'No space left on device'
+While building module 'FirebaseRemoteConfigInterop' imported from FirebaseRemoteConfigInterop-42b7c21b.input:1:
+While building module 'UIKit' imported from /Users/nam/projects/flutter/motionfit/ios/Pods/Target Support Files/FirebaseRemoteConfigInterop/FirebaseRemoteConfigInterop-umbrella.h:2:
+In file included from <module-includes>:1:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:9:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKitCore.h:27:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/NSParagraphStyle.h:17:
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/NSText.h:34:9: fatal error: could not build module 'CoreText'
+error: unable to open output file '/Users/nam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/3KMN7B214ETKW/QuartzCore-1PGA94LEHPAST.pcm': 'No space left on device'
+error: unable to open output file '/Users/nam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/3KMN7B214ETKW/Symbols-1DNV4QDBC5QS9.pcm': 'No space left on device'
+error: unable to open output file '/Users/nam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/3KMN7B214ETKW/FileProvider-2O2DCCNZ1P9DX.pcm': 'No space left on device'
+error: unable to open output file '/Users/nam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/3KMN7B214ETKW/UserNotifications-1FJPVU08305M0.pcm': 'No space left on device'
+While building module 'FirebaseRemoteConfigInterop' imported from FirebaseRemoteConfigInterop-42b7c21b.input:1:
+In file included from <module-includes>:1:
+/Users/nam/projects/flutter/motionfit/ios/Pods/Target Support Files/FirebaseRemoteConfigInterop/FirebaseRemoteConfigInterop-umbrella.h:2:9: fatal error: could not build module 'UIKit'
+FirebaseRemoteConfigInterop-42b7c21b.input:1:1: fatal error: could not build module 'FirebaseRemoteConfigInterop'
+
+
+Swift Compiler Error (Xcode): Clang dependency scanner failure: error: unable to rename temporary '/Users/nam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/3V23EKVHT4D96/QuartzCore-1PGA94LEHPAST-3168dd30.pcm.tmp' to output file '/Users/nam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/3V23EKVHT4D96/QuartzCore-1PGA94LEHPAST.pcm': 'No space left on device'
+While building module 'FirebaseCoreInternal' imported from FirebaseCoreInternal-3de215f1.input:1:
+While building module 'UIKit' imported from /Users/nam/projects/flutter/motionfit/ios/Pods/Target Support Files/FirebaseCoreInternal/FirebaseCoreInternal-umbrella.h:2:
+In file included from <module-includes>:1:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:9:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKitCore.h:34:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:15:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:11:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h:10:9: fatal error: could not build module 'QuartzCore'
+While building module 'FirebaseCoreInternal' imported from FirebaseCoreInternal-3de215f1.input:1:
+In file included from <module-includes>:1:
+/Users/nam/projects/flutter/motionfit/ios/Pods/Target Support Files/FirebaseCoreInternal/FirebaseCoreInternal-umbrella.h:2:9: fatal error: could not build module 'UIKit'
+FirebaseCoreInternal-3de215f1.input:1:1: fatal error: could not build module 'FirebaseCoreInternal'
+
+
+Swift Compiler Error (Xcode): Unable to find module dependency: 'FirebaseCoreInternal'
+
+Swift Compiler Error (Xcode): Clang dependency scanner failure: error: unable to open output file '/Users/nam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/3AW3CIB5F3W5K/QuartzCore-1PGA94LEHPAST.pcm': 'No space left on device'
+While building module 'FirebaseCoreInternal' imported from FirebaseCoreInternal-26bb1bb3.input:1:
+While building module 'UIKit' imported from /Users/nam/projects/flutter/motionfit/ios/Pods/Target Support Files/FirebaseCoreInternal/FirebaseCoreInternal-umbrella.h:2:
+In file included from <module-includes>:1:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:9:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKitCore.h:34:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:15:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:11:
+In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h:10:9: fatal error: could not build module 'QuartzCore'
+error: unable to open output file '/Users/nam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/3AW3CIB5F3W5K/Symbols-1DNV4QDBC5QS9.pcm': 'No space left on device'
+error: unable to open output file '/Users/nam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/3AW3CIB5F3W5K/FileProvider-2O2DCCNZ1P9DX.pcm': 'No space left on device'
+error: unable to open output file '/Users/nam/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/3AW3CIB5F3W5K/UserNotifications-1FJPVU08305M0.pcm': 'No space left on device'
+While building module 'FirebaseCoreInternal' imported from FirebaseCoreInternal-26bb1bb3.input:1:
+In file included from <module-includes>:1:
+/Users/nam/projects/flutter/motionfit/ios/Pods/Target Support Files/FirebaseCoreInternal/FirebaseCoreInternal-umbrella.h:2:9: fatal error: could not build module 'UIKit'
+FirebaseCoreInternal-26bb1bb3.input:1:1: fatal error: could not build module 'FirebaseCoreInternal'
+
+
+Error (Xcode): GoogleMobileAds.framework/.GoogleMobileAds.ZPVnCndyBD: write: No space left on device
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60630):0:0
+
+Error (Xcode): buf_copy
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60630):0:0
+
+Error (Xcode): rsync_downloader
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60630):0:0
+
+Error (Xcode): rsync_receiver
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60630):0:0
+
+Error (Xcode): unexpected end of file
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60629):0:0
+
+Error (Xcode): io_read_nonblocking
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60629):0:0
+
+Error (Xcode): io_read_blocking
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60629):0:0
+
+Error (Xcode): io_read_flush
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60629):0:0
+
+Error (Xcode): rsync_sender
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60629):0:0
+
+Error (Xcode): FBAudienceNetwork.framework/.FBAudienceNetwork.SxyPBUgh5n: write: No space left on device
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60648):0:0
+
+Error (Xcode): buf_copy
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60648):0:0
+
+Error (Xcode): rsync_downloader
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60648):0:0
+
+Error (Xcode): rsync_receiver
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60648):0:0
+
+Error (Xcode): unexpected end of file
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60647):0:0
+
+Error (Xcode): io_read_nonblocking
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60647):0:0
+
+Error (Xcode): io_read_blocking
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60647):0:0
+
+Error (Xcode): io_read_flush
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60647):0:0
+
+Error (Xcode): rsync_sender
+/Users/nam/projects/flutter/motionfit/ios/Pods/rsync(60647):0:0
+
+Uncategorized (Xcode): Command CodeSign failed with a nonzero exit code
+
+Uncategorized (Xcode): Command CompileC failed with a nonzero exit code
+
+Encountered error while building for simulator.

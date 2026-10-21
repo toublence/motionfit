@@ -17,6 +17,7 @@ class AdLoader extends ChangeNotifier {
     required this.telemetry,
     this.retry = true,
     this.timeout = const Duration(seconds: 15),
+    this.loadTimeout = const Duration(seconds: 60),
     String Function()? newId,
   }) : _newId = newId ?? const Uuid().v7;
   final AdFormat format;
@@ -25,7 +26,13 @@ class AdLoader extends ChangeNotifier {
   final FutureOr<AdHandle> Function(AdCallbacks) create;
   final AdTelemetry telemetry;
   final bool retry;
+
+  /// Local setup (size lookup, consent check) before the SDK request.
   final Duration timeout;
+
+  /// Lost-callback guard once the SDK request is out. Mediation waterfalls
+  /// can fill well after [timeout]; the SDK reports its own request timeout.
+  final Duration loadTimeout;
   final String Function() _newId;
   AdHandle? _pending;
   AdHandle? _ad;
@@ -120,6 +127,11 @@ class AdLoader extends ChangeNotifier {
           }
           _pending = handle;
           _requested = true;
+          _deadline?.cancel();
+          _deadline = Timer(
+            loadTimeout,
+            () => _fail(generation, const AdFailure('timeout')),
+          );
           _log('mf2_ad_request_attempted');
           await handle.load();
         } on Object catch (error) {
@@ -150,10 +162,15 @@ class AdLoader extends ChangeNotifier {
     });
     ++_failures;
     if (retry && error.retryable && _enabled) {
-      _retryTimer = Timer(retryDelay(_failures), () {
-        _retryTimer = null;
-        ensureLoaded();
-      });
+      _retryTimer = Timer(
+        error.kind == 'configuration'
+            ? const Duration(minutes: 5)
+            : retryDelay(_failures),
+        () {
+          _retryTimer = null;
+          ensureLoaded();
+        },
+      );
     }
     notifyListeners();
   }
