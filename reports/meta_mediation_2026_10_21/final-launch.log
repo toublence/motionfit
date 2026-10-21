@@ -1,0 +1,17 @@
+15:06:57  Acquired tunnel connection to device.
+15:06:57  Enabling developer disk image services.
+15:06:57  Acquired usage assertion.
+Launched application with fit.motionfit.app bundle identifier.
+Waiting for the application to terminate…
+2026-10-21 15:06:58.282 Runner[22033:5475475] [Firebase/Crashlytics] Version 12.15.0
+[Crashlytics] The signal SIGABRT has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGBUS has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGFPE has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGILL has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGSEGV has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGSYS has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGTRAP has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+2026-10-21 15:07:03.577 Runner[22033:5475475] <UMP SDK> To enable debug mode for this device, set: UMPDebugSettings.testDeviceIdentifiers = @[ @"19DDDFF4-E375-4614-9CB4-97EEAB4DE1C2" ];
+2026-10-21 15:07:03.826 Runner[22033:5475475] -canOpenURL: failed for URL: "fb://" - error: "작업을 완료할 수 없습니다.(OSStatus 오류 -10814.)"
+[UnityAds][Info] Initializing SDK 4.21.0 42100 with game id 6208809 in production mode, session D7E5B1B6-DEF7-4CC1-85D0-D9D3E083B49F
+[UnityAds][Info] Initialized successfully!

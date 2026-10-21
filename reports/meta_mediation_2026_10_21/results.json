@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-21",
+  "platform": "iOS only",
+  "status": "PASS: Meta interstitial loaded, displayed, recorded impression, dismissed",
+  "versions": {
+    "GoogleMobileAdsMediationFacebook": "6.22.0.0",
+    "FBAudienceNetwork": "6.22.0",
+    "Google-Mobile-Ads-SDK": "13.3.0",
+    "GoogleMobileAdsMediationUnity": "4.21.0.0"
+  },
+  "changes": [
+    "iOS Podfile and lock add Meta adapter and SDK",
+    "ATT status forwarded before Mobile Ads initialization on iOS 15/16; Meta SDK reads ATT directly on iOS 17+",
+    "Allow fb URL query used by Meta SDK",
+    "Existing Meta SKAdNetwork identifiers retained",
+    "Opt-in Meta device QA entry point shares the Unity QA host"
+  ],
+  "device": {
+    "name": "iPad (4)",
+    "model": "iPad Air 11-inch (M2)",
+    "os": "26.6.2",
+    "identifier": "315AE942-B017-5187-A2DA-A0B2490459AD"
+  },
+  "test": {
+    "source": "Meta Audience Network (Bidding) single-source test in Ad Inspector",
+    "testMode": true,
+    "adUnitId": "ca-app-pub-6169297934919363/2998795518",
+    "placementId": "1059151487163037_1059152357162950",
+    "loadedAdapter": "GADMediationAdapterFacebook",
+    "showed": true,
+    "impression": true,
+    "dismissed": true,
+    "qaResult": "PASS",
+    "creativeClicked": false,
+    "scope": "Interstitial only; other formats not individually exercised"
+  },
+  "initialAttempt": {
+    "result": "No ad to show",
+    "underlyingError": "FBAdDSLDataLoaderDomain Code=0: Something went wrong",
+    "followUp": "Added fb query scheme; subsequent device test succeeded. The initial error cause is not proven."
+  },
+  "cleanup": {
+    "singleSourceTesting": "disabled and asserted switch=0",
+    "installedEntryPoint": "lib/main.dart",
+    "configuration": "Profile",
+    "nativeQaFlag": false,
+    "installedBundle": "fit.motionfit.app",
+    "version": "1.6.8",
+    "build": "68",
+    "appData": "Kept; installed as an update"
+  },
+  "evidence": {
+    "sdkCallbacks": "meta-ads-qa-final.log",
+    "testCreative": "meta-test-ad.png",
+    "displayUiTest": "ui-retry.log",
+    "dismissalAndCleanupUiTest": "ui-finish.log",
+    "normalAppBuild": "final-build.log",
+    "normalAppInstall": "final-install.log",
+    "normalAppLaunch": "final-launch.log"
+  },
+  "reference": "https://developers.google.com/admob/ios/mediation/meta?hl=en",
+  "repeat": {
+    "entryPoint": "tool/meta_ads_device_test.dart",
+    "nativeProfileFlag": "META_ADS_QA",
+    "uiProject": "ui/MotionfitMetaQA.xcodeproj",
+    "sequence": [
+      "testMetaInterstitial",
+      "testFinishAndDisableSingleSource"
+    ],
+    "note": "Run methods in sequence; confirm native callback log PASS. Always restore lib/main.dart and remove QA flag afterward."
+  }
+}

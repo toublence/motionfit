@@ -1,0 +1,16 @@
+Updating local specs repositories
+Analyzing dependencies
+firebase_analytics: Using Firebase SDK version '12.15.0' defined in 'firebase_core'
+firebase_core: Using Firebase SDK version '12.15.0' defined in 'firebase_core'
+Ignoring ffi-1.17.2 because its extensions are not built. Try: gem pristine ffi --version 1.17.2
+firebase_crashlytics: Using Firebase SDK version '12.15.0' defined in 'firebase_core'
+Downloading dependencies
+Installing FBAudienceNetwork (6.22.0)
+Installing GoogleMobileAdsMediationFacebook (6.22.0.0)
+Generating Pods project
+Integrating client project
+Pod installation complete! There are 21 dependencies from the Podfile and 44 total pods installed.
+
+[!] CocoaPods did not set the base configuration of your project because your project already has a custom config set. In order for CocoaPods integration to work at all, please either set the base configurations of the target `Runner` to `Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig` or include the `Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig` in your build configuration (`Flutter/Release.xcconfig`).
+
+[!] FirebaseCore has been deprecated in favor of the Firebase Apple SDK via Swift Package Manager. Existing CocoaPods versions will remain available and installations will remain functional, but new versions will no longer be published to CocoaPods after October 2026. See: https://firebase.google.com/docs/ios/cocoapods-deprecation

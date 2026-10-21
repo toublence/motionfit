@@ -1,9 +1,11 @@
 import FirebaseCore
+import AppTrackingTransparency
+import FBAudienceNetwork
 import Flutter
 import UIKit
 import UserNotifications
 import WebKit
-#if DEBUG || UNITY_ADS_QA
+#if DEBUG || UNITY_ADS_QA || META_ADS_QA
 import UnityAdapter
 import UnityAds
 #endif
@@ -13,22 +15,27 @@ import UnityAds
   private var legacyStorageChannel: FlutterMethodChannel?
   private var legacyStorageReader: LegacyCapacitorStorageReader?
 
-  #if DEBUG || UNITY_ADS_QA
-  // Only the opt-in tool/unity_ads_device_test.dart entry point invokes this bridge.
+  #if DEBUG || UNITY_ADS_QA || META_ADS_QA
+  // Only the opt-in tool/*_ads_device_test.dart entry points invoke this bridge.
   private func configureUnityQAChannel(_ messenger: FlutterBinaryMessenger) {
     let channel = FlutterMethodChannel(name: "fit.motionfit.app/unity_ads_qa", binaryMessenger: messenger)
     channel.setMethodCallHandler { call, result in
       switch call.method {
+      case "initializeMeta":
+        FBAdSettings.addTestDevice(FBAdSettings.testDeviceHash())
+        result(FBAdSettings.isTestMode())
+      case "metaTestMode":
+        result(FBAdSettings.isTestMode())
       case "initializeUnity":
         // AdMob initializes Unity with the server-mapped iOS Game ID.
         GADMediationAdapterUnity.testMode = true
         result(UnityAds.getVersion())
       case "testMode":
         result(GADMediationAdapterUnity.testMode)
-      case "record":
+      case "record", "recordMeta":
         if let line = call.arguments as? String {
           let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("unity-ads-qa.log")
+            .appendingPathComponent(call.method == "recordMeta" ? "meta-ads-qa.log" : "unity-ads-qa.log")
           let previous = (try? String(contentsOf: url, encoding: .utf8)) ?? ""
           try? (previous + line + "\n").write(to: url, atomically: true, encoding: .utf8)
         }
@@ -57,7 +64,24 @@ import UnityAds
 
   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
     GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
-    #if DEBUG || UNITY_ADS_QA
+    let metaPrivacy = FlutterMethodChannel(
+      name: "fit.motionfit.app/meta_ads_privacy",
+      binaryMessenger: engineBridge.applicationRegistrar.messenger()
+    )
+    metaPrivacy.setMethodCallHandler { call, result in
+      guard call.method == "syncTrackingAuthorization" else {
+        result(FlutterMethodNotImplemented)
+        return
+      }
+      // SDK 6.15+ reads ATT directly on iOS 17+. Older iOS needs the flag.
+      if #unavailable(iOS 17) {
+        FBAdSettings.setAdvertiserTrackingEnabled(
+          ATTrackingManager.trackingAuthorizationStatus == .authorized
+        )
+      }
+      result(nil)
+    }
+    #if DEBUG || UNITY_ADS_QA || META_ADS_QA
     configureUnityQAChannel(engineBridge.applicationRegistrar.messenger())
     #endif
     guard let registrar = engineBridge.pluginRegistry.registrar(

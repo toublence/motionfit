@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'ad_failure.dart';
@@ -53,6 +55,11 @@ abstract interface class AdSdk {
 class GoogleAdSdk implements AdSdk {
   @override
   Future<void> initialize() async {
+    if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
+      await const MethodChannel(
+        'fit.motionfit.app/meta_ads_privacy',
+      ).invokeMethod<void>('syncTrackingAuthorization');
+    }
     await MobileAds.instance.initialize();
   }
 

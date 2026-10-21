@@ -31,6 +31,7 @@ target 'Runner' do
 
   # iOS-only AdMob mediation; Game/Placement IDs are supplied by AdMob.
   pod 'GoogleMobileAdsMediationUnity', '4.21.0.0'
+  pod 'GoogleMobileAdsMediationFacebook', '6.22.0.0'
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
   target 'RunnerTests' do

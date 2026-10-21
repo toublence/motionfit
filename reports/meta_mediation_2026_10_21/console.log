@@ -1,0 +1,19 @@
+14:58:31  Acquired tunnel connection to device.
+14:58:31  Enabling developer disk image services.
+14:58:31  Acquired usage assertion.
+Launched application with fit.motionfit.app bundle identifier.
+Waiting for the application to terminate…
+2026-10-21 14:58:31.853 Runner[21992:5468688] [Firebase/Crashlytics] Version 12.15.0
+2026-10-21 14:58:32.014 Runner[21992:5468688] <UMP SDK> To enable debug mode for this device, set: UMPDebugSettings.testDeviceIdentifiers = @[ @"19DDDFF4-E375-4614-9CB4-97EEAB4DE1C2" ];
+[UnityAds][Info] Initializing SDK 4.21.0 42100 with game id 6208809 in production mode, session 03DEC4BD-9491-4AB8-B9B9-FF333511F0C5
+2026-10-21 14:58:32.625 Runner[21992:5468688] -canOpenURL: failed for URL: "fb://" - error: "This app is not allowed to query for scheme fb"
+[UnityAds][Info] Initialized successfully!
+[Crashlytics] The signal SIGABRT has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGBUS has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGFPE has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGILL has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGSEGV has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGSYS has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[Crashlytics] The signal SIGTRAP has a non-Crashlytics handler (GADRegisterSignalHandlers).  This will interfere with reporting.
+[UnityAds][Info] Generated a valid token.
+App terminated due to signal 9.

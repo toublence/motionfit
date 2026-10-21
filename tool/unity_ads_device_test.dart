@@ -8,8 +8,14 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:motionfit_squat/core/ads/ad_unit_ids.dart';
 
 const _qa = MethodChannel('fit.motionfit.app/unity_ads_qa');
+bool _meta = false;
+String get _source => _meta ? 'Meta' : 'Unity';
+String get _testModeMethod => _meta ? 'metaTestMode' : 'testMode';
 
-Future<void> main() async {
+Future<void> main() => runMediationQa();
+
+Future<void> runMediationQa({bool meta = false}) async {
+  _meta = meta;
   WidgetsFlutterBinding.ensureInitialized();
   if (kReleaseMode || defaultTargetPlatform != TargetPlatform.iOS) {
     throw StateError('This QA entry point requires iOS Debug or QA Profile');
@@ -31,8 +37,8 @@ class _UnityQaState extends State<_UnityQa> {
   bool _impressed = false;
 
   void _record(String line) {
-    debugPrint('UNITY_QA $line');
-    unawaited(_qa.invokeMethod<void>('record', line));
+    debugPrint('${_source.toUpperCase()}_QA $line');
+    unawaited(_qa.invokeMethod<void>(_meta ? 'recordMeta' : 'record', line));
     if (mounted) setState(() => _lines.add(line));
   }
 
@@ -57,19 +63,24 @@ class _UnityQaState extends State<_UnityQa> {
       if (!await ConsentInformation.instance.canRequestAds())
         throw StateError('Consent blocks ads');
       _record('consentAllowed=true');
-      final version = await _qa.invokeMethod<String>('initializeUnity', {
-        'gameId': '',
-      });
-      _record('unitySdk=$version');
+      if (_meta) {
+        await _qa.invokeMethod<bool>('initializeMeta');
+        await const MethodChannel(
+          'fit.motionfit.app/meta_ads_privacy',
+        ).invokeMethod<void>('syncTrackingAuthorization');
+      } else {
+        final version = await _qa.invokeMethod<String>('initializeUnity');
+        _record('unitySdk=$version');
+      }
       final status = await MobileAds.instance.initialize();
       for (final entry in status.adapterStatuses.entries) {
         _record(
           'adapter=${entry.key} state=${entry.value.state} description=${entry.value.description}',
         );
       }
-      if (await _qa.invokeMethod<bool>('testMode') != true)
-        throw StateError('Unity test mode required');
-      _record('unityTestMode=true');
+      if (await _qa.invokeMethod<bool>(_testModeMethod) != true)
+        throw StateError('$_source test mode required');
+      _record('${_source.toLowerCase()}TestMode=true');
       // Inspector needs an initial ad request to obtain its device/server configuration.
       final preflight = Completer<void>();
       await InterstitialAd.load(
@@ -98,7 +109,7 @@ class _UnityQaState extends State<_UnityQa> {
       _loading = true;
       _impressed = false;
     });
-    if (await _qa.invokeMethod<bool>('testMode') != true) {
+    if (await _qa.invokeMethod<bool>(_testModeMethod) != true) {
       _record('FAIL test mode disabled');
       return;
     }
@@ -112,14 +123,18 @@ class _UnityQaState extends State<_UnityQa> {
       adLoadCallback: InterstitialAdLoadCallback(
         onAdFailedToLoad: (error) {
           _record('FAIL load: ${error.code} ${error.domain} ${error.message}');
+          _record('responseInfo=${error.responseInfo}');
           setState(() => _loading = false);
         },
         onAdLoaded: (ad) {
           final adapter = ad.responseInfo?.mediationAdapterClassName ?? '';
           _record('loadedAdapter=$adapter');
-          if (!adapter.toLowerCase().contains('unity')) {
+          final name = adapter.toLowerCase();
+          if (_meta
+              ? !name.contains('meta') && !name.contains('facebook')
+              : !name.contains('unity')) {
             ad.dispose();
-            _record('FAIL expected Unity source');
+            _record('FAIL expected $_source source');
             setState(() => _loading = false);
             return;
           }
@@ -151,7 +166,7 @@ class _UnityQaState extends State<_UnityQa> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Unity Ads QA')),
+    appBar: AppBar(title: Text('$_source Ads QA')),
     body: Column(
       children: [
         TextButton(
@@ -167,7 +182,7 @@ class _UnityQaState extends State<_UnityQa> {
         ),
         TextButton(
           onPressed: _ready && _inspectorClosed && !_loading ? _load : null,
-          child: const Text('Load Unity interstitial'),
+          child: Text('Load $_source interstitial'),
         ),
         Expanded(child: SingleChildScrollView(child: Text(_lines.join('\n')))),
       ],

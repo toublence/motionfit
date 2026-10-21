@@ -30,6 +30,10 @@
 	<string>ca-app-pub-6169297934919363~5425389550</string>
 	<key>GADDelayAppMeasurementInit</key>
 	<true/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fb</string>
+	</array>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>

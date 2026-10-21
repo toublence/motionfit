@@ -1,0 +1,359 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project reports/meta_mediation_2026_10_21/ui/MotionfitMetaQA.xcodeproj -scheme MotionfitMetaQA -destination platform=iOS,id=00008112-001848821413601E -derivedDataPath /tmp/motionfit-meta-ui -resultBundlePath /tmp/motionfit-meta-load.xcresult
+
+Writing result bundle at path:
+	/tmp/motionfit-meta-load.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'MotionfitMetaQA' in project 'MotionfitMetaQA' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 27b6719ce67017dcdb5f085fd385acdd
+Build description path: /tmp/motionfit-meta-ui/Build/Intermediates.noindex/XCBuildData/27b6719ce67017dcdb5f085fd385acdd.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui/MotionfitMetaQA.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -o /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache
+
+ProcessProductPackaging "" /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "2CZQR7Q423.fit.motionfit.app.metaqa.xctrunner";
+    "com.apple.developer.team-identifier" = 2CZQR7Q423;
+    "get-task-allow" = 1;
+    "keychain-access-groups" =     (
+        "2CZQR7Q423.fit.motionfit.app.metaqa.xctrunner"
+    );
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent
+
+ProcessProductPackagingDER /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent.der (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    /usr/bin/derq query -f xml -i /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent -o /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent.der --raw
+
+SwiftDriver MotionfitMetaQA normal arm64 com.apple.xcode.tools.swift.compiler (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name MotionfitMetaQA -Onone -enforce-exclusivity\=checked @/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -target arm64-apple-ios26.0 -g -module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /tmp/motionfit-meta-ui/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache -output-file-map /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -sdk-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule -validate-clang-modules-once -clang-build-session-file /tmp/motionfit-meta-ui/ModuleCache.noindex/Session.modulevalidation -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_const_extract_protocols.json -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-generated-files.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-own-target-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-all-target-headers.hmap -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-project-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/include -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources-normal/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-Swift.h -working-directory /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ MotionfitMetaQA.swift /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui/MotionfitMetaQA.swift (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+
+SwiftCompile normal arm64 /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui/MotionfitMetaQA.swift (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ MotionfitMetaQA (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+
+SwiftCompile normal arm64 /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui/MotionfitMetaQA.swift (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling MotionfitMetaQA.swift (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+
+SwiftDriver\ Compilation MotionfitMetaQA normal arm64 com.apple.xcode.tools.swift.compiler (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name MotionfitMetaQA -Onone -enforce-exclusivity\=checked @/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -target arm64-apple-ios26.0 -g -module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /tmp/motionfit-meta-ui/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache -output-file-map /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -sdk-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule -validate-clang-modules-once -clang-build-session-file /tmp/motionfit-meta-ui/ModuleCache.noindex/Session.modulevalidation -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_const_extract_protocols.json -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-generated-files.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-own-target-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-all-target-headers.hmap -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-project-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/include -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources-normal/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-Swift.h -working-directory /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for MotionfitMetaQA (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+
+SwiftDriver\ Compilation\ Requirements MotionfitMetaQA normal arm64 com.apple.xcode.tools.swift.compiler (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name MotionfitMetaQA -Onone -enforce-exclusivity\=checked @/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -target arm64-apple-ios26.0 -g -module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /tmp/motionfit-meta-ui/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /tmp/motionfit-meta-ui/SDKStatCaches.noindex/iphoneos26.1-23B77-69b33fc7382b27d9b5d46e82a00f8e78.sdkstatcache -output-file-map /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -sdk-module-cache-path /tmp/motionfit-meta-ui/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule -validate-clang-modules-once -clang-build-session-file /tmp/motionfit-meta-ui/ModuleCache.noindex/Session.modulevalidation -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_const_extract_protocols.json -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-generated-files.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-own-target-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-all-target-headers.hmap -Xcc -iquote -Xcc /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA-project-headers.hmap -Xcc -I/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/include -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources-normal/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources/arm64 -Xcc -I/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-Swift.h -working-directory /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui -experimental-emit-module-separately -disable-cmo
+
+Copy /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/arm64-apple-ios.abi.json /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.abi.json (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.abi.json /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/arm64-apple-ios.abi.json
+
+Copy /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/arm64-apple-ios.swiftmodule /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/arm64-apple-ios.swiftmodule
+
+Copy /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftsourceinfo (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftsourceinfo /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo
+
+Ld /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA normal (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios26.0 -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk -O0 -L/tmp/motionfit-meta-ui/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphoneos -L/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib -F/tmp/motionfit-meta-ui/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphoneos -F/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/Developer/Library/Frameworks -filelist /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.LinkFileList -Xlinker -rpath -Xlinker @loader_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.swiftmodule @/tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA-linker-args.resp -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport -framework Foundation -Xlinker -no_adhoc_codesign -o /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA
+
+ExtractAppIntentsMetadata (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name MotionfitMetaQA --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk --xcode-version 17B100 --platform-family iOS --deployment-target 26.0 --bundle-identifier fit.motionfit.app.metaqa --output /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest --target-triple arm64-apple-ios26.0 --binary-file /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA --dependency-file /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA_dependency_info.dat --stringsdata-file /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftFileList --metadata-file-list /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.DependencyMetadataFileList --static-metadata-file-list /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.DependencyStaticMetadataFileList --swift-const-vals-list /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/Objects-normal/arm64/MotionfitMetaQA.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-10-21 14:59:56.615 appintentsmetadataprocessor[77712:415034] Starting appintentsmetadataprocessor export
+2026-10-21 14:59:56.616 appintentsmetadataprocessor[77712:415034] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+ProcessInfoPlistFile /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Info.plist /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/empty-MotionfitMetaQA.plist (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    builtin-infoPlistUtility /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/empty-MotionfitMetaQA.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/ProductTypeInfoPlistAdditions.plist -requiredArchitecture arm64 -o /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Info.plist
+
+CopySwiftLibs /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    builtin-swiftStdLibTool --copy --verbose --sign F6E1562BAA0DE14FEC77153D483EA318853A7AAB --scan-executable /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA --scan-folder /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Frameworks --scan-folder /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/PlugIns --scan-folder /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/SystemExtensions --scan-folder /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Extensions --scan-folder /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework --platform iphoneos --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+GenerateDSYMFile /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest.dSYM /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest/MotionfitMetaQA -o /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest.dSYM
+
+CodeSign /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    
+    Signing Identity:     "Apple Development: ChangHyun Nam (67BGHNS3RH)"
+    Provisioning Profile: "iOS Team Provisioning Profile: *"
+                          (2cb1a10e-b3e6-49d3-9767-f111dd993f9b)
+    
+    /usr/bin/codesign --force --sign F6E1562BAA0DE14FEC77153D483EA318853A7AAB --entitlements /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent --timestamp\=none --generate-entitlement-der /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app/PlugIns/MotionfitMetaQA.xctest
+
+CodeSign /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app (in target 'MotionfitMetaQA' from project 'MotionfitMetaQA')
+    cd /Users/nam/projects/flutter/motionfit/reports/meta_mediation_2026_10_21/ui
+    
+    Signing Identity:     "Apple Development: ChangHyun Nam (67BGHNS3RH)"
+    Provisioning Profile: "iOS Team Provisioning Profile: *"
+                          (2cb1a10e-b3e6-49d3-9767-f111dd993f9b)
+    
+    /usr/bin/codesign --force --sign F6E1562BAA0DE14FEC77153D483EA318853A7AAB --entitlements /tmp/motionfit-meta-ui/Build/Intermediates.noindex/MotionfitMetaQA.build/Debug-iphoneos/MotionfitMetaQA.build/MotionfitMetaQA.xctest.xcent --timestamp\=none --generate-entitlement-der /tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app
+/tmp/motionfit-meta-ui/Build/Products/Debug-iphoneos/MotionfitMetaQA-Runner.app: replacing existing signature
+
+2026-10-21 14:59:59.196065+0900 MotionfitMetaQA-Runner[22012:5470675] [Default] Running tests...
+2026-10-21 14:59:59.209457+0900 MotionfitMetaQA-Runner[22012:5470675] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'All tests' started at 2026-10-21 14:59:59.679.
+Test Suite 'MotionfitMetaQA.xctest' started at 2026-10-21 14:59:59.680.
+Test Suite 'MotionfitMetaQA' started at 2026-10-21 14:59:59.680.
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testLoadMeta]' started.
+    t =     0.00s Start Test at 2026-10-21 14:59:59.680
+    t =     0.01s Set Up
+    t =     0.01s Open fit.motionfit.app
+    t =     0.01s     Activate fit.motionfit.app
+    t =     0.03s         Wait for fit.motionfit.app to idle
+    t =     0.04s Tap "Start test" Button
+    t =     0.04s     Wait for fit.motionfit.app to idle
+    t =     0.04s     Find the "Start test" Button
+    t =     0.08s     Check for interrupting elements affecting "Start test" Button
+    t =     0.10s     Synthesize event
+    t =     0.38s     Wait for fit.motionfit.app to idle
+    t =     2.39s Requesting snapshot of accessibility hierarchy for app with pid 21992
+    t =     2.78s Requesting snapshot of accessibility hierarchy for app with pid 21992
+META_TEST_ACTIVE
+Attributes: Application, 0x1196183c0, pid: 21992, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x1196183c0, pid: 21992, label: 'motionfit - workout coach'
+    Window (Main), 0x119618500, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x119618780, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x1196188c0, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x119618c80, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x11961a300, {{0.0, 0.0}, {820.0, 1180.0}}
+        WebView, 0x11961a1c0, {{0.0, 0.0}, {820.0, 1180.0}}
+          WebView, 0x11961a080, {{0.0, 0.0}, {820.0, 1180.0}}
+            WebView, 0x1196192c0, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x119619400, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x119619cc0, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x119619f40, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x119619e00, {{0.0, 0.0}, {820.0, 1180.0}}, label: 'Ad inspector'
+                      Other, 0x119619900, {{16.0, 1099.0}, {40.0, 40.0}}
+                        Image, 0x119619b80, {{20.0, 1103.0}, {32.0, 32.0}}, label: 'Single ad source test icon'
+                      StaticText, 0x119619a40, {{72.0, 1096.0}, {150.0, 22.0}}, label: 'Single ad source test', value: Single ad source t...
+                      StaticText, 0x119619540, {{72.0, 1120.0}, {197.0, 18.0}}, label: 'Meta Audience Network (Bidding)', value: Meta Audience Netw...
+                      Switch, 0x1196197c0, {{764.0, 1112.0}, {36.0, 14.0}}, value: 1, Focused
+                      StaticText, 0x119619680, {{32.0, 60.0}, {116.0, 27.0}}, label: 'Ad Inspector', value: Ad Inspector
+                      Button, 0x119619040, {{764.0, 47.0}, {48.0, 49.0}}, label: 'Close'
+                      Other, 0x119619180, {{16.0, 144.0}, {56.0, 56.0}}
+                        Image, 0x119618dc0, {{16.0, 144.0}, {56.0, 56.0}}, label: 'App icon'
+                      Other, 0x119618f00, {{88.0, 128.0}, {245.0, 24.0}}
+                        StaticText, 0x119618b40, {{88.0, 129.0}, {188.0, 21.0}}, label: 'motionfit - workout coach', value: motionfit - workou...
+                      Other, 0x119618a00, {{88.0, 152.0}, {245.0, 16.0}}
+                        StaticText, 0x11961a440, {{88.0, 152.0}, {88.0, 16.0}}, label: 'fit.motionfit.app', value: fit.motionfit.app
+                      Other, 0x11961a580, {{88.0, 168.0}, {245.0, 16.0}}
+                        StaticText, 0x11961a6c0, {{88.0, 168.0}, {245.0, 16.0}}, label: 'ca-app-pub-6169297934919363~5425389550', value: ca-app-pub-6169297...
+                      Other, 0x11961a800, {{88.0, 184.0}, {245.0, 16.0}}
+                        StaticText, 0x11961a940, {{88.0, 184.0}, {169.0, 16.0}}, label: 'Google Mobile Ads SDK v13.3.0', value: Google Mobile Ads ...
+                      Other, 0x11961aa80, {{88.0, 200.0}, {245.0, 16.0}}
+                        StaticText, 0x11961ad00, {{88.0, 200.0}, {101.0, 16.0}}, label: 'Flutter-GMA-9.0.0', value: Flutter-GMA-9.0.0
+                      Button, 0x11961ae40, {{16.0, 232.0}, {788.0, 36.0}}, label: 'Send feedback'
+                      Other, 0x11961af80, {{0.0, 272.0}, {820.0, 48.0}}
+                        Button, 0x11961b0c0, {{0.0, 272.0}, {273.0, 48.0}}, label: 'Ad units', Selected
+                        Button, 0x11961b480, {{273.0, 272.0}, {280.0, 48.0}}, label: 'Adapters'
+                        Button, 0x11961bac0, {{552.0, 272.0}, {269.0, 48.0}}, label: 'Privacy'
+                      Other, 0x11961bc00, {{0.0, 320.0}, {820.0, 409.0}}, label: 'Ad units, 탭 패널'
+                        Other, 0x11961bd40, {{0.0, 328.0}, {820.0, 401.0}}
+                          Other, 0x11961be80, {{0.0, 328.0}, {820.0, 32.0}}
+                            Other, 0x11961b840, {{16.0, 328.0}, {546.0, 32.0}}
+                              StaticText, 0x11961b980, {{16.0, 332.0}, {59.0, 22.0}}, label: 'Ad units', value: Ad units
+                            Other, 0x11961b5c0, {{562.0, 328.0}, {242.0, 32.0}}
+                              StaticText, 0x11961b700, {{718.0, 335.0}, {86.0, 16.0}}, label: 'LATEST ACTIVITY', value: LATEST ACTIVITY
+                          Other, 0x11961b340, {{0.0, 360.0}, {820.0, 81.0}}
+                            Other, 0x11961b200, {{8.0, 360.0}, {554.0, 81.0}}
+                              Other, 0x11961abc0, {{16.0, 380.0}, {40.0, 40.0}}
+                              StaticText, 0x11819b700, {{72.0, 379.0}, {328.0, 21.0}}, label: 'ca-app-pub-3940256099942544/4411468910', value: ca-app-pub-3940256...
+                              StaticText, 0x11819b840, {{72.0, 403.0}, {58.0, 17.0}}, label: 'Interstitial', value: Interstitial
+                            Other, 0x11819b980, {{562.0, 360.0}, {250.0, 81.0}}
+                              StaticText, 0x11819bac0, {{780.0, 371.0}, {16.0, 17.0}}, label: 'Fill', value: Fill
+                              StaticText, 0x11819bc00, {{707.0, 393.0}, {97.0, 17.0}}, label: 'AdMob Network', value: AdMob Network
+                              StaticText, 0x11819bd40, {{740.0, 413.0}, {64.0, 17.0}}, label: '2:58:35 PM', value: 2:58:35 PM
+                          Other, 0x1181997c0, {{0.0, 441.0}, {820.0, 72.0}}
+                            Other, 0x11819be80, {{8.0, 441.0}, {554.0, 72.0}}
+                              Other, 0x119680000, {{16.0, 456.0}, {40.0, 41.0}}
+                              StaticText, 0x119680140, {{72.0, 455.0}, {319.0, 22.0}}, label: 'ca-app-pub-6169297934919363/9732714503', value: ca-app-pub-6169297...
+                              StaticText, 0x119680280, {{72.0, 479.0}, {58.0, 18.0}}, label: 'App open', value: App open
+                            Other, 0x1196803c0, {{562.0, 441.0}, {250.0, 72.0}}
+                          Other, 0x119680500, {{0.0, 513.0}, {820.0, 72.0}}
+                            Other, 0x119680640, {{8.0, 513.0}, {554.0, 72.0}}
+                              Other, 0x119680780, {{16.0, 528.0}, {40.0, 41.0}}
+                              StaticText, 0x1196808c0, {{72.0, 527.0}, {318.0, 22.0}}, label: 'ca-app-pub-6169297934919363/2998795518', value: ca-app-pub-6169297...
+                              StaticText, 0x119680a00, {{72.0, 551.0}, {58.0, 18.0}}, label: 'Interstitial', value: Interstitial
+                            Other, 0x119680b40, {{562.0, 513.0}, {250.0, 72.0}}
+                          Other, 0x119680c80, {{0.0, 585.0}, {820.0, 72.0}}
+                            Other, 0x119680dc0, {{8.0, 585.0}, {554.0, 72.0}}
+                              Other, 0x119680f00, {{16.0, 600.0}, {40.0, 41.0}}
+                              StaticText, 0x119681040, {{72.0, 599.0}, {316.0, 22.0}}, label: 'ca-app-pub-6169297934919363/1414718708', value: ca-app-pub-6169297...
+                              StaticText, 0x119681180, {{72.0, 623.0}, {98.0, 18.0}}, label: 'Native advanced', value: Native advanced
+                            Other, 0x1196812c0, {{562.0, 585.0}, {250.0, 72.0}}
+                          Other, 0x119681400, {{0.0, 657.0}, {820.0, 72.0}}
+                            Other, 0x119681540, {{8.0, 657.0}, {554.0, 72.0}}
+                              Other, 0x119681680, {{16.0, 673.0}, {40.0, 40.0}}
+                              StaticText, 0x1196817c0, {{72.0, 672.0}, {323.0, 21.0}}, label: 'ca-app-pub-6169297934919363/9696065805', value: ca-app-pub-6169297...
+                              StaticText, 0x119681900, {{72.0, 696.0}, {42.0, 17.0}}, label: 'Banner', value: Banner
+                            Other, 0x119681a40, {{562.0, 657.0}, {250.0, 72.0}}
+                      Other, 0x119681b80, {{0.0, 1179.0}, {1.0, 1.0}}
+                      Other, 0x119681cc0, {{238.0, 1124.0}, {336.0, 48.0}}
+                        Other, 0x119681e00, {{238.0, 1124.0}, {336.0, 48.0}}
+                          StaticText, 0x119681f40, {{254.0, 1139.0}, {75.0, 17.0}}, label: 'Test is active', value: Test is active
+            Other, 0x119682080, {{787.0, 18.0}, {30.0, 1144.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+              Other, 0x1196821c0, {{814.0, 21.0}, {3.0, 1138.0}}
+            Other, 0x119682300, {{18.0, 1147.0}, {784.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+              Other, 0x119682440, {{21.0, 1174.0}, {778.0, 3.0}}
+            Other, 0x119682580, {{787.0, 18.0}, {30.0, 1144.0}}, label: '수직 스크롤 막대, 1페이지', value: 0%
+              Other, 0x1196826c0, {{814.0, 21.0}, {3.0, 1138.0}}
+            Other, 0x119682800, {{18.0, 1147.0}, {784.0, 30.0}}, label: '수평 스크롤 막대, 1페이지', value: 0%
+              Other, 0x119682940, {{21.0, 1174.0}, {778.0, 3.0}}
+          Button, 0x119682a80, {{0.0, 32.0}, {52.0, 52.0}}, label: 'Close Ad Inspector', Disabled
+    Window, 0x119682bc0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x119682d00, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x119682e40, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x1196183c0, pid: 21992, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x119682f80, pid: 21992, label: 'motionfit - workout coach'
+  }
+
+    t =     2.86s Tap "Close" Button
+    t =     2.86s     Wait for fit.motionfit.app to idle
+    t =     2.86s     Find the "Close" Button
+    t =     2.92s     Check for interrupting elements affecting "Close" Button
+    t =     2.96s     Synthesize event
+    t =     3.25s     Wait for fit.motionfit.app to idle
+    t =     3.60s Waiting 10.0s for "Load Meta interstitial" Button to exist
+    t =     4.63s     Checking `Expect predicate `existsNoRetry == 1` for object "Load Meta interstitial" Button`
+    t =     4.64s         Checking existence of `"Load Meta interstitial" Button`
+    t =     4.65s         Capturing element debug description
+    t =     5.67s     Checking `Expect predicate `existsNoRetry == 1` for object "Load Meta interstitial" Button`
+    t =     5.67s         Checking existence of `"Load Meta interstitial" Button`
+    t =     5.71s Find the "Load Meta interstitial" Button
+    t =     5.73s Tap "Load Meta interstitial" Button
+    t =     5.73s     Wait for fit.motionfit.app to idle
+    t =     5.74s     Find the "Load Meta interstitial" Button
+    t =     5.75s     Check for interrupting elements affecting "Load Meta interstitial" Button
+    t =     5.78s     Synthesize event
+    t =     6.10s     Wait for fit.motionfit.app to idle
+    t =    26.11s Requesting snapshot of accessibility hierarchy for app with pid 21992
+    t =    26.22s Requesting snapshot of accessibility hierarchy for app with pid 21992
+META_AD_RESULT
+Attributes: Application, 0x119e8abc0, pid: 21992, label: 'motionfit - workout coach'
+Element subtree:
+ →Application, 0x119e8abc0, pid: 21992, label: 'motionfit - workout coach'
+    Window (Main), 0x119e8a440, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x119e8bac0, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x119e8bc00, {{0.0, 0.0}, {820.0, 1180.0}}
+          Other, 0x119e8b980, {{0.0, 0.0}, {820.0, 1180.0}}
+            Other, 0x119e8b840, {{0.0, 0.0}, {820.0, 1180.0}}
+              Other, 0x119e8b700, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x119e8b5c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                Other, 0x119e8b480, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x119e8b200, {{0.0, 0.0}, {820.0, 1180.0}}
+                  Other, 0x119e8b340, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x119e9c000, {{0.0, 0.0}, {820.0, 1180.0}}
+                    Other, 0x119e9c140, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x119e9c280, {{0.0, 0.0}, {820.0, 1180.0}}
+                      Other, 0x119e9c3c0, {{0.0, 0.0}, {820.0, 1180.0}}
+                        Other, 0x119e9c500, {{0.0, 0.0}, {820.0, 88.0}}
+                        Other, 0x119e9c640, {{349.1, 46.0}, {121.8, 28.0}}, label: 'Meta Ads QA'
+                      Button, 0x119e9c780, {{334.1, 88.0}, {151.8, 48.0}}, label: 'Open Ad Inspector'
+                      Button, 0x119e9c8c0, {{325.7, 136.0}, {168.6, 48.0}}, label: 'Load Meta interstitial'
+                      Other, 0x119e9ca00, {{0.0, 0.0}, {820.0, 1180.0}}
+                        ScrollView, 0x119e9cb40, {{0.0, 184.0}, {820.0, 996.0}}
+                        StaticText, 0x119e9cc80, {{0.0, 184.0}, {820.0, 743.0}}, label: 'consentAllowed=true
+adapter=GADMediationAdapterFacebook state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x11de02940; state = Ready>
+adapter=GADMediationAdapterUnity state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x11de02f30; state = Ready>
+adapter=GADMobileAds state=AdapterInitializationState.ready description=<GADAdapterStatus: 0x11d6ca4e0; state = Ready>
+metaTestMode=true
+googleTestPreflightLoaded=true
+inspectorClosed=OK
+request=ca-app-pub-6169297934919363/2998795518
+FAIL load: 1 com.google.admob Request Error: No ad to show.
+responseInfo=ResponseInfo(responseId: 5VTYaqSeObeKjeYPvdiUuQg, mediationAdapterClassName: null, adapterResponses: [AdapterResponseInfo(adapterClassName: GADMediationAdapterFacebook, latencyMillis: 745, description: {
+    "Ad Source ID" = 11198165126854996598;
+    "Ad Source Instance ID" = 2600661560325760;
+    "Ad Source Instance Name" = "Meta Audience Network(\Uc785\Ucc30)";
+    "Ad Source Name" = "Meta Audience Network (bidding)";
+    AdUnitMapping =     {
+        "placement_id" = "1059151487163037_1059152357162950";
+        pubid = "ca-app-pub-6169297934919363/2998795518/cak=no_cache&cadc=68&caqid=5VTYas6iNteO3NMPhde2iAc";
+    };
+    Error = "Error Domain=com.google.admob Code=1 \"Request Error: No ad to show.\" UserInfo={NSLocalizedDescription=Request Error: No ad to show., NSUnderlyingError=0x12e661650 {Error Domain=FBAdDSLDataLoaderDomain Code=0 \"Something went wrong\" UserInfo={NSLocalizedDescription=Something went wrong}}}";
+    Latency = "0.745";
+    Network = GADMediationAdapterFacebook;
+}, adUnitMapping: {pubid: ca-app-pub-6169297934919363/2998795518/cak=no_cache&cadc=68&caqid=5VTYas6iNteO3NMPhde2iAc, placement_id: 1059151487163037_1059152357162950}, adError: AdError(code: 1, domain: com.google.admob, message: Request Error: No ad to show.), adSourceName: Meta Audience Network (bidding), adSourceId: 11198165126854996598, adSourceInstanceName: Meta Audience Network(입찰), adSourceInstanceId: 2600661560325760)], loadedAdapterResponseInfo: AdapterResponseInfo(adapterClassName: , latencyMillis: 0, description: , adUnitMapping: {}, adError: null, adSourceName: , adSourceId: , adSourceInstanceName: , adSourceInstanceId: )), responseExtras: {mediation_group_name: 포즈 전면}'
+    Window, 0x119e9cdc0, {{0.0, 0.0}, {820.0, 1180.0}}
+      Other, 0x119e9cf00, {{0.0, 0.0}, {820.0, 1180.0}}
+        Other, 0x119e9d040, {{0.0, 0.0}, {820.0, 1180.0}}
+Path to element:
+ →Application, 0x119e8abc0, pid: 21992, label: 'motionfit - workout coach'
+Query chain:
+ →Find: Application 'fit.motionfit.app'
+  Output: {
+    Application, 0x119e9d180, pid: 21992, label: 'motionfit - workout coach'
+  }
+
+    t =    26.40s Added attachment named 'Screenshot of main screen (ID 1).png'
+    t =    26.40s Tear Down
+Test Case '-[MotionfitMetaQA.MotionfitMetaQA testLoadMeta]' passed (26.434 seconds).
+Test Suite 'MotionfitMetaQA' passed at 2026-10-21 15:00:26.114.
+	 Executed 1 test, with 0 failures (0 unexpected) in 26.434 (26.434) seconds
+Test Suite 'MotionfitMetaQA.xctest' passed at 2026-10-21 15:00:26.114.
+	 Executed 1 test, with 0 failures (0 unexpected) in 26.434 (26.435) seconds
+Test Suite 'All tests' passed at 2026-10-21 15:00:26.115.
+	 Executed 1 test, with 0 failures (0 unexpected) in 26.434 (26.435) seconds
+2026-10-21 15:00:26.664 xcodebuild[77696:414871] [MT] IDETestOperationsObserverDebug: 29.841 elapsed -- Testing started completed.
+2026-10-21 15:00:26.664 xcodebuild[77696:414871] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-21 15:00:26.664 xcodebuild[77696:414871] [MT] IDETestOperationsObserverDebug: 29.841 sec, +29.841 sec -- end
+
+Test session results, code coverage, and logs:
+	/tmp/motionfit-meta-load.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started
